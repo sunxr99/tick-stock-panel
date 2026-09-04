@@ -1,0 +1,265 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/tests/test_strategy_scoring.py",
+      "type": "file",
+      "name": "test_strategy_scoring.py",
+      "filePath": "backend/tests/test_strategy_scoring.py",
+      "summary": "为 strategy_scoring 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_strategy_scoring.py:_candidates",
+      "type": "function",
+      "name": "_candidates",
+      "filePath": "backend/tests/test_strategy_scoring.py",
+      "lineRange": [
+        12,
+        19
+      ],
+      "summary": "实现 _candidates，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_strategy_scoring.py:test_virtual_scoring_is_shared_and_does_not_add_virtual_column",
+      "type": "function",
+      "name": "test_virtual_scoring_is_shared_and_does_not_add_virtual_column",
+      "filePath": "backend/tests/test_strategy_scoring.py",
+      "lineRange": [
+        22,
+        31
+      ],
+      "summary": "验证 virtual scoring is shared and does not add virtual column 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_strategy_scoring.py:test_scoring_reweights_only_available_fields",
+      "type": "function",
+      "name": "test_scoring_reweights_only_available_fields",
+      "filePath": "backend/tests/test_strategy_scoring.py",
+      "lineRange": [
+        34,
+        40
+      ],
+      "summary": "验证 scoring reweights only available fields 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_strategy_scoring.py:test_scoring_can_prefer_lower_factor_values",
+      "type": "function",
+      "name": "test_scoring_can_prefer_lower_factor_values",
+      "filePath": "backend/tests/test_strategy_scoring.py",
+      "lineRange": [
+        43,
+        50
+      ],
+      "summary": "验证 scoring can prefer lower factor values 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_strategy_scoring.py:test_backtest_scoring_uses_saved_direction_and_replacement",
+      "type": "function",
+      "name": "test_backtest_scoring_uses_saved_direction_and_replacement",
+      "filePath": "backend/tests/test_strategy_scoring.py",
+      "lineRange": [
+        53,
+        70
+      ],
+      "summary": "验证 backtest scoring uses saved direction and replacement 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_strategy_scoring.py:test_realtime_scoring_materializes_rolling_factor_from_history",
+      "type": "function",
+      "name": "test_realtime_scoring_materializes_rolling_factor_from_history",
+      "filePath": "backend/tests/test_strategy_scoring.py",
+      "lineRange": [
+        73,
+        95
+      ],
+      "summary": "验证 realtime scoring materializes rolling factor from history 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_strategy_scoring.py:test_effective_scoring_keeps_legacy_merge_and_supports_full_replace",
+      "type": "function",
+      "name": "test_effective_scoring_keeps_legacy_merge_and_supports_full_replace",
+      "filePath": "backend/tests/test_strategy_scoring.py",
+      "lineRange": [
+        98,
+        112
+      ],
+      "summary": "验证 effective scoring keeps legacy merge and supports full replace 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "file:backend/app/backtest/strategy.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "file:backend/app/strategy/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "file:backend/app/strategy/scoring.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "function:backend/tests/test_strategy_scoring.py:_candidates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "function:backend/tests/test_strategy_scoring.py:_candidates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "function:backend/tests/test_strategy_scoring.py:test_virtual_scoring_is_shared_and_does_not_add_virtual_column",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "function:backend/tests/test_strategy_scoring.py:test_virtual_scoring_is_shared_and_does_not_add_virtual_column",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "function:backend/tests/test_strategy_scoring.py:test_scoring_reweights_only_available_fields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "function:backend/tests/test_strategy_scoring.py:test_scoring_reweights_only_available_fields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "function:backend/tests/test_strategy_scoring.py:test_scoring_can_prefer_lower_factor_values",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "function:backend/tests/test_strategy_scoring.py:test_scoring_can_prefer_lower_factor_values",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "function:backend/tests/test_strategy_scoring.py:test_backtest_scoring_uses_saved_direction_and_replacement",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "function:backend/tests/test_strategy_scoring.py:test_backtest_scoring_uses_saved_direction_and_replacement",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "function:backend/tests/test_strategy_scoring.py:test_realtime_scoring_materializes_rolling_factor_from_history",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "function:backend/tests/test_strategy_scoring.py:test_realtime_scoring_materializes_rolling_factor_from_history",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "function:backend/tests/test_strategy_scoring.py:test_effective_scoring_keeps_legacy_merge_and_supports_full_replace",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_strategy_scoring.py",
+      "target": "function:backend/tests/test_strategy_scoring.py:test_effective_scoring_keeps_legacy_merge_and_supports_full_replace",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

@@ -1,0 +1,670 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/app/backtest/minute_trigger.py",
+      "type": "file",
+      "name": "minute_trigger.py",
+      "filePath": "backend/app/backtest/minute_trigger.py",
+      "summary": "提供 minute_trigger 回测领域能力，处理历史市场数据、策略信号或绩效计算。",
+      "tags": [
+        "backtest",
+        "quantitative",
+        "market-data",
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/backtest/minute_trigger.py:unsupported_minute_exit_signals",
+      "type": "function",
+      "name": "unsupported_minute_exit_signals",
+      "filePath": "backend/app/backtest/minute_trigger.py",
+      "lineRange": [
+        14,
+        15
+      ],
+      "summary": "实现 unsupported_minute_exit_signals，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/backtest/minute_trigger.py:build_minute_exit_reference",
+      "type": "function",
+      "name": "build_minute_exit_reference",
+      "filePath": "backend/app/backtest/minute_trigger.py",
+      "lineRange": [
+        18,
+        49
+      ],
+      "summary": "实现 build_minute_exit_reference，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/backtest/numba_runtime.py",
+      "type": "file",
+      "name": "numba_runtime.py",
+      "filePath": "backend/app/backtest/numba_runtime.py",
+      "summary": "提供 numba_runtime 回测领域能力，处理历史市场数据、策略信号或绩效计算。",
+      "tags": [
+        "backtest",
+        "quantitative",
+        "market-data",
+        "service"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/backtest/numba_runtime.py:run_numba_parallel",
+      "type": "function",
+      "name": "run_numba_parallel",
+      "filePath": "backend/app/backtest/numba_runtime.py",
+      "lineRange": [
+        20,
+        23
+      ],
+      "summary": "实现 run_numba_parallel，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/backtest/optimizer.py",
+      "type": "file",
+      "name": "optimizer.py",
+      "filePath": "backend/app/backtest/optimizer.py",
+      "summary": "提供 optimizer 回测领域能力，处理历史市场数据、策略信号或绩效计算。",
+      "tags": [
+        "backtest",
+        "quantitative",
+        "market-data",
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/backtest/optimizer.py:OptimizeConfig",
+      "type": "class",
+      "name": "OptimizeConfig",
+      "filePath": "backend/app/backtest/optimizer.py",
+      "lineRange": [
+        181,
+        193
+      ],
+      "summary": "定义 OptimizeConfig 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/backtest/optimizer.py:PhaseRssSampler",
+      "type": "class",
+      "name": "PhaseRssSampler",
+      "filePath": "backend/app/backtest/optimizer.py",
+      "lineRange": [
+        196,
+        201
+      ],
+      "summary": "定义 PhaseRssSampler 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/backtest/optimizer.py:StrategyOptimizer",
+      "type": "class",
+      "name": "StrategyOptimizer",
+      "filePath": "backend/app/backtest/optimizer.py",
+      "lineRange": [
+        204,
+        441
+      ],
+      "summary": "定义 StrategyOptimizer 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/backtest/optimizer.py:_candidates_for",
+      "type": "function",
+      "name": "_candidates_for",
+      "filePath": "backend/app/backtest/optimizer.py",
+      "lineRange": [
+        36,
+        100
+      ],
+      "summary": "实现 _candidates_for，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/backtest/optimizer.py:_grid_candidates",
+      "type": "function",
+      "name": "_grid_candidates",
+      "filePath": "backend/app/backtest/optimizer.py",
+      "lineRange": [
+        103,
+        113
+      ],
+      "summary": "实现 _grid_candidates，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/backtest/optimizer.py:count_combinations",
+      "type": "function",
+      "name": "count_combinations",
+      "filePath": "backend/app/backtest/optimizer.py",
+      "lineRange": [
+        116,
+        122
+      ],
+      "summary": "实现 count_combinations，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/backtest/optimizer.py:expand_param_grid",
+      "type": "function",
+      "name": "expand_param_grid",
+      "filePath": "backend/app/backtest/optimizer.py",
+      "lineRange": [
+        125,
+        141
+      ],
+      "summary": "实现 expand_param_grid，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/backtest/optimizer.py:objective_value",
+      "type": "function",
+      "name": "objective_value",
+      "filePath": "backend/app/backtest/optimizer.py",
+      "lineRange": [
+        144,
+        155
+      ],
+      "summary": "实现 objective_value，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/backtest/optimizer.py:default_direction",
+      "type": "function",
+      "name": "default_direction",
+      "filePath": "backend/app/backtest/optimizer.py",
+      "lineRange": [
+        158,
+        159
+      ],
+      "summary": "实现 default_direction，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/backtest/optimizer.py:_validate_backtest_kwargs",
+      "type": "function",
+      "name": "_validate_backtest_kwargs",
+      "filePath": "backend/app/backtest/optimizer.py",
+      "lineRange": [
+        166,
+        177
+      ],
+      "summary": "实现 _validate_backtest_kwargs，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/backtest/regime_alignment.py",
+      "type": "file",
+      "name": "regime_alignment.py",
+      "filePath": "backend/app/backtest/regime_alignment.py",
+      "summary": "提供 regime_alignment 回测领域能力，处理历史市场数据、策略信号或绩效计算。",
+      "tags": [
+        "backtest",
+        "quantitative",
+        "market-data",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/backtest/regime_alignment.py:three_level_regime",
+      "type": "function",
+      "name": "three_level_regime",
+      "filePath": "backend/app/backtest/regime_alignment.py",
+      "lineRange": [
+        20,
+        21
+      ],
+      "summary": "实现 three_level_regime，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/backtest/regime_alignment.py:_date_text",
+      "type": "function",
+      "name": "_date_text",
+      "filePath": "backend/app/backtest/regime_alignment.py",
+      "lineRange": [
+        24,
+        25
+      ],
+      "summary": "实现 _date_text，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/backtest/regime_alignment.py:_normalize_regime_point",
+      "type": "function",
+      "name": "_normalize_regime_point",
+      "filePath": "backend/app/backtest/regime_alignment.py",
+      "lineRange": [
+        28,
+        35
+      ],
+      "summary": "实现 _normalize_regime_point，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/backtest/regime_alignment.py:clamp_formal_start_for_regime",
+      "type": "function",
+      "name": "clamp_formal_start_for_regime",
+      "filePath": "backend/app/backtest/regime_alignment.py",
+      "lineRange": [
+        38,
+        65
+      ],
+      "summary": "实现 clamp_formal_start_for_regime，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/backtest/regime_alignment.py:align_regime_t_minus_one",
+      "type": "function",
+      "name": "align_regime_t_minus_one",
+      "filePath": "backend/app/backtest/regime_alignment.py",
+      "lineRange": [
+        68,
+        123
+      ],
+      "summary": "实现 align_regime_t_minus_one，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/backtest/regime_alignment.py:build_regime_filter_mask",
+      "type": "function",
+      "name": "build_regime_filter_mask",
+      "filePath": "backend/app/backtest/regime_alignment.py",
+      "lineRange": [
+        126,
+        166
+      ],
+      "summary": "实现 build_regime_filter_mask，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/app/backtest/minute_trigger.py",
+      "target": "function:backend/app/backtest/minute_trigger.py:unsupported_minute_exit_signals",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/minute_trigger.py",
+      "target": "function:backend/app/backtest/minute_trigger.py:unsupported_minute_exit_signals",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/minute_trigger.py",
+      "target": "function:backend/app/backtest/minute_trigger.py:build_minute_exit_reference",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/minute_trigger.py",
+      "target": "function:backend/app/backtest/minute_trigger.py:build_minute_exit_reference",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/numba_runtime.py",
+      "target": "function:backend/app/backtest/numba_runtime.py:run_numba_parallel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/numba_runtime.py",
+      "target": "function:backend/app/backtest/numba_runtime.py:run_numba_parallel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "class:backend/app/backtest/optimizer.py:OptimizeConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "class:backend/app/backtest/optimizer.py:OptimizeConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "class:backend/app/backtest/optimizer.py:PhaseRssSampler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "class:backend/app/backtest/optimizer.py:PhaseRssSampler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "class:backend/app/backtest/optimizer.py:StrategyOptimizer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "class:backend/app/backtest/optimizer.py:StrategyOptimizer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "function:backend/app/backtest/optimizer.py:_candidates_for",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "function:backend/app/backtest/optimizer.py:_candidates_for",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "function:backend/app/backtest/optimizer.py:_grid_candidates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "function:backend/app/backtest/optimizer.py:_grid_candidates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "function:backend/app/backtest/optimizer.py:count_combinations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "function:backend/app/backtest/optimizer.py:count_combinations",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "function:backend/app/backtest/optimizer.py:expand_param_grid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "function:backend/app/backtest/optimizer.py:expand_param_grid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "function:backend/app/backtest/optimizer.py:objective_value",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "function:backend/app/backtest/optimizer.py:objective_value",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "function:backend/app/backtest/optimizer.py:default_direction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "function:backend/app/backtest/optimizer.py:default_direction",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "function:backend/app/backtest/optimizer.py:_validate_backtest_kwargs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/optimizer.py",
+      "target": "function:backend/app/backtest/optimizer.py:_validate_backtest_kwargs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/regime_alignment.py",
+      "target": "function:backend/app/backtest/regime_alignment.py:three_level_regime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/regime_alignment.py",
+      "target": "function:backend/app/backtest/regime_alignment.py:three_level_regime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/regime_alignment.py",
+      "target": "function:backend/app/backtest/regime_alignment.py:_date_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/regime_alignment.py",
+      "target": "function:backend/app/backtest/regime_alignment.py:_date_text",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/regime_alignment.py",
+      "target": "function:backend/app/backtest/regime_alignment.py:_normalize_regime_point",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/regime_alignment.py",
+      "target": "function:backend/app/backtest/regime_alignment.py:_normalize_regime_point",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/regime_alignment.py",
+      "target": "function:backend/app/backtest/regime_alignment.py:clamp_formal_start_for_regime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/regime_alignment.py",
+      "target": "function:backend/app/backtest/regime_alignment.py:clamp_formal_start_for_regime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/regime_alignment.py",
+      "target": "function:backend/app/backtest/regime_alignment.py:align_regime_t_minus_one",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/regime_alignment.py",
+      "target": "function:backend/app/backtest/regime_alignment.py:align_regime_t_minus_one",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/backtest/regime_alignment.py",
+      "target": "function:backend/app/backtest/regime_alignment.py:build_regime_filter_mask",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/backtest/regime_alignment.py",
+      "target": "function:backend/app/backtest/regime_alignment.py:build_regime_filter_mask",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

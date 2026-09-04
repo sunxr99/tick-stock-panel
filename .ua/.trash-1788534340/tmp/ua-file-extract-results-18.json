@@ -1,0 +1,6106 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 12,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 12,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 12,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "backend/app/data_providers/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/app/data_providers/base.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 61,
+      "classes": [
+        {
+          "name": "ProviderCapabilities",
+          "startLine": 20,
+          "endLine": 26,
+          "methods": [],
+          "properties": [
+            "instruments",
+            "daily",
+            "adj_factor",
+            "minute",
+            "realtime",
+            "financial"
+          ]
+        },
+        {
+          "name": "MarketDataProvider",
+          "startLine": 29,
+          "endLine": 75,
+          "methods": [
+            "get_instruments",
+            "get_daily",
+            "get_adj_factors",
+            "get_minute",
+            "get_realtime"
+          ],
+          "properties": [
+            "name",
+            "capabilities"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProviderCapabilities",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "MarketDataProvider",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "backend/app/data_providers/capabilities.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 201,
+      "nonEmptyLines": 181,
+      "functions": [
+        {
+          "name": "_tier_base",
+          "startLine": 105,
+          "endLine": 110,
+          "params": [
+            "tier"
+          ]
+        },
+        {
+          "name": "_declared_sources",
+          "startLine": 113,
+          "endLine": 135,
+          "params": []
+        },
+        {
+          "name": "_display_of",
+          "startLine": 138,
+          "endLine": 144,
+          "params": [
+            "sources",
+            "name"
+          ]
+        },
+        {
+          "name": "build_capability_matrix",
+          "startLine": 147,
+          "endLine": 201,
+          "params": [
+            "current",
+            "tickflow_tier"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_tier_base",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "_declared_sources",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "_display_of",
+          "line": 138,
+          "isDefault": false
+        },
+        {
+          "name": "build_capability_matrix",
+          "line": 147,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_tier_base",
+          "callee": "str(tier or \"\").strip().lower",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_tier_base",
+          "callee": "str(tier or \"\").strip",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_tier_base",
+          "callee": "str",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_tier_base",
+          "callee": "text.split()[0].split",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_tier_base",
+          "callee": "text.split",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_declared_sources",
+          "callee": "custom_sources.list_plugins",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_declared_sources",
+          "callee": "rows.append",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_declared_sources",
+          "callee": "plugin.get",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_declared_sources",
+          "callee": "set",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_declared_sources",
+          "callee": "plugin.get",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_declared_sources",
+          "callee": "bool",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_declared_sources",
+          "callee": "plugin.get",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_declared_sources",
+          "callee": "str",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_declared_sources",
+          "callee": "plugin.get",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_declared_sources",
+          "callee": "custom_sources.list_sources",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_declared_sources",
+          "callee": "rows.append",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_declared_sources",
+          "callee": "source.get",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_declared_sources",
+          "callee": "set",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_declared_sources",
+          "callee": "source.get",
+          "lineNumber": 129
+        },
+        {
+          "caller": "build_capability_matrix",
+          "callee": "_tier_base",
+          "lineNumber": 159
+        },
+        {
+          "caller": "build_capability_matrix",
+          "callee": "_TIER_RANK.get",
+          "lineNumber": 160
+        },
+        {
+          "caller": "build_capability_matrix",
+          "callee": "_declared_sources",
+          "lineNumber": 161
+        },
+        {
+          "caller": "build_capability_matrix",
+          "callee": "current.get",
+          "lineNumber": 166
+        },
+        {
+          "caller": "build_capability_matrix",
+          "callee": "candidates.append",
+          "lineNumber": 171
+        },
+        {
+          "caller": "build_capability_matrix",
+          "callee": "dict",
+          "lineNumber": 171
+        },
+        {
+          "caller": "build_capability_matrix",
+          "callee": "(candidates if s[\"available\"] else pending).append",
+          "lineNumber": 183
+        },
+        {
+          "caller": "build_capability_matrix",
+          "callee": "any",
+          "lineNumber": 184
+        },
+        {
+          "caller": "build_capability_matrix",
+          "callee": "capabilities.append",
+          "lineNumber": 185
+        },
+        {
+          "caller": "build_capability_matrix",
+          "callee": "_display_of",
+          "lineNumber": 195
+        },
+        {
+          "caller": "build_capability_matrix",
+          "callee": "_display_of",
+          "lineNumber": 197
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/app/data_providers/normalizer.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 99,
+      "functions": [
+        {
+          "name": "to_polars",
+          "startLine": 13,
+          "endLine": 31,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "normalize_daily",
+          "startLine": 34,
+          "endLine": 59,
+          "params": [
+            "data",
+            "default_symbol",
+            "source"
+          ]
+        },
+        {
+          "name": "normalize_adj_factors",
+          "startLine": 62,
+          "endLine": 89,
+          "params": [
+            "data",
+            "source"
+          ]
+        },
+        {
+          "name": "normalize_instruments",
+          "startLine": 92,
+          "endLine": 110,
+          "params": [
+            "rows",
+            "asset_type",
+            "source"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "to_polars",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "normalize_daily",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "normalize_adj_factors",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "normalize_instruments",
+          "line": 92,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "to_polars",
+          "callee": "pl.DataFrame",
+          "lineNumber": 15
+        },
+        {
+          "caller": "to_polars",
+          "callee": "isinstance",
+          "lineNumber": 16
+        },
+        {
+          "caller": "to_polars",
+          "callee": "isinstance",
+          "lineNumber": 18
+        },
+        {
+          "caller": "to_polars",
+          "callee": "data.items",
+          "lineNumber": 20
+        },
+        {
+          "caller": "to_polars",
+          "callee": "dict",
+          "lineNumber": 22
+        },
+        {
+          "caller": "to_polars",
+          "callee": "row.setdefault",
+          "lineNumber": 23
+        },
+        {
+          "caller": "to_polars",
+          "callee": "rows.append",
+          "lineNumber": 24
+        },
+        {
+          "caller": "to_polars",
+          "callee": "pl.DataFrame",
+          "lineNumber": 25
+        },
+        {
+          "caller": "to_polars",
+          "callee": "pl.DataFrame",
+          "lineNumber": 25
+        },
+        {
+          "caller": "to_polars",
+          "callee": "hasattr",
+          "lineNumber": 26
+        },
+        {
+          "caller": "to_polars",
+          "callee": "pl.from_pandas",
+          "lineNumber": 27
+        },
+        {
+          "caller": "to_polars",
+          "callee": "data.reset_index",
+          "lineNumber": 27
+        },
+        {
+          "caller": "to_polars",
+          "callee": "pl.DataFrame",
+          "lineNumber": 29
+        },
+        {
+          "caller": "to_polars",
+          "callee": "pl.DataFrame",
+          "lineNumber": 31
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "to_polars",
+          "lineNumber": 35
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "df.is_empty",
+          "lineNumber": 36
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "df.rename",
+          "lineNumber": 46
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "rename_map.items",
+          "lineNumber": 46
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "df.with_columns",
+          "lineNumber": 48
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "pl.lit(default_symbol).alias",
+          "lineNumber": 48
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "pl.lit",
+          "lineNumber": 48
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "df.with_columns",
+          "lineNumber": 50
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "pl.col(\"date\").cast",
+          "lineNumber": 50
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "pl.col",
+          "lineNumber": 50
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "df.with_columns",
+          "lineNumber": 53
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "pl.col(\"quote_ts\").cast",
+          "lineNumber": 53
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "pl.col",
+          "lineNumber": 53
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "df.with_columns",
+          "lineNumber": 56
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "pl.col(col).cast",
+          "lineNumber": 56
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "pl.col",
+          "lineNumber": 56
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "filter_halt_days",
+          "lineNumber": 57
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "df.select",
+          "lineNumber": 59
+        },
+        {
+          "caller": "normalize_daily",
+          "callee": "pl.DataFrame",
+          "lineNumber": 59
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "to_polars",
+          "lineNumber": 63
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "df.is_empty",
+          "lineNumber": 64
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "df.rename",
+          "lineNumber": 71
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "rename_map.items",
+          "lineNumber": 71
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "df.with_columns",
+          "lineNumber": 76
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "pl.from_epoch(pl.col(\"trade_date\").cast(pl.Int64), time_unit=\"ms\")\r\n                .dt.replace_time_zone(\"UTC\")\r\n                .dt.convert_time_zone(\"Asia/Shanghai\")\r\n                .dt.replace_time_zone(None)\r\n                .dt.date()\r\n                .alias",
+          "lineNumber": 77
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "pl.from_epoch(pl.col(\"trade_date\").cast(pl.Int64), time_unit=\"ms\")\r\n                .dt.replace_time_zone(\"UTC\")\r\n                .dt.convert_time_zone(\"Asia/Shanghai\")\r\n                .dt.replace_time_zone(None)\r\n                .dt.date",
+          "lineNumber": 77
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "pl.from_epoch(pl.col(\"trade_date\").cast(pl.Int64), time_unit=\"ms\")\r\n                .dt.replace_time_zone(\"UTC\")\r\n                .dt.convert_time_zone(\"Asia/Shanghai\")\r\n                .dt.replace_time_zone",
+          "lineNumber": 77
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "pl.from_epoch(pl.col(\"trade_date\").cast(pl.Int64), time_unit=\"ms\")\r\n                .dt.replace_time_zone(\"UTC\")\r\n                .dt.convert_time_zone",
+          "lineNumber": 77
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "pl.from_epoch(pl.col(\"trade_date\").cast(pl.Int64), time_unit=\"ms\")\r\n                .dt.replace_time_zone",
+          "lineNumber": 77
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "pl.from_epoch",
+          "lineNumber": 77
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "pl.col(\"trade_date\").cast",
+          "lineNumber": 77
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "pl.col",
+          "lineNumber": 77
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "df.with_columns",
+          "lineNumber": 85
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "pl.col(\"trade_date\").cast",
+          "lineNumber": 85
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "pl.col",
+          "lineNumber": 85
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "df.with_columns",
+          "lineNumber": 87
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "pl.col(\"ex_factor\").cast",
+          "lineNumber": 87
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "pl.col",
+          "lineNumber": 87
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "df.select(keep).drop_nulls",
+          "lineNumber": 89
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "df.select",
+          "lineNumber": 89
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "len",
+          "lineNumber": 89
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "len",
+          "lineNumber": 89
+        },
+        {
+          "caller": "normalize_adj_factors",
+          "callee": "pl.DataFrame",
+          "lineNumber": 89
+        },
+        {
+          "caller": "normalize_instruments",
+          "callee": "pl.DataFrame",
+          "lineNumber": 94
+        },
+        {
+          "caller": "normalize_instruments",
+          "callee": "item.get",
+          "lineNumber": 97
+        },
+        {
+          "caller": "normalize_instruments",
+          "callee": "out.append",
+          "lineNumber": 100
+        },
+        {
+          "caller": "normalize_instruments",
+          "callee": "str",
+          "lineNumber": 101
+        },
+        {
+          "caller": "normalize_instruments",
+          "callee": "item.get",
+          "lineNumber": 102
+        },
+        {
+          "caller": "normalize_instruments",
+          "callee": "str",
+          "lineNumber": 102
+        },
+        {
+          "caller": "normalize_instruments",
+          "callee": "item.get",
+          "lineNumber": 103
+        },
+        {
+          "caller": "normalize_instruments",
+          "callee": "str(symbol).split",
+          "lineNumber": 103
+        },
+        {
+          "caller": "normalize_instruments",
+          "callee": "str",
+          "lineNumber": 103
+        },
+        {
+          "caller": "normalize_instruments",
+          "callee": "item.get",
+          "lineNumber": 104
+        },
+        {
+          "caller": "normalize_instruments",
+          "callee": "pl.DataFrame",
+          "lineNumber": 109
+        },
+        {
+          "caller": "normalize_instruments",
+          "callee": "pl.DataFrame(out).select(INSTRUMENT_COLS).unique(subset=[\"symbol\"], keep=\"last\").sort",
+          "lineNumber": 110
+        },
+        {
+          "caller": "normalize_instruments",
+          "callee": "pl.DataFrame(out).select(INSTRUMENT_COLS).unique",
+          "lineNumber": 110
+        },
+        {
+          "caller": "normalize_instruments",
+          "callee": "pl.DataFrame(out).select",
+          "lineNumber": 110
+        },
+        {
+          "caller": "normalize_instruments",
+          "callee": "pl.DataFrame",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/app/data_providers/registry.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 11,
+      "functions": [
+        {
+          "name": "get_provider",
+          "startLine": 11,
+          "endLine": 15,
+          "params": [
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "get_provider",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_provider",
+          "callee": "_PROVIDERS.get",
+          "lineNumber": 12
+        },
+        {
+          "caller": "get_provider",
+          "callee": "(name or \"tickflow\").lower",
+          "lineNumber": 12
+        },
+        {
+          "caller": "get_provider",
+          "callee": "ValueError",
+          "lineNumber": 14
+        },
+        {
+          "caller": "get_provider",
+          "callee": "provider_cls",
+          "lineNumber": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/app/data_providers/tickflow_provider.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 121,
+      "nonEmptyLines": 109,
+      "classes": [
+        {
+          "name": "TickFlowProvider",
+          "startLine": 19,
+          "endLine": 121,
+          "methods": [
+            "get_instruments",
+            "get_daily",
+            "get_adj_factors",
+            "get_minute",
+            "get_realtime"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TickFlowProvider",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get_instruments",
+          "callee": "get_client",
+          "lineNumber": 31
+        },
+        {
+          "caller": "get_instruments",
+          "callee": "tf.exchanges.get_instruments",
+          "lineNumber": 36
+        },
+        {
+          "caller": "get_instruments",
+          "callee": "rows.extend",
+          "lineNumber": 37
+        },
+        {
+          "caller": "get_instruments",
+          "callee": "isinstance",
+          "lineNumber": 37
+        },
+        {
+          "caller": "get_instruments",
+          "callee": "logger.warning",
+          "lineNumber": 39
+        },
+        {
+          "caller": "get_instruments",
+          "callee": "normalize_instruments",
+          "lineNumber": 40
+        },
+        {
+          "caller": "get_daily",
+          "callee": "pl.DataFrame",
+          "lineNumber": 50
+        },
+        {
+          "caller": "get_daily",
+          "callee": "get_client",
+          "lineNumber": 51
+        },
+        {
+          "caller": "get_daily",
+          "callee": "_datetime_to_ms",
+          "lineNumber": 61
+        },
+        {
+          "caller": "get_daily",
+          "callee": "_datetime_to_ms",
+          "lineNumber": 62
+        },
+        {
+          "caller": "get_daily",
+          "callee": "tf.klines.batch",
+          "lineNumber": 65
+        },
+        {
+          "caller": "get_daily",
+          "callee": "_compact_klines_to_df",
+          "lineNumber": 69
+        },
+        {
+          "caller": "get_daily",
+          "callee": "seg.is_empty",
+          "lineNumber": 70
+        },
+        {
+          "caller": "get_daily",
+          "callee": "pl.DataFrame",
+          "lineNumber": 71
+        },
+        {
+          "caller": "get_daily",
+          "callee": "seg.with_columns",
+          "lineNumber": 72
+        },
+        {
+          "caller": "get_daily",
+          "callee": "_timestamp_to_beijing_datetime(pl.col(\"timestamp\")).alias",
+          "lineNumber": 72
+        },
+        {
+          "caller": "get_daily",
+          "callee": "_timestamp_to_beijing_datetime",
+          "lineNumber": 72
+        },
+        {
+          "caller": "get_daily",
+          "callee": "pl.col",
+          "lineNumber": 72
+        },
+        {
+          "caller": "get_daily",
+          "callee": "normalize_daily",
+          "lineNumber": 73
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "pl.DataFrame",
+          "lineNumber": 83
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "get_client",
+          "lineNumber": 84
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "_datetime_to_ms",
+          "lineNumber": 89
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "_datetime_to_ms",
+          "lineNumber": 91
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "tf.klines.ex_factors",
+          "lineNumber": 92
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "normalize_adj_factors",
+          "lineNumber": 93
+        },
+        {
+          "caller": "get_minute",
+          "callee": "pl.DataFrame",
+          "lineNumber": 105
+        },
+        {
+          "caller": "get_realtime",
+          "callee": "get_client",
+          "lineNumber": 112
+        },
+        {
+          "caller": "get_realtime",
+          "callee": "ValueError",
+          "lineNumber": 114
+        },
+        {
+          "caller": "get_realtime",
+          "callee": "tf.quotes.get_by_universes",
+          "lineNumber": 116
+        },
+        {
+          "caller": "get_realtime",
+          "callee": "tf.quotes.get",
+          "lineNumber": 118
+        },
+        {
+          "caller": "get_realtime",
+          "callee": "pl.DataFrame",
+          "lineNumber": 120
+        },
+        {
+          "caller": "get_realtime",
+          "callee": "pl.DataFrame",
+          "lineNumber": 121
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/app/plugins/stocksdk/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 11,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/app/plugins/stocksdk/bridge.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 99,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "_node_bin",
+          "startLine": 32,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "run_job",
+          "startLine": 40,
+          "endLine": 87,
+          "params": [
+            "job",
+            "timeout"
+          ]
+        },
+        {
+          "name": "availability",
+          "startLine": 90,
+          "endLine": 99,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "StockSDKBridgeError",
+          "startLine": 28,
+          "endLine": 29,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "StockSDKBridgeError",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "_node_bin",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "run_job",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "availability",
+          "line": 90,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_node_bin",
+          "callee": "os.getenv",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_node_bin",
+          "callee": "Path(env).exists",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_node_bin",
+          "callee": "Path",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_node_bin",
+          "callee": "shutil.which",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_node_bin",
+          "callee": "shutil.which",
+          "lineNumber": 37
+        },
+        {
+          "caller": "run_job",
+          "callee": "_node_bin",
+          "lineNumber": 42
+        },
+        {
+          "caller": "run_job",
+          "callee": "StockSDKBridgeError",
+          "lineNumber": 44
+        },
+        {
+          "caller": "run_job",
+          "callee": "_BRIDGE_MJS.exists",
+          "lineNumber": 47
+        },
+        {
+          "caller": "run_job",
+          "callee": "StockSDKBridgeError",
+          "lineNumber": 48
+        },
+        {
+          "caller": "run_job",
+          "callee": "json.dumps",
+          "lineNumber": 50
+        },
+        {
+          "caller": "run_job",
+          "callee": "job.get",
+          "lineNumber": 51
+        },
+        {
+          "caller": "run_job",
+          "callee": "time.perf_counter",
+          "lineNumber": 52
+        },
+        {
+          "caller": "run_job",
+          "callee": "logger.info",
+          "lineNumber": 53
+        },
+        {
+          "caller": "run_job",
+          "callee": "subprocess.run",
+          "lineNumber": 55
+        },
+        {
+          "caller": "run_job",
+          "callee": "str",
+          "lineNumber": 56
+        },
+        {
+          "caller": "run_job",
+          "callee": "str",
+          "lineNumber": 63
+        },
+        {
+          "caller": "run_job",
+          "callee": "logger.warning",
+          "lineNumber": 66
+        },
+        {
+          "caller": "run_job",
+          "callee": "StockSDKBridgeError",
+          "lineNumber": 67
+        },
+        {
+          "caller": "run_job",
+          "callee": "logger.warning",
+          "lineNumber": 69
+        },
+        {
+          "caller": "run_job",
+          "callee": "StockSDKBridgeError",
+          "lineNumber": 70
+        },
+        {
+          "caller": "run_job",
+          "callee": "logger.info",
+          "lineNumber": 71
+        },
+        {
+          "caller": "run_job",
+          "callee": "time.perf_counter",
+          "lineNumber": 71
+        },
+        {
+          "caller": "run_job",
+          "callee": "(proc.stderr or proc.stdout or \"\").strip",
+          "lineNumber": 74
+        },
+        {
+          "caller": "run_job",
+          "callee": "StockSDKBridgeError",
+          "lineNumber": 75
+        },
+        {
+          "caller": "run_job",
+          "callee": "(proc.stdout or \"\").strip",
+          "lineNumber": 77
+        },
+        {
+          "caller": "run_job",
+          "callee": "StockSDKBridgeError",
+          "lineNumber": 79
+        },
+        {
+          "caller": "run_job",
+          "callee": "(proc.stderr or '').strip",
+          "lineNumber": 79
+        },
+        {
+          "caller": "run_job",
+          "callee": "json.loads",
+          "lineNumber": 81
+        },
+        {
+          "caller": "run_job",
+          "callee": "StockSDKBridgeError",
+          "lineNumber": 83
+        },
+        {
+          "caller": "run_job",
+          "callee": "result.get",
+          "lineNumber": 85
+        },
+        {
+          "caller": "run_job",
+          "callee": "StockSDKBridgeError",
+          "lineNumber": 86
+        },
+        {
+          "caller": "run_job",
+          "callee": "result.get",
+          "lineNumber": 86
+        },
+        {
+          "caller": "availability",
+          "callee": "_node_bin",
+          "lineNumber": 92
+        },
+        {
+          "caller": "availability",
+          "callee": "run_job",
+          "lineNumber": 96
+        },
+        {
+          "caller": "availability",
+          "callee": "result.get",
+          "lineNumber": 97
+        },
+        {
+          "caller": "availability",
+          "callee": "str",
+          "lineNumber": 99
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/app/plugins/stocksdk/provider.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 340,
+      "nonEmptyLines": 308,
+      "functions": [
+        {
+          "name": "_yyyymmdd",
+          "startLine": 46,
+          "endLine": 47,
+          "params": [
+            "dt"
+          ]
+        },
+        {
+          "name": "_preview",
+          "startLine": 333,
+          "endLine": 340,
+          "params": [
+            "dataset",
+            "df"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "_StockSDKConfig",
+          "startLine": 36,
+          "endLine": 43,
+          "methods": [],
+          "properties": [
+            "name",
+            "display_name",
+            "datasets",
+            "path",
+            "builtin"
+          ]
+        },
+        {
+          "name": "StockSDKProvider",
+          "startLine": 50,
+          "endLine": 330,
+          "methods": [
+            "__init__",
+            "close",
+            "get_daily",
+            "get_adj_factors",
+            "get_minute",
+            "_null_degenerate_opens",
+            "_minute_df",
+            "get_realtime",
+            "get_instruments",
+            "test_dataset"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_StockSDKConfig",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "_yyyymmdd",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "StockSDKProvider",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "_preview",
+          "line": 333,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_yyyymmdd",
+          "callee": "dt.strftime",
+          "lineNumber": 47
+        },
+        {
+          "caller": "__init__",
+          "callee": "_StockSDKConfig",
+          "lineNumber": 60
+        },
+        {
+          "caller": "get_daily",
+          "callee": "pl.DataFrame",
+          "lineNumber": 75
+        },
+        {
+          "caller": "get_daily",
+          "callee": "logger.info",
+          "lineNumber": 76
+        },
+        {
+          "caller": "get_daily",
+          "callee": "len",
+          "lineNumber": 76
+        },
+        {
+          "caller": "get_daily",
+          "callee": "chunked",
+          "lineNumber": 78
+        },
+        {
+          "caller": "get_daily",
+          "callee": "enumerate",
+          "lineNumber": 79
+        },
+        {
+          "caller": "get_daily",
+          "callee": "_yyyymmdd",
+          "lineNumber": 84
+        },
+        {
+          "caller": "get_daily",
+          "callee": "_yyyymmdd",
+          "lineNumber": 85
+        },
+        {
+          "caller": "get_daily",
+          "callee": "bridge.run_job",
+          "lineNumber": 88
+        },
+        {
+          "caller": "get_daily",
+          "callee": "logger.warning",
+          "lineNumber": 90
+        },
+        {
+          "caller": "get_daily",
+          "callee": "len",
+          "lineNumber": 90
+        },
+        {
+          "caller": "get_daily",
+          "callee": "(result.get(\"rows\") or {}).items",
+          "lineNumber": 92
+        },
+        {
+          "caller": "get_daily",
+          "callee": "result.get",
+          "lineNumber": 92
+        },
+        {
+          "caller": "get_daily",
+          "callee": "normalize_daily",
+          "lineNumber": 95
+        },
+        {
+          "caller": "get_daily",
+          "callee": "df.is_empty",
+          "lineNumber": 96
+        },
+        {
+          "caller": "get_daily",
+          "callee": "frames.append",
+          "lineNumber": 97
+        },
+        {
+          "caller": "get_daily",
+          "callee": "on_chunk_done",
+          "lineNumber": 99
+        },
+        {
+          "caller": "get_daily",
+          "callee": "len",
+          "lineNumber": 99
+        },
+        {
+          "caller": "get_daily",
+          "callee": "pl.concat",
+          "lineNumber": 100
+        },
+        {
+          "caller": "get_daily",
+          "callee": "pl.DataFrame",
+          "lineNumber": 100
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "pl.DataFrame",
+          "lineNumber": 112
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "chunked",
+          "lineNumber": 114
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "enumerate",
+          "lineNumber": 115
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "_yyyymmdd",
+          "lineNumber": 119
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "_yyyymmdd",
+          "lineNumber": 120
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "bridge.run_job",
+          "lineNumber": 123
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "logger.warning",
+          "lineNumber": 125
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "len",
+          "lineNumber": 125
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "(result.get(\"rows\") or {}).values",
+          "lineNumber": 128
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "result.get",
+          "lineNumber": 128
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "flat.extend",
+          "lineNumber": 129
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "normalize_adj_factors",
+          "lineNumber": 131
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "df.is_empty",
+          "lineNumber": 132
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "frames.append",
+          "lineNumber": 133
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "on_chunk_done",
+          "lineNumber": 135
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "len",
+          "lineNumber": 135
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "pl.concat",
+          "lineNumber": 136
+        },
+        {
+          "caller": "get_adj_factors",
+          "callee": "pl.DataFrame",
+          "lineNumber": 136
+        },
+        {
+          "caller": "get_minute",
+          "callee": "pl.DataFrame",
+          "lineNumber": 149
+        },
+        {
+          "caller": "get_minute",
+          "callee": "\"\".join",
+          "lineNumber": 150
+        },
+        {
+          "caller": "get_minute",
+          "callee": "str",
+          "lineNumber": 150
+        },
+        {
+          "caller": "get_minute",
+          "callee": "ch.isdigit",
+          "lineNumber": 150
+        },
+        {
+          "caller": "get_minute",
+          "callee": "logger.info",
+          "lineNumber": 151
+        },
+        {
+          "caller": "get_minute",
+          "callee": "len",
+          "lineNumber": 151
+        },
+        {
+          "caller": "get_minute",
+          "callee": "end_time.date",
+          "lineNumber": 161
+        },
+        {
+          "caller": "get_minute",
+          "callee": "start_time.date",
+          "lineNumber": 161
+        },
+        {
+          "caller": "get_minute",
+          "callee": "end_time.date",
+          "lineNumber": 163
+        },
+        {
+          "caller": "get_minute",
+          "callee": "timedelta",
+          "lineNumber": 163
+        },
+        {
+          "caller": "get_minute",
+          "callee": "start_time.date",
+          "lineNumber": 164
+        },
+        {
+          "caller": "get_minute",
+          "callee": "datetime.combine",
+          "lineNumber": 165
+        },
+        {
+          "caller": "get_minute",
+          "callee": "timedelta",
+          "lineNumber": 165
+        },
+        {
+          "caller": "get_minute",
+          "callee": "windows.append",
+          "lineNumber": 166
+        },
+        {
+          "caller": "get_minute",
+          "callee": "start_time.date",
+          "lineNumber": 168
+        },
+        {
+          "caller": "get_minute",
+          "callee": "end_time.date",
+          "lineNumber": 170
+        },
+        {
+          "caller": "get_minute",
+          "callee": "day.weekday",
+          "lineNumber": 171
+        },
+        {
+          "caller": "get_minute",
+          "callee": "windows.append",
+          "lineNumber": 172
+        },
+        {
+          "caller": "get_minute",
+          "callee": "datetime.combine",
+          "lineNumber": 173
+        },
+        {
+          "caller": "get_minute",
+          "callee": "datetime.combine",
+          "lineNumber": 174
+        },
+        {
+          "caller": "get_minute",
+          "callee": "timedelta",
+          "lineNumber": 176
+        },
+        {
+          "caller": "get_minute",
+          "callee": "windows.append",
+          "lineNumber": 178
+        },
+        {
+          "caller": "get_minute",
+          "callee": "chunked",
+          "lineNumber": 181
+        },
+        {
+          "caller": "get_minute",
+          "callee": "len",
+          "lineNumber": 182
+        },
+        {
+          "caller": "get_minute",
+          "callee": "len",
+          "lineNumber": 182
+        },
+        {
+          "caller": "get_minute",
+          "callee": "_yyyymmdd",
+          "lineNumber": 191
+        },
+        {
+          "caller": "get_minute",
+          "callee": "_yyyymmdd",
+          "lineNumber": 192
+        },
+        {
+          "caller": "get_minute",
+          "callee": "bridge.run_job",
+          "lineNumber": 195
+        },
+        {
+          "caller": "get_minute",
+          "callee": "logger.warning",
+          "lineNumber": 197
+        },
+        {
+          "caller": "get_minute",
+          "callee": "len",
+          "lineNumber": 197
+        },
+        {
+          "caller": "get_minute",
+          "callee": "(result.get(\"rows\") or {}).items",
+          "lineNumber": 199
+        },
+        {
+          "caller": "get_minute",
+          "callee": "result.get",
+          "lineNumber": 199
+        },
+        {
+          "caller": "get_minute",
+          "callee": "self._minute_df",
+          "lineNumber": 200
+        },
+        {
+          "caller": "get_minute",
+          "callee": "df.is_empty",
+          "lineNumber": 201
+        },
+        {
+          "caller": "get_minute",
+          "callee": "frames.append",
+          "lineNumber": 202
+        },
+        {
+          "caller": "get_minute",
+          "callee": "on_chunk_done",
+          "lineNumber": 204
+        },
+        {
+          "caller": "get_minute",
+          "callee": "pl.concat",
+          "lineNumber": 207
+        },
+        {
+          "caller": "get_minute",
+          "callee": "pl.DataFrame",
+          "lineNumber": 207
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "df.is_empty",
+          "lineNumber": 219
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "df.group_by(pl.col(\"datetime\").dt.date()).agg",
+          "lineNumber": 221
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "df.group_by",
+          "lineNumber": 221
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.col(\"datetime\").dt.date",
+          "lineNumber": 221
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.col",
+          "lineNumber": 221
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.len().alias",
+          "lineNumber": 222
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.len",
+          "lineNumber": 222
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.col(\"open\").n_unique().alias",
+          "lineNumber": 223
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.col(\"open\").n_unique",
+          "lineNumber": 223
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.col",
+          "lineNumber": 223
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.col(\"close\").n_unique().alias",
+          "lineNumber": 224
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.col(\"close\").n_unique",
+          "lineNumber": 224
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.col",
+          "lineNumber": 224
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "stats.filter",
+          "lineNumber": 226
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.col",
+          "lineNumber": 227
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.col",
+          "lineNumber": 227
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.col",
+          "lineNumber": 227
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "fake_dates.is_empty",
+          "lineNumber": 229
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "logger.warning",
+          "lineNumber": 231
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "fake_dates.to_list",
+          "lineNumber": 233
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "df.with_columns",
+          "lineNumber": 235
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.when(pl.col(\"datetime\").dt.date().is_in(fake_dates))\r\n            .then(None)\r\n            .otherwise(pl.col(\"open\"))\r\n            .alias",
+          "lineNumber": 236
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.when(pl.col(\"datetime\").dt.date().is_in(fake_dates))\r\n            .then(None)\r\n            .otherwise",
+          "lineNumber": 236
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.when(pl.col(\"datetime\").dt.date().is_in(fake_dates))\r\n            .then",
+          "lineNumber": 236
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.when",
+          "lineNumber": 236
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.col(\"datetime\").dt.date().is_in",
+          "lineNumber": 236
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.col(\"datetime\").dt.date",
+          "lineNumber": 236
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.col",
+          "lineNumber": 236
+        },
+        {
+          "caller": "_null_degenerate_opens",
+          "callee": "pl.col",
+          "lineNumber": 238
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.DataFrame",
+          "lineNumber": 245
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.DataFrame",
+          "lineNumber": 246
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "df.with_columns",
+          "lineNumber": 250
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.from_epoch(pl.col(\"timestamp\").cast(pl.Int64), time_unit=\"ms\")\r\n                .dt.replace_time_zone(\"UTC\")\r\n                .dt.convert_time_zone(\"Asia/Shanghai\")\r\n                .dt.replace_time_zone(None)\r\n                .cast(pl.Datetime(\"us\"))\r\n                .alias",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.from_epoch(pl.col(\"timestamp\").cast(pl.Int64), time_unit=\"ms\")\r\n                .dt.replace_time_zone(\"UTC\")\r\n                .dt.convert_time_zone(\"Asia/Shanghai\")\r\n                .dt.replace_time_zone(None)\r\n                .cast",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.from_epoch(pl.col(\"timestamp\").cast(pl.Int64), time_unit=\"ms\")\r\n                .dt.replace_time_zone(\"UTC\")\r\n                .dt.convert_time_zone(\"Asia/Shanghai\")\r\n                .dt.replace_time_zone",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.from_epoch(pl.col(\"timestamp\").cast(pl.Int64), time_unit=\"ms\")\r\n                .dt.replace_time_zone(\"UTC\")\r\n                .dt.convert_time_zone",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.from_epoch(pl.col(\"timestamp\").cast(pl.Int64), time_unit=\"ms\")\r\n                .dt.replace_time_zone",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.from_epoch",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.col(\"timestamp\").cast",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.col",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.Datetime",
+          "lineNumber": 255
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "df.with_columns",
+          "lineNumber": 259
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.col(\"date\").str.to_datetime(\"%Y-%m-%d %H:%M\", strict=False).alias",
+          "lineNumber": 260
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.col(\"date\").str.to_datetime",
+          "lineNumber": 260
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.col",
+          "lineNumber": 260
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "df.with_columns",
+          "lineNumber": 262
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.lit(symbol).alias",
+          "lineNumber": 262
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.lit",
+          "lineNumber": 262
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "df.with_columns",
+          "lineNumber": 265
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.col(col).cast",
+          "lineNumber": 265
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.col",
+          "lineNumber": 265
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "StockSDKProvider._null_degenerate_opens",
+          "lineNumber": 266
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "df.select",
+          "lineNumber": 268
+        },
+        {
+          "caller": "_minute_df",
+          "callee": "pl.DataFrame",
+          "lineNumber": 268
+        },
+        {
+          "caller": "get_realtime",
+          "callee": "logger.info",
+          "lineNumber": 272
+        },
+        {
+          "caller": "get_realtime",
+          "callee": "bridge.run_job",
+          "lineNumber": 274
+        },
+        {
+          "caller": "get_realtime",
+          "callee": "logger.warning",
+          "lineNumber": 276
+        },
+        {
+          "caller": "get_realtime",
+          "callee": "result.get",
+          "lineNumber": 278
+        },
+        {
+          "caller": "get_realtime",
+          "callee": "dict",
+          "lineNumber": 281
+        },
+        {
+          "caller": "get_realtime",
+          "callee": "item.get",
+          "lineNumber": 284
+        },
+        {
+          "caller": "get_realtime",
+          "callee": "float",
+          "lineNumber": 285
+        },
+        {
+          "caller": "get_realtime",
+          "callee": "item.get",
+          "lineNumber": 287
+        },
+        {
+          "caller": "get_realtime",
+          "callee": "float",
+          "lineNumber": 288
+        },
+        {
+          "caller": "get_realtime",
+          "callee": "normalized.append",
+          "lineNumber": 289
+        },
+        {
+          "caller": "get_instruments",
+          "callee": "bridge.run_job",
+          "lineNumber": 302
+        },
+        {
+          "caller": "get_instruments",
+          "callee": "logger.warning",
+          "lineNumber": 304
+        },
+        {
+          "caller": "get_instruments",
+          "callee": "result.get",
+          "lineNumber": 306
+        },
+        {
+          "caller": "test_dataset",
+          "callee": "self.get_daily",
+          "lineNumber": 312
+        },
+        {
+          "caller": "test_dataset",
+          "callee": "_preview",
+          "lineNumber": 313
+        },
+        {
+          "caller": "test_dataset",
+          "callee": "self.get_adj_factors",
+          "lineNumber": 315
+        },
+        {
+          "caller": "test_dataset",
+          "callee": "_preview",
+          "lineNumber": 316
+        },
+        {
+          "caller": "test_dataset",
+          "callee": "self.get_minute",
+          "lineNumber": 318
+        },
+        {
+          "caller": "test_dataset",
+          "callee": "_preview",
+          "lineNumber": 319
+        },
+        {
+          "caller": "test_dataset",
+          "callee": "self.get_realtime",
+          "lineNumber": 321
+        },
+        {
+          "caller": "test_dataset",
+          "callee": "len",
+          "lineNumber": 326
+        },
+        {
+          "caller": "test_dataset",
+          "callee": "list",
+          "lineNumber": 327
+        },
+        {
+          "caller": "test_dataset",
+          "callee": "head[0].keys",
+          "lineNumber": 327
+        },
+        {
+          "caller": "test_dataset",
+          "callee": "ValueError",
+          "lineNumber": 330
+        },
+        {
+          "caller": "_preview",
+          "callee": "df.head(5).to_dicts",
+          "lineNumber": 339
+        },
+        {
+          "caller": "_preview",
+          "callee": "df.head",
+          "lineNumber": 339
+        },
+        {
+          "caller": "_preview",
+          "callee": "df.is_empty",
+          "lineNumber": 339
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 4,
+        "functionCount": 2,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "backend/tests/test_capability_matrix.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 270,
+      "nonEmptyLines": 236,
+      "functions": [
+        {
+          "name": "_fake_sources",
+          "startLine": 27,
+          "endLine": 29,
+          "params": [
+            "monkeypatch",
+            "plugins",
+            "customs"
+          ]
+        },
+        {
+          "name": "_by_id",
+          "startLine": 32,
+          "endLine": 33,
+          "params": [
+            "matrix"
+          ]
+        },
+        {
+          "name": "test_registry_covers_all_routing_fields",
+          "startLine": 36,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "test_matrix_without_third_party_sources",
+          "startLine": 54,
+          "endLine": 67,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_candidates_only_available_unready_goes_pending",
+          "startLine": 70,
+          "endLine": 90,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_tickflow_candidates_filtered_by_tier",
+          "startLine": 93,
+          "endLine": 108,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_current_tickflow_unmet_tier_flagged",
+          "startLine": 111,
+          "endLine": 120,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_usable_follows_effective_provider",
+          "startLine": 123,
+          "endLine": 166,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_unknown_or_empty_tier_fails_closed",
+          "startLine": 169,
+          "endLine": 178,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_adj_factor_routes_independently",
+          "startLine": 181,
+          "endLine": 202,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_depth5_capability_semantics",
+          "startLine": 205,
+          "endLine": 225,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_unknown_current_display_falls_back_to_name",
+          "startLine": 228,
+          "endLine": 238,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_full_minute_routable_like_other_capabilities",
+          "startLine": 241,
+          "endLine": 270,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_fake_sources",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "_by_id",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "test_registry_covers_all_routing_fields",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "test_matrix_without_third_party_sources",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "test_candidates_only_available_unready_goes_pending",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "test_tickflow_candidates_filtered_by_tier",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "test_current_tickflow_unmet_tier_flagged",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "test_usable_follows_effective_provider",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "test_unknown_or_empty_tier_fails_closed",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "test_adj_factor_routes_independently",
+          "line": 181,
+          "isDefault": false
+        },
+        {
+          "name": "test_depth5_capability_semantics",
+          "line": 205,
+          "isDefault": false
+        },
+        {
+          "name": "test_unknown_current_display_falls_back_to_name",
+          "line": 228,
+          "isDefault": false
+        },
+        {
+          "name": "test_full_minute_routable_like_other_capabilities",
+          "line": 241,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_fake_sources",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 28
+        },
+        {
+          "caller": "_fake_sources",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 29
+        },
+        {
+          "caller": "test_registry_covers_all_routing_fields",
+          "callee": "sorted",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_registry_covers_all_routing_fields",
+          "callee": "sorted",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_registry_covers_all_routing_fields",
+          "callee": "len",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_registry_covers_all_routing_fields",
+          "callee": "set",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_registry_covers_all_routing_fields",
+          "callee": "len",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_registry_covers_all_routing_fields",
+          "callee": "next",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_matrix_without_third_party_sources",
+          "callee": "_fake_sources",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_matrix_without_third_party_sources",
+          "callee": "build_capability_matrix",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_matrix_without_third_party_sources",
+          "callee": "dict",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_matrix_without_third_party_sources",
+          "callee": "len",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_candidates_only_available_unready_goes_pending",
+          "callee": "_fake_sources",
+          "lineNumber": 72
+        },
+        {
+          "caller": "test_candidates_only_available_unready_goes_pending",
+          "callee": "_by_id",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_candidates_only_available_unready_goes_pending",
+          "callee": "build_capability_matrix",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_candidates_only_available_unready_goes_pending",
+          "callee": "dict",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_tickflow_candidates_filtered_by_tier",
+          "callee": "_fake_sources",
+          "lineNumber": 95
+        },
+        {
+          "caller": "test_tickflow_candidates_filtered_by_tier",
+          "callee": "_by_id",
+          "lineNumber": 96
+        },
+        {
+          "caller": "test_tickflow_candidates_filtered_by_tier",
+          "callee": "build_capability_matrix",
+          "lineNumber": 96
+        },
+        {
+          "caller": "test_tickflow_candidates_filtered_by_tier",
+          "callee": "dict",
+          "lineNumber": 96
+        },
+        {
+          "caller": "test_tickflow_candidates_filtered_by_tier",
+          "callee": "_by_id",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_tickflow_candidates_filtered_by_tier",
+          "callee": "build_capability_matrix",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_tickflow_candidates_filtered_by_tier",
+          "callee": "dict",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_current_tickflow_unmet_tier_flagged",
+          "callee": "_fake_sources",
+          "lineNumber": 113
+        },
+        {
+          "caller": "test_current_tickflow_unmet_tier_flagged",
+          "callee": "_by_id",
+          "lineNumber": 114
+        },
+        {
+          "caller": "test_current_tickflow_unmet_tier_flagged",
+          "callee": "build_capability_matrix",
+          "lineNumber": 115
+        },
+        {
+          "caller": "test_current_tickflow_unmet_tier_flagged",
+          "callee": "dict",
+          "lineNumber": 115
+        },
+        {
+          "caller": "test_usable_follows_effective_provider",
+          "callee": "_fake_sources",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_usable_follows_effective_provider",
+          "callee": "_by_id",
+          "lineNumber": 139
+        },
+        {
+          "caller": "test_usable_follows_effective_provider",
+          "callee": "build_capability_matrix",
+          "lineNumber": 140
+        },
+        {
+          "caller": "test_usable_follows_effective_provider",
+          "callee": "dict",
+          "lineNumber": 141
+        },
+        {
+          "caller": "test_usable_follows_effective_provider",
+          "callee": "_by_id",
+          "lineNumber": 158
+        },
+        {
+          "caller": "test_usable_follows_effective_provider",
+          "callee": "build_capability_matrix",
+          "lineNumber": 159
+        },
+        {
+          "caller": "test_usable_follows_effective_provider",
+          "callee": "dict",
+          "lineNumber": 160
+        },
+        {
+          "caller": "test_unknown_or_empty_tier_fails_closed",
+          "callee": "_fake_sources",
+          "lineNumber": 171
+        },
+        {
+          "caller": "test_unknown_or_empty_tier_fails_closed",
+          "callee": "build_capability_matrix",
+          "lineNumber": 173
+        },
+        {
+          "caller": "test_unknown_or_empty_tier_fails_closed",
+          "callee": "dict",
+          "lineNumber": 173
+        },
+        {
+          "caller": "test_unknown_or_empty_tier_fails_closed",
+          "callee": "_by_id",
+          "lineNumber": 174
+        },
+        {
+          "caller": "test_adj_factor_routes_independently",
+          "callee": "_fake_sources",
+          "lineNumber": 187
+        },
+        {
+          "caller": "test_adj_factor_routes_independently",
+          "callee": "_by_id",
+          "lineNumber": 193
+        },
+        {
+          "caller": "test_adj_factor_routes_independently",
+          "callee": "build_capability_matrix",
+          "lineNumber": 194
+        },
+        {
+          "caller": "test_adj_factor_routes_independently",
+          "callee": "dict",
+          "lineNumber": 195
+        },
+        {
+          "caller": "test_depth5_capability_semantics",
+          "callee": "_fake_sources",
+          "lineNumber": 211
+        },
+        {
+          "caller": "test_depth5_capability_semantics",
+          "callee": "_by_id",
+          "lineNumber": 217
+        },
+        {
+          "caller": "test_depth5_capability_semantics",
+          "callee": "build_capability_matrix",
+          "lineNumber": 217
+        },
+        {
+          "caller": "test_depth5_capability_semantics",
+          "callee": "dict",
+          "lineNumber": 217
+        },
+        {
+          "caller": "test_depth5_capability_semantics",
+          "callee": "_by_id",
+          "lineNumber": 222
+        },
+        {
+          "caller": "test_depth5_capability_semantics",
+          "callee": "build_capability_matrix",
+          "lineNumber": 222
+        },
+        {
+          "caller": "test_depth5_capability_semantics",
+          "callee": "dict",
+          "lineNumber": 222
+        },
+        {
+          "caller": "test_unknown_current_display_falls_back_to_name",
+          "callee": "_fake_sources",
+          "lineNumber": 230
+        },
+        {
+          "caller": "test_unknown_current_display_falls_back_to_name",
+          "callee": "_by_id",
+          "lineNumber": 231
+        },
+        {
+          "caller": "test_unknown_current_display_falls_back_to_name",
+          "callee": "build_capability_matrix",
+          "lineNumber": 232
+        },
+        {
+          "caller": "test_unknown_current_display_falls_back_to_name",
+          "callee": "dict",
+          "lineNumber": 233
+        },
+        {
+          "caller": "test_full_minute_routable_like_other_capabilities",
+          "callee": "_fake_sources",
+          "lineNumber": 244
+        },
+        {
+          "caller": "test_full_minute_routable_like_other_capabilities",
+          "callee": "_by_id",
+          "lineNumber": 249
+        },
+        {
+          "caller": "test_full_minute_routable_like_other_capabilities",
+          "callee": "build_capability_matrix",
+          "lineNumber": 249
+        },
+        {
+          "caller": "test_full_minute_routable_like_other_capabilities",
+          "callee": "dict",
+          "lineNumber": 249
+        },
+        {
+          "caller": "test_full_minute_routable_like_other_capabilities",
+          "callee": "dict",
+          "lineNumber": 258
+        },
+        {
+          "caller": "test_full_minute_routable_like_other_capabilities",
+          "callee": "_by_id",
+          "lineNumber": 259
+        },
+        {
+          "caller": "test_full_minute_routable_like_other_capabilities",
+          "callee": "build_capability_matrix",
+          "lineNumber": 259
+        },
+        {
+          "caller": "test_full_minute_routable_like_other_capabilities",
+          "callee": "_by_id",
+          "lineNumber": 267
+        },
+        {
+          "caller": "test_full_minute_routable_like_other_capabilities",
+          "callee": "build_capability_matrix",
+          "lineNumber": 267
+        },
+        {
+          "caller": "test_full_minute_routable_like_other_capabilities",
+          "callee": "dict",
+          "lineNumber": 267
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 13,
+        "functionCount": 13,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/test_minute_routing.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1183,
+      "nonEmptyLines": 894,
+      "functions": [
+        {
+          "name": "_mock_minute_df",
+          "startLine": 29,
+          "endLine": 40,
+          "params": [
+            "symbol"
+          ]
+        },
+        {
+          "name": "_setup_custom_provider",
+          "startLine": 43,
+          "endLine": 62,
+          "params": [
+            "monkeypatch",
+            "provider",
+            "has_dataset"
+          ]
+        },
+        {
+          "name": "test_custom_minute_provider_returns_1m_k",
+          "startLine": 67,
+          "endLine": 88,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_stocksdk_get_minute_receives_freq_1m",
+          "startLine": 93,
+          "endLine": 112,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_custom_provider_exception_no_500",
+          "startLine": 117,
+          "endLine": 146,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_provider_without_minute_dataset_fallback",
+          "startLine": 151,
+          "endLine": 163,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_asset_type_threaded_to_provider",
+          "startLine": 168,
+          "endLine": 183,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_custom_success_skips_tickflow",
+          "startLine": 188,
+          "endLine": 206,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_sync_minute_batch_custom_success_returns_directly",
+          "startLine": 211,
+          "endLine": 233,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_on_chunk_done_wrapped_to_3_args",
+          "startLine": 238,
+          "endLine": 269,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_get_minute_batch_splits_stock_and_etf",
+          "startLine": 274,
+          "endLine": 317,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "_bars",
+          "startLine": 322,
+          "endLine": 330,
+          "params": [
+            "symbol",
+            "dts"
+          ]
+        },
+        {
+          "name": "_endpoint_mocks",
+          "startLine": 333,
+          "endLine": 362,
+          "params": [
+            "monkeypatch",
+            "local_df",
+            "sync_ret"
+          ]
+        },
+        {
+          "name": "test_minute_batch_tail_stale_pulls_incremental_and_persists",
+          "startLine": 365,
+          "endLine": 384,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_minute_batch_middle_hole_falls_back_to_full_day",
+          "startLine": 387,
+          "endLine": 397,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_minute_batch_fresh_local_skips_pull",
+          "startLine": 400,
+          "endLine": 413,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_minute_batch_since_returns_only_new_bars",
+          "startLine": 416,
+          "endLine": 449,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_sync_minute_batch_custom_calls_on_segment",
+          "startLine": 454,
+          "endLine": 478,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_sync_minute_batch_custom_empty_df_skips_on_segment",
+          "startLine": 483,
+          "endLine": 501,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_sync_and_persist_minute_custom_persists",
+          "startLine": 506,
+          "endLine": 545,
+          "params": [
+            "monkeypatch",
+            "tmp_path"
+          ]
+        },
+        {
+          "name": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "startLine": 548,
+          "endLine": 577,
+          "params": [
+            "monkeypatch",
+            "tmp_path"
+          ]
+        },
+        {
+          "name": "test_get_provider_exception_falls_back_to_tickflow",
+          "startLine": 582,
+          "endLine": 608,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_provider_has_dataset_exception_falls_back",
+          "startLine": 613,
+          "endLine": 635,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "_make_minute_config",
+          "startLine": 644,
+          "endLine": 655,
+          "params": [
+            "**extra"
+          ]
+        },
+        {
+          "name": "_capture_request_rows",
+          "startLine": 658,
+          "endLine": 669,
+          "params": [
+            "provider"
+          ]
+        },
+        {
+          "name": "test_generic_http_get_minute_passes_asset_type_when_configured",
+          "startLine": 672,
+          "endLine": 681,
+          "params": []
+        },
+        {
+          "name": "test_generic_http_get_minute_passes_freq_when_configured",
+          "startLine": 684,
+          "endLine": 693,
+          "params": []
+        },
+        {
+          "name": "test_generic_http_get_minute_omits_params_when_not_configured",
+          "startLine": 696,
+          "endLine": 706,
+          "params": []
+        },
+        {
+          "name": "test_sync_and_persist_minute_resolver_exception_returns_zero",
+          "startLine": 711,
+          "endLine": 740,
+          "params": [
+            "monkeypatch",
+            "tmp_path"
+          ]
+        },
+        {
+          "name": "test_resolve_minute_provider_tickflow_returns_silent_fallback",
+          "startLine": 745,
+          "endLine": 750,
+          "params": []
+        },
+        {
+          "name": "test_resolve_minute_provider_no_dataset_returns_silent_fallback",
+          "startLine": 753,
+          "endLine": 762,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_resolve_minute_provider_has_dataset_exception_returns_err",
+          "startLine": 765,
+          "endLine": 774,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_resolve_minute_provider_get_provider_exception_returns_err",
+          "startLine": 777,
+          "endLine": 790,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_resolve_minute_provider_success_returns_provider",
+          "startLine": 793,
+          "endLine": 807,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_minute_allowed_resolver_exception_returns_false",
+          "startLine": 810,
+          "endLine": 825,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_intraday_monitor_support_resolver_exception_falls_back",
+          "startLine": 828,
+          "endLine": 848,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_sync_minute_single_rejects_index_symbol",
+          "startLine": 853,
+          "endLine": 870,
+          "params": []
+        },
+        {
+          "name": "_mock_minute_rows",
+          "startLine": 876,
+          "endLine": 883,
+          "params": [
+            "symbol",
+            "n"
+          ]
+        },
+        {
+          "name": "_healthy_svc",
+          "startLine": 886,
+          "endLine": 890,
+          "params": [
+            "monkeypatch",
+            "healthy"
+          ]
+        },
+        {
+          "name": "test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+          "startLine": 893,
+          "endLine": 927,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_get_minute_batch_prefer_local_unhealthy_falls_back",
+          "startLine": 930,
+          "endLine": 955,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_get_minute_batch_no_flag_unaffected_even_if_healthy",
+          "startLine": 958,
+          "endLine": 982,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_minute_refresh_is_healthy_requires_recent_round",
+          "startLine": 985,
+          "endLine": 1013,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_minute_batch_compress_preference_default_and_toggle",
+          "startLine": 1019,
+          "endLine": 1026,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "_compress_mock_env",
+          "startLine": 1029,
+          "endLine": 1051,
+          "params": [
+            "monkeypatch",
+            "compress_on",
+            "accept"
+          ]
+        },
+        {
+          "name": "test_get_minute_batch_gzip_response_when_enabled",
+          "startLine": 1054,
+          "endLine": 1069,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_get_minute_batch_plain_when_disabled",
+          "startLine": 1072,
+          "endLine": 1080,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_get_minute_batch_plain_without_accept_encoding",
+          "startLine": 1083,
+          "endLine": 1091,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "_daily_mock_env",
+          "startLine": 1097,
+          "endLine": 1119,
+          "params": [
+            "monkeypatch",
+            "compress_on",
+            "accept"
+          ]
+        },
+        {
+          "name": "test_daily_batch_gzip_when_enabled",
+          "startLine": 1122,
+          "endLine": 1134,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_daily_batch_plain_when_disabled",
+          "startLine": 1137,
+          "endLine": 1142,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_daily_batch_independent_from_minute_switch",
+          "startLine": 1145,
+          "endLine": 1155,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_preferences_parallel_saves_do_not_lose_each_other",
+          "startLine": 1158,
+          "endLine": 1183,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_mock_minute_df",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "_setup_custom_provider",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "test_custom_minute_provider_returns_1m_k",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "test_stocksdk_get_minute_receives_freq_1m",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "test_custom_provider_exception_no_500",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "test_provider_without_minute_dataset_fallback",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "test_asset_type_threaded_to_provider",
+          "line": 168,
+          "isDefault": false
+        },
+        {
+          "name": "test_custom_success_skips_tickflow",
+          "line": 188,
+          "isDefault": false
+        },
+        {
+          "name": "test_sync_minute_batch_custom_success_returns_directly",
+          "line": 211,
+          "isDefault": false
+        },
+        {
+          "name": "test_on_chunk_done_wrapped_to_3_args",
+          "line": 238,
+          "isDefault": false
+        },
+        {
+          "name": "test_get_minute_batch_splits_stock_and_etf",
+          "line": 274,
+          "isDefault": false
+        },
+        {
+          "name": "_bars",
+          "line": 322,
+          "isDefault": false
+        },
+        {
+          "name": "_endpoint_mocks",
+          "line": 333,
+          "isDefault": false
+        },
+        {
+          "name": "test_minute_batch_tail_stale_pulls_incremental_and_persists",
+          "line": 365,
+          "isDefault": false
+        },
+        {
+          "name": "test_minute_batch_middle_hole_falls_back_to_full_day",
+          "line": 387,
+          "isDefault": false
+        },
+        {
+          "name": "test_minute_batch_fresh_local_skips_pull",
+          "line": 400,
+          "isDefault": false
+        },
+        {
+          "name": "test_minute_batch_since_returns_only_new_bars",
+          "line": 416,
+          "isDefault": false
+        },
+        {
+          "name": "test_sync_minute_batch_custom_calls_on_segment",
+          "line": 454,
+          "isDefault": false
+        },
+        {
+          "name": "test_sync_minute_batch_custom_empty_df_skips_on_segment",
+          "line": 483,
+          "isDefault": false
+        },
+        {
+          "name": "test_sync_and_persist_minute_custom_persists",
+          "line": 506,
+          "isDefault": false
+        },
+        {
+          "name": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "line": 548,
+          "isDefault": false
+        },
+        {
+          "name": "test_get_provider_exception_falls_back_to_tickflow",
+          "line": 582,
+          "isDefault": false
+        },
+        {
+          "name": "test_provider_has_dataset_exception_falls_back",
+          "line": 613,
+          "isDefault": false
+        },
+        {
+          "name": "_make_minute_config",
+          "line": 644,
+          "isDefault": false
+        },
+        {
+          "name": "_capture_request_rows",
+          "line": 658,
+          "isDefault": false
+        },
+        {
+          "name": "test_generic_http_get_minute_passes_asset_type_when_configured",
+          "line": 672,
+          "isDefault": false
+        },
+        {
+          "name": "test_generic_http_get_minute_passes_freq_when_configured",
+          "line": 684,
+          "isDefault": false
+        },
+        {
+          "name": "test_generic_http_get_minute_omits_params_when_not_configured",
+          "line": 696,
+          "isDefault": false
+        },
+        {
+          "name": "test_sync_and_persist_minute_resolver_exception_returns_zero",
+          "line": 711,
+          "isDefault": false
+        },
+        {
+          "name": "test_resolve_minute_provider_tickflow_returns_silent_fallback",
+          "line": 745,
+          "isDefault": false
+        },
+        {
+          "name": "test_resolve_minute_provider_no_dataset_returns_silent_fallback",
+          "line": 753,
+          "isDefault": false
+        },
+        {
+          "name": "test_resolve_minute_provider_has_dataset_exception_returns_err",
+          "line": 765,
+          "isDefault": false
+        },
+        {
+          "name": "test_resolve_minute_provider_get_provider_exception_returns_err",
+          "line": 777,
+          "isDefault": false
+        },
+        {
+          "name": "test_resolve_minute_provider_success_returns_provider",
+          "line": 793,
+          "isDefault": false
+        },
+        {
+          "name": "test_minute_allowed_resolver_exception_returns_false",
+          "line": 810,
+          "isDefault": false
+        },
+        {
+          "name": "test_intraday_monitor_support_resolver_exception_falls_back",
+          "line": 828,
+          "isDefault": false
+        },
+        {
+          "name": "test_sync_minute_single_rejects_index_symbol",
+          "line": 853,
+          "isDefault": false
+        },
+        {
+          "name": "_mock_minute_rows",
+          "line": 876,
+          "isDefault": false
+        },
+        {
+          "name": "_healthy_svc",
+          "line": 886,
+          "isDefault": false
+        },
+        {
+          "name": "test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+          "line": 893,
+          "isDefault": false
+        },
+        {
+          "name": "test_get_minute_batch_prefer_local_unhealthy_falls_back",
+          "line": 930,
+          "isDefault": false
+        },
+        {
+          "name": "test_get_minute_batch_no_flag_unaffected_even_if_healthy",
+          "line": 958,
+          "isDefault": false
+        },
+        {
+          "name": "test_minute_refresh_is_healthy_requires_recent_round",
+          "line": 985,
+          "isDefault": false
+        },
+        {
+          "name": "test_minute_batch_compress_preference_default_and_toggle",
+          "line": 1019,
+          "isDefault": false
+        },
+        {
+          "name": "_compress_mock_env",
+          "line": 1029,
+          "isDefault": false
+        },
+        {
+          "name": "test_get_minute_batch_gzip_response_when_enabled",
+          "line": 1054,
+          "isDefault": false
+        },
+        {
+          "name": "test_get_minute_batch_plain_when_disabled",
+          "line": 1072,
+          "isDefault": false
+        },
+        {
+          "name": "test_get_minute_batch_plain_without_accept_encoding",
+          "line": 1083,
+          "isDefault": false
+        },
+        {
+          "name": "_daily_mock_env",
+          "line": 1097,
+          "isDefault": false
+        },
+        {
+          "name": "test_daily_batch_gzip_when_enabled",
+          "line": 1122,
+          "isDefault": false
+        },
+        {
+          "name": "test_daily_batch_plain_when_disabled",
+          "line": 1137,
+          "isDefault": false
+        },
+        {
+          "name": "test_daily_batch_independent_from_minute_switch",
+          "line": 1145,
+          "isDefault": false
+        },
+        {
+          "name": "test_preferences_parallel_saves_do_not_lose_each_other",
+          "line": 1158,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_mock_minute_df",
+          "callee": "pl.DataFrame",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_mock_minute_df",
+          "callee": "datetime",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_setup_custom_provider",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_setup_custom_provider",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_setup_custom_provider",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_custom_minute_provider_returns_1m_k",
+          "callee": "MagicMock",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_custom_minute_provider_returns_1m_k",
+          "callee": "_mock_minute_df",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_custom_minute_provider_returns_1m_k",
+          "callee": "MagicMock",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_custom_minute_provider_returns_1m_k",
+          "callee": "_setup_custom_provider",
+          "lineNumber": 72
+        },
+        {
+          "caller": "test_custom_minute_provider_returns_1m_k",
+          "callee": "kline_sync._try_custom_minute",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_custom_minute_provider_returns_1m_k",
+          "callee": "datetime",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_custom_minute_provider_returns_1m_k",
+          "callee": "datetime",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_custom_minute_provider_returns_1m_k",
+          "callee": "df.is_empty",
+          "lineNumber": 83
+        },
+        {
+          "caller": "test_custom_minute_provider_returns_1m_k",
+          "callee": "spy.assert_called_once",
+          "lineNumber": 85
+        },
+        {
+          "caller": "test_custom_minute_provider_returns_1m_k",
+          "callee": "kwargs.get",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_custom_minute_provider_returns_1m_k",
+          "callee": "kwargs.get",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_stocksdk_get_minute_receives_freq_1m",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 105
+        },
+        {
+          "caller": "test_stocksdk_get_minute_receives_freq_1m",
+          "callee": "StockSDKProvider().get_minute",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_stocksdk_get_minute_receives_freq_1m",
+          "callee": "StockSDKProvider",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_custom_provider_exception_no_500",
+          "callee": "MagicMock",
+          "lineNumber": 122
+        },
+        {
+          "caller": "test_custom_provider_exception_no_500",
+          "callee": "httpx.TimeoutException",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_custom_provider_exception_no_500",
+          "callee": "_setup_custom_provider",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_custom_provider_exception_no_500",
+          "callee": "MagicMock",
+          "lineNumber": 127
+        },
+        {
+          "caller": "test_custom_provider_exception_no_500",
+          "callee": "Exception",
+          "lineNumber": 128
+        },
+        {
+          "caller": "test_custom_provider_exception_no_500",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 129
+        },
+        {
+          "caller": "test_custom_provider_exception_no_500",
+          "callee": "kline_sync.fetch_minute_single",
+          "lineNumber": 132
+        },
+        {
+          "caller": "test_custom_provider_exception_no_500",
+          "callee": "date",
+          "lineNumber": 133
+        },
+        {
+          "caller": "test_custom_provider_exception_no_500",
+          "callee": "isinstance",
+          "lineNumber": 135
+        },
+        {
+          "caller": "test_custom_provider_exception_no_500",
+          "callee": "df_single.is_empty",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_custom_provider_exception_no_500",
+          "callee": "kline_sync.sync_minute_batch",
+          "lineNumber": 139
+        },
+        {
+          "caller": "test_custom_provider_exception_no_500",
+          "callee": "datetime",
+          "lineNumber": 141
+        },
+        {
+          "caller": "test_custom_provider_exception_no_500",
+          "callee": "datetime",
+          "lineNumber": 142
+        },
+        {
+          "caller": "test_custom_provider_exception_no_500",
+          "callee": "isinstance",
+          "lineNumber": 145
+        },
+        {
+          "caller": "test_custom_provider_exception_no_500",
+          "callee": "df_batch.is_empty",
+          "lineNumber": 146
+        },
+        {
+          "caller": "test_provider_without_minute_dataset_fallback",
+          "callee": "MagicMock",
+          "lineNumber": 153
+        },
+        {
+          "caller": "test_provider_without_minute_dataset_fallback",
+          "callee": "_setup_custom_provider",
+          "lineNumber": 154
+        },
+        {
+          "caller": "test_provider_without_minute_dataset_fallback",
+          "callee": "kline_sync._try_custom_minute",
+          "lineNumber": 156
+        },
+        {
+          "caller": "test_provider_without_minute_dataset_fallback",
+          "callee": "mock_provider.get_minute.assert_not_called",
+          "lineNumber": 163
+        },
+        {
+          "caller": "test_asset_type_threaded_to_provider",
+          "callee": "MagicMock",
+          "lineNumber": 170
+        },
+        {
+          "caller": "test_asset_type_threaded_to_provider",
+          "callee": "_mock_minute_df",
+          "lineNumber": 170
+        },
+        {
+          "caller": "test_asset_type_threaded_to_provider",
+          "callee": "MagicMock",
+          "lineNumber": 171
+        },
+        {
+          "caller": "test_asset_type_threaded_to_provider",
+          "callee": "_setup_custom_provider",
+          "lineNumber": 173
+        },
+        {
+          "caller": "test_asset_type_threaded_to_provider",
+          "callee": "kline_sync.fetch_minute_single",
+          "lineNumber": 176
+        },
+        {
+          "caller": "test_asset_type_threaded_to_provider",
+          "callee": "date",
+          "lineNumber": 176
+        },
+        {
+          "caller": "test_asset_type_threaded_to_provider",
+          "callee": "kline_sync.fetch_minute_single",
+          "lineNumber": 177
+        },
+        {
+          "caller": "test_asset_type_threaded_to_provider",
+          "callee": "date",
+          "lineNumber": 177
+        },
+        {
+          "caller": "test_asset_type_threaded_to_provider",
+          "callee": "kline_sync.fetch_minute_single",
+          "lineNumber": 178
+        },
+        {
+          "caller": "test_asset_type_threaded_to_provider",
+          "callee": "date",
+          "lineNumber": 178
+        },
+        {
+          "caller": "test_asset_type_threaded_to_provider",
+          "callee": "call.kwargs.get",
+          "lineNumber": 182
+        },
+        {
+          "caller": "test_custom_success_skips_tickflow",
+          "callee": "_mock_minute_df",
+          "lineNumber": 190
+        },
+        {
+          "caller": "test_custom_success_skips_tickflow",
+          "callee": "MagicMock",
+          "lineNumber": 191
+        },
+        {
+          "caller": "test_custom_success_skips_tickflow",
+          "callee": "_setup_custom_provider",
+          "lineNumber": 193
+        },
+        {
+          "caller": "test_custom_success_skips_tickflow",
+          "callee": "MagicMock",
+          "lineNumber": 196
+        },
+        {
+          "caller": "test_custom_success_skips_tickflow",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 197
+        },
+        {
+          "caller": "test_custom_success_skips_tickflow",
+          "callee": "kline_sync.fetch_minute_single",
+          "lineNumber": 199
+        },
+        {
+          "caller": "test_custom_success_skips_tickflow",
+          "callee": "date",
+          "lineNumber": 200
+        },
+        {
+          "caller": "test_custom_success_skips_tickflow",
+          "callee": "get_client_spy.assert_not_called",
+          "lineNumber": 206
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_success_returns_directly",
+          "callee": "_mock_minute_df",
+          "lineNumber": 216
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_success_returns_directly",
+          "callee": "MagicMock",
+          "lineNumber": 217
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_success_returns_directly",
+          "callee": "_setup_custom_provider",
+          "lineNumber": 219
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_success_returns_directly",
+          "callee": "MagicMock",
+          "lineNumber": 221
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_success_returns_directly",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 222
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_success_returns_directly",
+          "callee": "kline_sync.sync_minute_batch",
+          "lineNumber": 224
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_success_returns_directly",
+          "callee": "datetime",
+          "lineNumber": 226
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_success_returns_directly",
+          "callee": "datetime",
+          "lineNumber": 227
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_success_returns_directly",
+          "callee": "get_client_spy.assert_not_called",
+          "lineNumber": 233
+        },
+        {
+          "caller": "test_on_chunk_done_wrapped_to_3_args",
+          "callee": "MagicMock",
+          "lineNumber": 244
+        },
+        {
+          "caller": "provider_get_minute_side_effect",
+          "callee": "on_chunk_done",
+          "lineNumber": 251
+        },
+        {
+          "caller": "provider_get_minute_side_effect",
+          "callee": "_mock_minute_df",
+          "lineNumber": 252
+        },
+        {
+          "caller": "test_on_chunk_done_wrapped_to_3_args",
+          "callee": "MagicMock",
+          "lineNumber": 254
+        },
+        {
+          "caller": "test_on_chunk_done_wrapped_to_3_args",
+          "callee": "_setup_custom_provider",
+          "lineNumber": 256
+        },
+        {
+          "caller": "test_on_chunk_done_wrapped_to_3_args",
+          "callee": "kline_sync._try_custom_minute",
+          "lineNumber": 258
+        },
+        {
+          "caller": "test_on_chunk_done_wrapped_to_3_args",
+          "callee": "datetime",
+          "lineNumber": 260
+        },
+        {
+          "caller": "test_on_chunk_done_wrapped_to_3_args",
+          "callee": "datetime",
+          "lineNumber": 261
+        },
+        {
+          "caller": "test_on_chunk_done_wrapped_to_3_args",
+          "callee": "upper_cb.assert_called_once_with",
+          "lineNumber": 269
+        },
+        {
+          "caller": "fake_sync",
+          "callee": "_mock_minute_df",
+          "lineNumber": 286
+        },
+        {
+          "caller": "fake_sync",
+          "callee": "_mock_minute_df",
+          "lineNumber": 288
+        },
+        {
+          "caller": "fake_sync",
+          "callee": "pl.DataFrame",
+          "lineNumber": 289
+        },
+        {
+          "caller": "test_get_minute_batch_splits_stock_and_etf",
+          "callee": "MagicMock",
+          "lineNumber": 290
+        },
+        {
+          "caller": "test_get_minute_batch_splits_stock_and_etf",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 291
+        },
+        {
+          "caller": "test_get_minute_batch_splits_stock_and_etf",
+          "callee": "MagicMock",
+          "lineNumber": 294
+        },
+        {
+          "caller": "test_get_minute_batch_splits_stock_and_etf",
+          "callee": "pl.DataFrame",
+          "lineNumber": 296
+        },
+        {
+          "caller": "test_get_minute_batch_splits_stock_and_etf",
+          "callee": "MagicMock",
+          "lineNumber": 299
+        },
+        {
+          "caller": "test_get_minute_batch_splits_stock_and_etf",
+          "callee": "MagicMock",
+          "lineNumber": 303
+        },
+        {
+          "caller": "test_get_minute_batch_splits_stock_and_etf",
+          "callee": "kline_api.get_minute_batch",
+          "lineNumber": 308
+        },
+        {
+          "caller": "test_get_minute_batch_splits_stock_and_etf",
+          "callee": "sorted",
+          "lineNumber": 312
+        },
+        {
+          "caller": "test_get_minute_batch_splits_stock_and_etf",
+          "callee": "call.kwargs.get",
+          "lineNumber": 312
+        },
+        {
+          "caller": "_bars",
+          "callee": "len",
+          "lineNumber": 324
+        },
+        {
+          "caller": "_bars",
+          "callee": "pl.DataFrame",
+          "lineNumber": 325
+        },
+        {
+          "caller": "fake_sync",
+          "callee": "captured.append",
+          "lineNumber": 340
+        },
+        {
+          "caller": "fake_sync",
+          "callee": "list",
+          "lineNumber": 340
+        },
+        {
+          "caller": "fake_sync",
+          "callee": "pl.DataFrame",
+          "lineNumber": 341
+        },
+        {
+          "caller": "_endpoint_mocks",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 343
+        },
+        {
+          "caller": "_endpoint_mocks",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 345
+        },
+        {
+          "caller": "_endpoint_mocks",
+          "callee": "writes.append",
+          "lineNumber": 346
+        },
+        {
+          "caller": "_endpoint_mocks",
+          "callee": "MagicMock",
+          "lineNumber": 348
+        },
+        {
+          "caller": "_endpoint_mocks",
+          "callee": "set",
+          "lineNumber": 349
+        },
+        {
+          "caller": "_endpoint_mocks",
+          "callee": "Lock",
+          "lineNumber": 351
+        },
+        {
+          "caller": "_endpoint_mocks",
+          "callee": "Path",
+          "lineNumber": 353
+        },
+        {
+          "caller": "_endpoint_mocks",
+          "callee": "MagicMock",
+          "lineNumber": 355
+        },
+        {
+          "caller": "_endpoint_mocks",
+          "callee": "MagicMock",
+          "lineNumber": 359
+        },
+        {
+          "caller": "test_minute_batch_tail_stale_pulls_incremental_and_persists",
+          "callee": "_bars",
+          "lineNumber": 370
+        },
+        {
+          "caller": "test_minute_batch_tail_stale_pulls_incremental_and_persists",
+          "callee": "datetime",
+          "lineNumber": 371
+        },
+        {
+          "caller": "test_minute_batch_tail_stale_pulls_incremental_and_persists",
+          "callee": "datetime",
+          "lineNumber": 371
+        },
+        {
+          "caller": "test_minute_batch_tail_stale_pulls_incremental_and_persists",
+          "callee": "datetime",
+          "lineNumber": 371
+        },
+        {
+          "caller": "test_minute_batch_tail_stale_pulls_incremental_and_persists",
+          "callee": "_bars",
+          "lineNumber": 373
+        },
+        {
+          "caller": "test_minute_batch_tail_stale_pulls_incremental_and_persists",
+          "callee": "datetime",
+          "lineNumber": 373
+        },
+        {
+          "caller": "test_minute_batch_tail_stale_pulls_incremental_and_persists",
+          "callee": "datetime",
+          "lineNumber": 373
+        },
+        {
+          "caller": "test_minute_batch_tail_stale_pulls_incremental_and_persists",
+          "callee": "_endpoint_mocks",
+          "lineNumber": 374
+        },
+        {
+          "caller": "test_minute_batch_tail_stale_pulls_incremental_and_persists",
+          "callee": "kline_api.get_minute_batch",
+          "lineNumber": 376
+        },
+        {
+          "caller": "test_minute_batch_tail_stale_pulls_incremental_and_persists",
+          "callee": "len",
+          "lineNumber": 378
+        },
+        {
+          "caller": "test_minute_batch_tail_stale_pulls_incremental_and_persists",
+          "callee": "datetime",
+          "lineNumber": 379
+        },
+        {
+          "caller": "test_minute_batch_tail_stale_pulls_incremental_and_persists",
+          "callee": "len",
+          "lineNumber": 383
+        },
+        {
+          "caller": "test_minute_batch_tail_stale_pulls_incremental_and_persists",
+          "callee": "datetime",
+          "lineNumber": 384
+        },
+        {
+          "caller": "test_minute_batch_middle_hole_falls_back_to_full_day",
+          "callee": "_bars",
+          "lineNumber": 391
+        },
+        {
+          "caller": "test_minute_batch_middle_hole_falls_back_to_full_day",
+          "callee": "datetime",
+          "lineNumber": 391
+        },
+        {
+          "caller": "test_minute_batch_middle_hole_falls_back_to_full_day",
+          "callee": "datetime",
+          "lineNumber": 391
+        },
+        {
+          "caller": "test_minute_batch_middle_hole_falls_back_to_full_day",
+          "callee": "_endpoint_mocks",
+          "lineNumber": 392
+        },
+        {
+          "caller": "test_minute_batch_middle_hole_falls_back_to_full_day",
+          "callee": "pl.DataFrame",
+          "lineNumber": 392
+        },
+        {
+          "caller": "test_minute_batch_middle_hole_falls_back_to_full_day",
+          "callee": "kline_api.get_minute_batch",
+          "lineNumber": 394
+        },
+        {
+          "caller": "test_minute_batch_middle_hole_falls_back_to_full_day",
+          "callee": "len",
+          "lineNumber": 396
+        },
+        {
+          "caller": "test_minute_batch_middle_hole_falls_back_to_full_day",
+          "callee": "datetime",
+          "lineNumber": 397
+        },
+        {
+          "caller": "test_minute_batch_fresh_local_skips_pull",
+          "callee": "datetime",
+          "lineNumber": 404
+        },
+        {
+          "caller": "test_minute_batch_fresh_local_skips_pull",
+          "callee": "timedelta",
+          "lineNumber": 404
+        },
+        {
+          "caller": "test_minute_batch_fresh_local_skips_pull",
+          "callee": "range",
+          "lineNumber": 404
+        },
+        {
+          "caller": "test_minute_batch_fresh_local_skips_pull",
+          "callee": "datetime",
+          "lineNumber": 405
+        },
+        {
+          "caller": "test_minute_batch_fresh_local_skips_pull",
+          "callee": "timedelta",
+          "lineNumber": 405
+        },
+        {
+          "caller": "test_minute_batch_fresh_local_skips_pull",
+          "callee": "range",
+          "lineNumber": 405
+        },
+        {
+          "caller": "test_minute_batch_fresh_local_skips_pull",
+          "callee": "_bars",
+          "lineNumber": 406
+        },
+        {
+          "caller": "test_minute_batch_fresh_local_skips_pull",
+          "callee": "_endpoint_mocks",
+          "lineNumber": 407
+        },
+        {
+          "caller": "test_minute_batch_fresh_local_skips_pull",
+          "callee": "pl.DataFrame",
+          "lineNumber": 407
+        },
+        {
+          "caller": "test_minute_batch_fresh_local_skips_pull",
+          "callee": "kline_api.get_minute_batch",
+          "lineNumber": 409
+        },
+        {
+          "caller": "test_minute_batch_fresh_local_skips_pull",
+          "callee": "len",
+          "lineNumber": 413
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "datetime",
+          "lineNumber": 421
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "timedelta",
+          "lineNumber": 421
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "range",
+          "lineNumber": 421
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "datetime",
+          "lineNumber": 422
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "timedelta",
+          "lineNumber": 422
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "range",
+          "lineNumber": 422
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "_bars",
+          "lineNumber": 423
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "_endpoint_mocks",
+          "lineNumber": 424
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "pl.DataFrame",
+          "lineNumber": 424
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "kline_api.get_minute_batch",
+          "lineNumber": 426
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "datetime",
+          "lineNumber": 431
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "kline_api.get_minute_batch",
+          "lineNumber": 435
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "len",
+          "lineNumber": 438
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "kline_api.get_minute_batch",
+          "lineNumber": 439
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "len",
+          "lineNumber": 441
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "kline_api.get_minute_batch",
+          "lineNumber": 445
+        },
+        {
+          "caller": "test_minute_batch_since_returns_only_new_bars",
+          "callee": "datetime",
+          "lineNumber": 449
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_calls_on_segment",
+          "callee": "_mock_minute_df",
+          "lineNumber": 458
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_calls_on_segment",
+          "callee": "MagicMock",
+          "lineNumber": 459
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_calls_on_segment",
+          "callee": "_setup_custom_provider",
+          "lineNumber": 461
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_calls_on_segment",
+          "callee": "MagicMock",
+          "lineNumber": 463
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_calls_on_segment",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 464
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_calls_on_segment",
+          "callee": "MagicMock",
+          "lineNumber": 466
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_calls_on_segment",
+          "callee": "kline_sync.sync_minute_batch",
+          "lineNumber": 467
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_calls_on_segment",
+          "callee": "datetime",
+          "lineNumber": 469
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_calls_on_segment",
+          "callee": "datetime",
+          "lineNumber": 470
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_calls_on_segment",
+          "callee": "on_segment_spy.assert_called_once_with",
+          "lineNumber": 475
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_calls_on_segment",
+          "callee": "isinstance",
+          "lineNumber": 476
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_calls_on_segment",
+          "callee": "df.is_empty",
+          "lineNumber": 477
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_calls_on_segment",
+          "callee": "get_client_spy.assert_not_called",
+          "lineNumber": 478
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_empty_df_skips_on_segment",
+          "callee": "MagicMock",
+          "lineNumber": 486
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_empty_df_skips_on_segment",
+          "callee": "pl.DataFrame",
+          "lineNumber": 487
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_empty_df_skips_on_segment",
+          "callee": "_setup_custom_provider",
+          "lineNumber": 488
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_empty_df_skips_on_segment",
+          "callee": "MagicMock",
+          "lineNumber": 490
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_empty_df_skips_on_segment",
+          "callee": "kline_sync.sync_minute_batch",
+          "lineNumber": 491
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_empty_df_skips_on_segment",
+          "callee": "datetime",
+          "lineNumber": 493
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_empty_df_skips_on_segment",
+          "callee": "datetime",
+          "lineNumber": 494
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_empty_df_skips_on_segment",
+          "callee": "on_segment_spy.assert_not_called",
+          "lineNumber": 499
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_empty_df_skips_on_segment",
+          "callee": "isinstance",
+          "lineNumber": 500
+        },
+        {
+          "caller": "test_sync_minute_batch_custom_empty_df_skips_on_segment",
+          "callee": "df.is_empty",
+          "lineNumber": 501
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "_mock_minute_df",
+          "lineNumber": 510
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "MagicMock",
+          "lineNumber": 511
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "_setup_custom_provider",
+          "lineNumber": 513
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 516
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 517
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 518
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 519
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "MagicMock",
+          "lineNumber": 519
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 520
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "MagicMock",
+          "lineNumber": 523
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 524
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "MagicMock",
+          "lineNumber": 527
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 528
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "MagicMock",
+          "lineNumber": 531
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "MagicMock",
+          "lineNumber": 533
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "MagicMock",
+          "lineNumber": 536
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "kline_sync.sync_and_persist_minute",
+          "lineNumber": 538
+        },
+        {
+          "caller": "test_sync_and_persist_minute_custom_persists",
+          "callee": "get_client_spy.assert_not_called",
+          "lineNumber": 545
+        },
+        {
+          "caller": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "callee": "_mock_minute_df",
+          "lineNumber": 549
+        },
+        {
+          "caller": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "callee": "MagicMock",
+          "lineNumber": 550
+        },
+        {
+          "caller": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "callee": "_setup_custom_provider",
+          "lineNumber": 552
+        },
+        {
+          "caller": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 554
+        },
+        {
+          "caller": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 555
+        },
+        {
+          "caller": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 556
+        },
+        {
+          "caller": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 557
+        },
+        {
+          "caller": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "callee": "MagicMock",
+          "lineNumber": 557
+        },
+        {
+          "caller": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 558
+        },
+        {
+          "caller": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "callee": "Lock",
+          "lineNumber": 560
+        },
+        {
+          "caller": "assert_locked",
+          "callee": "write_lock.acquire",
+          "lineNumber": 563
+        },
+        {
+          "caller": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 566
+        },
+        {
+          "caller": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "callee": "MagicMock",
+          "lineNumber": 568
+        },
+        {
+          "caller": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "callee": "MagicMock",
+          "lineNumber": 570
+        },
+        {
+          "caller": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "callee": "kline_sync.sync_and_persist_minute",
+          "lineNumber": 573
+        },
+        {
+          "caller": "test_sync_and_persist_minute_holds_repository_write_lock",
+          "callee": "MagicMock",
+          "lineNumber": 574
+        },
+        {
+          "caller": "test_get_provider_exception_falls_back_to_tickflow",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 586
+        },
+        {
+          "caller": "test_get_provider_exception_falls_back_to_tickflow",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 591
+        },
+        {
+          "caller": "_raising_get_provider",
+          "callee": "ValueError",
+          "lineNumber": 597
+        },
+        {
+          "caller": "test_get_provider_exception_falls_back_to_tickflow",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 598
+        },
+        {
+          "caller": "test_get_provider_exception_falls_back_to_tickflow",
+          "callee": "kline_sync._try_custom_minute",
+          "lineNumber": 603
+        },
+        {
+          "caller": "test_provider_has_dataset_exception_falls_back",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 617
+        },
+        {
+          "caller": "_raising_has_dataset",
+          "callee": "RuntimeError",
+          "lineNumber": 624
+        },
+        {
+          "caller": "test_provider_has_dataset_exception_falls_back",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 625
+        },
+        {
+          "caller": "test_provider_has_dataset_exception_falls_back",
+          "callee": "kline_sync._try_custom_minute",
+          "lineNumber": 630
+        },
+        {
+          "caller": "_make_minute_config",
+          "callee": "CustomSourceConfig",
+          "lineNumber": 649
+        },
+        {
+          "caller": "_make_minute_config",
+          "callee": "DatasetConfig",
+          "lineNumber": 652
+        },
+        {
+          "caller": "test_generic_http_get_minute_passes_asset_type_when_configured",
+          "callee": "_make_minute_config",
+          "lineNumber": 674
+        },
+        {
+          "caller": "test_generic_http_get_minute_passes_asset_type_when_configured",
+          "callee": "GenericHTTPProvider",
+          "lineNumber": 675
+        },
+        {
+          "caller": "test_generic_http_get_minute_passes_asset_type_when_configured",
+          "callee": "_capture_request_rows",
+          "lineNumber": 676
+        },
+        {
+          "caller": "test_generic_http_get_minute_passes_asset_type_when_configured",
+          "callee": "provider.get_minute",
+          "lineNumber": 678
+        },
+        {
+          "caller": "test_generic_http_get_minute_passes_freq_when_configured",
+          "callee": "_make_minute_config",
+          "lineNumber": 686
+        },
+        {
+          "caller": "test_generic_http_get_minute_passes_freq_when_configured",
+          "callee": "GenericHTTPProvider",
+          "lineNumber": 687
+        },
+        {
+          "caller": "test_generic_http_get_minute_passes_freq_when_configured",
+          "callee": "_capture_request_rows",
+          "lineNumber": 688
+        },
+        {
+          "caller": "test_generic_http_get_minute_passes_freq_when_configured",
+          "callee": "provider.get_minute",
+          "lineNumber": 690
+        },
+        {
+          "caller": "test_generic_http_get_minute_omits_params_when_not_configured",
+          "callee": "_make_minute_config",
+          "lineNumber": 698
+        },
+        {
+          "caller": "test_generic_http_get_minute_omits_params_when_not_configured",
+          "callee": "GenericHTTPProvider",
+          "lineNumber": 699
+        },
+        {
+          "caller": "test_generic_http_get_minute_omits_params_when_not_configured",
+          "callee": "_capture_request_rows",
+          "lineNumber": 700
+        },
+        {
+          "caller": "test_generic_http_get_minute_omits_params_when_not_configured",
+          "callee": "provider.get_minute",
+          "lineNumber": 702
+        },
+        {
+          "caller": "test_sync_and_persist_minute_resolver_exception_returns_zero",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 715
+        },
+        {
+          "caller": "_raising_has_dataset",
+          "callee": "RuntimeError",
+          "lineNumber": 722
+        },
+        {
+          "caller": "test_sync_and_persist_minute_resolver_exception_returns_zero",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 723
+        },
+        {
+          "caller": "test_sync_and_persist_minute_resolver_exception_returns_zero",
+          "callee": "MagicMock",
+          "lineNumber": 729
+        },
+        {
+          "caller": "test_sync_and_persist_minute_resolver_exception_returns_zero",
+          "callee": "MagicMock",
+          "lineNumber": 732
+        },
+        {
+          "caller": "test_sync_and_persist_minute_resolver_exception_returns_zero",
+          "callee": "kline_sync.sync_and_persist_minute",
+          "lineNumber": 736
+        },
+        {
+          "caller": "test_resolve_minute_provider_tickflow_returns_silent_fallback",
+          "callee": "kline_sync._resolve_minute_provider",
+          "lineNumber": 747
+        },
+        {
+          "caller": "test_resolve_minute_provider_no_dataset_returns_silent_fallback",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 755
+        },
+        {
+          "caller": "test_resolve_minute_provider_no_dataset_returns_silent_fallback",
+          "callee": "kline_sync._resolve_minute_provider",
+          "lineNumber": 759
+        },
+        {
+          "caller": "_raising",
+          "callee": "RuntimeError",
+          "lineNumber": 768
+        },
+        {
+          "caller": "test_resolve_minute_provider_has_dataset_exception_returns_err",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 769
+        },
+        {
+          "caller": "test_resolve_minute_provider_has_dataset_exception_returns_err",
+          "callee": "kline_sync._resolve_minute_provider",
+          "lineNumber": 770
+        },
+        {
+          "caller": "test_resolve_minute_provider_get_provider_exception_returns_err",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 779
+        },
+        {
+          "caller": "_raising_get",
+          "callee": "ValueError",
+          "lineNumber": 784
+        },
+        {
+          "caller": "test_resolve_minute_provider_get_provider_exception_returns_err",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 785
+        },
+        {
+          "caller": "test_resolve_minute_provider_get_provider_exception_returns_err",
+          "callee": "kline_sync._resolve_minute_provider",
+          "lineNumber": 786
+        },
+        {
+          "caller": "test_resolve_minute_provider_success_returns_provider",
+          "callee": "object",
+          "lineNumber": 795
+        },
+        {
+          "caller": "test_resolve_minute_provider_success_returns_provider",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 796
+        },
+        {
+          "caller": "test_resolve_minute_provider_success_returns_provider",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 800
+        },
+        {
+          "caller": "test_resolve_minute_provider_success_returns_provider",
+          "callee": "kline_sync._resolve_minute_provider",
+          "lineNumber": 804
+        },
+        {
+          "caller": "test_minute_allowed_resolver_exception_returns_false",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 815
+        },
+        {
+          "caller": "_raising",
+          "callee": "RuntimeError",
+          "lineNumber": 821
+        },
+        {
+          "caller": "test_minute_allowed_resolver_exception_returns_false",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 823
+        },
+        {
+          "caller": "test_minute_allowed_resolver_exception_returns_false",
+          "callee": "kline_api._minute_allowed",
+          "lineNumber": 825
+        },
+        {
+          "caller": "test_minute_allowed_resolver_exception_returns_false",
+          "callee": "CapabilitySet",
+          "lineNumber": 825
+        },
+        {
+          "caller": "test_intraday_monitor_support_resolver_exception_falls_back",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 832
+        },
+        {
+          "caller": "_raising",
+          "callee": "RuntimeError",
+          "lineNumber": 839
+        },
+        {
+          "caller": "test_intraday_monitor_support_resolver_exception_falls_back",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 841
+        },
+        {
+          "caller": "test_intraday_monitor_support_resolver_exception_falls_back",
+          "callee": "CapabilitySet",
+          "lineNumber": 842
+        },
+        {
+          "caller": "test_intraday_monitor_support_resolver_exception_falls_back",
+          "callee": "capset.grant",
+          "lineNumber": 843
+        },
+        {
+          "caller": "test_intraday_monitor_support_resolver_exception_falls_back",
+          "callee": "kline_sync.intraday_monitor_support",
+          "lineNumber": 845
+        },
+        {
+          "caller": "test_sync_minute_single_rejects_index_symbol",
+          "callee": "MagicMock",
+          "lineNumber": 862
+        },
+        {
+          "caller": "test_sync_minute_single_rejects_index_symbol",
+          "callee": "MagicMock",
+          "lineNumber": 864
+        },
+        {
+          "caller": "test_sync_minute_single_rejects_index_symbol",
+          "callee": "pytest.raises",
+          "lineNumber": 867
+        },
+        {
+          "caller": "test_sync_minute_single_rejects_index_symbol",
+          "callee": "asyncio.run",
+          "lineNumber": 868
+        },
+        {
+          "caller": "test_sync_minute_single_rejects_index_symbol",
+          "callee": "kline_api.sync_minute_single",
+          "lineNumber": 868
+        },
+        {
+          "caller": "test_sync_minute_single_rejects_index_symbol",
+          "callee": "str",
+          "lineNumber": 870
+        },
+        {
+          "caller": "_mock_minute_rows",
+          "callee": "pl.DataFrame",
+          "lineNumber": 878
+        },
+        {
+          "caller": "_mock_minute_rows",
+          "callee": "datetime",
+          "lineNumber": 880
+        },
+        {
+          "caller": "_mock_minute_rows",
+          "callee": "timedelta",
+          "lineNumber": 880
+        },
+        {
+          "caller": "_mock_minute_rows",
+          "callee": "range",
+          "lineNumber": 880
+        },
+        {
+          "caller": "_healthy_svc",
+          "callee": "MagicMock",
+          "lineNumber": 888
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+          "callee": "MagicMock",
+          "lineNumber": 898
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+          "callee": "_mock_minute_df",
+          "lineNumber": 898
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 899
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+          "callee": "MagicMock",
+          "lineNumber": 901
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+          "callee": "_mock_minute_rows",
+          "lineNumber": 906
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+          "callee": "pl.DataFrame",
+          "lineNumber": 906
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+          "callee": "MagicMock",
+          "lineNumber": 909
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+          "callee": "MagicMock",
+          "lineNumber": 913
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+          "callee": "_healthy_svc",
+          "lineNumber": 916
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+          "callee": "kline_api.get_minute_batch",
+          "lineNumber": 919
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+          "callee": "sync_spy.call_args.kwargs.get",
+          "lineNumber": 923
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+          "callee": "len",
+          "lineNumber": 926
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_unhealthy_falls_back",
+          "callee": "MagicMock",
+          "lineNumber": 934
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_unhealthy_falls_back",
+          "callee": "_mock_minute_df",
+          "lineNumber": 934
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_unhealthy_falls_back",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 935
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_unhealthy_falls_back",
+          "callee": "MagicMock",
+          "lineNumber": 937
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_unhealthy_falls_back",
+          "callee": "set",
+          "lineNumber": 938
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_unhealthy_falls_back",
+          "callee": "_mock_minute_rows",
+          "lineNumber": 939
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_unhealthy_falls_back",
+          "callee": "MagicMock",
+          "lineNumber": 941
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_unhealthy_falls_back",
+          "callee": "MagicMock",
+          "lineNumber": 945
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_unhealthy_falls_back",
+          "callee": "_healthy_svc",
+          "lineNumber": 948
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_unhealthy_falls_back",
+          "callee": "kline_api.get_minute_batch",
+          "lineNumber": 951
+        },
+        {
+          "caller": "test_get_minute_batch_prefer_local_unhealthy_falls_back",
+          "callee": "sync_spy.call_args.kwargs.get",
+          "lineNumber": 954
+        },
+        {
+          "caller": "test_get_minute_batch_no_flag_unaffected_even_if_healthy",
+          "callee": "MagicMock",
+          "lineNumber": 962
+        },
+        {
+          "caller": "test_get_minute_batch_no_flag_unaffected_even_if_healthy",
+          "callee": "_mock_minute_df",
+          "lineNumber": 962
+        },
+        {
+          "caller": "test_get_minute_batch_no_flag_unaffected_even_if_healthy",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 963
+        },
+        {
+          "caller": "test_get_minute_batch_no_flag_unaffected_even_if_healthy",
+          "callee": "MagicMock",
+          "lineNumber": 965
+        },
+        {
+          "caller": "test_get_minute_batch_no_flag_unaffected_even_if_healthy",
+          "callee": "set",
+          "lineNumber": 966
+        },
+        {
+          "caller": "test_get_minute_batch_no_flag_unaffected_even_if_healthy",
+          "callee": "_mock_minute_rows",
+          "lineNumber": 967
+        },
+        {
+          "caller": "test_get_minute_batch_no_flag_unaffected_even_if_healthy",
+          "callee": "MagicMock",
+          "lineNumber": 969
+        },
+        {
+          "caller": "test_get_minute_batch_no_flag_unaffected_even_if_healthy",
+          "callee": "MagicMock",
+          "lineNumber": 973
+        },
+        {
+          "caller": "test_get_minute_batch_no_flag_unaffected_even_if_healthy",
+          "callee": "_healthy_svc",
+          "lineNumber": 976
+        },
+        {
+          "caller": "test_get_minute_batch_no_flag_unaffected_even_if_healthy",
+          "callee": "kline_api.get_minute_batch",
+          "lineNumber": 979
+        },
+        {
+          "caller": "test_minute_refresh_is_healthy_requires_recent_round",
+          "callee": "mr.MinuteRefreshService",
+          "lineNumber": 990
+        },
+        {
+          "caller": "test_minute_refresh_is_healthy_requires_recent_round",
+          "callee": "MagicMock",
+          "lineNumber": 990
+        },
+        {
+          "caller": "test_minute_refresh_is_healthy_requires_recent_round",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 992
+        },
+        {
+          "caller": "test_minute_refresh_is_healthy_requires_recent_round",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 993
+        },
+        {
+          "caller": "test_minute_refresh_is_healthy_requires_recent_round",
+          "callee": "svc.is_healthy",
+          "lineNumber": 995
+        },
+        {
+          "caller": "test_minute_refresh_is_healthy_requires_recent_round",
+          "callee": "MagicMock",
+          "lineNumber": 997
+        },
+        {
+          "caller": "test_minute_refresh_is_healthy_requires_recent_round",
+          "callee": "svc.is_healthy",
+          "lineNumber": 1000
+        },
+        {
+          "caller": "test_minute_refresh_is_healthy_requires_recent_round",
+          "callee": "time_mod.time",
+          "lineNumber": 1003
+        },
+        {
+          "caller": "test_minute_refresh_is_healthy_requires_recent_round",
+          "callee": "svc.is_healthy",
+          "lineNumber": 1004
+        },
+        {
+          "caller": "test_minute_refresh_is_healthy_requires_recent_round",
+          "callee": "time_mod.time",
+          "lineNumber": 1007
+        },
+        {
+          "caller": "test_minute_refresh_is_healthy_requires_recent_round",
+          "callee": "svc.is_healthy",
+          "lineNumber": 1008
+        },
+        {
+          "caller": "test_minute_refresh_is_healthy_requires_recent_round",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 1011
+        },
+        {
+          "caller": "test_minute_refresh_is_healthy_requires_recent_round",
+          "callee": "time_mod.time",
+          "lineNumber": 1012
+        },
+        {
+          "caller": "test_minute_refresh_is_healthy_requires_recent_round",
+          "callee": "svc.is_healthy",
+          "lineNumber": 1013
+        },
+        {
+          "caller": "test_minute_batch_compress_preference_default_and_toggle",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 1023
+        },
+        {
+          "caller": "test_minute_batch_compress_preference_default_and_toggle",
+          "callee": "prefs.get_minute_batch_compress",
+          "lineNumber": 1024
+        },
+        {
+          "caller": "test_minute_batch_compress_preference_default_and_toggle",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 1025
+        },
+        {
+          "caller": "test_minute_batch_compress_preference_default_and_toggle",
+          "callee": "prefs.get_minute_batch_compress",
+          "lineNumber": 1026
+        },
+        {
+          "caller": "_compress_mock_env",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "_compress_mock_env",
+          "callee": "MagicMock",
+          "lineNumber": 1036
+        },
+        {
+          "caller": "_compress_mock_env",
+          "callee": "_mock_minute_df",
+          "lineNumber": 1036
+        },
+        {
+          "caller": "_compress_mock_env",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 1037
+        },
+        {
+          "caller": "_compress_mock_env",
+          "callee": "MagicMock",
+          "lineNumber": 1039
+        },
+        {
+          "caller": "_compress_mock_env",
+          "callee": "set",
+          "lineNumber": 1040
+        },
+        {
+          "caller": "_compress_mock_env",
+          "callee": "_mock_minute_rows",
+          "lineNumber": 1041
+        },
+        {
+          "caller": "_compress_mock_env",
+          "callee": "MagicMock",
+          "lineNumber": 1043
+        },
+        {
+          "caller": "_compress_mock_env",
+          "callee": "MagicMock",
+          "lineNumber": 1047
+        },
+        {
+          "caller": "test_get_minute_batch_gzip_response_when_enabled",
+          "callee": "_compress_mock_env",
+          "lineNumber": 1060
+        },
+        {
+          "caller": "test_get_minute_batch_gzip_response_when_enabled",
+          "callee": "kline_api.get_minute_batch",
+          "lineNumber": 1061
+        },
+        {
+          "caller": "test_get_minute_batch_gzip_response_when_enabled",
+          "callee": "isinstance",
+          "lineNumber": 1064
+        },
+        {
+          "caller": "test_get_minute_batch_gzip_response_when_enabled",
+          "callee": "json_mod.loads",
+          "lineNumber": 1067
+        },
+        {
+          "caller": "test_get_minute_batch_gzip_response_when_enabled",
+          "callee": "gzip_mod.decompress",
+          "lineNumber": 1067
+        },
+        {
+          "caller": "test_get_minute_batch_gzip_response_when_enabled",
+          "callee": "len",
+          "lineNumber": 1069
+        },
+        {
+          "caller": "test_get_minute_batch_plain_when_disabled",
+          "callee": "_compress_mock_env",
+          "lineNumber": 1076
+        },
+        {
+          "caller": "test_get_minute_batch_plain_when_disabled",
+          "callee": "kline_api.get_minute_batch",
+          "lineNumber": 1077
+        },
+        {
+          "caller": "test_get_minute_batch_plain_when_disabled",
+          "callee": "isinstance",
+          "lineNumber": 1080
+        },
+        {
+          "caller": "test_get_minute_batch_plain_without_accept_encoding",
+          "callee": "_compress_mock_env",
+          "lineNumber": 1087
+        },
+        {
+          "caller": "test_get_minute_batch_plain_without_accept_encoding",
+          "callee": "kline_api.get_minute_batch",
+          "lineNumber": 1088
+        },
+        {
+          "caller": "test_get_minute_batch_plain_without_accept_encoding",
+          "callee": "isinstance",
+          "lineNumber": 1091
+        },
+        {
+          "caller": "_daily_mock_env",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 1102
+        },
+        {
+          "caller": "_daily_mock_env",
+          "callee": "pl.DataFrame",
+          "lineNumber": 1106
+        },
+        {
+          "caller": "_daily_mock_env",
+          "callee": "date",
+          "lineNumber": 1108
+        },
+        {
+          "caller": "_daily_mock_env",
+          "callee": "timedelta",
+          "lineNumber": 1108
+        },
+        {
+          "caller": "_daily_mock_env",
+          "callee": "range",
+          "lineNumber": 1108
+        },
+        {
+          "caller": "_daily_mock_env",
+          "callee": "MagicMock",
+          "lineNumber": 1112
+        },
+        {
+          "caller": "_daily_mock_env",
+          "callee": "MagicMock",
+          "lineNumber": 1116
+        },
+        {
+          "caller": "test_daily_batch_gzip_when_enabled",
+          "callee": "_daily_mock_env",
+          "lineNumber": 1129
+        },
+        {
+          "caller": "test_daily_batch_gzip_when_enabled",
+          "callee": "kline_api.get_daily_batch",
+          "lineNumber": 1130
+        },
+        {
+          "caller": "test_daily_batch_gzip_when_enabled",
+          "callee": "isinstance",
+          "lineNumber": 1131
+        },
+        {
+          "caller": "test_daily_batch_gzip_when_enabled",
+          "callee": "json_mod.loads",
+          "lineNumber": 1133
+        },
+        {
+          "caller": "test_daily_batch_gzip_when_enabled",
+          "callee": "gzip_mod.decompress",
+          "lineNumber": 1133
+        },
+        {
+          "caller": "test_daily_batch_gzip_when_enabled",
+          "callee": "len",
+          "lineNumber": 1134
+        },
+        {
+          "caller": "test_daily_batch_plain_when_disabled",
+          "callee": "_daily_mock_env",
+          "lineNumber": 1140
+        },
+        {
+          "caller": "test_daily_batch_plain_when_disabled",
+          "callee": "kline_api.get_daily_batch",
+          "lineNumber": 1141
+        },
+        {
+          "caller": "test_daily_batch_plain_when_disabled",
+          "callee": "isinstance",
+          "lineNumber": 1142
+        },
+        {
+          "caller": "test_daily_batch_independent_from_minute_switch",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 1152
+        },
+        {
+          "caller": "test_daily_batch_independent_from_minute_switch",
+          "callee": "_daily_mock_env",
+          "lineNumber": 1153
+        },
+        {
+          "caller": "test_daily_batch_independent_from_minute_switch",
+          "callee": "kline_api.get_daily_batch",
+          "lineNumber": 1154
+        },
+        {
+          "caller": "test_daily_batch_independent_from_minute_switch",
+          "callee": "isinstance",
+          "lineNumber": 1155
+        },
+        {
+          "caller": "test_daily_batch_independent_from_minute_switch",
+          "callee": "gzip_mod.decompress",
+          "lineNumber": 1155
+        },
+        {
+          "caller": "test_preferences_parallel_saves_do_not_lose_each_other",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 1167
+        },
+        {
+          "caller": "test_preferences_parallel_saves_do_not_lose_each_other",
+          "callee": "prefs._invalidate_cache",
+          "lineNumber": 1168
+        },
+        {
+          "caller": "test_preferences_parallel_saves_do_not_lose_each_other",
+          "callee": "prefs.save",
+          "lineNumber": 1169
+        },
+        {
+          "caller": "test_preferences_parallel_saves_do_not_lose_each_other",
+          "callee": "threading.Barrier",
+          "lineNumber": 1171
+        },
+        {
+          "caller": "write_key",
+          "callee": "barrier.wait",
+          "lineNumber": 1174
+        },
+        {
+          "caller": "write_key",
+          "callee": "prefs.save",
+          "lineNumber": 1175
+        },
+        {
+          "caller": "test_preferences_parallel_saves_do_not_lose_each_other",
+          "callee": "threading.Thread",
+          "lineNumber": 1177
+        },
+        {
+          "caller": "test_preferences_parallel_saves_do_not_lose_each_other",
+          "callee": "threading.Thread",
+          "lineNumber": 1178
+        },
+        {
+          "caller": "test_preferences_parallel_saves_do_not_lose_each_other",
+          "callee": "t1.start",
+          "lineNumber": 1179
+        },
+        {
+          "caller": "test_preferences_parallel_saves_do_not_lose_each_other",
+          "callee": "t2.start",
+          "lineNumber": 1179
+        },
+        {
+          "caller": "test_preferences_parallel_saves_do_not_lose_each_other",
+          "callee": "t1.join",
+          "lineNumber": 1179
+        },
+        {
+          "caller": "test_preferences_parallel_saves_do_not_lose_each_other",
+          "callee": "t2.join",
+          "lineNumber": 1179
+        },
+        {
+          "caller": "test_preferences_parallel_saves_do_not_lose_each_other",
+          "callee": "prefs.load",
+          "lineNumber": 1181
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 53,
+        "functionCount": 53,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/test_stocksdk_provider.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 335,
+      "nonEmptyLines": 267,
+      "functions": [
+        {
+          "name": "_patch_run_job",
+          "startLine": 20,
+          "endLine": 26,
+          "params": [
+            "monkeypatch",
+            "mapping"
+          ]
+        },
+        {
+          "name": "test_get_daily_normalizes_and_echoes_symbol",
+          "startLine": 29,
+          "endLine": 45,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_get_adj_factors_from_bridge_ratio",
+          "startLine": 48,
+          "endLine": 62,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_get_minute_datetime_is_beijing_wall_clock",
+          "startLine": 65,
+          "endLine": 80,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_get_realtime_normalizes_units_without_mutating_bridge_rows",
+          "startLine": 83,
+          "endLine": 96,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_get_instruments_flatten_compatible",
+          "startLine": 99,
+          "endLine": 108,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_empty_symbols_returns_empty",
+          "startLine": 111,
+          "endLine": 115,
+          "params": []
+        },
+        {
+          "name": "test_bridge_error_degrades_to_empty",
+          "startLine": 118,
+          "endLine": 125,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_bridge_uses_utf8_error_tolerant_subprocess",
+          "startLine": 128,
+          "endLine": 147,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "startLine": 150,
+          "endLine": 201,
+          "params": [
+            "tmp_path"
+          ]
+        },
+        {
+          "name": "test_plugin_discovered_in_loader",
+          "startLine": 204,
+          "endLine": 216,
+          "params": []
+        },
+        {
+          "name": "test_plugin_registered_when_available",
+          "startLine": 219,
+          "endLine": 233,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "_load_stocksdk_entry",
+          "startLine": 236,
+          "endLine": 244,
+          "params": [
+            "entry_ref"
+          ]
+        },
+        {
+          "name": "test_builtin_not_editable",
+          "startLine": 247,
+          "endLine": 256,
+          "params": []
+        },
+        {
+          "name": "_sdk_rows",
+          "startLine": 261,
+          "endLine": 270,
+          "params": [
+            "day",
+            "opens",
+            "closes"
+          ]
+        },
+        {
+          "name": "test_minute_degenerate_open_nulled",
+          "startLine": 273,
+          "endLine": 280,
+          "params": []
+        },
+        {
+          "name": "test_minute_real_open_kept",
+          "startLine": 283,
+          "endLine": 289,
+          "params": []
+        },
+        {
+          "name": "test_minute_short_day_open_kept",
+          "startLine": 292,
+          "endLine": 296,
+          "params": []
+        },
+        {
+          "name": "test_get_minute_splits_tail_into_single_day_jobs",
+          "startLine": 299,
+          "endLine": 319,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_get_minute_single_day_no_split",
+          "startLine": 322,
+          "endLine": 335,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_patch_run_job",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "test_get_daily_normalizes_and_echoes_symbol",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "test_get_adj_factors_from_bridge_ratio",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "test_get_minute_datetime_is_beijing_wall_clock",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "test_get_realtime_normalizes_units_without_mutating_bridge_rows",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "test_get_instruments_flatten_compatible",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "test_empty_symbols_returns_empty",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "test_bridge_error_degrades_to_empty",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "test_bridge_uses_utf8_error_tolerant_subprocess",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "line": 150,
+          "isDefault": false
+        },
+        {
+          "name": "test_plugin_discovered_in_loader",
+          "line": 204,
+          "isDefault": false
+        },
+        {
+          "name": "test_plugin_registered_when_available",
+          "line": 219,
+          "isDefault": false
+        },
+        {
+          "name": "_load_stocksdk_entry",
+          "line": 236,
+          "isDefault": false
+        },
+        {
+          "name": "test_builtin_not_editable",
+          "line": 247,
+          "isDefault": false
+        },
+        {
+          "name": "_sdk_rows",
+          "line": 261,
+          "isDefault": false
+        },
+        {
+          "name": "test_minute_degenerate_open_nulled",
+          "line": 273,
+          "isDefault": false
+        },
+        {
+          "name": "test_minute_real_open_kept",
+          "line": 283,
+          "isDefault": false
+        },
+        {
+          "name": "test_minute_short_day_open_kept",
+          "line": 292,
+          "isDefault": false
+        },
+        {
+          "name": "test_get_minute_splits_tail_into_single_day_jobs",
+          "line": 299,
+          "isDefault": false
+        },
+        {
+          "name": "test_get_minute_single_day_no_split",
+          "line": 322,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_patch_run_job",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_get_daily_normalizes_and_echoes_symbol",
+          "callee": "_patch_run_job",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_get_daily_normalizes_and_echoes_symbol",
+          "callee": "StockSDKProvider().get_daily",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_get_daily_normalizes_and_echoes_symbol",
+          "callee": "StockSDKProvider",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_get_daily_normalizes_and_echoes_symbol",
+          "callee": "dt.datetime",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_get_daily_normalizes_and_echoes_symbol",
+          "callee": "dt.datetime",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_get_daily_normalizes_and_echoes_symbol",
+          "callee": "df[\"symbol\"].unique().to_list",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_get_daily_normalizes_and_echoes_symbol",
+          "callee": "df[\"symbol\"].unique",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_get_adj_factors_from_bridge_ratio",
+          "callee": "_patch_run_job",
+          "lineNumber": 50
+        },
+        {
+          "caller": "test_get_adj_factors_from_bridge_ratio",
+          "callee": "StockSDKProvider().get_adj_factors",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_get_adj_factors_from_bridge_ratio",
+          "callee": "StockSDKProvider",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_get_adj_factors_from_bridge_ratio",
+          "callee": "abs",
+          "lineNumber": 62
+        },
+        {
+          "caller": "test_get_minute_datetime_is_beijing_wall_clock",
+          "callee": "_patch_run_job",
+          "lineNumber": 67
+        },
+        {
+          "caller": "test_get_minute_datetime_is_beijing_wall_clock",
+          "callee": "StockSDKProvider().get_minute",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_get_minute_datetime_is_beijing_wall_clock",
+          "callee": "StockSDKProvider",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_get_minute_datetime_is_beijing_wall_clock",
+          "callee": "set",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_get_realtime_normalizes_units_without_mutating_bridge_rows",
+          "callee": "_patch_run_job",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_get_realtime_normalizes_units_without_mutating_bridge_rows",
+          "callee": "StockSDKProvider().get_realtime",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_get_realtime_normalizes_units_without_mutating_bridge_rows",
+          "callee": "StockSDKProvider",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_get_realtime_normalizes_units_without_mutating_bridge_rows",
+          "callee": "abs",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_get_realtime_normalizes_units_without_mutating_bridge_rows",
+          "callee": "set",
+          "lineNumber": 96
+        },
+        {
+          "caller": "test_get_realtime_normalizes_units_without_mutating_bridge_rows",
+          "callee": "out[0].keys",
+          "lineNumber": 96
+        },
+        {
+          "caller": "test_get_instruments_flatten_compatible",
+          "callee": "_patch_run_job",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_get_instruments_flatten_compatible",
+          "callee": "StockSDKProvider().get_instruments",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_get_instruments_flatten_compatible",
+          "callee": "StockSDKProvider",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_get_instruments_flatten_compatible",
+          "callee": "StockSDKProvider().get_instruments",
+          "lineNumber": 108
+        },
+        {
+          "caller": "test_get_instruments_flatten_compatible",
+          "callee": "StockSDKProvider",
+          "lineNumber": 108
+        },
+        {
+          "caller": "test_empty_symbols_returns_empty",
+          "callee": "StockSDKProvider",
+          "lineNumber": 112
+        },
+        {
+          "caller": "test_empty_symbols_returns_empty",
+          "callee": "p.get_daily([], None, None).is_empty",
+          "lineNumber": 113
+        },
+        {
+          "caller": "test_empty_symbols_returns_empty",
+          "callee": "p.get_daily",
+          "lineNumber": 113
+        },
+        {
+          "caller": "test_empty_symbols_returns_empty",
+          "callee": "p.get_adj_factors([], None, None).is_empty",
+          "lineNumber": 114
+        },
+        {
+          "caller": "test_empty_symbols_returns_empty",
+          "callee": "p.get_adj_factors",
+          "lineNumber": 114
+        },
+        {
+          "caller": "test_empty_symbols_returns_empty",
+          "callee": "p.get_minute([], None, None).is_empty",
+          "lineNumber": 115
+        },
+        {
+          "caller": "test_empty_symbols_returns_empty",
+          "callee": "p.get_minute",
+          "lineNumber": 115
+        },
+        {
+          "caller": "boom",
+          "callee": "sp.bridge.StockSDKBridgeError",
+          "lineNumber": 120
+        },
+        {
+          "caller": "test_bridge_error_degrades_to_empty",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 122
+        },
+        {
+          "caller": "test_bridge_error_degrades_to_empty",
+          "callee": "StockSDKProvider().get_daily([\"600519.SH\"], None, None).is_empty",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_bridge_error_degrades_to_empty",
+          "callee": "StockSDKProvider().get_daily",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_bridge_error_degrades_to_empty",
+          "callee": "StockSDKProvider",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_bridge_error_degrades_to_empty",
+          "callee": "StockSDKProvider().get_realtime",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_bridge_error_degrades_to_empty",
+          "callee": "StockSDKProvider",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_bridge_error_degrades_to_empty",
+          "callee": "StockSDKProvider().get_instruments",
+          "lineNumber": 125
+        },
+        {
+          "caller": "test_bridge_error_degrades_to_empty",
+          "callee": "StockSDKProvider",
+          "lineNumber": 125
+        },
+        {
+          "caller": "test_bridge_uses_utf8_error_tolerant_subprocess",
+          "callee": "json.dumps",
+          "lineNumber": 133
+        },
+        {
+          "caller": "test_bridge_uses_utf8_error_tolerant_subprocess",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 136
+        },
+        {
+          "caller": "fake_run",
+          "callee": "calls.append",
+          "lineNumber": 139
+        },
+        {
+          "caller": "fake_run",
+          "callee": "Result",
+          "lineNumber": 140
+        },
+        {
+          "caller": "test_bridge_uses_utf8_error_tolerant_subprocess",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 142
+        },
+        {
+          "caller": "test_bridge_uses_utf8_error_tolerant_subprocess",
+          "callee": "bridge.run_job",
+          "lineNumber": 144
+        },
+        {
+          "caller": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "callee": "shutil.which",
+          "lineNumber": 151
+        },
+        {
+          "caller": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "callee": "AssertionError",
+          "lineNumber": 152
+        },
+        {
+          "caller": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "callee": "shutil.copyfile",
+          "lineNumber": 155
+        },
+        {
+          "caller": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "callee": "pkg_dir.mkdir",
+          "lineNumber": 158
+        },
+        {
+          "caller": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "callee": "(pkg_dir / \"package.json\").write_text",
+          "lineNumber": 159
+        },
+        {
+          "caller": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "callee": "json.dumps",
+          "lineNumber": 160
+        },
+        {
+          "caller": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "callee": "(pkg_dir / \"index.js\").write_text",
+          "lineNumber": 163
+        },
+        {
+          "caller": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "callee": "subprocess.run",
+          "lineNumber": 179
+        },
+        {
+          "caller": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "callee": "str",
+          "lineNumber": 180
+        },
+        {
+          "caller": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "callee": "json.dumps",
+          "lineNumber": 181
+        },
+        {
+          "caller": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "callee": "json.loads",
+          "lineNumber": 189
+        },
+        {
+          "caller": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "callee": "subprocess.run",
+          "lineNumber": 191
+        },
+        {
+          "caller": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "callee": "str",
+          "lineNumber": 192
+        },
+        {
+          "caller": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "callee": "json.dumps",
+          "lineNumber": 193
+        },
+        {
+          "caller": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+          "callee": "json.loads",
+          "lineNumber": 200
+        },
+        {
+          "caller": "test_plugin_discovered_in_loader",
+          "callee": "cs.list_plugins",
+          "lineNumber": 208
+        },
+        {
+          "caller": "test_plugin_discovered_in_loader",
+          "callee": "cs.is_builtin",
+          "lineNumber": 214
+        },
+        {
+          "caller": "test_plugin_discovered_in_loader",
+          "callee": "cs.list_sources",
+          "lineNumber": 216
+        },
+        {
+          "caller": "test_plugin_registered_when_available",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 225
+        },
+        {
+          "caller": "test_plugin_registered_when_available",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 226
+        },
+        {
+          "caller": "test_plugin_registered_when_available",
+          "callee": "loader._load_builtin_plugins",
+          "lineNumber": 227
+        },
+        {
+          "caller": "test_plugin_registered_when_available",
+          "callee": "cs.names",
+          "lineNumber": 229
+        },
+        {
+          "caller": "test_plugin_registered_when_available",
+          "callee": "cs.is_custom_provider",
+          "lineNumber": 230
+        },
+        {
+          "caller": "test_plugin_registered_when_available",
+          "callee": "cs.provider_has_dataset",
+          "lineNumber": 231
+        },
+        {
+          "caller": "test_plugin_registered_when_available",
+          "callee": "cs.provider_has_dataset",
+          "lineNumber": 232
+        },
+        {
+          "caller": "test_plugin_registered_when_available",
+          "callee": "cs.provider_has_dataset",
+          "lineNumber": 233
+        },
+        {
+          "caller": "_load_stocksdk_entry",
+          "callee": "ValueError",
+          "lineNumber": 244
+        },
+        {
+          "caller": "test_builtin_not_editable",
+          "callee": "cs.get_config_dict",
+          "lineNumber": 250
+        },
+        {
+          "caller": "test_builtin_not_editable",
+          "callee": "cs.save_config",
+          "lineNumber": 251
+        },
+        {
+          "caller": "test_builtin_not_editable",
+          "callee": "cs.delete_config",
+          "lineNumber": 251
+        },
+        {
+          "caller": "test_builtin_not_editable",
+          "callee": "fn",
+          "lineNumber": 253
+        },
+        {
+          "caller": "test_builtin_not_editable",
+          "callee": "AssertionError",
+          "lineNumber": 254
+        },
+        {
+          "caller": "_sdk_rows",
+          "callee": "enumerate",
+          "lineNumber": 265
+        },
+        {
+          "caller": "_sdk_rows",
+          "callee": "zip",
+          "lineNumber": 265
+        },
+        {
+          "caller": "_sdk_rows",
+          "callee": "datetime.fromisoformat",
+          "lineNumber": 266
+        },
+        {
+          "caller": "_sdk_rows",
+          "callee": "timedelta",
+          "lineNumber": 266
+        },
+        {
+          "caller": "_sdk_rows",
+          "callee": "int",
+          "lineNumber": 267
+        },
+        {
+          "caller": "_sdk_rows",
+          "callee": "dt.replace(tzinfo=UTC).timestamp",
+          "lineNumber": 267
+        },
+        {
+          "caller": "_sdk_rows",
+          "callee": "dt.replace",
+          "lineNumber": 267
+        },
+        {
+          "caller": "_sdk_rows",
+          "callee": "rows.append",
+          "lineNumber": 268
+        },
+        {
+          "caller": "_sdk_rows",
+          "callee": "max",
+          "lineNumber": 268
+        },
+        {
+          "caller": "_sdk_rows",
+          "callee": "min",
+          "lineNumber": 268
+        },
+        {
+          "caller": "test_minute_degenerate_open_nulled",
+          "callee": "_sdk_rows",
+          "lineNumber": 276
+        },
+        {
+          "caller": "test_minute_degenerate_open_nulled",
+          "callee": "range",
+          "lineNumber": 276
+        },
+        {
+          "caller": "test_minute_degenerate_open_nulled",
+          "callee": "StockSDKProvider._minute_df",
+          "lineNumber": 277
+        },
+        {
+          "caller": "test_minute_degenerate_open_nulled",
+          "callee": "df[\"open\"].null_count",
+          "lineNumber": 279
+        },
+        {
+          "caller": "test_minute_degenerate_open_nulled",
+          "callee": "df[\"close\"].null_count",
+          "lineNumber": 280
+        },
+        {
+          "caller": "test_minute_real_open_kept",
+          "callee": "_sdk_rows",
+          "lineNumber": 286
+        },
+        {
+          "caller": "test_minute_real_open_kept",
+          "callee": "range",
+          "lineNumber": 286
+        },
+        {
+          "caller": "test_minute_real_open_kept",
+          "callee": "range",
+          "lineNumber": 286
+        },
+        {
+          "caller": "test_minute_real_open_kept",
+          "callee": "StockSDKProvider._minute_df",
+          "lineNumber": 287
+        },
+        {
+          "caller": "test_minute_real_open_kept",
+          "callee": "df[\"open\"].null_count",
+          "lineNumber": 288
+        },
+        {
+          "caller": "test_minute_real_open_kept",
+          "callee": "df[\"open\"].n_unique",
+          "lineNumber": 289
+        },
+        {
+          "caller": "test_minute_short_day_open_kept",
+          "callee": "_sdk_rows",
+          "lineNumber": 294
+        },
+        {
+          "caller": "test_minute_short_day_open_kept",
+          "callee": "range",
+          "lineNumber": 294
+        },
+        {
+          "caller": "test_minute_short_day_open_kept",
+          "callee": "StockSDKProvider._minute_df",
+          "lineNumber": 295
+        },
+        {
+          "caller": "test_minute_short_day_open_kept",
+          "callee": "df[\"open\"].null_count",
+          "lineNumber": 296
+        },
+        {
+          "caller": "fake_run_job",
+          "callee": "jobs.append",
+          "lineNumber": 306
+        },
+        {
+          "caller": "test_get_minute_splits_tail_into_single_day_jobs",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 309
+        },
+        {
+          "caller": "test_get_minute_splits_tail_into_single_day_jobs",
+          "callee": "StockSDKProvider",
+          "lineNumber": 310
+        },
+        {
+          "caller": "test_get_minute_splits_tail_into_single_day_jobs",
+          "callee": "p.get_minute",
+          "lineNumber": 311
+        },
+        {
+          "caller": "test_get_minute_splits_tail_into_single_day_jobs",
+          "callee": "datetime",
+          "lineNumber": 311
+        },
+        {
+          "caller": "test_get_minute_splits_tail_into_single_day_jobs",
+          "callee": "datetime",
+          "lineNumber": 311
+        },
+        {
+          "caller": "fake_run_job",
+          "callee": "jobs.append",
+          "lineNumber": 329
+        },
+        {
+          "caller": "test_get_minute_single_day_no_split",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 332
+        },
+        {
+          "caller": "test_get_minute_single_day_no_split",
+          "callee": "StockSDKProvider().get_minute",
+          "lineNumber": 333
+        },
+        {
+          "caller": "test_get_minute_single_day_no_split",
+          "callee": "StockSDKProvider",
+          "lineNumber": 333
+        },
+        {
+          "caller": "test_get_minute_single_day_no_split",
+          "callee": "datetime",
+          "lineNumber": 333
+        },
+        {
+          "caller": "test_get_minute_single_day_no_split",
+          "callee": "datetime",
+          "lineNumber": 333
+        },
+        {
+          "caller": "test_get_minute_single_day_no_split",
+          "callee": "len",
+          "lineNumber": 334
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 20,
+        "functionCount": 20,
+        "classCount": 0
+      }
+    }
+  ]
+}

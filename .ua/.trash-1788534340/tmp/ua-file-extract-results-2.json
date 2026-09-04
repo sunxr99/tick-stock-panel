@@ -1,0 +1,7180 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 33,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 33,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 33,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "frontend/src/components/CandlestickChart.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 168,
+      "nonEmptyLines": 150,
+      "functions": [
+        {
+          "name": "fmtBigNum",
+          "startLine": 21,
+          "endLine": 26,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "CandlestickChart",
+          "startLine": 42,
+          "endLine": 168,
+          "params": [
+            "{ data, height = 480 }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "fmtBigNum",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "CandlestickChart",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fmtBigNum",
+          "callee": "(v / 1_000_000_000_000).toFixed",
+          "lineNumber": 22
+        },
+        {
+          "caller": "fmtBigNum",
+          "callee": "(v / 100_000_000).toFixed",
+          "lineNumber": 23
+        },
+        {
+          "caller": "fmtBigNum",
+          "callee": "(v / 10_000).toFixed",
+          "lineNumber": 24
+        },
+        {
+          "caller": "fmtBigNum",
+          "callee": "v.toFixed",
+          "lineNumber": 25
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "useRef",
+          "lineNumber": 43
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "useRef",
+          "lineNumber": 44
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "useRef",
+          "lineNumber": 45
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "useRef",
+          "lineNumber": 46
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "useChartTheme",
+          "lineNumber": 47
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "useRef",
+          "lineNumber": 48
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "useEffect",
+          "lineNumber": 52
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "chartRef.current?.applyOptions",
+          "lineNumber": 53
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "useEffect",
+          "lineNumber": 61
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "createChart",
+          "lineNumber": 65
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "chart.addCandlestickSeries",
+          "lineNumber": 94
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "chart.addHistogramSeries",
+          "lineNumber": 106
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "chart.priceScale('volume').applyOptions",
+          "lineNumber": 112
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "chart.priceScale",
+          "lineNumber": 112
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "chart.applyOptions",
+          "lineNumber": 121
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "ro.observe",
+          "lineNumber": 123
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "ro.disconnect",
+          "lineNumber": 126
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "chart.remove",
+          "lineNumber": 127
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "useEffect",
+          "lineNumber": 134
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "candleRef.current.setData",
+          "lineNumber": 137
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "data.map",
+          "lineNumber": 138
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "volRef.current.setData",
+          "lineNumber": 147
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "data.map",
+          "lineNumber": 148
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "chartRef.current.timeScale",
+          "lineNumber": 155
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "ts.setVisibleRange",
+          "lineNumber": 158
+        },
+        {
+          "caller": "CandlestickChart",
+          "callee": "ts.fitContent",
+          "lineNumber": 163
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/Layout.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 1074,
+      "nonEmptyLines": 1033,
+      "functions": [
+        {
+          "name": "ThemeToggle",
+          "startLine": 102,
+          "endLine": 114,
+          "params": []
+        },
+        {
+          "name": "fmtIndexValue",
+          "startLine": 116,
+          "endLine": 119,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "fmtIndexPct",
+          "startLine": 121,
+          "endLine": 124,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "indexPctClass",
+          "startLine": 126,
+          "endLine": 131,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "MonitorBadge",
+          "startLine": 134,
+          "endLine": 146,
+          "params": [
+            "{ active }"
+          ]
+        },
+        {
+          "name": "SidebarIndexQuotes",
+          "startLine": 148,
+          "endLine": 176,
+          "params": [
+            "{ rows, items }"
+          ]
+        },
+        {
+          "name": "capSquareCls",
+          "startLine": 183,
+          "endLine": 185,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "DataSourceHealthBadge",
+          "startLine": 187,
+          "endLine": 313,
+          "params": [
+            "{ matrix }"
+          ]
+        },
+        {
+          "name": "AIConfigBadge",
+          "startLine": 315,
+          "endLine": 338,
+          "params": [
+            "{ configured, model }"
+          ]
+        },
+        {
+          "name": "Layout",
+          "startLine": 344,
+          "endLine": 1074,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Layout",
+          "line": 344,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ThemeToggle",
+          "callee": "useTheme",
+          "lineNumber": 103
+        },
+        {
+          "caller": "ThemeToggle",
+          "callee": "toggleTheme",
+          "lineNumber": 107
+        },
+        {
+          "caller": "fmtIndexValue",
+          "callee": "Number.isNaN",
+          "lineNumber": 117
+        },
+        {
+          "caller": "fmtIndexValue",
+          "callee": "Number",
+          "lineNumber": 117
+        },
+        {
+          "caller": "fmtIndexValue",
+          "callee": "Number(v).toFixed",
+          "lineNumber": 118
+        },
+        {
+          "caller": "fmtIndexValue",
+          "callee": "Number",
+          "lineNumber": 118
+        },
+        {
+          "caller": "fmtIndexPct",
+          "callee": "Number.isNaN",
+          "lineNumber": 122
+        },
+        {
+          "caller": "fmtIndexPct",
+          "callee": "Number",
+          "lineNumber": 122
+        },
+        {
+          "caller": "fmtIndexPct",
+          "callee": "Number",
+          "lineNumber": 123
+        },
+        {
+          "caller": "fmtIndexPct",
+          "callee": "Number(v).toFixed",
+          "lineNumber": 123
+        },
+        {
+          "caller": "fmtIndexPct",
+          "callee": "Number",
+          "lineNumber": 123
+        },
+        {
+          "caller": "indexPctClass",
+          "callee": "Number.isNaN",
+          "lineNumber": 127
+        },
+        {
+          "caller": "indexPctClass",
+          "callee": "Number",
+          "lineNumber": 127
+        },
+        {
+          "caller": "indexPctClass",
+          "callee": "Number",
+          "lineNumber": 128
+        },
+        {
+          "caller": "MonitorBadge",
+          "callee": "useUnreadAlerts",
+          "lineNumber": 135
+        },
+        {
+          "caller": "MonitorBadge",
+          "callee": "(() => {\r\n    try { return localStorage.getItem('monitor_badge_enabled') !== '0' } catch { return true }\r\n  })",
+          "lineNumber": 137
+        },
+        {
+          "caller": "MonitorBadge",
+          "callee": "localStorage.getItem",
+          "lineNumber": 138
+        },
+        {
+          "caller": "SidebarIndexQuotes",
+          "callee": "(rows ?? []).map",
+          "lineNumber": 150
+        },
+        {
+          "caller": "SidebarIndexQuotes",
+          "callee": "items.map",
+          "lineNumber": 153
+        },
+        {
+          "caller": "SidebarIndexQuotes",
+          "callee": "quoteBySymbol.get",
+          "lineNumber": 154
+        },
+        {
+          "caller": "SidebarIndexQuotes",
+          "callee": "encodeURIComponent",
+          "lineNumber": 160
+        },
+        {
+          "caller": "SidebarIndexQuotes",
+          "callee": "indexPctClass",
+          "lineNumber": 166
+        },
+        {
+          "caller": "SidebarIndexQuotes",
+          "callee": "fmtIndexPct",
+          "lineNumber": 166
+        },
+        {
+          "caller": "SidebarIndexQuotes",
+          "callee": "indexPctClass",
+          "lineNumber": 168
+        },
+        {
+          "caller": "SidebarIndexQuotes",
+          "callee": "fmtIndexValue",
+          "lineNumber": 169
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "caps.filter",
+          "lineNumber": 190
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "caps.filter",
+          "lineNumber": 191
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "down.some",
+          "lineNumber": 195
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "useRef",
+          "lineNumber": 203
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "useRef",
+          "lineNumber": 204
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "useRef",
+          "lineNumber": 205
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "useState",
+          "lineNumber": 206
+        },
+        {
+          "caller": "openPop",
+          "callee": "window.clearTimeout",
+          "lineNumber": 208
+        },
+        {
+          "caller": "openPop",
+          "callee": "linkRef.current?.getBoundingClientRect",
+          "lineNumber": 209
+        },
+        {
+          "caller": "openPop",
+          "callee": "setPopPos",
+          "lineNumber": 210
+        },
+        {
+          "caller": "closePop",
+          "callee": "window.setTimeout",
+          "lineNumber": 213
+        },
+        {
+          "caller": "closePop",
+          "callee": "setPopPos",
+          "lineNumber": 213
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "useEffect",
+          "lineNumber": 215
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "window.clearTimeout",
+          "lineNumber": 215
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "useLayoutEffect",
+          "lineNumber": 216
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "Math.min",
+          "lineNumber": 222
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "Math.max",
+          "lineNumber": 222
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "setPopPos",
+          "lineNumber": 223
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "setPopPos",
+          "lineNumber": 236
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "Array.from",
+          "lineNumber": 244
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "caps.map",
+          "lineNumber": 247
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "capSquareCls",
+          "lineNumber": 248
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "window.clearTimeout",
+          "lineNumber": 262
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "caps.map",
+          "lineNumber": 283
+        },
+        {
+          "caller": "DataSourceHealthBadge",
+          "callee": "capSquareCls",
+          "lineNumber": 285
+        },
+        {
+          "caller": "Layout",
+          "callee": "useSettings",
+          "lineNumber": 346
+        },
+        {
+          "caller": "Layout",
+          "callee": "useCapabilityMatrix",
+          "lineNumber": 347
+        },
+        {
+          "caller": "Layout",
+          "callee": "useVersion",
+          "lineNumber": 348
+        },
+        {
+          "caller": "Layout",
+          "callee": "usePreferences",
+          "lineNumber": 349
+        },
+        {
+          "caller": "Layout",
+          "callee": "useQuery",
+          "lineNumber": 351
+        },
+        {
+          "caller": "Layout",
+          "callee": "useQuoteStatus",
+          "lineNumber": 357
+        },
+        {
+          "caller": "Layout",
+          "callee": "useQuery",
+          "lineNumber": 358
+        },
+        {
+          "caller": "Layout",
+          "callee": "useLocation",
+          "lineNumber": 365
+        },
+        {
+          "caller": "Layout",
+          "callee": "useQuery",
+          "lineNumber": 366
+        },
+        {
+          "caller": "Layout",
+          "callee": "useState",
+          "lineNumber": 374
+        },
+        {
+          "caller": "Layout",
+          "callee": "useState",
+          "lineNumber": 379
+        },
+        {
+          "caller": "Layout",
+          "callee": "localStorage.getItem",
+          "lineNumber": 381
+        },
+        {
+          "caller": "Layout",
+          "callee": "localStorage.getItem",
+          "lineNumber": 383
+        },
+        {
+          "caller": "Layout",
+          "callee": "useState",
+          "lineNumber": 386
+        },
+        {
+          "caller": "Layout",
+          "callee": "useIsDesktop",
+          "lineNumber": 387
+        },
+        {
+          "caller": "Layout",
+          "callee": "useState",
+          "lineNumber": 389
+        },
+        {
+          "caller": "Layout",
+          "callee": "useRef",
+          "lineNumber": 390
+        },
+        {
+          "caller": "setNavStatePersist",
+          "callee": "setNavState",
+          "lineNumber": 392
+        },
+        {
+          "caller": "setNavStatePersist",
+          "callee": "localStorage.setItem",
+          "lineNumber": 393
+        },
+        {
+          "caller": "Layout",
+          "callee": "useEffect",
+          "lineNumber": 398
+        },
+        {
+          "caller": "Layout",
+          "callee": "setDrawerOpen",
+          "lineNumber": 398
+        },
+        {
+          "caller": "Layout",
+          "callee": "useEffect",
+          "lineNumber": 399
+        },
+        {
+          "caller": "onKey",
+          "callee": "setDrawerOpen",
+          "lineNumber": 401
+        },
+        {
+          "caller": "Layout",
+          "callee": "window.addEventListener",
+          "lineNumber": 402
+        },
+        {
+          "caller": "Layout",
+          "callee": "window.removeEventListener",
+          "lineNumber": 403
+        },
+        {
+          "caller": "Layout",
+          "callee": "useQuery",
+          "lineNumber": 411
+        },
+        {
+          "caller": "Layout",
+          "callee": "useQuery",
+          "lineNumber": 417
+        },
+        {
+          "caller": "Layout",
+          "callee": "QK.watchlistEnriched",
+          "lineNumber": 418
+        },
+        {
+          "caller": "Layout",
+          "callee": "api.watchlistEnriched",
+          "lineNumber": 419
+        },
+        {
+          "caller": "Layout",
+          "callee": "useMemo",
+          "lineNumber": 423
+        },
+        {
+          "caller": "Layout",
+          "callee": "computeGroupPcts",
+          "lineNumber": 424
+        },
+        {
+          "caller": "Layout",
+          "callee": "(navEnriched?.rows ?? []).map",
+          "lineNumber": 426
+        },
+        {
+          "caller": "Layout",
+          "callee": "useQuery",
+          "lineNumber": 432
+        },
+        {
+          "caller": "Layout",
+          "callee": "api.pipelineJobs",
+          "lineNumber": 434
+        },
+        {
+          "caller": "Layout",
+          "callee": "useState",
+          "lineNumber": 442
+        },
+        {
+          "caller": "Layout",
+          "callee": "useRef",
+          "lineNumber": 443
+        },
+        {
+          "caller": "Layout",
+          "callee": "useEffect",
+          "lineNumber": 444
+        },
+        {
+          "caller": "Layout",
+          "callee": "setDataSyncJustDone",
+          "lineNumber": 447
+        },
+        {
+          "caller": "Layout",
+          "callee": "setTimeout",
+          "lineNumber": 448
+        },
+        {
+          "caller": "Layout",
+          "callee": "setDataSyncJustDone",
+          "lineNumber": 448
+        },
+        {
+          "caller": "Layout",
+          "callee": "clearTimeout",
+          "lineNumber": 450
+        },
+        {
+          "caller": "Layout",
+          "callee": "useQueryClient",
+          "lineNumber": 455
+        },
+        {
+          "caller": "Layout",
+          "callee": "useNavigate",
+          "lineNumber": 456
+        },
+        {
+          "caller": "Layout",
+          "callee": "useState",
+          "lineNumber": 460
+        },
+        {
+          "caller": "Layout",
+          "callee": "useState",
+          "lineNumber": 462
+        },
+        {
+          "caller": "Layout",
+          "callee": "useDialogBackdrop",
+          "lineNumber": 463
+        },
+        {
+          "caller": "Layout",
+          "callee": "setMiningQueuedWarning",
+          "lineNumber": 463
+        },
+        {
+          "caller": "toggleNavCollapsed",
+          "callee": "setNavStatePersist",
+          "lineNumber": 466
+        },
+        {
+          "caller": "Layout",
+          "callee": "useQuery",
+          "lineNumber": 470
+        },
+        {
+          "caller": "Layout",
+          "callee": "api.indexQuotes",
+          "lineNumber": 472
+        },
+        {
+          "caller": "Layout",
+          "callee": "sidebarIndexes.map",
+          "lineNumber": 472
+        },
+        {
+          "caller": "Layout",
+          "callee": "useQuoteStream",
+          "lineNumber": 478
+        },
+        {
+          "caller": "Layout",
+          "callee": "useQuoteStreamStatus",
+          "lineNumber": 480
+        },
+        {
+          "caller": "Layout",
+          "callee": "useToggleRealtimeQuotes",
+          "lineNumber": 482
+        },
+        {
+          "caller": "Layout",
+          "callee": "dataSources?.custom?.find",
+          "lineNumber": 495
+        },
+        {
+          "caller": "Layout",
+          "callee": "useQuery",
+          "lineNumber": 527
+        },
+        {
+          "caller": "Layout",
+          "callee": "api.alertsList",
+          "lineNumber": 529
+        },
+        {
+          "caller": "Layout",
+          "callee": "useEffect",
+          "lineNumber": 535
+        },
+        {
+          "caller": "Layout",
+          "callee": "setAlertTotal",
+          "lineNumber": 536
+        },
+        {
+          "caller": "Layout",
+          "callee": "(analysisMenus?.items ?? [])\r\n    .filter(m => m.visible)\r\n    .map",
+          "lineNumber": 541
+        },
+        {
+          "caller": "Layout",
+          "callee": "(analysisMenus?.items ?? [])\r\n    .filter",
+          "lineNumber": 541
+        },
+        {
+          "caller": "Layout",
+          "callee": "getFrontendExtensionNavigation().map",
+          "lineNumber": 544
+        },
+        {
+          "caller": "Layout",
+          "callee": "getFrontendExtensionNavigation",
+          "lineNumber": 544
+        },
+        {
+          "caller": "Layout",
+          "callee": "(() => {\r\n        const byTo = new Map(allNav.map(n => [n.to, n]))\r\n        const ordered = (savedOrder\r\n          .map(id => byTo.get(id) ?? byTo.get(`/analysis/${id}`))\r\n          .filter(Boolean)) as typeof allNav\r\n        const seen = new Set(ordered.map(n => n.to))\r\n        const merged = [...ordered]\r\n        for (const item of allNav) {\r\n          if (seen.has(item.to)) continue\r\n          // 未保存过排序的新条目: 内置页插回默认位置(排在已保存的默认前驱之后),\r\n          // 分析/扩展菜单仍追加到末尾\r\n          const defaultIndex = nav.findIndex(n => n.to === item.to)\r\n          let anchor = -1\r\n          if (defaultIndex > 0) {\r\n            for (let i = defaultIndex - 1; i >= 0 && anchor < 0; i -= 1) {\r\n              anchor = merged.findIndex(n => n.to === nav[i].to)\r\n            }\r\n          }\r\n          if (anchor >= 0) merged.splice(anchor + 1, 0, item)\r\n          else if (defaultIndex >= 0) merged.unshift(item)\r\n          else merged.push(item)\r\n        }\r\n        return merged\r\n      })",
+          "lineNumber": 555
+        },
+        {
+          "caller": "Layout",
+          "callee": "allNav.map",
+          "lineNumber": 556
+        },
+        {
+          "caller": "Layout",
+          "callee": "savedOrder\r\n          .map(id => byTo.get(id) ?? byTo.get(`/analysis/${id}`))\r\n          .filter",
+          "lineNumber": 557
+        },
+        {
+          "caller": "Layout",
+          "callee": "savedOrder\r\n          .map",
+          "lineNumber": 557
+        },
+        {
+          "caller": "Layout",
+          "callee": "byTo.get",
+          "lineNumber": 558
+        },
+        {
+          "caller": "Layout",
+          "callee": "byTo.get",
+          "lineNumber": 558
+        },
+        {
+          "caller": "Layout",
+          "callee": "ordered.map",
+          "lineNumber": 560
+        },
+        {
+          "caller": "Layout",
+          "callee": "seen.has",
+          "lineNumber": 563
+        },
+        {
+          "caller": "Layout",
+          "callee": "nav.findIndex",
+          "lineNumber": 566
+        },
+        {
+          "caller": "Layout",
+          "callee": "merged.findIndex",
+          "lineNumber": 570
+        },
+        {
+          "caller": "Layout",
+          "callee": "merged.splice",
+          "lineNumber": 573
+        },
+        {
+          "caller": "Layout",
+          "callee": "merged.unshift",
+          "lineNumber": 574
+        },
+        {
+          "caller": "Layout",
+          "callee": "merged.push",
+          "lineNumber": 575
+        },
+        {
+          "caller": "Layout",
+          "callee": "navItems.filter",
+          "lineNumber": 582
+        },
+        {
+          "caller": "Layout",
+          "callee": "hiddenIds.has",
+          "lineNumber": 582
+        },
+        {
+          "caller": "Layout",
+          "callee": "hiddenIds.has",
+          "lineNumber": 582
+        },
+        {
+          "caller": "Layout",
+          "callee": "n.to.replace",
+          "lineNumber": 582
+        },
+        {
+          "caller": "doEnableRealtime",
+          "callee": "toggleQuote.mutateAsync",
+          "lineNumber": 585
+        },
+        {
+          "caller": "doEnableRealtime",
+          "callee": "api.intradayRefresh().catch",
+          "lineNumber": 588
+        },
+        {
+          "caller": "doEnableRealtime",
+          "callee": "api.intradayRefresh",
+          "lineNumber": 588
+        },
+        {
+          "caller": "handleToggle",
+          "callee": "toggleQuote.mutateAsync",
+          "lineNumber": 595
+        },
+        {
+          "caller": "handleToggle",
+          "callee": "qc.fetchQuery",
+          "lineNumber": 598
+        },
+        {
+          "caller": "handleToggle",
+          "callee": "toast",
+          "lineNumber": 603
+        },
+        {
+          "caller": "handleToggle",
+          "callee": "qc.fetchQuery",
+          "lineNumber": 609
+        },
+        {
+          "caller": "handleToggle",
+          "callee": "(runs?.items ?? []).filter",
+          "lineNumber": 614
+        },
+        {
+          "caller": "handleToggle",
+          "callee": "setMiningQueuedWarning",
+          "lineNumber": 616
+        },
+        {
+          "caller": "handleToggle",
+          "callee": "doEnableRealtime",
+          "lineNumber": 622
+        },
+        {
+          "caller": "Layout",
+          "callee": "setDrawerOpen",
+          "lineNumber": 634
+        },
+        {
+          "caller": "Layout",
+          "callee": "window.clearTimeout",
+          "lineNumber": 642
+        },
+        {
+          "caller": "Layout",
+          "callee": "setOverlayPreview",
+          "lineNumber": 643
+        },
+        {
+          "caller": "Layout",
+          "callee": "setNavStatePersist",
+          "lineNumber": 644
+        },
+        {
+          "caller": "Layout",
+          "callee": "setDrawerOpen",
+          "lineNumber": 645
+        },
+        {
+          "caller": "Layout",
+          "callee": "window.clearTimeout",
+          "lineNumber": 649
+        },
+        {
+          "caller": "Layout",
+          "callee": "window.setTimeout",
+          "lineNumber": 650
+        },
+        {
+          "caller": "Layout",
+          "callee": "setOverlayPreview",
+          "lineNumber": 650
+        },
+        {
+          "caller": "Layout",
+          "callee": "window.clearTimeout",
+          "lineNumber": 652
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 653
+        },
+        {
+          "caller": "Layout",
+          "callee": "setOverlayPreview",
+          "lineNumber": 666
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 667
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 670
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 671
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 679
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 681
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 699
+        },
+        {
+          "caller": "Layout",
+          "callee": "setDrawerOpen",
+          "lineNumber": 712
+        },
+        {
+          "caller": "Layout",
+          "callee": "visibleNavItems.map",
+          "lineNumber": 735
+        },
+        {
+          "caller": "Layout",
+          "callee": "setWatchlistNavExpanded",
+          "lineNumber": 743
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 744
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 752
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 757
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 770
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 783
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 788
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 814
+        },
+        {
+          "caller": "Layout",
+          "callee": "(() => {\r\n                        const info = navGroupPcts['all']\r\n                        return info && info.pct != null ? (\r\n                          <span className={`ml-auto font-mono text-[10px] tabular-nums ${groupPctColor(info.pct)}`} title={groupPctTitle(info)}>\r\n                            {fmtPct(info.pct)}\r\n                          </span>\r\n                        ) : null\r\n                      })",
+          "lineNumber": 823
+        },
+        {
+          "caller": "Layout",
+          "callee": "groupPctColor",
+          "lineNumber": 826
+        },
+        {
+          "caller": "Layout",
+          "callee": "groupPctTitle",
+          "lineNumber": 826
+        },
+        {
+          "caller": "Layout",
+          "callee": "fmtPct",
+          "lineNumber": 827
+        },
+        {
+          "caller": "Layout",
+          "callee": "watchlistGroups.map",
+          "lineNumber": 832
+        },
+        {
+          "caller": "Layout",
+          "callee": "resolveWatchlistGroupColor",
+          "lineNumber": 833
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 841
+        },
+        {
+          "caller": "Layout",
+          "callee": "groupPctColor",
+          "lineNumber": 851
+        },
+        {
+          "caller": "Layout",
+          "callee": "groupPctTitle",
+          "lineNumber": 851
+        },
+        {
+          "caller": "Layout",
+          "callee": "fmtPct",
+          "lineNumber": 852
+        },
+        {
+          "caller": "Layout",
+          "callee": "handleToggle",
+          "lineNumber": 874
+        },
+        {
+          "caller": "Layout",
+          "callee": "navigate",
+          "lineNumber": 898
+        },
+        {
+          "caller": "Layout",
+          "callee": "navigate",
+          "lineNumber": 921
+        },
+        {
+          "caller": "Layout",
+          "callee": "handleToggle",
+          "lineNumber": 934
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 937
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 945
+        },
+        {
+          "caller": "Layout",
+          "callee": "setDismissFreeHint",
+          "lineNumber": 964
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 983
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 990
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 1002
+        },
+        {
+          "caller": "Layout",
+          "callee": "cn",
+          "lineNumber": 1007
+        },
+        {
+          "caller": "Layout",
+          "callee": "e.stopPropagation",
+          "lineNumber": 1057
+        },
+        {
+          "caller": "Layout",
+          "callee": "setMiningQueuedWarning",
+          "lineNumber": 1066
+        },
+        {
+          "caller": "Layout",
+          "callee": "setMiningQueuedWarning",
+          "lineNumber": 1067
+        },
+        {
+          "caller": "Layout",
+          "callee": "doEnableRealtime",
+          "lineNumber": 1067
+        }
+      ],
+      "metrics": {
+        "importCount": 22,
+        "exportCount": 1,
+        "functionCount": 10,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/Logo.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "Logo",
+          "startLine": 15,
+          "endLine": 59,
+          "params": [
+            "{ className, size = 32, style }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Logo",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/financials/AiAnalysisDialog.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 274,
+      "nonEmptyLines": 256,
+      "functions": [
+        {
+          "name": "getPhase",
+          "startLine": 27,
+          "endLine": 31,
+          "params": [
+            "task"
+          ]
+        },
+        {
+          "name": "getContent",
+          "startLine": 32,
+          "endLine": 34,
+          "params": [
+            "task"
+          ]
+        },
+        {
+          "name": "getMeta",
+          "startLine": 35,
+          "endLine": 40,
+          "params": [
+            "task"
+          ]
+        },
+        {
+          "name": "AiAnalysisDialog",
+          "startLine": 42,
+          "endLine": 261,
+          "params": [
+            "{ task, mode, minimized }"
+          ]
+        },
+        {
+          "name": "fmtRelative",
+          "startLine": 264,
+          "endLine": 274,
+          "params": [
+            "iso"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiAnalysisDialog",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "useRef",
+          "lineNumber": 43
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "useRef",
+          "lineNumber": 44
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "useState",
+          "lineNumber": 45
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "useState",
+          "lineNumber": 46
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "getPhase",
+          "lineNumber": 48
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "getContent",
+          "lineNumber": 49
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "getMeta",
+          "lineNumber": 50
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "useEffect",
+          "lineNumber": 56
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "useEffect",
+          "lineNumber": 63
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "setFocus",
+          "lineNumber": 64
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "useCallback",
+          "lineNumber": 67
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "startAnalysis",
+          "lineNumber": 70
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "focus.trim",
+          "lineNumber": 70
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "copyText",
+          "lineNumber": 75
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "toast",
+          "lineNumber": 77
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "setCopied",
+          "lineNumber": 80
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "toast",
+          "lineNumber": 81
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "setTimeout",
+          "lineNumber": 82
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "setCopied",
+          "lineNumber": 82
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "useDialogBackdrop",
+          "lineNumber": 85
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "fmtRelative",
+          "lineNumber": 132
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "error.includes",
+          "lineNumber": 187
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "setFocus",
+          "lineNumber": 222
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "handleStartNew",
+          "lineNumber": 223
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "cn",
+          "lineNumber": 226
+        },
+        {
+          "caller": "AiAnalysisDialog",
+          "callee": "focus.trim",
+          "lineNumber": 244
+        },
+        {
+          "caller": "fmtRelative",
+          "callee": "new Date(iso).getTime",
+          "lineNumber": 266
+        },
+        {
+          "caller": "fmtRelative",
+          "callee": "Date.now",
+          "lineNumber": 267
+        },
+        {
+          "caller": "fmtRelative",
+          "callee": "Math.floor",
+          "lineNumber": 269
+        },
+        {
+          "caller": "fmtRelative",
+          "callee": "Math.floor",
+          "lineNumber": 270
+        },
+        {
+          "caller": "fmtRelative",
+          "callee": "Math.floor",
+          "lineNumber": 271
+        },
+        {
+          "caller": "fmtRelative",
+          "callee": "new Date(iso).toLocaleDateString",
+          "lineNumber": 272
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/financials/AiAnalysisHost.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 13,
+      "functions": [
+        {
+          "name": "AiAnalysisHost",
+          "startLine": 10,
+          "endLine": 14,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiAnalysisHost",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AiAnalysisHost",
+          "callee": "useDialogTask",
+          "lineNumber": 11
+        },
+        {
+          "caller": "AiAnalysisHost",
+          "callee": "useDialogState",
+          "lineNumber": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/financials/AiReportBubble.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 254,
+      "nonEmptyLines": 232,
+      "functions": [
+        {
+          "name": "AiReportBubble",
+          "startLine": 26,
+          "endLine": 151,
+          "params": []
+        },
+        {
+          "name": "BubbleItem",
+          "startLine": 154,
+          "endLine": 229,
+          "params": [
+            "{ task, isLast, onPointerDown }"
+          ]
+        },
+        {
+          "name": "loadPos",
+          "startLine": 233,
+          "endLine": 251,
+          "params": []
+        },
+        {
+          "name": "savePos",
+          "startLine": 252,
+          "endLine": 254,
+          "params": [
+            "p"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AiReportBubble",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AiReportBubble",
+          "callee": "useActiveTasks",
+          "lineNumber": 27
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "useRef",
+          "lineNumber": 28
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "useState",
+          "lineNumber": 30
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "loadPos",
+          "lineNumber": 30
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "useRef",
+          "lineNumber": 33
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "useRef",
+          "lineNumber": 34
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "useRef",
+          "lineNumber": 35
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "useRef",
+          "lineNumber": 37
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "useCallback",
+          "lineNumber": 39
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "useCallback",
+          "lineNumber": 44
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "Math.max",
+          "lineNumber": 48
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "Math.min",
+          "lineNumber": 48
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "Math.max",
+          "lineNumber": 49
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "Math.min",
+          "lineNumber": 49
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "useCallback",
+          "lineNumber": 53
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "el.classList.add",
+          "lineNumber": 58
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "(e.currentTarget as HTMLElement).setPointerCapture",
+          "lineNumber": 59
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "useCallback",
+          "lineNumber": 62
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "Math.abs",
+          "lineNumber": 66
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "Math.abs",
+          "lineNumber": 66
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "clamp",
+          "lineNumber": 69
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "applyTransform",
+          "lineNumber": 70
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "useCallback",
+          "lineNumber": 73
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "el.classList.remove",
+          "lineNumber": 77
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "setPos",
+          "lineNumber": 80
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "transform.match",
+          "lineNumber": 82
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "parseFloat",
+          "lineNumber": 83
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "parseFloat",
+          "lineNumber": 83
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "savePos",
+          "lineNumber": 84
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "fn",
+          "lineNumber": 91
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "useEffect",
+          "lineNumber": 96
+        },
+        {
+          "caller": "onResize",
+          "callee": "setPos",
+          "lineNumber": 98
+        },
+        {
+          "caller": "onResize",
+          "callee": "clamp",
+          "lineNumber": 99
+        },
+        {
+          "caller": "onResize",
+          "callee": "applyTransform",
+          "lineNumber": 101
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "window.addEventListener",
+          "lineNumber": 107
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "window.removeEventListener",
+          "lineNumber": 108
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "useEffect",
+          "lineNumber": 112
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "applyTransform",
+          "lineNumber": 113
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "activeTasks.map",
+          "lineNumber": 135
+        },
+        {
+          "caller": "AiReportBubble",
+          "callee": "restoreDialog",
+          "lineNumber": 140
+        },
+        {
+          "caller": "loadPos",
+          "callee": "Math.max",
+          "lineNumber": 235
+        },
+        {
+          "caller": "loadPos",
+          "callee": "Math.max",
+          "lineNumber": 236
+        },
+        {
+          "caller": "loadPos",
+          "callee": "localStorage.getItem",
+          "lineNumber": 238
+        },
+        {
+          "caller": "loadPos",
+          "callee": "JSON.parse",
+          "lineNumber": 240
+        },
+        {
+          "caller": "loadPos",
+          "callee": "Math.max",
+          "lineNumber": 244
+        },
+        {
+          "caller": "loadPos",
+          "callee": "Math.min",
+          "lineNumber": 244
+        },
+        {
+          "caller": "loadPos",
+          "callee": "Math.max",
+          "lineNumber": 245
+        },
+        {
+          "caller": "loadPos",
+          "callee": "Math.min",
+          "lineNumber": 245
+        },
+        {
+          "caller": "savePos",
+          "callee": "localStorage.setItem",
+          "lineNumber": 253
+        },
+        {
+          "caller": "savePos",
+          "callee": "JSON.stringify",
+          "lineNumber": 253
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/financials/MarkdownRenderer.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 225,
+      "nonEmptyLines": 208,
+      "functions": [
+        {
+          "name": "renderInline",
+          "startLine": 22,
+          "endLine": 47,
+          "params": [
+            "text",
+            "keyBase"
+          ]
+        },
+        {
+          "name": "parseTable",
+          "startLine": 51,
+          "endLine": 69,
+          "params": [
+            "lines",
+            "start"
+          ]
+        },
+        {
+          "name": "MarkdownRenderer",
+          "startLine": 73,
+          "endLine": 225,
+          "params": [
+            "{ content }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MarkdownRenderer",
+          "line": 73,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "renderInline",
+          "callee": "re.exec",
+          "lineNumber": 29
+        },
+        {
+          "caller": "renderInline",
+          "callee": "nodes.push",
+          "lineNumber": 30
+        },
+        {
+          "caller": "renderInline",
+          "callee": "text.slice",
+          "lineNumber": 30
+        },
+        {
+          "caller": "renderInline",
+          "callee": "nodes.push",
+          "lineNumber": 33
+        },
+        {
+          "caller": "renderInline",
+          "callee": "nodes.push",
+          "lineNumber": 36
+        },
+        {
+          "caller": "renderInline",
+          "callee": "nodes.push",
+          "lineNumber": 45
+        },
+        {
+          "caller": "renderInline",
+          "callee": "text.slice",
+          "lineNumber": 45
+        },
+        {
+          "caller": "parseTable",
+          "callee": "lines[idx].trim().startsWith",
+          "lineNumber": 55
+        },
+        {
+          "caller": "parseTable",
+          "callee": "lines[idx].trim",
+          "lineNumber": 55
+        },
+        {
+          "caller": "parseTable",
+          "callee": "tableLines.push",
+          "lineNumber": 56
+        },
+        {
+          "caller": "parseTable",
+          "callee": "lines[idx].trim",
+          "lineNumber": 56
+        },
+        {
+          "caller": "parseTable",
+          "callee": "/^|[\\s-:|]+$/.test",
+          "lineNumber": 61
+        },
+        {
+          "caller": "parseTable",
+          "callee": "tableLines[1].split('|').every",
+          "lineNumber": 61
+        },
+        {
+          "caller": "parseTable",
+          "callee": "tableLines[1].split",
+          "lineNumber": 61
+        },
+        {
+          "caller": "parseTable",
+          "callee": "/^[\\s-:]*$/.test",
+          "lineNumber": 61
+        },
+        {
+          "caller": "parseRow",
+          "callee": "line.replace(/^\\|/, '').replace(/\\|$/, '').split('|').map",
+          "lineNumber": 65
+        },
+        {
+          "caller": "parseRow",
+          "callee": "line.replace(/^\\|/, '').replace(/\\|$/, '').split",
+          "lineNumber": 65
+        },
+        {
+          "caller": "parseRow",
+          "callee": "line.replace(/^\\|/, '').replace",
+          "lineNumber": 65
+        },
+        {
+          "caller": "parseRow",
+          "callee": "line.replace",
+          "lineNumber": 65
+        },
+        {
+          "caller": "parseRow",
+          "callee": "c.trim",
+          "lineNumber": 65
+        },
+        {
+          "caller": "parseTable",
+          "callee": "parseRow",
+          "lineNumber": 66
+        },
+        {
+          "caller": "parseTable",
+          "callee": "tableLines.slice(2).map",
+          "lineNumber": 67
+        },
+        {
+          "caller": "parseTable",
+          "callee": "tableLines.slice",
+          "lineNumber": 67
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "content.replace(/\\r\\n/g, '\\n').split",
+          "lineNumber": 74
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "content.replace",
+          "lineNumber": 74
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "line.trim",
+          "lineNumber": 81
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "/^(-{3,}|\\*{3,}|_{3,})$/.test",
+          "lineNumber": 90
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "blocks.push",
+          "lineNumber": 91
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "trimmed.match",
+          "lineNumber": 97
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "blocks.push",
+          "lineNumber": 103
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "renderInline",
+          "lineNumber": 105
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "trimmed.startsWith",
+          "lineNumber": 113
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "lines[i].trim().startsWith",
+          "lineNumber": 115
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "lines[i].trim",
+          "lineNumber": 115
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "quoteLines.push",
+          "lineNumber": 116
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "lines[i].trim().replace",
+          "lineNumber": 116
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "lines[i].trim",
+          "lineNumber": 116
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "blocks.push",
+          "lineNumber": 119
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "renderInline",
+          "lineNumber": 121
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "quoteLines.join",
+          "lineNumber": 121
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "trimmed.startsWith",
+          "lineNumber": 128
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "parseTable",
+          "lineNumber": 129
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "blocks.push",
+          "lineNumber": 133
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "Array.from({ length: ncol - 1 }).map",
+          "lineNumber": 139
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "Array.from",
+          "lineNumber": 139
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "header.map",
+          "lineNumber": 145
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "renderInline",
+          "lineNumber": 147
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "body.map",
+          "lineNumber": 153
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "row.map",
+          "lineNumber": 155
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "renderInline",
+          "lineNumber": 157
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "/^[-*]\\s+/.test",
+          "lineNumber": 172
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "/^\\s*[-*]\\s+/.test",
+          "lineNumber": 174
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "items.push",
+          "lineNumber": 175
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "lines[i].replace",
+          "lineNumber": 175
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "blocks.push",
+          "lineNumber": 178
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "items.map",
+          "lineNumber": 180
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "renderInline",
+          "lineNumber": 183
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "/^\\d+\\.\\s+/.test",
+          "lineNumber": 192
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "/^\\s*\\d+\\.\\s+/.test",
+          "lineNumber": 194
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "items.push",
+          "lineNumber": 195
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "lines[i].replace",
+          "lineNumber": 195
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "blocks.push",
+          "lineNumber": 198
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "items.map",
+          "lineNumber": 200
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "renderInline",
+          "lineNumber": 205
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "blocks.push",
+          "lineNumber": 214
+        },
+        {
+          "caller": "MarkdownRenderer",
+          "callee": "renderInline",
+          "lineNumber": 216
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/stock-analysis/StockAnalysisBubble.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 207,
+      "nonEmptyLines": 190,
+      "functions": [
+        {
+          "name": "StockAnalysisBubble",
+          "startLine": 17,
+          "endLine": 127,
+          "params": []
+        },
+        {
+          "name": "BubbleItem",
+          "startLine": 129,
+          "endLine": 184,
+          "params": [
+            "{ task, isLast, onPointerDown }"
+          ]
+        },
+        {
+          "name": "loadPos",
+          "startLine": 187,
+          "endLine": 204,
+          "params": []
+        },
+        {
+          "name": "savePos",
+          "startLine": 205,
+          "endLine": 207,
+          "params": [
+            "p"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "StockAnalysisBubble",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "useBubbleTasks",
+          "lineNumber": 18
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "useRef",
+          "lineNumber": 19
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "useState",
+          "lineNumber": 20
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "loadPos",
+          "lineNumber": 20
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "useRef",
+          "lineNumber": 22
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "useRef",
+          "lineNumber": 23
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "useRef",
+          "lineNumber": 24
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "useRef",
+          "lineNumber": 25
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "useCallback",
+          "lineNumber": 27
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "useCallback",
+          "lineNumber": 32
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "Math.max",
+          "lineNumber": 36
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "Math.min",
+          "lineNumber": 36
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "Math.max",
+          "lineNumber": 37
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "Math.min",
+          "lineNumber": 37
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "useCallback",
+          "lineNumber": 41
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "el.classList.add",
+          "lineNumber": 46
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "(e.currentTarget as HTMLElement).setPointerCapture",
+          "lineNumber": 47
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "useCallback",
+          "lineNumber": 50
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "Math.abs",
+          "lineNumber": 54
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "Math.abs",
+          "lineNumber": 54
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "clamp",
+          "lineNumber": 55
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "applyTransform",
+          "lineNumber": 56
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "useCallback",
+          "lineNumber": 59
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "el.classList.remove",
+          "lineNumber": 63
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "setPos",
+          "lineNumber": 65
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "transform.match",
+          "lineNumber": 67
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "parseFloat",
+          "lineNumber": 68
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "parseFloat",
+          "lineNumber": 68
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "savePos",
+          "lineNumber": 69
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "fn",
+          "lineNumber": 75
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "useEffect",
+          "lineNumber": 79
+        },
+        {
+          "caller": "onResize",
+          "callee": "setPos",
+          "lineNumber": 81
+        },
+        {
+          "caller": "onResize",
+          "callee": "clamp",
+          "lineNumber": 82
+        },
+        {
+          "caller": "onResize",
+          "callee": "applyTransform",
+          "lineNumber": 84
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "window.addEventListener",
+          "lineNumber": 90
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "window.removeEventListener",
+          "lineNumber": 91
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "useEffect",
+          "lineNumber": 94
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "applyTransform",
+          "lineNumber": 94
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "activeTasks.map",
+          "lineNumber": 115
+        },
+        {
+          "caller": "StockAnalysisBubble",
+          "callee": "restoreDialog",
+          "lineNumber": 120
+        },
+        {
+          "caller": "loadPos",
+          "callee": "Math.max",
+          "lineNumber": 189
+        },
+        {
+          "caller": "loadPos",
+          "callee": "Math.max",
+          "lineNumber": 190
+        },
+        {
+          "caller": "loadPos",
+          "callee": "localStorage.getItem",
+          "lineNumber": 192
+        },
+        {
+          "caller": "loadPos",
+          "callee": "JSON.parse",
+          "lineNumber": 194
+        },
+        {
+          "caller": "loadPos",
+          "callee": "Math.max",
+          "lineNumber": 197
+        },
+        {
+          "caller": "loadPos",
+          "callee": "Math.min",
+          "lineNumber": 197
+        },
+        {
+          "caller": "loadPos",
+          "callee": "Math.max",
+          "lineNumber": 198
+        },
+        {
+          "caller": "loadPos",
+          "callee": "Math.min",
+          "lineNumber": 198
+        },
+        {
+          "caller": "savePos",
+          "callee": "localStorage.setItem",
+          "lineNumber": 206
+        },
+        {
+          "caller": "savePos",
+          "callee": "JSON.stringify",
+          "lineNumber": 206
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/stock-analysis/StockAnalysisDialog.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 264,
+      "nonEmptyLines": 245,
+      "functions": [
+        {
+          "name": "getPhase",
+          "startLine": 30,
+          "endLine": 34,
+          "params": [
+            "task"
+          ]
+        },
+        {
+          "name": "getContent",
+          "startLine": 35,
+          "endLine": 37,
+          "params": [
+            "task"
+          ]
+        },
+        {
+          "name": "getMeta",
+          "startLine": 38,
+          "endLine": 42,
+          "params": [
+            "task"
+          ]
+        },
+        {
+          "name": "StockAnalysisDialog",
+          "startLine": 44,
+          "endLine": 252,
+          "params": [
+            "{ task, mode, minimized }"
+          ]
+        },
+        {
+          "name": "fmtRelative",
+          "startLine": 254,
+          "endLine": 264,
+          "params": [
+            "iso"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "StockAnalysisDialog",
+          "line": 44,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "useRef",
+          "lineNumber": 45
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "useState",
+          "lineNumber": 46
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "useState",
+          "lineNumber": 47
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "getPhase",
+          "lineNumber": 49
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "getContent",
+          "lineNumber": 50
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "getMeta",
+          "lineNumber": 51
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "useEffect",
+          "lineNumber": 56
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "useEffect",
+          "lineNumber": 62
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "setFocus",
+          "lineNumber": 63
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "useCallback",
+          "lineNumber": 66
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "startAnalysis",
+          "lineNumber": 69
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "focus.trim",
+          "lineNumber": 69
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "copyText",
+          "lineNumber": 74
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "toast",
+          "lineNumber": 76
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "setCopied",
+          "lineNumber": 79
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "toast",
+          "lineNumber": 80
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "setTimeout",
+          "lineNumber": 81
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "setCopied",
+          "lineNumber": 81
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "useDialogBackdrop",
+          "lineNumber": 84
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "fmtRelative",
+          "lineNumber": 131
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "error.includes",
+          "lineNumber": 180
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "setFocus",
+          "lineNumber": 213
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "handleStartNew",
+          "lineNumber": 214
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "cn",
+          "lineNumber": 217
+        },
+        {
+          "caller": "StockAnalysisDialog",
+          "callee": "focus.trim",
+          "lineNumber": 235
+        },
+        {
+          "caller": "fmtRelative",
+          "callee": "new Date(iso).getTime",
+          "lineNumber": 256
+        },
+        {
+          "caller": "fmtRelative",
+          "callee": "Date.now",
+          "lineNumber": 257
+        },
+        {
+          "caller": "fmtRelative",
+          "callee": "Math.floor",
+          "lineNumber": 259
+        },
+        {
+          "caller": "fmtRelative",
+          "callee": "Math.floor",
+          "lineNumber": 260
+        },
+        {
+          "caller": "fmtRelative",
+          "callee": "Math.floor",
+          "lineNumber": 261
+        },
+        {
+          "caller": "fmtRelative",
+          "callee": "new Date(iso).toLocaleDateString",
+          "lineNumber": 262
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/components/stock-analysis/StockAnalysisHost.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 11,
+      "functions": [
+        {
+          "name": "StockAnalysisHost",
+          "startLine": 8,
+          "endLine": 12,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "StockAnalysisHost",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "StockAnalysisHost",
+          "callee": "useDialogTask",
+          "lineNumber": 9
+        },
+        {
+          "caller": "StockAnalysisHost",
+          "callee": "useDialogState",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/custom/chanlun/extension.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 276,
+      "nonEmptyLines": 257,
+      "functions": [
+        {
+          "name": "buildOption",
+          "startLine": 43,
+          "endLine": 159,
+          "params": [
+            "data",
+            "ct"
+          ]
+        },
+        {
+          "name": "ChanlunFooter",
+          "startLine": 161,
+          "endLine": 260,
+          "params": [
+            "{\n  symbol,\n  name,\n  view,\n}"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "buildOption",
+          "callee": "data.bars.map",
+          "lineNumber": 44
+        },
+        {
+          "caller": "buildOption",
+          "callee": "data.bars.map",
+          "lineNumber": 46
+        },
+        {
+          "caller": "buildOption",
+          "callee": "data.bi\n    .filter((b) => dateSet.has(b.sdt) && dateSet.has(b.edt))\n    .map",
+          "lineNumber": 48
+        },
+        {
+          "caller": "buildOption",
+          "callee": "data.bi\n    .filter",
+          "lineNumber": 48
+        },
+        {
+          "caller": "buildOption",
+          "callee": "dateSet.has",
+          "lineNumber": 49
+        },
+        {
+          "caller": "buildOption",
+          "callee": "dateSet.has",
+          "lineNumber": 49
+        },
+        {
+          "caller": "buildOption",
+          "callee": "data.zs\n    .filter((z) => dateSet.has(z.sdt) && dateSet.has(z.edt))\n    .map",
+          "lineNumber": 55
+        },
+        {
+          "caller": "buildOption",
+          "callee": "data.zs\n    .filter",
+          "lineNumber": 55
+        },
+        {
+          "caller": "buildOption",
+          "callee": "dateSet.has",
+          "lineNumber": 56
+        },
+        {
+          "caller": "buildOption",
+          "callee": "dateSet.has",
+          "lineNumber": 56
+        },
+        {
+          "caller": "buildOption",
+          "callee": "data.buy_sell\n    .filter((p) => dateSet.has(p.dt) && TYPE_META[p.type])\n    .map",
+          "lineNumber": 62
+        },
+        {
+          "caller": "buildOption",
+          "callee": "data.buy_sell\n    .filter",
+          "lineNumber": 62
+        },
+        {
+          "caller": "buildOption",
+          "callee": "dateSet.has",
+          "lineNumber": 63
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "useChartTheme",
+          "lineNumber": 170
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "useRef",
+          "lineNumber": 171
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "useRef",
+          "lineNumber": 172
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "useState",
+          "lineNumber": 173
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "useState",
+          "lineNumber": 174
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "useState",
+          "lineNumber": 175
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "useEffect",
+          "lineNumber": 178
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "setData",
+          "lineNumber": 180
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "setError",
+          "lineNumber": 181
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "useEffect",
+          "lineNumber": 185
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "echarts.init",
+          "lineNumber": 187
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "chart.current.setOption",
+          "lineNumber": 188
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "buildOption",
+          "lineNumber": 188
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "chart.current?.dispose",
+          "lineNumber": 190
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "useEffect",
+          "lineNumber": 195
+        },
+        {
+          "caller": "onResize",
+          "callee": "chart.current?.resize",
+          "lineNumber": 196
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "window.addEventListener",
+          "lineNumber": 197
+        },
+        {
+          "caller": "ChanlunFooter",
+          "callee": "window.removeEventListener",
+          "lineNumber": 198
+        },
+        {
+          "caller": "load",
+          "callee": "setLoading",
+          "lineNumber": 204
+        },
+        {
+          "caller": "load",
+          "callee": "setError",
+          "lineNumber": 205
+        },
+        {
+          "caller": "load",
+          "callee": "fetch",
+          "lineNumber": 207
+        },
+        {
+          "caller": "load",
+          "callee": "encodeURIComponent",
+          "lineNumber": 207
+        },
+        {
+          "caller": "load",
+          "callee": "res.json",
+          "lineNumber": 208
+        },
+        {
+          "caller": "load",
+          "callee": "setData",
+          "lineNumber": 210
+        },
+        {
+          "caller": "load",
+          "callee": "setError",
+          "lineNumber": 212
+        },
+        {
+          "caller": "load",
+          "callee": "String",
+          "lineNumber": 212
+        },
+        {
+          "caller": "load",
+          "callee": "setLoading",
+          "lineNumber": 214
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/extensions/ExtensionBoundary.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 27,
+      "classes": [
+        {
+          "name": "ExtensionBoundary",
+          "startLine": 13,
+          "endLine": 33,
+          "methods": [
+            "getDerivedStateFromError",
+            "componentDidCatch",
+            "render"
+          ],
+          "properties": [
+            "state"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ExtensionBoundary",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "componentDidCatch",
+          "callee": "console.error",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "frontend/src/extensions/ExtensionSlot.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "ExtensionSlot",
+          "startLine": 11,
+          "endLine": 26,
+          "params": [
+            "{ name, context, compact }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ExtensionSlot",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ExtensionSlot",
+          "callee": "getFrontendSlotRegistrations",
+          "lineNumber": 12
+        },
+        {
+          "caller": "ExtensionSlot",
+          "callee": "registrations.map",
+          "lineNumber": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/extensions/bootstrap.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 8,
+      "functions": [
+        {
+          "name": "initializeFrontendExtensions",
+          "startLine": 8,
+          "endLine": 10,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "initializeFrontendExtensions",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "initializeFrontendExtensions",
+          "callee": "loadFrontendExtensions",
+          "lineNumber": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/extensions/registry.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 184,
+      "nonEmptyLines": 167,
+      "functions": [
+        {
+          "name": "assertMutable",
+          "startLine": 22,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "assertId",
+          "startLine": 26,
+          "endLine": 28,
+          "params": [
+            "value",
+            "label"
+          ]
+        },
+        {
+          "name": "registerExtension",
+          "startLine": 30,
+          "endLine": 90,
+          "params": [
+            "extension"
+          ]
+        },
+        {
+          "name": "loadFrontendExtensions",
+          "startLine": 92,
+          "endLine": 109,
+          "params": [
+            "modules"
+          ]
+        },
+        {
+          "name": "finalizeFrontendExtensions",
+          "startLine": 111,
+          "endLine": 142,
+          "params": [
+            "reservedPaths"
+          ]
+        },
+        {
+          "name": "removeExtension",
+          "startLine": 144,
+          "endLine": 155,
+          "params": [
+            "extensionId"
+          ]
+        },
+        {
+          "name": "coreRouteMatches",
+          "startLine": 157,
+          "endLine": 162,
+          "params": [
+            "pattern",
+            "path"
+          ]
+        },
+        {
+          "name": "getFrontendExtensionRoutes",
+          "startLine": 164,
+          "endLine": 167,
+          "params": []
+        },
+        {
+          "name": "getFrontendExtensionNavigation",
+          "startLine": 169,
+          "endLine": 174,
+          "params": []
+        },
+        {
+          "name": "getFrontendSlotRegistrations",
+          "startLine": 176,
+          "endLine": 180,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "getFrontendExtensionLoadErrors",
+          "startLine": 182,
+          "endLine": 184,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "loadFrontendExtensions",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "finalizeFrontendExtensions",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "getFrontendExtensionRoutes",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "getFrontendExtensionNavigation",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "getFrontendSlotRegistrations",
+          "line": 176,
+          "isDefault": false
+        },
+        {
+          "name": "getFrontendExtensionLoadErrors",
+          "line": 182,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "assertId",
+          "callee": "ID_RE.test",
+          "lineNumber": 27
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "assertMutable",
+          "lineNumber": 31
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "assertId",
+          "lineNumber": 32
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "extensions.has",
+          "lineNumber": 38
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "assertId",
+          "lineNumber": 43
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "route.path.startsWith",
+          "lineNumber": 44
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "routes.has",
+          "lineNumber": 47
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "localRouteIds.has",
+          "lineNumber": 47
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "[...routes.values()].find",
+          "lineNumber": 50
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "routes.values",
+          "lineNumber": 50
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "localRoutePaths.has",
+          "lineNumber": 51
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "localRouteIds.add",
+          "lineNumber": 54
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "localRoutePaths.add",
+          "lineNumber": 55
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "assertId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "navigation.has",
+          "lineNumber": 61
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "localNavigationIds.has",
+          "lineNumber": 61
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "localNavigationIds.add",
+          "lineNumber": 64
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "assertId",
+          "lineNumber": 69
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "localSlotIds.has",
+          "lineNumber": 71
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "(slots.get(slot.name) ?? []).some",
+          "lineNumber": 72
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "slots.get",
+          "lineNumber": 72
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "localSlotIds.add",
+          "lineNumber": 75
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "extensions.set",
+          "lineNumber": 78
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "routes.set",
+          "lineNumber": 80
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "navigation.set",
+          "lineNumber": 83
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "slots.get",
+          "lineNumber": 86
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "items.push",
+          "lineNumber": 87
+        },
+        {
+          "caller": "registerExtension",
+          "callee": "slots.set",
+          "lineNumber": 88
+        },
+        {
+          "caller": "loadFrontendExtensions",
+          "callee": "Object.keys(modules).sort",
+          "lineNumber": 95
+        },
+        {
+          "caller": "loadFrontendExtensions",
+          "callee": "Object.keys",
+          "lineNumber": 95
+        },
+        {
+          "caller": "loadFrontendExtensions",
+          "callee": "modules[source]",
+          "lineNumber": 98
+        },
+        {
+          "caller": "loadFrontendExtensions",
+          "callee": "registerExtension",
+          "lineNumber": 100
+        },
+        {
+          "caller": "loadFrontendExtensions",
+          "callee": "loadErrors.push",
+          "lineNumber": 102
+        },
+        {
+          "caller": "loadFrontendExtensions",
+          "callee": "String",
+          "lineNumber": 105
+        },
+        {
+          "caller": "finalizeFrontendExtensions",
+          "callee": "extensions.values",
+          "lineNumber": 113
+        },
+        {
+          "caller": "finalizeFrontendExtensions",
+          "callee": "route.path.includes",
+          "lineNumber": 116
+        },
+        {
+          "caller": "finalizeFrontendExtensions",
+          "callee": "route.path.includes",
+          "lineNumber": 116
+        },
+        {
+          "caller": "finalizeFrontendExtensions",
+          "callee": "[...reservedPaths].some",
+          "lineNumber": 119
+        },
+        {
+          "caller": "finalizeFrontendExtensions",
+          "callee": "coreRouteMatches",
+          "lineNumber": 119
+        },
+        {
+          "caller": "finalizeFrontendExtensions",
+          "callee": "(extension.routes ?? []).map",
+          "lineNumber": 123
+        },
+        {
+          "caller": "finalizeFrontendExtensions",
+          "callee": "ownRouteIds.has",
+          "lineNumber": 125
+        },
+        {
+          "caller": "finalizeFrontendExtensions",
+          "callee": "loadErrors.push",
+          "lineNumber": 130
+        },
+        {
+          "caller": "finalizeFrontendExtensions",
+          "callee": "String",
+          "lineNumber": 133
+        },
+        {
+          "caller": "finalizeFrontendExtensions",
+          "callee": "removeExtension",
+          "lineNumber": 135
+        },
+        {
+          "caller": "finalizeFrontendExtensions",
+          "callee": "slots.values",
+          "lineNumber": 138
+        },
+        {
+          "caller": "finalizeFrontendExtensions",
+          "callee": "items.sort",
+          "lineNumber": 139
+        },
+        {
+          "caller": "finalizeFrontendExtensions",
+          "callee": "a.id.localeCompare",
+          "lineNumber": 139
+        },
+        {
+          "caller": "removeExtension",
+          "callee": "extensions.delete",
+          "lineNumber": 145
+        },
+        {
+          "caller": "removeExtension",
+          "callee": "routes.delete",
+          "lineNumber": 147
+        },
+        {
+          "caller": "removeExtension",
+          "callee": "navigation.delete",
+          "lineNumber": 150
+        },
+        {
+          "caller": "removeExtension",
+          "callee": "slots.set",
+          "lineNumber": 153
+        },
+        {
+          "caller": "removeExtension",
+          "callee": "items.filter",
+          "lineNumber": 153
+        },
+        {
+          "caller": "coreRouteMatches",
+          "callee": "pattern.split('/').filter",
+          "lineNumber": 158
+        },
+        {
+          "caller": "coreRouteMatches",
+          "callee": "pattern.split",
+          "lineNumber": 158
+        },
+        {
+          "caller": "coreRouteMatches",
+          "callee": "path.split('/').filter",
+          "lineNumber": 159
+        },
+        {
+          "caller": "coreRouteMatches",
+          "callee": "path.split",
+          "lineNumber": 159
+        },
+        {
+          "caller": "coreRouteMatches",
+          "callee": "patternParts.every",
+          "lineNumber": 161
+        },
+        {
+          "caller": "coreRouteMatches",
+          "callee": "part.startsWith",
+          "lineNumber": 161
+        },
+        {
+          "caller": "getFrontendExtensionRoutes",
+          "callee": "[...routes.values()].sort",
+          "lineNumber": 166
+        },
+        {
+          "caller": "getFrontendExtensionRoutes",
+          "callee": "routes.values",
+          "lineNumber": 166
+        },
+        {
+          "caller": "getFrontendExtensionRoutes",
+          "callee": "a.path.localeCompare",
+          "lineNumber": 166
+        },
+        {
+          "caller": "getFrontendExtensionNavigation",
+          "callee": "[...navigation.values()]\r\n    .map(item => ({ ...item, route: routes.get(item.routeId)! }))\r\n    .sort",
+          "lineNumber": 171
+        },
+        {
+          "caller": "getFrontendExtensionNavigation",
+          "callee": "[...navigation.values()]\r\n    .map",
+          "lineNumber": 171
+        },
+        {
+          "caller": "getFrontendExtensionNavigation",
+          "callee": "navigation.values",
+          "lineNumber": 171
+        },
+        {
+          "caller": "getFrontendExtensionNavigation",
+          "callee": "routes.get",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getFrontendExtensionNavigation",
+          "callee": "a.id.localeCompare",
+          "lineNumber": 173
+        },
+        {
+          "caller": "getFrontendSlotRegistrations",
+          "callee": "slots.get",
+          "lineNumber": 179
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/extensions/types.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 65,
+      "exports": [
+        {
+          "name": "FRONTEND_EXTENSION_API_VERSION",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/lib/aiReportStore.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 336,
+      "nonEmptyLines": 301,
+      "functions": [
+        {
+          "name": "emit",
+          "startLine": 59,
+          "endLine": 59,
+          "params": []
+        },
+        {
+          "name": "subscribe",
+          "startLine": 61,
+          "endLine": 64,
+          "params": [
+            "fn"
+          ]
+        },
+        {
+          "name": "normalizeAiError",
+          "startLine": 66,
+          "endLine": 70,
+          "params": [
+            "msg"
+          ]
+        },
+        {
+          "name": "rebuildSnap",
+          "startLine": 79,
+          "endLine": 83,
+          "params": []
+        },
+        {
+          "name": "getActiveSnapshot",
+          "startLine": 85,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "getHistorySnapshot",
+          "startLine": 86,
+          "endLine": 86,
+          "params": []
+        },
+        {
+          "name": "getDialogSnapshot",
+          "startLine": 87,
+          "endLine": 87,
+          "params": []
+        },
+        {
+          "name": "patchTask",
+          "startLine": 89,
+          "endLine": 101,
+          "params": [
+            "id",
+            "patch"
+          ]
+        },
+        {
+          "name": "useBubbleTasks",
+          "startLine": 105,
+          "endLine": 123,
+          "params": []
+        },
+        {
+          "name": "useHistoryReports",
+          "startLine": 128,
+          "endLine": 131,
+          "params": []
+        },
+        {
+          "name": "useDialogState",
+          "startLine": 133,
+          "endLine": 135,
+          "params": []
+        },
+        {
+          "name": "useDialogTask",
+          "startLine": 138,
+          "endLine": 148,
+          "params": []
+        },
+        {
+          "name": "loadHistory",
+          "startLine": 153,
+          "endLine": 163,
+          "params": []
+        },
+        {
+          "name": "findLatestHistoryReport",
+          "startLine": 170,
+          "endLine": 174,
+          "params": [
+            "symbol"
+          ]
+        },
+        {
+          "name": "startAnalysis",
+          "startLine": 180,
+          "endLine": 211,
+          "params": [
+            "symbol",
+            "name",
+            "focus"
+          ]
+        },
+        {
+          "name": "runStream",
+          "startLine": 213,
+          "endLine": 270,
+          "params": [
+            "id",
+            "symbol",
+            "focus"
+          ]
+        },
+        {
+          "name": "openDialog",
+          "startLine": 273,
+          "endLine": 278,
+          "params": [
+            "taskId"
+          ]
+        },
+        {
+          "name": "minimizeDialog",
+          "startLine": 281,
+          "endLine": 285,
+          "params": []
+        },
+        {
+          "name": "closeDialog",
+          "startLine": 290,
+          "endLine": 295,
+          "params": []
+        },
+        {
+          "name": "restoreDialog",
+          "startLine": 301,
+          "endLine": 310,
+          "params": [
+            "taskId"
+          ]
+        },
+        {
+          "name": "retryAnalysis",
+          "startLine": 313,
+          "endLine": 315,
+          "params": [
+            "task"
+          ]
+        },
+        {
+          "name": "deleteReport",
+          "startLine": 318,
+          "endLine": 327,
+          "params": [
+            "reportId"
+          ]
+        },
+        {
+          "name": "openHistoryReport",
+          "startLine": 330,
+          "endLine": 335,
+          "params": [
+            "reportId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "useBubbleTasks",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "useActiveTasks",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "useHistoryReports",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "useDialogState",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "useDialogTask",
+          "line": 138,
+          "isDefault": false
+        },
+        {
+          "name": "loadHistory",
+          "line": 153,
+          "isDefault": false
+        },
+        {
+          "name": "findLatestHistoryReport",
+          "line": 170,
+          "isDefault": false
+        },
+        {
+          "name": "startAnalysis",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "openDialog",
+          "line": 273,
+          "isDefault": false
+        },
+        {
+          "name": "minimizeDialog",
+          "line": 281,
+          "isDefault": false
+        },
+        {
+          "name": "closeDialog",
+          "line": 290,
+          "isDefault": false
+        },
+        {
+          "name": "restoreDialog",
+          "line": 301,
+          "isDefault": false
+        },
+        {
+          "name": "retryAnalysis",
+          "line": 313,
+          "isDefault": false
+        },
+        {
+          "name": "deleteReport",
+          "line": 318,
+          "isDefault": false
+        },
+        {
+          "name": "openHistoryReport",
+          "line": 330,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "emit",
+          "callee": "listeners.forEach",
+          "lineNumber": 59
+        },
+        {
+          "caller": "emit",
+          "callee": "fn",
+          "lineNumber": 59
+        },
+        {
+          "caller": "subscribe",
+          "callee": "listeners.add",
+          "lineNumber": 62
+        },
+        {
+          "caller": "subscribe",
+          "callee": "listeners.delete",
+          "lineNumber": 63
+        },
+        {
+          "caller": "normalizeAiError",
+          "callee": "msg.includes",
+          "lineNumber": 67
+        },
+        {
+          "caller": "normalizeAiError",
+          "callee": "msg.includes",
+          "lineNumber": 67
+        },
+        {
+          "caller": "patchTask",
+          "callee": "activeTasks.map",
+          "lineNumber": 90
+        },
+        {
+          "caller": "patchTask",
+          "callee": "Date.now",
+          "lineNumber": 95
+        },
+        {
+          "caller": "patchTask",
+          "callee": "rebuildSnap",
+          "lineNumber": 99
+        },
+        {
+          "caller": "patchTask",
+          "callee": "emit",
+          "lineNumber": 100
+        },
+        {
+          "caller": "useBubbleTasks",
+          "callee": "useSyncExternalStore",
+          "lineNumber": 106
+        },
+        {
+          "caller": "useBubbleTasks",
+          "callee": "useSyncExternalStore",
+          "lineNumber": 109
+        },
+        {
+          "caller": "useBubbleTasks",
+          "callee": "all.filter",
+          "lineNumber": 111
+        },
+        {
+          "caller": "useHistoryReports",
+          "callee": "useSyncExternalStore",
+          "lineNumber": 129
+        },
+        {
+          "caller": "useDialogState",
+          "callee": "useSyncExternalStore",
+          "lineNumber": 134
+        },
+        {
+          "caller": "useDialogTask",
+          "callee": "useDialogState",
+          "lineNumber": 139
+        },
+        {
+          "caller": "useDialogTask",
+          "callee": "useSyncExternalStore",
+          "lineNumber": 140
+        },
+        {
+          "caller": "useDialogTask",
+          "callee": "useSyncExternalStore",
+          "lineNumber": 141
+        },
+        {
+          "caller": "useDialogTask",
+          "callee": "ds.taskId.startsWith",
+          "lineNumber": 143
+        },
+        {
+          "caller": "useDialogTask",
+          "callee": "ds.taskId.slice",
+          "lineNumber": 144
+        },
+        {
+          "caller": "useDialogTask",
+          "callee": "hist.find",
+          "lineNumber": 145
+        },
+        {
+          "caller": "useDialogTask",
+          "callee": "active.find",
+          "lineNumber": 147
+        },
+        {
+          "caller": "loadHistory",
+          "callee": "api.financialReportsList",
+          "lineNumber": 155
+        },
+        {
+          "caller": "loadHistory",
+          "callee": "rebuildSnap",
+          "lineNumber": 158
+        },
+        {
+          "caller": "loadHistory",
+          "callee": "emit",
+          "lineNumber": 159
+        },
+        {
+          "caller": "findLatestHistoryReport",
+          "callee": "loadHistory",
+          "lineNumber": 171
+        },
+        {
+          "caller": "findLatestHistoryReport",
+          "callee": "history.find",
+          "lineNumber": 173
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "activeTasks.find",
+          "lineNumber": 182
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "rebuildSnap",
+          "lineNumber": 186
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "emit",
+          "lineNumber": 187
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "activeTasks.filter",
+          "lineNumber": 191
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "Date.now",
+          "lineNumber": 196
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 196
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "Math.random().toString",
+          "lineNumber": 196
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "Math.random",
+          "lineNumber": 196
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "Date.now",
+          "lineNumber": 200
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "rebuildSnap",
+          "lineNumber": 205
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "emit",
+          "lineNumber": 206
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "runStream",
+          "lineNumber": 209
+        },
+        {
+          "caller": "runStream",
+          "callee": "api.financialAnalyzeStream",
+          "lineNumber": 216
+        },
+        {
+          "caller": "runStream",
+          "callee": "activeTasks.find",
+          "lineNumber": 218
+        },
+        {
+          "caller": "runStream",
+          "callee": "patchTask",
+          "lineNumber": 222
+        },
+        {
+          "caller": "runStream",
+          "callee": "patchTask",
+          "lineNumber": 225
+        },
+        {
+          "caller": "runStream",
+          "callee": "patchTask",
+          "lineNumber": 226
+        },
+        {
+          "caller": "runStream",
+          "callee": "patchTask",
+          "lineNumber": 229
+        },
+        {
+          "caller": "runStream",
+          "callee": "patchTask",
+          "lineNumber": 233
+        },
+        {
+          "caller": "runStream",
+          "callee": "activeTasks.find",
+          "lineNumber": 238
+        },
+        {
+          "caller": "runStream",
+          "callee": "api.financialReportSave",
+          "lineNumber": 241
+        },
+        {
+          "caller": "runStream",
+          "callee": "patchTask",
+          "lineNumber": 250
+        },
+        {
+          "caller": "runStream",
+          "callee": "history.filter",
+          "lineNumber": 252
+        },
+        {
+          "caller": "runStream",
+          "callee": "rebuildSnap",
+          "lineNumber": 254
+        },
+        {
+          "caller": "runStream",
+          "callee": "emit",
+          "lineNumber": 255
+        },
+        {
+          "caller": "runStream",
+          "callee": "String",
+          "lineNumber": 264
+        },
+        {
+          "caller": "runStream",
+          "callee": "patchTask",
+          "lineNumber": 265
+        },
+        {
+          "caller": "runStream",
+          "callee": "normalizeAiError",
+          "lineNumber": 267
+        },
+        {
+          "caller": "openDialog",
+          "callee": "rebuildSnap",
+          "lineNumber": 276
+        },
+        {
+          "caller": "openDialog",
+          "callee": "emit",
+          "lineNumber": 277
+        },
+        {
+          "caller": "minimizeDialog",
+          "callee": "rebuildSnap",
+          "lineNumber": 283
+        },
+        {
+          "caller": "minimizeDialog",
+          "callee": "emit",
+          "lineNumber": 284
+        },
+        {
+          "caller": "closeDialog",
+          "callee": "rebuildSnap",
+          "lineNumber": 293
+        },
+        {
+          "caller": "closeDialog",
+          "callee": "emit",
+          "lineNumber": 294
+        },
+        {
+          "caller": "restoreDialog",
+          "callee": "activeTasks.find",
+          "lineNumber": 302
+        },
+        {
+          "caller": "restoreDialog",
+          "callee": "patchTask",
+          "lineNumber": 304
+        },
+        {
+          "caller": "restoreDialog",
+          "callee": "rebuildSnap",
+          "lineNumber": 308
+        },
+        {
+          "caller": "restoreDialog",
+          "callee": "emit",
+          "lineNumber": 309
+        },
+        {
+          "caller": "retryAnalysis",
+          "callee": "startAnalysis",
+          "lineNumber": 314
+        },
+        {
+          "caller": "deleteReport",
+          "callee": "api.financialReportDelete",
+          "lineNumber": 320
+        },
+        {
+          "caller": "deleteReport",
+          "callee": "history.filter",
+          "lineNumber": 321
+        },
+        {
+          "caller": "deleteReport",
+          "callee": "rebuildSnap",
+          "lineNumber": 322
+        },
+        {
+          "caller": "deleteReport",
+          "callee": "emit",
+          "lineNumber": 323
+        },
+        {
+          "caller": "openHistoryReport",
+          "callee": "rebuildSnap",
+          "lineNumber": 333
+        },
+        {
+          "caller": "openHistoryReport",
+          "callee": "emit",
+          "lineNumber": 334
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 15,
+        "functionCount": 23,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/lib/clipboard.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "copyText",
+          "startLine": 1,
+          "endLine": 30,
+          "params": [
+            "text"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "copyText",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "copyText",
+          "callee": "navigator.clipboard.writeText",
+          "lineNumber": 6
+        },
+        {
+          "caller": "copyText",
+          "callee": "document.createElement",
+          "lineNumber": 13
+        },
+        {
+          "caller": "copyText",
+          "callee": "document.body.appendChild",
+          "lineNumber": 19
+        },
+        {
+          "caller": "copyText",
+          "callee": "textarea.select",
+          "lineNumber": 20
+        },
+        {
+          "caller": "copyText",
+          "callee": "textarea.setSelectionRange",
+          "lineNumber": 21
+        },
+        {
+          "caller": "copyText",
+          "callee": "document.execCommand",
+          "lineNumber": 24
+        },
+        {
+          "caller": "copyText",
+          "callee": "textarea.remove",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/lib/stockAnalysisStore.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 272,
+      "nonEmptyLines": 245,
+      "functions": [
+        {
+          "name": "emit",
+          "startLine": 58,
+          "endLine": 58,
+          "params": []
+        },
+        {
+          "name": "subscribe",
+          "startLine": 59,
+          "endLine": 59,
+          "params": [
+            "fn"
+          ]
+        },
+        {
+          "name": "normalizeAiError",
+          "startLine": 61,
+          "endLine": 65,
+          "params": [
+            "msg"
+          ]
+        },
+        {
+          "name": "rebuildSnap",
+          "startLine": 72,
+          "endLine": 76,
+          "params": []
+        },
+        {
+          "name": "getActiveSnapshot",
+          "startLine": 78,
+          "endLine": 78,
+          "params": []
+        },
+        {
+          "name": "getHistorySnapshot",
+          "startLine": 79,
+          "endLine": 79,
+          "params": []
+        },
+        {
+          "name": "getDialogSnapshot",
+          "startLine": 80,
+          "endLine": 80,
+          "params": []
+        },
+        {
+          "name": "patchTask",
+          "startLine": 82,
+          "endLine": 93,
+          "params": [
+            "id",
+            "patch"
+          ]
+        },
+        {
+          "name": "useBubbleTasks",
+          "startLine": 97,
+          "endLine": 109,
+          "params": []
+        },
+        {
+          "name": "useHistoryReports",
+          "startLine": 111,
+          "endLine": 114,
+          "params": []
+        },
+        {
+          "name": "useDialogState",
+          "startLine": 116,
+          "endLine": 118,
+          "params": []
+        },
+        {
+          "name": "useDialogTask",
+          "startLine": 120,
+          "endLine": 130,
+          "params": []
+        },
+        {
+          "name": "loadHistory",
+          "startLine": 134,
+          "endLine": 142,
+          "params": []
+        },
+        {
+          "name": "findLatestHistoryReport",
+          "startLine": 144,
+          "endLine": 147,
+          "params": [
+            "symbol"
+          ]
+        },
+        {
+          "name": "findTodayReport",
+          "startLine": 154,
+          "endLine": 158,
+          "params": [
+            "symbol"
+          ]
+        },
+        {
+          "name": "startAnalysis",
+          "startLine": 160,
+          "endLine": 188,
+          "params": [
+            "symbol",
+            "name",
+            "focus"
+          ]
+        },
+        {
+          "name": "runStream",
+          "startLine": 190,
+          "endLine": 241,
+          "params": [
+            "id",
+            "symbol",
+            "_name",
+            "focus"
+          ]
+        },
+        {
+          "name": "openDialog",
+          "startLine": 243,
+          "endLine": 245,
+          "params": [
+            "taskId"
+          ]
+        },
+        {
+          "name": "minimizeDialog",
+          "startLine": 246,
+          "endLine": 248,
+          "params": []
+        },
+        {
+          "name": "closeDialog",
+          "startLine": 249,
+          "endLine": 251,
+          "params": []
+        },
+        {
+          "name": "restoreDialog",
+          "startLine": 252,
+          "endLine": 258,
+          "params": [
+            "taskId"
+          ]
+        },
+        {
+          "name": "retryAnalysis",
+          "startLine": 259,
+          "endLine": 261,
+          "params": [
+            "task"
+          ]
+        },
+        {
+          "name": "deleteReport",
+          "startLine": 262,
+          "endLine": 269,
+          "params": [
+            "reportId"
+          ]
+        },
+        {
+          "name": "openHistoryReport",
+          "startLine": 270,
+          "endLine": 272,
+          "params": [
+            "reportId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "useBubbleTasks",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "useHistoryReports",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "useDialogState",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "useDialogTask",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "loadHistory",
+          "line": 134,
+          "isDefault": false
+        },
+        {
+          "name": "findLatestHistoryReport",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "findTodayReport",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "startAnalysis",
+          "line": 160,
+          "isDefault": false
+        },
+        {
+          "name": "openDialog",
+          "line": 243,
+          "isDefault": false
+        },
+        {
+          "name": "minimizeDialog",
+          "line": 246,
+          "isDefault": false
+        },
+        {
+          "name": "closeDialog",
+          "line": 249,
+          "isDefault": false
+        },
+        {
+          "name": "restoreDialog",
+          "line": 252,
+          "isDefault": false
+        },
+        {
+          "name": "retryAnalysis",
+          "line": 259,
+          "isDefault": false
+        },
+        {
+          "name": "deleteReport",
+          "line": 262,
+          "isDefault": false
+        },
+        {
+          "name": "openHistoryReport",
+          "line": 270,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "emit",
+          "callee": "listeners.forEach",
+          "lineNumber": 58
+        },
+        {
+          "caller": "emit",
+          "callee": "fn",
+          "lineNumber": 58
+        },
+        {
+          "caller": "subscribe",
+          "callee": "listeners.add",
+          "lineNumber": 59
+        },
+        {
+          "caller": "subscribe",
+          "callee": "listeners.delete",
+          "lineNumber": 59
+        },
+        {
+          "caller": "normalizeAiError",
+          "callee": "msg.includes",
+          "lineNumber": 62
+        },
+        {
+          "caller": "normalizeAiError",
+          "callee": "msg.includes",
+          "lineNumber": 62
+        },
+        {
+          "caller": "patchTask",
+          "callee": "activeTasks.map",
+          "lineNumber": 83
+        },
+        {
+          "caller": "patchTask",
+          "callee": "Date.now",
+          "lineNumber": 87
+        },
+        {
+          "caller": "patchTask",
+          "callee": "rebuildSnap",
+          "lineNumber": 91
+        },
+        {
+          "caller": "patchTask",
+          "callee": "emit",
+          "lineNumber": 92
+        },
+        {
+          "caller": "useBubbleTasks",
+          "callee": "useSyncExternalStore",
+          "lineNumber": 98
+        },
+        {
+          "caller": "useBubbleTasks",
+          "callee": "useSyncExternalStore",
+          "lineNumber": 99
+        },
+        {
+          "caller": "useBubbleTasks",
+          "callee": "all.filter",
+          "lineNumber": 101
+        },
+        {
+          "caller": "useHistoryReports",
+          "callee": "useSyncExternalStore",
+          "lineNumber": 112
+        },
+        {
+          "caller": "useDialogState",
+          "callee": "useSyncExternalStore",
+          "lineNumber": 117
+        },
+        {
+          "caller": "useDialogTask",
+          "callee": "useDialogState",
+          "lineNumber": 121
+        },
+        {
+          "caller": "useDialogTask",
+          "callee": "useSyncExternalStore",
+          "lineNumber": 122
+        },
+        {
+          "caller": "useDialogTask",
+          "callee": "useSyncExternalStore",
+          "lineNumber": 123
+        },
+        {
+          "caller": "useDialogTask",
+          "callee": "ds.taskId.startsWith",
+          "lineNumber": 125
+        },
+        {
+          "caller": "useDialogTask",
+          "callee": "ds.taskId.slice",
+          "lineNumber": 126
+        },
+        {
+          "caller": "useDialogTask",
+          "callee": "hist.find",
+          "lineNumber": 127
+        },
+        {
+          "caller": "useDialogTask",
+          "callee": "active.find",
+          "lineNumber": 129
+        },
+        {
+          "caller": "loadHistory",
+          "callee": "api.stockAnalysisReportsList",
+          "lineNumber": 136
+        },
+        {
+          "caller": "loadHistory",
+          "callee": "rebuildSnap",
+          "lineNumber": 139
+        },
+        {
+          "caller": "loadHistory",
+          "callee": "emit",
+          "lineNumber": 140
+        },
+        {
+          "caller": "findLatestHistoryReport",
+          "callee": "loadHistory",
+          "lineNumber": 145
+        },
+        {
+          "caller": "findLatestHistoryReport",
+          "callee": "history.find",
+          "lineNumber": 146
+        },
+        {
+          "caller": "findTodayReport",
+          "callee": "loadHistory",
+          "lineNumber": 155
+        },
+        {
+          "caller": "findTodayReport",
+          "callee": "new Date().toISOString().slice",
+          "lineNumber": 156
+        },
+        {
+          "caller": "findTodayReport",
+          "callee": "new Date().toISOString",
+          "lineNumber": 156
+        },
+        {
+          "caller": "findTodayReport",
+          "callee": "history.find",
+          "lineNumber": 157
+        },
+        {
+          "caller": "findTodayReport",
+          "callee": "(r.created_at ?? '').slice",
+          "lineNumber": 157
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "activeTasks.find",
+          "lineNumber": 161
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "rebuildSnap",
+          "lineNumber": 165
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "emit",
+          "lineNumber": 166
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "activeTasks.filter",
+          "lineNumber": 169
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "Date.now",
+          "lineNumber": 174
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 174
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "Math.random().toString",
+          "lineNumber": 174
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "Math.random",
+          "lineNumber": 174
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "Date.now",
+          "lineNumber": 178
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "rebuildSnap",
+          "lineNumber": 183
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "emit",
+          "lineNumber": 184
+        },
+        {
+          "caller": "startAnalysis",
+          "callee": "runStream",
+          "lineNumber": 186
+        },
+        {
+          "caller": "runStream",
+          "callee": "api.stockAnalyzeStream",
+          "lineNumber": 193
+        },
+        {
+          "caller": "runStream",
+          "callee": "activeTasks.find",
+          "lineNumber": 194
+        },
+        {
+          "caller": "runStream",
+          "callee": "patchTask",
+          "lineNumber": 198
+        },
+        {
+          "caller": "runStream",
+          "callee": "patchTask",
+          "lineNumber": 201
+        },
+        {
+          "caller": "runStream",
+          "callee": "patchTask",
+          "lineNumber": 202
+        },
+        {
+          "caller": "runStream",
+          "callee": "patchTask",
+          "lineNumber": 205
+        },
+        {
+          "caller": "runStream",
+          "callee": "patchTask",
+          "lineNumber": 208
+        },
+        {
+          "caller": "runStream",
+          "callee": "activeTasks.find",
+          "lineNumber": 212
+        },
+        {
+          "caller": "runStream",
+          "callee": "patchTask",
+          "lineNumber": 216
+        },
+        {
+          "caller": "runStream",
+          "callee": "api.stockAnalysisReportSave",
+          "lineNumber": 220
+        },
+        {
+          "caller": "runStream",
+          "callee": "patchTask",
+          "lineNumber": 226
+        },
+        {
+          "caller": "runStream",
+          "callee": "history.filter",
+          "lineNumber": 227
+        },
+        {
+          "caller": "runStream",
+          "callee": "rebuildSnap",
+          "lineNumber": 229
+        },
+        {
+          "caller": "runStream",
+          "callee": "emit",
+          "lineNumber": 230
+        },
+        {
+          "caller": "runStream",
+          "callee": "String",
+          "lineNumber": 235
+        },
+        {
+          "caller": "runStream",
+          "callee": "patchTask",
+          "lineNumber": 236
+        },
+        {
+          "caller": "runStream",
+          "callee": "normalizeAiError",
+          "lineNumber": 238
+        },
+        {
+          "caller": "openDialog",
+          "callee": "rebuildSnap",
+          "lineNumber": 244
+        },
+        {
+          "caller": "openDialog",
+          "callee": "emit",
+          "lineNumber": 244
+        },
+        {
+          "caller": "minimizeDialog",
+          "callee": "rebuildSnap",
+          "lineNumber": 247
+        },
+        {
+          "caller": "minimizeDialog",
+          "callee": "emit",
+          "lineNumber": 247
+        },
+        {
+          "caller": "closeDialog",
+          "callee": "rebuildSnap",
+          "lineNumber": 250
+        },
+        {
+          "caller": "closeDialog",
+          "callee": "emit",
+          "lineNumber": 250
+        },
+        {
+          "caller": "restoreDialog",
+          "callee": "activeTasks.find",
+          "lineNumber": 253
+        },
+        {
+          "caller": "restoreDialog",
+          "callee": "patchTask",
+          "lineNumber": 255
+        },
+        {
+          "caller": "restoreDialog",
+          "callee": "rebuildSnap",
+          "lineNumber": 257
+        },
+        {
+          "caller": "restoreDialog",
+          "callee": "emit",
+          "lineNumber": 257
+        },
+        {
+          "caller": "retryAnalysis",
+          "callee": "startAnalysis",
+          "lineNumber": 260
+        },
+        {
+          "caller": "deleteReport",
+          "callee": "api.stockAnalysisReportDelete",
+          "lineNumber": 264
+        },
+        {
+          "caller": "deleteReport",
+          "callee": "history.filter",
+          "lineNumber": 265
+        },
+        {
+          "caller": "deleteReport",
+          "callee": "rebuildSnap",
+          "lineNumber": 266
+        },
+        {
+          "caller": "deleteReport",
+          "callee": "emit",
+          "lineNumber": 267
+        },
+        {
+          "caller": "openHistoryReport",
+          "callee": "rebuildSnap",
+          "lineNumber": 271
+        },
+        {
+          "caller": "openHistoryReport",
+          "callee": "emit",
+          "lineNumber": 271
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 15,
+        "functionCount": 24,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/lib/theme.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 121,
+      "nonEmptyLines": 109,
+      "functions": [
+        {
+          "name": "getTheme",
+          "startLine": 16,
+          "endLine": 22,
+          "params": []
+        },
+        {
+          "name": "setTheme",
+          "startLine": 24,
+          "endLine": 28,
+          "params": [
+            "theme"
+          ]
+        },
+        {
+          "name": "toggleTheme",
+          "startLine": 30,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "useTheme",
+          "startLine": 37,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "chartTheme",
+          "startLine": 114,
+          "endLine": 116,
+          "params": [
+            "theme"
+          ]
+        },
+        {
+          "name": "useChartTheme",
+          "startLine": 119,
+          "endLine": 121,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getTheme",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "setTheme",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "toggleTheme",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "useTheme",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "chartTheme",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "useChartTheme",
+          "line": 119,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getTheme",
+          "callee": "localStorage.getItem",
+          "lineNumber": 18
+        },
+        {
+          "caller": "setTheme",
+          "callee": "localStorage.setItem",
+          "lineNumber": 25
+        },
+        {
+          "caller": "setTheme",
+          "callee": "document.documentElement.classList.toggle",
+          "lineNumber": 26
+        },
+        {
+          "caller": "setTheme",
+          "callee": "window.dispatchEvent",
+          "lineNumber": 27
+        },
+        {
+          "caller": "toggleTheme",
+          "callee": "getTheme",
+          "lineNumber": 31
+        },
+        {
+          "caller": "toggleTheme",
+          "callee": "setTheme",
+          "lineNumber": 32
+        },
+        {
+          "caller": "useTheme",
+          "callee": "useState",
+          "lineNumber": 38
+        },
+        {
+          "caller": "useTheme",
+          "callee": "useEffect",
+          "lineNumber": 39
+        },
+        {
+          "caller": "onChange",
+          "callee": "set",
+          "lineNumber": 40
+        },
+        {
+          "caller": "onChange",
+          "callee": "getTheme",
+          "lineNumber": 40
+        },
+        {
+          "caller": "useTheme",
+          "callee": "window.addEventListener",
+          "lineNumber": 41
+        },
+        {
+          "caller": "useTheme",
+          "callee": "window.addEventListener",
+          "lineNumber": 42
+        },
+        {
+          "caller": "useTheme",
+          "callee": "window.removeEventListener",
+          "lineNumber": 44
+        },
+        {
+          "caller": "useTheme",
+          "callee": "window.removeEventListener",
+          "lineNumber": 45
+        },
+        {
+          "caller": "useChartTheme",
+          "callee": "chartTheme",
+          "lineNumber": 120
+        },
+        {
+          "caller": "useChartTheme",
+          "callee": "useTheme",
+          "lineNumber": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/lib/useMediaQuery.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "useMediaQuery",
+          "startLine": 7,
+          "endLine": 17,
+          "params": [
+            "query"
+          ]
+        },
+        {
+          "name": "useIsDesktop",
+          "startLine": 20,
+          "endLine": 22,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "useMediaQuery",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "useIsDesktop",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useMediaQuery",
+          "callee": "useSyncExternalStore",
+          "lineNumber": 8
+        },
+        {
+          "caller": "useMediaQuery",
+          "callee": "window.matchMedia",
+          "lineNumber": 10
+        },
+        {
+          "caller": "useMediaQuery",
+          "callee": "mql.addEventListener",
+          "lineNumber": 11
+        },
+        {
+          "caller": "useMediaQuery",
+          "callee": "mql.removeEventListener",
+          "lineNumber": 12
+        },
+        {
+          "caller": "useMediaQuery",
+          "callee": "window.matchMedia",
+          "lineNumber": 14
+        },
+        {
+          "caller": "useIsDesktop",
+          "callee": "useMediaQuery",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/main.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "bootstrap",
+          "startLine": 45,
+          "endLine": 55,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "bootstrap",
+          "callee": "initializeFrontendExtensions",
+          "lineNumber": 46
+        },
+        {
+          "caller": "bootstrap",
+          "callee": "import",
+          "lineNumber": 47
+        },
+        {
+          "caller": "bootstrap",
+          "callee": "ReactDOM.createRoot(document.getElementById('root')!).render",
+          "lineNumber": 48
+        },
+        {
+          "caller": "bootstrap",
+          "callee": "ReactDOM.createRoot",
+          "lineNumber": 48
+        },
+        {
+          "caller": "bootstrap",
+          "callee": "document.getElementById",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/pages/Auth.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 195,
+      "nonEmptyLines": 180,
+      "functions": [
+        {
+          "name": "Auth",
+          "startLine": 21,
+          "endLine": 195,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Auth",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Auth",
+          "callee": "useNavigate",
+          "lineNumber": 22
+        },
+        {
+          "caller": "Auth",
+          "callee": "useState",
+          "lineNumber": 23
+        },
+        {
+          "caller": "Auth",
+          "callee": "useState",
+          "lineNumber": 24
+        },
+        {
+          "caller": "Auth",
+          "callee": "useState",
+          "lineNumber": 25
+        },
+        {
+          "caller": "Auth",
+          "callee": "useState",
+          "lineNumber": 26
+        },
+        {
+          "caller": "Auth",
+          "callee": "useState",
+          "lineNumber": 29
+        },
+        {
+          "caller": "Auth",
+          "callee": "useEffect",
+          "lineNumber": 30
+        },
+        {
+          "caller": "Auth",
+          "callee": "api.authStatus().then(s => {\r\n      setStatus(s)\r\n      // 已登录的话直接进面板(避免登录页死循环)\r\n      if (s.authenticated) navigate('/', { replace: true })\r\n    }).catch",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Auth",
+          "callee": "api.authStatus().then",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Auth",
+          "callee": "api.authStatus",
+          "lineNumber": 31
+        },
+        {
+          "caller": "Auth",
+          "callee": "setStatus",
+          "lineNumber": 32
+        },
+        {
+          "caller": "Auth",
+          "callee": "navigate",
+          "lineNumber": 34
+        },
+        {
+          "caller": "Auth",
+          "callee": "setStatus",
+          "lineNumber": 35
+        },
+        {
+          "caller": "Auth",
+          "callee": "useMutation",
+          "lineNumber": 41
+        },
+        {
+          "caller": "Auth",
+          "callee": "api.authSetup",
+          "lineNumber": 44
+        },
+        {
+          "caller": "Auth",
+          "callee": "api.authLogin",
+          "lineNumber": 46
+        },
+        {
+          "caller": "Auth",
+          "callee": "new URLSearchParams(window.location.search).get",
+          "lineNumber": 50
+        },
+        {
+          "caller": "Auth",
+          "callee": "navigate",
+          "lineNumber": 51
+        },
+        {
+          "caller": "Auth",
+          "callee": "setLocalError",
+          "lineNumber": 56
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "e.preventDefault",
+          "lineNumber": 61
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setLocalError",
+          "lineNumber": 62
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setLocalError",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "setLocalError",
+          "lineNumber": 65
+        },
+        {
+          "caller": "handleSubmit",
+          "callee": "submitMut.mutate",
+          "lineNumber": 67
+        },
+        {
+          "caller": "Auth",
+          "callee": "cn",
+          "lineNumber": 98
+        },
+        {
+          "caller": "Auth",
+          "callee": "setPassword",
+          "lineNumber": 120
+        },
+        {
+          "caller": "Auth",
+          "callee": "setShowPwd",
+          "lineNumber": 127
+        },
+        {
+          "caller": "Auth",
+          "callee": "setConfirmPassword",
+          "lineNumber": 140
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/pages/Onboarding.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 832,
+      "nonEmptyLines": 777,
+      "functions": [
+        {
+          "name": "Onboarding",
+          "startLine": 50,
+          "endLine": 160,
+          "params": []
+        },
+        {
+          "name": "DisclaimerStep",
+          "startLine": 164,
+          "endLine": 208,
+          "params": [
+            "{ onNext }"
+          ]
+        },
+        {
+          "name": "WelcomeStep",
+          "startLine": 212,
+          "endLine": 273,
+          "params": [
+            "{ onNext, onSkip }"
+          ]
+        },
+        {
+          "name": "DataSourceStep",
+          "startLine": 286,
+          "endLine": 548,
+          "params": [
+            "{ onNext, onBack }"
+          ]
+        },
+        {
+          "name": "ResultStep",
+          "startLine": 562,
+          "endLine": 725,
+          "params": [
+            "{ onNext, onBack }"
+          ]
+        },
+        {
+          "name": "LinkMark",
+          "startLine": 728,
+          "endLine": 730,
+          "params": []
+        },
+        {
+          "name": "FinishStep",
+          "startLine": 734,
+          "endLine": 832,
+          "params": [
+            "{ onNext, onBack, pending }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Onboarding",
+          "line": 50,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Onboarding",
+          "callee": "useNavigate",
+          "lineNumber": 51
+        },
+        {
+          "caller": "Onboarding",
+          "callee": "useQueryClient",
+          "lineNumber": 52
+        },
+        {
+          "caller": "Onboarding",
+          "callee": "useState",
+          "lineNumber": 54
+        },
+        {
+          "caller": "Onboarding",
+          "callee": "useMutation",
+          "lineNumber": 57
+        },
+        {
+          "caller": "Onboarding",
+          "callee": "qc.setQueryData",
+          "lineNumber": 62
+        },
+        {
+          "caller": "Onboarding",
+          "callee": "qc.invalidateQueries",
+          "lineNumber": 65
+        },
+        {
+          "caller": "Onboarding",
+          "callee": "navigate",
+          "lineNumber": 66
+        },
+        {
+          "caller": "Onboarding",
+          "callee": "navigate",
+          "lineNumber": 70
+        },
+        {
+          "caller": "finish",
+          "callee": "complete.mutate",
+          "lineNumber": 74
+        },
+        {
+          "caller": "Onboarding",
+          "callee": "STEPS.map",
+          "lineNumber": 111
+        },
+        {
+          "caller": "Onboarding",
+          "callee": "setStep",
+          "lineNumber": 147
+        },
+        {
+          "caller": "Onboarding",
+          "callee": "setStep",
+          "lineNumber": 148
+        },
+        {
+          "caller": "Onboarding",
+          "callee": "setStep",
+          "lineNumber": 150
+        },
+        {
+          "caller": "Onboarding",
+          "callee": "setStep",
+          "lineNumber": 150
+        },
+        {
+          "caller": "Onboarding",
+          "callee": "setStep",
+          "lineNumber": 152
+        },
+        {
+          "caller": "Onboarding",
+          "callee": "setStep",
+          "lineNumber": 152
+        },
+        {
+          "caller": "Onboarding",
+          "callee": "setStep",
+          "lineNumber": 153
+        },
+        {
+          "caller": "WelcomeStep",
+          "callee": "HIGHLIGHTS.map",
+          "lineNumber": 236
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "useQueryClient",
+          "lineNumber": 287
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "useSettings",
+          "lineNumber": 288
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "useQuery",
+          "lineNumber": 289
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "useState",
+          "lineNumber": 296
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "useState",
+          "lineNumber": 297
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "useState",
+          "lineNumber": 298
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "builtin.map",
+          "lineNumber": 304
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "plugins.map",
+          "lineNumber": 305
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "custom.map",
+          "lineNumber": 306
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "plugins.find",
+          "lineNumber": 311
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "useMutation",
+          "lineNumber": 314
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "api.saveTickflowKey",
+          "lineNumber": 316
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "api.savePluginKey",
+          "lineNumber": 317
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "qc.invalidateQueries",
+          "lineNumber": 319
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "qc.invalidateQueries",
+          "lineNumber": 320
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "qc.invalidateQueries",
+          "lineNumber": 321
+        },
+        {
+          "caller": "setError",
+          "callee": "setErrors",
+          "lineNumber": 322
+        },
+        {
+          "caller": "setSaved",
+          "callee": "setSavedMsg",
+          "lineNumber": 324
+        },
+        {
+          "caller": "setSaved",
+          "callee": "setTimeout",
+          "lineNumber": 325
+        },
+        {
+          "caller": "setSaved",
+          "callee": "setSavedMsg",
+          "lineNumber": 325
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "setInputs",
+          "lineNumber": 328
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "setError",
+          "lineNumber": 329
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "setSaved",
+          "lineNumber": 331
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "routeFuyaoEnhanced.mutate",
+          "lineNumber": 334
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "setSaved",
+          "lineNumber": 335
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "setSaved",
+          "lineNumber": 337
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "setError",
+          "lineNumber": 340
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "setErrors",
+          "lineNumber": 343
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "useMutation",
+          "lineNumber": 347
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "api.updateDataProviders",
+          "lineNumber": 348
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "qc.invalidateQueries",
+          "lineNumber": 352
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "items.map",
+          "lineNumber": 391
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "plugins.find",
+          "lineNumber": 392
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "item.display_name.replace(/（.*?）|\\(.*?\\)/g, '').trim",
+          "lineNumber": 410
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "item.display_name.replace",
+          "lineNumber": 410
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "item.datasets.slice(0, 4).map",
+          "lineNumber": 426
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "item.datasets.slice",
+          "lineNumber": 426
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "keyForms.map",
+          "lineNumber": 442
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "e.preventDefault",
+          "lineNumber": 474
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "val.trim",
+          "lineNumber": 475
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "saveKey.mutate",
+          "lineNumber": 475
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "val.trim",
+          "lineNumber": 475
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "setInputs",
+          "lineNumber": 482
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "setErrors",
+          "lineNumber": 483
+        },
+        {
+          "caller": "DataSourceStep",
+          "callee": "val.trim",
+          "lineNumber": 491
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "useQueryClient",
+          "lineNumber": 563
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "useSettings",
+          "lineNumber": 564
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "usePreferences",
+          "lineNumber": 565
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "useQuery",
+          "lineNumber": 566
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "useRef",
+          "lineNumber": 573
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "useState",
+          "lineNumber": 574
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "useState",
+          "lineNumber": 575
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "useEffect",
+          "lineNumber": 577
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "ROUTE_PRIORITY.find",
+          "lineNumber": 584
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "cap.candidates.some",
+          "lineNumber": 587
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "changes.push",
+          "lineNumber": 591
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "setAppliedChanges",
+          "lineNumber": 594
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "api.updateDataProviders(desired)\r\n      .then(() => {\r\n        setAppliedChanges(changes)\r\n        return qc.invalidateQueries({ queryKey: QK.preferences })\r\n      })\r\n      .then(() => qc.invalidateQueries({ queryKey: QK.capabilityMatrix }))\r\n      .catch",
+          "lineNumber": 597
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "api.updateDataProviders(desired)\r\n      .then(() => {\r\n        setAppliedChanges(changes)\r\n        return qc.invalidateQueries({ queryKey: QK.preferences })\r\n      })\r\n      .then",
+          "lineNumber": 597
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "api.updateDataProviders(desired)\r\n      .then",
+          "lineNumber": 597
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "api.updateDataProviders",
+          "lineNumber": 597
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "setAppliedChanges",
+          "lineNumber": 599
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "qc.invalidateQueries",
+          "lineNumber": 600
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "qc.invalidateQueries",
+          "lineNumber": 602
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "setApplyError",
+          "lineNumber": 603
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "routes.filter",
+          "lineNumber": 611
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "appliedChanges.map(c => `${c.label} → ${c.to}`).join",
+          "lineNumber": 640
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "appliedChanges.map",
+          "lineNumber": 640
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "routes.map",
+          "lineNumber": 660
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "r.candidates.map(c => c.display).join",
+          "lineNumber": 686
+        },
+        {
+          "caller": "ResultStep",
+          "callee": "r.candidates.map",
+          "lineNumber": 686
+        },
+        {
+          "caller": "FinishStep",
+          "callee": "useSettings",
+          "lineNumber": 735
+        },
+        {
+          "caller": "FinishStep",
+          "callee": "tips.map",
+          "lineNumber": 796
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/pages/backtest/charts/FactorCorrelationHeatmap.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 191,
+      "nonEmptyLines": 174,
+      "functions": [
+        {
+          "name": "escapeHtml",
+          "startLine": 25,
+          "endLine": 33,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "FactorCorrelationHeatmap",
+          "startLine": 35,
+          "endLine": 191,
+          "params": [
+            "{\r\n  labels,\r\n  matrix,\r\n  pairCounts,\r\n  threshold,\r\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FactorCorrelationHeatmap",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "escapeHtml",
+          "callee": "value.replace",
+          "lineNumber": 26
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "useChartTheme",
+          "lineNumber": 41
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "useState",
+          "lineNumber": 42
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "useEffect",
+          "lineNumber": 45
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "setPrepared",
+          "lineNumber": 47
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "labels.slice",
+          "lineNumber": 51
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "Number.isFinite",
+          "lineNumber": 53
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "Math.min",
+          "lineNumber": 54
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "Math.max",
+          "lineNumber": 54
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "Math.abs",
+          "lineNumber": 54
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "Number.isFinite",
+          "lineNumber": 63
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "Number.isFinite",
+          "lineNumber": 66
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "Math.abs",
+          "lineNumber": 71
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "data.push",
+          "lineNumber": 73
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "setPrepared",
+          "lineNumber": 80
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "useMemo",
+          "lineNumber": 83
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "escapeHtml",
+          "lineNumber": 99
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "escapeHtml",
+          "lineNumber": 100
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "rho.toFixed",
+          "lineNumber": 102
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "pairCount.toLocaleString",
+          "lineNumber": 103
+        },
+        {
+          "caller": "FactorCorrelationHeatmap",
+          "callee": "useECharts",
+          "lineNumber": 173
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/pages/backtest/charts/FactorGroupNavChart.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 134,
+      "nonEmptyLines": 121,
+      "functions": [
+        {
+          "name": "groupSortKey",
+          "startLine": 23,
+          "endLine": 25,
+          "params": [
+            "group"
+          ]
+        },
+        {
+          "name": "getGroupCols",
+          "startLine": 27,
+          "endLine": 29,
+          "params": [
+            "row"
+          ]
+        },
+        {
+          "name": "FactorGroupNavChart",
+          "startLine": 31,
+          "endLine": 134,
+          "params": [
+            "{ result }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FactorGroupNavChart",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "groupSortKey",
+          "callee": "group.startsWith",
+          "lineNumber": 24
+        },
+        {
+          "caller": "groupSortKey",
+          "callee": "Number",
+          "lineNumber": 24
+        },
+        {
+          "caller": "groupSortKey",
+          "callee": "group.slice",
+          "lineNumber": 24
+        },
+        {
+          "caller": "getGroupCols",
+          "callee": "Object.keys(row).filter(k => k !== 'date').sort",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getGroupCols",
+          "callee": "Object.keys(row).filter",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getGroupCols",
+          "callee": "Object.keys",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getGroupCols",
+          "callee": "groupSortKey",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getGroupCols",
+          "callee": "groupSortKey",
+          "lineNumber": 28
+        },
+        {
+          "caller": "FactorGroupNavChart",
+          "callee": "useChartTheme",
+          "lineNumber": 32
+        },
+        {
+          "caller": "FactorGroupNavChart",
+          "callee": "useMemo",
+          "lineNumber": 33
+        },
+        {
+          "caller": "FactorGroupNavChart",
+          "callee": "result.group_nav.map",
+          "lineNumber": 36
+        },
+        {
+          "caller": "FactorGroupNavChart",
+          "callee": "(r.date as string).slice",
+          "lineNumber": 36
+        },
+        {
+          "caller": "FactorGroupNavChart",
+          "callee": "getGroupCols",
+          "lineNumber": 37
+        },
+        {
+          "caller": "FactorGroupNavChart",
+          "callee": "groupCols.map",
+          "lineNumber": 43
+        },
+        {
+          "caller": "FactorGroupNavChart",
+          "callee": "result.group_nav.map",
+          "lineNumber": 46
+        },
+        {
+          "caller": "FactorGroupNavChart",
+          "callee": "series.push",
+          "lineNumber": 53
+        },
+        {
+          "caller": "FactorGroupNavChart",
+          "callee": "lsNav.map",
+          "lineNumber": 56
+        },
+        {
+          "caller": "FactorGroupNavChart",
+          "callee": "(p.value as number).toFixed",
+          "lineNumber": 84
+        },
+        {
+          "caller": "FactorGroupNavChart",
+          "callee": "Math.floor",
+          "lineNumber": 93
+        },
+        {
+          "caller": "FactorGroupNavChart",
+          "callee": "useECharts",
+          "lineNumber": 108
+        },
+        {
+          "caller": "FactorGroupNavChart",
+          "callee": "getGroupCols",
+          "lineNumber": 112
+        },
+        {
+          "caller": "FactorGroupNavChart",
+          "callee": "groupCols.map",
+          "lineNumber": 118
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/pages/backtest/charts/FactorICChart.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 83,
+      "functions": [
+        {
+          "name": "FactorICChart",
+          "startLine": 10,
+          "endLine": 90,
+          "params": [
+            "{ result }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FactorICChart",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "FactorICChart",
+          "callee": "useChartTheme",
+          "lineNumber": 11
+        },
+        {
+          "caller": "FactorICChart",
+          "callee": "useMemo",
+          "lineNumber": 12
+        },
+        {
+          "caller": "FactorICChart",
+          "callee": "result.ic_series.map",
+          "lineNumber": 15
+        },
+        {
+          "caller": "FactorICChart",
+          "callee": "r.date.slice",
+          "lineNumber": 15
+        },
+        {
+          "caller": "FactorICChart",
+          "callee": "result.ic_series.map",
+          "lineNumber": 16
+        },
+        {
+          "caller": "FactorICChart",
+          "callee": "values.map",
+          "lineNumber": 20
+        },
+        {
+          "caller": "FactorICChart",
+          "callee": "values.slice",
+          "lineNumber": 22
+        },
+        {
+          "caller": "FactorICChart",
+          "callee": "slice.reduce",
+          "lineNumber": 23
+        },
+        {
+          "caller": "FactorICChart",
+          "callee": "(p.value * 100).toFixed",
+          "lineNumber": 41
+        },
+        {
+          "caller": "FactorICChart",
+          "callee": "Math.floor",
+          "lineNumber": 50
+        },
+        {
+          "caller": "FactorICChart",
+          "callee": "(v * 100).toFixed",
+          "lineNumber": 56
+        },
+        {
+          "caller": "FactorICChart",
+          "callee": "values.map",
+          "lineNumber": 64
+        },
+        {
+          "caller": "FactorICChart",
+          "callee": "useECharts",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/pages/backtest/charts/MiningOosChart.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 201,
+      "nonEmptyLines": 189,
+      "functions": [
+        {
+          "name": "finiteOrNull",
+          "startLine": 19,
+          "endLine": 21,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "escapeHtml",
+          "startLine": 23,
+          "endLine": 31,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "MiningOosChart",
+          "startLine": 33,
+          "endLine": 201,
+          "params": [
+            "{ folds }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MiningOosChart",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "finiteOrNull",
+          "callee": "Number.isFinite",
+          "lineNumber": 20
+        },
+        {
+          "caller": "escapeHtml",
+          "callee": "value.replace",
+          "lineNumber": 24
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "useChartTheme",
+          "lineNumber": 34
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "useMemo",
+          "lineNumber": 35
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "folds.map",
+          "lineNumber": 35
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "finiteOrNull",
+          "lineNumber": 37
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "finiteOrNull",
+          "lineNumber": 38
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "preparedFolds.some",
+          "lineNumber": 41
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "useMemo",
+          "lineNumber": 45
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "Array.isArray",
+          "lineNumber": 68
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "items.find",
+          "lineNumber": 69
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "Array.isArray",
+          "lineNumber": 69
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "escapeHtml",
+          "lineNumber": 78
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "escapeHtml",
+          "lineNumber": 79
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "escapeHtml",
+          "lineNumber": 84
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "(fold.return * 100).toFixed",
+          "lineNumber": 85
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "fold.sharpe.toFixed",
+          "lineNumber": 86
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "preparedFolds.map",
+          "lineNumber": 91
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "value.toFixed",
+          "lineNumber": 116
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "preparedFolds.map",
+          "lineNumber": 134
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "preparedFolds.map",
+          "lineNumber": 146
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "preparedFolds.flatMap",
+          "lineNumber": 157
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "api.coord",
+          "lineNumber": 159
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "api.value",
+          "lineNumber": 159
+        },
+        {
+          "caller": "MiningOosChart",
+          "callee": "useECharts",
+          "lineNumber": 181
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/pages/backtest/charts/RegimeComparisonChart.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 182,
+      "nonEmptyLines": 171,
+      "functions": [
+        {
+          "name": "finiteOrNull",
+          "startLine": 19,
+          "endLine": 21,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "escapeHtml",
+          "startLine": 23,
+          "endLine": 31,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "RegimeComparisonChart",
+          "startLine": 33,
+          "endLine": 182,
+          "params": [
+            "{ rows }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RegimeComparisonChart",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "finiteOrNull",
+          "callee": "Number.isFinite",
+          "lineNumber": 20
+        },
+        {
+          "caller": "escapeHtml",
+          "callee": "value.replace",
+          "lineNumber": 24
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "useChartTheme",
+          "lineNumber": 34
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "useMemo",
+          "lineNumber": 35
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "rows.map",
+          "lineNumber": 35
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "Number.isFinite",
+          "lineNumber": 36
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "finiteOrNull",
+          "lineNumber": 40
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "finiteOrNull",
+          "lineNumber": 41
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "finiteOrNull",
+          "lineNumber": 42
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "preparedRows.some",
+          "lineNumber": 46
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "useMemo",
+          "lineNumber": 50
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "Array.isArray",
+          "lineNumber": 74
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "escapeHtml",
+          "lineNumber": 80
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "escapeHtml",
+          "lineNumber": 83
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "row.nDates.toLocaleString",
+          "lineNumber": 84
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "(row.return * 100).toFixed",
+          "lineNumber": 85
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "(row.maxDrawdown * 100).toFixed",
+          "lineNumber": 86
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "row.sharpe.toFixed",
+          "lineNumber": 87
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "preparedRows.map",
+          "lineNumber": 92
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "value.toFixed",
+          "lineNumber": 117
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "preparedRows.map",
+          "lineNumber": 135
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "preparedRows.map",
+          "lineNumber": 142
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "preparedRows.map",
+          "lineNumber": 150
+        },
+        {
+          "caller": "RegimeComparisonChart",
+          "callee": "useECharts",
+          "lineNumber": 162
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/pages/backtest/charts/ReturnDistributionChart.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "ReturnDistributionChart",
+          "startLine": 16,
+          "endLine": 65,
+          "params": [
+            "{ distribution }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ReturnDistributionChart",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ReturnDistributionChart",
+          "callee": "useChartTheme",
+          "lineNumber": 17
+        },
+        {
+          "caller": "ReturnDistributionChart",
+          "callee": "useMemo",
+          "lineNumber": 18
+        },
+        {
+          "caller": "ReturnDistributionChart",
+          "callee": "distribution.map",
+          "lineNumber": 19
+        },
+        {
+          "caller": "ReturnDistributionChart",
+          "callee": "distribution.map",
+          "lineNumber": 20
+        },
+        {
+          "caller": "ReturnDistributionChart",
+          "callee": "distribution.map",
+          "lineNumber": 22
+        },
+        {
+          "caller": "ReturnDistributionChart",
+          "callee": "parseFloat",
+          "lineNumber": 23
+        },
+        {
+          "caller": "ReturnDistributionChart",
+          "callee": "parseFloat",
+          "lineNumber": 25
+        },
+        {
+          "caller": "ReturnDistributionChart",
+          "callee": "d.range.split",
+          "lineNumber": 25
+        },
+        {
+          "caller": "ReturnDistributionChart",
+          "callee": "Array.isArray",
+          "lineNumber": 35
+        },
+        {
+          "caller": "ReturnDistributionChart",
+          "callee": "(bin.ratio * 100).toFixed",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ReturnDistributionChart",
+          "callee": "vals.map",
+          "lineNumber": 55
+        },
+        {
+          "caller": "ReturnDistributionChart",
+          "callee": "useECharts",
+          "lineNumber": 62
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/pages/backtest/charts/StrategyNavChart.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 291,
+      "nonEmptyLines": 284,
+      "functions": [
+        {
+          "name": "StrategyNavChart",
+          "startLine": 11,
+          "endLine": 291,
+          "params": [
+            "{ result }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "StrategyNavChart",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "StrategyNavChart",
+          "callee": "useChartTheme",
+          "lineNumber": 12
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "useState",
+          "lineNumber": 14
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "useRef",
+          "lineNumber": 16
+        },
+        {
+          "caller": "toggleLegend",
+          "callee": "setHidden",
+          "lineNumber": 18
+        },
+        {
+          "caller": "toggleLegend",
+          "callee": "next.has",
+          "lineNumber": 20
+        },
+        {
+          "caller": "toggleLegend",
+          "callee": "next.delete",
+          "lineNumber": 20
+        },
+        {
+          "caller": "toggleLegend",
+          "callee": "next.add",
+          "lineNumber": 21
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "useMemo",
+          "lineNumber": 24
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "echarts.getInstanceByDom",
+          "lineNumber": 28
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "prevInstance?.getOption",
+          "lineNumber": 29
+        },
+        {
+          "caller": "axisMoneyFmt",
+          "callee": "Math.abs",
+          "lineNumber": 36
+        },
+        {
+          "caller": "axisMoneyFmt",
+          "callee": "(v / 100_000_000).toFixed",
+          "lineNumber": 36
+        },
+        {
+          "caller": "axisMoneyFmt",
+          "callee": "Math.abs",
+          "lineNumber": 37
+        },
+        {
+          "caller": "axisMoneyFmt",
+          "callee": "(v / 10_000).toFixed",
+          "lineNumber": 37
+        },
+        {
+          "caller": "axisMoneyFmt",
+          "callee": "moneyFmt.format",
+          "lineNumber": 38
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "result.equity_curve.map",
+          "lineNumber": 40
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "r.date.slice",
+          "lineNumber": 40
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "result.equity_curve.map",
+          "lineNumber": 41
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "(result.benchmark_curve ?? []).map",
+          "lineNumber": 42
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "r.date.slice",
+          "lineNumber": 42
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "dates.map",
+          "lineNumber": 43
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "benchmarkByDate.get",
+          "lineNumber": 43
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "benchmarkValues.some",
+          "lineNumber": 44
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "result.drawdown_curve.map",
+          "lineNumber": 45
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "result.equity_curve.map",
+          "lineNumber": 46
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "Math.max",
+          "lineNumber": 49
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "Math.min",
+          "lineNumber": 49
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "positionValues.some",
+          "lineNumber": 53
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "Math.floor",
+          "lineNumber": 78
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "v.toFixed",
+          "lineNumber": 93
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "v.toFixed",
+          "lineNumber": 119
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "(p.value as number).toFixed",
+          "lineNumber": 178
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "valueFmt.format",
+          "lineNumber": 180
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "moneyFmt.format",
+          "lineNumber": 181
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "hidden.has",
+          "lineNumber": 208
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "hidden.has",
+          "lineNumber": 230
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "useECharts",
+          "lineNumber": 247
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "result.equity_curve.some",
+          "lineNumber": 260
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "toggleLegend",
+          "lineNumber": 263
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "hidden.has",
+          "lineNumber": 266
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "toggleLegend",
+          "lineNumber": 276
+        },
+        {
+          "caller": "StrategyNavChart",
+          "callee": "hidden.has",
+          "lineNumber": 279
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/pages/backtest/charts/useECharts.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "useECharts",
+          "startLine": 12,
+          "endLine": 43,
+          "params": [
+            "option",
+            "deps",
+            "containerRef"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "useECharts",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useECharts",
+          "callee": "useRef",
+          "lineNumber": 17
+        },
+        {
+          "caller": "useECharts",
+          "callee": "useRef",
+          "lineNumber": 19
+        },
+        {
+          "caller": "useECharts",
+          "callee": "useEffect",
+          "lineNumber": 22
+        },
+        {
+          "caller": "useECharts",
+          "callee": "echarts.init",
+          "lineNumber": 25
+        },
+        {
+          "caller": "useECharts",
+          "callee": "instanceRef.current?.resize",
+          "lineNumber": 26
+        },
+        {
+          "caller": "useECharts",
+          "callee": "resizeObserver.observe",
+          "lineNumber": 27
+        },
+        {
+          "caller": "useECharts",
+          "callee": "resizeObserver.disconnect",
+          "lineNumber": 30
+        },
+        {
+          "caller": "useECharts",
+          "callee": "instanceRef.current?.dispose",
+          "lineNumber": 31
+        },
+        {
+          "caller": "useECharts",
+          "callee": "useEffect",
+          "lineNumber": 37
+        },
+        {
+          "caller": "useECharts",
+          "callee": "instanceRef.current.setOption",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/router.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 155,
+      "nonEmptyLines": 147,
+      "functions": [
+        {
+          "name": "OnboardingGuard",
+          "startLine": 79,
+          "endLine": 102,
+          "params": [
+            "{ children }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "router",
+          "line": 104,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "OnboardingGuard",
+          "callee": "useSettings",
+          "lineNumber": 80
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

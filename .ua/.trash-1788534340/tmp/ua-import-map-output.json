@@ -1,0 +1,2554 @@
+{
+  "scriptCompleted": true,
+  "stats": {
+    "filesScanned": 613,
+    "filesWithImports": 440,
+    "totalEdges": 1490
+  },
+  "failures": [],
+  "importMap": {
+    ".dockerignore": [],
+    ".env.example": [],
+    ".gitattributes": [],
+    ".github/workflows/docker.yml": [],
+    ".github/workflows/release.yml": [],
+    ".serena/project.yml": [],
+    "AGENTS.md": [],
+    "CONTRIBUTING.md": [],
+    "Dockerfile": [],
+    "README.md": [],
+    "VERSION": [],
+    "backend/_debug_chan.py": [
+      "backend/app/custom/chanlun.py"
+    ],
+    "backend/app/__init__.py": [],
+    "backend/app/api/__init__.py": [],
+    "backend/app/api/abnormal.py": [
+      "backend/app/services/abnormal_moves.py"
+    ],
+    "backend/app/api/alerts.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/alert_store.py"
+    ],
+    "backend/app/api/analysis.py": [],
+    "backend/app/api/auth.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/auth.py"
+    ],
+    "backend/app/api/backtest.py": [
+      "backend/app/config.py",
+      "backend/app/services/backtest.py"
+    ],
+    "backend/app/api/data.py": [
+      "backend/app/enriched_generation.py",
+      "backend/app/indicators/pipeline.py"
+    ],
+    "backend/app/api/ext_data.py": [
+      "backend/app/services/ext_data.py",
+      "backend/app/services/ext_pull.py"
+    ],
+    "backend/app/api/financials.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/ai_reports.py",
+      "backend/app/services/financial_analyzer.py",
+      "backend/app/services/financial_sync.py",
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/app/api/indices.py": [
+      "backend/app/indicators/pipeline.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/index_sync.py",
+      "backend/app/services/kline_sync.py",
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/app/api/intraday.py": [],
+    "backend/app/api/kline.py": [
+      "backend/app/db_safe.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/market_time.py",
+      "backend/app/price_limits.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py"
+    ],
+    "backend/app/api/market_recap.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/auction_benchmark.py",
+      "backend/app/services/dragon_tiger.py",
+      "backend/app/services/market_recap.py",
+      "backend/app/services/market_recap_reports.py"
+    ],
+    "backend/app/api/mining.py": [
+      "backend/app/backtest/factor.py",
+      "backend/app/backtest/mining.py",
+      "backend/app/enriched_generation.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/mining_jobs.py",
+      "backend/app/services/mining_preflight.py",
+      "backend/app/services/mining_schedule.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/app/api/monitor_rules.py": [
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/intraday_signals.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/app/api/overview.py": [
+      "backend/app/services/ext_data.py",
+      "backend/app/services/index_const.py",
+      "backend/app/services/screener.py"
+    ],
+    "backend/app/api/pipeline.py": [
+      "backend/app/api/data.py",
+      "backend/app/jobs/__init__.py",
+      "backend/app/jobs/daily_pipeline.py",
+      "backend/app/services/pipeline_jobs.py"
+    ],
+    "backend/app/api/regime.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/regime_builder.py"
+    ],
+    "backend/app/api/routes.py": [
+      "backend/app/__init__.py",
+      "backend/app/tickflow/__init__.py",
+      "backend/app/tickflow/policy.py"
+    ],
+    "backend/app/api/rps.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/concept_rotation_analyzer.py",
+      "backend/app/services/rps_rotation.py"
+    ],
+    "backend/app/api/screener.py": [
+      "backend/app/db_safe.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/screener.py",
+      "backend/app/services/strategy_cache.py",
+      "backend/app/strategy/__init__.py"
+    ],
+    "backend/app/api/settings.py": [
+      "backend/app/__init__.py",
+      "backend/app/data_providers/custom/config.py",
+      "backend/app/secrets_store.py",
+      "backend/app/tickflow/__init__.py",
+      "backend/app/tickflow/policy.py"
+    ],
+    "backend/app/api/signals.py": [
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/custom_signals.py"
+    ],
+    "backend/app/api/stock_analysis.py": [
+      "backend/app/indicators/levels.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/stock_analyzer.py",
+      "backend/app/services/stock_reports.py"
+    ],
+    "backend/app/api/strategy.py": [
+      "backend/app/backtest/minute_trigger.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/ai_generator.py",
+      "backend/app/strategy/engine.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/prompt_builder.py",
+      "backend/app/strategy/scoring.py"
+    ],
+    "backend/app/api/watchlist.py": [
+      "backend/app/db_safe.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/watchlist.py",
+      "backend/app/services/watchlist_csv.py",
+      "backend/app/services/watchlist_ocr/__init__.py",
+      "backend/app/services/watchlist_ocr/provider.py"
+    ],
+    "backend/app/backtest/__init__.py": [],
+    "backend/app/backtest/candidates.py": [],
+    "backend/app/backtest/engine.py": [
+      "backend/app/backtest/matrix.py",
+      "backend/app/config.py",
+      "backend/app/enriched_generation.py",
+      "backend/app/parquet.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/app/backtest/factor.py": [
+      "backend/app/backtest/engine.py",
+      "backend/app/backtest/fundamentals.py",
+      "backend/app/strategy/scoring.py"
+    ],
+    "backend/app/backtest/fundamentals.py": [],
+    "backend/app/backtest/matrix.py": [
+      "backend/app/backtest/minute_trigger.py",
+      "backend/app/backtest/numba_runtime.py",
+      "backend/app/price_limits.py",
+      "backend/app/strategy/scoring.py"
+    ],
+    "backend/app/backtest/mining.py": [],
+    "backend/app/backtest/mining_runtime.py": [
+      "backend/app/backtest/factor.py",
+      "backend/app/backtest/fundamentals.py",
+      "backend/app/backtest/mining.py",
+      "backend/app/backtest/strategy.py",
+      "backend/app/enriched_generation.py",
+      "backend/app/services/mining_jobs.py",
+      "backend/app/services/mining_preflight.py",
+      "backend/app/services/mining_schedule.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/app/backtest/minute_replay.py": [
+      "backend/app/price_limits.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/app/backtest/minute_trigger.py": [],
+    "backend/app/backtest/numba_runtime.py": [],
+    "backend/app/backtest/optimizer.py": [],
+    "backend/app/backtest/regime_alignment.py": [],
+    "backend/app/backtest/strategy.py": [
+      "backend/app/backtest/engine.py",
+      "backend/app/backtest/fundamentals.py",
+      "backend/app/backtest/matrix.py",
+      "backend/app/backtest/minute_replay.py",
+      "backend/app/backtest/minute_trigger.py",
+      "backend/app/config.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/strategy/engine.py",
+      "backend/app/strategy/scoring.py"
+    ],
+    "backend/app/backtest/walkforward.py": [],
+    "backend/app/backtest/worker.py": [],
+    "backend/app/config.py": [],
+    "backend/app/custom/README.md": [],
+    "backend/app/custom/__init__.py": [],
+    "backend/app/custom/_template.py.example": [],
+    "backend/app/custom/chanlun.py": [
+      "backend/app/extensions/__init__.py"
+    ],
+    "backend/app/data_providers/__init__.py": [
+      "backend/app/data_providers/base.py",
+      "backend/app/data_providers/registry.py"
+    ],
+    "backend/app/data_providers/base.py": [],
+    "backend/app/data_providers/capabilities.py": [
+      "backend/app/data_providers/__init__.py"
+    ],
+    "backend/app/data_providers/custom/__init__.py": [
+      "backend/app/data_providers/custom/loader.py"
+    ],
+    "backend/app/data_providers/custom/config.py": [],
+    "backend/app/data_providers/custom/loader.py": [
+      "backend/app/__init__.py",
+      "backend/app/config.py",
+      "backend/app/data_providers/custom/config.py",
+      "backend/app/data_providers/custom/provider.py",
+      "backend/app/secrets_store.py"
+    ],
+    "backend/app/data_providers/custom/mapper.py": [],
+    "backend/app/data_providers/custom/provider.py": [
+      "backend/app/config.py",
+      "backend/app/data_providers/base.py",
+      "backend/app/data_providers/custom/config.py",
+      "backend/app/data_providers/custom/mapper.py",
+      "backend/app/data_providers/normalizer.py",
+      "backend/app/tickflow/rate_limits.py"
+    ],
+    "backend/app/data_providers/normalizer.py": [
+      "backend/app/indicators/pipeline.py"
+    ],
+    "backend/app/data_providers/registry.py": [
+      "backend/app/data_providers/tickflow_provider.py"
+    ],
+    "backend/app/data_providers/schemas.py": [],
+    "backend/app/data_providers/tickflow_provider.py": [
+      "backend/app/data_providers/base.py",
+      "backend/app/data_providers/normalizer.py",
+      "backend/app/tickflow/client.py"
+    ],
+    "backend/app/db_safe.py": [],
+    "backend/app/desktop.py": [],
+    "backend/app/enriched_generation.py": [],
+    "backend/app/extensions/__init__.py": [
+      "backend/app/extensions/contracts.py",
+      "backend/app/extensions/registry.py"
+    ],
+    "backend/app/extensions/contracts.py": [],
+    "backend/app/extensions/loader.py": [
+      "backend/app/extensions/contracts.py",
+      "backend/app/extensions/registry.py"
+    ],
+    "backend/app/extensions/registry.py": [
+      "backend/app/extensions/contracts.py"
+    ],
+    "backend/app/indicators/__init__.py": [],
+    "backend/app/indicators/levels.py": [],
+    "backend/app/indicators/pipeline.py": [
+      "backend/app/config.py",
+      "backend/app/enriched_generation.py",
+      "backend/app/market_time.py",
+      "backend/app/parquet.py",
+      "backend/app/price_limits.py",
+      "backend/app/share_capital.py"
+    ],
+    "backend/app/jobs/__init__.py": [],
+    "backend/app/jobs/daily_pipeline.py": [
+      "backend/app/config.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/index_sync.py",
+      "backend/app/services/instrument_sync.py",
+      "backend/app/services/kline_sync.py",
+      "backend/app/tickflow/capabilities.py",
+      "backend/app/tickflow/pools.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/app/main.py": [
+      "backend/app/__init__.py",
+      "backend/app/api/__init__.py",
+      "backend/app/api/abnormal.py",
+      "backend/app/api/alerts.py",
+      "backend/app/api/analysis.py",
+      "backend/app/api/backtest.py",
+      "backend/app/api/data.py",
+      "backend/app/api/ext_data.py",
+      "backend/app/api/financials.py",
+      "backend/app/api/indices.py",
+      "backend/app/api/intraday.py",
+      "backend/app/api/kline.py",
+      "backend/app/api/market_recap.py",
+      "backend/app/api/mining.py",
+      "backend/app/api/monitor_rules.py",
+      "backend/app/api/overview.py",
+      "backend/app/api/pipeline.py",
+      "backend/app/api/regime.py",
+      "backend/app/api/routes.py",
+      "backend/app/api/rps.py",
+      "backend/app/api/screener.py",
+      "backend/app/api/signals.py",
+      "backend/app/api/stock_analysis.py",
+      "backend/app/api/strategy.py",
+      "backend/app/api/watchlist.py",
+      "backend/app/config.py",
+      "backend/app/enriched_generation.py",
+      "backend/app/extensions/loader.py",
+      "backend/app/jobs/__init__.py",
+      "backend/app/jobs/daily_pipeline.py",
+      "backend/app/services/matrix_prewarm_owner.py",
+      "backend/app/services/mining_process_lock.py",
+      "backend/app/services/quote_service.py",
+      "backend/app/tickflow/__init__.py",
+      "backend/app/tickflow/capabilities.py",
+      "backend/app/tickflow/policy.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/app/market_time.py": [],
+    "backend/app/parquet.py": [],
+    "backend/app/plugins/fuyao/__init__.py": [],
+    "backend/app/plugins/fuyao/client.py": [],
+    "backend/app/plugins/fuyao/plugin.yaml": [],
+    "backend/app/plugins/fuyao/provider.py": [
+      "backend/app/data_providers/normalizer.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/plugins/fuyao/__init__.py",
+      "backend/app/plugins/fuyao/client.py"
+    ],
+    "backend/app/plugins/stocksdk/__init__.py": [
+      "backend/app/plugins/stocksdk/bridge.py",
+      "backend/app/plugins/stocksdk/provider.py"
+    ],
+    "backend/app/plugins/stocksdk/bridge.mjs": [],
+    "backend/app/plugins/stocksdk/bridge.py": [],
+    "backend/app/plugins/stocksdk/package.json": [],
+    "backend/app/plugins/stocksdk/plugin.yaml": [],
+    "backend/app/plugins/stocksdk/provider.py": [
+      "backend/app/data_providers/base.py",
+      "backend/app/data_providers/normalizer.py",
+      "backend/app/plugins/stocksdk/__init__.py",
+      "backend/app/plugins/stocksdk/bridge.py",
+      "backend/app/tickflow/rate_limits.py"
+    ],
+    "backend/app/price_limits.py": [],
+    "backend/app/secrets_store.py": [],
+    "backend/app/services/__init__.py": [],
+    "backend/app/services/abnormal_moves.py": [
+      "backend/app/indicators/pipeline.py"
+    ],
+    "backend/app/services/ai_provider.py": [
+      "backend/app/__init__.py",
+      "backend/app/config.py",
+      "backend/app/secrets_store.py"
+    ],
+    "backend/app/services/ai_reports.py": [
+      "backend/app/services/json_report_store.py"
+    ],
+    "backend/app/services/alert_store.py": [],
+    "backend/app/services/auction_benchmark.py": [
+      "backend/app/market_time.py"
+    ],
+    "backend/app/services/auth.py": [],
+    "backend/app/services/backtest.py": [
+      "backend/app/config.py",
+      "backend/app/parquet.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/app/services/concept_rotation_analyzer.py": [],
+    "backend/app/services/data_integrity.py": [
+      "backend/app/market_time.py"
+    ],
+    "backend/app/services/depth_service.py": [
+      "backend/app/market_time.py",
+      "backend/app/tickflow/capabilities.py",
+      "backend/app/tickflow/rate_limits.py"
+    ],
+    "backend/app/services/dragon_tiger.py": [
+      "backend/app/market_time.py"
+    ],
+    "backend/app/services/ext_data.py": [],
+    "backend/app/services/ext_presets.py": [
+      "backend/app/services/ext_data.py"
+    ],
+    "backend/app/services/ext_pull.py": [
+      "backend/app/services/ext_data.py"
+    ],
+    "backend/app/services/extend_history.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py",
+      "backend/app/services/pipeline_jobs.py",
+      "backend/app/tickflow/capabilities.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/app/services/financial_analyzer.py": [
+      "backend/app/services/financial_sync.py"
+    ],
+    "backend/app/services/financial_sync.py": [
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/app/services/heavy_job_limiter.py": [],
+    "backend/app/services/index_const.py": [],
+    "backend/app/services/index_sync.py": [
+      "backend/app/indicators/pipeline.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py",
+      "backend/app/services/preferences.py",
+      "backend/app/tickflow/capabilities.py",
+      "backend/app/tickflow/client.py",
+      "backend/app/tickflow/rate_limits.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/app/services/instrument_sync.py": [
+      "backend/app/tickflow/client.py"
+    ],
+    "backend/app/services/json_report_store.py": [],
+    "backend/app/services/kline_sync.py": [
+      "backend/app/data_providers/base.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/market_time.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/preferences.py",
+      "backend/app/tickflow/capabilities.py",
+      "backend/app/tickflow/client.py",
+      "backend/app/tickflow/rate_limits.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/app/services/market_mainline.py": [
+      "backend/app/services/rps_rotation.py"
+    ],
+    "backend/app/services/market_overview_builder.py": [
+      "backend/app/services/ext_data.py",
+      "backend/app/services/index_const.py",
+      "backend/app/services/screener.py"
+    ],
+    "backend/app/services/market_phase.py": [],
+    "backend/app/services/market_recap.py": [
+      "backend/app/services/market_overview_builder.py"
+    ],
+    "backend/app/services/market_recap_reports.py": [
+      "backend/app/services/json_report_store.py"
+    ],
+    "backend/app/services/matrix_prewarm_owner.py": [],
+    "backend/app/services/mining_candidates.py": [
+      "backend/app/backtest/candidates.py",
+      "backend/app/backtest/factor.py",
+      "backend/app/backtest/mining.py",
+      "backend/app/services/mining_jobs.py",
+      "backend/app/strategy/ai_generator.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/app/services/mining_jobs.py": [],
+    "backend/app/services/mining_manager.py": [
+      "backend/app/backtest/worker.py",
+      "backend/app/services/heavy_job_limiter.py",
+      "backend/app/services/mining_jobs.py"
+    ],
+    "backend/app/services/mining_preflight.py": [
+      "backend/app/backtest/mining.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/app/services/mining_process_lock.py": [],
+    "backend/app/services/mining_schedule.py": [
+      "backend/app/backtest/factor.py",
+      "backend/app/backtest/mining.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/mining_preflight.py",
+      "backend/app/services/preferences.py",
+      "backend/app/services/regime_builder.py"
+    ],
+    "backend/app/services/minute_refresh.py": [
+      "backend/app/market_time.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/app/services/notify_adapter.py": [],
+    "backend/app/services/pipeline_jobs.py": [],
+    "backend/app/services/preferences.py": [],
+    "backend/app/services/quote_service.py": [
+      "backend/app/market_time.py",
+      "backend/app/parquet.py",
+      "backend/app/services/index_const.py",
+      "backend/app/strategy/intraday_signals.py"
+    ],
+    "backend/app/services/regime_builder.py": [],
+    "backend/app/services/repair_daily.py": [
+      "backend/app/tickflow/capabilities.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/app/services/rps_rotation.py": [
+      "backend/app/services/ext_data.py",
+      "backend/app/services/market_overview_builder.py"
+    ],
+    "backend/app/services/screener.py": [
+      "backend/app/parquet.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/app/services/sector_monitor.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/ext_data.py",
+      "backend/app/services/index_const.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/app/services/stock_analyzer.py": [
+      "backend/app/indicators/levels.py",
+      "backend/app/services/financial_sync.py"
+    ],
+    "backend/app/services/stock_reports.py": [
+      "backend/app/services/json_report_store.py"
+    ],
+    "backend/app/services/strategy_cache.py": [],
+    "backend/app/services/trading_day.py": [
+      "backend/app/market_time.py"
+    ],
+    "backend/app/services/watchlist.py": [
+      "backend/app/config.py",
+      "backend/app/tickflow/capabilities.py",
+      "backend/app/tickflow/client.py",
+      "backend/app/tickflow/rate_limits.py"
+    ],
+    "backend/app/services/watchlist_csv.py": [
+      "backend/app/services/watchlist_ocr/pipeline.py"
+    ],
+    "backend/app/services/watchlist_ocr/__init__.py": [
+      "backend/app/services/watchlist_ocr/pipeline.py"
+    ],
+    "backend/app/services/watchlist_ocr/pipeline.py": [
+      "backend/app/services/watchlist_ocr/provider.py"
+    ],
+    "backend/app/services/watchlist_ocr/provider.py": [],
+    "backend/app/services/webhook_adapter.py": [],
+    "backend/app/services/wecom_bot_service.py": [],
+    "backend/app/share_capital.py": [],
+    "backend/app/strategy/__init__.py": [],
+    "backend/app/strategy/ai_generator.py": [
+      "backend/app/indicators/pipeline.py",
+      "backend/app/strategy/scoring.py"
+    ],
+    "backend/app/strategy/builtin/__init__.py": [],
+    "backend/app/strategy/builtin/active_limit_gene.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/boll_breakout.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/breakout_new_high_60d.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/broken_board_recovery.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/bullish_alignment.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/consecutive_limit_ups.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/factor_rank_research.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/high_turnover_surge.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/limit_up_momentum.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/long_lower_shadow_reversal.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/low_volatility_leader.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/ma_convergence_breakout.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/ma_golden_cross.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/macd_below_zero_revival.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/macd_golden.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/n_day_low_reversal.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/near_limit_up.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/oversold_bounce.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/oversold_reversal.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/platform_consolidation_breakout.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/pullback_ma20_bounce.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/pullback_to_support.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/rsi_midline_pullback.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/strong_open.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/trend_breakout.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/builtin/volume_price_surge.py": [
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/app/strategy/composite.py": [],
+    "backend/app/strategy/config.py": [],
+    "backend/app/strategy/custom_signals.py": [],
+    "backend/app/strategy/custom_signals_ai.py": [
+      "backend/app/indicators/pipeline.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/custom_signals.py"
+    ],
+    "backend/app/strategy/engine.py": [
+      "backend/app/strategy/scoring.py"
+    ],
+    "backend/app/strategy/intraday_signals.py": [
+      "backend/app/market_time.py"
+    ],
+    "backend/app/strategy/market_data.py": [],
+    "backend/app/strategy/monitor.py": [
+      "backend/app/market_time.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/custom_signals.py",
+      "backend/app/strategy/intraday_signals.py"
+    ],
+    "backend/app/strategy/monitor_rules.py": [
+      "backend/app/strategy/custom_signals.py",
+      "backend/app/strategy/intraday_signals.py"
+    ],
+    "backend/app/strategy/prompt_builder.py": [],
+    "backend/app/strategy/prompts/strategy-builder-step1.md": [],
+    "backend/app/strategy/prompts/strategy-builder-step2.md": [],
+    "backend/app/strategy/prompts/strategy-example.md": [],
+    "backend/app/strategy/prompts/strategy-guide-compact.md": [],
+    "backend/app/strategy/prompts/strategy-guide.md": [],
+    "backend/app/strategy/scoring.py": [],
+    "backend/app/tickflow/__init__.py": [],
+    "backend/app/tickflow/capabilities.py": [],
+    "backend/app/tickflow/client.py": [
+      "backend/app/__init__.py",
+      "backend/app/secrets_store.py",
+      "backend/app/tickflow/__init__.py"
+    ],
+    "backend/app/tickflow/policy.py": [
+      "backend/app/__init__.py",
+      "backend/app/config.py",
+      "backend/app/secrets_store.py",
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/app/tickflow/pools.py": [
+      "backend/app/config.py",
+      "backend/app/tickflow/client.py"
+    ],
+    "backend/app/tickflow/rate_limits.py": [
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/app/tickflow/repository.py": [
+      "backend/app/config.py",
+      "backend/app/enriched_generation.py",
+      "backend/app/market_time.py",
+      "backend/app/parquet.py"
+    ],
+    "backend/app/tickflow/scheduler.py": [
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/pyproject.toml": [],
+    "backend/scripts/__init__.py": [],
+    "backend/scripts/cleanup_halt_days.py": [],
+    "backend/scripts/probe_tickflow_pro.py": [],
+    "backend/tests/backtest/test_composite_backtest_e2e.py": [
+      "backend/app/backtest/engine.py",
+      "backend/app/backtest/matrix.py",
+      "backend/app/backtest/strategy.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/backtest/test_cost_model.py": [
+      "backend/app/backtest/engine.py"
+    ],
+    "backend/tests/backtest/test_dependencies.py": [
+      "backend/app/backtest/strategy.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/backtest/test_engine_portfolio.py": [
+      "backend/app/backtest/engine.py"
+    ],
+    "backend/tests/backtest/test_factor_batch.py": [
+      "backend/app/backtest/factor.py"
+    ],
+    "backend/tests/backtest/test_factor_default_range.py": [
+      "backend/app/api/__init__.py"
+    ],
+    "backend/tests/backtest/test_factor_metrics.py": [
+      "backend/app/backtest/factor.py",
+      "backend/app/backtest/regime_alignment.py"
+    ],
+    "backend/tests/backtest/test_factor_rank_research.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/backtest/matrix.py",
+      "backend/app/backtest/optimizer.py",
+      "backend/app/backtest/strategy.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/backtest/test_full_simulation_tail.py": [
+      "backend/app/backtest/engine.py"
+    ],
+    "backend/tests/backtest/test_market_matrix.py": [
+      "backend/app/backtest/engine.py",
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/tests/backtest/test_matrix_compute_cache.py": [
+      "backend/app/backtest/matrix.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/backtest/test_matrix_strategy.py": [
+      "backend/app/backtest/__init__.py",
+      "backend/app/backtest/factor.py",
+      "backend/app/backtest/matrix.py",
+      "backend/app/backtest/strategy.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/backtest/test_max_hold_exits.py": [
+      "backend/app/services/backtest.py"
+    ],
+    "backend/tests/backtest/test_mining.py": [
+      "backend/app/backtest/mining.py"
+    ],
+    "backend/tests/backtest/test_mining_runtime.py": [
+      "backend/app/backtest/mining.py",
+      "backend/app/backtest/mining_runtime.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/regime_builder.py"
+    ],
+    "backend/tests/backtest/test_minute_backtest.py": [
+      "backend/app/backtest/engine.py",
+      "backend/app/backtest/strategy.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/backtest/test_minute_fill.py": [
+      "backend/app/backtest/engine.py",
+      "backend/app/backtest/minute_trigger.py"
+    ],
+    "backend/tests/backtest/test_numba_runtime.py": [
+      "backend/app/backtest/numba_runtime.py"
+    ],
+    "backend/tests/backtest/test_optimizer_api.py": [
+      "backend/app/api/backtest.py"
+    ],
+    "backend/tests/backtest/test_optimizer_grid.py": [
+      "backend/app/backtest/optimizer.py"
+    ],
+    "backend/tests/backtest/test_optimizer_run.py": [
+      "backend/app/backtest/optimizer.py"
+    ],
+    "backend/tests/backtest/test_research_api.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/backtest/factor.py"
+    ],
+    "backend/tests/backtest/test_research_candidates.py": [
+      "backend/app/backtest/candidates.py"
+    ],
+    "backend/tests/backtest/test_robustness_metrics.py": [
+      "backend/app/backtest/engine.py"
+    ],
+    "backend/tests/backtest/test_strategy_backtest_correctness.py": [
+      "backend/app/backtest/engine.py",
+      "backend/app/backtest/matrix.py",
+      "backend/app/backtest/strategy.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/regime_builder.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/backtest/test_walkforward.py": [
+      "backend/app/backtest/engine.py",
+      "backend/app/backtest/walkforward.py"
+    ],
+    "backend/tests/backtest/test_worker_process.py": [
+      "backend/app/backtest/__init__.py",
+      "backend/app/backtest/mining.py",
+      "backend/app/backtest/optimizer.py",
+      "backend/app/backtest/strategy.py",
+      "backend/app/backtest/walkforward.py",
+      "backend/app/backtest/worker.py",
+      "backend/app/enriched_generation.py",
+      "backend/app/services/mining_jobs.py"
+    ],
+    "backend/tests/fixtures/strategies/minute_red_streak.py": [],
+    "backend/tests/test_abnormal_intraday.py": [
+      "backend/app/services/abnormal_moves.py"
+    ],
+    "backend/tests/test_abnormal_moves.py": [
+      "backend/app/indicators/pipeline.py",
+      "backend/app/services/abnormal_moves.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_ai_generator_prompt.py": [
+      "backend/app/strategy/ai_generator.py",
+      "backend/app/strategy/prompt_builder.py"
+    ],
+    "backend/tests/test_ai_provider.py": [
+      "backend/app/__init__.py",
+      "backend/app/api/__init__.py",
+      "backend/app/config.py",
+      "backend/app/secrets_store.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/ai_provider.py"
+    ],
+    "backend/tests/test_ai_strategy_meta_normalize.py": [
+      "backend/app/api/strategy.py",
+      "backend/app/strategy/ai_generator.py"
+    ],
+    "backend/tests/test_atomic_write_retry.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py",
+      "backend/app/tickflow/__init__.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_auction_benchmark.py": [
+      "backend/app/plugins/fuyao/client.py",
+      "backend/app/services/__init__.py"
+    ],
+    "backend/tests/test_auth_env_bootstrap.py": [
+      "backend/app/__init__.py",
+      "backend/app/config.py"
+    ],
+    "backend/tests/test_backtest_etf.py": [
+      "backend/app/backtest/engine.py",
+      "backend/app/backtest/factor.py",
+      "backend/app/backtest/strategy.py",
+      "backend/app/services/backtest.py"
+    ],
+    "backend/tests/test_capability_augment.py": [
+      "backend/app/tickflow/capabilities.py",
+      "backend/app/tickflow/policy.py"
+    ],
+    "backend/tests/test_capability_matrix.py": [
+      "backend/app/data_providers/__init__.py",
+      "backend/app/data_providers/capabilities.py"
+    ],
+    "backend/tests/test_chanlun_extension.py": [
+      "backend/app/custom/chanlun.py"
+    ],
+    "backend/tests/test_composite_override.py": [
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_composite_strategy.py": [
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_composite_strategy_api.py": [
+      "backend/app/api/strategy.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_config_env.py": [
+      "backend/app/config.py"
+    ],
+    "backend/tests/test_custom_loader_install.py": [
+      "backend/app/data_providers/custom/__init__.py",
+      "backend/app/data_providers/custom/loader.py"
+    ],
+    "backend/tests/test_custom_minute_config.py": [
+      "backend/app/api/settings.py",
+      "backend/app/data_providers/custom/config.py",
+      "backend/app/data_providers/custom/loader.py",
+      "backend/app/data_providers/custom/provider.py"
+    ],
+    "backend/tests/test_custom_pct_units.py": [
+      "backend/app/data_providers/custom/config.py",
+      "backend/app/data_providers/custom/provider.py"
+    ],
+    "backend/tests/test_custom_provider_indices.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/index_const.py"
+    ],
+    "backend/tests/test_custom_signals_ai.py": [
+      "backend/app/api/signals.py",
+      "backend/app/strategy/custom_signals_ai.py"
+    ],
+    "backend/tests/test_daily_batch_asset.py": [
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_data_clear_generation.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/backtest/engine.py",
+      "backend/app/enriched_generation.py"
+    ],
+    "backend/tests/test_data_integrity.py": [
+      "backend/app/market_time.py",
+      "backend/app/services/data_integrity.py"
+    ],
+    "backend/tests/test_data_status_storage.py": [
+      "backend/app/api/data.py"
+    ],
+    "backend/tests/test_depth_continuous_trading.py": [
+      "backend/app/market_time.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/depth_service.py"
+    ],
+    "backend/tests/test_dimension_intraday.py": [
+      "backend/app/api/ext_data.py",
+      "backend/app/services/ext_data.py"
+    ],
+    "backend/tests/test_dragon_tiger.py": [
+      "backend/app/plugins/fuyao/client.py",
+      "backend/app/services/__init__.py"
+    ],
+    "backend/tests/test_enriched_full_rebuild.py": [
+      "backend/app/indicators/__init__.py",
+      "backend/app/indicators/pipeline.py"
+    ],
+    "backend/tests/test_enriched_generation.py": [
+      "backend/app/backtest/engine.py",
+      "backend/app/enriched_generation.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_enriched_range_warming_guard.py": [
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_ext_config_load_all_cache.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/ext_data.py"
+    ],
+    "backend/tests/test_ext_config_store_safety.py": [
+      "backend/app/services/ext_data.py"
+    ],
+    "backend/tests/test_ext_data_dimension_members.py": [
+      "backend/app/api/ext_data.py"
+    ],
+    "backend/tests/test_ext_preset_dimension_values.py": [
+      "backend/app/services/ext_presets.py",
+      "backend/app/services/market_overview_builder.py"
+    ],
+    "backend/tests/test_ext_sql_safety.py": [
+      "backend/app/db_safe.py"
+    ],
+    "backend/tests/test_ext_upload_size_limit.py": [
+      "backend/app/api/ext_data.py"
+    ],
+    "backend/tests/test_extensions.py": [
+      "backend/app/extensions/contracts.py",
+      "backend/app/extensions/loader.py",
+      "backend/app/extensions/registry.py",
+      "backend/app/services/quote_service.py"
+    ],
+    "backend/tests/test_factor_library_v2.py": [
+      "backend/app/backtest/matrix.py",
+      "backend/app/strategy/scoring.py"
+    ],
+    "backend/tests/test_financial_shares.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/indicators/__init__.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/financial_sync.py",
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/tests/test_full_minute_capability.py": [
+      "backend/app/services/minute_refresh.py",
+      "backend/app/tickflow/capabilities.py",
+      "backend/app/tickflow/policy.py"
+    ],
+    "backend/tests/test_fundamental_factors.py": [
+      "backend/app/backtest/fundamentals.py",
+      "backend/app/backtest/matrix.py"
+    ],
+    "backend/tests/test_fuyao_financial.py": [
+      "backend/app/plugins/fuyao/__init__.py",
+      "backend/app/plugins/fuyao/provider.py",
+      "backend/app/services/financial_sync.py"
+    ],
+    "backend/tests/test_fuyao_provider.py": [
+      "backend/app/plugins/fuyao/__init__.py",
+      "backend/app/plugins/fuyao/provider.py"
+    ],
+    "backend/tests/test_get_daily_cache_reuse.py": [
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_heavy_job_limiter.py": [
+      "backend/app/services/heavy_job_limiter.py"
+    ],
+    "backend/tests/test_high_turnover_strategy.py": [
+      "backend/app/backtest/matrix.py",
+      "backend/app/strategy/builtin/__init__.py",
+      "backend/app/strategy/builtin/high_turnover_surge.py"
+    ],
+    "backend/tests/test_indicator_needed.py": [
+      "backend/app/indicators/pipeline.py"
+    ],
+    "backend/tests/test_instrument_search.py": [
+      "backend/app/api/kline.py"
+    ],
+    "backend/tests/test_intraday_burst_fault_isolation.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py",
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/tests/test_intraday_monitor_signals.py": [
+      "backend/app/market_time.py",
+      "backend/app/services/kline_sync.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/intraday_signals.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py",
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/tests/test_job_record_persistence.py": [
+      "backend/app/services/pipeline_jobs.py"
+    ],
+    "backend/tests/test_job_stall_and_cancel.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/pipeline_jobs.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_kline_hot_path_memory.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/api/kline.py",
+      "backend/app/api/screener.py",
+      "backend/app/services/ext_data.py"
+    ],
+    "backend/tests/test_kline_minute_live.py": [
+      "backend/app/api/kline.py",
+      "backend/app/market_time.py"
+    ],
+    "backend/tests/test_kline_sync_timezone.py": [
+      "backend/app/market_time.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py"
+    ],
+    "backend/tests/test_last_fetch_throttle.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/preferences.py",
+      "backend/app/services/quote_service.py"
+    ],
+    "backend/tests/test_limit_ladder_one_word.py": [
+      "backend/app/api/screener.py"
+    ],
+    "backend/tests/test_live_enriched_metadata.py": [
+      "backend/app/market_time.py",
+      "backend/app/strategy/engine.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_main_mining_lifespan.py": [
+      "backend/app/main.py"
+    ],
+    "backend/tests/test_market_mainline.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/market_mainline.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_market_phase.py": [
+      "backend/app/services/market_phase.py",
+      "backend/app/services/regime_builder.py"
+    ],
+    "backend/tests/test_matrix_etf_share_fields.py": [
+      "backend/app/backtest/matrix.py",
+      "backend/app/backtest/strategy.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_matrix_field_columns_expansion.py": [
+      "backend/app/backtest/matrix.py",
+      "backend/app/strategy/builtin/factor_rank_research.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_matrix_prewarm_owner.py": [
+      "backend/app/services/heavy_job_limiter.py",
+      "backend/app/services/matrix_prewarm_owner.py"
+    ],
+    "backend/tests/test_mining_api.py": [
+      "backend/app/api/mining.py",
+      "backend/app/backtest/mining.py",
+      "backend/app/enriched_generation.py",
+      "backend/app/services/mining_jobs.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_mining_candidates.py": [
+      "backend/app/backtest/candidates.py",
+      "backend/app/backtest/mining.py",
+      "backend/app/services/mining_candidates.py",
+      "backend/app/services/mining_jobs.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_mining_jobs.py": [
+      "backend/app/services/mining_jobs.py"
+    ],
+    "backend/tests/test_mining_manager.py": [
+      "backend/app/services/heavy_job_limiter.py",
+      "backend/app/services/mining_manager.py"
+    ],
+    "backend/tests/test_mining_process_lock.py": [
+      "backend/app/services/mining_process_lock.py"
+    ],
+    "backend/tests/test_mining_schedule.py": [
+      "backend/app/jobs/__init__.py",
+      "backend/app/jobs/daily_pipeline.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/mining_jobs.py",
+      "backend/app/services/mining_schedule.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_minute_history_days.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/api/settings.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_minute_range_api.py": [
+      "backend/app/api/__init__.py"
+    ],
+    "backend/tests/test_minute_refresh.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/minute_refresh.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_minute_routing.py": [
+      "backend/app/data_providers/custom/config.py",
+      "backend/app/data_providers/custom/provider.py",
+      "backend/app/plugins/stocksdk/__init__.py",
+      "backend/app/plugins/stocksdk/provider.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py"
+    ],
+    "backend/tests/test_minute_strategy.py": [
+      "backend/app/services/screener.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_minute_timezone_contract.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py"
+    ],
+    "backend/tests/test_monitor_etf.py": [
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_monitor_group_scope.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/config.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/watchlist.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_monitor_index.py": [
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_override_signature_cache.py": [
+      "backend/app/strategy/__init__.py"
+    ],
+    "backend/tests/test_parquet_schema_compat.py": [
+      "backend/app/parquet.py"
+    ],
+    "backend/tests/test_pipeline_and_monitor_fixes.py": [
+      "backend/app/jobs/__init__.py",
+      "backend/app/jobs/daily_pipeline.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/pipeline_jobs.py",
+      "backend/app/services/preferences.py",
+      "backend/app/services/quote_service.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_pipeline_pull_types.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_preferences_cache.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_price_limits.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/api/kline.py",
+      "backend/app/backtest/matrix.py",
+      "backend/app/indicators/__init__.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/price_limits.py"
+    ],
+    "backend/tests/test_probe_tickflow_pro_gate.py": [
+      "backend/scripts/probe_tickflow_pro.py"
+    ],
+    "backend/tests/test_probe_tickflow_pro_live.py": [
+      "backend/scripts/probe_tickflow_pro.py"
+    ],
+    "backend/tests/test_quote_index_merge.py": [
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_quote_interval_min.py": [
+      "backend/app/services/quote_service.py"
+    ],
+    "backend/tests/test_quote_name_map_reuse.py": [
+      "backend/app/services/quote_service.py"
+    ],
+    "backend/tests/test_rate_limit_safety_budget.py": [
+      "backend/app/tickflow/capabilities.py",
+      "backend/app/tickflow/rate_limits.py"
+    ],
+    "backend/tests/test_realtime_enriched_resume.py": [
+      "backend/app/indicators/pipeline.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_realtime_mode.py": [
+      "backend/app/services/quote_service.py"
+    ],
+    "backend/tests/test_realtime_turnover_rate.py": [
+      "backend/app/indicators/__init__.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/services/quote_service.py"
+    ],
+    "backend/tests/test_regime_builder.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/regime_builder.py"
+    ],
+    "backend/tests/test_repository_index.py": [
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_resolve_universe_index.py": [
+      "backend/app/jobs/__init__.py",
+      "backend/app/jobs/daily_pipeline.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_screener_builtin_params.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/services/screener.py"
+    ],
+    "backend/tests/test_screener_cache_api.py": [
+      "backend/app/api/__init__.py"
+    ],
+    "backend/tests/test_screener_etf.py": [
+      "backend/app/services/screener.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_sector_monitor.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/ext_data.py",
+      "backend/app/services/sector_monitor.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_settings_mining_schedule.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/api/settings.py"
+    ],
+    "backend/tests/test_st_limit_and_sharpe.py": [
+      "backend/app/backtest/factor.py",
+      "backend/app/backtest/matrix.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/strategy/builtin/near_limit_up.py"
+    ],
+    "backend/tests/test_stock_analyzer_index.py": [
+      "backend/app/services/stock_analyzer.py"
+    ],
+    "backend/tests/test_stocksdk_provider.py": [
+      "backend/app/plugins/stocksdk/__init__.py",
+      "backend/app/plugins/stocksdk/bridge.py",
+      "backend/app/plugins/stocksdk/provider.py"
+    ],
+    "backend/tests/test_strategy_build_stream.py": [
+      "backend/app/api/strategy.py",
+      "backend/app/strategy/ai_generator.py"
+    ],
+    "backend/tests/test_strategy_cache.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/strategy_cache.py"
+    ],
+    "backend/tests/test_strategy_code_save.py": [
+      "backend/app/api/strategy.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_strategy_delete.py": [
+      "backend/app/api/strategy.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/preferences.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/engine.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_strategy_detail_signals.py": [
+      "backend/app/api/strategy.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_strategy_market_data.py": [
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/ai_generator.py",
+      "backend/app/strategy/market_data.py"
+    ],
+    "backend/tests/test_strategy_monitor_events.py": [
+      "backend/app/backtest/matrix.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/alert_store.py",
+      "backend/app/services/preferences.py",
+      "backend/app/services/quote_service.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/engine.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_strategy_param_normalize.py": [
+      "backend/app/api/strategy.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_strategy_realtime_refresh.py": [
+      "backend/app/market_time.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/quote_service.py",
+      "backend/app/strategy/engine.py",
+      "backend/app/strategy/monitor.py"
+    ],
+    "backend/tests/test_strategy_registry.py": [
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_strategy_required_history.py": [
+      "backend/app/services/screener.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_strategy_saved_params.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_strategy_scoring.py": [
+      "backend/app/backtest/strategy.py",
+      "backend/app/strategy/engine.py",
+      "backend/app/strategy/scoring.py"
+    ],
+    "backend/tests/test_trading_day.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/trading_day.py"
+    ],
+    "backend/tests/test_volume_delta_monitor.py": [
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_watchlist_csv.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/api/watchlist.py",
+      "backend/app/config.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/watchlist.py",
+      "backend/app/services/watchlist_csv.py"
+    ],
+    "backend/tests/test_watchlist_enriched_join.py": [
+      "backend/app/api/__init__.py"
+    ],
+    "backend/tests/test_watchlist_groups.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/config.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/watchlist.py"
+    ],
+    "backend/tests/test_watchlist_ocr.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/api/watchlist.py",
+      "backend/app/config.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/watchlist.py",
+      "backend/app/services/watchlist_ocr/pipeline.py",
+      "backend/app/services/watchlist_ocr/provider.py"
+    ],
+    "backend/tests/test_webhook_test.py": [
+      "backend/app/api/settings.py"
+    ],
+    "dev.ps1": [],
+    "dev.sh": [],
+    "docker-compose.yml": [],
+    "docs/ai-context/architecture.md": [],
+    "docs/ai-context/data-contracts.md": [],
+    "docs/ai-context/development-workflow.md": [],
+    "docs/ai-context/domain-flows.md": [],
+    "docs/ai-context/extensions.md": [],
+    "docs/ai-context/index.md": [],
+    "docs/chanlun-phase1.md": [],
+    "docs/chanlun-phase2.md": [],
+    "docs/configuration.md": [],
+    "docs/custom-data-source.md": [],
+    "docs/deploy-password.md": [],
+    "docs/deployment.md": [],
+    "docs/examples/custom-data-source/README.md": [],
+    "docs/examples/custom-data-source/mock_server.py": [],
+    "docs/examples/custom-data-source/mock_source.yaml": [],
+    "docs/features.md": [],
+    "docs/market-phase.md": [],
+    "docs/mining.md": [],
+    "docs/plugin-development.md": [],
+    "docs/secondary-dev-plan-chanlun-wyckoff.md": [],
+    "docs/secondary-development.md": [],
+    "docs/strategy.md": [],
+    "docs/tickflow-pro-phase1-probe.md": [],
+    "docs/tickflow-pro-shared-rate-limit.md": [],
+    "frontend/index.html": [],
+    "frontend/package.json": [],
+    "frontend/postcss.config.js": [],
+    "frontend/src/components/AdjFactorSyncGate.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/components/AlertToast.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/notificationSound.ts",
+      "frontend/src/lib/signals.ts",
+      "frontend/src/lib/strategyMonitorEvents.ts",
+      "frontend/src/lib/useSharedQueries.ts",
+      "frontend/src/lib/voiceBroadcast.ts"
+    ],
+    "frontend/src/components/CandlestickChart.tsx": [
+      "frontend/src/lib/theme.ts"
+    ],
+    "frontend/src/components/ColumnCustomizer.tsx": [
+      "frontend/src/components/ListColumnCustomizer.tsx",
+      "frontend/src/lib/watchlist-columns.ts"
+    ],
+    "frontend/src/components/DatePicker.tsx": [],
+    "frontend/src/components/DimensionMembersDialog.tsx": [
+      "frontend/src/components/Modal.tsx",
+      "frontend/src/components/StockPreviewDialog.tsx",
+      "frontend/src/components/stock-table/primitives.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/theme.ts"
+    ],
+    "frontend/src/components/EChartsCandlestick.tsx": [
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/theme.ts"
+    ],
+    "frontend/src/components/EChartsIntraday.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/intraday-chart.ts",
+      "frontend/src/lib/theme.ts"
+    ],
+    "frontend/src/components/EChartsMultiDayIntraday.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/intraday-chart.ts",
+      "frontend/src/lib/theme.ts"
+    ],
+    "frontend/src/components/EmptyState.tsx": [],
+    "frontend/src/components/EndpointTestDialog.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/capability-labels.tsx",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useDialogBackdrop.ts"
+    ],
+    "frontend/src/components/ExtDimensionAnalysis.tsx": [
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/components/GroupStatsSettings.tsx": [
+      "frontend/src/lib/watchlistGroupStats.ts"
+    ],
+    "frontend/src/components/LastStockChip.tsx": [
+      "frontend/src/lib/useLastStock.ts"
+    ],
+    "frontend/src/components/Layout.tsx": [
+      "frontend/src/components/AlertToast.tsx",
+      "frontend/src/components/Logo.tsx",
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/components/financials/AiAnalysisHost.tsx",
+      "frontend/src/components/financials/AiReportBubble.tsx",
+      "frontend/src/components/stock-analysis/StockAnalysisBubble.tsx",
+      "frontend/src/components/stock-analysis/StockAnalysisHost.tsx",
+      "frontend/src/extensions/ExtensionSlot.tsx",
+      "frontend/src/extensions/registry.ts",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/monitorBadge.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/theme.ts",
+      "frontend/src/lib/useDialogBackdrop.ts",
+      "frontend/src/lib/useMediaQuery.ts",
+      "frontend/src/lib/useQuoteStream.ts",
+      "frontend/src/lib/useSharedMutations.ts",
+      "frontend/src/lib/useSharedQueries.ts",
+      "frontend/src/lib/watchlist-group-colors.ts",
+      "frontend/src/lib/watchlistGroupStats.ts"
+    ],
+    "frontend/src/components/ListColumnCustomizer.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/list-columns.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useDialogBackdrop.ts"
+    ],
+    "frontend/src/components/Logo.tsx": [],
+    "frontend/src/components/Modal.tsx": [],
+    "frontend/src/components/PageHeader.tsx": [
+      "frontend/src/lib/cn.ts"
+    ],
+    "frontend/src/components/RpsRotationDialog.tsx": [
+      "frontend/src/components/Modal.tsx",
+      "frontend/src/components/financials/MarkdownRenderer.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/components/ScoringEditor.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/components/SealedBadge.tsx": [
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/components/StockDailyKChart.tsx": [
+      "frontend/src/components/EChartsCandlestick.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/kline.ts",
+      "frontend/src/lib/storage.ts"
+    ],
+    "frontend/src/components/StockInfoBar.tsx": [
+      "frontend/src/components/ListColumnCustomizer.tsx",
+      "frontend/src/components/WatchlistAddMenu.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/stock-external-link.ts",
+      "frontend/src/lib/stock-info-fields.ts"
+    ],
+    "frontend/src/components/StockIntradayChart.tsx": [
+      "frontend/src/components/EChartsIntraday.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/kline.ts",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/components/StockMultiDayIntradayChart.tsx": [
+      "frontend/src/components/EChartsMultiDayIntraday.tsx",
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/kline.ts"
+    ],
+    "frontend/src/components/StockPanel.tsx": [
+      "frontend/src/components/EChartsCandlestick.tsx",
+      "frontend/src/components/StockDailyKChart.tsx",
+      "frontend/src/components/StockInfoBar.tsx",
+      "frontend/src/components/StockIntradayChart.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/kline.ts",
+      "frontend/src/lib/stock-info-fields.ts",
+      "frontend/src/lib/useFinancials.ts",
+      "frontend/src/lib/useSharedQueries.ts"
+    ],
+    "frontend/src/components/StockPreviewDialog.tsx": [
+      "frontend/src/components/DatePicker.tsx",
+      "frontend/src/components/StockMultiDayIntradayChart.tsx",
+      "frontend/src/components/StockPanel.tsx",
+      "frontend/src/components/WatchlistAddMenu.tsx",
+      "frontend/src/components/monitor/RuleEditor.tsx",
+      "frontend/src/components/stock-analysis/PriceAlertDialog.tsx",
+      "frontend/src/extensions/ExtensionSlot.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/kline.ts",
+      "frontend/src/lib/price-alerts.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/signals.ts",
+      "frontend/src/lib/storage.ts",
+      "frontend/src/lib/useDialogBackdrop.ts",
+      "frontend/src/lib/useQuoteStream.ts",
+      "frontend/src/lib/useSharedQueries.ts"
+    ],
+    "frontend/src/components/Toast.tsx": [],
+    "frontend/src/components/WarmupBadge.tsx": [],
+    "frontend/src/components/WatchlistAddMenu.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/watchlist-group-colors.ts"
+    ],
+    "frontend/src/components/WatchlistGroupCards.tsx": [
+      "frontend/src/components/GroupStatsSettings.tsx",
+      "frontend/src/components/stock-table/primitives.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/watchlist-group-colors.ts",
+      "frontend/src/lib/watchlistGroupStats.ts"
+    ],
+    "frontend/src/components/WatchlistGroupStatsBar.tsx": [
+      "frontend/src/components/GroupStatsSettings.tsx",
+      "frontend/src/components/WatchlistGroups.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/watchlist-group-colors.ts",
+      "frontend/src/lib/watchlistGroupStats.ts"
+    ],
+    "frontend/src/components/WatchlistGroups.tsx": [
+      "frontend/src/components/Modal.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useSharedQueries.ts",
+      "frontend/src/lib/watchlist-group-colors.ts",
+      "frontend/src/lib/watchlistGroupStats.ts"
+    ],
+    "frontend/src/components/WatchlistImportDialog.tsx": [
+      "frontend/src/components/Modal.tsx",
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useSharedMutations.ts",
+      "frontend/src/lib/watchlist-group-colors.ts"
+    ],
+    "frontend/src/components/analysis-shared.tsx": [
+      "frontend/src/lib/analysis-adapter.ts",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useDialogBackdrop.ts"
+    ],
+    "frontend/src/components/data/ActiveJobCard.tsx": [
+      "frontend/src/components/data/StatCard.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/format.ts"
+    ],
+    "frontend/src/components/data/DepthConfigCard.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/capability-labels.tsx",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useSharedQueries.ts"
+    ],
+    "frontend/src/components/data/EnrichedRebuildPanel.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useSharedQueries.ts"
+    ],
+    "frontend/src/components/data/ExtendHistoryPanel.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/capability-labels.tsx",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/components/data/MinuteSyncConfig.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/capability-labels.tsx",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/components/data/PageSettingsModal.tsx": [
+      "frontend/src/lib/storage.ts"
+    ],
+    "frontend/src/components/data/PipelineScopeConfig.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/components/data/QuoteConfigCard.tsx": [
+      "frontend/src/components/data/Skeleton.tsx"
+    ],
+    "frontend/src/components/data/RegimeConfigCard.tsx": [
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/components/data/RepairDailyPanel.tsx": [
+      "frontend/src/components/DatePicker.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/capability-labels.tsx",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/components/data/ScheduleEditor.tsx": [],
+    "frontend/src/components/data/SchemaModal.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useDialogBackdrop.ts"
+    ],
+    "frontend/src/components/data/SectionTitle.tsx": [
+      "frontend/src/lib/format.ts"
+    ],
+    "frontend/src/components/data/SettingsModal.tsx": [
+      "frontend/src/lib/useDialogBackdrop.ts"
+    ],
+    "frontend/src/components/data/Skeleton.tsx": [],
+    "frontend/src/components/data/StatCard.tsx": [
+      "frontend/src/components/data/Skeleton.tsx",
+      "frontend/src/lib/capability-labels.tsx",
+      "frontend/src/lib/format.ts"
+    ],
+    "frontend/src/components/ext-data/CreateExtDialog.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useDialogBackdrop.ts"
+    ],
+    "frontend/src/components/ext-data/EditExtDialog.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useDialogBackdrop.ts"
+    ],
+    "frontend/src/components/ext-data/ExtDataApiPanel.tsx": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/components/ext-data/ExtDataPullPanel.tsx": [
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/components/ext-data/ExtDataStatCard.tsx": [
+      "frontend/src/components/data/SettingsModal.tsx",
+      "frontend/src/components/ext-data/ExtDataApiPanel.tsx",
+      "frontend/src/components/ext-data/ExtDataPullPanel.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/components/financials/AiAnalysisDialog.tsx": [
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/components/financials/MarkdownRenderer.tsx",
+      "frontend/src/lib/aiReportStore.ts",
+      "frontend/src/lib/clipboard.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/useDialogBackdrop.ts"
+    ],
+    "frontend/src/components/financials/AiAnalysisHost.tsx": [
+      "frontend/src/components/financials/AiAnalysisDialog.tsx",
+      "frontend/src/lib/aiReportStore.ts"
+    ],
+    "frontend/src/components/financials/AiReportBubble.tsx": [
+      "frontend/src/lib/aiReportStore.ts"
+    ],
+    "frontend/src/components/financials/MarkdownRenderer.tsx": [],
+    "frontend/src/components/financials/ReportHistoryPanel.tsx": [
+      "frontend/src/lib/aiReportStore.ts"
+    ],
+    "frontend/src/components/financials/StockFinancialDetail.tsx": [
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/components/data/Skeleton.tsx",
+      "frontend/src/lib/aiReportStore.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/useFinancials.ts"
+    ],
+    "frontend/src/components/financials/StockFinancialSearch.tsx": [
+      "frontend/src/components/stock-table/primitives.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/components/monitor/RuleEditor.tsx": [
+      "frontend/src/components/screener/SignalPicker.tsx",
+      "frontend/src/components/stock-table/primitives.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/signals.ts",
+      "frontend/src/lib/strategyMonitorEvents.ts",
+      "frontend/src/lib/useSharedQueries.ts",
+      "frontend/src/lib/watchlist-group-colors.ts"
+    ],
+    "frontend/src/components/screener/CompositeStrategyDialog.tsx": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/components/screener/ScreenerFilter.tsx": [
+      "frontend/src/lib/board.ts"
+    ],
+    "frontend/src/components/screener/ScreenerTable.tsx": [
+      "frontend/src/components/DimensionMembersDialog.tsx",
+      "frontend/src/components/StockPreviewDialog.tsx",
+      "frontend/src/components/WatchlistAddMenu.tsx",
+      "frontend/src/components/stock-table/MiniCandlestick.tsx",
+      "frontend/src/components/stock-table/MiniIntraday.tsx",
+      "frontend/src/components/stock-table/StockDataTable.tsx",
+      "frontend/src/components/stock-table/primitives.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/list-columns.ts",
+      "frontend/src/lib/screener-columns.ts",
+      "frontend/src/lib/stock-table.ts"
+    ],
+    "frontend/src/components/screener/SignalPicker.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/signals.ts"
+    ],
+    "frontend/src/components/screener/StrategyBuilderDialog.tsx": [
+      "frontend/src/components/Modal.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/storage.ts"
+    ],
+    "frontend/src/components/screener/StrategyCard.tsx": [
+      "frontend/src/lib/storage.ts"
+    ],
+    "frontend/src/components/screener/StrategyPoolDialog.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/useDialogBackdrop.ts"
+    ],
+    "frontend/src/components/screener/StrategySettingsDialog.tsx": [
+      "frontend/src/components/Modal.tsx",
+      "frontend/src/components/ScoringEditor.tsx",
+      "frontend/src/components/screener/SignalPicker.tsx",
+      "frontend/src/components/signals/SignalTriggerActions.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/colors.ts",
+      "frontend/src/lib/watchlist-columns.ts"
+    ],
+    "frontend/src/components/screener/StrategyStoreDialog.tsx": [
+      "frontend/src/lib/useDialogBackdrop.ts"
+    ],
+    "frontend/src/components/signals/CustomSignalDialog.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useDialogBackdrop.ts"
+    ],
+    "frontend/src/components/signals/SignalTriggerActions.tsx": [
+      "frontend/src/components/signals/CustomSignalDialog.tsx",
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/components/stock-analysis/AnalysisKChart.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/theme.ts"
+    ],
+    "frontend/src/components/stock-analysis/PriceAlertDialog.tsx": [
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/components/stock-analysis/AnalysisKChart.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/price-alerts.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useDialogBackdrop.ts",
+      "frontend/src/lib/useSharedQueries.ts"
+    ],
+    "frontend/src/components/stock-analysis/StockAnalysisBubble.tsx": [
+      "frontend/src/lib/stockAnalysisStore.ts"
+    ],
+    "frontend/src/components/stock-analysis/StockAnalysisDialog.tsx": [
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/components/financials/MarkdownRenderer.tsx",
+      "frontend/src/lib/clipboard.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/stockAnalysisStore.ts",
+      "frontend/src/lib/useDialogBackdrop.ts"
+    ],
+    "frontend/src/components/stock-analysis/StockAnalysisHost.tsx": [
+      "frontend/src/components/stock-analysis/StockAnalysisDialog.tsx",
+      "frontend/src/lib/stockAnalysisStore.ts"
+    ],
+    "frontend/src/components/stock-table/MiniCandlestick.tsx": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/components/stock-table/MiniIntraday.tsx": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/components/stock-table/StockDataTable.tsx": [
+      "frontend/src/components/stock-table/useTableSort.ts",
+      "frontend/src/components/virtual-list/useParentScroll.ts",
+      "frontend/src/lib/list-columns.ts",
+      "frontend/src/lib/stock-table.ts"
+    ],
+    "frontend/src/components/stock-table/primitives.tsx": [
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/list-columns.ts",
+      "frontend/src/lib/stock-table.ts"
+    ],
+    "frontend/src/components/stock-table/useTableSort.ts": [
+      "frontend/src/lib/list-columns.ts",
+      "frontend/src/lib/stock-table.ts"
+    ],
+    "frontend/src/components/virtual-list/useParentScroll.ts": [],
+    "frontend/src/custom/README.md": [],
+    "frontend/src/custom/_template/extension.tsx.example": [],
+    "frontend/src/custom/chanlun/extension.tsx": [
+      "frontend/src/extensions/types.ts",
+      "frontend/src/lib/theme.ts"
+    ],
+    "frontend/src/extensions/ExtensionBoundary.tsx": [],
+    "frontend/src/extensions/ExtensionSlot.tsx": [
+      "frontend/src/extensions/ExtensionBoundary.tsx",
+      "frontend/src/extensions/registry.ts",
+      "frontend/src/extensions/types.ts"
+    ],
+    "frontend/src/extensions/bootstrap.ts": [
+      "frontend/src/extensions/registry.ts",
+      "frontend/src/extensions/types.ts"
+    ],
+    "frontend/src/extensions/registry.ts": [
+      "frontend/src/extensions/types.ts"
+    ],
+    "frontend/src/extensions/types.ts": [],
+    "frontend/src/index.css": [],
+    "frontend/src/lib/aiReportStore.ts": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/lib/analysis-adapter.ts": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/lib/api.ts": [
+      "frontend/src/components/Toast.tsx"
+    ],
+    "frontend/src/lib/backtestTask.ts": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/lib/board.ts": [],
+    "frontend/src/lib/capability-labels.tsx": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/lib/clipboard.ts": [],
+    "frontend/src/lib/cn.ts": [],
+    "frontend/src/lib/colors.ts": [],
+    "frontend/src/lib/format.ts": [],
+    "frontend/src/lib/intraday-chart.ts": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/lib/kline.ts": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/lib/list-columns.ts": [],
+    "frontend/src/lib/miningTask.ts": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/lib/minuteBatchIncremental.ts": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/lib/monitorBadge.ts": [],
+    "frontend/src/lib/notificationSound.ts": [],
+    "frontend/src/lib/ocrInstallHint.ts": [],
+    "frontend/src/lib/optimizerTask.ts": [],
+    "frontend/src/lib/price-alerts.ts": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/lib/queryKeys.ts": [],
+    "frontend/src/lib/reviewStore.ts": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/lib/screener-columns.ts": [
+      "frontend/src/lib/list-columns.ts",
+      "frontend/src/lib/storage.ts"
+    ],
+    "frontend/src/lib/signals.ts": [],
+    "frontend/src/lib/stock-external-link.ts": [
+      "frontend/src/lib/storage.ts"
+    ],
+    "frontend/src/lib/stock-info-fields.ts": [
+      "frontend/src/lib/list-columns.ts",
+      "frontend/src/lib/storage.ts"
+    ],
+    "frontend/src/lib/stock-table.ts": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/list-columns.ts"
+    ],
+    "frontend/src/lib/stockAnalysisStore.ts": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/lib/storage.ts": [],
+    "frontend/src/lib/strategyMonitorEvents.ts": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/lib/strategyOverrides.ts": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/lib/theme.ts": [],
+    "frontend/src/lib/useCardFlash.tsx": [],
+    "frontend/src/lib/useDialogBackdrop.ts": [],
+    "frontend/src/lib/useFinancials.ts": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/lib/useLastStock.ts": [],
+    "frontend/src/lib/useMediaQuery.ts": [],
+    "frontend/src/lib/useQueryConfig.ts": [
+      "frontend/src/lib/storage.ts"
+    ],
+    "frontend/src/lib/useQuoteStream.ts": [
+      "frontend/src/components/AlertToast.tsx",
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/reviewStore.ts",
+      "frontend/src/lib/useQueryConfig.ts"
+    ],
+    "frontend/src/lib/useReviewStore.ts": [
+      "frontend/src/lib/reviewStore.ts"
+    ],
+    "frontend/src/lib/useSharedMutations.ts": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/lib/useSharedQueries.ts": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/lib/useStrategyPool.ts": [
+      "frontend/src/lib/storage.ts"
+    ],
+    "frontend/src/lib/voiceBroadcast.ts": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/strategyMonitorEvents.ts"
+    ],
+    "frontend/src/lib/walkforwardTask.ts": [],
+    "frontend/src/lib/watchlist-columns.ts": [
+      "frontend/src/lib/list-columns.ts",
+      "frontend/src/lib/storage.ts"
+    ],
+    "frontend/src/lib/watchlist-group-colors.ts": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/lib/watchlistGroupStats.ts": [
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/storage.ts"
+    ],
+    "frontend/src/main.tsx": [
+      "frontend/src/extensions/bootstrap.ts",
+      "frontend/src/index.css"
+    ],
+    "frontend/src/pages/AbnormalMoves.tsx": [
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/components/StockPreviewDialog.tsx",
+      "frontend/src/components/stock-table/primitives.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/storage.ts"
+    ],
+    "frontend/src/pages/Analysis.tsx": [
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/components/data/Skeleton.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/pages/AnalysisDetail.tsx": [
+      "frontend/src/components/ExtDimensionAnalysis.tsx"
+    ],
+    "frontend/src/pages/Auth.tsx": [
+      "frontend/src/components/Logo.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/cn.ts"
+    ],
+    "frontend/src/pages/Backtest.tsx": [
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/pages/backtest/FactorDiscovery.tsx",
+      "frontend/src/pages/backtest/ResearchCandidatesDialog.tsx",
+      "frontend/src/pages/backtest/RobustnessValidation.tsx",
+      "frontend/src/pages/backtest/StrategyBacktest.tsx"
+    ],
+    "frontend/src/pages/Branding.tsx": [
+      "frontend/src/components/PageHeader.tsx"
+    ],
+    "frontend/src/pages/ConceptAnalysis.tsx": [
+      "frontend/src/components/EmptyState.tsx",
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/components/RpsRotationDialog.tsx",
+      "frontend/src/components/StockPreviewDialog.tsx",
+      "frontend/src/components/analysis-shared.tsx",
+      "frontend/src/lib/analysis-adapter.ts",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/storage.ts"
+    ],
+    "frontend/src/pages/Dashboard.tsx": [
+      "frontend/src/components/AdjFactorSyncGate.tsx",
+      "frontend/src/components/DatePicker.tsx",
+      "frontend/src/components/DimensionMembersDialog.tsx",
+      "frontend/src/components/SealedBadge.tsx",
+      "frontend/src/components/StockPreviewDialog.tsx",
+      "frontend/src/components/data/ActiveJobCard.tsx",
+      "frontend/src/components/data/SettingsModal.tsx",
+      "frontend/src/components/stock-table/primitives.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/signals.ts",
+      "frontend/src/lib/strategyMonitorEvents.ts",
+      "frontend/src/lib/useSharedQueries.ts"
+    ],
+    "frontend/src/pages/Data.tsx": [
+      "frontend/src/components/AdjFactorSyncGate.tsx",
+      "frontend/src/components/EndpointTestDialog.tsx",
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/components/data/ActiveJobCard.tsx",
+      "frontend/src/components/data/EnrichedRebuildPanel.tsx",
+      "frontend/src/components/data/ExtendHistoryPanel.tsx",
+      "frontend/src/components/data/MinuteSyncConfig.tsx",
+      "frontend/src/components/data/PageSettingsModal.tsx",
+      "frontend/src/components/data/PipelineScopeConfig.tsx",
+      "frontend/src/components/data/QuoteConfigCard.tsx",
+      "frontend/src/components/data/RegimeConfigCard.tsx",
+      "frontend/src/components/data/RepairDailyPanel.tsx",
+      "frontend/src/components/data/ScheduleEditor.tsx",
+      "frontend/src/components/data/SchemaModal.tsx",
+      "frontend/src/components/data/SectionTitle.tsx",
+      "frontend/src/components/data/SettingsModal.tsx",
+      "frontend/src/components/data/Skeleton.tsx",
+      "frontend/src/components/data/StatCard.tsx",
+      "frontend/src/components/ext-data/CreateExtDialog.tsx",
+      "frontend/src/components/ext-data/EditExtDialog.tsx",
+      "frontend/src/components/ext-data/ExtDataStatCard.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/capability-labels.tsx",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useSharedMutations.ts",
+      "frontend/src/lib/useSharedQueries.ts"
+    ],
+    "frontend/src/pages/Dev.tsx": [
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/monitorBadge.ts",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/pages/Financials.tsx": [
+      "frontend/src/components/EmptyState.tsx",
+      "frontend/src/components/LastStockChip.tsx",
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/components/financials/ReportHistoryPanel.tsx",
+      "frontend/src/components/financials/StockFinancialDetail.tsx",
+      "frontend/src/components/financials/StockFinancialSearch.tsx",
+      "frontend/src/lib/capability-labels.tsx",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/useFinancials.ts",
+      "frontend/src/lib/useLastStock.ts",
+      "frontend/src/lib/useSharedQueries.ts"
+    ],
+    "frontend/src/pages/Indices.tsx": [
+      "frontend/src/components/EChartsCandlestick.tsx",
+      "frontend/src/components/EChartsIntraday.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useSharedQueries.ts"
+    ],
+    "frontend/src/pages/IndustryAnalysis.tsx": [
+      "frontend/src/components/EmptyState.tsx",
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/components/RpsRotationDialog.tsx",
+      "frontend/src/components/StockPreviewDialog.tsx",
+      "frontend/src/components/analysis-shared.tsx",
+      "frontend/src/lib/analysis-adapter.ts",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/storage.ts"
+    ],
+    "frontend/src/pages/LimitUpLadder.tsx": [
+      "frontend/src/components/DatePicker.tsx",
+      "frontend/src/components/DimensionMembersDialog.tsx",
+      "frontend/src/components/EmptyState.tsx",
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/components/SealedBadge.tsx",
+      "frontend/src/components/StockPreviewDialog.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/storage.ts",
+      "frontend/src/lib/theme.ts",
+      "frontend/src/lib/useDialogBackdrop.ts",
+      "frontend/src/lib/useSharedQueries.ts",
+      "frontend/src/lib/watchlist-columns.ts"
+    ],
+    "frontend/src/pages/Mining.tsx": [
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/pages/backtest/MiningWorkbench.tsx",
+      "frontend/src/pages/backtest/ResearchCandidatesDialog.tsx"
+    ],
+    "frontend/src/pages/Monitor.tsx": [
+      "frontend/src/components/DimensionMembersDialog.tsx",
+      "frontend/src/components/EmptyState.tsx",
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/components/StockPreviewDialog.tsx",
+      "frontend/src/components/data/Skeleton.tsx",
+      "frontend/src/components/monitor/RuleEditor.tsx",
+      "frontend/src/components/stock-table/primitives.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/monitorBadge.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/signals.ts",
+      "frontend/src/lib/strategyMonitorEvents.ts",
+      "frontend/src/lib/useDialogBackdrop.ts",
+      "frontend/src/lib/useSharedQueries.ts",
+      "frontend/src/lib/watchlist-group-colors.ts"
+    ],
+    "frontend/src/pages/Onboarding.tsx": [
+      "frontend/src/components/Logo.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useSharedQueries.ts"
+    ],
+    "frontend/src/pages/Regime.tsx": [
+      "frontend/src/components/Modal.tsx",
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/theme.ts"
+    ],
+    "frontend/src/pages/Review.tsx": [
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/components/StockPreviewDialog.tsx",
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/components/financials/MarkdownRenderer.tsx",
+      "frontend/src/components/stock-table/primitives.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/reviewStore.ts",
+      "frontend/src/lib/useReviewStore.ts",
+      "frontend/src/lib/useSharedQueries.ts"
+    ],
+    "frontend/src/pages/Screener.tsx": [
+      "frontend/src/components/DatePicker.tsx",
+      "frontend/src/components/EmptyState.tsx",
+      "frontend/src/components/ListColumnCustomizer.tsx",
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/components/StockPreviewDialog.tsx",
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/components/WatchlistAddMenu.tsx",
+      "frontend/src/components/screener/CompositeStrategyDialog.tsx",
+      "frontend/src/components/screener/ScreenerFilter.tsx",
+      "frontend/src/components/screener/ScreenerTable.tsx",
+      "frontend/src/components/screener/StrategyBuilderDialog.tsx",
+      "frontend/src/components/screener/StrategyCard.tsx",
+      "frontend/src/components/screener/StrategyPoolDialog.tsx",
+      "frontend/src/components/screener/StrategySettingsDialog.tsx",
+      "frontend/src/components/screener/StrategyStoreDialog.tsx",
+      "frontend/src/components/stock-table/useTableSort.ts",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/list-columns.ts",
+      "frontend/src/lib/minuteBatchIncremental.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/screener-columns.ts",
+      "frontend/src/lib/storage.ts",
+      "frontend/src/lib/strategyMonitorEvents.ts",
+      "frontend/src/lib/useSharedMutations.ts",
+      "frontend/src/lib/useSharedQueries.ts",
+      "frontend/src/lib/useStrategyPool.ts"
+    ],
+    "frontend/src/pages/Settings.tsx": [
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/pages/settings/AI.tsx",
+      "frontend/src/pages/settings/CustomSignals.tsx",
+      "frontend/src/pages/settings/DataSources.tsx",
+      "frontend/src/pages/settings/ExtPages.tsx",
+      "frontend/src/pages/settings/MenuSettings.tsx",
+      "frontend/src/pages/settings/Monitoring.tsx",
+      "frontend/src/pages/settings/System.tsx",
+      "frontend/src/pages/settings/Timeout.tsx"
+    ],
+    "frontend/src/pages/StockAnalysis.tsx": [
+      "frontend/src/components/EmptyState.tsx",
+      "frontend/src/components/LastStockChip.tsx",
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/components/StockPreviewDialog.tsx",
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/components/financials/StockFinancialSearch.tsx",
+      "frontend/src/components/stock-analysis/AnalysisKChart.tsx",
+      "frontend/src/components/stock-analysis/PriceAlertDialog.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/stockAnalysisStore.ts",
+      "frontend/src/lib/useLastStock.ts"
+    ],
+    "frontend/src/pages/Watchlist.tsx": [
+      "frontend/src/components/ColumnCustomizer.tsx",
+      "frontend/src/components/DimensionMembersDialog.tsx",
+      "frontend/src/components/EmptyState.tsx",
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/components/StockPreviewDialog.tsx",
+      "frontend/src/components/WatchlistAddMenu.tsx",
+      "frontend/src/components/WatchlistGroupCards.tsx",
+      "frontend/src/components/WatchlistGroupStatsBar.tsx",
+      "frontend/src/components/WatchlistGroups.tsx",
+      "frontend/src/components/WatchlistImportDialog.tsx",
+      "frontend/src/components/stock-table/MiniCandlestick.tsx",
+      "frontend/src/components/stock-table/MiniIntraday.tsx",
+      "frontend/src/components/stock-table/StockDataTable.tsx",
+      "frontend/src/components/stock-table/primitives.tsx",
+      "frontend/src/components/stock-table/useTableSort.ts",
+      "frontend/src/components/virtual-list/useParentScroll.ts",
+      "frontend/src/extensions/ExtensionSlot.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/cn.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/list-columns.ts",
+      "frontend/src/lib/minuteBatchIncremental.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/stock-table.ts",
+      "frontend/src/lib/storage.ts",
+      "frontend/src/lib/useSharedQueries.ts",
+      "frontend/src/lib/watchlist-columns.ts",
+      "frontend/src/lib/watchlistGroupStats.ts"
+    ],
+    "frontend/src/pages/backtest/FactorBacktest.tsx": [
+      "frontend/src/components/DatePicker.tsx",
+      "frontend/src/components/EmptyState.tsx",
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/pages/backtest/charts/FactorGroupNavChart.tsx",
+      "frontend/src/pages/backtest/charts/FactorICChart.tsx",
+      "frontend/src/pages/backtest/researchCandidates.ts"
+    ],
+    "frontend/src/pages/backtest/FactorDiscovery.tsx": [
+      "frontend/src/components/DatePicker.tsx",
+      "frontend/src/components/EmptyState.tsx",
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/components/WatchlistAddMenu.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/pages/backtest/FactorBacktest.tsx",
+      "frontend/src/pages/backtest/researchCandidates.ts"
+    ],
+    "frontend/src/pages/backtest/MiningWorkbench.tsx": [
+      "frontend/src/components/EmptyState.tsx",
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/miningTask.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useDialogBackdrop.ts",
+      "frontend/src/lib/useSharedMutations.ts",
+      "frontend/src/lib/useSharedQueries.ts",
+      "frontend/src/pages/backtest/charts/FactorCorrelationHeatmap.tsx",
+      "frontend/src/pages/backtest/charts/MiningOosChart.tsx",
+      "frontend/src/pages/backtest/charts/RegimeComparisonChart.tsx"
+    ],
+    "frontend/src/pages/backtest/ResearchCandidatesDialog.tsx": [
+      "frontend/src/components/Modal.tsx",
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/pages/backtest/RobustnessValidation.tsx": [
+      "frontend/src/pages/backtest/StrategyOptimizer.tsx",
+      "frontend/src/pages/backtest/StrategyWalkForward.tsx"
+    ],
+    "frontend/src/pages/backtest/StrategyBacktest.tsx": [
+      "frontend/src/components/DatePicker.tsx",
+      "frontend/src/components/EmptyState.tsx",
+      "frontend/src/components/ScoringEditor.tsx",
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/components/WarmupBadge.tsx",
+      "frontend/src/components/WatchlistAddMenu.tsx",
+      "frontend/src/components/screener/SignalPicker.tsx",
+      "frontend/src/components/signals/SignalTriggerActions.tsx",
+      "frontend/src/components/stock-table/primitives.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/backtestTask.ts",
+      "frontend/src/lib/board.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/signals.ts",
+      "frontend/src/lib/storage.ts",
+      "frontend/src/lib/useSharedQueries.ts",
+      "frontend/src/lib/watchlist-columns.ts",
+      "frontend/src/pages/backtest/charts/ReturnDistributionChart.tsx",
+      "frontend/src/pages/backtest/charts/StrategyNavChart.tsx",
+      "frontend/src/pages/backtest/components/TradeKlineModal.tsx",
+      "frontend/src/pages/backtest/researchCandidates.ts"
+    ],
+    "frontend/src/pages/backtest/StrategyOptimizer.tsx": [
+      "frontend/src/components/DatePicker.tsx",
+      "frontend/src/components/EmptyState.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/optimizerTask.ts",
+      "frontend/src/lib/strategyOverrides.ts",
+      "frontend/src/pages/backtest/components/paramSweep.tsx"
+    ],
+    "frontend/src/pages/backtest/StrategyWalkForward.tsx": [
+      "frontend/src/components/DatePicker.tsx",
+      "frontend/src/components/EmptyState.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/strategyOverrides.ts",
+      "frontend/src/lib/walkforwardTask.ts",
+      "frontend/src/pages/backtest/components/paramSweep.tsx"
+    ],
+    "frontend/src/pages/backtest/charts/FactorCorrelationHeatmap.tsx": [
+      "frontend/src/lib/theme.ts",
+      "frontend/src/pages/backtest/charts/useECharts.ts"
+    ],
+    "frontend/src/pages/backtest/charts/FactorGroupNavChart.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/theme.ts",
+      "frontend/src/pages/backtest/charts/useECharts.ts"
+    ],
+    "frontend/src/pages/backtest/charts/FactorICChart.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/theme.ts",
+      "frontend/src/pages/backtest/charts/useECharts.ts"
+    ],
+    "frontend/src/pages/backtest/charts/MiningOosChart.tsx": [
+      "frontend/src/lib/theme.ts",
+      "frontend/src/pages/backtest/charts/useECharts.ts"
+    ],
+    "frontend/src/pages/backtest/charts/RegimeComparisonChart.tsx": [
+      "frontend/src/lib/theme.ts",
+      "frontend/src/pages/backtest/charts/useECharts.ts"
+    ],
+    "frontend/src/pages/backtest/charts/ReturnDistributionChart.tsx": [
+      "frontend/src/lib/theme.ts",
+      "frontend/src/pages/backtest/charts/useECharts.ts"
+    ],
+    "frontend/src/pages/backtest/charts/StrategyNavChart.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/theme.ts",
+      "frontend/src/pages/backtest/charts/useECharts.ts"
+    ],
+    "frontend/src/pages/backtest/charts/useECharts.ts": [],
+    "frontend/src/pages/backtest/components/TradeKlineModal.tsx": [
+      "frontend/src/components/EChartsCandlestick.tsx",
+      "frontend/src/components/StockPanel.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/format.ts",
+      "frontend/src/lib/useDialogBackdrop.ts"
+    ],
+    "frontend/src/pages/backtest/components/paramSweep.tsx": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/pages/backtest/researchCandidates.ts": [
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/pages/settings/AI.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useCardFlash.tsx",
+      "frontend/src/lib/useSharedQueries.ts"
+    ],
+    "frontend/src/pages/settings/CustomSignals.tsx": [
+      "frontend/src/components/data/Skeleton.tsx",
+      "frontend/src/components/signals/CustomSignalDialog.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/signals.ts",
+      "frontend/src/lib/useCardFlash.tsx"
+    ],
+    "frontend/src/pages/settings/DataSourceEditor.tsx": [
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/lib/api.ts"
+    ],
+    "frontend/src/pages/settings/DataSources.tsx": [
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/capability-labels.tsx",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useCardFlash.tsx",
+      "frontend/src/lib/useSharedQueries.ts",
+      "frontend/src/pages/settings/DataSourceEditor.tsx",
+      "frontend/src/pages/settings/Keys.tsx"
+    ],
+    "frontend/src/pages/settings/ExtPages.tsx": [
+      "frontend/src/components/data/Skeleton.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts"
+    ],
+    "frontend/src/pages/settings/JobTimeoutCard.tsx": [
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useSharedQueries.ts"
+    ],
+    "frontend/src/pages/settings/Keys.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/capability-labels.tsx",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useSharedQueries.ts"
+    ],
+    "frontend/src/pages/settings/MenuSettings.tsx": [
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useSharedQueries.ts"
+    ],
+    "frontend/src/pages/settings/Monitoring.tsx": [
+      "frontend/src/components/Toast.tsx",
+      "frontend/src/components/data/DepthConfigCard.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/useCardFlash.tsx",
+      "frontend/src/lib/useSharedMutations.ts",
+      "frontend/src/lib/useSharedQueries.ts"
+    ],
+    "frontend/src/pages/settings/System.tsx": [
+      "frontend/src/components/AlertToast.tsx",
+      "frontend/src/components/PageHeader.tsx",
+      "frontend/src/lib/api.ts",
+      "frontend/src/lib/notificationSound.ts",
+      "frontend/src/lib/queryKeys.ts",
+      "frontend/src/lib/stock-external-link.ts",
+      "frontend/src/lib/useSharedQueries.ts",
+      "frontend/src/lib/voiceBroadcast.ts"
+    ],
+    "frontend/src/pages/settings/Timeout.tsx": [
+      "frontend/src/pages/settings/JobTimeoutCard.tsx"
+    ],
+    "frontend/src/router.tsx": [
+      "frontend/src/components/Layout.tsx",
+      "frontend/src/components/Logo.tsx",
+      "frontend/src/extensions/ExtensionBoundary.tsx",
+      "frontend/src/extensions/registry.ts",
+      "frontend/src/lib/useSharedQueries.ts",
+      "frontend/src/pages/Auth.tsx",
+      "frontend/src/pages/Onboarding.tsx"
+    ],
+    "frontend/src/vite-env.d.ts": [],
+    "frontend/tailwind.config.ts": [],
+    "frontend/tsconfig.json": [],
+    "frontend/tsconfig.node.json": [],
+    "frontend/vite.config.d.ts": [],
+    "frontend/vite.config.ts": [],
+    "packaging/ChineseSimplified.isl": [],
+    "packaging/generate_icon.py": [],
+    "packaging/generate_icon_designs.py": [],
+    "packaging/icon.icns": [],
+    "packaging/tickflow.iss": [],
+    "packaging/tickflow.spec": [],
+    "screenshots/README.md": [],
+    "scripts/upgrade_check.py": [],
+    "tiers.yaml": [],
+    "操作说明书.md": []
+  }
+}

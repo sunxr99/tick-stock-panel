@@ -1,0 +1,1754 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/tests/backtest/test_numba_runtime.py",
+      "type": "file",
+      "name": "test_numba_runtime.py",
+      "filePath": "backend/tests/backtest/test_numba_runtime.py",
+      "summary": "为 numba_runtime 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_numba_runtime.py:test_run_numba_parallel_serializes_concurrent_calls",
+      "type": "function",
+      "name": "test_run_numba_parallel_serializes_concurrent_calls",
+      "filePath": "backend/tests/backtest/test_numba_runtime.py",
+      "lineRange": [
+        13,
+        36
+      ],
+      "summary": "验证 run numba parallel serializes concurrent calls 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_numba_runtime.py:test_valid_shift_kernel_survives_concurrent_threads",
+      "type": "function",
+      "name": "test_valid_shift_kernel_survives_concurrent_threads",
+      "filePath": "backend/tests/backtest/test_numba_runtime.py",
+      "lineRange": [
+        43,
+        59
+      ],
+      "summary": "验证 valid shift kernel survives concurrent threads 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "type": "file",
+      "name": "test_optimizer_grid.py",
+      "filePath": "backend/tests/backtest/test_optimizer_grid.py",
+      "summary": "为 optimizer_grid 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_grid.py:test_explicit_value_lists_cartesian_product",
+      "type": "function",
+      "name": "test_explicit_value_lists_cartesian_product",
+      "filePath": "backend/tests/backtest/test_optimizer_grid.py",
+      "lineRange": [
+        30,
+        35
+      ],
+      "summary": "验证 explicit value lists cartesian product 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_grid.py:test_single_param_sweep",
+      "type": "function",
+      "name": "test_single_param_sweep",
+      "filePath": "backend/tests/backtest/test_optimizer_grid.py",
+      "lineRange": [
+        38,
+        40
+      ],
+      "summary": "验证 single param sweep 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_grid.py:test_bool_and_select_sweep",
+      "type": "function",
+      "name": "test_bool_and_select_sweep",
+      "filePath": "backend/tests/backtest/test_optimizer_grid.py",
+      "lineRange": [
+        43,
+        46
+      ],
+      "summary": "验证 bool and select sweep 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_grid.py:test_range_spec_expands_by_step",
+      "type": "function",
+      "name": "test_range_spec_expands_by_step",
+      "filePath": "backend/tests/backtest/test_optimizer_grid.py",
+      "lineRange": [
+        53,
+        56
+      ],
+      "summary": "验证 range spec expands by step 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_grid.py:test_range_spec_float_keeps_endpoint_despite_accumulation",
+      "type": "function",
+      "name": "test_range_spec_float_keeps_endpoint_despite_accumulation",
+      "filePath": "backend/tests/backtest/test_optimizer_grid.py",
+      "lineRange": [
+        59,
+        64
+      ],
+      "summary": "验证 range spec float keeps endpoint despite accumulation 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_grid.py:test_duplicate_values_folded",
+      "type": "function",
+      "name": "test_duplicate_values_folded",
+      "filePath": "backend/tests/backtest/test_optimizer_grid.py",
+      "lineRange": [
+        67,
+        70
+      ],
+      "summary": "验证 duplicate values folded 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_grid.py:test_range_spec_int_yields_ints",
+      "type": "function",
+      "name": "test_range_spec_int_yields_ints",
+      "filePath": "backend/tests/backtest/test_optimizer_grid.py",
+      "lineRange": [
+        73,
+        77
+      ],
+      "summary": "验证 range spec int yields ints 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_grid.py:test_unknown_param_rejected",
+      "type": "function",
+      "name": "test_unknown_param_rejected",
+      "filePath": "backend/tests/backtest/test_optimizer_grid.py",
+      "lineRange": [
+        84,
+        86
+      ],
+      "summary": "验证 unknown param rejected 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_grid.py:test_value_out_of_range_rejected",
+      "type": "function",
+      "name": "test_value_out_of_range_rejected",
+      "filePath": "backend/tests/backtest/test_optimizer_grid.py",
+      "lineRange": [
+        89,
+        91
+      ],
+      "summary": "验证 value out of range rejected 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_grid.py:test_select_value_not_in_options_rejected",
+      "type": "function",
+      "name": "test_select_value_not_in_options_rejected",
+      "filePath": "backend/tests/backtest/test_optimizer_grid.py",
+      "lineRange": [
+        94,
+        96
+      ],
+      "summary": "验证 select value not in options rejected 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_grid.py:test_empty_grid_rejected",
+      "type": "function",
+      "name": "test_empty_grid_rejected",
+      "filePath": "backend/tests/backtest/test_optimizer_grid.py",
+      "lineRange": [
+        99,
+        101
+      ],
+      "summary": "验证 empty grid rejected 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_grid.py:test_combination_explosion_rejected",
+      "type": "function",
+      "name": "test_combination_explosion_rejected",
+      "filePath": "backend/tests/backtest/test_optimizer_grid.py",
+      "lineRange": [
+        104,
+        125
+      ],
+      "summary": "验证 combination explosion rejected 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/backtest/test_optimizer_run.py",
+      "type": "file",
+      "name": "test_optimizer_run.py",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "summary": "为 optimizer_run 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_optimizer_run.py:_FakeDef",
+      "type": "class",
+      "name": "_FakeDef",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        15,
+        17
+      ],
+      "summary": "定义 _FakeDef 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_optimizer_run.py:_FakeEngine",
+      "type": "class",
+      "name": "_FakeEngine",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        20,
+        28
+      ],
+      "summary": "定义 _FakeEngine 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_optimizer_run.py:_FakeResult",
+      "type": "class",
+      "name": "_FakeResult",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        32,
+        34
+      ],
+      "summary": "定义 _FakeResult 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_optimizer_run.py:_FakeCache",
+      "type": "class",
+      "name": "_FakeCache",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        37,
+        45
+      ],
+      "summary": "定义 _FakeCache 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_optimizer_run.py:_FakeService",
+      "type": "class",
+      "name": "_FakeService",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        48,
+        81
+      ],
+      "summary": "定义 _FakeService 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:_optimizer",
+      "type": "function",
+      "name": "_optimizer",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        89,
+        93
+      ],
+      "summary": "实现 _optimizer，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:_cfg",
+      "type": "function",
+      "name": "_cfg",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        96,
+        102
+      ],
+      "summary": "实现 _cfg，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_ranks_best_by_objective_max",
+      "type": "function",
+      "name": "test_ranks_best_by_objective_max",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        105,
+        115
+      ],
+      "summary": "验证 ranks best by objective max 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_all_combos_executed_once",
+      "type": "function",
+      "name": "test_all_combos_executed_once",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        118,
+        131
+      ],
+      "summary": "验证 all combos executed once 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_min_direction_objective_restores_display_sign",
+      "type": "function",
+      "name": "test_min_direction_objective_restores_display_sign",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        134,
+        144
+      ],
+      "summary": "验证 min direction objective restores display sign 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_max_drawdown_objective_prefers_smaller_drawdown",
+      "type": "function",
+      "name": "test_max_drawdown_objective_prefers_smaller_drawdown",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        147,
+        154
+      ],
+      "summary": "验证 max drawdown objective prefers smaller drawdown 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_service_exception_isolated_not_crashing_batch",
+      "type": "function",
+      "name": "test_service_exception_isolated_not_crashing_batch",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        157,
+        168
+      ],
+      "summary": "验证 service exception isolated not crashing batch 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_backtest_kwargs_illegal_key_rejected",
+      "type": "function",
+      "name": "test_backtest_kwargs_illegal_key_rejected",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        171,
+        175
+      ],
+      "summary": "验证 backtest kwargs illegal key rejected 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_backtest_kwargs_reserved_key_rejected",
+      "type": "function",
+      "name": "test_backtest_kwargs_reserved_key_rejected",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        178,
+        182
+      ],
+      "summary": "验证 backtest kwargs reserved key rejected 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_base_params_merged_and_overridden_by_sweep",
+      "type": "function",
+      "name": "test_base_params_merged_and_overridden_by_sweep",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        185,
+        196
+      ],
+      "summary": "验证 base params merged and overridden by sweep 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_none_and_error_results_sink_to_bottom",
+      "type": "function",
+      "name": "test_none_and_error_results_sink_to_bottom",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        199,
+        212
+      ],
+      "summary": "验证 none and error results sink to bottom 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_cancel_event_stops_remaining",
+      "type": "function",
+      "name": "test_cancel_event_stops_remaining",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        215,
+        225
+      ],
+      "summary": "验证 cancel event stops remaining 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_progress_callback_reports_done_total",
+      "type": "function",
+      "name": "test_progress_callback_reports_done_total",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        228,
+        240
+      ],
+      "summary": "验证 progress callback reports done total 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_matrix_optimizer_prepares_once_and_reuses_same_market_data",
+      "type": "function",
+      "name": "test_matrix_optimizer_prepares_once_and_reuses_same_market_data",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        243,
+        261
+      ],
+      "summary": "验证 matrix optimizer prepares once and reuses same market data 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_optimizer_trial_policy_skips_mc_but_best_backtest_is_full",
+      "type": "function",
+      "name": "test_optimizer_trial_policy_skips_mc_but_best_backtest_is_full",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        264,
+        274
+      ],
+      "summary": "验证 optimizer trial policy skips mc but best backtest is full 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_mc_objective_trial_policy_keeps_monte_carlo",
+      "type": "function",
+      "name": "test_mc_objective_trial_policy_keeps_monte_carlo",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        277,
+        284
+      ],
+      "summary": "验证 mc objective trial policy keeps monte carlo 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_missing_objective_is_an_explicit_trial_error",
+      "type": "function",
+      "name": "test_missing_objective_is_an_explicit_trial_error",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        287,
+        293
+      ],
+      "summary": "验证 missing objective is an explicit trial error 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_matrix_cache_closes_when_progress_callback_raises_after_prepare",
+      "type": "function",
+      "name": "test_matrix_cache_closes_when_progress_callback_raises_after_prepare",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        296,
+        308
+      ],
+      "summary": "验证 matrix cache closes when progress callback raises after prepare 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_matrix_cache_closes_when_cancelled_after_first_trial",
+      "type": "function",
+      "name": "test_matrix_cache_closes_when_cancelled_after_first_trial",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        311,
+        323
+      ],
+      "summary": "验证 matrix cache closes when cancelled after first trial 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_matrix_cache_closes_when_best_backtest_raises",
+      "type": "function",
+      "name": "test_matrix_cache_closes_when_best_backtest_raises",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        326,
+        339
+      ],
+      "summary": "验证 matrix cache closes when best backtest raises 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_cancelled_matrix_optimizer_skips_expensive_preparation",
+      "type": "function",
+      "name": "test_cancelled_matrix_optimizer_skips_expensive_preparation",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        342,
+        354
+      ],
+      "summary": "验证 cancelled matrix optimizer skips expensive preparation 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_optimizer_run.py:test_invalid_objective_rejected",
+      "type": "function",
+      "name": "test_invalid_objective_rejected",
+      "filePath": "backend/tests/backtest/test_optimizer_run.py",
+      "lineRange": [
+        357,
+        361
+      ],
+      "summary": "验证 invalid objective rejected 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/backtest/test_research_candidates.py",
+      "type": "file",
+      "name": "test_research_candidates.py",
+      "filePath": "backend/tests/backtest/test_research_candidates.py",
+      "summary": "为 research_candidates 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_research_candidates.py:_create",
+      "type": "function",
+      "name": "_create",
+      "filePath": "backend/tests/backtest/test_research_candidates.py",
+      "lineRange": [
+        14,
+        22
+      ],
+      "summary": "实现 _create，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_crud_and_atomic_file",
+      "type": "function",
+      "name": "test_candidate_crud_and_atomic_file",
+      "filePath": "backend/tests/backtest/test_research_candidates.py",
+      "lineRange": [
+        25,
+        38
+      ],
+      "summary": "验证 candidate crud and atomic file 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_mining_provenance_is_idempotent_and_conflict_safe",
+      "type": "function",
+      "name": "test_candidate_mining_provenance_is_idempotent_and_conflict_safe",
+      "filePath": "backend/tests/backtest/test_research_candidates.py",
+      "lineRange": [
+        41,
+        70
+      ],
+      "summary": "验证 candidate mining provenance is idempotent and conflict safe 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_rejects_full_result_fields",
+      "type": "function",
+      "name": "test_candidate_rejects_full_result_fields",
+      "filePath": "backend/tests/backtest/test_research_candidates.py",
+      "lineRange": [
+        73,
+        84
+      ],
+      "summary": "验证 candidate rejects full result fields 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_stores_factor_mining_summary",
+      "type": "function",
+      "name": "test_candidate_stores_factor_mining_summary",
+      "filePath": "backend/tests/backtest/test_research_candidates.py",
+      "lineRange": [
+        87,
+        122
+      ],
+      "summary": "验证 candidate stores factor mining summary 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_stores_strategy_mining_factor_combination",
+      "type": "function",
+      "name": "test_candidate_stores_strategy_mining_factor_combination",
+      "filePath": "backend/tests/backtest/test_research_candidates.py",
+      "lineRange": [
+        125,
+        160
+      ],
+      "summary": "验证 candidate stores strategy mining factor combination 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_rejects_nested_mining_metrics",
+      "type": "function",
+      "name": "test_candidate_rejects_nested_mining_metrics",
+      "filePath": "backend/tests/backtest/test_research_candidates.py",
+      "lineRange": [
+        164,
+        175
+      ],
+      "summary": "验证 candidate rejects nested mining metrics 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_rejects_unknown_metric_field",
+      "type": "function",
+      "name": "test_candidate_rejects_unknown_metric_field",
+      "filePath": "backend/tests/backtest/test_research_candidates.py",
+      "lineRange": [
+        178,
+        189
+      ],
+      "summary": "验证 candidate rejects unknown metric field 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_rejects_non_json_config",
+      "type": "function",
+      "name": "test_candidate_rejects_non_json_config",
+      "filePath": "backend/tests/backtest/test_research_candidates.py",
+      "lineRange": [
+        192,
+        203
+      ],
+      "summary": "验证 candidate rejects non json config 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_loads_legacy_missing_optional_fields",
+      "type": "function",
+      "name": "test_candidate_loads_legacy_missing_optional_fields",
+      "filePath": "backend/tests/backtest/test_research_candidates.py",
+      "lineRange": [
+        206,
+        228
+      ],
+      "summary": "验证 candidate loads legacy missing optional fields 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_corrupt_file_fails_closed",
+      "type": "function",
+      "name": "test_candidate_corrupt_file_fails_closed",
+      "filePath": "backend/tests/backtest/test_research_candidates.py",
+      "lineRange": [
+        231,
+        241
+      ],
+      "summary": "验证 candidate corrupt file fails closed 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/tests/backtest/test_numba_runtime.py",
+      "target": "file:backend/app/backtest/numba_runtime.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_numba_runtime.py",
+      "target": "function:backend/tests/backtest/test_numba_runtime.py:test_run_numba_parallel_serializes_concurrent_calls",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_numba_runtime.py",
+      "target": "function:backend/tests/backtest/test_numba_runtime.py:test_run_numba_parallel_serializes_concurrent_calls",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_numba_runtime.py",
+      "target": "function:backend/tests/backtest/test_numba_runtime.py:test_valid_shift_kernel_survives_concurrent_threads",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_numba_runtime.py",
+      "target": "function:backend/tests/backtest/test_numba_runtime.py:test_valid_shift_kernel_survives_concurrent_threads",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "file:backend/app/backtest/optimizer.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_explicit_value_lists_cartesian_product",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_explicit_value_lists_cartesian_product",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_single_param_sweep",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_single_param_sweep",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_bool_and_select_sweep",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_bool_and_select_sweep",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_range_spec_expands_by_step",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_range_spec_expands_by_step",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_range_spec_float_keeps_endpoint_despite_accumulation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_range_spec_float_keeps_endpoint_despite_accumulation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_duplicate_values_folded",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_duplicate_values_folded",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_range_spec_int_yields_ints",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_range_spec_int_yields_ints",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_unknown_param_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_unknown_param_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_value_out_of_range_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_value_out_of_range_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_select_value_not_in_options_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_select_value_not_in_options_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_empty_grid_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_empty_grid_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_combination_explosion_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_grid.py",
+      "target": "function:backend/tests/backtest/test_optimizer_grid.py:test_combination_explosion_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "file:backend/app/backtest/optimizer.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "class:backend/tests/backtest/test_optimizer_run.py:_FakeDef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "class:backend/tests/backtest/test_optimizer_run.py:_FakeDef",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "class:backend/tests/backtest/test_optimizer_run.py:_FakeEngine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "class:backend/tests/backtest/test_optimizer_run.py:_FakeEngine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "class:backend/tests/backtest/test_optimizer_run.py:_FakeResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "class:backend/tests/backtest/test_optimizer_run.py:_FakeResult",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "class:backend/tests/backtest/test_optimizer_run.py:_FakeCache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "class:backend/tests/backtest/test_optimizer_run.py:_FakeCache",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "class:backend/tests/backtest/test_optimizer_run.py:_FakeService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "class:backend/tests/backtest/test_optimizer_run.py:_FakeService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:_optimizer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:_optimizer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:_cfg",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:_cfg",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_ranks_best_by_objective_max",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_ranks_best_by_objective_max",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_all_combos_executed_once",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_all_combos_executed_once",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_min_direction_objective_restores_display_sign",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_min_direction_objective_restores_display_sign",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_max_drawdown_objective_prefers_smaller_drawdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_max_drawdown_objective_prefers_smaller_drawdown",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_service_exception_isolated_not_crashing_batch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_service_exception_isolated_not_crashing_batch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_backtest_kwargs_illegal_key_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_backtest_kwargs_illegal_key_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_backtest_kwargs_reserved_key_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_backtest_kwargs_reserved_key_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_base_params_merged_and_overridden_by_sweep",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_base_params_merged_and_overridden_by_sweep",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_none_and_error_results_sink_to_bottom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_none_and_error_results_sink_to_bottom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_cancel_event_stops_remaining",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_cancel_event_stops_remaining",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_progress_callback_reports_done_total",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_progress_callback_reports_done_total",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_matrix_optimizer_prepares_once_and_reuses_same_market_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_matrix_optimizer_prepares_once_and_reuses_same_market_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_optimizer_trial_policy_skips_mc_but_best_backtest_is_full",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_optimizer_trial_policy_skips_mc_but_best_backtest_is_full",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_mc_objective_trial_policy_keeps_monte_carlo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_mc_objective_trial_policy_keeps_monte_carlo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_missing_objective_is_an_explicit_trial_error",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_missing_objective_is_an_explicit_trial_error",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_matrix_cache_closes_when_progress_callback_raises_after_prepare",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_matrix_cache_closes_when_progress_callback_raises_after_prepare",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_matrix_cache_closes_when_cancelled_after_first_trial",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_matrix_cache_closes_when_cancelled_after_first_trial",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_matrix_cache_closes_when_best_backtest_raises",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_matrix_cache_closes_when_best_backtest_raises",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_cancelled_matrix_optimizer_skips_expensive_preparation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_cancelled_matrix_optimizer_skips_expensive_preparation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_invalid_objective_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_optimizer_run.py",
+      "target": "function:backend/tests/backtest/test_optimizer_run.py:test_invalid_objective_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "file:backend/app/backtest/candidates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:_create",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:_create",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_crud_and_atomic_file",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_crud_and_atomic_file",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_mining_provenance_is_idempotent_and_conflict_safe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_mining_provenance_is_idempotent_and_conflict_safe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_rejects_full_result_fields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_rejects_full_result_fields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_stores_factor_mining_summary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_stores_factor_mining_summary",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_stores_strategy_mining_factor_combination",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_stores_strategy_mining_factor_combination",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_rejects_nested_mining_metrics",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_rejects_nested_mining_metrics",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_rejects_unknown_metric_field",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_rejects_unknown_metric_field",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_rejects_non_json_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_rejects_non_json_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_loads_legacy_missing_optional_fields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_loads_legacy_missing_optional_fields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_corrupt_file_fails_closed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_research_candidates.py",
+      "target": "function:backend/tests/backtest/test_research_candidates.py:test_candidate_corrupt_file_fails_closed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

@@ -1,0 +1,1866 @@
+{
+  "nodes": [
+    {
+      "id": "file:frontend/src/lib/analysis-adapter.ts",
+      "type": "file",
+      "name": "analysis-adapter.ts",
+      "filePath": "frontend/src/lib/analysis-adapter.ts",
+      "summary": "“analysis adapter”前端模块，服务于股票面板的交互与数据展示。主要封装 dimensionValue、dimensionValues、detectConstituentField 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "complex",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/analysis-adapter.ts:pickDimensionField",
+      "type": "function",
+      "name": "pickDimensionField",
+      "filePath": "frontend/src/lib/analysis-adapter.ts",
+      "lineRange": [
+        88,
+        104
+      ],
+      "summary": "实现 pick Dimension Field 的局部业务处理逻辑，支持 analysis-adapter.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/analysis-adapter.ts:parsePerStock",
+      "type": "function",
+      "name": "parsePerStock",
+      "filePath": "frontend/src/lib/analysis-adapter.ts",
+      "lineRange": [
+        113,
+        141
+      ],
+      "summary": "实现 parse Per Stock 的局部业务处理逻辑，支持 analysis-adapter.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/analysis-adapter.ts:parsePerDimension",
+      "type": "function",
+      "name": "parsePerDimension",
+      "filePath": "frontend/src/lib/analysis-adapter.ts",
+      "lineRange": [
+        145,
+        176
+      ],
+      "summary": "实现 parse Per Dimension 的局部业务处理逻辑，支持 analysis-adapter.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/analysis-adapter.ts:parseConstituents",
+      "type": "function",
+      "name": "parseConstituents",
+      "filePath": "frontend/src/lib/analysis-adapter.ts",
+      "lineRange": [
+        179,
+        206
+      ],
+      "summary": "实现 parse Constituents 的局部业务处理逻辑，支持 analysis-adapter.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/analysis-adapter.ts:computeMetrics",
+      "type": "function",
+      "name": "computeMetrics",
+      "filePath": "frontend/src/lib/analysis-adapter.ts",
+      "lineRange": [
+        216,
+        232
+      ],
+      "summary": "实现 compute Metrics 的局部业务处理逻辑，支持 analysis-adapter.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/analysis-adapter.ts:resolveDimension",
+      "type": "function",
+      "name": "resolveDimension",
+      "filePath": "frontend/src/lib/analysis-adapter.ts",
+      "lineRange": [
+        236,
+        289
+      ],
+      "summary": "实现 resolve Dimension 的局部业务处理逻辑，支持 analysis-adapter.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/lib/analysis-adapter.ts:buildQuoteMap",
+      "type": "function",
+      "name": "buildQuoteMap",
+      "filePath": "frontend/src/lib/analysis-adapter.ts",
+      "lineRange": [
+        303,
+        312
+      ],
+      "summary": "实现 build Quote Map 的局部业务处理逻辑，支持 analysis-adapter.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/analysis-adapter.ts:computeQuoteMetrics",
+      "type": "function",
+      "name": "computeQuoteMetrics",
+      "filePath": "frontend/src/lib/analysis-adapter.ts",
+      "lineRange": [
+        315,
+        350
+      ],
+      "summary": "实现 compute Quote Metrics 的局部业务处理逻辑，支持 analysis-adapter.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/api.ts",
+      "type": "file",
+      "name": "api.ts",
+      "filePath": "frontend/src/lib/api.ts",
+      "summary": "“api”前端模块，服务于股票面板的交互与数据展示。主要封装 request、genRuleId 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "complex",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/api.ts:request",
+      "type": "function",
+      "name": "request",
+      "filePath": "frontend/src/lib/api.ts",
+      "lineRange": [
+        15,
+        43
+      ],
+      "summary": "实现 request 的局部业务处理逻辑，支持 api.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/api.ts:genRuleId",
+      "type": "function",
+      "name": "genRuleId",
+      "filePath": "frontend/src/lib/api.ts",
+      "lineRange": [
+        977,
+        981
+      ],
+      "summary": "实现 gen Rule Id 的局部业务处理逻辑，支持 api.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/backtestTask.ts",
+      "type": "file",
+      "name": "backtestTask.ts",
+      "filePath": "frontend/src/lib/backtestTask.ts",
+      "summary": "“backtest Task”前端模块，服务于股票面板的交互与数据展示。主要封装 emit、subscribe、getSnapshot 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "complex",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/backtestTask.ts:connectSSE",
+      "type": "function",
+      "name": "connectSSE",
+      "filePath": "frontend/src/lib/backtestTask.ts",
+      "lineRange": [
+        69,
+        179
+      ],
+      "summary": "实现 connect SSE 的局部业务处理逻辑，支持 backtestTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/lib/backtestTask.ts:startBacktest",
+      "type": "function",
+      "name": "startBacktest",
+      "filePath": "frontend/src/lib/backtestTask.ts",
+      "lineRange": [
+        182,
+        245
+      ],
+      "summary": "实现 start Backtest 的局部业务处理逻辑，支持 backtestTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/lib/backtestTask.ts:stopBacktest",
+      "type": "function",
+      "name": "stopBacktest",
+      "filePath": "frontend/src/lib/backtestTask.ts",
+      "lineRange": [
+        248,
+        275
+      ],
+      "summary": "实现 stop Backtest 的局部业务处理逻辑，支持 backtestTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/backtestTask.ts:clearBacktest",
+      "type": "function",
+      "name": "clearBacktest",
+      "filePath": "frontend/src/lib/backtestTask.ts",
+      "lineRange": [
+        278,
+        281
+      ],
+      "summary": "实现 clear Backtest 的局部业务处理逻辑，支持 backtestTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/backtestTask.ts:tryReconnect",
+      "type": "function",
+      "name": "tryReconnect",
+      "filePath": "frontend/src/lib/backtestTask.ts",
+      "lineRange": [
+        284,
+        293
+      ],
+      "summary": "实现 try Reconnect 的局部业务处理逻辑，支持 backtestTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/backtestTask.ts:useBacktestTask",
+      "type": "function",
+      "name": "useBacktestTask",
+      "filePath": "frontend/src/lib/backtestTask.ts",
+      "lineRange": [
+        296,
+        298
+      ],
+      "summary": "封装 use Backtest Task 所需的 React 状态、查询或副作用，供 backtestTask.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/board.ts",
+      "type": "file",
+      "name": "board.ts",
+      "filePath": "frontend/src/lib/board.ts",
+      "summary": "“board”前端模块，服务于股票面板的交互与数据展示。主要封装 getBoardType、boardTag 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "simple",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/board.ts:getBoardType",
+      "type": "function",
+      "name": "getBoardType",
+      "filePath": "frontend/src/lib/board.ts",
+      "lineRange": [
+        7,
+        14
+      ],
+      "summary": "实现 get Board Type 的局部业务处理逻辑，支持 board.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/board.ts:boardTag",
+      "type": "function",
+      "name": "boardTag",
+      "filePath": "frontend/src/lib/board.ts",
+      "lineRange": [
+        17,
+        25
+      ],
+      "summary": "实现 board Tag 的局部业务处理逻辑，支持 board.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/capability-labels.tsx",
+      "type": "file",
+      "name": "capability-labels.tsx",
+      "filePath": "frontend/src/lib/capability-labels.tsx",
+      "summary": "“capability labels”前端模块，服务于股票面板的交互与数据展示。主要封装 capName、MissingCapChip、routeCap 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/capability-labels.tsx:capName",
+      "type": "function",
+      "name": "capName",
+      "filePath": "frontend/src/lib/capability-labels.tsx",
+      "lineRange": [
+        26,
+        28
+      ],
+      "summary": "实现 cap Name 的局部业务处理逻辑，支持 capability-labels.tsx 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/capability-labels.tsx:MissingCapChip",
+      "type": "function",
+      "name": "MissingCapChip",
+      "filePath": "frontend/src/lib/capability-labels.tsx",
+      "lineRange": [
+        31,
+        61
+      ],
+      "summary": "渲染 Missing Cap Chip 对应的 React 界面，并组织相关交互与展示状态。",
+      "tags": [
+        "component",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/capability-labels.tsx:routeCap",
+      "type": "function",
+      "name": "routeCap",
+      "filePath": "frontend/src/lib/capability-labels.tsx",
+      "lineRange": [
+        71,
+        73
+      ],
+      "summary": "实现 route Cap 的局部业务处理逻辑，支持 capability-labels.tsx 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/capability-labels.tsx:routeCapUsable",
+      "type": "function",
+      "name": "routeCapUsable",
+      "filePath": "frontend/src/lib/capability-labels.tsx",
+      "lineRange": [
+        75,
+        77
+      ],
+      "summary": "实现 route Cap Usable 的局部业务处理逻辑，支持 capability-labels.tsx 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/capability-labels.tsx:routeProviderDisplay",
+      "type": "function",
+      "name": "routeProviderDisplay",
+      "filePath": "frontend/src/lib/capability-labels.tsx",
+      "lineRange": [
+        80,
+        83
+      ],
+      "summary": "实现 route Provider Display 的局部业务处理逻辑，支持 capability-labels.tsx 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/capability-labels.tsx:tierRank",
+      "type": "function",
+      "name": "tierRank",
+      "filePath": "frontend/src/lib/capability-labels.tsx",
+      "lineRange": [
+        94,
+        97
+      ],
+      "summary": "实现 tier Rank 的局部业务处理逻辑，支持 capability-labels.tsx 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/capability-labels.tsx:isExpertOrAbove",
+      "type": "function",
+      "name": "isExpertOrAbove",
+      "filePath": "frontend/src/lib/capability-labels.tsx",
+      "lineRange": [
+        99,
+        101
+      ],
+      "summary": "实现 is Expert Or Above 的局部业务处理逻辑，支持 capability-labels.tsx 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/capability-labels.tsx:tierBaseName",
+      "type": "function",
+      "name": "tierBaseName",
+      "filePath": "frontend/src/lib/capability-labels.tsx",
+      "lineRange": [
+        145,
+        147
+      ],
+      "summary": "实现 tier Base Name 的局部业务处理逻辑，支持 capability-labels.tsx 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/capability-labels.tsx:tierStyle",
+      "type": "function",
+      "name": "tierStyle",
+      "filePath": "frontend/src/lib/capability-labels.tsx",
+      "lineRange": [
+        150,
+        152
+      ],
+      "summary": "实现 tier Style 的局部业务处理逻辑，支持 capability-labels.tsx 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/capability-labels.tsx:tierTextStyle",
+      "type": "function",
+      "name": "tierTextStyle",
+      "filePath": "frontend/src/lib/capability-labels.tsx",
+      "lineRange": [
+        158,
+        160
+      ],
+      "summary": "实现 tier Text Style 的局部业务处理逻辑，支持 capability-labels.tsx 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/capability-labels.tsx:TierTag",
+      "type": "function",
+      "name": "TierTag",
+      "filePath": "frontend/src/lib/capability-labels.tsx",
+      "lineRange": [
+        163,
+        176
+      ],
+      "summary": "渲染 Tier Tag 对应的 React 界面，并组织相关交互与展示状态。",
+      "tags": [
+        "component",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/cn.ts",
+      "type": "file",
+      "name": "cn.ts",
+      "filePath": "frontend/src/lib/cn.ts",
+      "summary": "“cn”前端模块，服务于股票面板的交互与数据展示。主要封装 cn 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "simple",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/cn.ts:cn",
+      "type": "function",
+      "name": "cn",
+      "filePath": "frontend/src/lib/cn.ts",
+      "lineRange": [
+        4,
+        6
+      ],
+      "summary": "实现 cn 的局部业务处理逻辑，支持 cn.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/colors.ts",
+      "type": "file",
+      "name": "colors.ts",
+      "filePath": "frontend/src/lib/colors.ts",
+      "summary": "“colors”前端模块，服务于股票面板的交互与数据展示。提供界面结构、状态协作或展示逻辑。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "simple",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "file:frontend/src/lib/format.ts",
+      "type": "file",
+      "name": "format.ts",
+      "filePath": "frontend/src/lib/format.ts",
+      "summary": "“format”前端模块，服务于股票面板的交互与数据展示。主要封装 fmtPrice、fmtPct、fmtVolume 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/format.ts:fmtPrice",
+      "type": "function",
+      "name": "fmtPrice",
+      "filePath": "frontend/src/lib/format.ts",
+      "lineRange": [
+        3,
+        6
+      ],
+      "summary": "实现 fmt Price 的局部业务处理逻辑，支持 format.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/format.ts:fmtPct",
+      "type": "function",
+      "name": "fmtPct",
+      "filePath": "frontend/src/lib/format.ts",
+      "lineRange": [
+        8,
+        12
+      ],
+      "summary": "实现 fmt Pct 的局部业务处理逻辑，支持 format.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/format.ts:fmtVolume",
+      "type": "function",
+      "name": "fmtVolume",
+      "filePath": "frontend/src/lib/format.ts",
+      "lineRange": [
+        14,
+        21
+      ],
+      "summary": "实现 fmt Volume 的局部业务处理逻辑，支持 format.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/format.ts:priceColorClass",
+      "type": "function",
+      "name": "priceColorClass",
+      "filePath": "frontend/src/lib/format.ts",
+      "lineRange": [
+        24,
+        27
+      ],
+      "summary": "实现 price Color Class 的局部业务处理逻辑，支持 format.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/format.ts:fmtBigNum",
+      "type": "function",
+      "name": "fmtBigNum",
+      "filePath": "frontend/src/lib/format.ts",
+      "lineRange": [
+        29,
+        35
+      ],
+      "summary": "实现 fmt Big Num 的局部业务处理逻辑，支持 format.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/format.ts:fmtDate",
+      "type": "function",
+      "name": "fmtDate",
+      "filePath": "frontend/src/lib/format.ts",
+      "lineRange": [
+        37,
+        42
+      ],
+      "summary": "实现 fmt Date 的局部业务处理逻辑，支持 format.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/format.ts:formatNumber",
+      "type": "function",
+      "name": "formatNumber",
+      "filePath": "frontend/src/lib/format.ts",
+      "lineRange": [
+        46,
+        50
+      ],
+      "summary": "实现 format Number 的局部业务处理逻辑，支持 format.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/format.ts:formatDuration",
+      "type": "function",
+      "name": "formatDuration",
+      "filePath": "frontend/src/lib/format.ts",
+      "lineRange": [
+        52,
+        60
+      ],
+      "summary": "实现 format Duration 的局部业务处理逻辑，支持 format.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/format.ts:formatScheduleDatePart",
+      "type": "function",
+      "name": "formatScheduleDatePart",
+      "filePath": "frontend/src/lib/format.ts",
+      "lineRange": [
+        62,
+        65
+      ],
+      "summary": "实现 format Schedule Date Part 的局部业务处理逻辑，支持 format.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/format.ts:formatScheduleTimePart",
+      "type": "function",
+      "name": "formatScheduleTimePart",
+      "filePath": "frontend/src/lib/format.ts",
+      "lineRange": [
+        67,
+        70
+      ],
+      "summary": "实现 format Schedule Time Part 的局部业务处理逻辑，支持 format.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/format.ts:isToday",
+      "type": "function",
+      "name": "isToday",
+      "filePath": "frontend/src/lib/format.ts",
+      "lineRange": [
+        72,
+        78
+      ],
+      "summary": "实现 is Today 的局部业务处理逻辑，支持 format.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/format.ts:formatLogTime",
+      "type": "function",
+      "name": "formatLogTime",
+      "filePath": "frontend/src/lib/format.ts",
+      "lineRange": [
+        80,
+        83
+      ],
+      "summary": "实现 format Log Time 的局部业务处理逻辑，支持 format.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/format.ts:formatExtNumber",
+      "type": "function",
+      "name": "formatExtNumber",
+      "filePath": "frontend/src/lib/format.ts",
+      "lineRange": [
+        94,
+        136
+      ],
+      "summary": "实现 format Ext Number 的局部业务处理逻辑，支持 format.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/intraday-chart.ts",
+      "type": "file",
+      "name": "intraday-chart.ts",
+      "filePath": "frontend/src/lib/intraday-chart.ts",
+      "summary": "“intraday chart”前端模块，服务于股票面板的交互与数据展示。主要封装 formatMinuteTime、computeIntradayAverage、generateFullDayTimes 等功能。",
+      "tags": [
+        "chart",
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "simple",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/intraday-chart.ts:formatMinuteTime",
+      "type": "function",
+      "name": "formatMinuteTime",
+      "filePath": "frontend/src/lib/intraday-chart.ts",
+      "lineRange": [
+        4,
+        8
+      ],
+      "summary": "实现 format Minute Time 的局部业务处理逻辑，支持 intraday-chart.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/intraday-chart.ts:computeIntradayAverage",
+      "type": "function",
+      "name": "computeIntradayAverage",
+      "filePath": "frontend/src/lib/intraday-chart.ts",
+      "lineRange": [
+        10,
+        20
+      ],
+      "summary": "实现 compute Intraday Average 的局部业务处理逻辑，支持 intraday-chart.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/intraday-chart.ts:generateFullDayTimes",
+      "type": "function",
+      "name": "generateFullDayTimes",
+      "filePath": "frontend/src/lib/intraday-chart.ts",
+      "lineRange": [
+        22,
+        38
+      ],
+      "summary": "实现 generate Full Day Times 的局部业务处理逻辑，支持 intraday-chart.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/kline.ts",
+      "type": "file",
+      "name": "kline.ts",
+      "filePath": "frontend/src/lib/kline.ts",
+      "summary": "“kline”前端模块，服务于股票面板的交互与数据展示。主要封装 klineDailyQueryOptions、klineMinuteQueryOptions、klineMinuteRangeQueryOptions 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/kline.ts:klineDailyQueryOptions",
+      "type": "function",
+      "name": "klineDailyQueryOptions",
+      "filePath": "frontend/src/lib/kline.ts",
+      "lineRange": [
+        16,
+        30
+      ],
+      "summary": "实现 kline Daily Query Options 的局部业务处理逻辑，支持 kline.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/kline.ts:klineMinuteQueryOptions",
+      "type": "function",
+      "name": "klineMinuteQueryOptions",
+      "filePath": "frontend/src/lib/kline.ts",
+      "lineRange": [
+        38,
+        43
+      ],
+      "summary": "实现 kline Minute Query Options 的局部业务处理逻辑，支持 kline.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/kline.ts:klineMinuteRangeQueryOptions",
+      "type": "function",
+      "name": "klineMinuteRangeQueryOptions",
+      "filePath": "frontend/src/lib/kline.ts",
+      "lineRange": [
+        48,
+        57
+      ],
+      "summary": "实现 kline Minute Range Query Options 的局部业务处理逻辑，支持 kline.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/list-columns.ts",
+      "type": "file",
+      "name": "list-columns.ts",
+      "filePath": "frontend/src/lib/list-columns.ts",
+      "summary": "“list columns”前端模块，服务于股票面板的交互与数据展示。主要封装 resolveIntradayConfig、clampNum、resolveCandleConfig 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "complex",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/list-columns.ts:resolveIntradayConfig",
+      "type": "function",
+      "name": "resolveIntradayConfig",
+      "filePath": "frontend/src/lib/list-columns.ts",
+      "lineRange": [
+        78,
+        84
+      ],
+      "summary": "实现 resolve Intraday Config 的局部业务处理逻辑，支持 list-columns.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/list-columns.ts:resolveCandleConfig",
+      "type": "function",
+      "name": "resolveCandleConfig",
+      "filePath": "frontend/src/lib/list-columns.ts",
+      "lineRange": [
+        104,
+        113
+      ],
+      "summary": "实现 resolve Candle Config 的局部业务处理逻辑，支持 list-columns.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/list-columns.ts:serializeColumns",
+      "type": "function",
+      "name": "serializeColumns",
+      "filePath": "frontend/src/lib/list-columns.ts",
+      "lineRange": [
+        143,
+        148
+      ],
+      "summary": "实现 serialize Columns 的局部业务处理逻辑，支持 list-columns.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/list-columns.ts:mergeColumns",
+      "type": "function",
+      "name": "mergeColumns",
+      "filePath": "frontend/src/lib/list-columns.ts",
+      "lineRange": [
+        156,
+        212
+      ],
+      "summary": "实现 merge Columns 的局部业务处理逻辑，支持 list-columns.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/lib/list-columns.ts:buildExtColumnsParam",
+      "type": "function",
+      "name": "buildExtColumnsParam",
+      "filePath": "frontend/src/lib/list-columns.ts",
+      "lineRange": [
+        215,
+        220
+      ],
+      "summary": "实现 build Ext Columns Param 的局部业务处理逻辑，支持 list-columns.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/list-columns.ts:createExtColumn",
+      "type": "function",
+      "name": "createExtColumn",
+      "filePath": "frontend/src/lib/list-columns.ts",
+      "lineRange": [
+        223,
+        236
+      ],
+      "summary": "实现 create Ext Column 的局部业务处理逻辑，支持 list-columns.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:frontend/src/lib/analysis-adapter.ts",
+      "target": "function:frontend/src/lib/analysis-adapter.ts:pickDimensionField",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/analysis-adapter.ts",
+      "target": "function:frontend/src/lib/analysis-adapter.ts:pickDimensionField",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/analysis-adapter.ts",
+      "target": "function:frontend/src/lib/analysis-adapter.ts:parsePerStock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/analysis-adapter.ts",
+      "target": "function:frontend/src/lib/analysis-adapter.ts:parsePerDimension",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/analysis-adapter.ts",
+      "target": "function:frontend/src/lib/analysis-adapter.ts:parseConstituents",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/analysis-adapter.ts",
+      "target": "function:frontend/src/lib/analysis-adapter.ts:computeMetrics",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/analysis-adapter.ts",
+      "target": "function:frontend/src/lib/analysis-adapter.ts:resolveDimension",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/analysis-adapter.ts",
+      "target": "function:frontend/src/lib/analysis-adapter.ts:resolveDimension",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/analysis-adapter.ts",
+      "target": "function:frontend/src/lib/analysis-adapter.ts:buildQuoteMap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/analysis-adapter.ts",
+      "target": "function:frontend/src/lib/analysis-adapter.ts:buildQuoteMap",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/analysis-adapter.ts",
+      "target": "function:frontend/src/lib/analysis-adapter.ts:computeQuoteMetrics",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/analysis-adapter.ts",
+      "target": "function:frontend/src/lib/analysis-adapter.ts:computeQuoteMetrics",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/analysis-adapter.ts",
+      "target": "file:frontend/src/lib/api.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/api.ts",
+      "target": "function:frontend/src/lib/api.ts:request",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/api.ts",
+      "target": "function:frontend/src/lib/api.ts:genRuleId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/api.ts",
+      "target": "function:frontend/src/lib/api.ts:genRuleId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/api.ts",
+      "target": "file:frontend/src/components/Toast.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/backtestTask.ts",
+      "target": "function:frontend/src/lib/backtestTask.ts:connectSSE",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/backtestTask.ts",
+      "target": "function:frontend/src/lib/backtestTask.ts:startBacktest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/backtestTask.ts",
+      "target": "function:frontend/src/lib/backtestTask.ts:startBacktest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/backtestTask.ts",
+      "target": "function:frontend/src/lib/backtestTask.ts:stopBacktest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/backtestTask.ts",
+      "target": "function:frontend/src/lib/backtestTask.ts:stopBacktest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/backtestTask.ts",
+      "target": "function:frontend/src/lib/backtestTask.ts:clearBacktest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/backtestTask.ts",
+      "target": "function:frontend/src/lib/backtestTask.ts:clearBacktest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/backtestTask.ts",
+      "target": "function:frontend/src/lib/backtestTask.ts:tryReconnect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/backtestTask.ts",
+      "target": "function:frontend/src/lib/backtestTask.ts:tryReconnect",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/backtestTask.ts",
+      "target": "function:frontend/src/lib/backtestTask.ts:useBacktestTask",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/backtestTask.ts",
+      "target": "function:frontend/src/lib/backtestTask.ts:useBacktestTask",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/backtestTask.ts",
+      "target": "file:frontend/src/lib/api.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/board.ts",
+      "target": "function:frontend/src/lib/board.ts:getBoardType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/board.ts",
+      "target": "function:frontend/src/lib/board.ts:getBoardType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/board.ts",
+      "target": "function:frontend/src/lib/board.ts:boardTag",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/board.ts",
+      "target": "function:frontend/src/lib/board.ts:boardTag",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:capName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:capName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:MissingCapChip",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:MissingCapChip",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:routeCap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:routeCap",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:routeCapUsable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:routeCapUsable",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:routeProviderDisplay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:routeProviderDisplay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:tierRank",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:tierRank",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:isExpertOrAbove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:isExpertOrAbove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:tierBaseName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:tierBaseName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:tierStyle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:tierStyle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:tierTextStyle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:tierTextStyle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:TierTag",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "function:frontend/src/lib/capability-labels.tsx:TierTag",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/capability-labels.tsx",
+      "target": "file:frontend/src/lib/api.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/cn.ts",
+      "target": "function:frontend/src/lib/cn.ts:cn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/cn.ts",
+      "target": "function:frontend/src/lib/cn.ts:cn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:fmtPrice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:fmtPrice",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:fmtPct",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:fmtPct",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:fmtVolume",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:fmtVolume",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:priceColorClass",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:priceColorClass",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:fmtBigNum",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:fmtBigNum",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:fmtDate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:fmtDate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:formatNumber",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:formatNumber",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:formatDuration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:formatDuration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:formatScheduleDatePart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:formatScheduleDatePart",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:formatScheduleTimePart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:formatScheduleTimePart",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:isToday",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:isToday",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:formatLogTime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:formatLogTime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:formatExtNumber",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/format.ts",
+      "target": "function:frontend/src/lib/format.ts:formatExtNumber",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/intraday-chart.ts",
+      "target": "function:frontend/src/lib/intraday-chart.ts:formatMinuteTime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/intraday-chart.ts",
+      "target": "function:frontend/src/lib/intraday-chart.ts:formatMinuteTime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/intraday-chart.ts",
+      "target": "function:frontend/src/lib/intraday-chart.ts:computeIntradayAverage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/intraday-chart.ts",
+      "target": "function:frontend/src/lib/intraday-chart.ts:computeIntradayAverage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/intraday-chart.ts",
+      "target": "function:frontend/src/lib/intraday-chart.ts:generateFullDayTimes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/intraday-chart.ts",
+      "target": "file:frontend/src/lib/api.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/kline.ts",
+      "target": "function:frontend/src/lib/kline.ts:klineDailyQueryOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/kline.ts",
+      "target": "function:frontend/src/lib/kline.ts:klineDailyQueryOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/kline.ts",
+      "target": "function:frontend/src/lib/kline.ts:klineMinuteQueryOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/kline.ts",
+      "target": "function:frontend/src/lib/kline.ts:klineMinuteQueryOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/kline.ts",
+      "target": "function:frontend/src/lib/kline.ts:klineMinuteRangeQueryOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/kline.ts",
+      "target": "function:frontend/src/lib/kline.ts:klineMinuteRangeQueryOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/kline.ts",
+      "target": "file:frontend/src/lib/api.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/kline.ts",
+      "target": "file:frontend/src/lib/queryKeys.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/list-columns.ts",
+      "target": "function:frontend/src/lib/list-columns.ts:resolveIntradayConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/list-columns.ts",
+      "target": "function:frontend/src/lib/list-columns.ts:resolveIntradayConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/list-columns.ts",
+      "target": "function:frontend/src/lib/list-columns.ts:resolveCandleConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/list-columns.ts",
+      "target": "function:frontend/src/lib/list-columns.ts:resolveCandleConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/list-columns.ts",
+      "target": "function:frontend/src/lib/list-columns.ts:serializeColumns",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/list-columns.ts",
+      "target": "function:frontend/src/lib/list-columns.ts:serializeColumns",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/list-columns.ts",
+      "target": "function:frontend/src/lib/list-columns.ts:mergeColumns",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/list-columns.ts",
+      "target": "function:frontend/src/lib/list-columns.ts:mergeColumns",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/list-columns.ts",
+      "target": "function:frontend/src/lib/list-columns.ts:buildExtColumnsParam",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/list-columns.ts",
+      "target": "function:frontend/src/lib/list-columns.ts:buildExtColumnsParam",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/list-columns.ts",
+      "target": "function:frontend/src/lib/list-columns.ts:createExtColumn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/list-columns.ts",
+      "target": "function:frontend/src/lib/list-columns.ts:createExtColumn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

@@ -1,0 +1,570 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/app/data_providers/custom/provider.py",
+      "type": "file",
+      "name": "provider.py",
+      "filePath": "backend/app/data_providers/custom/provider.py",
+      "summary": "实现自定义数据源的配置、装载或标准化适配能力。",
+      "tags": [
+        "数据源",
+        "provider",
+        "后端"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/data_providers/custom/provider.py:_normalize_pct_units",
+      "type": "function",
+      "name": "_normalize_pct_units",
+      "filePath": "backend/app/data_providers/custom/provider.py",
+      "lineRange": [
+        48,
+        89
+      ],
+      "summary": "在 provider.py 中实现 _normalize_pct_units，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/data_providers/custom/provider.py:_token_from_env",
+      "type": "function",
+      "name": "_token_from_env",
+      "filePath": "backend/app/data_providers/custom/provider.py",
+      "lineRange": [
+        416,
+        436
+      ],
+      "summary": "在 provider.py 中实现 _token_from_env，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/data_providers/custom/provider.py:GenericHTTPProvider",
+      "type": "class",
+      "name": "GenericHTTPProvider",
+      "filePath": "backend/app/data_providers/custom/provider.py",
+      "lineRange": [
+        92,
+        413
+      ],
+      "summary": "在 provider.py 中定义 GenericHTTPProvider，封装相关的数据结构、状态或协作职责。",
+      "tags": [
+        "类",
+        "后端",
+        "模型"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/jobs/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "backend/app/jobs/__init__.py",
+      "summary": "承载 __init__ 模块的配置、领域逻辑或公共支撑能力。",
+      "tags": [
+        "后端",
+        "python",
+        "模块"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/main.py",
+      "type": "file",
+      "name": "main.py",
+      "filePath": "backend/app/main.py",
+      "summary": "启动 FastAPI 应用，注册路由、生命周期任务和扩展加载流程。",
+      "tags": [
+        "后端",
+        "python",
+        "模块"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/main.py:_application_lifespan",
+      "type": "function",
+      "name": "_application_lifespan",
+      "filePath": "backend/app/main.py",
+      "lineRange": [
+        87,
+        372
+      ],
+      "summary": "在 main.py 中实现 _application_lifespan，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/main.py:lifespan",
+      "type": "function",
+      "name": "lifespan",
+      "filePath": "backend/app/main.py",
+      "lineRange": [
+        376,
+        383
+      ],
+      "summary": "在 main.py 中实现 lifespan，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/main.py:auth_middleware",
+      "type": "function",
+      "name": "auth_middleware",
+      "filePath": "backend/app/main.py",
+      "lineRange": [
+        418,
+        447
+      ],
+      "summary": "在 main.py 中实现 auth_middleware，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/main.py:capability_denied_handler",
+      "type": "function",
+      "name": "capability_denied_handler",
+      "filePath": "backend/app/main.py",
+      "lineRange": [
+        492,
+        496
+      ],
+      "summary": "在 main.py 中实现 capability_denied_handler，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/app/data_providers/custom/provider.py",
+      "target": "function:backend/app/data_providers/custom/provider.py:_normalize_pct_units",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/data_providers/custom/provider.py",
+      "target": "function:backend/app/data_providers/custom/provider.py:_normalize_pct_units",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/data_providers/custom/provider.py",
+      "target": "function:backend/app/data_providers/custom/provider.py:_token_from_env",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/data_providers/custom/provider.py",
+      "target": "function:backend/app/data_providers/custom/provider.py:_token_from_env",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/data_providers/custom/provider.py",
+      "target": "class:backend/app/data_providers/custom/provider.py:GenericHTTPProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/data_providers/custom/provider.py",
+      "target": "class:backend/app/data_providers/custom/provider.py:GenericHTTPProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/data_providers/custom/provider.py",
+      "target": "file:backend/app/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/data_providers/custom/provider.py",
+      "target": "file:backend/app/data_providers/base.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/data_providers/custom/provider.py",
+      "target": "file:backend/app/data_providers/custom/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/data_providers/custom/provider.py",
+      "target": "file:backend/app/data_providers/custom/mapper.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/data_providers/custom/provider.py",
+      "target": "file:backend/app/data_providers/normalizer.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/data_providers/custom/provider.py",
+      "target": "file:backend/app/tickflow/rate_limits.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "function:backend/app/main.py:_application_lifespan",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "function:backend/app/main.py:_application_lifespan",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "function:backend/app/main.py:lifespan",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "function:backend/app/main.py:lifespan",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "function:backend/app/main.py:auth_middleware",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "function:backend/app/main.py:auth_middleware",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "function:backend/app/main.py:capability_denied_handler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "function:backend/app/main.py:capability_denied_handler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/abnormal.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/alerts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/analysis.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/backtest.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/ext_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/financials.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/indices.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/intraday.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/kline.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/market_recap.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/mining.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/monitor_rules.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/overview.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/pipeline.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/regime.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/routes.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/rps.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/screener.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/signals.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/stock_analysis.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/strategy.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/api/watchlist.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/enriched_generation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/extensions/loader.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/jobs/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/jobs/daily_pipeline.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/services/matrix_prewarm_owner.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/services/mining_process_lock.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/services/quote_service.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/tickflow/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/tickflow/capabilities.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/tickflow/policy.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/main.py",
+      "target": "file:backend/app/tickflow/repository.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:backend/app/main.py:lifespan",
+      "target": "function:backend/app/main.py:_application_lifespan",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

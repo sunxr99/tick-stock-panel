@@ -1,0 +1,1473 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/app/services/ext_pull.py",
+      "type": "file",
+      "name": "ext_pull.py",
+      "filePath": "backend/app/services/ext_pull.py",
+      "summary": "实现扩展数据拉取领域的服务逻辑，并协调数据访问与业务计算。",
+      "tags": [
+        "service",
+        "后端",
+        "python"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/services/ext_pull.py:PullScheduler",
+      "type": "class",
+      "name": "PullScheduler",
+      "filePath": "backend/app/services/ext_pull.py",
+      "lineRange": [
+        170,
+        315
+      ],
+      "summary": "封装扩展数据拉取领域的 PullScheduler 类型职责与协作状态。",
+      "tags": [
+        "class",
+        "后端",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/ext_pull.py:_in_time_window",
+      "type": "function",
+      "name": "_in_time_window",
+      "filePath": "backend/app/services/ext_pull.py",
+      "lineRange": [
+        23,
+        35
+      ],
+      "summary": "执行扩展数据拉取中的 _in_time_window 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ext_pull.py:_extract_rows",
+      "type": "function",
+      "name": "_extract_rows",
+      "filePath": "backend/app/services/ext_pull.py",
+      "lineRange": [
+        42,
+        71
+      ],
+      "summary": "执行扩展数据拉取中的 _extract_rows 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ext_pull.py:_apply_field_map",
+      "type": "function",
+      "name": "_apply_field_map",
+      "filePath": "backend/app/services/ext_pull.py",
+      "lineRange": [
+        74,
+        85
+      ],
+      "summary": "执行扩展数据拉取中的 _apply_field_map 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ext_pull.py:_apply_preset_flatten",
+      "type": "function",
+      "name": "_apply_preset_flatten",
+      "filePath": "backend/app/services/ext_pull.py",
+      "lineRange": [
+        92,
+        102
+      ],
+      "summary": "执行扩展数据拉取中的 _apply_preset_flatten 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ext_pull.py:fetch_and_ingest",
+      "type": "function",
+      "name": "fetch_and_ingest",
+      "filePath": "backend/app/services/ext_pull.py",
+      "lineRange": [
+        105,
+        163
+      ],
+      "summary": "执行扩展数据拉取中的 fetch_and_ingest 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/services/index_const.py",
+      "type": "file",
+      "name": "index_const.py",
+      "filePath": "backend/app/services/index_const.py",
+      "summary": "实现指数常量领域的服务逻辑，并协调数据访问与业务计算。",
+      "tags": [
+        "service",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/market_mainline.py",
+      "type": "file",
+      "name": "market_mainline.py",
+      "filePath": "backend/app/services/market_mainline.py",
+      "summary": "实现市场主线领域的服务逻辑，并协调数据访问与业务计算。",
+      "tags": [
+        "service",
+        "后端",
+        "python"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/market_mainline.py:_resolve_filter_config",
+      "type": "function",
+      "name": "_resolve_filter_config",
+      "filePath": "backend/app/services/market_mainline.py",
+      "lineRange": [
+        47,
+        65
+      ],
+      "summary": "执行市场主线中的 _resolve_filter_config 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_mainline.py:mainline_path",
+      "type": "function",
+      "name": "mainline_path",
+      "filePath": "backend/app/services/market_mainline.py",
+      "lineRange": [
+        68,
+        69
+      ],
+      "summary": "执行市场主线中的 mainline_path 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_mainline.py:load_risk_warning_symbols",
+      "type": "function",
+      "name": "load_risk_warning_symbols",
+      "filePath": "backend/app/services/market_mainline.py",
+      "lineRange": [
+        75,
+        98
+      ],
+      "summary": "执行市场主线中的 load_risk_warning_symbols 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_mainline.py:load_mainline_history",
+      "type": "function",
+      "name": "load_mainline_history",
+      "filePath": "backend/app/services/market_mainline.py",
+      "lineRange": [
+        101,
+        113
+      ],
+      "summary": "执行市场主线中的 load_mainline_history 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_mainline.py:_industry_member",
+      "type": "function",
+      "name": "_industry_member",
+      "filePath": "backend/app/services/market_mainline.py",
+      "lineRange": [
+        116,
+        120
+      ],
+      "summary": "执行市场主线中的 _industry_member 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_mainline.py:compute_mainline_range",
+      "type": "function",
+      "name": "compute_mainline_range",
+      "filePath": "backend/app/services/market_mainline.py",
+      "lineRange": [
+        123,
+        252
+      ],
+      "summary": "执行市场主线中的 compute_mainline_range 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/market_mainline.py:upsert_mainline_history",
+      "type": "function",
+      "name": "upsert_mainline_history",
+      "filePath": "backend/app/services/market_mainline.py",
+      "lineRange": [
+        255,
+        279
+      ],
+      "summary": "执行市场主线中的 upsert_mainline_history 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_mainline.py:compute_mainline_incremental",
+      "type": "function",
+      "name": "compute_mainline_incremental",
+      "filePath": "backend/app/services/market_mainline.py",
+      "lineRange": [
+        282,
+        298
+      ],
+      "summary": "执行市场主线中的 compute_mainline_incremental 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/market_overview_builder.py",
+      "type": "file",
+      "name": "market_overview_builder.py",
+      "filePath": "backend/app/services/market_overview_builder.py",
+      "summary": "实现市场总览构建领域的服务逻辑，并协调数据访问与业务计算。",
+      "tags": [
+        "service",
+        "后端",
+        "python"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/market_overview_builder.py:_finite",
+      "type": "function",
+      "name": "_finite",
+      "filePath": "backend/app/services/market_overview_builder.py",
+      "lineRange": [
+        36,
+        43
+      ],
+      "summary": "执行市场总览构建中的 _finite 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_overview_builder.py:_json_safe",
+      "type": "function",
+      "name": "_json_safe",
+      "filePath": "backend/app/services/market_overview_builder.py",
+      "lineRange": [
+        46,
+        53
+      ],
+      "summary": "执行市场总览构建中的 _json_safe 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_overview_builder.py:_board",
+      "type": "function",
+      "name": "_board",
+      "filePath": "backend/app/services/market_overview_builder.py",
+      "lineRange": [
+        56,
+        67
+      ],
+      "summary": "执行市场总览构建中的 _board 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_overview_builder.py:_score",
+      "type": "function",
+      "name": "_score",
+      "filePath": "backend/app/services/market_overview_builder.py",
+      "lineRange": [
+        70,
+        73
+      ],
+      "summary": "执行市场总览构建中的 _score 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_overview_builder.py:_quote_status",
+      "type": "function",
+      "name": "_quote_status",
+      "filePath": "backend/app/services/market_overview_builder.py",
+      "lineRange": [
+        80,
+        84
+      ],
+      "summary": "执行市场总览构建中的 _quote_status 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_overview_builder.py:_index_quotes",
+      "type": "function",
+      "name": "_index_quotes",
+      "filePath": "backend/app/services/market_overview_builder.py",
+      "lineRange": [
+        87,
+        151
+      ],
+      "summary": "执行市场总览构建中的 _index_quotes 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/market_overview_builder.py:_dimension_field",
+      "type": "function",
+      "name": "_dimension_field",
+      "filePath": "backend/app/services/market_overview_builder.py",
+      "lineRange": [
+        158,
+        166
+      ],
+      "summary": "执行市场总览构建中的 _dimension_field 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_overview_builder.py:_ext_files",
+      "type": "function",
+      "name": "_ext_files",
+      "filePath": "backend/app/services/market_overview_builder.py",
+      "lineRange": [
+        169,
+        174
+      ],
+      "summary": "执行市场总览构建中的 _ext_files 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_overview_builder.py:_read_ext_rows",
+      "type": "function",
+      "name": "_read_ext_rows",
+      "filePath": "backend/app/services/market_overview_builder.py",
+      "lineRange": [
+        177,
+        206
+      ],
+      "summary": "执行市场总览构建中的 _read_ext_rows 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_overview_builder.py:_dimension_values",
+      "type": "function",
+      "name": "_dimension_values",
+      "filePath": "backend/app/services/market_overview_builder.py",
+      "lineRange": [
+        209,
+        217
+      ],
+      "summary": "执行市场总览构建中的 _dimension_values 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_overview_builder.py:_symbol_keys",
+      "type": "function",
+      "name": "_symbol_keys",
+      "filePath": "backend/app/services/market_overview_builder.py",
+      "lineRange": [
+        220,
+        237
+      ],
+      "summary": "执行市场总览构建中的 _symbol_keys 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_overview_builder.py:_dimension_rank",
+      "type": "function",
+      "name": "_dimension_rank",
+      "filePath": "backend/app/services/market_overview_builder.py",
+      "lineRange": [
+        240,
+        302
+      ],
+      "summary": "执行市场总览构建中的 _dimension_rank 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/market_overview_builder.py:_top_rows",
+      "type": "function",
+      "name": "_top_rows",
+      "filePath": "backend/app/services/market_overview_builder.py",
+      "lineRange": [
+        309,
+        323
+      ],
+      "summary": "执行市场总览构建中的 _top_rows 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_overview_builder.py:_pct_band_rows",
+      "type": "function",
+      "name": "_pct_band_rows",
+      "filePath": "backend/app/services/market_overview_builder.py",
+      "lineRange": [
+        326,
+        349
+      ],
+      "summary": "执行市场总览构建中的 _pct_band_rows 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_overview_builder.py:build_market_overview",
+      "type": "function",
+      "name": "build_market_overview",
+      "filePath": "backend/app/services/market_overview_builder.py",
+      "lineRange": [
+        356,
+        595
+      ],
+      "summary": "执行市场总览构建中的 build_market_overview 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/services/market_recap.py",
+      "type": "file",
+      "name": "market_recap.py",
+      "filePath": "backend/app/services/market_recap.py",
+      "summary": "实现市场复盘领域的服务逻辑，并协调数据访问与业务计算。",
+      "tags": [
+        "service",
+        "后端",
+        "python"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/market_recap.py:_fmt_pct",
+      "type": "function",
+      "name": "_fmt_pct",
+      "filePath": "backend/app/services/market_recap.py",
+      "lineRange": [
+        100,
+        103
+      ],
+      "summary": "执行市场复盘中的 _fmt_pct 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_recap.py:_build_indices_block",
+      "type": "function",
+      "name": "_build_indices_block",
+      "filePath": "backend/app/services/market_recap.py",
+      "lineRange": [
+        106,
+        118
+      ],
+      "summary": "执行市场复盘中的 _build_indices_block 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_recap.py:_build_breadth_block",
+      "type": "function",
+      "name": "_build_breadth_block",
+      "filePath": "backend/app/services/market_recap.py",
+      "lineRange": [
+        121,
+        150
+      ],
+      "summary": "执行市场复盘中的 _build_breadth_block 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_recap.py:_build_sector_block",
+      "type": "function",
+      "name": "_build_sector_block",
+      "filePath": "backend/app/services/market_recap.py",
+      "lineRange": [
+        153,
+        167
+      ],
+      "summary": "执行市场复盘中的 _build_sector_block 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_recap.py:_build_emotion_block",
+      "type": "function",
+      "name": "_build_emotion_block",
+      "filePath": "backend/app/services/market_recap.py",
+      "lineRange": [
+        170,
+        179
+      ],
+      "summary": "执行市场复盘中的 _build_emotion_block 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_recap.py:_build_user_prompt",
+      "type": "function",
+      "name": "_build_user_prompt",
+      "filePath": "backend/app/services/market_recap.py",
+      "lineRange": [
+        182,
+        245
+      ],
+      "summary": "执行市场复盘中的 _build_user_prompt 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/market_recap.py:_recap_summary",
+      "type": "function",
+      "name": "_recap_summary",
+      "filePath": "backend/app/services/market_recap.py",
+      "lineRange": [
+        252,
+        270
+      ],
+      "summary": "执行市场复盘中的 _recap_summary 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_recap.py:recap_market_stream",
+      "type": "function",
+      "name": "recap_market_stream",
+      "filePath": "backend/app/services/market_recap.py",
+      "lineRange": [
+        277,
+        352
+      ],
+      "summary": "执行市场复盘中的 recap_market_stream 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/market_recap.py:recap_market_once",
+      "type": "function",
+      "name": "recap_market_once",
+      "filePath": "backend/app/services/market_recap.py",
+      "lineRange": [
+        355,
+        383
+      ],
+      "summary": "执行市场复盘中的 recap_market_once 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/rps_rotation.py",
+      "type": "file",
+      "name": "rps_rotation.py",
+      "filePath": "backend/app/services/rps_rotation.py",
+      "summary": "实现RPS 轮动领域的服务逻辑，并协调数据访问与业务计算。",
+      "tags": [
+        "service",
+        "后端",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/rps_rotation.py:invalidate_cache",
+      "type": "function",
+      "name": "invalidate_cache",
+      "filePath": "backend/app/services/rps_rotation.py",
+      "lineRange": [
+        40,
+        43
+      ],
+      "summary": "执行RPS 轮动中的 invalidate_cache 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/rps_rotation.py:_latest_enriched_date",
+      "type": "function",
+      "name": "_latest_enriched_date",
+      "filePath": "backend/app/services/rps_rotation.py",
+      "lineRange": [
+        46,
+        51
+      ],
+      "summary": "执行RPS 轮动中的 _latest_enriched_date 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/rps_rotation.py:_load_concept_map_df",
+      "type": "function",
+      "name": "_load_concept_map_df",
+      "filePath": "backend/app/services/rps_rotation.py",
+      "lineRange": [
+        54,
+        100
+      ],
+      "summary": "执行RPS 轮动中的 _load_concept_map_df 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/rps_rotation.py:build_rps_rotation",
+      "type": "function",
+      "name": "build_rps_rotation",
+      "filePath": "backend/app/services/rps_rotation.py",
+      "lineRange": [
+        108,
+        212
+      ],
+      "summary": "执行RPS 轮动中的 build_rps_rotation 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/rps_rotation.py:_slice_cached",
+      "type": "function",
+      "name": "_slice_cached",
+      "filePath": "backend/app/services/rps_rotation.py",
+      "lineRange": [
+        215,
+        225
+      ],
+      "summary": "执行RPS 轮动中的 _slice_cached 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/app/services/ext_pull.py",
+      "target": "class:backend/app/services/ext_pull.py:PullScheduler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ext_pull.py",
+      "target": "class:backend/app/services/ext_pull.py:PullScheduler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ext_pull.py",
+      "target": "function:backend/app/services/ext_pull.py:_in_time_window",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ext_pull.py",
+      "target": "function:backend/app/services/ext_pull.py:_in_time_window",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ext_pull.py",
+      "target": "function:backend/app/services/ext_pull.py:_extract_rows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ext_pull.py",
+      "target": "function:backend/app/services/ext_pull.py:_extract_rows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ext_pull.py",
+      "target": "function:backend/app/services/ext_pull.py:_apply_field_map",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ext_pull.py",
+      "target": "function:backend/app/services/ext_pull.py:_apply_field_map",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ext_pull.py",
+      "target": "function:backend/app/services/ext_pull.py:_apply_preset_flatten",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ext_pull.py",
+      "target": "function:backend/app/services/ext_pull.py:_apply_preset_flatten",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ext_pull.py",
+      "target": "function:backend/app/services/ext_pull.py:fetch_and_ingest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ext_pull.py",
+      "target": "function:backend/app/services/ext_pull.py:fetch_and_ingest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ext_pull.py",
+      "target": "file:backend/app/services/ext_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:_resolve_filter_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:_resolve_filter_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:mainline_path",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:mainline_path",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:load_risk_warning_symbols",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:load_risk_warning_symbols",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:load_mainline_history",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:load_mainline_history",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:_industry_member",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:_industry_member",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:compute_mainline_range",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:compute_mainline_range",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:upsert_mainline_history",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:upsert_mainline_history",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:compute_mainline_incremental",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:compute_mainline_incremental",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "file:backend/app/services/rps_rotation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_finite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_finite",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_json_safe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_json_safe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_board",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_board",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_score",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_score",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_quote_status",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_quote_status",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_index_quotes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_index_quotes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_dimension_field",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_dimension_field",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_ext_files",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_ext_files",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_read_ext_rows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_read_ext_rows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_dimension_values",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_dimension_values",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_symbol_keys",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_symbol_keys",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_dimension_rank",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_dimension_rank",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_top_rows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_top_rows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_pct_band_rows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:_pct_band_rows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:build_market_overview",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "function:backend/app/services/market_overview_builder.py:build_market_overview",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "file:backend/app/services/ext_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "file:backend/app/services/index_const.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/market_overview_builder.py",
+      "target": "file:backend/app/services/screener.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:_fmt_pct",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:_fmt_pct",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:_build_indices_block",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:_build_indices_block",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:_build_breadth_block",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:_build_breadth_block",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:_build_sector_block",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:_build_sector_block",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:_build_emotion_block",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:_build_emotion_block",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:_build_user_prompt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:_build_user_prompt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:_recap_summary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:_recap_summary",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:recap_market_stream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:recap_market_stream",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:recap_market_once",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "function:backend/app/services/market_recap.py:recap_market_once",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_recap.py",
+      "target": "file:backend/app/services/market_overview_builder.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/rps_rotation.py",
+      "target": "function:backend/app/services/rps_rotation.py:invalidate_cache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/rps_rotation.py",
+      "target": "function:backend/app/services/rps_rotation.py:invalidate_cache",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/rps_rotation.py",
+      "target": "function:backend/app/services/rps_rotation.py:_latest_enriched_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/rps_rotation.py",
+      "target": "function:backend/app/services/rps_rotation.py:_latest_enriched_date",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/rps_rotation.py",
+      "target": "function:backend/app/services/rps_rotation.py:_load_concept_map_df",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/rps_rotation.py",
+      "target": "function:backend/app/services/rps_rotation.py:_load_concept_map_df",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/rps_rotation.py",
+      "target": "function:backend/app/services/rps_rotation.py:build_rps_rotation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/rps_rotation.py",
+      "target": "function:backend/app/services/rps_rotation.py:build_rps_rotation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/rps_rotation.py",
+      "target": "function:backend/app/services/rps_rotation.py:_slice_cached",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/rps_rotation.py",
+      "target": "function:backend/app/services/rps_rotation.py:_slice_cached",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/rps_rotation.py",
+      "target": "file:backend/app/services/ext_data.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/rps_rotation.py",
+      "target": "file:backend/app/services/market_overview_builder.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

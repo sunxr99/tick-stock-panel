@@ -1,0 +1,2684 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/tests/test_mining_manager.py",
+      "type": "file",
+      "name": "test_mining_manager.py",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "summary": "为 mining_manager 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:_task_factory",
+      "type": "function",
+      "name": "_task_factory",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        16,
+        21
+      ],
+      "summary": "实现 _task_factory，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:_wait_for_status",
+      "type": "function",
+      "name": "_wait_for_status",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        24,
+        38
+      ],
+      "summary": "实现 _wait_for_status，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:isolated_limiter",
+      "type": "function",
+      "name": "isolated_limiter",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        42,
+        45
+      ],
+      "summary": "实现 isolated_limiter，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:make_manager",
+      "type": "function",
+      "name": "make_manager",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        49,
+        73
+      ],
+      "summary": "实现 make_manager，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_start_records_states_events_progress_and_worker_payload",
+      "type": "function",
+      "name": "test_start_records_states_events_progress_and_worker_payload",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        76,
+        130
+      ],
+      "summary": "验证 start records states events progress and worker payload 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_start_accepts_valid_persistent_run_id",
+      "type": "function",
+      "name": "test_start_accepts_valid_persistent_run_id",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        133,
+        146
+      ],
+      "summary": "验证 start accepts valid persistent run id 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_duplicate_persistent_run_id_reuses_existing_without_starting_runner",
+      "type": "function",
+      "name": "test_duplicate_persistent_run_id_reuses_existing_without_starting_runner",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        149,
+        172
+      ],
+      "summary": "验证 duplicate persistent run id reuses existing without starting runner 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_start_reuses_active_and_success_but_force_creates_new_run",
+      "type": "function",
+      "name": "test_start_reuses_active_and_success_but_force_creates_new_run",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        175,
+        205
+      ],
+      "summary": "验证 start reuses active and success but force creates new run 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_cancel_while_waiting_for_capacity_never_calls_runner",
+      "type": "function",
+      "name": "test_cancel_while_waiting_for_capacity_never_calls_runner",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        208,
+        235
+      ],
+      "summary": "验证 cancel while waiting for capacity never calls runner 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_cancel_running_job_wins_over_worker_success",
+      "type": "function",
+      "name": "test_cancel_running_job_wins_over_worker_success",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        238,
+        256
+      ],
+      "summary": "验证 cancel running job wins over worker success 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_runner_exception_marks_failed_and_appends_error_event",
+      "type": "function",
+      "name": "test_runner_exception_marks_failed_and_appends_error_event",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        259,
+        274
+      ],
+      "summary": "验证 runner exception marks failed and appends error event 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_non_dict_worker_result_is_rejected",
+      "type": "function",
+      "name": "test_non_dict_worker_result_is_rejected",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        277,
+        285
+      ],
+      "summary": "验证 non dict worker result is rejected 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_budget_exhausted_result_uses_distinct_success_status",
+      "type": "function",
+      "name": "test_budget_exhausted_result_uses_distinct_success_status",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        288,
+        304
+      ],
+      "summary": "验证 budget exhausted result uses distinct success status 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_recover_interrupted_delegates_to_store",
+      "type": "function",
+      "name": "test_recover_interrupted_delegates_to_store",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        307,
+        321
+      ],
+      "summary": "验证 recover interrupted delegates to store 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_shutdown_sets_cancel_uses_bounded_join_and_keeps_history",
+      "type": "function",
+      "name": "test_shutdown_sets_cancel_uses_bounded_join_and_keeps_history",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        324,
+        352
+      ],
+      "summary": "验证 shutdown sets cancel uses bounded join and keeps history 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_mining_schedule.py",
+      "type": "file",
+      "name": "test_mining_schedule.py",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "summary": "为 mining_schedule 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/tests/test_mining_schedule.py:FakeRepo",
+      "type": "class",
+      "name": "FakeRepo",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        16,
+        37
+      ],
+      "summary": "定义 FakeRepo 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/test_mining_schedule.py:FakeManager",
+      "type": "class",
+      "name": "FakeManager",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        40,
+        55
+      ],
+      "summary": "定义 FakeManager 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:scheduled_state",
+      "type": "function",
+      "name": "scheduled_state",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        59,
+        73
+      ],
+      "summary": "实现 scheduled_state，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:_friday",
+      "type": "function",
+      "name": "_friday",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        76,
+        79
+      ],
+      "summary": "实现 _friday，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:_write_prerequisites",
+      "type": "function",
+      "name": "_write_prerequisites",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        82,
+        98
+      ],
+      "summary": "实现 _write_prerequisites，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_beijing_date_and_iso_week_use_china_timezone",
+      "type": "function",
+      "name": "test_beijing_date_and_iso_week_use_china_timezone",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        101,
+        106
+      ],
+      "summary": "验证 beijing date and iso week use china timezone 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_fingerprint_retries_generation_change_and_returns_stable_token",
+      "type": "function",
+      "name": "test_fingerprint_retries_generation_change_and_returns_stable_token",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        109,
+        129
+      ],
+      "summary": "验证 fingerprint retries generation change and returns stable token 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_implementation_metadata_is_recursive_content_based_and_root_independent",
+      "type": "function",
+      "name": "test_implementation_metadata_is_recursive_content_based_and_root_independent",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        132,
+        151
+      ],
+      "summary": "验证 implementation metadata is recursive content based and root independent 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_fingerprint_covers_result_implementation_digest",
+      "type": "function",
+      "name": "test_fingerprint_covers_result_implementation_digest",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        154,
+        177
+      ],
+      "summary": "验证 fingerprint covers result implementation digest 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_selected_strategy_metadata_changes_with_same_size_source_edit",
+      "type": "function",
+      "name": "test_selected_strategy_metadata_changes_with_same_size_source_edit",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        180,
+        203
+      ],
+      "summary": "验证 selected strategy metadata changes with same size source edit 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_fingerprint_rejects_continuously_changing_generation",
+      "type": "function",
+      "name": "test_fingerprint_rejects_continuously_changing_generation",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        206,
+        220
+      ],
+      "summary": "验证 fingerprint rejects continuously changing generation 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_disabled_and_before_scheduled_weekday_do_not_enqueue",
+      "type": "function",
+      "name": "test_disabled_and_before_scheduled_weekday_do_not_enqueue",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        223,
+        250
+      ],
+      "summary": "验证 disabled and before scheduled weekday do not enqueue 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_later_workday_catches_up_once_in_same_iso_week",
+      "type": "function",
+      "name": "test_later_workday_catches_up_once_in_same_iso_week",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        253,
+        269
+      ],
+      "summary": "验证 later workday catches up once in same iso week 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_same_week_and_fingerprint_enqueue_once",
+      "type": "function",
+      "name": "test_same_week_and_fingerprint_enqueue_once",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        272,
+        289
+      ],
+      "summary": "验证 same week and fingerprint enqueue once 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_profile_change_cannot_bypass_same_week_claim",
+      "type": "function",
+      "name": "test_profile_change_cannot_bypass_same_week_claim",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        292,
+        310
+      ],
+      "summary": "验证 profile change cannot bypass same week claim 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_new_week_creates_new_claim_but_same_week_metadata_change_does_not",
+      "type": "function",
+      "name": "test_new_week_creates_new_claim_but_same_week_metadata_change_does_not",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        313,
+        331
+      ],
+      "summary": "验证 new week creates new claim but same week metadata change does not 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_missing_regime_records_visible_skipped_prerequisite",
+      "type": "function",
+      "name": "test_missing_regime_records_visible_skipped_prerequisite",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        334,
+        345
+      ],
+      "summary": "验证 missing regime records visible skipped prerequisite 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_incomplete_regime_coverage_records_visible_skip",
+      "type": "function",
+      "name": "test_incomplete_regime_coverage_records_visible_skip",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        348,
+        363
+      ],
+      "summary": "验证 incomplete regime coverage records visible skip 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_early_regime_gap_records_visible_skipped_prerequisite",
+      "type": "function",
+      "name": "test_early_regime_gap_records_visible_skipped_prerequisite",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        366,
+        378
+      ],
+      "summary": "验证 early regime gap records visible skipped prerequisite 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_insufficient_data_records_visible_skipped_prerequisite",
+      "type": "function",
+      "name": "test_insufficient_data_records_visible_skipped_prerequisite",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        381,
+        403
+      ],
+      "summary": "验证 insufficient data records visible skipped prerequisite 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_pipeline_failure_does_not_trigger_mining",
+      "type": "function",
+      "name": "test_pipeline_failure_does_not_trigger_mining",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        406,
+        416
+      ],
+      "summary": "验证 pipeline failure does not trigger mining 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_schedule.py:test_enqueue_failure_does_not_escape_successful_pipeline",
+      "type": "function",
+      "name": "test_enqueue_failure_does_not_escape_successful_pipeline",
+      "filePath": "backend/tests/test_mining_schedule.py",
+      "lineRange": [
+        419,
+        427
+      ],
+      "summary": "验证 enqueue failure does not escape successful pipeline 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_minute_strategy.py",
+      "type": "file",
+      "name": "test_minute_strategy.py",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "summary": "为 minute_strategy 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/tests/test_minute_strategy.py:_FakeMinuteRepo",
+      "type": "class",
+      "name": "_FakeMinuteRepo",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        433,
+        444
+      ],
+      "summary": "定义 _FakeMinuteRepo 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:_bars",
+      "type": "function",
+      "name": "_bars",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        34,
+        47
+      ],
+      "summary": "实现 _bars，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_hits_five_red_of_seven_with_red_top_two",
+      "type": "function",
+      "name": "test_pattern_hits_five_red_of_seven_with_red_top_two",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        53,
+        69
+      ],
+      "summary": "验证 pattern hits five red of seven with red top two 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_insufficient_bars_never_triggers",
+      "type": "function",
+      "name": "test_pattern_insufficient_bars_never_triggers",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        72,
+        74
+      ],
+      "summary": "验证 pattern insufficient bars never triggers 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_green_at_top_blocks_hit",
+      "type": "function",
+      "name": "test_pattern_green_at_top_blocks_hit",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        77,
+        89
+      ],
+      "summary": "验证 pattern green at top blocks hit 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_rank_by_close_uses_close_not_high",
+      "type": "function",
+      "name": "test_pattern_rank_by_close_uses_close_not_high",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        92,
+        108
+      ],
+      "summary": "验证 pattern rank by close uses close not high 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_sorts_unordered_input_by_datetime",
+      "type": "function",
+      "name": "test_pattern_sorts_unordered_input_by_datetime",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        111,
+        121
+      ],
+      "summary": "验证 pattern sorts unordered input by datetime 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_three_way_high_tie_prefers_later_bars",
+      "type": "function",
+      "name": "test_pattern_three_way_high_tie_prefers_later_bars",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        124,
+        138
+      ],
+      "summary": "验证 pattern three way high tie prefers later bars 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_min_red_threshold_respected",
+      "type": "function",
+      "name": "test_pattern_min_red_threshold_respected",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        141,
+        154
+      ],
+      "summary": "验证 pattern min red threshold respected 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_uses_opening_bars_even_if_day_turns_green",
+      "type": "function",
+      "name": "test_pattern_uses_opening_bars_even_if_day_turns_green",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        157,
+        176
+      ],
+      "summary": "验证 pattern uses opening bars even if day turns green 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_opening_window_miss_not_rescued_by_late_reds",
+      "type": "function",
+      "name": "test_pattern_opening_window_miss_not_rescued_by_late_reds",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        179,
+        193
+      ],
+      "summary": "验证 pattern opening window miss not rescued by late reds 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:_daily",
+      "type": "function",
+      "name": "_daily",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        210,
+        225
+      ],
+      "summary": "实现 _daily，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_condition_filters_by_daily_signals",
+      "type": "function",
+      "name": "test_pattern_limit_up_condition_filters_by_daily_signals",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        228,
+        241
+      ],
+      "summary": "验证 pattern limit up condition filters by daily signals 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_lookback_window_boundary",
+      "type": "function",
+      "name": "test_pattern_limit_up_lookback_window_boundary",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        244,
+        253
+      ],
+      "summary": "验证 pattern limit up lookback window boundary 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_fails_closed_without_daily",
+      "type": "function",
+      "name": "test_pattern_limit_up_fails_closed_without_daily",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        256,
+        259
+      ],
+      "summary": "验证 pattern limit up fails closed without daily 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_disabled_ignores_daily",
+      "type": "function",
+      "name": "test_pattern_limit_up_disabled_ignores_daily",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        262,
+        267
+      ],
+      "summary": "验证 pattern limit up disabled ignores daily 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_custom_minute_strategy_loads_with_minute_filter_backend",
+      "type": "function",
+      "name": "test_custom_minute_strategy_loads_with_minute_filter_backend",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        273,
+        281
+      ],
+      "summary": "验证 custom minute strategy loads with minute filter backend 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:_minute_code",
+      "type": "function",
+      "name": "_minute_code",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        284,
+        293
+      ],
+      "summary": "实现 _minute_code，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_filter_backend_validation",
+      "type": "function",
+      "name": "test_minute_filter_backend_validation",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        296,
+        308
+      ],
+      "summary": "验证 minute filter backend validation 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_filter_daily_history_validation",
+      "type": "function",
+      "name": "test_minute_filter_daily_history_validation",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        311,
+        343
+      ],
+      "summary": "验证 minute filter daily history validation 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_run_injects_daily_history",
+      "type": "function",
+      "name": "test_minute_run_injects_daily_history",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        346,
+        377
+      ],
+      "summary": "验证 minute run injects daily history 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_context_run_applies_enriched_basic_filter",
+      "type": "function",
+      "name": "test_minute_context_run_applies_enriched_basic_filter",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        380,
+        411
+      ],
+      "summary": "验证 minute context run applies enriched basic filter 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_strategy_rejects_daily_context",
+      "type": "function",
+      "name": "test_minute_strategy_rejects_daily_context",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        414,
+        427
+      ],
+      "summary": "验证 minute strategy rejects daily context 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:_svc",
+      "type": "function",
+      "name": "_svc",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        447,
+        448
+      ],
+      "summary": "实现 _svc，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_context_prefers_as_of_partition",
+      "type": "function",
+      "name": "test_minute_context_prefers_as_of_partition",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        451,
+        462
+      ],
+      "summary": "验证 minute context prefers as of partition 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_context_falls_back_to_latest_partition",
+      "type": "function",
+      "name": "test_minute_context_falls_back_to_latest_partition",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        465,
+        475
+      ],
+      "summary": "验证 minute context falls back to latest partition 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_context_empty_store_raises_with_guidance",
+      "type": "function",
+      "name": "test_minute_context_empty_store_raises_with_guidance",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        478,
+        487
+      ],
+      "summary": "验证 minute context empty store raises with guidance 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_context_rejects_non_stock_asset",
+      "type": "function",
+      "name": "test_minute_context_rejects_non_stock_asset",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        490,
+        499
+      ],
+      "summary": "验证 minute context rejects non stock asset 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_context_loads_daily_history_for_declared_strategies",
+      "type": "function",
+      "name": "test_minute_context_loads_daily_history_for_declared_strategies",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        502,
+        517
+      ],
+      "summary": "验证 minute context loads daily history for declared strategies 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_context_without_engine_skips_daily_history",
+      "type": "function",
+      "name": "test_minute_context_without_engine_skips_daily_history",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        520,
+        526
+      ],
+      "summary": "验证 minute context without engine skips daily history 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_parquet_schema_compat.py",
+      "type": "file",
+      "name": "test_parquet_schema_compat.py",
+      "filePath": "backend/tests/test_parquet_schema_compat.py",
+      "summary": "为 parquet_schema_compat 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_parquet_schema_compat.py:test_partitioned_daily_scan_tolerates_added_quote_ts",
+      "type": "function",
+      "name": "test_partitioned_daily_scan_tolerates_added_quote_ts",
+      "filePath": "backend/tests/test_parquet_schema_compat.py",
+      "lineRange": [
+        8,
+        42
+      ],
+      "summary": "验证 partitioned daily scan tolerates added quote ts 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_parquet_schema_compat.py:test_partitioned_enriched_scan_tolerates_added_quote_ts",
+      "type": "function",
+      "name": "test_partitioned_enriched_scan_tolerates_added_quote_ts",
+      "filePath": "backend/tests/test_parquet_schema_compat.py",
+      "lineRange": [
+        45,
+        81
+      ],
+      "summary": "验证 partitioned enriched scan tolerates added quote ts 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_quote_index_merge.py",
+      "type": "file",
+      "name": "test_quote_index_merge.py",
+      "filePath": "backend/tests/test_quote_index_merge.py",
+      "summary": "为 quote_index_merge 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_quote_index_merge.py:_enriched_row",
+      "type": "function",
+      "name": "_enriched_row",
+      "filePath": "backend/tests/test_quote_index_merge.py",
+      "lineRange": [
+        9,
+        15
+      ],
+      "summary": "实现 _enriched_row，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_quote_index_merge.py:test_merge_live_enriched_preserves_full_index_partition",
+      "type": "function",
+      "name": "test_merge_live_enriched_preserves_full_index_partition",
+      "filePath": "backend/tests/test_quote_index_merge.py",
+      "lineRange": [
+        18,
+        49
+      ],
+      "summary": "验证 merge live enriched preserves full index partition 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_quote_index_merge.py:test_merge_live_daily_preserves_full_index_partition",
+      "type": "function",
+      "name": "test_merge_live_daily_preserves_full_index_partition",
+      "filePath": "backend/tests/test_quote_index_merge.py",
+      "lineRange": [
+        52,
+        78
+      ],
+      "summary": "验证 merge live daily preserves full index partition 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_realtime_enriched_resume.py",
+      "type": "file",
+      "name": "test_realtime_enriched_resume.py",
+      "filePath": "backend/tests/test_realtime_enriched_resume.py",
+      "summary": "为 realtime_enriched_resume 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/tests/test_realtime_enriched_resume.py:_historical_cache",
+      "type": "function",
+      "name": "_historical_cache",
+      "filePath": "backend/tests/test_realtime_enriched_resume.py",
+      "lineRange": [
+        16,
+        36
+      ],
+      "summary": "实现 _historical_cache，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_realtime_enriched_resume.py:test_live_agg_uses_each_symbols_last_available_trading_state",
+      "type": "function",
+      "name": "test_live_agg_uses_each_symbols_last_available_trading_state",
+      "filePath": "backend/tests/test_realtime_enriched_resume.py",
+      "lineRange": [
+        39,
+        89
+      ],
+      "summary": "验证 live agg uses each symbols last available trading state 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_realtime_enriched_resume.py:_live_state",
+      "type": "function",
+      "name": "_live_state",
+      "filePath": "backend/tests/test_realtime_enriched_resume.py",
+      "lineRange": [
+        92,
+        141
+      ],
+      "summary": "实现 _live_state，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_realtime_enriched_resume.py:_previous_enriched",
+      "type": "function",
+      "name": "_previous_enriched",
+      "filePath": "backend/tests/test_realtime_enriched_resume.py",
+      "lineRange": [
+        144,
+        156
+      ],
+      "summary": "实现 _previous_enriched，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_realtime_enriched_resume.py:test_realtime_enriched_keeps_rows_without_history_and_limits_technical_fields",
+      "type": "function",
+      "name": "test_realtime_enriched_keeps_rows_without_history_and_limits_technical_fields",
+      "filePath": "backend/tests/test_realtime_enriched_resume.py",
+      "lineRange": [
+        159,
+        209
+      ],
+      "summary": "验证 realtime enriched keeps rows without history and limits technical fields 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_realtime_enriched_resume.py:test_repository_restores_active_rows_missing_from_latest_enriched",
+      "type": "function",
+      "name": "test_repository_restores_active_rows_missing_from_latest_enriched",
+      "filePath": "backend/tests/test_realtime_enriched_resume.py",
+      "lineRange": [
+        212,
+        251
+      ],
+      "summary": "验证 repository restores active rows missing from latest enriched 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "file:backend/app/services/heavy_job_limiter.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "file:backend/app/services/mining_manager.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:_task_factory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:_task_factory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:_wait_for_status",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:_wait_for_status",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:isolated_limiter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:isolated_limiter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:make_manager",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:make_manager",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_start_records_states_events_progress_and_worker_payload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_start_records_states_events_progress_and_worker_payload",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_start_accepts_valid_persistent_run_id",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_start_accepts_valid_persistent_run_id",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_duplicate_persistent_run_id_reuses_existing_without_starting_runner",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_duplicate_persistent_run_id_reuses_existing_without_starting_runner",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_start_reuses_active_and_success_but_force_creates_new_run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_start_reuses_active_and_success_but_force_creates_new_run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_cancel_while_waiting_for_capacity_never_calls_runner",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_cancel_while_waiting_for_capacity_never_calls_runner",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_cancel_running_job_wins_over_worker_success",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_cancel_running_job_wins_over_worker_success",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_runner_exception_marks_failed_and_appends_error_event",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_runner_exception_marks_failed_and_appends_error_event",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_non_dict_worker_result_is_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_non_dict_worker_result_is_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_budget_exhausted_result_uses_distinct_success_status",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_budget_exhausted_result_uses_distinct_success_status",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_recover_interrupted_delegates_to_store",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_recover_interrupted_delegates_to_store",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_shutdown_sets_cancel_uses_bounded_join_and_keeps_history",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_shutdown_sets_cancel_uses_bounded_join_and_keeps_history",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "file:backend/app/jobs/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "file:backend/app/jobs/daily_pipeline.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "file:backend/app/services/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "file:backend/app/services/mining_jobs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "file:backend/app/services/mining_schedule.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "file:backend/app/services/preferences.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "class:backend/tests/test_mining_schedule.py:FakeRepo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "class:backend/tests/test_mining_schedule.py:FakeRepo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "class:backend/tests/test_mining_schedule.py:FakeManager",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "class:backend/tests/test_mining_schedule.py:FakeManager",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:scheduled_state",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:scheduled_state",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:_friday",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:_friday",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:_write_prerequisites",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:_write_prerequisites",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_beijing_date_and_iso_week_use_china_timezone",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_beijing_date_and_iso_week_use_china_timezone",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_fingerprint_retries_generation_change_and_returns_stable_token",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_fingerprint_retries_generation_change_and_returns_stable_token",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_implementation_metadata_is_recursive_content_based_and_root_independent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_implementation_metadata_is_recursive_content_based_and_root_independent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_fingerprint_covers_result_implementation_digest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_fingerprint_covers_result_implementation_digest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_selected_strategy_metadata_changes_with_same_size_source_edit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_selected_strategy_metadata_changes_with_same_size_source_edit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_fingerprint_rejects_continuously_changing_generation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_fingerprint_rejects_continuously_changing_generation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_disabled_and_before_scheduled_weekday_do_not_enqueue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_disabled_and_before_scheduled_weekday_do_not_enqueue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_later_workday_catches_up_once_in_same_iso_week",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_later_workday_catches_up_once_in_same_iso_week",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_same_week_and_fingerprint_enqueue_once",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_same_week_and_fingerprint_enqueue_once",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_profile_change_cannot_bypass_same_week_claim",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_profile_change_cannot_bypass_same_week_claim",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_new_week_creates_new_claim_but_same_week_metadata_change_does_not",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_new_week_creates_new_claim_but_same_week_metadata_change_does_not",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_missing_regime_records_visible_skipped_prerequisite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_missing_regime_records_visible_skipped_prerequisite",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_incomplete_regime_coverage_records_visible_skip",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_incomplete_regime_coverage_records_visible_skip",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_early_regime_gap_records_visible_skipped_prerequisite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_early_regime_gap_records_visible_skipped_prerequisite",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_insufficient_data_records_visible_skipped_prerequisite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_insufficient_data_records_visible_skipped_prerequisite",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_pipeline_failure_does_not_trigger_mining",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_pipeline_failure_does_not_trigger_mining",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_enqueue_failure_does_not_escape_successful_pipeline",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_schedule.py",
+      "target": "function:backend/tests/test_mining_schedule.py:test_enqueue_failure_does_not_escape_successful_pipeline",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "file:backend/app/services/screener.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "file:backend/app/strategy/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "class:backend/tests/test_minute_strategy.py:_FakeMinuteRepo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "class:backend/tests/test_minute_strategy.py:_FakeMinuteRepo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:_bars",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:_bars",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_hits_five_red_of_seven_with_red_top_two",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_hits_five_red_of_seven_with_red_top_two",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_insufficient_bars_never_triggers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_insufficient_bars_never_triggers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_green_at_top_blocks_hit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_green_at_top_blocks_hit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_rank_by_close_uses_close_not_high",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_rank_by_close_uses_close_not_high",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_sorts_unordered_input_by_datetime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_sorts_unordered_input_by_datetime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_three_way_high_tie_prefers_later_bars",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_three_way_high_tie_prefers_later_bars",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_min_red_threshold_respected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_min_red_threshold_respected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_uses_opening_bars_even_if_day_turns_green",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_uses_opening_bars_even_if_day_turns_green",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_opening_window_miss_not_rescued_by_late_reds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_opening_window_miss_not_rescued_by_late_reds",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:_daily",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:_daily",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_condition_filters_by_daily_signals",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_condition_filters_by_daily_signals",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_lookback_window_boundary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_lookback_window_boundary",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_fails_closed_without_daily",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_fails_closed_without_daily",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_disabled_ignores_daily",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_disabled_ignores_daily",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_custom_minute_strategy_loads_with_minute_filter_backend",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_custom_minute_strategy_loads_with_minute_filter_backend",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:_minute_code",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:_minute_code",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_filter_backend_validation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_filter_backend_validation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_filter_daily_history_validation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_filter_daily_history_validation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_run_injects_daily_history",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_run_injects_daily_history",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_run_applies_enriched_basic_filter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_run_applies_enriched_basic_filter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_strategy_rejects_daily_context",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_strategy_rejects_daily_context",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:_svc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:_svc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_prefers_as_of_partition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_prefers_as_of_partition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_falls_back_to_latest_partition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_falls_back_to_latest_partition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_empty_store_raises_with_guidance",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_empty_store_raises_with_guidance",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_rejects_non_stock_asset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_rejects_non_stock_asset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_loads_daily_history_for_declared_strategies",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_loads_daily_history_for_declared_strategies",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_without_engine_skips_daily_history",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_without_engine_skips_daily_history",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_parquet_schema_compat.py",
+      "target": "file:backend/app/parquet.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_parquet_schema_compat.py",
+      "target": "function:backend/tests/test_parquet_schema_compat.py:test_partitioned_daily_scan_tolerates_added_quote_ts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_parquet_schema_compat.py",
+      "target": "function:backend/tests/test_parquet_schema_compat.py:test_partitioned_daily_scan_tolerates_added_quote_ts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_parquet_schema_compat.py",
+      "target": "function:backend/tests/test_parquet_schema_compat.py:test_partitioned_enriched_scan_tolerates_added_quote_ts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_parquet_schema_compat.py",
+      "target": "function:backend/tests/test_parquet_schema_compat.py:test_partitioned_enriched_scan_tolerates_added_quote_ts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_index_merge.py",
+      "target": "file:backend/app/tickflow/repository.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_quote_index_merge.py",
+      "target": "function:backend/tests/test_quote_index_merge.py:_enriched_row",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_index_merge.py",
+      "target": "function:backend/tests/test_quote_index_merge.py:_enriched_row",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_index_merge.py",
+      "target": "function:backend/tests/test_quote_index_merge.py:test_merge_live_enriched_preserves_full_index_partition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_index_merge.py",
+      "target": "function:backend/tests/test_quote_index_merge.py:test_merge_live_enriched_preserves_full_index_partition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_index_merge.py",
+      "target": "function:backend/tests/test_quote_index_merge.py:test_merge_live_daily_preserves_full_index_partition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_index_merge.py",
+      "target": "function:backend/tests/test_quote_index_merge.py:test_merge_live_daily_preserves_full_index_partition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_realtime_enriched_resume.py",
+      "target": "file:backend/app/indicators/pipeline.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_realtime_enriched_resume.py",
+      "target": "file:backend/app/tickflow/repository.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_realtime_enriched_resume.py",
+      "target": "function:backend/tests/test_realtime_enriched_resume.py:_historical_cache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_realtime_enriched_resume.py",
+      "target": "function:backend/tests/test_realtime_enriched_resume.py:_historical_cache",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_realtime_enriched_resume.py",
+      "target": "function:backend/tests/test_realtime_enriched_resume.py:test_live_agg_uses_each_symbols_last_available_trading_state",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_realtime_enriched_resume.py",
+      "target": "function:backend/tests/test_realtime_enriched_resume.py:test_live_agg_uses_each_symbols_last_available_trading_state",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_realtime_enriched_resume.py",
+      "target": "function:backend/tests/test_realtime_enriched_resume.py:_live_state",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_realtime_enriched_resume.py",
+      "target": "function:backend/tests/test_realtime_enriched_resume.py:_live_state",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_realtime_enriched_resume.py",
+      "target": "function:backend/tests/test_realtime_enriched_resume.py:_previous_enriched",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_realtime_enriched_resume.py",
+      "target": "function:backend/tests/test_realtime_enriched_resume.py:_previous_enriched",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_realtime_enriched_resume.py",
+      "target": "function:backend/tests/test_realtime_enriched_resume.py:test_realtime_enriched_keeps_rows_without_history_and_limits_technical_fields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_realtime_enriched_resume.py",
+      "target": "function:backend/tests/test_realtime_enriched_resume.py:test_realtime_enriched_keeps_rows_without_history_and_limits_technical_fields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_realtime_enriched_resume.py",
+      "target": "function:backend/tests/test_realtime_enriched_resume.py:test_repository_restores_active_rows_missing_from_latest_enriched",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_realtime_enriched_resume.py",
+      "target": "function:backend/tests/test_realtime_enriched_resume.py:test_repository_restores_active_rows_missing_from_latest_enriched",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

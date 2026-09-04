@@ -1,0 +1,292 @@
+{
+  "projectRoot": "D:\\stock\\myStockPanel\\tick-stock-panel",
+  "batchFiles": [
+    {
+      "path": "backend/tests/test_kline_sync_timezone.py",
+      "language": "python",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_last_fetch_throttle.py",
+      "language": "python",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_limit_ladder_one_word.py",
+      "language": "python",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_live_enriched_metadata.py",
+      "language": "python",
+      "sizeLines": 104,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_minute_refresh.py",
+      "language": "python",
+      "sizeLines": 446,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_minute_timezone_contract.py",
+      "language": "python",
+      "sizeLines": 185,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_monitor_etf.py",
+      "language": "python",
+      "sizeLines": 86,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_monitor_index.py",
+      "language": "python",
+      "sizeLines": 202,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_override_signature_cache.py",
+      "language": "python",
+      "sizeLines": 97,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_pipeline_and_monitor_fixes.py",
+      "language": "python",
+      "sizeLines": 156,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_pipeline_pull_types.py",
+      "language": "python",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_preferences_cache.py",
+      "language": "python",
+      "sizeLines": 123,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_price_limits.py",
+      "language": "python",
+      "sizeLines": 256,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_quote_interval_min.py",
+      "language": "python",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_quote_name_map_reuse.py",
+      "language": "python",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_rate_limit_safety_budget.py",
+      "language": "python",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_realtime_mode.py",
+      "language": "python",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_realtime_turnover_rate.py",
+      "language": "python",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_stock_analyzer_index.py",
+      "language": "python",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_strategy_cache.py",
+      "language": "python",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_strategy_market_data.py",
+      "language": "python",
+      "sizeLines": 101,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_strategy_monitor_events.py",
+      "language": "python",
+      "sizeLines": 427,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_strategy_realtime_refresh.py",
+      "language": "python",
+      "sizeLines": 219,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_strategy_saved_params.py",
+      "language": "python",
+      "sizeLines": 100,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_trading_day.py",
+      "language": "python",
+      "sizeLines": 256,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_volume_delta_monitor.py",
+      "language": "python",
+      "sizeLines": 274,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "backend/tests/test_kline_sync_timezone.py": [
+      "backend/app/market_time.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py"
+    ],
+    "backend/tests/test_last_fetch_throttle.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/preferences.py",
+      "backend/app/services/quote_service.py"
+    ],
+    "backend/tests/test_limit_ladder_one_word.py": [
+      "backend/app/api/screener.py"
+    ],
+    "backend/tests/test_live_enriched_metadata.py": [
+      "backend/app/market_time.py",
+      "backend/app/strategy/engine.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_minute_refresh.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/minute_refresh.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_minute_timezone_contract.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py"
+    ],
+    "backend/tests/test_monitor_etf.py": [
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_monitor_index.py": [
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_override_signature_cache.py": [
+      "backend/app/strategy/__init__.py"
+    ],
+    "backend/tests/test_pipeline_and_monitor_fixes.py": [
+      "backend/app/jobs/__init__.py",
+      "backend/app/jobs/daily_pipeline.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/pipeline_jobs.py",
+      "backend/app/services/preferences.py",
+      "backend/app/services/quote_service.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_pipeline_pull_types.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_preferences_cache.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_price_limits.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/api/kline.py",
+      "backend/app/backtest/matrix.py",
+      "backend/app/indicators/__init__.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/price_limits.py"
+    ],
+    "backend/tests/test_quote_interval_min.py": [
+      "backend/app/services/quote_service.py"
+    ],
+    "backend/tests/test_quote_name_map_reuse.py": [
+      "backend/app/services/quote_service.py"
+    ],
+    "backend/tests/test_rate_limit_safety_budget.py": [
+      "backend/app/tickflow/capabilities.py",
+      "backend/app/tickflow/rate_limits.py"
+    ],
+    "backend/tests/test_realtime_mode.py": [
+      "backend/app/services/quote_service.py"
+    ],
+    "backend/tests/test_realtime_turnover_rate.py": [
+      "backend/app/indicators/__init__.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/services/quote_service.py"
+    ],
+    "backend/tests/test_stock_analyzer_index.py": [
+      "backend/app/services/stock_analyzer.py"
+    ],
+    "backend/tests/test_strategy_cache.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/strategy_cache.py"
+    ],
+    "backend/tests/test_strategy_market_data.py": [
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/ai_generator.py",
+      "backend/app/strategy/market_data.py"
+    ],
+    "backend/tests/test_strategy_monitor_events.py": [
+      "backend/app/backtest/matrix.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/alert_store.py",
+      "backend/app/services/preferences.py",
+      "backend/app/services/quote_service.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/engine.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_strategy_realtime_refresh.py": [
+      "backend/app/market_time.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/quote_service.py",
+      "backend/app/strategy/engine.py",
+      "backend/app/strategy/monitor.py"
+    ],
+    "backend/tests/test_strategy_saved_params.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_trading_day.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/trading_day.py"
+    ],
+    "backend/tests/test_volume_delta_monitor.py": [
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "nodes": [
+    {"id":"pipeline:.github/workflows/docker.yml","type":"pipeline","name":"docker.yml","filePath":".github/workflows/docker.yml","summary":"在 main 推送、版本标签或手动触发时构建多架构 Docker 镜像并推送至 GitHub Container Registry。","tags":["github-actions","ci-cd","docker","container-registry"],"complexity":"moderate"},
+    {"id":"pipeline:.github/workflows/release.yml","type":"pipeline","name":"release.yml","filePath":".github/workflows/release.yml","summary":"手动选择目标平台与版本后并行构建桌面客户端，并创建或更新 GitHub Release 及其安装包。","tags":["github-actions","release","desktop","ci-cd"],"complexity":"complex","languageNotes":"工作流使用动态矩阵按输入筛选 Windows、macOS ARM64 与 Linux 构建任务。"}
+  ],
+  "edges": []
+}

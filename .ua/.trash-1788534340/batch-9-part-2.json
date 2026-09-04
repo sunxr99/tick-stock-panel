@@ -1,0 +1,2822 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/tests/test_market_phase.py",
+      "type": "file",
+      "name": "test_market_phase.py",
+      "filePath": "backend/tests/test_market_phase.py",
+      "summary": "为 market_phase 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/tests/test_market_phase.py:TestLadderMetrics",
+      "type": "class",
+      "name": "TestLadderMetrics",
+      "filePath": "backend/tests/test_market_phase.py",
+      "lineRange": [
+        47,
+        98
+      ],
+      "summary": "定义 TestLadderMetrics 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/tests/test_market_phase.py:TestClassifyPhaseSeries",
+      "type": "class",
+      "name": "TestClassifyPhaseSeries",
+      "filePath": "backend/tests/test_market_phase.py",
+      "lineRange": [
+        121,
+        179
+      ],
+      "summary": "定义 TestClassifyPhaseSeries 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/tests/test_market_phase.py:TestRefreshPhaseLabels",
+      "type": "class",
+      "name": "TestRefreshPhaseLabels",
+      "filePath": "backend/tests/test_market_phase.py",
+      "lineRange": [
+        182,
+        200
+      ],
+      "summary": "定义 TestRefreshPhaseLabels 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_market_phase.py:_days",
+      "type": "function",
+      "name": "_days",
+      "filePath": "backend/tests/test_market_phase.py",
+      "lineRange": [
+        28,
+        35
+      ],
+      "summary": "实现 _days，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_market_phase.py:_frame",
+      "type": "function",
+      "name": "_frame",
+      "filePath": "backend/tests/test_market_phase.py",
+      "lineRange": [
+        38,
+        44
+      ],
+      "summary": "实现 _frame，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_market_phase.py:_series",
+      "type": "function",
+      "name": "_series",
+      "filePath": "backend/tests/test_market_phase.py",
+      "lineRange": [
+        101,
+        118
+      ],
+      "summary": "实现 _series，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "type": "file",
+      "name": "test_matrix_etf_share_fields.py",
+      "filePath": "backend/tests/test_matrix_etf_share_fields.py",
+      "summary": "为 matrix_etf_share_fields 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_matrix_etf_share_fields.py:_engine",
+      "type": "function",
+      "name": "_engine",
+      "filePath": "backend/tests/test_matrix_etf_share_fields.py",
+      "lineRange": [
+        33,
+        34
+      ],
+      "summary": "实现 _engine，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_matrix_etf_share_fields.py:_resolve_research_plan",
+      "type": "function",
+      "name": "_resolve_research_plan",
+      "filePath": "backend/tests/test_matrix_etf_share_fields.py",
+      "lineRange": [
+        37,
+        50
+      ],
+      "summary": "实现 _resolve_research_plan，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_matrix_etf_share_fields.py:test_etf_plan_does_not_require_share_fields",
+      "type": "function",
+      "name": "test_etf_plan_does_not_require_share_fields",
+      "filePath": "backend/tests/test_matrix_etf_share_fields.py",
+      "lineRange": [
+        53,
+        62
+      ],
+      "summary": "验证 etf plan does not require share fields 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_matrix_etf_share_fields.py:test_etf_cache_profile_excludes_share_fields",
+      "type": "function",
+      "name": "test_etf_cache_profile_excludes_share_fields",
+      "filePath": "backend/tests/test_matrix_etf_share_fields.py",
+      "lineRange": [
+        65,
+        78
+      ],
+      "summary": "验证 etf cache profile excludes share fields 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_matrix_etf_share_fields.py:_etf_instruments",
+      "type": "function",
+      "name": "_etf_instruments",
+      "filePath": "backend/tests/test_matrix_etf_share_fields.py",
+      "lineRange": [
+        81,
+        88
+      ],
+      "summary": "实现 _etf_instruments，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_matrix_etf_share_fields.py:_etf_dataset",
+      "type": "function",
+      "name": "_etf_dataset",
+      "filePath": "backend/tests/test_matrix_etf_share_fields.py",
+      "lineRange": [
+        91,
+        106
+      ],
+      "summary": "实现 _etf_dataset，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_matrix_etf_share_fields.py:test_matrix_storage_fields_resolve_with_etf_instruments",
+      "type": "function",
+      "name": "test_matrix_storage_fields_resolve_with_etf_instruments",
+      "filePath": "backend/tests/test_matrix_etf_share_fields.py",
+      "lineRange": [
+        109,
+        130
+      ],
+      "summary": "验证 matrix storage fields resolve with etf instruments 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_matrix_etf_share_fields.py:test_share_fields_still_unavailable_without_sanitization",
+      "type": "function",
+      "name": "test_share_fields_still_unavailable_without_sanitization",
+      "filePath": "backend/tests/test_matrix_etf_share_fields.py",
+      "lineRange": [
+        133,
+        141
+      ],
+      "summary": "验证 share fields still unavailable without sanitization 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_matrix_field_columns_expansion.py",
+      "type": "file",
+      "name": "test_matrix_field_columns_expansion.py",
+      "filePath": "backend/tests/test_matrix_field_columns_expansion.py",
+      "summary": "为 matrix_field_columns_expansion 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_matrix_field_columns_expansion.py:_mined_limit_up_strategy",
+      "type": "function",
+      "name": "_mined_limit_up_strategy",
+      "filePath": "backend/tests/test_matrix_field_columns_expansion.py",
+      "lineRange": [
+        21,
+        30
+      ],
+      "summary": "实现 _mined_limit_up_strategy，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_matrix_field_columns_expansion.py:test_matrix_field_columns_expand_parameter_scoring_dependencies",
+      "type": "function",
+      "name": "test_matrix_field_columns_expand_parameter_scoring_dependencies",
+      "filePath": "backend/tests/test_matrix_field_columns_expansion.py",
+      "lineRange": [
+        33,
+        37
+      ],
+      "summary": "验证 matrix field columns expand parameter scoring dependencies 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_matrix_field_columns_expansion.py:test_mined_limit_up_strategy_signals_build_from_panel_fields",
+      "type": "function",
+      "name": "test_mined_limit_up_strategy_signals_build_from_panel_fields",
+      "filePath": "backend/tests/test_matrix_field_columns_expansion.py",
+      "lineRange": [
+        40,
+        65
+      ],
+      "summary": "验证 mined limit up strategy signals build from panel fields 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_mining_api.py",
+      "type": "file",
+      "name": "test_mining_api.py",
+      "filePath": "backend/tests/test_mining_api.py",
+      "summary": "为 mining_api 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/tests/test_mining_api.py:_Repo",
+      "type": "class",
+      "name": "_Repo",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        29,
+        45
+      ],
+      "summary": "定义 _Repo 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/test_mining_api.py:_Manager",
+      "type": "class",
+      "name": "_Manager",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        48,
+        69
+      ],
+      "summary": "定义 _Manager 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/test_mining_api.py:_PublishingRepo",
+      "type": "class",
+      "name": "_PublishingRepo",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        610,
+        617
+      ],
+      "summary": "定义 _PublishingRepo 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:_write_enriched_dates",
+      "type": "function",
+      "name": "_write_enriched_dates",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        72,
+        85
+      ],
+      "summary": "实现 _write_enriched_dates，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:_client",
+      "type": "function",
+      "name": "_client",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        88,
+        95
+      ],
+      "summary": "实现 _client，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:_successful_run",
+      "type": "function",
+      "name": "_successful_run",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        98,
+        201
+      ],
+      "summary": "实现 _successful_run，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:test_start_is_strict_and_projects_server_signature",
+      "type": "function",
+      "name": "test_start_is_strict_and_projects_server_signature",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        204,
+        228
+      ],
+      "summary": "验证 start is strict and projects server signature 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:test_start_accepts_iso_dates_and_persists_json_safe_request",
+      "type": "function",
+      "name": "test_start_accepts_iso_dates_and_persists_json_safe_request",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        231,
+        256
+      ],
+      "summary": "验证 start accepts iso dates and persists json safe request 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:test_availability_enforces_exact_profile_boundaries",
+      "type": "function",
+      "name": "test_availability_enforces_exact_profile_boundaries",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        263,
+        312
+      ],
+      "summary": "验证 availability enforces exact profile boundaries 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:test_start_rejects_balanced_625_bar_range_before_creating_run",
+      "type": "function",
+      "name": "test_start_rejects_balanced_625_bar_range_before_creating_run",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        315,
+        335
+      ],
+      "summary": "验证 start rejects balanced 625 bar range before creating run 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:test_availability_uses_asset_specific_valid_partitions",
+      "type": "function",
+      "name": "test_availability_uses_asset_specific_valid_partitions",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        338,
+        363
+      ],
+      "summary": "验证 availability uses asset specific valid partitions 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:test_result_reconstructs_artifacts_without_exposing_definition",
+      "type": "function",
+      "name": "test_result_reconstructs_artifacts_without_exposing_definition",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        366,
+        396
+      ],
+      "summary": "验证 result reconstructs artifacts without exposing definition 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:test_result_marks_legacy_fold_rows_without_evaluation_kind",
+      "type": "function",
+      "name": "test_result_marks_legacy_fold_rows_without_evaluation_kind",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        399,
+        407
+      ],
+      "summary": "验证 result marks legacy fold rows without evaluation kind 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:test_publish_endpoint_rejects_candidate_below_evidence_gate",
+      "type": "function",
+      "name": "test_publish_endpoint_rejects_candidate_below_evidence_gate",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        410,
+        424
+      ],
+      "summary": "验证 publish endpoint rejects candidate below evidence gate 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:test_promote_endpoint_uses_persisted_definition_only",
+      "type": "function",
+      "name": "test_promote_endpoint_uses_persisted_definition_only",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        427,
+        444
+      ],
+      "summary": "验证 promote endpoint uses persisted definition only 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:test_publish_endpoint_uses_persisted_definition_and_invalidates_runtime",
+      "type": "function",
+      "name": "test_publish_endpoint_uses_persisted_definition_and_invalidates_runtime",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        447,
+        479
+      ],
+      "summary": "验证 publish endpoint uses persisted definition and invalidates runtime 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:test_result_fails_closed_when_artifact_is_missing",
+      "type": "function",
+      "name": "test_result_fails_closed_when_artifact_is_missing",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        482,
+        490
+      ],
+      "summary": "验证 result fails closed when artifact is missing 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:test_sse_maps_failed_event_and_honors_last_event_id",
+      "type": "function",
+      "name": "test_sse_maps_failed_event_and_honors_last_event_id",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        493,
+        517
+      ],
+      "summary": "验证 sse maps failed event and honors last event id 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:test_sse_recovers_progress_snapshot_when_history_is_truncated",
+      "type": "function",
+      "name": "test_sse_recovers_progress_snapshot_when_history_is_truncated",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        520,
+        548
+      ],
+      "summary": "验证 sse recovers progress snapshot when history is truncated 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:test_start_rejects_incompatible_strategy_before_creating_run",
+      "type": "function",
+      "name": "test_start_rejects_incompatible_strategy_before_creating_run",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        551,
+        574
+      ],
+      "summary": "验证 start rejects incompatible strategy before creating run 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:test_config_patch_merges_current_values",
+      "type": "function",
+      "name": "test_config_patch_merges_current_values",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        577,
+        607
+      ],
+      "summary": "验证 config patch merges current values 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_api.py:test_start_returns_400_with_guidance_while_enriched_publication_active",
+      "type": "function",
+      "name": "test_start_returns_400_with_guidance_while_enriched_publication_active",
+      "filePath": "backend/tests/test_mining_api.py",
+      "lineRange": [
+        620,
+        637
+      ],
+      "summary": "验证 start returns 400 with guidance while enriched publication active 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_mining_candidates.py",
+      "type": "file",
+      "name": "test_mining_candidates.py",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "summary": "为 mining_candidates 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/tests/test_mining_candidates.py:_StrategyEngine",
+      "type": "class",
+      "name": "_StrategyEngine",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        22,
+        43
+      ],
+      "summary": "定义 _StrategyEngine 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:_factor_definition",
+      "type": "function",
+      "name": "_factor_definition",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        46,
+        52
+      ],
+      "summary": "实现 _factor_definition，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:_create_run",
+      "type": "function",
+      "name": "_create_run",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        55,
+        118
+      ],
+      "summary": "实现 _create_run，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:_service",
+      "type": "function",
+      "name": "_service",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        121,
+        128
+      ],
+      "summary": "实现 _service，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:_real_service",
+      "type": "function",
+      "name": "_real_service",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        131,
+        149
+      ],
+      "summary": "实现 _real_service，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_promote_rereads_artifact_and_repairs_backlink_idempotently",
+      "type": "function",
+      "name": "test_promote_rereads_artifact_and_repairs_backlink_idempotently",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        152,
+        171
+      ],
+      "summary": "验证 promote rereads artifact and repairs backlink idempotently 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_promote_repairs_backlink_after_partial_failure",
+      "type": "function",
+      "name": "test_promote_repairs_backlink_after_partial_failure",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        174,
+        197
+      ],
+      "summary": "验证 promote repairs backlink after partial failure 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_non_successful_run",
+      "type": "function",
+      "name": "test_promote_rejects_non_successful_run",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        200,
+        206
+      ],
+      "summary": "验证 promote rejects non successful run 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_tampered_definition_before_candidate_write",
+      "type": "function",
+      "name": "test_promote_rejects_tampered_definition_before_candidate_write",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        209,
+        225
+      ],
+      "summary": "验证 promote rejects tampered definition before candidate write 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_factor_not_selected_in_origin_request",
+      "type": "function",
+      "name": "test_promote_rejects_factor_not_selected_in_origin_request",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        228,
+        238
+      ],
+      "summary": "验证 promote rejects factor not selected in origin request 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_promote_existing_strategy_revalidates_current_engine_contract",
+      "type": "function",
+      "name": "test_promote_existing_strategy_revalidates_current_engine_contract",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        241,
+        248
+      ],
+      "summary": "验证 promote existing strategy revalidates current engine contract 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_publish_existing_strategy_returns_verified_id_and_repairs_backlink",
+      "type": "function",
+      "name": "test_publish_existing_strategy_returns_verified_id_and_repairs_backlink",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        251,
+        264
+      ],
+      "summary": "验证 publish existing strategy returns verified id and repairs backlink 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_promote_requires_unique_artifact_signature",
+      "type": "function",
+      "name": "test_promote_requires_unique_artifact_signature",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        267,
+        274
+      ],
+      "summary": "验证 promote requires unique artifact signature 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_promote_concurrent_calls_create_one_authoritative_candidate",
+      "type": "function",
+      "name": "test_promote_concurrent_calls_create_one_authoritative_candidate",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        277,
+        288
+      ],
+      "summary": "验证 promote concurrent calls create one authoritative candidate 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_artifact_conflicting_with_existing_store_record",
+      "type": "function",
+      "name": "test_promote_rejects_artifact_conflicting_with_existing_store_record",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        291,
+        310
+      ],
+      "summary": "验证 promote rejects artifact conflicting with existing store record 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_invalid_factor_contract",
+      "type": "function",
+      "name": "test_promote_rejects_invalid_factor_contract",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        381,
+        392
+      ],
+      "summary": "验证 promote rejects invalid factor contract 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_nonfinite_artifact_values",
+      "type": "function",
+      "name": "test_promote_rejects_nonfinite_artifact_values",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        396,
+        402
+      ],
+      "summary": "验证 promote rejects nonfinite artifact values 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_corrupt_or_missing_schema_artifact",
+      "type": "function",
+      "name": "test_promote_rejects_corrupt_or_missing_schema_artifact",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        405,
+        415
+      ],
+      "summary": "验证 promote rejects corrupt or missing schema artifact 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_publish_factor_discovers_public_strategy_and_repairs_runtime_state",
+      "type": "function",
+      "name": "test_publish_factor_discovers_public_strategy_and_repairs_runtime_state",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        418,
+        458
+      ],
+      "summary": "验证 publish factor discovers public strategy and repairs runtime state 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_publish_factor_repairs_backlink_after_source_was_verified",
+      "type": "function",
+      "name": "test_publish_factor_repairs_backlink_after_source_was_verified",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        461,
+        485
+      ],
+      "summary": "验证 publish factor repairs backlink after source was verified 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_publish_factor_uses_server_run_scoped_id_and_refuses_collision",
+      "type": "function",
+      "name": "test_publish_factor_uses_server_run_scoped_id_and_refuses_collision",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        488,
+        501
+      ],
+      "summary": "验证 publish factor uses server run scoped id and refuses collision 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_publish_factor_same_signature_in_different_runs_has_independent_ids",
+      "type": "function",
+      "name": "test_publish_factor_same_signature_in_different_runs_has_independent_ids",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        504,
+        525
+      ],
+      "summary": "验证 publish factor same signature in different runs has independent ids 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_publish_factor_rejects_inconsistent_backlink",
+      "type": "function",
+      "name": "test_publish_factor_rejects_inconsistent_backlink",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        528,
+        541
+      ],
+      "summary": "验证 publish factor rejects inconsistent backlink 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_publish_factor_rolls_back_file_and_skips_invalidations_on_reload_failure",
+      "type": "function",
+      "name": "test_publish_factor_rolls_back_file_and_skips_invalidations_on_reload_failure",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        544,
+        575
+      ],
+      "summary": "验证 publish factor rolls back file and skips invalidations on reload failure 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_publish_factor_rolls_back_on_runtime_invalidation_failure",
+      "type": "function",
+      "name": "test_publish_factor_rolls_back_on_runtime_invalidation_failure",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        578,
+        601
+      ],
+      "summary": "验证 publish factor rolls back on runtime invalidation failure 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_publish_existing_does_not_reload_or_invalidate",
+      "type": "function",
+      "name": "test_publish_existing_does_not_reload_or_invalidate",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        604,
+        620
+      ],
+      "summary": "验证 publish existing does not reload or invalidate 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:_rewrite_candidate_metric",
+      "type": "function",
+      "name": "_rewrite_candidate_metric",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        622,
+        632
+      ],
+      "summary": "实现 _rewrite_candidate_metric，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_publish_rejects_low_confidence_exploratory_candidate",
+      "type": "function",
+      "name": "test_publish_rejects_low_confidence_exploratory_candidate",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        635,
+        641
+      ],
+      "summary": "验证 publish rejects low confidence exploratory candidate 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_publish_rejects_candidate_below_evidence_gate",
+      "type": "function",
+      "name": "test_publish_rejects_candidate_below_evidence_gate",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        644,
+        650
+      ],
+      "summary": "验证 publish rejects candidate below evidence gate 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_publish_rejects_candidate_with_insufficient_folds",
+      "type": "function",
+      "name": "test_publish_rejects_candidate_with_insufficient_folds",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        653,
+        659
+      ],
+      "summary": "验证 publish rejects candidate with insufficient folds 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_publish_rejects_candidate_missing_required_metrics",
+      "type": "function",
+      "name": "test_publish_rejects_candidate_missing_required_metrics",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        662,
+        668
+      ],
+      "summary": "验证 publish rejects candidate missing required metrics 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_candidates.py:test_promote_still_allowed_for_gated_candidates",
+      "type": "function",
+      "name": "test_promote_still_allowed_for_gated_candidates",
+      "filePath": "backend/tests/test_mining_candidates.py",
+      "lineRange": [
+        671,
+        679
+      ],
+      "summary": "验证 promote still allowed for gated candidates 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_mining_jobs.py",
+      "type": "file",
+      "name": "test_mining_jobs.py",
+      "filePath": "backend/tests/test_mining_jobs.py",
+      "summary": "为 mining_jobs 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/tests/test_mining_jobs.py:_store",
+      "type": "function",
+      "name": "_store",
+      "filePath": "backend/tests/test_mining_jobs.py",
+      "lineRange": [
+        22,
+        23
+      ],
+      "summary": "实现 _store，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_jobs.py:test_create_and_atomic_summary_reads",
+      "type": "function",
+      "name": "test_create_and_atomic_summary_reads",
+      "filePath": "backend/tests/test_mining_jobs.py",
+      "lineRange": [
+        26,
+        63
+      ],
+      "summary": "验证 create and atomic summary reads 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_jobs.py:test_signature_is_canonical_and_covers_request_dimensions",
+      "type": "function",
+      "name": "test_signature_is_canonical_and_covers_request_dimensions",
+      "filePath": "backend/tests/test_mining_jobs.py",
+      "lineRange": [
+        66,
+        89
+      ],
+      "summary": "验证 signature is canonical and covers request dimensions 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_jobs.py:test_events_are_bounded_monotonic_and_support_after_id",
+      "type": "function",
+      "name": "test_events_are_bounded_monotonic_and_support_after_id",
+      "filePath": "backend/tests/test_mining_jobs.py",
+      "lineRange": [
+        92,
+        112
+      ],
+      "summary": "验证 events are bounded monotonic and support after id 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_jobs.py:test_status_transitions_summary_and_artifact_registration",
+      "type": "function",
+      "name": "test_status_transitions_summary_and_artifact_registration",
+      "filePath": "backend/tests/test_mining_jobs.py",
+      "lineRange": [
+        115,
+        137
+      ],
+      "summary": "验证 status transitions summary and artifact registration 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_jobs.py:test_historical_manifest_defaults_and_startup_recovery",
+      "type": "function",
+      "name": "test_historical_manifest_defaults_and_startup_recovery",
+      "filePath": "backend/tests/test_mining_jobs.py",
+      "lineRange": [
+        140,
+        176
+      ],
+      "summary": "验证 historical manifest defaults and startup recovery 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_jobs.py:test_run_ids_and_paths_are_restricted_to_runs_root",
+      "type": "function",
+      "name": "test_run_ids_and_paths_are_restricted_to_runs_root",
+      "filePath": "backend/tests/test_mining_jobs.py",
+      "lineRange": [
+        179,
+        190
+      ],
+      "summary": "验证 run ids and paths are restricted to runs root 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_jobs.py:test_find_by_signature_can_filter_active_and_success_runs",
+      "type": "function",
+      "name": "test_find_by_signature_can_filter_active_and_success_runs",
+      "filePath": "backend/tests/test_mining_jobs.py",
+      "lineRange": [
+        193,
+        212
+      ],
+      "summary": "验证 find by signature can filter active and success runs 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_jobs.py:test_list_runs_is_bounded_sorted_and_filters_status",
+      "type": "function",
+      "name": "test_list_runs_is_bounded_sorted_and_filters_status",
+      "filePath": "backend/tests/test_mining_jobs.py",
+      "lineRange": [
+        215,
+        229
+      ],
+      "summary": "验证 list runs is bounded sorted and filters status 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_jobs.py:test_concurrent_event_appends_have_unique_contiguous_ids",
+      "type": "function",
+      "name": "test_concurrent_event_appends_have_unique_contiguous_ids",
+      "filePath": "backend/tests/test_mining_jobs.py",
+      "lineRange": [
+        232,
+        263
+      ],
+      "summary": "验证 concurrent event appends have unique contiguous ids 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/tests/test_market_phase.py",
+      "target": "file:backend/app/services/market_phase.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_market_phase.py",
+      "target": "file:backend/app/services/regime_builder.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_market_phase.py",
+      "target": "class:backend/tests/test_market_phase.py:TestLadderMetrics",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_market_phase.py",
+      "target": "class:backend/tests/test_market_phase.py:TestLadderMetrics",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_market_phase.py",
+      "target": "class:backend/tests/test_market_phase.py:TestClassifyPhaseSeries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_market_phase.py",
+      "target": "class:backend/tests/test_market_phase.py:TestClassifyPhaseSeries",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_market_phase.py",
+      "target": "class:backend/tests/test_market_phase.py:TestRefreshPhaseLabels",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_market_phase.py",
+      "target": "class:backend/tests/test_market_phase.py:TestRefreshPhaseLabels",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_market_phase.py",
+      "target": "function:backend/tests/test_market_phase.py:_days",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_market_phase.py",
+      "target": "function:backend/tests/test_market_phase.py:_days",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_market_phase.py",
+      "target": "function:backend/tests/test_market_phase.py:_frame",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_market_phase.py",
+      "target": "function:backend/tests/test_market_phase.py:_frame",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_market_phase.py",
+      "target": "function:backend/tests/test_market_phase.py:_series",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_market_phase.py",
+      "target": "function:backend/tests/test_market_phase.py:_series",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "file:backend/app/backtest/matrix.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "file:backend/app/backtest/strategy.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "file:backend/app/strategy/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "function:backend/tests/test_matrix_etf_share_fields.py:_engine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "function:backend/tests/test_matrix_etf_share_fields.py:_engine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "function:backend/tests/test_matrix_etf_share_fields.py:_resolve_research_plan",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "function:backend/tests/test_matrix_etf_share_fields.py:_resolve_research_plan",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "function:backend/tests/test_matrix_etf_share_fields.py:test_etf_plan_does_not_require_share_fields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "function:backend/tests/test_matrix_etf_share_fields.py:test_etf_plan_does_not_require_share_fields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "function:backend/tests/test_matrix_etf_share_fields.py:test_etf_cache_profile_excludes_share_fields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "function:backend/tests/test_matrix_etf_share_fields.py:test_etf_cache_profile_excludes_share_fields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "function:backend/tests/test_matrix_etf_share_fields.py:_etf_instruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "function:backend/tests/test_matrix_etf_share_fields.py:_etf_instruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "function:backend/tests/test_matrix_etf_share_fields.py:_etf_dataset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "function:backend/tests/test_matrix_etf_share_fields.py:_etf_dataset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "function:backend/tests/test_matrix_etf_share_fields.py:test_matrix_storage_fields_resolve_with_etf_instruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "function:backend/tests/test_matrix_etf_share_fields.py:test_matrix_storage_fields_resolve_with_etf_instruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "function:backend/tests/test_matrix_etf_share_fields.py:test_share_fields_still_unavailable_without_sanitization",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_matrix_etf_share_fields.py",
+      "target": "function:backend/tests/test_matrix_etf_share_fields.py:test_share_fields_still_unavailable_without_sanitization",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_matrix_field_columns_expansion.py",
+      "target": "file:backend/app/backtest/matrix.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_matrix_field_columns_expansion.py",
+      "target": "file:backend/app/strategy/builtin/factor_rank_research.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_matrix_field_columns_expansion.py",
+      "target": "file:backend/app/strategy/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_matrix_field_columns_expansion.py",
+      "target": "function:backend/tests/test_matrix_field_columns_expansion.py:_mined_limit_up_strategy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_matrix_field_columns_expansion.py",
+      "target": "function:backend/tests/test_matrix_field_columns_expansion.py:_mined_limit_up_strategy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_matrix_field_columns_expansion.py",
+      "target": "function:backend/tests/test_matrix_field_columns_expansion.py:test_matrix_field_columns_expand_parameter_scoring_dependencies",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_matrix_field_columns_expansion.py",
+      "target": "function:backend/tests/test_matrix_field_columns_expansion.py:test_matrix_field_columns_expand_parameter_scoring_dependencies",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_matrix_field_columns_expansion.py",
+      "target": "function:backend/tests/test_matrix_field_columns_expansion.py:test_mined_limit_up_strategy_signals_build_from_panel_fields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_matrix_field_columns_expansion.py",
+      "target": "function:backend/tests/test_matrix_field_columns_expansion.py:test_mined_limit_up_strategy_signals_build_from_panel_fields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "file:backend/app/api/mining.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "file:backend/app/backtest/mining.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "file:backend/app/enriched_generation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "file:backend/app/services/mining_jobs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "file:backend/app/strategy/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "class:backend/tests/test_mining_api.py:_Repo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "class:backend/tests/test_mining_api.py:_Repo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "class:backend/tests/test_mining_api.py:_Manager",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "class:backend/tests/test_mining_api.py:_Manager",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "class:backend/tests/test_mining_api.py:_PublishingRepo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "class:backend/tests/test_mining_api.py:_PublishingRepo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:_write_enriched_dates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:_write_enriched_dates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:_client",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:_client",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:_successful_run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:_successful_run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_start_is_strict_and_projects_server_signature",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_start_is_strict_and_projects_server_signature",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_start_accepts_iso_dates_and_persists_json_safe_request",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_start_accepts_iso_dates_and_persists_json_safe_request",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_availability_enforces_exact_profile_boundaries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_availability_enforces_exact_profile_boundaries",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_start_rejects_balanced_625_bar_range_before_creating_run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_start_rejects_balanced_625_bar_range_before_creating_run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_availability_uses_asset_specific_valid_partitions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_availability_uses_asset_specific_valid_partitions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_result_reconstructs_artifacts_without_exposing_definition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_result_reconstructs_artifacts_without_exposing_definition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_result_marks_legacy_fold_rows_without_evaluation_kind",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_result_marks_legacy_fold_rows_without_evaluation_kind",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_publish_endpoint_rejects_candidate_below_evidence_gate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_publish_endpoint_rejects_candidate_below_evidence_gate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_promote_endpoint_uses_persisted_definition_only",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_promote_endpoint_uses_persisted_definition_only",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_publish_endpoint_uses_persisted_definition_and_invalidates_runtime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_publish_endpoint_uses_persisted_definition_and_invalidates_runtime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_result_fails_closed_when_artifact_is_missing",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_result_fails_closed_when_artifact_is_missing",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_sse_maps_failed_event_and_honors_last_event_id",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_sse_maps_failed_event_and_honors_last_event_id",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_sse_recovers_progress_snapshot_when_history_is_truncated",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_sse_recovers_progress_snapshot_when_history_is_truncated",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_start_rejects_incompatible_strategy_before_creating_run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_start_rejects_incompatible_strategy_before_creating_run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_config_patch_merges_current_values",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_config_patch_merges_current_values",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_start_returns_400_with_guidance_while_enriched_publication_active",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_api.py",
+      "target": "function:backend/tests/test_mining_api.py:test_start_returns_400_with_guidance_while_enriched_publication_active",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "file:backend/app/backtest/candidates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "file:backend/app/backtest/mining.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "file:backend/app/services/mining_candidates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "file:backend/app/services/mining_jobs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "file:backend/app/strategy/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "file:backend/app/strategy/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "class:backend/tests/test_mining_candidates.py:_StrategyEngine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "class:backend/tests/test_mining_candidates.py:_StrategyEngine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:_factor_definition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:_factor_definition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:_create_run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:_create_run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:_service",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:_service",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:_real_service",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:_real_service",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_rereads_artifact_and_repairs_backlink_idempotently",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_rereads_artifact_and_repairs_backlink_idempotently",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_repairs_backlink_after_partial_failure",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_repairs_backlink_after_partial_failure",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_non_successful_run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_non_successful_run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_tampered_definition_before_candidate_write",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_tampered_definition_before_candidate_write",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_factor_not_selected_in_origin_request",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_factor_not_selected_in_origin_request",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_existing_strategy_revalidates_current_engine_contract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_existing_strategy_revalidates_current_engine_contract",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_existing_strategy_returns_verified_id_and_repairs_backlink",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_existing_strategy_returns_verified_id_and_repairs_backlink",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_requires_unique_artifact_signature",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_requires_unique_artifact_signature",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_concurrent_calls_create_one_authoritative_candidate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_concurrent_calls_create_one_authoritative_candidate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_artifact_conflicting_with_existing_store_record",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_artifact_conflicting_with_existing_store_record",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_invalid_factor_contract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_invalid_factor_contract",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_nonfinite_artifact_values",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_nonfinite_artifact_values",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_corrupt_or_missing_schema_artifact",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_rejects_corrupt_or_missing_schema_artifact",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_factor_discovers_public_strategy_and_repairs_runtime_state",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_factor_discovers_public_strategy_and_repairs_runtime_state",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_factor_repairs_backlink_after_source_was_verified",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_factor_repairs_backlink_after_source_was_verified",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_factor_uses_server_run_scoped_id_and_refuses_collision",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_factor_uses_server_run_scoped_id_and_refuses_collision",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_factor_same_signature_in_different_runs_has_independent_ids",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_factor_same_signature_in_different_runs_has_independent_ids",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_factor_rejects_inconsistent_backlink",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_factor_rejects_inconsistent_backlink",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_factor_rolls_back_file_and_skips_invalidations_on_reload_failure",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_factor_rolls_back_file_and_skips_invalidations_on_reload_failure",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_factor_rolls_back_on_runtime_invalidation_failure",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_factor_rolls_back_on_runtime_invalidation_failure",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_existing_does_not_reload_or_invalidate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_existing_does_not_reload_or_invalidate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:_rewrite_candidate_metric",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:_rewrite_candidate_metric",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_rejects_low_confidence_exploratory_candidate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_rejects_low_confidence_exploratory_candidate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_rejects_candidate_below_evidence_gate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_rejects_candidate_below_evidence_gate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_rejects_candidate_with_insufficient_folds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_rejects_candidate_with_insufficient_folds",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_rejects_candidate_missing_required_metrics",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_publish_rejects_candidate_missing_required_metrics",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_still_allowed_for_gated_candidates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_candidates.py",
+      "target": "function:backend/tests/test_mining_candidates.py:test_promote_still_allowed_for_gated_candidates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "file:backend/app/services/mining_jobs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:_store",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:_store",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_create_and_atomic_summary_reads",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_create_and_atomic_summary_reads",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_signature_is_canonical_and_covers_request_dimensions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_signature_is_canonical_and_covers_request_dimensions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_events_are_bounded_monotonic_and_support_after_id",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_events_are_bounded_monotonic_and_support_after_id",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_status_transitions_summary_and_artifact_registration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_status_transitions_summary_and_artifact_registration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_historical_manifest_defaults_and_startup_recovery",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_historical_manifest_defaults_and_startup_recovery",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_run_ids_and_paths_are_restricted_to_runs_root",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_run_ids_and_paths_are_restricted_to_runs_root",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_find_by_signature_can_filter_active_and_success_runs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_find_by_signature_can_filter_active_and_success_runs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_list_runs_is_bounded_sorted_and_filters_status",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_list_runs_is_bounded_sorted_and_filters_status",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_concurrent_event_appends_have_unique_contiguous_ids",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_jobs.py",
+      "target": "function:backend/tests/test_mining_jobs.py:test_concurrent_event_appends_have_unique_contiguous_ids",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

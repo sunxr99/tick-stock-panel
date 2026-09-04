@@ -1,0 +1,1647 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/tests/test_composite_strategy.py",
+      "type": "file",
+      "name": "test_composite_strategy.py",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "summary": "为 composite_strategy 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:_filter_strategy_code",
+      "type": "function",
+      "name": "_filter_strategy_code",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        23,
+        36
+      ],
+      "summary": "实现 _filter_strategy_code，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:_composite_code",
+      "type": "function",
+      "name": "_composite_code",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        39,
+        68
+      ],
+      "summary": "实现 _composite_code，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_composite_loads_and_infers_source",
+      "type": "function",
+      "name": "test_composite_loads_and_infers_source",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        74,
+        92
+      ],
+      "summary": "验证 composite loads and infers source 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_composite_missing_child_is_orphaned_without_blocking_others",
+      "type": "function",
+      "name": "test_composite_missing_child_is_orphaned_without_blocking_others",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        95,
+        119
+      ],
+      "summary": "验证 composite missing child is orphaned without blocking others 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_nested_composite_rejected",
+      "type": "function",
+      "name": "test_nested_composite_rejected",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        122,
+        142
+      ],
+      "summary": "验证 nested composite rejected 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_composite_asset_type_mismatch_rejected",
+      "type": "function",
+      "name": "test_composite_asset_type_mismatch_rejected",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        145,
+        165
+      ],
+      "summary": "验证 composite asset type mismatch rejected 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_composite_asset_type_subset_is_allowed",
+      "type": "function",
+      "name": "test_composite_asset_type_subset_is_allowed",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        168,
+        190
+      ],
+      "summary": "验证 composite asset type subset is allowed 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_composite_exceeds_child_limit_rejected",
+      "type": "function",
+      "name": "test_composite_exceeds_child_limit_rejected",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        193,
+        213
+      ],
+      "summary": "验证 composite exceeds child limit rejected 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_composite_with_filter_fn_rejected",
+      "type": "function",
+      "name": "test_composite_with_filter_fn_rejected",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        216,
+        226
+      ],
+      "summary": "验证 composite with filter fn rejected 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_find_dependents_locates_referencing_composites",
+      "type": "function",
+      "name": "test_find_dependents_locates_referencing_composites",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        232,
+        250
+      ],
+      "summary": "验证 find dependents locates referencing composites 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:_stock_panel",
+      "type": "function",
+      "name": "_stock_panel",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        256,
+        262
+      ],
+      "summary": "实现 _stock_panel，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_composite_union_merge_combines_children",
+      "type": "function",
+      "name": "test_composite_union_merge_combines_children",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        265,
+        302
+      ],
+      "summary": "验证 composite union merge combines children 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_composite_intersect_requires_min_confirm",
+      "type": "function",
+      "name": "test_composite_intersect_requires_min_confirm",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        305,
+        347
+      ],
+      "summary": "验证 composite intersect requires min confirm 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_composite_weighted_score_ranking",
+      "type": "function",
+      "name": "test_composite_weighted_score_ranking",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        350,
+        380
+      ],
+      "summary": "验证 composite weighted score ranking 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_composite_no_scores_uses_neutral",
+      "type": "function",
+      "name": "test_composite_no_scores_uses_neutral",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        383,
+        399
+      ],
+      "summary": "验证 composite no scores uses neutral 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_composite_empty_children_returns_empty",
+      "type": "function",
+      "name": "test_composite_empty_children_returns_empty",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        402,
+        411
+      ],
+      "summary": "验证 composite empty children returns empty 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:_make_sig",
+      "type": "function",
+      "name": "_make_sig",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        417,
+        433
+      ],
+      "summary": "实现 _make_sig，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_merge_signal_matrices_union_entry",
+      "type": "function",
+      "name": "test_merge_signal_matrices_union_entry",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        436,
+        451
+      ],
+      "summary": "验证 merge signal matrices union entry 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_merge_signal_matrices_intersect_entry",
+      "type": "function",
+      "name": "test_merge_signal_matrices_intersect_entry",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        454,
+        468
+      ],
+      "summary": "验证 merge signal matrices intersect entry 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_merge_exit_projection_prevents_cross_close",
+      "type": "function",
+      "name": "test_merge_exit_projection_prevents_cross_close",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        471,
+        490
+      ],
+      "summary": "验证 merge exit projection prevents cross close 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_merge_exit_respects_child_own_exit",
+      "type": "function",
+      "name": "test_merge_exit_respects_child_own_exit",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        493,
+        508
+      ],
+      "summary": "验证 merge exit respects child own exit 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_merge_exit_max_hold_caps_window",
+      "type": "function",
+      "name": "test_merge_exit_max_hold_caps_window",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        511,
+        527
+      ],
+      "summary": "验证 merge exit max hold caps window 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy.py:test_merge_entry_signal_code_records_source",
+      "type": "function",
+      "name": "test_merge_entry_signal_code_records_source",
+      "filePath": "backend/tests/test_composite_strategy.py",
+      "lineRange": [
+        530,
+        545
+      ],
+      "summary": "验证 merge entry signal code records source 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_composite_strategy_api.py",
+      "type": "file",
+      "name": "test_composite_strategy_api.py",
+      "filePath": "backend/tests/test_composite_strategy_api.py",
+      "summary": "为 composite_strategy_api 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy_api.py:_filter_code",
+      "type": "function",
+      "name": "_filter_code",
+      "filePath": "backend/tests/test_composite_strategy_api.py",
+      "lineRange": [
+        28,
+        38
+      ],
+      "summary": "实现 _filter_code，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy_api.py:_setup_engine",
+      "type": "function",
+      "name": "_setup_engine",
+      "filePath": "backend/tests/test_composite_strategy_api.py",
+      "lineRange": [
+        41,
+        52
+      ],
+      "summary": "实现 _setup_engine，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy_api.py:_composite_req",
+      "type": "function",
+      "name": "_composite_req",
+      "filePath": "backend/tests/test_composite_strategy_api.py",
+      "lineRange": [
+        55,
+        64
+      ],
+      "summary": "实现 _composite_req，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy_api.py:test_render_composite_code_contains_children_and_backend",
+      "type": "function",
+      "name": "test_render_composite_code_contains_children_and_backend",
+      "filePath": "backend/tests/test_composite_strategy_api.py",
+      "lineRange": [
+        70,
+        80
+      ],
+      "summary": "验证 render composite code contains children and backend 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_creates_and_loads",
+      "type": "function",
+      "name": "test_save_composite_creates_and_loads",
+      "filePath": "backend/tests/test_composite_strategy_api.py",
+      "lineRange": [
+        86,
+        99
+      ],
+      "summary": "验证 save composite creates and loads 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_rejects_missing_composite_prefix",
+      "type": "function",
+      "name": "test_save_composite_rejects_missing_composite_prefix",
+      "filePath": "backend/tests/test_composite_strategy_api.py",
+      "lineRange": [
+        102,
+        110
+      ],
+      "summary": "验证 save composite rejects missing composite prefix 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_rejects_missing_child",
+      "type": "function",
+      "name": "test_save_composite_rejects_missing_child",
+      "filePath": "backend/tests/test_composite_strategy_api.py",
+      "lineRange": [
+        113,
+        119
+      ],
+      "summary": "验证 save composite rejects missing child 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_rejects_nested_composite",
+      "type": "function",
+      "name": "test_save_composite_rejects_nested_composite",
+      "filePath": "backend/tests/test_composite_strategy_api.py",
+      "lineRange": [
+        122,
+        134
+      ],
+      "summary": "验证 save composite rejects nested composite 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_update_mode",
+      "type": "function",
+      "name": "test_save_composite_update_mode",
+      "filePath": "backend/tests/test_composite_strategy_api.py",
+      "lineRange": [
+        137,
+        153
+      ],
+      "summary": "验证 save composite update mode 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_update_rejects_non_composite",
+      "type": "function",
+      "name": "test_save_composite_update_rejects_non_composite",
+      "filePath": "backend/tests/test_composite_strategy_api.py",
+      "lineRange": [
+        156,
+        165
+      ],
+      "summary": "验证 save composite update rejects non composite 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy_api.py:test_strategy_detail_shows_composite_children",
+      "type": "function",
+      "name": "test_strategy_detail_shows_composite_children",
+      "filePath": "backend/tests/test_composite_strategy_api.py",
+      "lineRange": [
+        171,
+        184
+      ],
+      "summary": "验证 strategy detail shows composite children 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy_api.py:test_strategy_detail_non_composite_has_null_children",
+      "type": "function",
+      "name": "test_strategy_detail_non_composite_has_null_children",
+      "filePath": "backend/tests/test_composite_strategy_api.py",
+      "lineRange": [
+        187,
+        193
+      ],
+      "summary": "验证 strategy detail non composite has null children 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy_api.py:test_delete_referenced_child_blocked",
+      "type": "function",
+      "name": "test_delete_referenced_child_blocked",
+      "filePath": "backend/tests/test_composite_strategy_api.py",
+      "lineRange": [
+        199,
+        214
+      ],
+      "summary": "验证 delete referenced child blocked 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_composite_strategy_api.py:test_delete_composite_itself_succeeds",
+      "type": "function",
+      "name": "test_delete_composite_itself_succeeds",
+      "filePath": "backend/tests/test_composite_strategy_api.py",
+      "lineRange": [
+        217,
+        230
+      ],
+      "summary": "验证 delete composite itself succeeds 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_daily_batch_asset.py",
+      "type": "file",
+      "name": "test_daily_batch_asset.py",
+      "filePath": "backend/tests/test_daily_batch_asset.py",
+      "summary": "为 daily_batch_asset 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_daily_batch_asset.py:repo",
+      "type": "function",
+      "name": "repo",
+      "filePath": "backend/tests/test_daily_batch_asset.py",
+      "lineRange": [
+        11,
+        12
+      ],
+      "summary": "实现 repo，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_daily_batch_asset.py:test_daily_batch_groups_index_symbols",
+      "type": "function",
+      "name": "test_daily_batch_groups_index_symbols",
+      "filePath": "backend/tests/test_daily_batch_asset.py",
+      "lineRange": [
+        15,
+        42
+      ],
+      "summary": "验证 daily batch groups index symbols 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_enriched_generation.py",
+      "type": "file",
+      "name": "test_enriched_generation.py",
+      "filePath": "backend/tests/test_enriched_generation.py",
+      "summary": "为 enriched_generation 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_enriched_generation.py:_frame",
+      "type": "function",
+      "name": "_frame",
+      "filePath": "backend/tests/test_enriched_generation.py",
+      "lineRange": [
+        19,
+        28
+      ],
+      "summary": "实现 _frame，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_enriched_generation.py:test_repository_enriched_noop_does_not_bump_generation",
+      "type": "function",
+      "name": "test_repository_enriched_noop_does_not_bump_generation",
+      "filePath": "backend/tests/test_enriched_generation.py",
+      "lineRange": [
+        31,
+        39
+      ],
+      "summary": "验证 repository enriched noop does not bump generation 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_enriched_generation.py:test_failed_multi_partition_publication_remains_fail_closed",
+      "type": "function",
+      "name": "test_failed_multi_partition_publication_remains_fail_closed",
+      "filePath": "backend/tests/test_enriched_generation.py",
+      "lineRange": [
+        42,
+        69
+      ],
+      "summary": "验证 failed multi partition publication remains fail closed 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_enriched_generation.py:test_recovery_replaces_stale_publication_but_not_active_owner",
+      "type": "function",
+      "name": "test_recovery_replaces_stale_publication_but_not_active_owner",
+      "filePath": "backend/tests/test_enriched_generation.py",
+      "lineRange": [
+        72,
+        86
+      ],
+      "summary": "验证 recovery replaces stale publication but not active owner 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_enriched_generation.py:test_recovery_takes_over_when_owner_pid_is_dead_on_windows",
+      "type": "function",
+      "name": "test_recovery_takes_over_when_owner_pid_is_dead_on_windows",
+      "filePath": "backend/tests/test_enriched_generation.py",
+      "lineRange": [
+        89,
+        121
+      ],
+      "summary": "验证 recovery takes over when owner pid is dead on windows 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_enriched_generation.py:test_panel_cache_generation_change_forces_recompute",
+      "type": "function",
+      "name": "test_panel_cache_generation_change_forces_recompute",
+      "filePath": "backend/tests/test_enriched_generation.py",
+      "lineRange": [
+        124,
+        138
+      ],
+      "summary": "验证 panel cache generation change forces recompute 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_enriched_generation.py:test_panel_reader_retries_when_generation_changes_during_scan",
+      "type": "function",
+      "name": "test_panel_reader_retries_when_generation_changes_during_scan",
+      "filePath": "backend/tests/test_enriched_generation.py",
+      "lineRange": [
+        141,
+        163
+      ],
+      "summary": "验证 panel reader retries when generation changes during scan 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_enriched_generation.py:test_matrix_reader_retries_when_generation_changes_during_build",
+      "type": "function",
+      "name": "test_matrix_reader_retries_when_generation_changes_during_build",
+      "filePath": "backend/tests/test_enriched_generation.py",
+      "lineRange": [
+        166,
+        200
+      ],
+      "summary": "验证 matrix reader retries when generation changes during build 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_enriched_generation.py:test_live_flush_write_recovers_stale_marker_from_dead_process",
+      "type": "function",
+      "name": "test_live_flush_write_recovers_stale_marker_from_dead_process",
+      "filePath": "backend/tests/test_enriched_generation.py",
+      "lineRange": [
+        203,
+        227
+      ],
+      "summary": "验证 live flush write recovers stale marker from dead process 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "file:backend/app/strategy/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:_filter_strategy_code",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:_filter_strategy_code",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:_composite_code",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:_composite_code",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_loads_and_infers_source",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_loads_and_infers_source",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_missing_child_is_orphaned_without_blocking_others",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_missing_child_is_orphaned_without_blocking_others",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_nested_composite_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_nested_composite_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_asset_type_mismatch_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_asset_type_mismatch_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_asset_type_subset_is_allowed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_asset_type_subset_is_allowed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_exceeds_child_limit_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_exceeds_child_limit_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_with_filter_fn_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_with_filter_fn_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_find_dependents_locates_referencing_composites",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_find_dependents_locates_referencing_composites",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:_stock_panel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:_stock_panel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_union_merge_combines_children",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_union_merge_combines_children",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_intersect_requires_min_confirm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_intersect_requires_min_confirm",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_weighted_score_ranking",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_weighted_score_ranking",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_no_scores_uses_neutral",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_no_scores_uses_neutral",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_empty_children_returns_empty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_composite_empty_children_returns_empty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:_make_sig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:_make_sig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_merge_signal_matrices_union_entry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_merge_signal_matrices_union_entry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_merge_signal_matrices_intersect_entry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_merge_signal_matrices_intersect_entry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_merge_exit_projection_prevents_cross_close",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_merge_exit_projection_prevents_cross_close",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_merge_exit_respects_child_own_exit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_merge_exit_respects_child_own_exit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_merge_exit_max_hold_caps_window",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_merge_exit_max_hold_caps_window",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_merge_entry_signal_code_records_source",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy.py",
+      "target": "function:backend/tests/test_composite_strategy.py:test_merge_entry_signal_code_records_source",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "file:backend/app/api/strategy.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "file:backend/app/strategy/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:_filter_code",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:_filter_code",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:_setup_engine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:_setup_engine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:_composite_req",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:_composite_req",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_render_composite_code_contains_children_and_backend",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_render_composite_code_contains_children_and_backend",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_creates_and_loads",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_creates_and_loads",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_rejects_missing_composite_prefix",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_rejects_missing_composite_prefix",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_rejects_missing_child",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_rejects_missing_child",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_rejects_nested_composite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_rejects_nested_composite",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_update_mode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_update_mode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_update_rejects_non_composite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_save_composite_update_rejects_non_composite",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_strategy_detail_shows_composite_children",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_strategy_detail_shows_composite_children",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_strategy_detail_non_composite_has_null_children",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_strategy_detail_non_composite_has_null_children",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_delete_referenced_child_blocked",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_delete_referenced_child_blocked",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_delete_composite_itself_succeeds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_composite_strategy_api.py",
+      "target": "function:backend/tests/test_composite_strategy_api.py:test_delete_composite_itself_succeeds",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_daily_batch_asset.py",
+      "target": "file:backend/app/tickflow/repository.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_daily_batch_asset.py",
+      "target": "function:backend/tests/test_daily_batch_asset.py:repo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_daily_batch_asset.py",
+      "target": "function:backend/tests/test_daily_batch_asset.py:repo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_daily_batch_asset.py",
+      "target": "function:backend/tests/test_daily_batch_asset.py:test_daily_batch_groups_index_symbols",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_daily_batch_asset.py",
+      "target": "function:backend/tests/test_daily_batch_asset.py:test_daily_batch_groups_index_symbols",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "file:backend/app/backtest/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "file:backend/app/enriched_generation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "file:backend/app/tickflow/repository.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:_frame",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:_frame",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:test_repository_enriched_noop_does_not_bump_generation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:test_repository_enriched_noop_does_not_bump_generation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:test_failed_multi_partition_publication_remains_fail_closed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:test_failed_multi_partition_publication_remains_fail_closed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:test_recovery_replaces_stale_publication_but_not_active_owner",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:test_recovery_replaces_stale_publication_but_not_active_owner",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:test_recovery_takes_over_when_owner_pid_is_dead_on_windows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:test_recovery_takes_over_when_owner_pid_is_dead_on_windows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:test_panel_cache_generation_change_forces_recompute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:test_panel_cache_generation_change_forces_recompute",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:test_panel_reader_retries_when_generation_changes_during_scan",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:test_panel_reader_retries_when_generation_changes_during_scan",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:test_matrix_reader_retries_when_generation_changes_during_build",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:test_matrix_reader_retries_when_generation_changes_during_build",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:test_live_flush_write_recovers_stale_marker_from_dead_process",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_enriched_generation.py",
+      "target": "function:backend/tests/test_enriched_generation.py:test_live_flush_write_recovers_stale_marker_from_dead_process",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

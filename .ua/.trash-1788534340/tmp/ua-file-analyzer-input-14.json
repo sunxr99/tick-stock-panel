@@ -1,0 +1,285 @@
+{
+  "projectRoot": "D:\\stock\\myStockPanel\\tick-stock-panel",
+  "batchFiles": [
+    {
+      "path": "backend/app/tickflow/__init__.py",
+      "language": "python",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/tickflow/capabilities.py",
+      "language": "python",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/tickflow/client.py",
+      "language": "python",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/tickflow/pools.py",
+      "language": "python",
+      "sizeLines": 158,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/tickflow/rate_limits.py",
+      "language": "python",
+      "sizeLines": 124,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/tickflow/scheduler.py",
+      "language": "python",
+      "sizeLines": 68,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_abnormal_intraday.py",
+      "language": "python",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_abnormal_moves.py",
+      "language": "python",
+      "sizeLines": 436,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_atomic_write_retry.py",
+      "language": "python",
+      "sizeLines": 161,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_auction_benchmark.py",
+      "language": "python",
+      "sizeLines": 178,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_custom_signals_ai.py",
+      "language": "python",
+      "sizeLines": 238,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_data_integrity.py",
+      "language": "python",
+      "sizeLines": 584,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_depth_continuous_trading.py",
+      "language": "python",
+      "sizeLines": 131,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_dragon_tiger.py",
+      "language": "python",
+      "sizeLines": 157,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_enriched_full_rebuild.py",
+      "language": "python",
+      "sizeLines": 80,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_ext_sql_safety.py",
+      "language": "python",
+      "sizeLines": 148,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_financial_shares.py",
+      "language": "python",
+      "sizeLines": 179,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_fuyao_financial.py",
+      "language": "python",
+      "sizeLines": 242,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_fuyao_provider.py",
+      "language": "python",
+      "sizeLines": 1414,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_indicator_needed.py",
+      "language": "python",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_instrument_search.py",
+      "language": "python",
+      "sizeLines": 148,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_intraday_burst_fault_isolation.py",
+      "language": "python",
+      "sizeLines": 91,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_intraday_monitor_signals.py",
+      "language": "python",
+      "sizeLines": 192,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_job_record_persistence.py",
+      "language": "python",
+      "sizeLines": 125,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_job_stall_and_cancel.py",
+      "language": "python",
+      "sizeLines": 208,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_kline_hot_path_memory.py",
+      "language": "python",
+      "sizeLines": 155,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_kline_minute_live.py",
+      "language": "python",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "backend/app/tickflow/__init__.py": [],
+    "backend/app/tickflow/capabilities.py": [],
+    "backend/app/tickflow/client.py": [
+      "backend/app/__init__.py",
+      "backend/app/secrets_store.py",
+      "backend/app/tickflow/__init__.py"
+    ],
+    "backend/app/tickflow/pools.py": [
+      "backend/app/config.py",
+      "backend/app/tickflow/client.py"
+    ],
+    "backend/app/tickflow/rate_limits.py": [
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/app/tickflow/scheduler.py": [
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/tests/test_abnormal_intraday.py": [
+      "backend/app/services/abnormal_moves.py"
+    ],
+    "backend/tests/test_abnormal_moves.py": [
+      "backend/app/indicators/pipeline.py",
+      "backend/app/services/abnormal_moves.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_atomic_write_retry.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py",
+      "backend/app/tickflow/__init__.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_auction_benchmark.py": [
+      "backend/app/plugins/fuyao/client.py",
+      "backend/app/services/__init__.py"
+    ],
+    "backend/tests/test_custom_signals_ai.py": [
+      "backend/app/api/signals.py",
+      "backend/app/strategy/custom_signals_ai.py"
+    ],
+    "backend/tests/test_data_integrity.py": [
+      "backend/app/market_time.py",
+      "backend/app/services/data_integrity.py"
+    ],
+    "backend/tests/test_depth_continuous_trading.py": [
+      "backend/app/market_time.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/depth_service.py"
+    ],
+    "backend/tests/test_dragon_tiger.py": [
+      "backend/app/plugins/fuyao/client.py",
+      "backend/app/services/__init__.py"
+    ],
+    "backend/tests/test_enriched_full_rebuild.py": [
+      "backend/app/indicators/__init__.py",
+      "backend/app/indicators/pipeline.py"
+    ],
+    "backend/tests/test_ext_sql_safety.py": [
+      "backend/app/db_safe.py"
+    ],
+    "backend/tests/test_financial_shares.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/indicators/__init__.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/financial_sync.py",
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/tests/test_fuyao_financial.py": [
+      "backend/app/plugins/fuyao/__init__.py",
+      "backend/app/plugins/fuyao/provider.py",
+      "backend/app/services/financial_sync.py"
+    ],
+    "backend/tests/test_fuyao_provider.py": [
+      "backend/app/plugins/fuyao/__init__.py",
+      "backend/app/plugins/fuyao/provider.py"
+    ],
+    "backend/tests/test_indicator_needed.py": [
+      "backend/app/indicators/pipeline.py"
+    ],
+    "backend/tests/test_instrument_search.py": [
+      "backend/app/api/kline.py"
+    ],
+    "backend/tests/test_intraday_burst_fault_isolation.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py",
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/tests/test_intraday_monitor_signals.py": [
+      "backend/app/market_time.py",
+      "backend/app/services/kline_sync.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/intraday_signals.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py",
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/tests/test_job_record_persistence.py": [
+      "backend/app/services/pipeline_jobs.py"
+    ],
+    "backend/tests/test_job_stall_and_cancel.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/pipeline_jobs.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_kline_hot_path_memory.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/api/kline.py",
+      "backend/app/api/screener.py",
+      "backend/app/services/ext_data.py"
+    ],
+    "backend/tests/test_kline_minute_live.py": [
+      "backend/app/api/kline.py",
+      "backend/app/market_time.py"
+    ]
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "projectRoot": "D:\\stock\\myStockPanel\\tick-stock-panel",
+  "batchFiles": [
+    {
+      "path": "backend/app/api/abnormal.py",
+      "language": "python",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/api/alerts.py",
+      "language": "python",
+      "sizeLines": 156,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/api/auth.py",
+      "language": "python",
+      "sizeLines": 228,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/api/financials.py",
+      "language": "python",
+      "sizeLines": 246,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/api/indices.py",
+      "language": "python",
+      "sizeLines": 108,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/api/kline.py",
+      "language": "python",
+      "sizeLines": 1485,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/api/market_recap.py",
+      "language": "python",
+      "sizeLines": 158,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/api/monitor_rules.py",
+      "language": "python",
+      "sizeLines": 681,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/api/screener.py",
+      "language": "python",
+      "sizeLines": 877,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/api/signals.py",
+      "language": "python",
+      "sizeLines": 173,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/api/stock_analysis.py",
+      "language": "python",
+      "sizeLines": 218,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/db_safe.py",
+      "language": "python",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/indicators/__init__.py",
+      "language": "python",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/indicators/levels.py",
+      "language": "python",
+      "sizeLines": 650,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/indicators/pipeline.py",
+      "language": "python",
+      "sizeLines": 2144,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/jobs/daily_pipeline.py",
+      "language": "python",
+      "sizeLines": 1138,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/market_time.py",
+      "language": "python",
+      "sizeLines": 88,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/plugins/fuyao/__init__.py",
+      "language": "python",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/plugins/fuyao/client.py",
+      "language": "python",
+      "sizeLines": 302,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/plugins/fuyao/provider.py",
+      "language": "python",
+      "sizeLines": 1095,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/price_limits.py",
+      "language": "python",
+      "sizeLines": 158,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/__init__.py",
+      "language": "python",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/abnormal_moves.py",
+      "language": "python",
+      "sizeLines": 282,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/ai_reports.py",
+      "language": "python",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/alert_store.py",
+      "language": "python",
+      "sizeLines": 211,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/auction_benchmark.py",
+      "language": "python",
+      "sizeLines": 288,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/auth.py",
+      "language": "python",
+      "sizeLines": 222,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "backend/app/api/abnormal.py": [
+      "backend/app/services/abnormal_moves.py"
+    ],
+    "backend/app/api/alerts.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/alert_store.py"
+    ],
+    "backend/app/api/auth.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/auth.py"
+    ],
+    "backend/app/api/financials.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/ai_reports.py",
+      "backend/app/services/financial_analyzer.py",
+      "backend/app/services/financial_sync.py",
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/app/api/indices.py": [
+      "backend/app/indicators/pipeline.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/index_sync.py",
+      "backend/app/services/kline_sync.py",
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/app/api/kline.py": [
+      "backend/app/db_safe.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/market_time.py",
+      "backend/app/price_limits.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py"
+    ],
+    "backend/app/api/market_recap.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/auction_benchmark.py",
+      "backend/app/services/dragon_tiger.py",
+      "backend/app/services/market_recap.py",
+      "backend/app/services/market_recap_reports.py"
+    ],
+    "backend/app/api/monitor_rules.py": [
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/intraday_signals.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/app/api/screener.py": [
+      "backend/app/db_safe.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/screener.py",
+      "backend/app/services/strategy_cache.py",
+      "backend/app/strategy/__init__.py"
+    ],
+    "backend/app/api/signals.py": [
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/custom_signals.py"
+    ],
+    "backend/app/api/stock_analysis.py": [
+      "backend/app/indicators/levels.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/stock_analyzer.py",
+      "backend/app/services/stock_reports.py"
+    ],
+    "backend/app/db_safe.py": [],
+    "backend/app/indicators/__init__.py": [],
+    "backend/app/indicators/levels.py": [],
+    "backend/app/indicators/pipeline.py": [
+      "backend/app/config.py",
+      "backend/app/enriched_generation.py",
+      "backend/app/market_time.py",
+      "backend/app/parquet.py",
+      "backend/app/price_limits.py",
+      "backend/app/share_capital.py"
+    ],
+    "backend/app/jobs/daily_pipeline.py": [
+      "backend/app/config.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/index_sync.py",
+      "backend/app/services/instrument_sync.py",
+      "backend/app/services/kline_sync.py",
+      "backend/app/tickflow/capabilities.py",
+      "backend/app/tickflow/pools.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/app/market_time.py": [],
+    "backend/app/plugins/fuyao/__init__.py": [],
+    "backend/app/plugins/fuyao/client.py": [],
+    "backend/app/plugins/fuyao/provider.py": [
+      "backend/app/data_providers/normalizer.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/plugins/fuyao/__init__.py",
+      "backend/app/plugins/fuyao/client.py"
+    ],
+    "backend/app/price_limits.py": [],
+    "backend/app/services/__init__.py": [],
+    "backend/app/services/abnormal_moves.py": [
+      "backend/app/indicators/pipeline.py"
+    ],
+    "backend/app/services/ai_reports.py": [
+      "backend/app/services/json_report_store.py"
+    ],
+    "backend/app/services/alert_store.py": [],
+    "backend/app/services/auction_benchmark.py": [
+      "backend/app/market_time.py"
+    ],
+    "backend/app/services/auth.py": []
+  }
+}

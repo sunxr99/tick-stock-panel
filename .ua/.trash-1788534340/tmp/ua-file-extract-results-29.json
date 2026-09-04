@@ -1,0 +1,1879 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 10,
+  "filesSkipped": [
+    "frontend/src/custom/_template/extension.tsx.example",
+    "frontend/src/index.css",
+    "packaging/ChineseSimplified.isl",
+    "packaging/icon.icns",
+    "packaging/tickflow.iss",
+    "packaging/tickflow.spec"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 10,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 8,
+      "failed": 0,
+      "skipped": 2
+    }
+  },
+  "results": [
+    {
+      "path": "frontend/src/custom/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 9,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "前端二次开发目录",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "frontend/src/lib/ocrInstallHint.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "getOcrInstallHint",
+          "startLine": 2,
+          "endLine": 41,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getOcrInstallHint",
+          "line": 2,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getOcrInstallHint",
+          "callee": "platform.toLowerCase",
+          "lineNumber": 8
+        },
+        {
+          "caller": "getOcrInstallHint",
+          "callee": "p.includes",
+          "lineNumber": 10
+        },
+        {
+          "caller": "getOcrInstallHint",
+          "callee": "[\r\n      'OCR 引擎不可用：请安装 Tesseract 后重试。',\r\n      '',\r\n      'Windows：',\r\n      '• 下载 UB Mannheim 发行版并安装（勾选将 tesseract 加入 PATH）',\r\n      '• 或执行：choco install tesseract',\r\n      '',\r\n      '安装后重启应用。',\r\n    ].join",
+          "lineNumber": 11
+        },
+        {
+          "caller": "getOcrInstallHint",
+          "callee": "p.includes",
+          "lineNumber": 22
+        },
+        {
+          "caller": "getOcrInstallHint",
+          "callee": "[\r\n      'OCR 引擎不可用：请安装 Tesseract 后重试。',\r\n      '',\r\n      'macOS：',\r\n      '• 执行：brew install tesseract',\r\n      '',\r\n      '安装后重启应用。',\r\n    ].join",
+          "lineNumber": 23
+        },
+        {
+          "caller": "getOcrInstallHint",
+          "callee": "[\r\n    'OCR 引擎不可用：请安装 Tesseract 后重试。',\r\n    '',\r\n    'Linux：安装 tesseract-ocr（及语言包）',\r\n    'Docker：官方镜像已内置，请确认使用对应镜像。',\r\n    '',\r\n    '安装后重启应用。',\r\n  ].join",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/vite-env.d.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/tailwind.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 43,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/vite.config.d.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/vite.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 52,
+      "callGraph": [
+        {
+          "caller": "manualChunks",
+          "callee": "id.includes",
+          "lineNumber": 46
+        },
+        {
+          "caller": "manualChunks",
+          "callee": "id.includes",
+          "lineNumber": 47
+        },
+        {
+          "caller": "manualChunks",
+          "callee": "id.includes",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packaging/generate_icon.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 126,
+      "nonEmptyLines": 98,
+      "functions": [
+        {
+          "name": "_draw",
+          "startLine": 35,
+          "endLine": 70,
+          "params": [
+            "size",
+            "sw_b",
+            "sw_w",
+            "body_w"
+          ]
+        },
+        {
+          "name": "draw_logo",
+          "startLine": 73,
+          "endLine": 86,
+          "params": [
+            "size"
+          ]
+        },
+        {
+          "name": "_save_ico",
+          "startLine": 89,
+          "endLine": 98,
+          "params": [
+            "images_by_size"
+          ]
+        },
+        {
+          "name": "_save_icns",
+          "startLine": 101,
+          "endLine": 114,
+          "params": [
+            "images_by_size"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 117,
+          "endLine": 122,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_draw",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "draw_logo",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "_save_ico",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "_save_icns",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 117,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_draw",
+          "callee": "max",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_draw",
+          "callee": "Image.new",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_draw",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_draw",
+          "callee": "d.rounded_rectangle",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_draw",
+          "callee": "int",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_draw",
+          "callee": "max",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_draw",
+          "callee": "int",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_draw",
+          "callee": "round",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_draw",
+          "callee": "max",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_draw",
+          "callee": "int",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_draw",
+          "callee": "round",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_draw",
+          "callee": "range",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_draw",
+          "callee": "len",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_draw",
+          "callee": "d.line",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_draw",
+          "callee": "d.line",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_draw",
+          "callee": "d.ellipse",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_draw",
+          "callee": "d.rounded_rectangle",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_draw",
+          "callee": "img.resize",
+          "lineNumber": 70
+        },
+        {
+          "caller": "draw_logo",
+          "callee": "_draw",
+          "lineNumber": 81
+        },
+        {
+          "caller": "draw_logo",
+          "callee": "_draw",
+          "lineNumber": 83
+        },
+        {
+          "caller": "draw_logo",
+          "callee": "_draw",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_save_ico",
+          "callee": "images[-1].save",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_save_ico",
+          "callee": "print",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_save_icns",
+          "callee": "images[-1].save",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_save_icns",
+          "callee": "print",
+          "lineNumber": 114
+        },
+        {
+          "caller": "main",
+          "callee": "draw_logo",
+          "lineNumber": 120
+        },
+        {
+          "caller": "main",
+          "callee": "_save_ico",
+          "lineNumber": 121
+        },
+        {
+          "caller": "main",
+          "callee": "_save_icns",
+          "lineNumber": 122
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packaging/generate_icon_designs.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 283,
+      "nonEmptyLines": 233,
+      "functions": [
+        {
+          "name": "_supersample",
+          "startLine": 29,
+          "endLine": 32,
+          "params": [
+            "size",
+            "factor"
+          ]
+        },
+        {
+          "name": "_finish",
+          "startLine": 35,
+          "endLine": 37,
+          "params": [
+            "img",
+            "size"
+          ]
+        },
+        {
+          "name": "_v_gradient",
+          "startLine": 40,
+          "endLine": 57,
+          "params": [
+            "size",
+            "c_top",
+            "c_bot",
+            "radius_ratio"
+          ]
+        },
+        {
+          "name": "_glow",
+          "startLine": 60,
+          "endLine": 66,
+          "params": [
+            "size",
+            "draw_fn",
+            "color",
+            "blur_ratio"
+          ]
+        },
+        {
+          "name": "design_1",
+          "startLine": 70,
+          "endLine": 117,
+          "params": [
+            "size"
+          ]
+        },
+        {
+          "name": "design_2",
+          "startLine": 121,
+          "endLine": 157,
+          "params": [
+            "size"
+          ]
+        },
+        {
+          "name": "design_3",
+          "startLine": 161,
+          "endLine": 198,
+          "params": [
+            "size"
+          ]
+        },
+        {
+          "name": "design_4",
+          "startLine": 202,
+          "endLine": 254,
+          "params": [
+            "size"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 257,
+          "endLine": 279,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_supersample",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "_finish",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "_v_gradient",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "_glow",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "design_1",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "design_2",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "design_3",
+          "line": 161,
+          "isDefault": false
+        },
+        {
+          "name": "design_4",
+          "line": 202,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 257,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_supersample",
+          "callee": "Image.new",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_finish",
+          "callee": "img.resize",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "Image.new",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "img.load",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "range",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "max",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "int",
+          "lineNumber": 46
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "int",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "int",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "range",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "Image.new",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "int",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "md.rounded_rectangle",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "img.putalpha",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_glow",
+          "callee": "Image.new",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_glow",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_glow",
+          "callee": "draw_fn",
+          "lineNumber": 64
+        },
+        {
+          "caller": "_glow",
+          "callee": "layer.filter",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_glow",
+          "callee": "ImageFilter.GaussianBlur",
+          "lineNumber": 65
+        },
+        {
+          "caller": "design_1",
+          "callee": "_supersample",
+          "lineNumber": 71
+        },
+        {
+          "caller": "design_1",
+          "callee": "_v_gradient",
+          "lineNumber": 74
+        },
+        {
+          "caller": "design_1",
+          "callee": "img.alpha_composite",
+          "lineNumber": 75
+        },
+        {
+          "caller": "design_1",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 77
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "dd.line",
+          "lineNumber": 84
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "int",
+          "lineNumber": 84
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "dd.line",
+          "lineNumber": 85
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "int",
+          "lineNumber": 85
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "dd.line",
+          "lineNumber": 86
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "int",
+          "lineNumber": 86
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "dd.line",
+          "lineNumber": 88
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "int",
+          "lineNumber": 88
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "dd.line",
+          "lineNumber": 89
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "int",
+          "lineNumber": 89
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "dd.line",
+          "lineNumber": 90
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "int",
+          "lineNumber": 90
+        },
+        {
+          "caller": "draw_wick",
+          "callee": "dd.line",
+          "lineNumber": 94
+        },
+        {
+          "caller": "draw_wick",
+          "callee": "int",
+          "lineNumber": 94
+        },
+        {
+          "caller": "draw_body",
+          "callee": "dd.rounded_rectangle",
+          "lineNumber": 97
+        },
+        {
+          "caller": "design_1",
+          "callee": "Image.new",
+          "lineNumber": 103
+        },
+        {
+          "caller": "design_1",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 104
+        },
+        {
+          "caller": "design_1",
+          "callee": "draw_body",
+          "lineNumber": 105
+        },
+        {
+          "caller": "design_1",
+          "callee": "glow.filter",
+          "lineNumber": 106
+        },
+        {
+          "caller": "design_1",
+          "callee": "ImageFilter.GaussianBlur",
+          "lineNumber": 106
+        },
+        {
+          "caller": "design_1",
+          "callee": "Image.new",
+          "lineNumber": 108
+        },
+        {
+          "caller": "design_1",
+          "callee": "Image.composite",
+          "lineNumber": 109
+        },
+        {
+          "caller": "design_1",
+          "callee": "Image.new",
+          "lineNumber": 109
+        },
+        {
+          "caller": "design_1",
+          "callee": "glow.point",
+          "lineNumber": 110
+        },
+        {
+          "caller": "design_1",
+          "callee": "min",
+          "lineNumber": 110
+        },
+        {
+          "caller": "design_1",
+          "callee": "int",
+          "lineNumber": 110
+        },
+        {
+          "caller": "design_1",
+          "callee": "img.alpha_composite",
+          "lineNumber": 111
+        },
+        {
+          "caller": "design_1",
+          "callee": "draw_brackets",
+          "lineNumber": 113
+        },
+        {
+          "caller": "design_1",
+          "callee": "draw_wick",
+          "lineNumber": 114
+        },
+        {
+          "caller": "design_1",
+          "callee": "draw_body",
+          "lineNumber": 115
+        },
+        {
+          "caller": "design_1",
+          "callee": "_finish",
+          "lineNumber": 117
+        },
+        {
+          "caller": "design_2",
+          "callee": "_supersample",
+          "lineNumber": 122
+        },
+        {
+          "caller": "design_2",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 123
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "dd.line",
+          "lineNumber": 133
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "int",
+          "lineNumber": 133
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "dd.line",
+          "lineNumber": 134
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "int",
+          "lineNumber": 134
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "dd.line",
+          "lineNumber": 135
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "int",
+          "lineNumber": 135
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "dd.line",
+          "lineNumber": 137
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "int",
+          "lineNumber": 137
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "dd.line",
+          "lineNumber": 138
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "int",
+          "lineNumber": 138
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "dd.line",
+          "lineNumber": 139
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "int",
+          "lineNumber": 139
+        },
+        {
+          "caller": "design_2",
+          "callee": "Image.new",
+          "lineNumber": 142
+        },
+        {
+          "caller": "design_2",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 143
+        },
+        {
+          "caller": "design_2",
+          "callee": "gradient_brackets",
+          "lineNumber": 144
+        },
+        {
+          "caller": "design_2",
+          "callee": "gd.rounded_rectangle",
+          "lineNumber": 145
+        },
+        {
+          "caller": "design_2",
+          "callee": "glow_layer.filter",
+          "lineNumber": 146
+        },
+        {
+          "caller": "design_2",
+          "callee": "ImageFilter.GaussianBlur",
+          "lineNumber": 146
+        },
+        {
+          "caller": "design_2",
+          "callee": "img.alpha_composite",
+          "lineNumber": 147
+        },
+        {
+          "caller": "design_2",
+          "callee": "gradient_brackets",
+          "lineNumber": 150
+        },
+        {
+          "caller": "design_2",
+          "callee": "d.line",
+          "lineNumber": 151
+        },
+        {
+          "caller": "design_2",
+          "callee": "int",
+          "lineNumber": 151
+        },
+        {
+          "caller": "design_2",
+          "callee": "d.rounded_rectangle",
+          "lineNumber": 152
+        },
+        {
+          "caller": "design_2",
+          "callee": "d.rounded_rectangle",
+          "lineNumber": 155
+        },
+        {
+          "caller": "design_2",
+          "callee": "_finish",
+          "lineNumber": 157
+        },
+        {
+          "caller": "design_3",
+          "callee": "_supersample",
+          "lineNumber": 162
+        },
+        {
+          "caller": "design_3",
+          "callee": "_v_gradient",
+          "lineNumber": 165
+        },
+        {
+          "caller": "design_3",
+          "callee": "img.alpha_composite",
+          "lineNumber": 166
+        },
+        {
+          "caller": "design_3",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 167
+        },
+        {
+          "caller": "design_3",
+          "callee": "d.line",
+          "lineNumber": 180
+        },
+        {
+          "caller": "design_3",
+          "callee": "int",
+          "lineNumber": 180
+        },
+        {
+          "caller": "design_3",
+          "callee": "d.rounded_rectangle",
+          "lineNumber": 182
+        },
+        {
+          "caller": "design_3",
+          "callee": "Image.new",
+          "lineNumber": 188
+        },
+        {
+          "caller": "design_3",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 189
+        },
+        {
+          "caller": "design_3",
+          "callee": "gd.rounded_rectangle",
+          "lineNumber": 190
+        },
+        {
+          "caller": "design_3",
+          "callee": "glow.filter",
+          "lineNumber": 191
+        },
+        {
+          "caller": "design_3",
+          "callee": "ImageFilter.GaussianBlur",
+          "lineNumber": 191
+        },
+        {
+          "caller": "design_3",
+          "callee": "img.alpha_composite",
+          "lineNumber": 192
+        },
+        {
+          "caller": "design_3",
+          "callee": "d.line",
+          "lineNumber": 195
+        },
+        {
+          "caller": "design_3",
+          "callee": "int",
+          "lineNumber": 196
+        },
+        {
+          "caller": "design_3",
+          "callee": "_finish",
+          "lineNumber": 198
+        },
+        {
+          "caller": "design_4",
+          "callee": "_supersample",
+          "lineNumber": 203
+        },
+        {
+          "caller": "design_4",
+          "callee": "_v_gradient",
+          "lineNumber": 206
+        },
+        {
+          "caller": "design_4",
+          "callee": "img.alpha_composite",
+          "lineNumber": 207
+        },
+        {
+          "caller": "design_4",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 208
+        },
+        {
+          "caller": "brackets",
+          "callee": "dd.rounded_rectangle",
+          "lineNumber": 214
+        },
+        {
+          "caller": "brackets",
+          "callee": "int",
+          "lineNumber": 216
+        },
+        {
+          "caller": "brackets",
+          "callee": "dd.rounded_rectangle",
+          "lineNumber": 218
+        },
+        {
+          "caller": "brackets",
+          "callee": "int",
+          "lineNumber": 220
+        },
+        {
+          "caller": "brackets2",
+          "callee": "int",
+          "lineNumber": 224
+        },
+        {
+          "caller": "brackets2",
+          "callee": "dd.line",
+          "lineNumber": 226
+        },
+        {
+          "caller": "brackets2",
+          "callee": "int",
+          "lineNumber": 226
+        },
+        {
+          "caller": "brackets2",
+          "callee": "dd.rounded_rectangle",
+          "lineNumber": 227
+        },
+        {
+          "caller": "brackets2",
+          "callee": "dd.line",
+          "lineNumber": 229
+        },
+        {
+          "caller": "brackets2",
+          "callee": "int",
+          "lineNumber": 229
+        },
+        {
+          "caller": "brackets2",
+          "callee": "dd.ellipse",
+          "lineNumber": 232
+        },
+        {
+          "caller": "brackets2",
+          "callee": "dd.line",
+          "lineNumber": 234
+        },
+        {
+          "caller": "brackets2",
+          "callee": "int",
+          "lineNumber": 234
+        },
+        {
+          "caller": "brackets2",
+          "callee": "dd.rounded_rectangle",
+          "lineNumber": 235
+        },
+        {
+          "caller": "brackets2",
+          "callee": "dd.line",
+          "lineNumber": 237
+        },
+        {
+          "caller": "brackets2",
+          "callee": "int",
+          "lineNumber": 237
+        },
+        {
+          "caller": "brackets2",
+          "callee": "dd.ellipse",
+          "lineNumber": 239
+        },
+        {
+          "caller": "design_4",
+          "callee": "Image.new",
+          "lineNumber": 242
+        },
+        {
+          "caller": "design_4",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 243
+        },
+        {
+          "caller": "design_4",
+          "callee": "gd.rounded_rectangle",
+          "lineNumber": 244
+        },
+        {
+          "caller": "design_4",
+          "callee": "glow.filter",
+          "lineNumber": 245
+        },
+        {
+          "caller": "design_4",
+          "callee": "ImageFilter.GaussianBlur",
+          "lineNumber": 245
+        },
+        {
+          "caller": "design_4",
+          "callee": "img.alpha_composite",
+          "lineNumber": 246
+        },
+        {
+          "caller": "design_4",
+          "callee": "brackets2",
+          "lineNumber": 248
+        },
+        {
+          "caller": "design_4",
+          "callee": "d.line",
+          "lineNumber": 250
+        },
+        {
+          "caller": "design_4",
+          "callee": "int",
+          "lineNumber": 250
+        },
+        {
+          "caller": "design_4",
+          "callee": "d.rounded_rectangle",
+          "lineNumber": 252
+        },
+        {
+          "caller": "design_4",
+          "callee": "_finish",
+          "lineNumber": 254
+        },
+        {
+          "caller": "main",
+          "callee": "Image.new",
+          "lineNumber": 266
+        },
+        {
+          "caller": "main",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 267
+        },
+        {
+          "caller": "main",
+          "callee": "zip",
+          "lineNumber": 269
+        },
+        {
+          "caller": "main",
+          "callee": "fn",
+          "lineNumber": 270
+        },
+        {
+          "caller": "main",
+          "callee": "grid.alpha_composite",
+          "lineNumber": 272
+        },
+        {
+          "caller": "main",
+          "callee": "fn(1024).save",
+          "lineNumber": 274
+        },
+        {
+          "caller": "main",
+          "callee": "fn",
+          "lineNumber": 274
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 275
+        },
+        {
+          "caller": "main",
+          "callee": "grid.save",
+          "lineNumber": 277
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 278
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 279
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "screenshots/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 69,
+      "nonEmptyLines": 35,
+      "sections": [
+        {
+          "heading": "项目截图",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "看板 Dashboard",
+          "level": 3,
+          "line": 3
+        },
+        {
+          "heading": "自选 Watchlist",
+          "level": 3,
+          "line": 7
+        },
+        {
+          "heading": "策略 Screener",
+          "level": 3,
+          "line": 11
+        },
+        {
+          "heading": "回测 Backtest",
+          "level": 3,
+          "line": 15
+        },
+        {
+          "heading": "挖掘 Mining",
+          "level": 3,
+          "line": 19
+        },
+        {
+          "heading": "市场环境 Regime",
+          "level": 3,
+          "line": 23
+        },
+        {
+          "heading": "异动监控 Abnormal Moves",
+          "level": 3,
+          "line": 27
+        },
+        {
+          "heading": "监控中心 Monitor",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "连板梯队 Limit Ladder",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "概念分析 Concept",
+          "level": 3,
+          "line": 39
+        },
+        {
+          "heading": "财务分析",
+          "level": 3,
+          "line": 43
+        },
+        {
+          "heading": "财务分析报告",
+          "level": 3,
+          "line": 47
+        },
+        {
+          "heading": "个股分析",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "个股分析报告",
+          "level": 3,
+          "line": 55
+        },
+        {
+          "heading": "复盘 Review",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "飞书推送-自动复盘",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "飞书推送-个股监控",
+          "level": 3,
+          "line": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    },
+    {
+      "path": "scripts/upgrade_check.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 121,
+      "nonEmptyLines": 100,
+      "functions": [
+        {
+          "name": "_git",
+          "startLine": 11,
+          "endLine": 22,
+          "params": [
+            "root",
+            "check"
+          ]
+        },
+        {
+          "name": "_lines",
+          "startLine": 25,
+          "endLine": 26,
+          "params": [
+            "result"
+          ]
+        },
+        {
+          "name": "_resolve_repo",
+          "startLine": 29,
+          "endLine": 31,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "_resolve_commit",
+          "startLine": 34,
+          "endLine": 35,
+          "params": [
+            "root",
+            "ref"
+          ]
+        },
+        {
+          "name": "_merge_tree_conflicts",
+          "startLine": 38,
+          "endLine": 58,
+          "params": [
+            "root",
+            "base",
+            "current",
+            "target"
+          ]
+        },
+        {
+          "name": "_print_paths",
+          "startLine": 61,
+          "endLine": 64,
+          "params": [
+            "title",
+            "paths"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 67,
+          "endLine": 117,
+          "params": [
+            "argv"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_git",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "_lines",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "_resolve_repo",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "_resolve_commit",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "_merge_tree_conflicts",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "_print_paths",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 67,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_git",
+          "callee": "subprocess.run",
+          "lineNumber": 12
+        },
+        {
+          "caller": "_git",
+          "callee": "(result.stderr or result.stdout).strip",
+          "lineNumber": 20
+        },
+        {
+          "caller": "_git",
+          "callee": "RuntimeError",
+          "lineNumber": 21
+        },
+        {
+          "caller": "_git",
+          "callee": "' '.join",
+          "lineNumber": 21
+        },
+        {
+          "caller": "_lines",
+          "callee": "line.strip",
+          "lineNumber": 26
+        },
+        {
+          "caller": "_lines",
+          "callee": "result.stdout.splitlines",
+          "lineNumber": 26
+        },
+        {
+          "caller": "_lines",
+          "callee": "line.strip",
+          "lineNumber": 26
+        },
+        {
+          "caller": "_resolve_repo",
+          "callee": "_git",
+          "lineNumber": 30
+        },
+        {
+          "caller": "_resolve_repo",
+          "callee": "Path(result.stdout.strip()).resolve",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_resolve_repo",
+          "callee": "Path",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_resolve_repo",
+          "callee": "result.stdout.strip",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_resolve_commit",
+          "callee": "_git(root, \"rev-parse\", \"--verify\", f\"{ref}^{{commit}}\").stdout.strip",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_resolve_commit",
+          "callee": "_git",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "_git",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "result.stdout.splitlines",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "conflicts.append",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "line.strip().split",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "line.strip",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "len",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "line.startswith",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "line.startswith",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "line.startswith",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "conflicts.append",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "sorted",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "set",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_print_paths",
+          "callee": "print",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_print_paths",
+          "callee": "len",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_print_paths",
+          "callee": "print",
+          "lineNumber": 64
+        },
+        {
+          "caller": "main",
+          "callee": "argparse.ArgumentParser",
+          "lineNumber": 68
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 71
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 72
+        },
+        {
+          "caller": "main",
+          "callee": "Path.cwd",
+          "lineNumber": 75
+        },
+        {
+          "caller": "main",
+          "callee": "parser.parse_args",
+          "lineNumber": 78
+        },
+        {
+          "caller": "main",
+          "callee": "_resolve_repo",
+          "lineNumber": 81
+        },
+        {
+          "caller": "main",
+          "callee": "args.repo.resolve",
+          "lineNumber": 81
+        },
+        {
+          "caller": "main",
+          "callee": "_resolve_commit",
+          "lineNumber": 82
+        },
+        {
+          "caller": "main",
+          "callee": "_resolve_commit",
+          "lineNumber": 83
+        },
+        {
+          "caller": "main",
+          "callee": "_git(root, \"merge-base\", current, target).stdout.strip",
+          "lineNumber": 84
+        },
+        {
+          "caller": "main",
+          "callee": "_git",
+          "lineNumber": 84
+        },
+        {
+          "caller": "main",
+          "callee": "RuntimeError",
+          "lineNumber": 86
+        },
+        {
+          "caller": "main",
+          "callee": "_lines",
+          "lineNumber": 88
+        },
+        {
+          "caller": "main",
+          "callee": "_git",
+          "lineNumber": 88
+        },
+        {
+          "caller": "main",
+          "callee": "_lines",
+          "lineNumber": 89
+        },
+        {
+          "caller": "main",
+          "callee": "_git",
+          "lineNumber": 89
+        },
+        {
+          "caller": "main",
+          "callee": "sorted",
+          "lineNumber": 90
+        },
+        {
+          "caller": "main",
+          "callee": "_merge_tree_conflicts",
+          "lineNumber": 91
+        },
+        {
+          "caller": "main",
+          "callee": "sorted",
+          "lineNumber": 92
+        },
+        {
+          "caller": "main",
+          "callee": "_lines",
+          "lineNumber": 92
+        },
+        {
+          "caller": "main",
+          "callee": "_git",
+          "lineNumber": 92
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 94
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 95
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 96
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 97
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 98
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 99
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 99
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 100
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 100
+        },
+        {
+          "caller": "main",
+          "callee": "_print_paths",
+          "lineNumber": 101
+        },
+        {
+          "caller": "main",
+          "callee": "_print_paths",
+          "lineNumber": 102
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 105
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 105
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 106
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 108
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 111
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 113
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 116
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    }
+  ]
+}

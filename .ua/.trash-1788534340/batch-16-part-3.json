@@ -1,0 +1,1267 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/tests/test_price_limits.py",
+      "type": "file",
+      "name": "test_price_limits.py",
+      "filePath": "backend/tests/test_price_limits.py",
+      "summary": "针对price limits相关行为、边界条件和回归约束的自动化测试。",
+      "tags": [
+        "test",
+        "后端",
+        "python"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/tests/test_price_limits.py:_InstrumentRepo",
+      "type": "class",
+      "name": "_InstrumentRepo",
+      "filePath": "backend/tests/test_price_limits.py",
+      "lineRange": [
+        117,
+        124
+      ],
+      "summary": "封装price limits领域的 _InstrumentRepo 类型职责与协作状态。",
+      "tags": [
+        "class",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_price_limits.py:test_scalar_price_limit_rules",
+      "type": "function",
+      "name": "test_scalar_price_limit_rules",
+      "filePath": "backend/tests/test_price_limits.py",
+      "lineRange": [
+        34,
+        39
+      ],
+      "summary": "验证 test_scalar_price_limit_rules 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_price_limits.py:test_polars_and_numpy_price_limit_rules_match",
+      "type": "function",
+      "name": "test_polars_and_numpy_price_limit_rules_match",
+      "filePath": "backend/tests/test_price_limits.py",
+      "lineRange": [
+        42,
+        59
+      ],
+      "summary": "验证 test_polars_and_numpy_price_limit_rules_match 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_price_limits.py:test_polars_and_numpy_limit_prices_use_identical_half_up_rounding",
+      "type": "function",
+      "name": "test_polars_and_numpy_limit_prices_use_identical_half_up_rounding",
+      "filePath": "backend/tests/test_price_limits.py",
+      "lineRange": [
+        62,
+        75
+      ],
+      "summary": "验证 test_polars_and_numpy_limit_prices_use_identical_half_up_rounding 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_price_limits.py:test_matrix_uses_date_specific_st_limits_across_change",
+      "type": "function",
+      "name": "test_matrix_uses_date_specific_st_limits_across_change",
+      "filePath": "backend/tests/test_price_limits.py",
+      "lineRange": [
+        78,
+        114
+      ],
+      "summary": "验证 test_matrix_uses_date_specific_st_limits_across_change 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_price_limits.py:test_minute_price_limit_prefers_authoritative_prices_only_today",
+      "type": "function",
+      "name": "test_minute_price_limit_prefers_authoritative_prices_only_today",
+      "filePath": "backend/tests/test_price_limits.py",
+      "lineRange": [
+        127,
+        148
+      ],
+      "summary": "验证 test_minute_price_limit_prefers_authoritative_prices_only_today 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_price_limits.py:_daily_limit_rows",
+      "type": "function",
+      "name": "_daily_limit_rows",
+      "filePath": "backend/tests/test_price_limits.py",
+      "lineRange": [
+        151,
+        161
+      ],
+      "summary": "验证 _daily_limit_rows 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_price_limits.py:test_daily_limit_prices_require_matching_instrument_date",
+      "type": "function",
+      "name": "test_daily_limit_prices_require_matching_instrument_date",
+      "filePath": "backend/tests/test_price_limits.py",
+      "lineRange": [
+        172,
+        189
+      ],
+      "summary": "验证 test_daily_limit_prices_require_matching_instrument_date 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_price_limits.py:test_realtime_limit_prices_ignore_stale_instrument_date",
+      "type": "function",
+      "name": "test_realtime_limit_prices_ignore_stale_instrument_date",
+      "filePath": "backend/tests/test_price_limits.py",
+      "lineRange": [
+        192,
+        218
+      ],
+      "summary": "验证 test_realtime_limit_prices_ignore_stale_instrument_date 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_price_limits.py:test_limit_down_recovery_uses_raw_low_under_later_ex_div",
+      "type": "function",
+      "name": "test_limit_down_recovery_uses_raw_low_under_later_ex_div",
+      "filePath": "backend/tests/test_price_limits.py",
+      "lineRange": [
+        221,
+        256
+      ],
+      "summary": "验证 test_limit_down_recovery_uses_raw_low_under_later_ex_div 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_quote_interval_min.py",
+      "type": "file",
+      "name": "test_quote_interval_min.py",
+      "filePath": "backend/tests/test_quote_interval_min.py",
+      "summary": "针对quote interval min相关行为、边界条件和回归约束的自动化测试。",
+      "tags": [
+        "test",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_quote_interval_min.py:_route",
+      "type": "function",
+      "name": "_route",
+      "filePath": "backend/tests/test_quote_interval_min.py",
+      "lineRange": [
+        13,
+        16
+      ],
+      "summary": "验证 _route 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_quote_interval_min.py:_bare",
+      "type": "function",
+      "name": "_bare",
+      "filePath": "backend/tests/test_quote_interval_min.py",
+      "lineRange": [
+        19,
+        21
+      ],
+      "summary": "验证 _bare 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_quote_interval_min.py:test_custom_provider_min_interval_1s",
+      "type": "function",
+      "name": "test_custom_provider_min_interval_1s",
+      "filePath": "backend/tests/test_quote_interval_min.py",
+      "lineRange": [
+        24,
+        27
+      ],
+      "summary": "验证 test_custom_provider_min_interval_1s 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_quote_interval_min.py:test_custom_provider_clamp_allows_1s",
+      "type": "function",
+      "name": "test_custom_provider_clamp_allows_1s",
+      "filePath": "backend/tests/test_quote_interval_min.py",
+      "lineRange": [
+        30,
+        36
+      ],
+      "summary": "验证 test_custom_provider_clamp_allows_1s 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_quote_interval_min.py:test_tickflow_tier_floor_unchanged",
+      "type": "function",
+      "name": "test_tickflow_tier_floor_unchanged",
+      "filePath": "backend/tests/test_quote_interval_min.py",
+      "lineRange": [
+        39,
+        43
+      ],
+      "summary": "验证 test_tickflow_tier_floor_unchanged 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_quote_interval_min.py:test_default_interval_unchanged",
+      "type": "function",
+      "name": "test_default_interval_unchanged",
+      "filePath": "backend/tests/test_quote_interval_min.py",
+      "lineRange": [
+        46,
+        48
+      ],
+      "summary": "验证 test_default_interval_unchanged 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_quote_name_map_reuse.py",
+      "type": "file",
+      "name": "test_quote_name_map_reuse.py",
+      "filePath": "backend/tests/test_quote_name_map_reuse.py",
+      "summary": "针对quote name map reuse相关行为、边界条件和回归约束的自动化测试。",
+      "tags": [
+        "test",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/test_quote_name_map_reuse.py:_FakeRepo",
+      "type": "class",
+      "name": "_FakeRepo",
+      "filePath": "backend/tests/test_quote_name_map_reuse.py",
+      "lineRange": [
+        9,
+        16
+      ],
+      "summary": "封装quote name map reuse领域的 _FakeRepo 类型职责与协作状态。",
+      "tags": [
+        "class",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_quote_name_map_reuse.py:test_filters_falsy_names_like_legacy_build",
+      "type": "function",
+      "name": "test_filters_falsy_names_like_legacy_build",
+      "filePath": "backend/tests/test_quote_name_map_reuse.py",
+      "lineRange": [
+        19,
+        29
+      ],
+      "summary": "验证 test_filters_falsy_names_like_legacy_build 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_quote_name_map_reuse.py:test_merges_all_asset_types_from_repo_map",
+      "type": "function",
+      "name": "test_merges_all_asset_types_from_repo_map",
+      "filePath": "backend/tests/test_quote_name_map_reuse.py",
+      "lineRange": [
+        32,
+        35
+      ],
+      "summary": "验证 test_merges_all_asset_types_from_repo_map 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_quote_name_map_reuse.py:test_delegates_to_repo_each_call",
+      "type": "function",
+      "name": "test_delegates_to_repo_each_call",
+      "filePath": "backend/tests/test_quote_name_map_reuse.py",
+      "lineRange": [
+        38,
+        42
+      ],
+      "summary": "验证 test_delegates_to_repo_each_call 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_quote_name_map_reuse.py:test_empty_repo_map_returns_empty",
+      "type": "function",
+      "name": "test_empty_repo_map_returns_empty",
+      "filePath": "backend/tests/test_quote_name_map_reuse.py",
+      "lineRange": [
+        45,
+        46
+      ],
+      "summary": "验证 test_empty_repo_map_returns_empty 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_quote_name_map_reuse.py:test_survives_repo_failure",
+      "type": "function",
+      "name": "test_survives_repo_failure",
+      "filePath": "backend/tests/test_quote_name_map_reuse.py",
+      "lineRange": [
+        49,
+        57
+      ],
+      "summary": "验证 test_survives_repo_failure 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "type": "file",
+      "name": "test_rate_limit_safety_budget.py",
+      "filePath": "backend/tests/test_rate_limit_safety_budget.py",
+      "summary": "针对rate limit safety budget相关行为、边界条件和回归约束的自动化测试。",
+      "tags": [
+        "test",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_rate_limit_safety_budget.py:test_apply_safety_rpm_scales_to_80_percent",
+      "type": "function",
+      "name": "test_apply_safety_rpm_scales_to_80_percent",
+      "filePath": "backend/tests/test_rate_limit_safety_budget.py",
+      "lineRange": [
+        18,
+        23
+      ],
+      "summary": "验证 test_apply_safety_rpm_scales_to_80_percent 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_rate_limit_safety_budget.py:test_resolve_limit_applies_safety_by_default",
+      "type": "function",
+      "name": "test_resolve_limit_applies_safety_by_default",
+      "filePath": "backend/tests/test_rate_limit_safety_budget.py",
+      "lineRange": [
+        26,
+        30
+      ],
+      "summary": "验证 test_resolve_limit_applies_safety_by_default 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_rate_limit_safety_budget.py:test_resolve_limit_can_skip_safety_for_diagnostics",
+      "type": "function",
+      "name": "test_resolve_limit_can_skip_safety_for_diagnostics",
+      "filePath": "backend/tests/test_rate_limit_safety_budget.py",
+      "lineRange": [
+        33,
+        36
+      ],
+      "summary": "验证 test_resolve_limit_can_skip_safety_for_diagnostics 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_rate_limit_safety_budget.py:test_two_first_batches_do_not_wait_even_when_slot_reserved",
+      "type": "function",
+      "name": "test_two_first_batches_do_not_wait_even_when_slot_reserved",
+      "filePath": "backend/tests/test_rate_limit_safety_budget.py",
+      "lineRange": [
+        39,
+        50
+      ],
+      "summary": "验证 test_two_first_batches_do_not_wait_even_when_slot_reserved 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_rate_limit_safety_budget.py:test_second_batch_waits_for_shared_slot",
+      "type": "function",
+      "name": "test_second_batch_waits_for_shared_slot",
+      "filePath": "backend/tests/test_rate_limit_safety_budget.py",
+      "lineRange": [
+        53,
+        59
+      ],
+      "summary": "验证 test_second_batch_waits_for_shared_slot 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_realtime_mode.py",
+      "type": "file",
+      "name": "test_realtime_mode.py",
+      "filePath": "backend/tests/test_realtime_mode.py",
+      "summary": "针对realtime mode相关行为、边界条件和回归约束的自动化测试。",
+      "tags": [
+        "test",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_realtime_mode.py:test_custom_realtime_source_is_full_market",
+      "type": "function",
+      "name": "test_custom_realtime_source_is_full_market",
+      "filePath": "backend/tests/test_realtime_mode.py",
+      "lineRange": [
+        10,
+        15
+      ],
+      "summary": "验证 test_custom_realtime_source_is_full_market 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_realtime_mode.py:test_tickflow_free_has_no_realtime",
+      "type": "function",
+      "name": "test_tickflow_free_has_no_realtime",
+      "filePath": "backend/tests/test_realtime_mode.py",
+      "lineRange": [
+        18,
+        24
+      ],
+      "summary": "验证 test_tickflow_free_has_no_realtime 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_realtime_mode.py:test_tickflow_paid_is_full_market",
+      "type": "function",
+      "name": "test_tickflow_paid_is_full_market",
+      "filePath": "backend/tests/test_realtime_mode.py",
+      "lineRange": [
+        27,
+        31
+      ],
+      "summary": "验证 test_tickflow_paid_is_full_market 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_realtime_turnover_rate.py",
+      "type": "file",
+      "name": "test_realtime_turnover_rate.py",
+      "filePath": "backend/tests/test_realtime_turnover_rate.py",
+      "summary": "针对realtime turnover rate相关行为、边界条件和回归约束的自动化测试。",
+      "tags": [
+        "test",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_realtime_turnover_rate.py:_today_rows",
+      "type": "function",
+      "name": "_today_rows",
+      "filePath": "backend/tests/test_realtime_turnover_rate.py",
+      "lineRange": [
+        10,
+        24
+      ],
+      "summary": "验证 _today_rows 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_realtime_turnover_rate.py:_instruments",
+      "type": "function",
+      "name": "_instruments",
+      "filePath": "backend/tests/test_realtime_turnover_rate.py",
+      "lineRange": [
+        27,
+        32
+      ],
+      "summary": "验证 _instruments 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_realtime_turnover_rate.py:test_quote_extra_normalizes_realtime_turnover_fraction_to_percent_value",
+      "type": "function",
+      "name": "test_quote_extra_normalizes_realtime_turnover_fraction_to_percent_value",
+      "filePath": "backend/tests/test_realtime_turnover_rate.py",
+      "lineRange": [
+        35,
+        38
+      ],
+      "summary": "验证 test_quote_extra_normalizes_realtime_turnover_fraction_to_percent_value 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_realtime_turnover_rate.py:test_realtime_turnover_rate_uses_api_value_directly_after_entry_normalization",
+      "type": "function",
+      "name": "test_realtime_turnover_rate_uses_api_value_directly_after_entry_normalization",
+      "filePath": "backend/tests/test_realtime_turnover_rate.py",
+      "lineRange": [
+        41,
+        44
+      ],
+      "summary": "验证 test_realtime_turnover_rate_uses_api_value_directly_after_entry_normalization 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_realtime_turnover_rate.py:test_realtime_turnover_rate_falls_back_to_float_shares_when_missing",
+      "type": "function",
+      "name": "test_realtime_turnover_rate_falls_back_to_float_shares_when_missing",
+      "filePath": "backend/tests/test_realtime_turnover_rate.py",
+      "lineRange": [
+        47,
+        50
+      ],
+      "summary": "验证 test_realtime_turnover_rate_falls_back_to_float_shares_when_missing 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "class:backend/tests/test_price_limits.py:_InstrumentRepo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "class:backend/tests/test_price_limits.py:_InstrumentRepo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:test_scalar_price_limit_rules",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:test_scalar_price_limit_rules",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:test_polars_and_numpy_price_limit_rules_match",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:test_polars_and_numpy_price_limit_rules_match",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:test_polars_and_numpy_limit_prices_use_identical_half_up_rounding",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:test_polars_and_numpy_limit_prices_use_identical_half_up_rounding",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:test_matrix_uses_date_specific_st_limits_across_change",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:test_matrix_uses_date_specific_st_limits_across_change",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:test_minute_price_limit_prefers_authoritative_prices_only_today",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:test_minute_price_limit_prefers_authoritative_prices_only_today",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:_daily_limit_rows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:_daily_limit_rows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:test_daily_limit_prices_require_matching_instrument_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:test_daily_limit_prices_require_matching_instrument_date",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:test_realtime_limit_prices_ignore_stale_instrument_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:test_realtime_limit_prices_ignore_stale_instrument_date",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:test_limit_down_recovery_uses_raw_low_under_later_ex_div",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "function:backend/tests/test_price_limits.py:test_limit_down_recovery_uses_raw_low_under_later_ex_div",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "file:backend/app/api/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "file:backend/app/api/kline.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "file:backend/app/backtest/matrix.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "file:backend/app/indicators/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "file:backend/app/indicators/pipeline.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_price_limits.py",
+      "target": "file:backend/app/price_limits.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_quote_interval_min.py",
+      "target": "function:backend/tests/test_quote_interval_min.py:_route",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_interval_min.py",
+      "target": "function:backend/tests/test_quote_interval_min.py:_route",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_interval_min.py",
+      "target": "function:backend/tests/test_quote_interval_min.py:_bare",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_interval_min.py",
+      "target": "function:backend/tests/test_quote_interval_min.py:_bare",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_interval_min.py",
+      "target": "function:backend/tests/test_quote_interval_min.py:test_custom_provider_min_interval_1s",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_interval_min.py",
+      "target": "function:backend/tests/test_quote_interval_min.py:test_custom_provider_min_interval_1s",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_interval_min.py",
+      "target": "function:backend/tests/test_quote_interval_min.py:test_custom_provider_clamp_allows_1s",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_interval_min.py",
+      "target": "function:backend/tests/test_quote_interval_min.py:test_custom_provider_clamp_allows_1s",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_interval_min.py",
+      "target": "function:backend/tests/test_quote_interval_min.py:test_tickflow_tier_floor_unchanged",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_interval_min.py",
+      "target": "function:backend/tests/test_quote_interval_min.py:test_tickflow_tier_floor_unchanged",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_interval_min.py",
+      "target": "function:backend/tests/test_quote_interval_min.py:test_default_interval_unchanged",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_interval_min.py",
+      "target": "function:backend/tests/test_quote_interval_min.py:test_default_interval_unchanged",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_interval_min.py",
+      "target": "file:backend/app/services/quote_service.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_quote_name_map_reuse.py",
+      "target": "class:backend/tests/test_quote_name_map_reuse.py:_FakeRepo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_name_map_reuse.py",
+      "target": "class:backend/tests/test_quote_name_map_reuse.py:_FakeRepo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_name_map_reuse.py",
+      "target": "function:backend/tests/test_quote_name_map_reuse.py:test_filters_falsy_names_like_legacy_build",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_name_map_reuse.py",
+      "target": "function:backend/tests/test_quote_name_map_reuse.py:test_filters_falsy_names_like_legacy_build",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_name_map_reuse.py",
+      "target": "function:backend/tests/test_quote_name_map_reuse.py:test_merges_all_asset_types_from_repo_map",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_name_map_reuse.py",
+      "target": "function:backend/tests/test_quote_name_map_reuse.py:test_merges_all_asset_types_from_repo_map",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_name_map_reuse.py",
+      "target": "function:backend/tests/test_quote_name_map_reuse.py:test_delegates_to_repo_each_call",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_name_map_reuse.py",
+      "target": "function:backend/tests/test_quote_name_map_reuse.py:test_delegates_to_repo_each_call",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_name_map_reuse.py",
+      "target": "function:backend/tests/test_quote_name_map_reuse.py:test_empty_repo_map_returns_empty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_name_map_reuse.py",
+      "target": "function:backend/tests/test_quote_name_map_reuse.py:test_empty_repo_map_returns_empty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_name_map_reuse.py",
+      "target": "function:backend/tests/test_quote_name_map_reuse.py:test_survives_repo_failure",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_name_map_reuse.py",
+      "target": "function:backend/tests/test_quote_name_map_reuse.py:test_survives_repo_failure",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_name_map_reuse.py",
+      "target": "file:backend/app/services/quote_service.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_apply_safety_rpm_scales_to_80_percent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_apply_safety_rpm_scales_to_80_percent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_resolve_limit_applies_safety_by_default",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_resolve_limit_applies_safety_by_default",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_resolve_limit_can_skip_safety_for_diagnostics",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_resolve_limit_can_skip_safety_for_diagnostics",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_two_first_batches_do_not_wait_even_when_slot_reserved",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_two_first_batches_do_not_wait_even_when_slot_reserved",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_second_batch_waits_for_shared_slot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_second_batch_waits_for_shared_slot",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "file:backend/app/tickflow/capabilities.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "file:backend/app/tickflow/rate_limits.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_realtime_mode.py",
+      "target": "function:backend/tests/test_realtime_mode.py:test_custom_realtime_source_is_full_market",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_realtime_mode.py",
+      "target": "function:backend/tests/test_realtime_mode.py:test_custom_realtime_source_is_full_market",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_realtime_mode.py",
+      "target": "function:backend/tests/test_realtime_mode.py:test_tickflow_free_has_no_realtime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_realtime_mode.py",
+      "target": "function:backend/tests/test_realtime_mode.py:test_tickflow_free_has_no_realtime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_realtime_mode.py",
+      "target": "function:backend/tests/test_realtime_mode.py:test_tickflow_paid_is_full_market",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_realtime_mode.py",
+      "target": "function:backend/tests/test_realtime_mode.py:test_tickflow_paid_is_full_market",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_realtime_mode.py",
+      "target": "file:backend/app/services/quote_service.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_realtime_turnover_rate.py",
+      "target": "function:backend/tests/test_realtime_turnover_rate.py:_today_rows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_realtime_turnover_rate.py",
+      "target": "function:backend/tests/test_realtime_turnover_rate.py:_today_rows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_realtime_turnover_rate.py",
+      "target": "function:backend/tests/test_realtime_turnover_rate.py:_instruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_realtime_turnover_rate.py",
+      "target": "function:backend/tests/test_realtime_turnover_rate.py:_instruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_realtime_turnover_rate.py",
+      "target": "function:backend/tests/test_realtime_turnover_rate.py:test_quote_extra_normalizes_realtime_turnover_fraction_to_percent_value",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_realtime_turnover_rate.py",
+      "target": "function:backend/tests/test_realtime_turnover_rate.py:test_quote_extra_normalizes_realtime_turnover_fraction_to_percent_value",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_realtime_turnover_rate.py",
+      "target": "function:backend/tests/test_realtime_turnover_rate.py:test_realtime_turnover_rate_uses_api_value_directly_after_entry_normalization",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_realtime_turnover_rate.py",
+      "target": "function:backend/tests/test_realtime_turnover_rate.py:test_realtime_turnover_rate_uses_api_value_directly_after_entry_normalization",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_realtime_turnover_rate.py",
+      "target": "function:backend/tests/test_realtime_turnover_rate.py:test_realtime_turnover_rate_falls_back_to_float_shares_when_missing",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_realtime_turnover_rate.py",
+      "target": "function:backend/tests/test_realtime_turnover_rate.py:test_realtime_turnover_rate_falls_back_to_float_shares_when_missing",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_realtime_turnover_rate.py",
+      "target": "file:backend/app/indicators/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_realtime_turnover_rate.py",
+      "target": "file:backend/app/indicators/pipeline.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_realtime_turnover_rate.py",
+      "target": "file:backend/app/services/quote_service.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

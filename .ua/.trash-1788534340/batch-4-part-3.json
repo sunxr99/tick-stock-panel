@@ -1,0 +1,1603 @@
+{
+  "nodes": [
+    {
+      "id": "file:frontend/src/lib/miningTask.ts",
+      "type": "file",
+      "name": "miningTask.ts",
+      "filePath": "frontend/src/lib/miningTask.ts",
+      "summary": "“mining Task”前端模块，服务于股票面板的交互与数据展示。主要封装 emit、update、subscribe 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "complex",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/miningTask.ts:eventPayload",
+      "type": "function",
+      "name": "eventPayload",
+      "filePath": "frontend/src/lib/miningTask.ts",
+      "lineRange": [
+        77,
+        87
+      ],
+      "summary": "实现 event Payload 的局部业务处理逻辑，支持 miningTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/miningTask.ts:refreshTerminalRun",
+      "type": "function",
+      "name": "refreshTerminalRun",
+      "filePath": "frontend/src/lib/miningTask.ts",
+      "lineRange": [
+        89,
+        131
+      ],
+      "summary": "实现 refresh Terminal Run 的局部业务处理逻辑，支持 miningTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/miningTask.ts:startStatusPolling",
+      "type": "function",
+      "name": "startStatusPolling",
+      "filePath": "frontend/src/lib/miningTask.ts",
+      "lineRange": [
+        133,
+        180
+      ],
+      "summary": "实现 start Status Polling 的局部业务处理逻辑，支持 miningTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/miningTask.ts:connect",
+      "type": "function",
+      "name": "connect",
+      "filePath": "frontend/src/lib/miningTask.ts",
+      "lineRange": [
+        182,
+        234
+      ],
+      "summary": "实现 connect 的局部业务处理逻辑，支持 miningTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/lib/miningTask.ts:startMining",
+      "type": "function",
+      "name": "startMining",
+      "filePath": "frontend/src/lib/miningTask.ts",
+      "lineRange": [
+        236,
+        273
+      ],
+      "summary": "实现 start Mining 的局部业务处理逻辑，支持 miningTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/miningTask.ts:cancelMining",
+      "type": "function",
+      "name": "cancelMining",
+      "filePath": "frontend/src/lib/miningTask.ts",
+      "lineRange": [
+        275,
+        303
+      ],
+      "summary": "实现 cancel Mining 的局部业务处理逻辑，支持 miningTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/miningTask.ts:attachMiningRun",
+      "type": "function",
+      "name": "attachMiningRun",
+      "filePath": "frontend/src/lib/miningTask.ts",
+      "lineRange": [
+        305,
+        348
+      ],
+      "summary": "实现 attach Mining Run 的局部业务处理逻辑，支持 miningTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/miningTask.ts:tryReconnectMining",
+      "type": "function",
+      "name": "tryReconnectMining",
+      "filePath": "frontend/src/lib/miningTask.ts",
+      "lineRange": [
+        350,
+        355
+      ],
+      "summary": "实现 try Reconnect Mining 的局部业务处理逻辑，支持 miningTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/miningTask.ts:clearMiningTask",
+      "type": "function",
+      "name": "clearMiningTask",
+      "filePath": "frontend/src/lib/miningTask.ts",
+      "lineRange": [
+        357,
+        372
+      ],
+      "summary": "实现 clear Mining Task 的局部业务处理逻辑，支持 miningTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/miningTask.ts:useMiningTask",
+      "type": "function",
+      "name": "useMiningTask",
+      "filePath": "frontend/src/lib/miningTask.ts",
+      "lineRange": [
+        374,
+        376
+      ],
+      "summary": "封装 use Mining Task 所需的 React 状态、查询或副作用，供 miningTask.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/minuteBatchIncremental.ts",
+      "type": "file",
+      "name": "minuteBatchIncremental.ts",
+      "filePath": "frontend/src/lib/minuteBatchIncremental.ts",
+      "summary": "“minute Batch Incremental”前端模块，服务于股票面板的交互与数据展示。主要封装 lastBarTs、mergeInto、fetchMinuteBatchIncremental 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "simple",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/minuteBatchIncremental.ts:lastBarTs",
+      "type": "function",
+      "name": "lastBarTs",
+      "filePath": "frontend/src/lib/minuteBatchIncremental.ts",
+      "lineRange": [
+        13,
+        26
+      ],
+      "summary": "实现 last Bar Ts 的局部业务处理逻辑，支持 minuteBatchIncremental.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/minuteBatchIncremental.ts:mergeInto",
+      "type": "function",
+      "name": "mergeInto",
+      "filePath": "frontend/src/lib/minuteBatchIncremental.ts",
+      "lineRange": [
+        28,
+        38
+      ],
+      "summary": "实现 merge Into 的局部业务处理逻辑，支持 minuteBatchIncremental.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/minuteBatchIncremental.ts:fetchMinuteBatchIncremental",
+      "type": "function",
+      "name": "fetchMinuteBatchIncremental",
+      "filePath": "frontend/src/lib/minuteBatchIncremental.ts",
+      "lineRange": [
+        41,
+        52
+      ],
+      "summary": "实现 fetch Minute Batch Incremental 的局部业务处理逻辑，支持 minuteBatchIncremental.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/monitorBadge.ts",
+      "type": "file",
+      "name": "monitorBadge.ts",
+      "filePath": "frontend/src/lib/monitorBadge.ts",
+      "summary": "“monitor Badge”前端模块，服务于股票面板的交互与数据展示。主要封装 readSeen、writeSeen、syncSeen 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/monitorBadge.ts:setCurrentTotal",
+      "type": "function",
+      "name": "setCurrentTotal",
+      "filePath": "frontend/src/lib/monitorBadge.ts",
+      "lineRange": [
+        55,
+        84
+      ],
+      "summary": "实现 set Current Total 的局部业务处理逻辑，支持 monitorBadge.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/monitorBadge.ts:markSeen",
+      "type": "function",
+      "name": "markSeen",
+      "filePath": "frontend/src/lib/monitorBadge.ts",
+      "lineRange": [
+        87,
+        95
+      ],
+      "summary": "实现 mark Seen 的局部业务处理逻辑，支持 monitorBadge.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/monitorBadge.ts:leaveMonitorPage",
+      "type": "function",
+      "name": "leaveMonitorPage",
+      "filePath": "frontend/src/lib/monitorBadge.ts",
+      "lineRange": [
+        98,
+        103
+      ],
+      "summary": "实现 leave Monitor Page 的局部业务处理逻辑，支持 monitorBadge.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/monitorBadge.ts:resetBadge",
+      "type": "function",
+      "name": "resetBadge",
+      "filePath": "frontend/src/lib/monitorBadge.ts",
+      "lineRange": [
+        106,
+        112
+      ],
+      "summary": "实现 reset Badge 的局部业务处理逻辑，支持 monitorBadge.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/monitorBadge.ts:useUnreadAlerts",
+      "type": "function",
+      "name": "useUnreadAlerts",
+      "filePath": "frontend/src/lib/monitorBadge.ts",
+      "lineRange": [
+        115,
+        117
+      ],
+      "summary": "封装 use Unread Alerts 所需的 React 状态、查询或副作用，供 monitorBadge.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/notificationSound.ts",
+      "type": "file",
+      "name": "notificationSound.ts",
+      "filePath": "frontend/src/lib/notificationSound.ts",
+      "summary": "“notification Sound”前端模块，服务于股票面板的交互与数据展示。主要封装 getCtx、playTone、playNotificationSound 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/notificationSound.ts:getCtx",
+      "type": "function",
+      "name": "getCtx",
+      "filePath": "frontend/src/lib/notificationSound.ts",
+      "lineRange": [
+        14,
+        24
+      ],
+      "summary": "实现 get Ctx 的局部业务处理逻辑，支持 notificationSound.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/notificationSound.ts:playTone",
+      "type": "function",
+      "name": "playTone",
+      "filePath": "frontend/src/lib/notificationSound.ts",
+      "lineRange": [
+        27,
+        40
+      ],
+      "summary": "实现 play Tone 的局部业务处理逻辑，支持 notificationSound.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/notificationSound.ts:playNotificationSound",
+      "type": "function",
+      "name": "playNotificationSound",
+      "filePath": "frontend/src/lib/notificationSound.ts",
+      "lineRange": [
+        112,
+        128
+      ],
+      "summary": "实现 play Notification Sound 的局部业务处理逻辑，支持 notificationSound.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/notificationSound.ts:previewSound",
+      "type": "function",
+      "name": "previewSound",
+      "filePath": "frontend/src/lib/notificationSound.ts",
+      "lineRange": [
+        147,
+        154
+      ],
+      "summary": "实现 preview Sound 的局部业务处理逻辑，支持 notificationSound.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/optimizerTask.ts",
+      "type": "file",
+      "name": "optimizerTask.ts",
+      "filePath": "frontend/src/lib/optimizerTask.ts",
+      "summary": "“optimizer Task”前端模块，服务于股票面板的交互与数据展示。主要封装 emit、subscribe、buildQuery 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "complex",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/optimizerTask.ts:connectSSE",
+      "type": "function",
+      "name": "connectSSE",
+      "filePath": "frontend/src/lib/optimizerTask.ts",
+      "lineRange": [
+        107,
+        198
+      ],
+      "summary": "实现 connect SSE 的局部业务处理逻辑，支持 optimizerTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/lib/optimizerTask.ts:startOptimize",
+      "type": "function",
+      "name": "startOptimize",
+      "filePath": "frontend/src/lib/optimizerTask.ts",
+      "lineRange": [
+        209,
+        249
+      ],
+      "summary": "实现 start Optimize 的局部业务处理逻辑，支持 optimizerTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/optimizerTask.ts:stopOptimize",
+      "type": "function",
+      "name": "stopOptimize",
+      "filePath": "frontend/src/lib/optimizerTask.ts",
+      "lineRange": [
+        251,
+        279
+      ],
+      "summary": "实现 stop Optimize 的局部业务处理逻辑，支持 optimizerTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/optimizerTask.ts:clearOptimize",
+      "type": "function",
+      "name": "clearOptimize",
+      "filePath": "frontend/src/lib/optimizerTask.ts",
+      "lineRange": [
+        281,
+        284
+      ],
+      "summary": "实现 clear Optimize 的局部业务处理逻辑，支持 optimizerTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/optimizerTask.ts:tryReconnectOptimize",
+      "type": "function",
+      "name": "tryReconnectOptimize",
+      "filePath": "frontend/src/lib/optimizerTask.ts",
+      "lineRange": [
+        286,
+        294
+      ],
+      "summary": "实现 try Reconnect Optimize 的局部业务处理逻辑，支持 optimizerTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/optimizerTask.ts:useOptimizerTask",
+      "type": "function",
+      "name": "useOptimizerTask",
+      "filePath": "frontend/src/lib/optimizerTask.ts",
+      "lineRange": [
+        296,
+        298
+      ],
+      "summary": "封装 use Optimizer Task 所需的 React 状态、查询或副作用，供 optimizerTask.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/price-alerts.ts",
+      "type": "file",
+      "name": "price-alerts.ts",
+      "filePath": "frontend/src/lib/price-alerts.ts",
+      "summary": "“price alerts”前端模块，服务于股票面板的交互与数据展示。主要封装 parsePointPriceAlert、inferPriceAlertDirection、buildPriceAlertMessage 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/price-alerts.ts:parsePointPriceAlert",
+      "type": "function",
+      "name": "parsePointPriceAlert",
+      "filePath": "frontend/src/lib/price-alerts.ts",
+      "lineRange": [
+        17,
+        35
+      ],
+      "summary": "实现 parse Point Price Alert 的局部业务处理逻辑，支持 price-alerts.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/price-alerts.ts:inferPriceAlertDirection",
+      "type": "function",
+      "name": "inferPriceAlertDirection",
+      "filePath": "frontend/src/lib/price-alerts.ts",
+      "lineRange": [
+        37,
+        42
+      ],
+      "summary": "实现 infer Price Alert Direction 的局部业务处理逻辑，支持 price-alerts.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/price-alerts.ts:buildPriceAlertMessage",
+      "type": "function",
+      "name": "buildPriceAlertMessage",
+      "filePath": "frontend/src/lib/price-alerts.ts",
+      "lineRange": [
+        44,
+        51
+      ],
+      "summary": "实现 build Price Alert Message 的局部业务处理逻辑，支持 price-alerts.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/price-alerts.ts:buildMonitorPriceLines",
+      "type": "function",
+      "name": "buildMonitorPriceLines",
+      "filePath": "frontend/src/lib/price-alerts.ts",
+      "lineRange": [
+        53,
+        65
+      ],
+      "summary": "实现 build Monitor Price Lines 的局部业务处理逻辑，支持 price-alerts.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/queryKeys.ts",
+      "type": "file",
+      "name": "queryKeys.ts",
+      "filePath": "frontend/src/lib/queryKeys.ts",
+      "summary": "“query Keys”前端模块，服务于股票面板的交互与数据展示。提供界面结构、状态协作或展示逻辑。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "file:frontend/src/lib/reviewStore.ts",
+      "type": "file",
+      "name": "reviewStore.ts",
+      "filePath": "frontend/src/lib/reviewStore.ts",
+      "summary": "“review Store”前端模块，服务于股票面板的交互与数据展示。主要封装 notify、getReviewState、subscribeReview 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/reviewStore.ts:getReviewState",
+      "type": "function",
+      "name": "getReviewState",
+      "filePath": "frontend/src/lib/reviewStore.ts",
+      "lineRange": [
+        50,
+        52
+      ],
+      "summary": "实现 get Review State 的局部业务处理逻辑，支持 reviewStore.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/reviewStore.ts:subscribeReview",
+      "type": "function",
+      "name": "subscribeReview",
+      "filePath": "frontend/src/lib/reviewStore.ts",
+      "lineRange": [
+        54,
+        57
+      ],
+      "summary": "实现 subscribe Review 的局部业务处理逻辑，支持 reviewStore.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/reviewStore.ts:getReviewMeta",
+      "type": "function",
+      "name": "getReviewMeta",
+      "filePath": "frontend/src/lib/reviewStore.ts",
+      "lineRange": [
+        60,
+        62
+      ],
+      "summary": "实现 get Review Meta 的局部业务处理逻辑，支持 reviewStore.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/reviewStore.ts:isReviewGenerating",
+      "type": "function",
+      "name": "isReviewGenerating",
+      "filePath": "frontend/src/lib/reviewStore.ts",
+      "lineRange": [
+        65,
+        67
+      ],
+      "summary": "实现 is Review Generating 的局部业务处理逻辑，支持 reviewStore.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/reviewStore.ts:startReviewGeneration",
+      "type": "function",
+      "name": "startReviewGeneration",
+      "filePath": "frontend/src/lib/reviewStore.ts",
+      "lineRange": [
+        75,
+        131
+      ],
+      "summary": "实现 start Review Generation 的局部业务处理逻辑，支持 reviewStore.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/lib/reviewStore.ts:abortReviewGeneration",
+      "type": "function",
+      "name": "abortReviewGeneration",
+      "filePath": "frontend/src/lib/reviewStore.ts",
+      "lineRange": [
+        134,
+        137
+      ],
+      "summary": "实现 abort Review Generation 的局部业务处理逻辑，支持 reviewStore.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/reviewStore.ts:setViewingReport",
+      "type": "function",
+      "name": "setViewingReport",
+      "filePath": "frontend/src/lib/reviewStore.ts",
+      "lineRange": [
+        140,
+        162
+      ],
+      "summary": "实现 set Viewing Report 的局部业务处理逻辑，支持 reviewStore.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/reviewStore.ts:resetReview",
+      "type": "function",
+      "name": "resetReview",
+      "filePath": "frontend/src/lib/reviewStore.ts",
+      "lineRange": [
+        165,
+        168
+      ],
+      "summary": "实现 reset Review 的局部业务处理逻辑，支持 reviewStore.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/reviewStore.ts:feedReviewEvent",
+      "type": "function",
+      "name": "feedReviewEvent",
+      "filePath": "frontend/src/lib/reviewStore.ts",
+      "lineRange": [
+        185,
+        220
+      ],
+      "summary": "实现 feed Review Event 的局部业务处理逻辑，支持 reviewStore.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/screener-columns.ts",
+      "type": "file",
+      "name": "screener-columns.ts",
+      "filePath": "frontend/src/lib/screener-columns.ts",
+      "summary": "“screener columns”前端模块，服务于股票面板的交互与数据展示。主要封装 saveScreenerColumnConfig、loadScreenerColumnConfig 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/screener-columns.ts:saveScreenerColumnConfig",
+      "type": "function",
+      "name": "saveScreenerColumnConfig",
+      "filePath": "frontend/src/lib/screener-columns.ts",
+      "lineRange": [
+        106,
+        115
+      ],
+      "summary": "实现 save Screener Column Config 的局部业务处理逻辑，支持 screener-columns.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/screener-columns.ts:loadScreenerColumnConfig",
+      "type": "function",
+      "name": "loadScreenerColumnConfig",
+      "filePath": "frontend/src/lib/screener-columns.ts",
+      "lineRange": [
+        117,
+        134
+      ],
+      "summary": "实现 load Screener Column Config 的局部业务处理逻辑，支持 screener-columns.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/signals.ts",
+      "type": "file",
+      "name": "signals.ts",
+      "filePath": "frontend/src/lib/signals.ts",
+      "summary": "“signals”前端模块，服务于股票面板的交互与数据展示。主要封装 cnSignal 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/signals.ts:cnSignal",
+      "type": "function",
+      "name": "cnSignal",
+      "filePath": "frontend/src/lib/signals.ts",
+      "lineRange": [
+        204,
+        207
+      ],
+      "summary": "实现 cn Signal 的局部业务处理逻辑，支持 signals.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/stock-external-link.ts",
+      "type": "file",
+      "name": "stock-external-link.ts",
+      "filePath": "frontend/src/lib/stock-external-link.ts",
+      "summary": "“stock external link”前端模块，服务于股票面板的交互与数据展示。主要封装 loadStockExternalTemplate、saveStockExternalTemplate、buildStockExternalUrl 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "simple",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/stock-external-link.ts:loadStockExternalTemplate",
+      "type": "function",
+      "name": "loadStockExternalTemplate",
+      "filePath": "frontend/src/lib/stock-external-link.ts",
+      "lineRange": [
+        16,
+        18
+      ],
+      "summary": "实现 load Stock External Template 的局部业务处理逻辑，支持 stock-external-link.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/stock-external-link.ts:saveStockExternalTemplate",
+      "type": "function",
+      "name": "saveStockExternalTemplate",
+      "filePath": "frontend/src/lib/stock-external-link.ts",
+      "lineRange": [
+        20,
+        22
+      ],
+      "summary": "实现 save Stock External Template 的局部业务处理逻辑，支持 stock-external-link.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/stock-external-link.ts:buildStockExternalUrl",
+      "type": "function",
+      "name": "buildStockExternalUrl",
+      "filePath": "frontend/src/lib/stock-external-link.ts",
+      "lineRange": [
+        24,
+        36
+      ],
+      "summary": "实现 build Stock External Url 的局部业务处理逻辑，支持 stock-external-link.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "function:frontend/src/lib/miningTask.ts:eventPayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "function:frontend/src/lib/miningTask.ts:refreshTerminalRun",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "function:frontend/src/lib/miningTask.ts:startStatusPolling",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "function:frontend/src/lib/miningTask.ts:connect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "function:frontend/src/lib/miningTask.ts:startMining",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "function:frontend/src/lib/miningTask.ts:startMining",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "function:frontend/src/lib/miningTask.ts:cancelMining",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "function:frontend/src/lib/miningTask.ts:cancelMining",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "function:frontend/src/lib/miningTask.ts:attachMiningRun",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "function:frontend/src/lib/miningTask.ts:attachMiningRun",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "function:frontend/src/lib/miningTask.ts:tryReconnectMining",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "function:frontend/src/lib/miningTask.ts:tryReconnectMining",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "function:frontend/src/lib/miningTask.ts:clearMiningTask",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "function:frontend/src/lib/miningTask.ts:clearMiningTask",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "function:frontend/src/lib/miningTask.ts:useMiningTask",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "function:frontend/src/lib/miningTask.ts:useMiningTask",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/miningTask.ts",
+      "target": "file:frontend/src/lib/api.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/minuteBatchIncremental.ts",
+      "target": "function:frontend/src/lib/minuteBatchIncremental.ts:lastBarTs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/minuteBatchIncremental.ts",
+      "target": "function:frontend/src/lib/minuteBatchIncremental.ts:mergeInto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/minuteBatchIncremental.ts",
+      "target": "function:frontend/src/lib/minuteBatchIncremental.ts:fetchMinuteBatchIncremental",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/minuteBatchIncremental.ts",
+      "target": "function:frontend/src/lib/minuteBatchIncremental.ts:fetchMinuteBatchIncremental",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/minuteBatchIncremental.ts",
+      "target": "file:frontend/src/lib/api.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/monitorBadge.ts",
+      "target": "function:frontend/src/lib/monitorBadge.ts:setCurrentTotal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/monitorBadge.ts",
+      "target": "function:frontend/src/lib/monitorBadge.ts:setCurrentTotal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/monitorBadge.ts",
+      "target": "function:frontend/src/lib/monitorBadge.ts:markSeen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/monitorBadge.ts",
+      "target": "function:frontend/src/lib/monitorBadge.ts:markSeen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/monitorBadge.ts",
+      "target": "function:frontend/src/lib/monitorBadge.ts:leaveMonitorPage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/monitorBadge.ts",
+      "target": "function:frontend/src/lib/monitorBadge.ts:leaveMonitorPage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/monitorBadge.ts",
+      "target": "function:frontend/src/lib/monitorBadge.ts:resetBadge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/monitorBadge.ts",
+      "target": "function:frontend/src/lib/monitorBadge.ts:resetBadge",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/monitorBadge.ts",
+      "target": "function:frontend/src/lib/monitorBadge.ts:useUnreadAlerts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/monitorBadge.ts",
+      "target": "function:frontend/src/lib/monitorBadge.ts:useUnreadAlerts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/notificationSound.ts",
+      "target": "function:frontend/src/lib/notificationSound.ts:getCtx",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/notificationSound.ts",
+      "target": "function:frontend/src/lib/notificationSound.ts:playTone",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/notificationSound.ts",
+      "target": "function:frontend/src/lib/notificationSound.ts:playNotificationSound",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/notificationSound.ts",
+      "target": "function:frontend/src/lib/notificationSound.ts:playNotificationSound",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/notificationSound.ts",
+      "target": "function:frontend/src/lib/notificationSound.ts:previewSound",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/notificationSound.ts",
+      "target": "function:frontend/src/lib/notificationSound.ts:previewSound",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/optimizerTask.ts",
+      "target": "function:frontend/src/lib/optimizerTask.ts:connectSSE",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/optimizerTask.ts",
+      "target": "function:frontend/src/lib/optimizerTask.ts:startOptimize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/optimizerTask.ts",
+      "target": "function:frontend/src/lib/optimizerTask.ts:startOptimize",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/optimizerTask.ts",
+      "target": "function:frontend/src/lib/optimizerTask.ts:stopOptimize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/optimizerTask.ts",
+      "target": "function:frontend/src/lib/optimizerTask.ts:stopOptimize",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/optimizerTask.ts",
+      "target": "function:frontend/src/lib/optimizerTask.ts:clearOptimize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/optimizerTask.ts",
+      "target": "function:frontend/src/lib/optimizerTask.ts:clearOptimize",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/optimizerTask.ts",
+      "target": "function:frontend/src/lib/optimizerTask.ts:tryReconnectOptimize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/optimizerTask.ts",
+      "target": "function:frontend/src/lib/optimizerTask.ts:tryReconnectOptimize",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/optimizerTask.ts",
+      "target": "function:frontend/src/lib/optimizerTask.ts:useOptimizerTask",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/optimizerTask.ts",
+      "target": "function:frontend/src/lib/optimizerTask.ts:useOptimizerTask",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/price-alerts.ts",
+      "target": "function:frontend/src/lib/price-alerts.ts:parsePointPriceAlert",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/price-alerts.ts",
+      "target": "function:frontend/src/lib/price-alerts.ts:parsePointPriceAlert",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/price-alerts.ts",
+      "target": "function:frontend/src/lib/price-alerts.ts:inferPriceAlertDirection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/price-alerts.ts",
+      "target": "function:frontend/src/lib/price-alerts.ts:inferPriceAlertDirection",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/price-alerts.ts",
+      "target": "function:frontend/src/lib/price-alerts.ts:buildPriceAlertMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/price-alerts.ts",
+      "target": "function:frontend/src/lib/price-alerts.ts:buildPriceAlertMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/price-alerts.ts",
+      "target": "function:frontend/src/lib/price-alerts.ts:buildMonitorPriceLines",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/price-alerts.ts",
+      "target": "function:frontend/src/lib/price-alerts.ts:buildMonitorPriceLines",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/price-alerts.ts",
+      "target": "file:frontend/src/lib/api.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:getReviewState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:getReviewState",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:subscribeReview",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:subscribeReview",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:getReviewMeta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:getReviewMeta",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:isReviewGenerating",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:isReviewGenerating",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:startReviewGeneration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:startReviewGeneration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:abortReviewGeneration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:abortReviewGeneration",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:setViewingReport",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:setViewingReport",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:resetReview",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:resetReview",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:feedReviewEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "function:frontend/src/lib/reviewStore.ts:feedReviewEvent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/reviewStore.ts",
+      "target": "file:frontend/src/lib/api.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/screener-columns.ts",
+      "target": "function:frontend/src/lib/screener-columns.ts:saveScreenerColumnConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/screener-columns.ts",
+      "target": "function:frontend/src/lib/screener-columns.ts:saveScreenerColumnConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/screener-columns.ts",
+      "target": "function:frontend/src/lib/screener-columns.ts:loadScreenerColumnConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/screener-columns.ts",
+      "target": "function:frontend/src/lib/screener-columns.ts:loadScreenerColumnConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/screener-columns.ts",
+      "target": "file:frontend/src/lib/list-columns.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/screener-columns.ts",
+      "target": "file:frontend/src/lib/storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/signals.ts",
+      "target": "function:frontend/src/lib/signals.ts:cnSignal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/signals.ts",
+      "target": "function:frontend/src/lib/signals.ts:cnSignal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/stock-external-link.ts",
+      "target": "function:frontend/src/lib/stock-external-link.ts:loadStockExternalTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/stock-external-link.ts",
+      "target": "function:frontend/src/lib/stock-external-link.ts:loadStockExternalTemplate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/stock-external-link.ts",
+      "target": "function:frontend/src/lib/stock-external-link.ts:saveStockExternalTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/stock-external-link.ts",
+      "target": "function:frontend/src/lib/stock-external-link.ts:saveStockExternalTemplate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/stock-external-link.ts",
+      "target": "function:frontend/src/lib/stock-external-link.ts:buildStockExternalUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/stock-external-link.ts",
+      "target": "function:frontend/src/lib/stock-external-link.ts:buildStockExternalUrl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/stock-external-link.ts",
+      "target": "file:frontend/src/lib/storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

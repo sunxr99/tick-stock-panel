@@ -1,0 +1,1218 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 15,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 15,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 15
+    }
+  },
+  "results": [
+    {
+      "path": "docs/chanlun-phase1.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 211,
+      "nonEmptyLines": 155,
+      "sections": [
+        {
+          "heading": "阶段 1 完成：czsc 缠论画图（后端路由 + 前端插槽 + iframe）",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. 交付了什么",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "2. 修改思路",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "2.1 扩展点选择（不改核心）",
+          "level": 3,
+          "line": 20
+        },
+        {
+          "heading": "2.2 数据链路与口径",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "2.3 关键设计决策",
+          "level": 3,
+          "line": 46
+        },
+        {
+          "heading": "2.4 一处核心类型 bug 的临时修复（⚠️ 待评审，见 §7）",
+          "level": 3,
+          "line": 54
+        },
+        {
+          "heading": "3. 修改文件清单",
+          "level": 2,
+          "line": 75
+        },
+        {
+          "heading": "4. 验证结果（实际执行）",
+          "level": 2,
+          "line": 89
+        },
+        {
+          "heading": "5. 验收方法（需要你在本机操作）",
+          "level": 2,
+          "line": 103
+        },
+        {
+          "heading": "6. 遗留风险与后续",
+          "level": 2,
+          "line": 115
+        },
+        {
+          "heading": "7. 插槽类型 bug 详细说明（待评审）",
+          "level": 2,
+          "line": 126
+        },
+        {
+          "heading": "7.1 原始定义",
+          "level": 3,
+          "line": 128
+        },
+        {
+          "heading": "7.2 根因",
+          "level": 3,
+          "line": 151
+        },
+        {
+          "heading": "7.3 为什么从未暴露",
+          "level": 3,
+          "line": 170
+        },
+        {
+          "heading": "7.4 本次触发的报错链",
+          "level": 3,
+          "line": 175
+        },
+        {
+          "heading": "7.5 当前临时修复",
+          "level": 3,
+          "line": 184
+        },
+        {
+          "heading": "7.6 待评审事项（留待后续决定）",
+          "level": 3,
+          "line": 204
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    },
+    {
+      "path": "docs/chanlun-phase2.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 130,
+      "nonEmptyLines": 93,
+      "sections": [
+        {
+          "heading": "阶段 2 完成：czsc 缠论 ECharts 原生叠加 + 买卖点标注",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. 交付了什么",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "2. 修改思路",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "2.1 后端：结构化接口 `/api/chan/analyze`",
+          "level": 3,
+          "line": 25
+        },
+        {
+          "heading": "2.2 买卖点：用 czsc 内置信号函数（不是自己写背驰算法）",
+          "level": 3,
+          "line": 47
+        },
+        {
+          "heading": "2.3 买卖点历史序列：滚动 + 边沿检测",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "2.4 前端：ECharts 原生渲染",
+          "level": 3,
+          "line": 73
+        },
+        {
+          "heading": "3. 修改文件清单",
+          "level": 2,
+          "line": 86
+        },
+        {
+          "heading": "4. 验证结果（实际执行）",
+          "level": 2,
+          "line": 98
+        },
+        {
+          "heading": "5. 验收方法",
+          "level": 2,
+          "line": 112
+        },
+        {
+          "heading": "6. 遗留风险与后续",
+          "level": 2,
+          "line": 123
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "docs/configuration.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 131,
+      "nonEmptyLines": 87,
+      "sections": [
+        {
+          "heading": "配置详解",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "数据源:TickFlow",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "实时行情按档位",
+          "level": 3,
+          "line": 20
+        },
+        {
+          "heading": "全量分钟 (full_minute)",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "AI(可选)",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "服务",
+          "level": 2,
+          "line": 76
+        },
+        {
+          "heading": "数据",
+          "level": 2,
+          "line": 90
+        },
+        {
+          "heading": "访问密码(公网部署)",
+          "level": 2,
+          "line": 102
+        },
+        {
+          "heading": "后端依赖 Extras(可选)",
+          "level": 2,
+          "line": 115
+        },
+        {
+          "heading": "配置优先级",
+          "level": 2,
+          "line": 125
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "docs/custom-data-source.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 343,
+      "nonEmptyLines": 266,
+      "sections": [
+        {
+          "heading": "自定义数据源接入",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "支持范围",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "配置位置",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "最小 YAML",
+          "level": 2,
+          "line": 40
+        },
+        {
+          "heading": "字段契约",
+          "level": 2,
+          "line": 101
+        },
+        {
+          "heading": "daily 必填",
+          "level": 3,
+          "line": 103
+        },
+        {
+          "heading": "adj_factor 必填",
+          "level": 3,
+          "line": 113
+        },
+        {
+          "heading": "realtime 必填",
+          "level": 3,
+          "line": 121
+        },
+        {
+          "heading": "请求约定",
+          "level": 2,
+          "line": 151
+        },
+        {
+          "heading": "请求超时",
+          "level": 3,
+          "line": 175
+        },
+        {
+          "heading": "鉴权",
+          "level": 2,
+          "line": 185
+        },
+        {
+          "heading": "联调流程",
+          "level": 2,
+          "line": 211
+        },
+        {
+          "heading": "常见错误",
+          "level": 2,
+          "line": 239
+        },
+        {
+          "heading": "用 AI 生成映射配置",
+          "level": 2,
+          "line": 249
+        },
+        {
+          "heading": "操作步骤",
+          "level": 3,
+          "line": 253
+        },
+        {
+          "heading": "Prompt 模板",
+          "level": 3,
+          "line": 261
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 16
+      }
+    },
+    {
+      "path": "docs/deploy-password.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 100,
+      "nonEmptyLines": 65,
+      "sections": [
+        {
+          "heading": "公网部署:如何设置访问密码",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "方式一:环境变量预置密码(最简单,推荐)",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "注意事项",
+          "level": 3,
+          "line": 29
+        },
+        {
+          "heading": "重置密码(忘密码时)",
+          "level": 3,
+          "line": 37
+        },
+        {
+          "heading": "方式二:SSH 端口转发",
+          "level": 2,
+          "line": 48
+        },
+        {
+          "heading": "端口说明",
+          "level": 3,
+          "line": 72
+        },
+        {
+          "heading": "原理说明",
+          "level": 2,
+          "line": 82
+        },
+        {
+          "heading": "两种方式怎么选",
+          "level": 2,
+          "line": 91
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "docs/deployment.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 187,
+      "nonEmptyLines": 126,
+      "sections": [
+        {
+          "heading": "部署指南",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "方式 A:Dev 模式(二次开发推荐)",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "手动分别启动(不想用 dev.sh)",
+          "level": 3,
+          "line": 25
+        },
+        {
+          "heading": "方式 B:Docker(部署最省心)",
+          "level": 2,
+          "line": 40
+        },
+        {
+          "heading": "老 CPU 兼容(avx2/fma 缺失)",
+          "level": 2,
+          "line": 72
+        },
+        {
+          "heading": "回测依赖说明",
+          "level": 3,
+          "line": 86
+        },
+        {
+          "heading": "更新代码(已部署用户必读)",
+          "level": 2,
+          "line": 92
+        },
+        {
+          "heading": "访问密码设置(公网部署必读)",
+          "level": 2,
+          "line": 111
+        },
+        {
+          "heading": "方式一:环境变量预置密码(最简单,推荐)",
+          "level": 3,
+          "line": 121
+        },
+        {
+          "heading": "方式二:SSH 端口转发",
+          "level": 3,
+          "line": 151
+        },
+        {
+          "heading": "两种方式怎么选",
+          "level": 3,
+          "line": 171
+        },
+        {
+          "heading": "原理说明",
+          "level": 3,
+          "line": 182
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "docs/features.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 159,
+      "nonEmptyLines": 96,
+      "sections": [
+        {
+          "heading": "功能手册",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "🔍 选股引擎(Screener)",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "📊 指标流水线(Indicators)",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "🧪 回测引擎(Backtest)",
+          "level": 2,
+          "line": 41
+        },
+        {
+          "heading": "📡 监控中心(Monitor)",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "飞书 Webhook 推送",
+          "level": 3,
+          "line": 89
+        },
+        {
+          "heading": "🚨 异动监控(Abnormal Moves)",
+          "level": 2,
+          "line": 95
+        },
+        {
+          "heading": "📈 个股分析(Beta)",
+          "level": 2,
+          "line": 109
+        },
+        {
+          "heading": "🏆 连板梯队 & 概念分析",
+          "level": 2,
+          "line": 119
+        },
+        {
+          "heading": "🧰 数据与扩展",
+          "level": 2,
+          "line": 127
+        },
+        {
+          "heading": "数据源插件化",
+          "level": 3,
+          "line": 129
+        },
+        {
+          "heading": "全量分钟(盘中增量落盘)",
+          "level": 3,
+          "line": 135
+        },
+        {
+          "heading": "🔌 第三方数据接入(重点)",
+          "level": 3,
+          "line": 141
+        },
+        {
+          "heading": "盘后定时管道",
+          "level": 3,
+          "line": 153
+        },
+        {
+          "heading": "令牌桶限流",
+          "level": 3,
+          "line": 157
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 15
+      }
+    },
+    {
+      "path": "docs/market-phase.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 95,
+      "nonEmptyLines": 62,
+      "sections": [
+        {
+          "heading": "市场阶段（情绪周期）与主线识别",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "功能边界",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "与 5 档 state 的关系",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "每日梯队指标",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "阶段规则",
+          "level": 2,
+          "line": 36
+        },
+        {
+          "heading": "主线识别",
+          "level": 2,
+          "line": 59
+        },
+        {
+          "heading": "宽基/风格标签过滤",
+          "level": 3,
+          "line": 68
+        },
+        {
+          "heading": "快照回填偏差",
+          "level": 3,
+          "line": 78
+        },
+        {
+          "heading": "API 与运行",
+          "level": 2,
+          "line": 82
+        },
+        {
+          "heading": "测试",
+          "level": 2,
+          "line": 92
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "docs/mining.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 138,
+      "nonEmptyLines": 84,
+      "sections": [
+        {
+          "heading": "因子与策略挖掘",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "功能边界",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "时间与收益口径",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "全局交易日标签",
+          "level": 3,
+          "line": 26
+        },
+        {
+          "heading": "T-1 市场环境",
+          "level": 3,
+          "line": 32
+        },
+        {
+          "heading": "成交和成本",
+          "level": 3,
+          "line": 46
+        },
+        {
+          "heading": "防止未来数据",
+          "level": 2,
+          "line": 50
+        },
+        {
+          "heading": "候选证据口径",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "晋级与发布门槛",
+          "level": 2,
+          "line": 72
+        },
+        {
+          "heading": "置信度",
+          "level": 2,
+          "line": 85
+        },
+        {
+          "heading": "任务与资源隔离",
+          "level": 2,
+          "line": 97
+        },
+        {
+          "heading": "自动运行",
+          "level": 2,
+          "line": 107
+        },
+        {
+          "heading": "保存与发布",
+          "level": 2,
+          "line": 115
+        },
+        {
+          "heading": "性能口径",
+          "level": 2,
+          "line": 130
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "docs/plugin-development.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 299,
+      "nonEmptyLines": 230,
+      "sections": [
+        {
+          "heading": "数据源插件开发指南",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "快速上手",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "plugin.yaml 字段",
+          "level": 3,
+          "line": 23
+        },
+        {
+          "heading": "api_key_env(界面配置 API Key)",
+          "level": 4,
+          "line": 42
+        },
+        {
+          "heading": "runtime 字段说明",
+          "level": 3,
+          "line": 55
+        },
+        {
+          "heading": "check 函数",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "内部数据契约(所有数据集必须遵守)",
+          "level": 2,
+          "line": 85
+        },
+        {
+          "heading": "代码格式",
+          "level": 3,
+          "line": 91
+        },
+        {
+          "heading": "单位制",
+          "level": 3,
+          "line": 96
+        },
+        {
+          "heading": "缺字段与空数据",
+          "level": 3,
+          "line": 106
+        },
+        {
+          "heading": "能力声明的粒度(重要)",
+          "level": 2,
+          "line": 113
+        },
+        {
+          "heading": "Provider 接口契约",
+          "level": 2,
+          "line": 124
+        },
+        {
+          "heading": "get_minute 的 datetime 时区契约",
+          "level": 3,
+          "line": 180
+        },
+        {
+          "heading": "异常语义",
+          "level": 3,
+          "line": 215
+        },
+        {
+          "heading": "get_realtime 行字段",
+          "level": 3,
+          "line": 224
+        },
+        {
+          "heading": "config.datasets 的作用",
+          "level": 3,
+          "line": 240
+        },
+        {
+          "heading": "限频与性能",
+          "level": 2,
+          "line": 251
+        },
+        {
+          "heading": "测试要求",
+          "level": 2,
+          "line": 260
+        },
+        {
+          "heading": "现有插件参考",
+          "level": 2,
+          "line": 278
+        },
+        {
+          "heading": "路由机制(无需关心, 仅参考)",
+          "level": 2,
+          "line": 290
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 20
+      }
+    },
+    {
+      "path": "docs/secondary-dev-plan-chanlun-wyckoff.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 195,
+      "nonEmptyLines": 147,
+      "sections": [
+        {
+          "heading": "二次开发工作计划：czsc 缠论画图 + 威科夫选股",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. 结论总览",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "2. 外部工具调研结论",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "2.1 czsc（waditu/czsc，缠中说禅技术分析工具）",
+          "level": 3,
+          "line": 27
+        },
+        {
+          "heading": "2.2 WyckoffTradingAgent（YoungCan-Wang）",
+          "level": 3,
+          "line": 40
+        },
+        {
+          "heading": "3. 集成架构设计（对齐 TSP 扩展点）",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "3.1 czsc 缠论画图（L2）",
+          "level": 3,
+          "line": 54
+        },
+        {
+          "heading": "3.2 威科夫选股（L1，移植源码）",
+          "level": 3,
+          "line": 81
+        },
+        {
+          "heading": "4. 分阶段工作计划",
+          "level": 2,
+          "line": 101
+        },
+        {
+          "heading": "阶段 0：准备与验收基线（0.5 天）",
+          "level": 3,
+          "line": 103
+        },
+        {
+          "heading": "阶段 1：czsc 后端集成 + iframe 画图（L2，2-3 天）",
+          "level": 3,
+          "line": 109
+        },
+        {
+          "heading": "阶段 2：czsc ECharts 原生叠加（可选，L3 边界，2-3 天）",
+          "level": 3,
+          "line": 121
+        },
+        {
+          "heading": "阶段 3：威科夫选股 — 源码移植（L1，3-5 天）",
+          "level": 3,
+          "line": 127
+        },
+        {
+          "heading": "阶段 4：（可选）缠论买点选股（L1/L2，3-5 天）",
+          "level": 3,
+          "line": 136
+        },
+        {
+          "heading": "阶段 5：加固与文档（1-2 天）",
+          "level": 3,
+          "line": 140
+        },
+        {
+          "heading": "5. 风险与注意事项",
+          "level": 2,
+          "line": 149
+        },
+        {
+          "heading": "6. 验证矩阵（对照 CONTRIBUTING §9）",
+          "level": 2,
+          "line": 160
+        },
+        {
+          "heading": "7. 完成检查表",
+          "level": 2,
+          "line": 187
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    },
+    {
+      "path": "docs/secondary-development.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 405,
+      "nonEmptyLines": 297,
+      "sections": [
+        {
+          "heading": "代码二次开发与 AI 扩展指南",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. 文档状态",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "2. 二次开发分级",
+          "level": 2,
+          "line": 34
+        },
+        {
+          "heading": "3. 前端扩展规范",
+          "level": 2,
+          "line": 51
+        },
+        {
+          "heading": "3.1 何时使用插槽",
+          "level": 3,
+          "line": 53
+        },
+        {
+          "heading": "3.2 当前插槽契约",
+          "level": 3,
+          "line": 65
+        },
+        {
+          "heading": "3.3 当前路由与导航契约",
+          "level": 3,
+          "line": 130
+        },
+        {
+          "heading": "3.4 前端禁止事项",
+          "level": 3,
+          "line": 157
+        },
+        {
+          "heading": "4. 后端扩展规范",
+          "level": 2,
+          "line": 165
+        },
+        {
+          "heading": "4.1 使用小粒度继承",
+          "level": 3,
+          "line": 167
+        },
+        {
+          "heading": "4.2 当前基类与注册契约",
+          "level": 3,
+          "line": 197
+        },
+        {
+          "heading": "4.3 后端契约要求",
+          "level": 3,
+          "line": 231
+        },
+        {
+          "heading": "4.4 继承与组合的边界",
+          "level": 3,
+          "line": 241
+        },
+        {
+          "heading": "5. 直接修改源码",
+          "level": 2,
+          "line": 252
+        },
+        {
+          "heading": "5.1 修改要求",
+          "level": 3,
+          "line": 256
+        },
+        {
+          "heading": "5.2 高冲突热点",
+          "level": 3,
+          "line": 265
+        },
+        {
+          "heading": "6. AI 开发工作流",
+          "level": 2,
+          "line": 281
+        },
+        {
+          "heading": "6.1 可直接使用的任务模板",
+          "level": 3,
+          "line": 294
+        },
+        {
+          "heading": "6.2 让 AI 设计扩展点的模板",
+          "level": 3,
+          "line": 321
+        },
+        {
+          "heading": "7. 验证矩阵",
+          "level": 2,
+          "line": 337
+        },
+        {
+          "heading": "8. 版本与升级约定",
+          "level": 2,
+          "line": 366
+        },
+        {
+          "heading": "9. 完成检查表",
+          "level": 2,
+          "line": 383
+        },
+        {
+          "heading": "10. 后续扩展原则",
+          "level": 2,
+          "line": 395
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 23
+      }
+    },
+    {
+      "path": "docs/strategy.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 86,
+      "nonEmptyLines": 55,
+      "sections": [
+        {
+          "heading": "策略指南",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "内置策略",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "扩展策略的三种方式",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "🎛️ 方式一:自定义信号(不写代码)",
+          "level": 3,
+          "line": 27
+        },
+        {
+          "heading": "🤖 方式二:AI 生成",
+          "level": 3,
+          "line": 36
+        },
+        {
+          "heading": "📝 方式三:自定义编写 / 代码迁移",
+          "level": 3,
+          "line": 60
+        },
+        {
+          "heading": "策略文件结构(简述)",
+          "level": 2,
+          "line": 68
+        },
+        {
+          "heading": "新增内置策略(贡献者)",
+          "level": 2,
+          "line": 84
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "docs/tickflow-pro-phase1-probe.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 37,
+      "nonEmptyLines": 25,
+      "sections": [
+        {
+          "heading": "TickFlow Pro Phase 1 probe",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Dry-run (safe anytime)",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Live probe (off-peak)",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Out of scope",
+          "level": 2,
+          "line": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "docs/tickflow-pro-shared-rate-limit.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 28,
+      "nonEmptyLines": 24,
+      "sections": [
+        {
+          "heading": "TickFlow Pro 限频安全预算（进程内 + 跨产品错峰）",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "决策（经 ChatGPT/Codex 评析修订）",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "预算表示例（Pro，单进程 80%）",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "错峰（Stage A）",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "实现要点",
+          "level": 2,
+          "line": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    }
+  ]
+}

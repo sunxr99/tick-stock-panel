@@ -1,0 +1,3477 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/app/api/mining.py",
+      "type": "file",
+      "name": "mining.py",
+      "filePath": "backend/app/api/mining.py",
+      "summary": "提供 mining 的 FastAPI 路由层，负责请求校验、服务编排与响应投影。",
+      "tags": [
+        "api",
+        "route",
+        "backend",
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/api/mining.py:MiningStartRequest",
+      "type": "class",
+      "name": "MiningStartRequest",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        49,
+        111
+      ],
+      "summary": "定义 MiningStartRequest 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/api/mining.py:MiningSchedulePatch",
+      "type": "class",
+      "name": "MiningSchedulePatch",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        114,
+        119
+      ],
+      "summary": "定义 MiningSchedulePatch 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:get_availability",
+      "type": "function",
+      "name": "get_availability",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        123,
+        141
+      ],
+      "summary": "实现 get_availability，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:list_runs",
+      "type": "function",
+      "name": "list_runs",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        145,
+        163
+      ],
+      "summary": "实现 list_runs，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:start_run",
+      "type": "function",
+      "name": "start_run",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        167,
+        220
+      ],
+      "summary": "实现 start_run，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:get_run",
+      "type": "function",
+      "name": "get_run",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        224,
+        226
+      ],
+      "summary": "实现 get_run，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:cancel_run",
+      "type": "function",
+      "name": "cancel_run",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        230,
+        237
+      ],
+      "summary": "实现 cancel_run，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:get_result",
+      "type": "function",
+      "name": "get_result",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        241,
+        267
+      ],
+      "summary": "实现 get_result，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:stream_events",
+      "type": "function",
+      "name": "stream_events",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        271,
+        333
+      ],
+      "summary": "实现 stream_events，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:promote_candidate",
+      "type": "function",
+      "name": "promote_candidate",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        337,
+        346
+      ],
+      "summary": "实现 promote_candidate，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:publish_candidate",
+      "type": "function",
+      "name": "publish_candidate",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        350,
+        361
+      ],
+      "summary": "实现 publish_candidate，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:get_config",
+      "type": "function",
+      "name": "get_config",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        365,
+        366
+      ],
+      "summary": "实现 get_config，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:update_config",
+      "type": "function",
+      "name": "update_config",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        370,
+        383
+      ],
+      "summary": "实现 update_config，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_manager",
+      "type": "function",
+      "name": "_manager",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        386,
+        390
+      ],
+      "summary": "实现 _manager，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_candidate_service",
+      "type": "function",
+      "name": "_candidate_service",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        393,
+        415
+      ],
+      "summary": "实现 _candidate_service，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_required_manifest",
+      "type": "function",
+      "name": "_required_manifest",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        418,
+        427
+      ],
+      "summary": "实现 _required_manifest，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_project_run",
+      "type": "function",
+      "name": "_project_run",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        430,
+        463
+      ],
+      "summary": "实现 _project_run，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_request_summary",
+      "type": "function",
+      "name": "_request_summary",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        466,
+        481
+      ],
+      "summary": "实现 _request_summary，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_summary_projection",
+      "type": "function",
+      "name": "_summary_projection",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        484,
+        496
+      ],
+      "summary": "实现 _summary_projection，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_read_registered_artifact",
+      "type": "function",
+      "name": "_read_registered_artifact",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        499,
+        518
+      ],
+      "summary": "实现 _read_registered_artifact，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_project_result",
+      "type": "function",
+      "name": "_project_result",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        521,
+        561
+      ],
+      "summary": "实现 _project_result，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_project_correlation",
+      "type": "function",
+      "name": "_project_correlation",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        564,
+        577
+      ],
+      "summary": "实现 _project_correlation，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_project_fold",
+      "type": "function",
+      "name": "_project_fold",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        580,
+        586
+      ],
+      "summary": "实现 _project_fold，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_public_fold",
+      "type": "function",
+      "name": "_public_fold",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        589,
+        597
+      ],
+      "summary": "实现 _public_fold，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_project_candidates",
+      "type": "function",
+      "name": "_project_candidates",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        600,
+        639
+      ],
+      "summary": "实现 _project_candidates，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_project_regimes",
+      "type": "function",
+      "name": "_project_regimes",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        642,
+        664
+      ],
+      "summary": "实现 _project_regimes，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_validate_selected_strategies",
+      "type": "function",
+      "name": "_validate_selected_strategies",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        667,
+        681
+      ],
+      "summary": "实现 _validate_selected_strategies，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_event_cursor",
+      "type": "function",
+      "name": "_event_cursor",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        684,
+        693
+      ],
+      "summary": "实现 _event_cursor，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_json_string_list",
+      "type": "function",
+      "name": "_json_string_list",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        696,
+        702
+      ],
+      "summary": "实现 _json_string_list，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_clean_record",
+      "type": "function",
+      "name": "_clean_record",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        705,
+        709
+      ],
+      "summary": "实现 _clean_record，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_finite",
+      "type": "function",
+      "name": "_finite",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        712,
+        719
+      ],
+      "summary": "实现 _finite，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_optional_int",
+      "type": "function",
+      "name": "_optional_int",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        722,
+        724
+      ],
+      "summary": "实现 _optional_int，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_finite_mapping",
+      "type": "function",
+      "name": "_finite_mapping",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        727,
+        734
+      ],
+      "summary": "实现 _finite_mapping，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_mean",
+      "type": "function",
+      "name": "_mean",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        737,
+        739
+      ],
+      "summary": "实现 _mean，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/mining.py:_minimum",
+      "type": "function",
+      "name": "_minimum",
+      "filePath": "backend/app/api/mining.py",
+      "lineRange": [
+        742,
+        744
+      ],
+      "summary": "实现 _minimum，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/api/regime.py",
+      "type": "file",
+      "name": "regime.py",
+      "filePath": "backend/app/api/regime.py",
+      "summary": "提供 regime 的 FastAPI 路由层，负责请求校验、服务编排与响应投影。",
+      "tags": [
+        "api",
+        "route",
+        "backend",
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/api/regime.py:invalidate_regime_cache",
+      "type": "function",
+      "name": "invalidate_regime_cache",
+      "filePath": "backend/app/api/regime.py",
+      "lineRange": [
+        25,
+        30
+      ],
+      "summary": "实现 invalidate_regime_cache，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/regime.py:_data_dir",
+      "type": "function",
+      "name": "_data_dir",
+      "filePath": "backend/app/api/regime.py",
+      "lineRange": [
+        33,
+        34
+      ],
+      "summary": "实现 _data_dir，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/regime.py:_df_to_records",
+      "type": "function",
+      "name": "_df_to_records",
+      "filePath": "backend/app/api/regime.py",
+      "lineRange": [
+        37,
+        46
+      ],
+      "summary": "实现 _df_to_records，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/regime.py:regime_history",
+      "type": "function",
+      "name": "regime_history",
+      "filePath": "backend/app/api/regime.py",
+      "lineRange": [
+        50,
+        86
+      ],
+      "summary": "实现 regime_history，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/regime.py:pl_col_date",
+      "type": "function",
+      "name": "pl_col_date",
+      "filePath": "backend/app/api/regime.py",
+      "lineRange": [
+        89,
+        94
+      ],
+      "summary": "实现 pl_col_date，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/regime.py:regime_latest",
+      "type": "function",
+      "name": "regime_latest",
+      "filePath": "backend/app/api/regime.py",
+      "lineRange": [
+        98,
+        105
+      ],
+      "summary": "实现 regime_latest，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/regime.py:regime_states",
+      "type": "function",
+      "name": "regime_states",
+      "filePath": "backend/app/api/regime.py",
+      "lineRange": [
+        109,
+        129
+      ],
+      "summary": "实现 regime_states，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/regime.py:regime_coverage",
+      "type": "function",
+      "name": "regime_coverage",
+      "filePath": "backend/app/api/regime.py",
+      "lineRange": [
+        133,
+        135
+      ],
+      "summary": "实现 regime_coverage，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/regime.py:regime_recompute",
+      "type": "function",
+      "name": "regime_recompute",
+      "filePath": "backend/app/api/regime.py",
+      "lineRange": [
+        139,
+        179
+      ],
+      "summary": "实现 regime_recompute，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/regime.py:regime_phases",
+      "type": "function",
+      "name": "regime_phases",
+      "filePath": "backend/app/api/regime.py",
+      "lineRange": [
+        183,
+        254
+      ],
+      "summary": "实现 regime_phases，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/regime.py:_segment_mainlines",
+      "type": "function",
+      "name": "_segment_mainlines",
+      "filePath": "backend/app/api/regime.py",
+      "lineRange": [
+        257,
+        286
+      ],
+      "summary": "实现 _segment_mainlines，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/regime.py:mainline_recompute",
+      "type": "function",
+      "name": "mainline_recompute",
+      "filePath": "backend/app/api/regime.py",
+      "lineRange": [
+        290,
+        311
+      ],
+      "summary": "实现 mainline_recompute，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/regime.py:regime_mainline",
+      "type": "function",
+      "name": "regime_mainline",
+      "filePath": "backend/app/api/regime.py",
+      "lineRange": [
+        315,
+        359
+      ],
+      "summary": "实现 regime_mainline，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/api/strategy.py",
+      "type": "file",
+      "name": "strategy.py",
+      "filePath": "backend/app/api/strategy.py",
+      "summary": "提供 strategy 的 FastAPI 路由层，负责请求校验、服务编排与响应投影。",
+      "tags": [
+        "api",
+        "route",
+        "backend",
+        "service"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/api/strategy.py:RunRequest",
+      "type": "class",
+      "name": "RunRequest",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        236,
+        242
+      ],
+      "summary": "定义 RunRequest 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/api/strategy.py:RunAllRequest",
+      "type": "class",
+      "name": "RunAllRequest",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        245,
+        248
+      ],
+      "summary": "定义 RunAllRequest 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/api/strategy.py:SaveConfigRequest",
+      "type": "class",
+      "name": "SaveConfigRequest",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        251,
+        253
+      ],
+      "summary": "定义 SaveConfigRequest 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/api/strategy.py:AIGenerateRequest",
+      "type": "class",
+      "name": "AIGenerateRequest",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        256,
+        257
+      ],
+      "summary": "定义 AIGenerateRequest 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/api/strategy.py:AISaveRequest",
+      "type": "class",
+      "name": "AISaveRequest",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        260,
+        264
+      ],
+      "summary": "定义 AISaveRequest 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/api/strategy.py:StrategyCodeValidateRequest",
+      "type": "class",
+      "name": "StrategyCodeValidateRequest",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        267,
+        271
+      ],
+      "summary": "定义 StrategyCodeValidateRequest 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/api/strategy.py:StrategyCodeSaveRequest",
+      "type": "class",
+      "name": "StrategyCodeSaveRequest",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        274,
+        280
+      ],
+      "summary": "定义 StrategyCodeSaveRequest 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/api/strategy.py:CompositeChildItem",
+      "type": "class",
+      "name": "CompositeChildItem",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        283,
+        285
+      ],
+      "summary": "定义 CompositeChildItem 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/api/strategy.py:StrategyCompositeSaveRequest",
+      "type": "class",
+      "name": "StrategyCompositeSaveRequest",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        288,
+        295
+      ],
+      "summary": "定义 StrategyCompositeSaveRequest 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/api/strategy.py:MonitorStartRequest",
+      "type": "class",
+      "name": "MonitorStartRequest",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        298,
+        299
+      ],
+      "summary": "定义 MonitorStartRequest 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/api/strategy.py:BuildRequest",
+      "type": "class",
+      "name": "BuildRequest",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        526,
+        538
+      ],
+      "summary": "定义 BuildRequest 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_get_engine",
+      "type": "function",
+      "name": "_get_engine",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        39,
+        43
+      ],
+      "summary": "实现 _get_engine，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_get_public_strategy",
+      "type": "function",
+      "name": "_get_public_strategy",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        46,
+        53
+      ],
+      "summary": "实现 _get_public_strategy，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_get_monitor",
+      "type": "function",
+      "name": "_get_monitor",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        56,
+        60
+      ],
+      "summary": "实现 _get_monitor，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_data_dir",
+      "type": "function",
+      "name": "_data_dir",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        63,
+        64
+      ],
+      "summary": "实现 _data_dir，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_invalidate_strategy_runtime",
+      "type": "function",
+      "name": "_invalidate_strategy_runtime",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        67,
+        73
+      ],
+      "summary": "实现 _invalidate_strategy_runtime，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_missing_custom_signals",
+      "type": "function",
+      "name": "_missing_custom_signals",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        76,
+        89
+      ],
+      "summary": "实现 _missing_custom_signals，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_cleanup_deleted_strategy",
+      "type": "function",
+      "name": "_cleanup_deleted_strategy",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        92,
+        140
+      ],
+      "summary": "实现 _cleanup_deleted_strategy，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_safe",
+      "type": "function",
+      "name": "_safe",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        143,
+        149
+      ],
+      "summary": "实现 _safe，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_child_meta",
+      "type": "function",
+      "name": "_child_meta",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        152,
+        160
+      ],
+      "summary": "实现 _child_meta，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_strategy_detail",
+      "type": "function",
+      "name": "_strategy_detail",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        163,
+        230
+      ],
+      "summary": "实现 _strategy_detail，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:list_strategies",
+      "type": "function",
+      "name": "list_strategies",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        306,
+        327
+      ],
+      "summary": "实现 list_strategies，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:get_strategy",
+      "type": "function",
+      "name": "get_strategy",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        331,
+        335
+      ],
+      "summary": "实现 get_strategy，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:run_strategy",
+      "type": "function",
+      "name": "run_strategy",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        342,
+        386
+      ],
+      "summary": "实现 run_strategy，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:run_all",
+      "type": "function",
+      "name": "run_all",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        390,
+        433
+      ],
+      "summary": "实现 run_all，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:save_config",
+      "type": "function",
+      "name": "save_config",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        440,
+        449
+      ],
+      "summary": "实现 save_config，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:patch_config",
+      "type": "function",
+      "name": "patch_config",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        453,
+        465
+      ],
+      "summary": "实现 patch_config，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_validate_scoring_config",
+      "type": "function",
+      "name": "_validate_scoring_config",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        468,
+        486
+      ],
+      "summary": "实现 _validate_scoring_config，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_strip_defaults",
+      "type": "function",
+      "name": "_strip_defaults",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        489,
+        514
+      ],
+      "summary": "实现 _strip_defaults，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:reset_config",
+      "type": "function",
+      "name": "reset_config",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        518,
+        521
+      ],
+      "summary": "实现 reset_config，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_py_string",
+      "type": "function",
+      "name": "_py_string",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        541,
+        542
+      ],
+      "summary": "实现 _py_string，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_find_meta_dict",
+      "type": "function",
+      "name": "_find_meta_dict",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        545,
+        549
+      ],
+      "summary": "实现 _find_meta_dict，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_set_meta_string_field",
+      "type": "function",
+      "name": "_set_meta_string_field",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        552,
+        589
+      ],
+      "summary": "实现 _set_meta_string_field，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_normalize_strategy_meta",
+      "type": "function",
+      "name": "_normalize_strategy_meta",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        592,
+        626
+      ],
+      "summary": "实现 _normalize_strategy_meta，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_normalize_build_result",
+      "type": "function",
+      "name": "_normalize_build_result",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        629,
+        642
+      ],
+      "summary": "实现 _normalize_build_result，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_validate_strategy_id",
+      "type": "function",
+      "name": "_validate_strategy_id",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        645,
+        649
+      ],
+      "summary": "实现 _validate_strategy_id，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_target_dir",
+      "type": "function",
+      "name": "_target_dir",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        652,
+        655
+      ],
+      "summary": "实现 _target_dir，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_prepare_strategy_code",
+      "type": "function",
+      "name": "_prepare_strategy_code",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        658,
+        679
+      ],
+      "summary": "实现 _prepare_strategy_code，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_restore_strategy_file",
+      "type": "function",
+      "name": "_restore_strategy_file",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        682,
+        686
+      ],
+      "summary": "实现 _restore_strategy_file，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_save_strategy_code",
+      "type": "function",
+      "name": "_save_strategy_code",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        689,
+        766
+      ],
+      "summary": "实现 _save_strategy_code，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:ai_status",
+      "type": "function",
+      "name": "ai_status",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        770,
+        783
+      ],
+      "summary": "实现 ai_status，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:get_strategy_source",
+      "type": "function",
+      "name": "get_strategy_source",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        787,
+        798
+      ],
+      "summary": "实现 get_strategy_source，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:ai_test",
+      "type": "function",
+      "name": "ai_test",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        802,
+        819
+      ],
+      "summary": "实现 ai_test，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_build_prompt",
+      "type": "function",
+      "name": "_build_prompt",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        822,
+        834
+      ],
+      "summary": "实现 _build_prompt，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:build_strategy",
+      "type": "function",
+      "name": "build_strategy",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        838,
+        856
+      ],
+      "summary": "实现 build_strategy，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:build_strategy_stream",
+      "type": "function",
+      "name": "build_strategy_stream",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        860,
+        887
+      ],
+      "summary": "实现 build_strategy_stream，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:ai_generate",
+      "type": "function",
+      "name": "ai_generate",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        892,
+        900
+      ],
+      "summary": "实现 ai_generate，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:validate_strategy_code",
+      "type": "function",
+      "name": "validate_strategy_code",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        904,
+        909
+      ],
+      "summary": "实现 validate_strategy_code，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:save_strategy_code",
+      "type": "function",
+      "name": "save_strategy_code",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        913,
+        917
+      ],
+      "summary": "实现 save_strategy_code，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_render_composite_code",
+      "type": "function",
+      "name": "_render_composite_code",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        920,
+        962
+      ],
+      "summary": "实现 _render_composite_code，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:_save_composite_strategy",
+      "type": "function",
+      "name": "_save_composite_strategy",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        965,
+        1036
+      ],
+      "summary": "实现 _save_composite_strategy，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:save_composite_strategy",
+      "type": "function",
+      "name": "save_composite_strategy",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        1040,
+        1044
+      ],
+      "summary": "实现 save_composite_strategy，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:ai_save",
+      "type": "function",
+      "name": "ai_save",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        1048,
+        1062
+      ],
+      "summary": "实现 ai_save，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:delete_strategy",
+      "type": "function",
+      "name": "delete_strategy",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        1066,
+        1114
+      ],
+      "summary": "实现 delete_strategy，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/strategy.py:reload_strategies",
+      "type": "function",
+      "name": "reload_strategies",
+      "filePath": "backend/app/api/strategy.py",
+      "lineRange": [
+        1126,
+        1133
+      ],
+      "summary": "实现 reload_strategies，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/backtest/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "backend/app/backtest/__init__.py",
+      "summary": "提供 __init__ 回测领域能力，处理历史市场数据、策略信号或绩效计算。",
+      "tags": [
+        "backtest",
+        "quantitative",
+        "market-data",
+        "service"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "file:backend/app/backtest/factor.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "file:backend/app/backtest/mining.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "file:backend/app/enriched_generation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "file:backend/app/services/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "file:backend/app/services/mining_jobs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "file:backend/app/services/mining_preflight.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "file:backend/app/services/mining_schedule.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "file:backend/app/services/preferences.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "class:backend/app/api/mining.py:MiningStartRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "class:backend/app/api/mining.py:MiningStartRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "class:backend/app/api/mining.py:MiningSchedulePatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "class:backend/app/api/mining.py:MiningSchedulePatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:get_availability",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:get_availability",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:list_runs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:list_runs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:start_run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:start_run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:get_run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:get_run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:cancel_run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:cancel_run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:get_result",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:get_result",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:stream_events",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:stream_events",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:promote_candidate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:promote_candidate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:publish_candidate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:publish_candidate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:get_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:get_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:update_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:update_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_manager",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_manager",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_candidate_service",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_candidate_service",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_required_manifest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_required_manifest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_project_run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_project_run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_request_summary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_request_summary",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_summary_projection",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_summary_projection",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_read_registered_artifact",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_read_registered_artifact",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_project_result",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_project_result",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_project_correlation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_project_correlation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_project_fold",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_project_fold",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_public_fold",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_public_fold",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_project_candidates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_project_candidates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_project_regimes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_project_regimes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_validate_selected_strategies",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_validate_selected_strategies",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_event_cursor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_event_cursor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_json_string_list",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_json_string_list",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_clean_record",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_clean_record",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_finite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_finite",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_optional_int",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_optional_int",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_finite_mapping",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_finite_mapping",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_mean",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_mean",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_minimum",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/mining.py",
+      "target": "function:backend/app/api/mining.py:_minimum",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "file:backend/app/services/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "file:backend/app/services/regime_builder.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:invalidate_regime_cache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:invalidate_regime_cache",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:_data_dir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:_data_dir",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:_df_to_records",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:_df_to_records",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:regime_history",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:regime_history",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:pl_col_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:pl_col_date",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:regime_latest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:regime_latest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:regime_states",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:regime_states",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:regime_coverage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:regime_coverage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:regime_recompute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:regime_recompute",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:regime_phases",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:regime_phases",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:_segment_mainlines",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:_segment_mainlines",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:mainline_recompute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:mainline_recompute",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:regime_mainline",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/regime.py",
+      "target": "function:backend/app/api/regime.py:regime_mainline",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "file:backend/app/backtest/minute_trigger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "file:backend/app/strategy/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "file:backend/app/strategy/ai_generator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "file:backend/app/strategy/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "file:backend/app/strategy/monitor.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "file:backend/app/strategy/prompt_builder.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "file:backend/app/strategy/scoring.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:RunRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:RunRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:RunAllRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:RunAllRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:SaveConfigRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:SaveConfigRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:AIGenerateRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:AIGenerateRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:AISaveRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:AISaveRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:StrategyCodeValidateRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:StrategyCodeValidateRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:StrategyCodeSaveRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:StrategyCodeSaveRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:CompositeChildItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:CompositeChildItem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:StrategyCompositeSaveRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:StrategyCompositeSaveRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:MonitorStartRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:MonitorStartRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:BuildRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "class:backend/app/api/strategy.py:BuildRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_get_engine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_get_engine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_get_public_strategy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_get_public_strategy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_get_monitor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_get_monitor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_data_dir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_data_dir",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_invalidate_strategy_runtime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_invalidate_strategy_runtime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_missing_custom_signals",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_missing_custom_signals",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_cleanup_deleted_strategy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_cleanup_deleted_strategy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_safe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_safe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_child_meta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_child_meta",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_strategy_detail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_strategy_detail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:list_strategies",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:list_strategies",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:get_strategy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:get_strategy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:run_strategy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:run_strategy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:run_all",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:run_all",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:save_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:save_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:patch_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:patch_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_validate_scoring_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_validate_scoring_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_strip_defaults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_strip_defaults",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:reset_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:reset_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_py_string",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_py_string",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_find_meta_dict",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_find_meta_dict",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_set_meta_string_field",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_set_meta_string_field",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_normalize_strategy_meta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_normalize_strategy_meta",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_normalize_build_result",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_normalize_build_result",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_validate_strategy_id",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_validate_strategy_id",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_target_dir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_target_dir",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_prepare_strategy_code",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_prepare_strategy_code",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_restore_strategy_file",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_restore_strategy_file",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_save_strategy_code",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_save_strategy_code",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:ai_status",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:ai_status",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:get_strategy_source",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:get_strategy_source",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:ai_test",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:ai_test",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_build_prompt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_build_prompt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:build_strategy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:build_strategy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:build_strategy_stream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:build_strategy_stream",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:ai_generate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:ai_generate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:validate_strategy_code",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:validate_strategy_code",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:save_strategy_code",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:save_strategy_code",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_render_composite_code",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_render_composite_code",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_save_composite_strategy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:_save_composite_strategy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:save_composite_strategy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:save_composite_strategy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:ai_save",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:ai_save",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:delete_strategy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:delete_strategy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:reload_strategies",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/strategy.py",
+      "target": "function:backend/app/api/strategy.py:reload_strategies",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

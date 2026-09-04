@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {"id":"config:.dockerignore","type":"config","name":".dockerignore","filePath":".dockerignore","summary":"定义 Docker 构建上下文的排除规则，避免运行数据、依赖、开发脚本与密钥进入镜像。","tags":["docker","configuration","build-context"],"complexity":"moderate"},
+    {"id":"service:Dockerfile","type":"service","name":"Dockerfile","filePath":"Dockerfile","summary":"以多阶段构建编译前端、可选 stock-sdk 与 Codex CLI，并产出运行 FastAPI 和静态前端的 Python 镜像。","tags":["docker","containerization","deployment","multi-stage"],"complexity":"complex","languageNotes":"通过多阶段 COPY 隔离构建依赖，并以构建参数切换镜像源和可选组件。"},
+    {"id":"service:Dockerfile:frontend-builder","type":"service","name":"frontend-builder","filePath":"Dockerfile","summary":"安装前端依赖并构建 Vite 静态产物的 Docker 构建阶段。","tags":["docker","frontend","build-stage"],"complexity":"moderate"},
+    {"id":"service:Dockerfile:stocksdk-builder","type":"service","name":"stocksdk-builder","filePath":"Dockerfile","summary":"按构建参数选择性安装 stock-sdk 插件 Node 依赖的构建阶段。","tags":["docker","plugin","optional-dependency"],"complexity":"moderate"},
+    {"id":"service:Dockerfile:codex-builder","type":"service","name":"codex-builder","filePath":"Dockerfile","summary":"固定安装并提取 Codex CLI 原生二进制的构建阶段。","tags":["docker","codex","build-stage"],"complexity":"simple"},
+    {"id":"service:Dockerfile:runtime","type":"service","name":"runtime","filePath":"Dockerfile","summary":"整合后端、前端静态文件和可选插件依赖，并以 Uvicorn 暴露应用的最终运行阶段。","tags":["docker","fastapi","runtime","deployment"],"complexity":"complex"},
+    {"id":"service:docker-compose.yml","type":"service","name":"docker-compose.yml","filePath":"docker-compose.yml","summary":"定义单个应用容器的构建、端口、环境变量、数据卷与 Codex 登录态挂载方式。","tags":["docker-compose","orchestration","deployment","configuration"],"complexity":"moderate"}
+  ],
+  "edges": []
+}

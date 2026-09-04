@@ -1,0 +1,512 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/app/data_providers/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "backend/app/data_providers/__init__.py",
+      "summary": "定义或实现  init  ，用于统一外部市场数据的能力访问与标准化。",
+      "tags": [
+        "data-provider",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/data_providers/base.py",
+      "type": "file",
+      "name": "base.py",
+      "filePath": "backend/app/data_providers/base.py",
+      "summary": "定义或实现数据提供者抽象，用于统一外部市场数据的能力访问与标准化。",
+      "tags": [
+        "data-provider",
+        "后端",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/data_providers/base.py:ProviderCapabilities",
+      "type": "class",
+      "name": "ProviderCapabilities",
+      "filePath": "backend/app/data_providers/base.py",
+      "lineRange": [
+        20,
+        26
+      ],
+      "summary": "封装数据提供者抽象领域的 ProviderCapabilities 类型职责与协作状态。",
+      "tags": [
+        "class",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/data_providers/base.py:MarketDataProvider",
+      "type": "class",
+      "name": "MarketDataProvider",
+      "filePath": "backend/app/data_providers/base.py",
+      "lineRange": [
+        29,
+        75
+      ],
+      "summary": "封装数据提供者抽象领域的 MarketDataProvider 类型职责与协作状态。",
+      "tags": [
+        "class",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/data_providers/capabilities.py",
+      "type": "file",
+      "name": "capabilities.py",
+      "filePath": "backend/app/data_providers/capabilities.py",
+      "summary": "定义或实现数据能力路由，用于统一外部市场数据的能力访问与标准化。",
+      "tags": [
+        "data-provider",
+        "后端",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/data_providers/capabilities.py:_tier_base",
+      "type": "function",
+      "name": "_tier_base",
+      "filePath": "backend/app/data_providers/capabilities.py",
+      "lineRange": [
+        105,
+        110
+      ],
+      "summary": "执行数据能力路由中的 _tier_base 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/data_providers/capabilities.py:_declared_sources",
+      "type": "function",
+      "name": "_declared_sources",
+      "filePath": "backend/app/data_providers/capabilities.py",
+      "lineRange": [
+        113,
+        135
+      ],
+      "summary": "执行数据能力路由中的 _declared_sources 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/data_providers/capabilities.py:_display_of",
+      "type": "function",
+      "name": "_display_of",
+      "filePath": "backend/app/data_providers/capabilities.py",
+      "lineRange": [
+        138,
+        144
+      ],
+      "summary": "执行数据能力路由中的 _display_of 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/data_providers/capabilities.py:build_capability_matrix",
+      "type": "function",
+      "name": "build_capability_matrix",
+      "filePath": "backend/app/data_providers/capabilities.py",
+      "lineRange": [
+        147,
+        201
+      ],
+      "summary": "执行数据能力路由中的 build_capability_matrix 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/data_providers/normalizer.py",
+      "type": "file",
+      "name": "normalizer.py",
+      "filePath": "backend/app/data_providers/normalizer.py",
+      "summary": "定义或实现数据标准化，用于统一外部市场数据的能力访问与标准化。",
+      "tags": [
+        "data-provider",
+        "后端",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/data_providers/normalizer.py:to_polars",
+      "type": "function",
+      "name": "to_polars",
+      "filePath": "backend/app/data_providers/normalizer.py",
+      "lineRange": [
+        13,
+        31
+      ],
+      "summary": "执行数据标准化中的 to_polars 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/data_providers/normalizer.py:normalize_daily",
+      "type": "function",
+      "name": "normalize_daily",
+      "filePath": "backend/app/data_providers/normalizer.py",
+      "lineRange": [
+        34,
+        59
+      ],
+      "summary": "执行数据标准化中的 normalize_daily 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/data_providers/normalizer.py:normalize_adj_factors",
+      "type": "function",
+      "name": "normalize_adj_factors",
+      "filePath": "backend/app/data_providers/normalizer.py",
+      "lineRange": [
+        62,
+        89
+      ],
+      "summary": "执行数据标准化中的 normalize_adj_factors 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/data_providers/normalizer.py:normalize_instruments",
+      "type": "function",
+      "name": "normalize_instruments",
+      "filePath": "backend/app/data_providers/normalizer.py",
+      "lineRange": [
+        92,
+        110
+      ],
+      "summary": "执行数据标准化中的 normalize_instruments 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/data_providers/registry.py",
+      "type": "file",
+      "name": "registry.py",
+      "filePath": "backend/app/data_providers/registry.py",
+      "summary": "定义或实现数据提供者注册，用于统一外部市场数据的能力访问与标准化。",
+      "tags": [
+        "data-provider",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/data_providers/registry.py:get_provider",
+      "type": "function",
+      "name": "get_provider",
+      "filePath": "backend/app/data_providers/registry.py",
+      "lineRange": [
+        11,
+        15
+      ],
+      "summary": "执行数据提供者注册中的 get_provider 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/data_providers/tickflow_provider.py",
+      "type": "file",
+      "name": "tickflow_provider.py",
+      "filePath": "backend/app/data_providers/tickflow_provider.py",
+      "summary": "定义或实现TickFlow 数据提供者，用于统一外部市场数据的能力访问与标准化。",
+      "tags": [
+        "data-provider",
+        "后端",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/data_providers/tickflow_provider.py:TickFlowProvider",
+      "type": "class",
+      "name": "TickFlowProvider",
+      "filePath": "backend/app/data_providers/tickflow_provider.py",
+      "lineRange": [
+        19,
+        121
+      ],
+      "summary": "封装TickFlow 数据提供者领域的 TickFlowProvider 类型职责与协作状态。",
+      "tags": [
+        "class",
+        "后端",
+        "python"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/app/data_providers/__init__.py",
+      "target": "file:backend/app/data_providers/base.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/data_providers/__init__.py",
+      "target": "file:backend/app/data_providers/registry.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/data_providers/base.py",
+      "target": "class:backend/app/data_providers/base.py:ProviderCapabilities",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/data_providers/base.py",
+      "target": "class:backend/app/data_providers/base.py:ProviderCapabilities",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/data_providers/base.py",
+      "target": "class:backend/app/data_providers/base.py:MarketDataProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/data_providers/base.py",
+      "target": "class:backend/app/data_providers/base.py:MarketDataProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/data_providers/capabilities.py",
+      "target": "function:backend/app/data_providers/capabilities.py:_tier_base",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/data_providers/capabilities.py",
+      "target": "function:backend/app/data_providers/capabilities.py:_tier_base",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/data_providers/capabilities.py",
+      "target": "function:backend/app/data_providers/capabilities.py:_declared_sources",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/data_providers/capabilities.py",
+      "target": "function:backend/app/data_providers/capabilities.py:_declared_sources",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/data_providers/capabilities.py",
+      "target": "function:backend/app/data_providers/capabilities.py:_display_of",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/data_providers/capabilities.py",
+      "target": "function:backend/app/data_providers/capabilities.py:_display_of",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/data_providers/capabilities.py",
+      "target": "function:backend/app/data_providers/capabilities.py:build_capability_matrix",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/data_providers/capabilities.py",
+      "target": "function:backend/app/data_providers/capabilities.py:build_capability_matrix",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/data_providers/capabilities.py",
+      "target": "file:backend/app/data_providers/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/data_providers/normalizer.py",
+      "target": "function:backend/app/data_providers/normalizer.py:to_polars",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/data_providers/normalizer.py",
+      "target": "function:backend/app/data_providers/normalizer.py:to_polars",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/data_providers/normalizer.py",
+      "target": "function:backend/app/data_providers/normalizer.py:normalize_daily",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/data_providers/normalizer.py",
+      "target": "function:backend/app/data_providers/normalizer.py:normalize_daily",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/data_providers/normalizer.py",
+      "target": "function:backend/app/data_providers/normalizer.py:normalize_adj_factors",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/data_providers/normalizer.py",
+      "target": "function:backend/app/data_providers/normalizer.py:normalize_adj_factors",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/data_providers/normalizer.py",
+      "target": "function:backend/app/data_providers/normalizer.py:normalize_instruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/data_providers/normalizer.py",
+      "target": "function:backend/app/data_providers/normalizer.py:normalize_instruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/data_providers/normalizer.py",
+      "target": "file:backend/app/indicators/pipeline.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/data_providers/registry.py",
+      "target": "function:backend/app/data_providers/registry.py:get_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/data_providers/registry.py",
+      "target": "function:backend/app/data_providers/registry.py:get_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/data_providers/registry.py",
+      "target": "file:backend/app/data_providers/tickflow_provider.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/data_providers/tickflow_provider.py",
+      "target": "class:backend/app/data_providers/tickflow_provider.py:TickFlowProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/data_providers/tickflow_provider.py",
+      "target": "class:backend/app/data_providers/tickflow_provider.py:TickFlowProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/data_providers/tickflow_provider.py",
+      "target": "file:backend/app/data_providers/base.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/data_providers/tickflow_provider.py",
+      "target": "file:backend/app/data_providers/normalizer.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/data_providers/tickflow_provider.py",
+      "target": "file:backend/app/tickflow/client.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

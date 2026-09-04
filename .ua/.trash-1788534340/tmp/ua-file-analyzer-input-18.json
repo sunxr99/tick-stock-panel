@@ -1,0 +1,127 @@
+{
+  "projectRoot": "D:\\stock\\myStockPanel\\tick-stock-panel",
+  "batchFiles": [
+    {
+      "path": "backend/app/data_providers/__init__.py",
+      "language": "python",
+      "sizeLines": 8,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/data_providers/base.py",
+      "language": "python",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/data_providers/capabilities.py",
+      "language": "python",
+      "sizeLines": 201,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/data_providers/normalizer.py",
+      "language": "python",
+      "sizeLines": 110,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/data_providers/registry.py",
+      "language": "python",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/data_providers/tickflow_provider.py",
+      "language": "python",
+      "sizeLines": 121,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/plugins/stocksdk/__init__.py",
+      "language": "python",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/plugins/stocksdk/bridge.py",
+      "language": "python",
+      "sizeLines": 99,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/plugins/stocksdk/provider.py",
+      "language": "python",
+      "sizeLines": 340,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_capability_matrix.py",
+      "language": "python",
+      "sizeLines": 270,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_minute_routing.py",
+      "language": "python",
+      "sizeLines": 1183,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_stocksdk_provider.py",
+      "language": "python",
+      "sizeLines": 335,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "backend/app/data_providers/__init__.py": [
+      "backend/app/data_providers/base.py",
+      "backend/app/data_providers/registry.py"
+    ],
+    "backend/app/data_providers/base.py": [],
+    "backend/app/data_providers/capabilities.py": [
+      "backend/app/data_providers/__init__.py"
+    ],
+    "backend/app/data_providers/normalizer.py": [
+      "backend/app/indicators/pipeline.py"
+    ],
+    "backend/app/data_providers/registry.py": [
+      "backend/app/data_providers/tickflow_provider.py"
+    ],
+    "backend/app/data_providers/tickflow_provider.py": [
+      "backend/app/data_providers/base.py",
+      "backend/app/data_providers/normalizer.py",
+      "backend/app/tickflow/client.py"
+    ],
+    "backend/app/plugins/stocksdk/__init__.py": [
+      "backend/app/plugins/stocksdk/bridge.py",
+      "backend/app/plugins/stocksdk/provider.py"
+    ],
+    "backend/app/plugins/stocksdk/bridge.py": [],
+    "backend/app/plugins/stocksdk/provider.py": [
+      "backend/app/data_providers/base.py",
+      "backend/app/data_providers/normalizer.py",
+      "backend/app/plugins/stocksdk/__init__.py",
+      "backend/app/plugins/stocksdk/bridge.py",
+      "backend/app/tickflow/rate_limits.py"
+    ],
+    "backend/tests/test_capability_matrix.py": [
+      "backend/app/data_providers/__init__.py",
+      "backend/app/data_providers/capabilities.py"
+    ],
+    "backend/tests/test_minute_routing.py": [
+      "backend/app/data_providers/custom/config.py",
+      "backend/app/data_providers/custom/provider.py",
+      "backend/app/plugins/stocksdk/__init__.py",
+      "backend/app/plugins/stocksdk/provider.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py"
+    ],
+    "backend/tests/test_stocksdk_provider.py": [
+      "backend/app/plugins/stocksdk/__init__.py",
+      "backend/app/plugins/stocksdk/bridge.py",
+      "backend/app/plugins/stocksdk/provider.py"
+    ]
+  }
+}

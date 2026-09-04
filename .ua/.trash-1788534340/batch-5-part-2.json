@@ -1,0 +1,1438 @@
+{
+  "nodes": [
+    {
+      "id": "file:frontend/src/lib/useQueryConfig.ts",
+      "type": "file",
+      "name": "useQueryConfig.ts",
+      "filePath": "frontend/src/lib/useQueryConfig.ts",
+      "summary": "“use Query Config”前端模块，服务于股票面板的交互与数据展示。主要封装 loadConfig、getQueryConfig 等功能。",
+      "tags": [
+        "hook",
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "simple",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/useQueryConfig.ts:getQueryConfig",
+      "type": "function",
+      "name": "getQueryConfig",
+      "filePath": "frontend/src/lib/useQueryConfig.ts",
+      "lineRange": [
+        38,
+        40
+      ],
+      "summary": "实现 get Query Config 的局部业务处理逻辑，支持 useQueryConfig.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/useQuoteStream.ts",
+      "type": "file",
+      "name": "useQuoteStream.ts",
+      "filePath": "frontend/src/lib/useQuoteStream.ts",
+      "summary": "“use Quote Stream”前端模块，服务于股票面板的交互与数据展示。主要封装 _emitStatus、_setStatus、_subscribeStatus 等功能。",
+      "tags": [
+        "hook",
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "complex",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/useQuoteStream.ts:useQuoteStreamStatus",
+      "type": "function",
+      "name": "useQuoteStreamStatus",
+      "filePath": "frontend/src/lib/useQuoteStream.ts",
+      "lineRange": [
+        45,
+        47
+      ],
+      "summary": "封装 use Quote Stream Status 所需的 React 状态、查询或副作用，供 useQuoteStream.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/useQuoteStream.ts:setFocusSymbol",
+      "type": "function",
+      "name": "setFocusSymbol",
+      "filePath": "frontend/src/lib/useQuoteStream.ts",
+      "lineRange": [
+        56,
+        58
+      ],
+      "summary": "实现 set Focus Symbol 的局部业务处理逻辑，支持 useQuoteStream.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/useQuoteStream.ts:clearFocusSymbol",
+      "type": "function",
+      "name": "clearFocusSymbol",
+      "filePath": "frontend/src/lib/useQuoteStream.ts",
+      "lineRange": [
+        61,
+        63
+      ],
+      "summary": "实现 clear Focus Symbol 的局部业务处理逻辑，支持 useQuoteStream.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/useQuoteStream.ts:useQuoteStream",
+      "type": "function",
+      "name": "useQuoteStream",
+      "filePath": "frontend/src/lib/useQuoteStream.ts",
+      "lineRange": [
+        73,
+        241
+      ],
+      "summary": "封装 use Quote Stream 所需的 React 状态、查询或副作用，供 useQuoteStream.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:frontend/src/lib/useReviewStore.ts",
+      "type": "file",
+      "name": "useReviewStore.ts",
+      "filePath": "frontend/src/lib/useReviewStore.ts",
+      "summary": "“use Review Store”前端模块，服务于股票面板的交互与数据展示。主要封装 useReviewState 等功能。",
+      "tags": [
+        "hook",
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "simple",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/useReviewStore.ts:useReviewState",
+      "type": "function",
+      "name": "useReviewState",
+      "filePath": "frontend/src/lib/useReviewStore.ts",
+      "lineRange": [
+        12,
+        14
+      ],
+      "summary": "封装 use Review State 所需的 React 状态、查询或副作用，供 useReviewStore.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/useSharedMutations.ts",
+      "type": "file",
+      "name": "useSharedMutations.ts",
+      "filePath": "frontend/src/lib/useSharedMutations.ts",
+      "summary": "“use Shared Mutations”前端模块，服务于股票面板的交互与数据展示。主要封装 useToggleRealtimeQuotes、useUpdateQuoteInterval、useWatchlistBatchAdd 等功能。",
+      "tags": [
+        "hook",
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "simple",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/useSharedMutations.ts:useToggleRealtimeQuotes",
+      "type": "function",
+      "name": "useToggleRealtimeQuotes",
+      "filePath": "frontend/src/lib/useSharedMutations.ts",
+      "lineRange": [
+        9,
+        18
+      ],
+      "summary": "封装 use Toggle Realtime Quotes 所需的 React 状态、查询或副作用，供 useSharedMutations.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/useSharedMutations.ts:useUpdateQuoteInterval",
+      "type": "function",
+      "name": "useUpdateQuoteInterval",
+      "filePath": "frontend/src/lib/useSharedMutations.ts",
+      "lineRange": [
+        21,
+        30
+      ],
+      "summary": "封装 use Update Quote Interval 所需的 React 状态、查询或副作用，供 useSharedMutations.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/useSharedMutations.ts:useWatchlistBatchAdd",
+      "type": "function",
+      "name": "useWatchlistBatchAdd",
+      "filePath": "frontend/src/lib/useSharedMutations.ts",
+      "lineRange": [
+        39,
+        51
+      ],
+      "summary": "封装 use Watchlist Batch Add 所需的 React 状态、查询或副作用，供 useSharedMutations.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/useSharedQueries.ts",
+      "type": "file",
+      "name": "useSharedQueries.ts",
+      "filePath": "frontend/src/lib/useSharedQueries.ts",
+      "summary": "“use Shared Queries”前端模块，服务于股票面板的交互与数据展示。主要封装 useCapabilities、useCapabilityMatrix、useSettings 等功能。",
+      "tags": [
+        "hook",
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/useSharedQueries.ts:useCapabilities",
+      "type": "function",
+      "name": "useCapabilities",
+      "filePath": "frontend/src/lib/useSharedQueries.ts",
+      "lineRange": [
+        14,
+        19
+      ],
+      "summary": "封装 use Capabilities 所需的 React 状态、查询或副作用，供 useSharedQueries.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/useSharedQueries.ts:useCapabilityMatrix",
+      "type": "function",
+      "name": "useCapabilityMatrix",
+      "filePath": "frontend/src/lib/useSharedQueries.ts",
+      "lineRange": [
+        27,
+        32
+      ],
+      "summary": "封装 use Capability Matrix 所需的 React 状态、查询或副作用，供 useSharedQueries.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/useSharedQueries.ts:useSettings",
+      "type": "function",
+      "name": "useSettings",
+      "filePath": "frontend/src/lib/useSharedQueries.ts",
+      "lineRange": [
+        35,
+        40
+      ],
+      "summary": "封装 use Settings 所需的 React 状态、查询或副作用，供 useSharedQueries.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/useSharedQueries.ts:usePreferences",
+      "type": "function",
+      "name": "usePreferences",
+      "filePath": "frontend/src/lib/useSharedQueries.ts",
+      "lineRange": [
+        43,
+        48
+      ],
+      "summary": "封装 use Preferences 所需的 React 状态、查询或副作用，供 useSharedQueries.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/useSharedQueries.ts:useQuoteStatus",
+      "type": "function",
+      "name": "useQuoteStatus",
+      "filePath": "frontend/src/lib/useSharedQueries.ts",
+      "lineRange": [
+        58,
+        65
+      ],
+      "summary": "封装 use Quote Status 所需的 React 状态、查询或副作用，供 useSharedQueries.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/useSharedQueries.ts:useQuoteInterval",
+      "type": "function",
+      "name": "useQuoteInterval",
+      "filePath": "frontend/src/lib/useSharedQueries.ts",
+      "lineRange": [
+        68,
+        73
+      ],
+      "summary": "封装 use Quote Interval 所需的 React 状态、查询或副作用，供 useSharedQueries.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/useSharedQueries.ts:useVersion",
+      "type": "function",
+      "name": "useVersion",
+      "filePath": "frontend/src/lib/useSharedQueries.ts",
+      "lineRange": [
+        76,
+        82
+      ],
+      "summary": "封装 use Version 所需的 React 状态、查询或副作用，供 useSharedQueries.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/useSharedQueries.ts:useDataStatus",
+      "type": "function",
+      "name": "useDataStatus",
+      "filePath": "frontend/src/lib/useSharedQueries.ts",
+      "lineRange": [
+        85,
+        95
+      ],
+      "summary": "封装 use Data Status 所需的 React 状态、查询或副作用，供 useSharedQueries.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/useStrategyPool.ts",
+      "type": "file",
+      "name": "useStrategyPool.ts",
+      "filePath": "frontend/src/lib/useStrategyPool.ts",
+      "summary": "“use Strategy Pool”前端模块，服务于股票面板的交互与数据展示。主要封装 loadUnifiedPool、useStrategyPool 等功能。",
+      "tags": [
+        "hook",
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/useStrategyPool.ts:loadUnifiedPool",
+      "type": "function",
+      "name": "loadUnifiedPool",
+      "filePath": "frontend/src/lib/useStrategyPool.ts",
+      "lineRange": [
+        8,
+        22
+      ],
+      "summary": "实现 load Unified Pool 的局部业务处理逻辑，支持 useStrategyPool.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/useStrategyPool.ts:useStrategyPool",
+      "type": "function",
+      "name": "useStrategyPool",
+      "filePath": "frontend/src/lib/useStrategyPool.ts",
+      "lineRange": [
+        29,
+        63
+      ],
+      "summary": "封装 use Strategy Pool 所需的 React 状态、查询或副作用，供 useStrategyPool.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/voiceBroadcast.ts",
+      "type": "file",
+      "name": "voiceBroadcast.ts",
+      "filePath": "frontend/src/lib/voiceBroadcast.ts",
+      "summary": "“voice Broadcast”前端模块，服务于股票面板的交互与数据展示。主要封装 activateVoice、isVoiceSupported、listZhVoices 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/voiceBroadcast.ts:activateVoice",
+      "type": "function",
+      "name": "activateVoice",
+      "filePath": "frontend/src/lib/voiceBroadcast.ts",
+      "lineRange": [
+        30,
+        40
+      ],
+      "summary": "实现 activate Voice 的局部业务处理逻辑，支持 voiceBroadcast.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/voiceBroadcast.ts:isVoiceSupported",
+      "type": "function",
+      "name": "isVoiceSupported",
+      "filePath": "frontend/src/lib/voiceBroadcast.ts",
+      "lineRange": [
+        43,
+        45
+      ],
+      "summary": "实现 is Voice Supported 的局部业务处理逻辑，支持 voiceBroadcast.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/voiceBroadcast.ts:listZhVoices",
+      "type": "function",
+      "name": "listZhVoices",
+      "filePath": "frontend/src/lib/voiceBroadcast.ts",
+      "lineRange": [
+        53,
+        57
+      ],
+      "summary": "实现 list Zh Voices 的局部业务处理逻辑，支持 voiceBroadcast.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/voiceBroadcast.ts:resolveVoice",
+      "type": "function",
+      "name": "resolveVoice",
+      "filePath": "frontend/src/lib/voiceBroadcast.ts",
+      "lineRange": [
+        69,
+        88
+      ],
+      "summary": "实现 resolve Voice 的局部业务处理逻辑，支持 voiceBroadcast.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/voiceBroadcast.ts:getCurrentVoiceURI",
+      "type": "function",
+      "name": "getCurrentVoiceURI",
+      "filePath": "frontend/src/lib/voiceBroadcast.ts",
+      "lineRange": [
+        91,
+        93
+      ],
+      "summary": "实现 get Current Voice URI 的局部业务处理逻辑，支持 voiceBroadcast.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/voiceBroadcast.ts:buildSingleText",
+      "type": "function",
+      "name": "buildSingleText",
+      "filePath": "frontend/src/lib/voiceBroadcast.ts",
+      "lineRange": [
+        115,
+        151
+      ],
+      "summary": "实现 build Single Text 的局部业务处理逻辑，支持 voiceBroadcast.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/voiceBroadcast.ts:speakAlerts",
+      "type": "function",
+      "name": "speakAlerts",
+      "filePath": "frontend/src/lib/voiceBroadcast.ts",
+      "lineRange": [
+        170,
+        192
+      ],
+      "summary": "实现 speak Alerts 的局部业务处理逻辑，支持 voiceBroadcast.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/voiceBroadcast.ts:stopVoice",
+      "type": "function",
+      "name": "stopVoice",
+      "filePath": "frontend/src/lib/voiceBroadcast.ts",
+      "lineRange": [
+        195,
+        202
+      ],
+      "summary": "实现 stop Voice 的局部业务处理逻辑，支持 voiceBroadcast.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/voiceBroadcast.ts:previewVoice",
+      "type": "function",
+      "name": "previewVoice",
+      "filePath": "frontend/src/lib/voiceBroadcast.ts",
+      "lineRange": [
+        205,
+        217
+      ],
+      "summary": "实现 preview Voice 的局部业务处理逻辑，支持 voiceBroadcast.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/walkforwardTask.ts",
+      "type": "file",
+      "name": "walkforwardTask.ts",
+      "filePath": "frontend/src/lib/walkforwardTask.ts",
+      "summary": "“walkforward Task”前端模块，服务于股票面板的交互与数据展示。主要封装 emit、subscribe、buildQuery 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "complex",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/walkforwardTask.ts:connectSSE",
+      "type": "function",
+      "name": "connectSSE",
+      "filePath": "frontend/src/lib/walkforwardTask.ts",
+      "lineRange": [
+        99,
+        189
+      ],
+      "summary": "实现 connect SSE 的局部业务处理逻辑，支持 walkforwardTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:frontend/src/lib/walkforwardTask.ts:startWalkForward",
+      "type": "function",
+      "name": "startWalkForward",
+      "filePath": "frontend/src/lib/walkforwardTask.ts",
+      "lineRange": [
+        200,
+        230
+      ],
+      "summary": "实现 start Walk Forward 的局部业务处理逻辑，支持 walkforwardTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/walkforwardTask.ts:stopWalkForward",
+      "type": "function",
+      "name": "stopWalkForward",
+      "filePath": "frontend/src/lib/walkforwardTask.ts",
+      "lineRange": [
+        232,
+        258
+      ],
+      "summary": "实现 stop Walk Forward 的局部业务处理逻辑，支持 walkforwardTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/walkforwardTask.ts:clearWalkForward",
+      "type": "function",
+      "name": "clearWalkForward",
+      "filePath": "frontend/src/lib/walkforwardTask.ts",
+      "lineRange": [
+        260,
+        263
+      ],
+      "summary": "实现 clear Walk Forward 的局部业务处理逻辑，支持 walkforwardTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/walkforwardTask.ts:tryReconnectWalkForward",
+      "type": "function",
+      "name": "tryReconnectWalkForward",
+      "filePath": "frontend/src/lib/walkforwardTask.ts",
+      "lineRange": [
+        265,
+        273
+      ],
+      "summary": "实现 try Reconnect Walk Forward 的局部业务处理逻辑，支持 walkforwardTask.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/walkforwardTask.ts:useWalkForwardTask",
+      "type": "function",
+      "name": "useWalkForwardTask",
+      "filePath": "frontend/src/lib/walkforwardTask.ts",
+      "lineRange": [
+        275,
+        277
+      ],
+      "summary": "封装 use Walk Forward Task 所需的 React 状态、查询或副作用，供 walkforwardTask.ts 及其调用方复用。",
+      "tags": [
+        "hook",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:frontend/src/lib/watchlist-columns.ts",
+      "type": "file",
+      "name": "watchlist-columns.ts",
+      "filePath": "frontend/src/lib/watchlist-columns.ts",
+      "summary": "“watchlist columns”前端模块，服务于股票面板的交互与数据展示。主要封装 serializeColumns、saveColumnConfig、loadColumnConfig 等功能。",
+      "tags": [
+        "frontend",
+        "react",
+        "typescript"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "TypeScript/TSX 文件以 React 组件、Hook 与声明式 UI 组织前端逻辑。"
+    },
+    {
+      "id": "function:frontend/src/lib/watchlist-columns.ts:serializeColumns",
+      "type": "function",
+      "name": "serializeColumns",
+      "filePath": "frontend/src/lib/watchlist-columns.ts",
+      "lineRange": [
+        106,
+        108
+      ],
+      "summary": "实现 serialize Columns 的局部业务处理逻辑，支持 watchlist-columns.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/watchlist-columns.ts:saveColumnConfig",
+      "type": "function",
+      "name": "saveColumnConfig",
+      "filePath": "frontend/src/lib/watchlist-columns.ts",
+      "lineRange": [
+        111,
+        121
+      ],
+      "summary": "实现 save Column Config 的局部业务处理逻辑，支持 watchlist-columns.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/watchlist-columns.ts:loadColumnConfig",
+      "type": "function",
+      "name": "loadColumnConfig",
+      "filePath": "frontend/src/lib/watchlist-columns.ts",
+      "lineRange": [
+        124,
+        147
+      ],
+      "summary": "实现 load Column Config 的局部业务处理逻辑，支持 watchlist-columns.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/watchlist-columns.ts:buildExtColumnsParam",
+      "type": "function",
+      "name": "buildExtColumnsParam",
+      "filePath": "frontend/src/lib/watchlist-columns.ts",
+      "lineRange": [
+        155,
+        157
+      ],
+      "summary": "实现 build Ext Columns Param 的局部业务处理逻辑，支持 watchlist-columns.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:frontend/src/lib/watchlist-columns.ts:createExtColumn",
+      "type": "function",
+      "name": "createExtColumn",
+      "filePath": "frontend/src/lib/watchlist-columns.ts",
+      "lineRange": [
+        160,
+        167
+      ],
+      "summary": "实现 create Ext Column 的局部业务处理逻辑，支持 watchlist-columns.ts 的界面行为。",
+      "tags": [
+        "utility",
+        "typescript",
+        "frontend"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:frontend/src/lib/useQueryConfig.ts",
+      "target": "function:frontend/src/lib/useQueryConfig.ts:getQueryConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useQueryConfig.ts",
+      "target": "function:frontend/src/lib/useQueryConfig.ts:getQueryConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useQueryConfig.ts",
+      "target": "file:frontend/src/lib/storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/useQuoteStream.ts",
+      "target": "function:frontend/src/lib/useQuoteStream.ts:useQuoteStreamStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useQuoteStream.ts",
+      "target": "function:frontend/src/lib/useQuoteStream.ts:useQuoteStreamStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useQuoteStream.ts",
+      "target": "function:frontend/src/lib/useQuoteStream.ts:setFocusSymbol",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useQuoteStream.ts",
+      "target": "function:frontend/src/lib/useQuoteStream.ts:setFocusSymbol",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useQuoteStream.ts",
+      "target": "function:frontend/src/lib/useQuoteStream.ts:clearFocusSymbol",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useQuoteStream.ts",
+      "target": "function:frontend/src/lib/useQuoteStream.ts:clearFocusSymbol",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useQuoteStream.ts",
+      "target": "function:frontend/src/lib/useQuoteStream.ts:useQuoteStream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useQuoteStream.ts",
+      "target": "function:frontend/src/lib/useQuoteStream.ts:useQuoteStream",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useQuoteStream.ts",
+      "target": "file:frontend/src/components/AlertToast.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/useQuoteStream.ts",
+      "target": "file:frontend/src/components/Toast.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/useQuoteStream.ts",
+      "target": "file:frontend/src/lib/api.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/useQuoteStream.ts",
+      "target": "file:frontend/src/lib/queryKeys.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/useQuoteStream.ts",
+      "target": "file:frontend/src/lib/reviewStore.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/useQuoteStream.ts",
+      "target": "file:frontend/src/lib/useQueryConfig.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/useReviewStore.ts",
+      "target": "function:frontend/src/lib/useReviewStore.ts:useReviewState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useReviewStore.ts",
+      "target": "function:frontend/src/lib/useReviewStore.ts:useReviewState",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useReviewStore.ts",
+      "target": "file:frontend/src/lib/reviewStore.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedMutations.ts",
+      "target": "function:frontend/src/lib/useSharedMutations.ts:useToggleRealtimeQuotes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedMutations.ts",
+      "target": "function:frontend/src/lib/useSharedMutations.ts:useToggleRealtimeQuotes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedMutations.ts",
+      "target": "function:frontend/src/lib/useSharedMutations.ts:useUpdateQuoteInterval",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedMutations.ts",
+      "target": "function:frontend/src/lib/useSharedMutations.ts:useUpdateQuoteInterval",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedMutations.ts",
+      "target": "function:frontend/src/lib/useSharedMutations.ts:useWatchlistBatchAdd",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedMutations.ts",
+      "target": "function:frontend/src/lib/useSharedMutations.ts:useWatchlistBatchAdd",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedMutations.ts",
+      "target": "file:frontend/src/lib/api.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedMutations.ts",
+      "target": "file:frontend/src/lib/queryKeys.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "function:frontend/src/lib/useSharedQueries.ts:useCapabilities",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "function:frontend/src/lib/useSharedQueries.ts:useCapabilities",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "function:frontend/src/lib/useSharedQueries.ts:useCapabilityMatrix",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "function:frontend/src/lib/useSharedQueries.ts:useCapabilityMatrix",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "function:frontend/src/lib/useSharedQueries.ts:useSettings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "function:frontend/src/lib/useSharedQueries.ts:useSettings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "function:frontend/src/lib/useSharedQueries.ts:usePreferences",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "function:frontend/src/lib/useSharedQueries.ts:usePreferences",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "function:frontend/src/lib/useSharedQueries.ts:useQuoteStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "function:frontend/src/lib/useSharedQueries.ts:useQuoteStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "function:frontend/src/lib/useSharedQueries.ts:useQuoteInterval",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "function:frontend/src/lib/useSharedQueries.ts:useQuoteInterval",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "function:frontend/src/lib/useSharedQueries.ts:useVersion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "function:frontend/src/lib/useSharedQueries.ts:useVersion",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "function:frontend/src/lib/useSharedQueries.ts:useDataStatus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "function:frontend/src/lib/useSharedQueries.ts:useDataStatus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "file:frontend/src/lib/api.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/useSharedQueries.ts",
+      "target": "file:frontend/src/lib/queryKeys.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/useStrategyPool.ts",
+      "target": "function:frontend/src/lib/useStrategyPool.ts:loadUnifiedPool",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useStrategyPool.ts",
+      "target": "function:frontend/src/lib/useStrategyPool.ts:useStrategyPool",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/useStrategyPool.ts",
+      "target": "function:frontend/src/lib/useStrategyPool.ts:useStrategyPool",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/useStrategyPool.ts",
+      "target": "file:frontend/src/lib/storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "function:frontend/src/lib/voiceBroadcast.ts:activateVoice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "function:frontend/src/lib/voiceBroadcast.ts:activateVoice",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "function:frontend/src/lib/voiceBroadcast.ts:isVoiceSupported",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "function:frontend/src/lib/voiceBroadcast.ts:isVoiceSupported",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "function:frontend/src/lib/voiceBroadcast.ts:listZhVoices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "function:frontend/src/lib/voiceBroadcast.ts:listZhVoices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "function:frontend/src/lib/voiceBroadcast.ts:resolveVoice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "function:frontend/src/lib/voiceBroadcast.ts:getCurrentVoiceURI",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "function:frontend/src/lib/voiceBroadcast.ts:getCurrentVoiceURI",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "function:frontend/src/lib/voiceBroadcast.ts:buildSingleText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "function:frontend/src/lib/voiceBroadcast.ts:speakAlerts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "function:frontend/src/lib/voiceBroadcast.ts:speakAlerts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "function:frontend/src/lib/voiceBroadcast.ts:stopVoice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "function:frontend/src/lib/voiceBroadcast.ts:stopVoice",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "function:frontend/src/lib/voiceBroadcast.ts:previewVoice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "function:frontend/src/lib/voiceBroadcast.ts:previewVoice",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "file:frontend/src/lib/api.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/voiceBroadcast.ts",
+      "target": "file:frontend/src/lib/strategyMonitorEvents.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/walkforwardTask.ts",
+      "target": "function:frontend/src/lib/walkforwardTask.ts:connectSSE",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/walkforwardTask.ts",
+      "target": "function:frontend/src/lib/walkforwardTask.ts:startWalkForward",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/walkforwardTask.ts",
+      "target": "function:frontend/src/lib/walkforwardTask.ts:startWalkForward",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/walkforwardTask.ts",
+      "target": "function:frontend/src/lib/walkforwardTask.ts:stopWalkForward",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/walkforwardTask.ts",
+      "target": "function:frontend/src/lib/walkforwardTask.ts:stopWalkForward",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/walkforwardTask.ts",
+      "target": "function:frontend/src/lib/walkforwardTask.ts:clearWalkForward",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/walkforwardTask.ts",
+      "target": "function:frontend/src/lib/walkforwardTask.ts:clearWalkForward",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/walkforwardTask.ts",
+      "target": "function:frontend/src/lib/walkforwardTask.ts:tryReconnectWalkForward",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/walkforwardTask.ts",
+      "target": "function:frontend/src/lib/walkforwardTask.ts:tryReconnectWalkForward",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/walkforwardTask.ts",
+      "target": "function:frontend/src/lib/walkforwardTask.ts:useWalkForwardTask",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/walkforwardTask.ts",
+      "target": "function:frontend/src/lib/walkforwardTask.ts:useWalkForwardTask",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/watchlist-columns.ts",
+      "target": "function:frontend/src/lib/watchlist-columns.ts:serializeColumns",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/watchlist-columns.ts",
+      "target": "function:frontend/src/lib/watchlist-columns.ts:serializeColumns",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/watchlist-columns.ts",
+      "target": "function:frontend/src/lib/watchlist-columns.ts:saveColumnConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/watchlist-columns.ts",
+      "target": "function:frontend/src/lib/watchlist-columns.ts:saveColumnConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/watchlist-columns.ts",
+      "target": "function:frontend/src/lib/watchlist-columns.ts:loadColumnConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/watchlist-columns.ts",
+      "target": "function:frontend/src/lib/watchlist-columns.ts:loadColumnConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/watchlist-columns.ts",
+      "target": "function:frontend/src/lib/watchlist-columns.ts:buildExtColumnsParam",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/watchlist-columns.ts",
+      "target": "function:frontend/src/lib/watchlist-columns.ts:buildExtColumnsParam",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/watchlist-columns.ts",
+      "target": "function:frontend/src/lib/watchlist-columns.ts:createExtColumn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:frontend/src/lib/watchlist-columns.ts",
+      "target": "function:frontend/src/lib/watchlist-columns.ts:createExtColumn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:frontend/src/lib/watchlist-columns.ts",
+      "target": "file:frontend/src/lib/list-columns.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:frontend/src/lib/watchlist-columns.ts",
+      "target": "file:frontend/src/lib/storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

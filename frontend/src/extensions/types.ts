@@ -34,6 +34,13 @@ export type FrontendSlotRegistration<K extends FrontendSlotName = FrontendSlotNa
   component: ComponentType<FrontendSlotContextMap[K]>
 }
 
+// 保留每个槽位具体 context 的联合类型。直接写 FrontendSlotRegistration[]
+// 会把 component 退化为三种 context 的联合 (ComponentType 对 props 逆变),
+// 导致二开插槽组件 (只接受单一 context) 无法通过 tsc 编译。
+export type AnyFrontendSlotRegistration = {
+  [K in FrontendSlotName]: FrontendSlotRegistration<K>
+}[FrontendSlotName]
+
 export interface FrontendExtensionRoute {
   id: string
   path: `/${string}`
@@ -54,7 +61,7 @@ export interface FrontendExtension {
   apiVersion: typeof FRONTEND_EXTENSION_API_VERSION
   routes?: FrontendExtensionRoute[]
   navigation?: FrontendExtensionNavigation[]
-  slots?: FrontendSlotRegistration[]
+  slots?: AnyFrontendSlotRegistration[]
 }
 
 export interface FrontendExtensionModule {

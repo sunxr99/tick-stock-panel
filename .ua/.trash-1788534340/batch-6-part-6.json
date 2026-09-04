@@ -1,0 +1,755 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/app/parquet.py",
+      "type": "file",
+      "name": "parquet.py",
+      "filePath": "backend/app/parquet.py",
+      "summary": "实现 parquet.py 的项目内部业务支持能力。",
+      "tags": [
+        "backend",
+        "service",
+        "market-data",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/parquet.py:scan_parquet_compat",
+      "type": "function",
+      "name": "scan_parquet_compat",
+      "filePath": "backend/app/parquet.py",
+      "lineRange": [
+        39,
+        43
+      ],
+      "summary": "实现 scan_parquet_compat，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/parquet.py:scan_daily_parquet",
+      "type": "function",
+      "name": "scan_daily_parquet",
+      "filePath": "backend/app/parquet.py",
+      "lineRange": [
+        46,
+        49
+      ],
+      "summary": "实现 scan_daily_parquet，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/parquet.py:scan_enriched_parquet",
+      "type": "function",
+      "name": "scan_enriched_parquet",
+      "filePath": "backend/app/parquet.py",
+      "lineRange": [
+        52,
+        55
+      ],
+      "summary": "实现 scan_enriched_parquet，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/backtest.py",
+      "type": "file",
+      "name": "backtest.py",
+      "filePath": "backend/app/services/backtest.py",
+      "summary": "实现 backtest.py 的项目内部业务支持能力。",
+      "tags": [
+        "backend",
+        "service",
+        "market-data",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/services/backtest.py:VectorbtUnavailable",
+      "type": "class",
+      "name": "VectorbtUnavailable",
+      "filePath": "backend/app/services/backtest.py",
+      "lineRange": [
+        28,
+        29
+      ],
+      "summary": "定义 VectorbtUnavailable 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/backtest.py:BacktestConfig",
+      "type": "class",
+      "name": "BacktestConfig",
+      "filePath": "backend/app/services/backtest.py",
+      "lineRange": [
+        74,
+        91
+      ],
+      "summary": "定义 BacktestConfig 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/backtest.py:BacktestResult",
+      "type": "class",
+      "name": "BacktestResult",
+      "filePath": "backend/app/services/backtest.py",
+      "lineRange": [
+        95,
+        101
+      ],
+      "summary": "定义 BacktestResult 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/backtest.py:BacktestService",
+      "type": "class",
+      "name": "BacktestService",
+      "filePath": "backend/app/services/backtest.py",
+      "lineRange": [
+        146,
+        391
+      ],
+      "summary": "定义 BacktestService 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/backtest.py:_get_vbt",
+      "type": "function",
+      "name": "_get_vbt",
+      "filePath": "backend/app/services/backtest.py",
+      "lineRange": [
+        32,
+        48
+      ],
+      "summary": "实现 _get_vbt，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/backtest.py:is_available",
+      "type": "function",
+      "name": "is_available",
+      "filePath": "backend/app/services/backtest.py",
+      "lineRange": [
+        51,
+        57
+      ],
+      "summary": "实现 is_available，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/backtest.py:_build_max_hold_exits",
+      "type": "function",
+      "name": "_build_max_hold_exits",
+      "filePath": "backend/app/services/backtest.py",
+      "lineRange": [
+        121,
+        143
+      ],
+      "summary": "实现 _build_max_hold_exits，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/backtest.py:_config_to_dict",
+      "type": "function",
+      "name": "_config_to_dict",
+      "filePath": "backend/app/services/backtest.py",
+      "lineRange": [
+        394,
+        406
+      ],
+      "summary": "实现 _config_to_dict，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/backtest.py:_json_safe",
+      "type": "function",
+      "name": "_json_safe",
+      "filePath": "backend/app/services/backtest.py",
+      "lineRange": [
+        409,
+        416
+      ],
+      "summary": "实现 _json_safe，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/heavy_job_limiter.py",
+      "type": "file",
+      "name": "heavy_job_limiter.py",
+      "filePath": "backend/app/services/heavy_job_limiter.py",
+      "summary": "实现 heavy_job_limiter.py 的项目内部业务支持能力。",
+      "tags": [
+        "backend",
+        "service",
+        "market-data",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/services/heavy_job_limiter.py:HeavyJobLimitTimeoutError",
+      "type": "class",
+      "name": "HeavyJobLimitTimeoutError",
+      "filePath": "backend/app/services/heavy_job_limiter.py",
+      "lineRange": [
+        14,
+        15
+      ],
+      "summary": "定义 HeavyJobLimitTimeoutError 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/heavy_job_limiter.py:HeavyJobCancelledError",
+      "type": "class",
+      "name": "HeavyJobCancelledError",
+      "filePath": "backend/app/services/heavy_job_limiter.py",
+      "lineRange": [
+        18,
+        19
+      ],
+      "summary": "定义 HeavyJobCancelledError 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/heavy_job_limiter.py:HeavyJobLimiter",
+      "type": "class",
+      "name": "HeavyJobLimiter",
+      "filePath": "backend/app/services/heavy_job_limiter.py",
+      "lineRange": [
+        22,
+        116
+      ],
+      "summary": "定义 HeavyJobLimiter 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/services/market_phase.py",
+      "type": "file",
+      "name": "market_phase.py",
+      "filePath": "backend/app/services/market_phase.py",
+      "summary": "实现 market_phase.py 的项目内部业务支持能力。",
+      "tags": [
+        "backend",
+        "service",
+        "market-data",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/market_phase.py:with_prev_consecutive",
+      "type": "function",
+      "name": "with_prev_consecutive",
+      "filePath": "backend/app/services/market_phase.py",
+      "lineRange": [
+        89,
+        102
+      ],
+      "summary": "实现 with_prev_consecutive，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_phase.py:ladder_daily_aggs",
+      "type": "function",
+      "name": "ladder_daily_aggs",
+      "filePath": "backend/app/services/market_phase.py",
+      "lineRange": [
+        105,
+        118
+      ],
+      "summary": "实现 ladder_daily_aggs，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_phase.py:ladder_promo_aggs",
+      "type": "function",
+      "name": "ladder_promo_aggs",
+      "filePath": "backend/app/services/market_phase.py",
+      "lineRange": [
+        121,
+        128
+      ],
+      "summary": "实现 ladder_promo_aggs，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_phase.py:finalize_ladder_row",
+      "type": "function",
+      "name": "finalize_ladder_row",
+      "filePath": "backend/app/services/market_phase.py",
+      "lineRange": [
+        131,
+        147
+      ],
+      "summary": "实现 finalize_ladder_row，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_phase.py:_ema",
+      "type": "function",
+      "name": "_ema",
+      "filePath": "backend/app/services/market_phase.py",
+      "lineRange": [
+        150,
+        169
+      ],
+      "summary": "实现 _ema，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_phase.py:classify_phase_series",
+      "type": "function",
+      "name": "classify_phase_series",
+      "filePath": "backend/app/services/market_phase.py",
+      "lineRange": [
+        172,
+        255
+      ],
+      "summary": "实现 classify_phase_series，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/app/parquet.py",
+      "target": "function:backend/app/parquet.py:scan_parquet_compat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/parquet.py",
+      "target": "function:backend/app/parquet.py:scan_parquet_compat",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/parquet.py",
+      "target": "function:backend/app/parquet.py:scan_daily_parquet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/parquet.py",
+      "target": "function:backend/app/parquet.py:scan_daily_parquet",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/parquet.py",
+      "target": "function:backend/app/parquet.py:scan_enriched_parquet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/parquet.py",
+      "target": "function:backend/app/parquet.py:scan_enriched_parquet",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "file:backend/app/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "file:backend/app/parquet.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "file:backend/app/tickflow/repository.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "class:backend/app/services/backtest.py:VectorbtUnavailable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "class:backend/app/services/backtest.py:VectorbtUnavailable",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "class:backend/app/services/backtest.py:BacktestConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "class:backend/app/services/backtest.py:BacktestConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "class:backend/app/services/backtest.py:BacktestResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "class:backend/app/services/backtest.py:BacktestResult",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "class:backend/app/services/backtest.py:BacktestService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "class:backend/app/services/backtest.py:BacktestService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "function:backend/app/services/backtest.py:_get_vbt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "function:backend/app/services/backtest.py:_get_vbt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "function:backend/app/services/backtest.py:is_available",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "function:backend/app/services/backtest.py:is_available",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "function:backend/app/services/backtest.py:_build_max_hold_exits",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "function:backend/app/services/backtest.py:_build_max_hold_exits",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "function:backend/app/services/backtest.py:_config_to_dict",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "function:backend/app/services/backtest.py:_config_to_dict",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "function:backend/app/services/backtest.py:_json_safe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/backtest.py",
+      "target": "function:backend/app/services/backtest.py:_json_safe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/heavy_job_limiter.py",
+      "target": "class:backend/app/services/heavy_job_limiter.py:HeavyJobLimitTimeoutError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/heavy_job_limiter.py",
+      "target": "class:backend/app/services/heavy_job_limiter.py:HeavyJobLimitTimeoutError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/heavy_job_limiter.py",
+      "target": "class:backend/app/services/heavy_job_limiter.py:HeavyJobCancelledError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/heavy_job_limiter.py",
+      "target": "class:backend/app/services/heavy_job_limiter.py:HeavyJobCancelledError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/heavy_job_limiter.py",
+      "target": "class:backend/app/services/heavy_job_limiter.py:HeavyJobLimiter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/heavy_job_limiter.py",
+      "target": "class:backend/app/services/heavy_job_limiter.py:HeavyJobLimiter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_phase.py",
+      "target": "function:backend/app/services/market_phase.py:with_prev_consecutive",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_phase.py",
+      "target": "function:backend/app/services/market_phase.py:with_prev_consecutive",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_phase.py",
+      "target": "function:backend/app/services/market_phase.py:ladder_daily_aggs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_phase.py",
+      "target": "function:backend/app/services/market_phase.py:ladder_daily_aggs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_phase.py",
+      "target": "function:backend/app/services/market_phase.py:ladder_promo_aggs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_phase.py",
+      "target": "function:backend/app/services/market_phase.py:ladder_promo_aggs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_phase.py",
+      "target": "function:backend/app/services/market_phase.py:finalize_ladder_row",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_phase.py",
+      "target": "function:backend/app/services/market_phase.py:finalize_ladder_row",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_phase.py",
+      "target": "function:backend/app/services/market_phase.py:_ema",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_phase.py",
+      "target": "function:backend/app/services/market_phase.py:_ema",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_phase.py",
+      "target": "function:backend/app/services/market_phase.py:classify_phase_series",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_phase.py",
+      "target": "function:backend/app/services/market_phase.py:classify_phase_series",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

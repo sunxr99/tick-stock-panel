@@ -1,0 +1,128 @@
+# .understandignore — patterns for files/dirs to exclude from analysis
+# Syntax: same as .gitignore (globs, # comments, ! negation, trailing / for dirs)
+# Lines below are suggestions — uncomment to activate.
+# Use ! prefix to force-include something excluded by defaults.
+#
+# Built-in defaults (always excluded unless negated):
+#   node_modules/, .git/, dist/, build/, obj/, *.lock, *.min.js, etc.
+#
+
+# --- From .gitignore (uncomment to exclude) ---
+
+# *.py[cod]
+# *$py.class
+# *.so
+# .Python
+# env/
+# .python-version
+# .pytest_cache/
+# .mypy_cache/
+# .ruff_cache/
+# .coverage
+# htmlcov/
+# *.egg-info/
+# .uv/
+# .pnpm-store/
+# .pnpm-debug.log*
+# .npm/
+# frontend/dist/
+# frontend/.vite/
+# backend/static/
+# backend/app/static/
+# *.swp
+# *.swo
+# .DS_Store
+# backend/data/**
+# !backend/data/.gitkeep
+# data/**
+# !data/.gitkeep
+# .env
+# .env.local
+# .env.*.local
+# backend/.env
+# backend/user_prompts/
+# .playwright-mcp/
+# .trae/
+# .zcode/
+# frontend/tsconfig*.tsbuildinfo
+# *.xlsx
+# DEPLOY.md
+# deploy.sh
+# DESIGN.md
+# DESIGN-proposal.md
+# CLAUDE.md
+# docs/zhihu/
+# data/strategies/custom/
+# backend._recheck*.py
+# backend/_verify*.py
+# backend/_desktop_run.log
+# reports/tickflow_pro_probe/
+# .cursor/debug-*.log
+# backend/TickFlowStockPanel-win-x64.zip
+# backend/TickFlowStockPanel-macos.zip
+# backend/TickFlowStockPanel-linux-x64.tar.gz
+# packaging/Output/
+# packaging/icon_preview.png
+# packaging/designs/
+# packaging/install.log
+# packaging/installed_run.log
+# TickFlowStockPanel.app/
+# TickFlowStockPanel-macos*.dmg
+# TickFlowStockPanel-macos*.zip
+# reports/cursor_tickflow_pro_rate_limit_p0.bundle
+
+# --- Detected directories (uncomment to exclude) ---
+
+# docs/
+# scripts/
+
+# --- Test file patterns (uncomment to exclude) ---
+
+# JS / TS
+# *.test.*
+# *.spec.*
+# *.snap
+# C# / .NET
+# **/*Tests.cs
+# **/*Test.cs
+# **/*Fixture.cs
+# **/*.Tests.csproj
+# Java / Kotlin
+# **/src/test/**
+# **/*Test.java
+# **/*IT.java
+# **/*Spec.kt
+# Go
+# **/*_test.go
+# C++
+# **/*_test.cc
+# **/*_test.cpp
+# **/*_test.cxx
+# **/*Test.cc
+# **/*Test.cpp
+# **/*_unittest.cc
+# **/*_unittest.cpp
+# **/*_browsertest.cc
+# **/*_benchmark.cc
+# **/*Benchmark.cpp
+# Python
+# **/test_*.py
+# **/*_test.py
+# **/tests.py
+# **/conftest.py
+# Rust
+# **/tests.rs
+# **/test_*.rs
+# **/*_test.rs
+# **/bench_*.rs
+# **/*_bench.rs
+# Ruby
+# **/*_spec.rb
+# **/*_test.rb
+# **/test_*.rb
+# **/spec_helper.rb
+# **/test_helper.rb
+# **/rails_helper.rb
+# Swift
+# **/Tests/**/*.swift
+# **/Specs/**/*.swift

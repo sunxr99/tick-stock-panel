@@ -1,0 +1,17 @@
+{
+  "nodes": [
+    {"id":"document:docs/ai-context/architecture.md","type":"document","name":"architecture.md","filePath":"docs/ai-context/architecture.md","summary":"概述后端、前端、数据边界、计算领域与扩展机制的分层，并给出静态检索起点。","tags":["documentation","architecture","ai-context","navigation"],"complexity":"simple"},
+    {"id":"document:docs/ai-context/data-contracts.md","type":"document","name":"data-contracts.md","filePath":"docs/ai-context/data-contracts.md","summary":"说明 Provider 标准化、服务层数据边界以及金融比例、复权、交易日和时区等不可混用口径。","tags":["documentation","data-contracts","financial-data","ai-context"],"complexity":"simple"},
+    {"id":"document:docs/ai-context/development-workflow.md","type":"document","name":"development-workflow.md","filePath":"docs/ai-context/development-workflow.md","summary":"记录项目开发协作、最小范围改动、验证和 Git 状态检查的工作流约定。","tags":["documentation","development","workflow","ai-context"],"complexity":"simple"},
+    {"id":"document:docs/ai-context/domain-flows.md","type":"document","name":"domain-flows.md","filePath":"docs/ai-context/domain-flows.md","summary":"概括日常数据 enriched、策略与监控、回测与研究三类核心领域流程。","tags":["documentation","domain-flow","strategy","ai-context"],"complexity":"simple"},
+    {"id":"document:docs/ai-context/extensions.md","type":"document","name":"extensions.md","filePath":"docs/ai-context/extensions.md","summary":"说明后端、前端及 custom 目录的二开扩展边界，并指向兼容性说明。","tags":["documentation","extensions","customization","ai-context"],"complexity":"simple"},
+    {"id":"document:docs/ai-context/index.md","type":"document","name":"index.md","filePath":"docs/ai-context/index.md","summary":"作为 AI Context 导航索引，按任务主题链接架构、数据契约、领域流程、扩展与开发工作流文档。","tags":["documentation","index","ai-context","navigation"],"complexity":"simple"}
+  ],
+  "edges": [
+    {"source":"document:docs/ai-context/index.md","target":"document:docs/ai-context/architecture.md","type":"documents","direction":"forward","weight":0.5},
+    {"source":"document:docs/ai-context/index.md","target":"document:docs/ai-context/data-contracts.md","type":"documents","direction":"forward","weight":0.5},
+    {"source":"document:docs/ai-context/index.md","target":"document:docs/ai-context/development-workflow.md","type":"documents","direction":"forward","weight":0.5},
+    {"source":"document:docs/ai-context/index.md","target":"document:docs/ai-context/domain-flows.md","type":"documents","direction":"forward","weight":0.5},
+    {"source":"document:docs/ai-context/index.md","target":"document:docs/ai-context/extensions.md","type":"documents","direction":"forward","weight":0.5}
+  ]
+}

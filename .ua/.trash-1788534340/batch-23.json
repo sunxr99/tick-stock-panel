@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {"id":"config:.env.example","type":"config","name":".env.example","filePath":".env.example","summary":"提供 TickFlow、AI、服务监听、认证与数据目录的环境变量示例，供本地或容器部署初始化。","tags":["environment","configuration","authentication","ai"],"complexity":"simple"},
+    {"id":"document:AGENTS.md","type":"document","name":"AGENTS.md","filePath":"AGENTS.md","summary":"定义 AI 代理在本项目中的任务导航、检索顺序、架构入口、构建命令和不可违反的开发约定。","tags":["documentation","ai-guidance","development","architecture"],"complexity":"moderate"},
+    {"id":"document:CONTRIBUTING.md","type":"document","name":"CONTRIBUTING.md","filePath":"CONTRIBUTING.md","summary":"说明贡献、AI 开发和复审的工程规范，涵盖数据契约、模块边界、性能、安全与验证矩阵。","tags":["documentation","contributing","development","quality"],"complexity":"complex"},
+    {"id":"document:README.md","type":"document","name":"README.md","filePath":"README.md","summary":"介绍 TSP A 股智能量化工作台的功能、架构、部署方式、配置、路线图与使用说明入口。","tags":["documentation","overview","entry-point","quantitative-trading"],"complexity":"complex"},
+    {"id":"file:dev.ps1","type":"file","name":"dev.ps1","filePath":"dev.ps1","summary":"Windows PowerShell 一键启动脚本，校验依赖、释放端口、安装依赖并以后台作业并行启动后端和前端。","tags":["development","powershell","launcher","windows"],"complexity":"complex"},
+    {"id":"function:dev.ps1:Read-DotEnvValue","type":"function","name":"Read-DotEnvValue","filePath":"dev.ps1","lineRange":[27,44],"summary":"安全读取 .env 中指定键的值，不将环境文件当作 PowerShell 代码执行。","tags":["environment","parsing","security"],"complexity":"simple"},
+    {"id":"function:dev.ps1:Free-Port","type":"function","name":"Free-Port","filePath":"dev.ps1","lineRange":[83,139],"summary":"识别监听目标端口的进程，终止其进程树并处理残留 socket，以保证开发服务可绑定端口。","tags":["network","port-management","process-control"],"complexity":"complex"},
+    {"id":"function:dev.ps1:Read-JobPid","type":"function","name":"Read-JobPid","filePath":"dev.ps1","lineRange":[221,230],"summary":"轮询后台作业写入的 PID 文件并返回子进程标识。","tags":["process-control","synchronization","utility"],"complexity":"simple"},
+    {"id":"function:dev.ps1:Cleanup-All","type":"function","name":"Cleanup-All","filePath":"dev.ps1","lineRange":[236,261],"summary":"在退出时停止前后端后台作业、终止子进程树并清理临时 PID 文件。","tags":["cleanup","process-control","lifecycle"],"complexity":"moderate"},
+    {"id":"file:dev.sh","type":"file","name":"dev.sh","filePath":"dev.sh","summary":"macOS/Linux 一键启动脚本，读取安全的环境配置、处理端口占用、同步依赖并启动前后端开发服务。","tags":["development","shell","launcher","unix"],"complexity":"complex"},
+    {"id":"function:dev.sh:read_dotenv_value","type":"function","name":"read_dotenv_value","filePath":"dev.sh","lineRange":[18,35],"summary":"用 awk 提取 .env 中的启动配置项，避免 source 整个环境文件。","tags":["environment","parsing","security"],"complexity":"moderate"},
+    {"id":"function:dev.sh:free_port","type":"function","name":"free_port","filePath":"dev.sh","lineRange":[83,115],"summary":"定位并逐级终止占用开发端口的进程，确认端口释放后继续启动。","tags":["network","port-management","process-control"],"complexity":"moderate"},
+    {"id":"function:dev.sh:cleanup","type":"function","name":"cleanup","filePath":"dev.sh","lineRange":[142,157],"summary":"响应中断信号并停止已启动的子进程，避免遗留开发服务。","tags":["cleanup","signal-handling","lifecycle"],"complexity":"moderate"},
+    {"id":"config:tiers.yaml","type":"config","name":"tiers.yaml","filePath":"tiers.yaml","summary":"记录 TickFlow 各套餐的能力、请求频率和批量限制，供启动期探测、界面标签与价格建议参考。","tags":["configuration","tickflow","rate-limit","capabilities"],"complexity":"moderate"},
+    {"id":"document:操作说明书.md","type":"document","name":"操作说明书.md","filePath":"操作说明书.md","summary":"面向用户的完整操作手册，覆盖安装、首次配置、看板、自选、策略、监控、回测与常见操作流程。","tags":["documentation","user-guide","operations","quantitative-trading"],"complexity":"complex"}
+  ],
+  "edges": [
+    {"source":"file:dev.ps1","target":"function:dev.ps1:Read-DotEnvValue","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:dev.ps1","target":"function:dev.ps1:Free-Port","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:dev.ps1","target":"function:dev.ps1:Read-JobPid","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:dev.ps1","target":"function:dev.ps1:Cleanup-All","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:dev.sh","target":"function:dev.sh:read_dotenv_value","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:dev.sh","target":"function:dev.sh:free_port","type":"contains","direction":"forward","weight":1.0},
+    {"source":"file:dev.sh","target":"function:dev.sh:cleanup","type":"contains","direction":"forward","weight":1.0}
+  ]
+}

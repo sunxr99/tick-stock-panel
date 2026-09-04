@@ -1,0 +1,3124 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/app/plugins/stocksdk/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "backend/app/plugins/stocksdk/__init__.py",
+      "summary": "实现  init  相关的插件适配与数据访问协作。",
+      "tags": [
+        "plugin",
+        "data-provider",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/plugins/stocksdk/bridge.py",
+      "type": "file",
+      "name": "bridge.py",
+      "filePath": "backend/app/plugins/stocksdk/bridge.py",
+      "summary": "实现StockSDK 桥接相关的插件适配与数据访问协作。",
+      "tags": [
+        "plugin",
+        "data-provider",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/plugins/stocksdk/bridge.py:StockSDKBridgeError",
+      "type": "class",
+      "name": "StockSDKBridgeError",
+      "filePath": "backend/app/plugins/stocksdk/bridge.py",
+      "lineRange": [
+        28,
+        29
+      ],
+      "summary": "封装StockSDK 桥接领域的 StockSDKBridgeError 类型职责与协作状态。",
+      "tags": [
+        "class",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/plugins/stocksdk/bridge.py:_node_bin",
+      "type": "function",
+      "name": "_node_bin",
+      "filePath": "backend/app/plugins/stocksdk/bridge.py",
+      "lineRange": [
+        32,
+        37
+      ],
+      "summary": "执行StockSDK 桥接中的 _node_bin 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/plugins/stocksdk/bridge.py:run_job",
+      "type": "function",
+      "name": "run_job",
+      "filePath": "backend/app/plugins/stocksdk/bridge.py",
+      "lineRange": [
+        40,
+        87
+      ],
+      "summary": "执行StockSDK 桥接中的 run_job 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/plugins/stocksdk/bridge.py:availability",
+      "type": "function",
+      "name": "availability",
+      "filePath": "backend/app/plugins/stocksdk/bridge.py",
+      "lineRange": [
+        90,
+        99
+      ],
+      "summary": "执行StockSDK 桥接中的 availability 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/plugins/stocksdk/provider.py",
+      "type": "file",
+      "name": "provider.py",
+      "filePath": "backend/app/plugins/stocksdk/provider.py",
+      "summary": "实现数据提供者实现相关的插件适配与数据访问协作。",
+      "tags": [
+        "plugin",
+        "data-provider",
+        "python"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/plugins/stocksdk/provider.py:_StockSDKConfig",
+      "type": "class",
+      "name": "_StockSDKConfig",
+      "filePath": "backend/app/plugins/stocksdk/provider.py",
+      "lineRange": [
+        36,
+        43
+      ],
+      "summary": "封装数据提供者实现领域的 _StockSDKConfig 类型职责与协作状态。",
+      "tags": [
+        "class",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/plugins/stocksdk/provider.py:StockSDKProvider",
+      "type": "class",
+      "name": "StockSDKProvider",
+      "filePath": "backend/app/plugins/stocksdk/provider.py",
+      "lineRange": [
+        50,
+        330
+      ],
+      "summary": "封装数据提供者实现领域的 StockSDKProvider 类型职责与协作状态。",
+      "tags": [
+        "class",
+        "后端",
+        "python"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/plugins/stocksdk/provider.py:_yyyymmdd",
+      "type": "function",
+      "name": "_yyyymmdd",
+      "filePath": "backend/app/plugins/stocksdk/provider.py",
+      "lineRange": [
+        46,
+        47
+      ],
+      "summary": "执行数据提供者实现中的 _yyyymmdd 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/plugins/stocksdk/provider.py:_preview",
+      "type": "function",
+      "name": "_preview",
+      "filePath": "backend/app/plugins/stocksdk/provider.py",
+      "lineRange": [
+        333,
+        340
+      ],
+      "summary": "执行数据提供者实现中的 _preview 业务步骤或辅助计算。",
+      "tags": [
+        "function",
+        "后端",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_capability_matrix.py",
+      "type": "file",
+      "name": "test_capability_matrix.py",
+      "filePath": "backend/tests/test_capability_matrix.py",
+      "summary": "针对capability matrix相关行为、边界条件和回归约束的自动化测试。",
+      "tags": [
+        "test",
+        "后端",
+        "python"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/tests/test_capability_matrix.py:_fake_sources",
+      "type": "function",
+      "name": "_fake_sources",
+      "filePath": "backend/tests/test_capability_matrix.py",
+      "lineRange": [
+        27,
+        29
+      ],
+      "summary": "验证 _fake_sources 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_capability_matrix.py:_by_id",
+      "type": "function",
+      "name": "_by_id",
+      "filePath": "backend/tests/test_capability_matrix.py",
+      "lineRange": [
+        32,
+        33
+      ],
+      "summary": "验证 _by_id 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_capability_matrix.py:test_registry_covers_all_routing_fields",
+      "type": "function",
+      "name": "test_registry_covers_all_routing_fields",
+      "filePath": "backend/tests/test_capability_matrix.py",
+      "lineRange": [
+        36,
+        51
+      ],
+      "summary": "验证 test_registry_covers_all_routing_fields 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_capability_matrix.py:test_matrix_without_third_party_sources",
+      "type": "function",
+      "name": "test_matrix_without_third_party_sources",
+      "filePath": "backend/tests/test_capability_matrix.py",
+      "lineRange": [
+        54,
+        67
+      ],
+      "summary": "验证 test_matrix_without_third_party_sources 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_capability_matrix.py:test_candidates_only_available_unready_goes_pending",
+      "type": "function",
+      "name": "test_candidates_only_available_unready_goes_pending",
+      "filePath": "backend/tests/test_capability_matrix.py",
+      "lineRange": [
+        70,
+        90
+      ],
+      "summary": "验证 test_candidates_only_available_unready_goes_pending 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_capability_matrix.py:test_tickflow_candidates_filtered_by_tier",
+      "type": "function",
+      "name": "test_tickflow_candidates_filtered_by_tier",
+      "filePath": "backend/tests/test_capability_matrix.py",
+      "lineRange": [
+        93,
+        108
+      ],
+      "summary": "验证 test_tickflow_candidates_filtered_by_tier 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_capability_matrix.py:test_current_tickflow_unmet_tier_flagged",
+      "type": "function",
+      "name": "test_current_tickflow_unmet_tier_flagged",
+      "filePath": "backend/tests/test_capability_matrix.py",
+      "lineRange": [
+        111,
+        120
+      ],
+      "summary": "验证 test_current_tickflow_unmet_tier_flagged 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_capability_matrix.py:test_usable_follows_effective_provider",
+      "type": "function",
+      "name": "test_usable_follows_effective_provider",
+      "filePath": "backend/tests/test_capability_matrix.py",
+      "lineRange": [
+        123,
+        166
+      ],
+      "summary": "验证 test_usable_follows_effective_provider 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_capability_matrix.py:test_unknown_or_empty_tier_fails_closed",
+      "type": "function",
+      "name": "test_unknown_or_empty_tier_fails_closed",
+      "filePath": "backend/tests/test_capability_matrix.py",
+      "lineRange": [
+        169,
+        178
+      ],
+      "summary": "验证 test_unknown_or_empty_tier_fails_closed 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_capability_matrix.py:test_adj_factor_routes_independently",
+      "type": "function",
+      "name": "test_adj_factor_routes_independently",
+      "filePath": "backend/tests/test_capability_matrix.py",
+      "lineRange": [
+        181,
+        202
+      ],
+      "summary": "验证 test_adj_factor_routes_independently 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_capability_matrix.py:test_depth5_capability_semantics",
+      "type": "function",
+      "name": "test_depth5_capability_semantics",
+      "filePath": "backend/tests/test_capability_matrix.py",
+      "lineRange": [
+        205,
+        225
+      ],
+      "summary": "验证 test_depth5_capability_semantics 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_capability_matrix.py:test_unknown_current_display_falls_back_to_name",
+      "type": "function",
+      "name": "test_unknown_current_display_falls_back_to_name",
+      "filePath": "backend/tests/test_capability_matrix.py",
+      "lineRange": [
+        228,
+        238
+      ],
+      "summary": "验证 test_unknown_current_display_falls_back_to_name 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_capability_matrix.py:test_full_minute_routable_like_other_capabilities",
+      "type": "function",
+      "name": "test_full_minute_routable_like_other_capabilities",
+      "filePath": "backend/tests/test_capability_matrix.py",
+      "lineRange": [
+        241,
+        270
+      ],
+      "summary": "验证 test_full_minute_routable_like_other_capabilities 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_minute_routing.py",
+      "type": "file",
+      "name": "test_minute_routing.py",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "summary": "针对minute routing相关行为、边界条件和回归约束的自动化测试。",
+      "tags": [
+        "test",
+        "后端",
+        "python"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:_mock_minute_df",
+      "type": "function",
+      "name": "_mock_minute_df",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        29,
+        40
+      ],
+      "summary": "验证 _mock_minute_df 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:_setup_custom_provider",
+      "type": "function",
+      "name": "_setup_custom_provider",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        43,
+        62
+      ],
+      "summary": "验证 _setup_custom_provider 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_custom_minute_provider_returns_1m_k",
+      "type": "function",
+      "name": "test_custom_minute_provider_returns_1m_k",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        67,
+        88
+      ],
+      "summary": "验证 test_custom_minute_provider_returns_1m_k 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_stocksdk_get_minute_receives_freq_1m",
+      "type": "function",
+      "name": "test_stocksdk_get_minute_receives_freq_1m",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        93,
+        112
+      ],
+      "summary": "验证 test_stocksdk_get_minute_receives_freq_1m 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_custom_provider_exception_no_500",
+      "type": "function",
+      "name": "test_custom_provider_exception_no_500",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        117,
+        146
+      ],
+      "summary": "验证 test_custom_provider_exception_no_500 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_provider_without_minute_dataset_fallback",
+      "type": "function",
+      "name": "test_provider_without_minute_dataset_fallback",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        151,
+        163
+      ],
+      "summary": "验证 test_provider_without_minute_dataset_fallback 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_asset_type_threaded_to_provider",
+      "type": "function",
+      "name": "test_asset_type_threaded_to_provider",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        168,
+        183
+      ],
+      "summary": "验证 test_asset_type_threaded_to_provider 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_custom_success_skips_tickflow",
+      "type": "function",
+      "name": "test_custom_success_skips_tickflow",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        188,
+        206
+      ],
+      "summary": "验证 test_custom_success_skips_tickflow 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_sync_minute_batch_custom_success_returns_directly",
+      "type": "function",
+      "name": "test_sync_minute_batch_custom_success_returns_directly",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        211,
+        233
+      ],
+      "summary": "验证 test_sync_minute_batch_custom_success_returns_directly 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_on_chunk_done_wrapped_to_3_args",
+      "type": "function",
+      "name": "test_on_chunk_done_wrapped_to_3_args",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        238,
+        269
+      ],
+      "summary": "验证 test_on_chunk_done_wrapped_to_3_args 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_splits_stock_and_etf",
+      "type": "function",
+      "name": "test_get_minute_batch_splits_stock_and_etf",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        274,
+        317
+      ],
+      "summary": "验证 test_get_minute_batch_splits_stock_and_etf 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:_bars",
+      "type": "function",
+      "name": "_bars",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        322,
+        330
+      ],
+      "summary": "验证 _bars 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:_endpoint_mocks",
+      "type": "function",
+      "name": "_endpoint_mocks",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        333,
+        362
+      ],
+      "summary": "验证 _endpoint_mocks 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_minute_batch_tail_stale_pulls_incremental_and_persists",
+      "type": "function",
+      "name": "test_minute_batch_tail_stale_pulls_incremental_and_persists",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        365,
+        384
+      ],
+      "summary": "验证 test_minute_batch_tail_stale_pulls_incremental_and_persists 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_minute_batch_middle_hole_falls_back_to_full_day",
+      "type": "function",
+      "name": "test_minute_batch_middle_hole_falls_back_to_full_day",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        387,
+        397
+      ],
+      "summary": "验证 test_minute_batch_middle_hole_falls_back_to_full_day 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_minute_batch_fresh_local_skips_pull",
+      "type": "function",
+      "name": "test_minute_batch_fresh_local_skips_pull",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        400,
+        413
+      ],
+      "summary": "验证 test_minute_batch_fresh_local_skips_pull 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_minute_batch_since_returns_only_new_bars",
+      "type": "function",
+      "name": "test_minute_batch_since_returns_only_new_bars",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        416,
+        449
+      ],
+      "summary": "验证 test_minute_batch_since_returns_only_new_bars 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_sync_minute_batch_custom_calls_on_segment",
+      "type": "function",
+      "name": "test_sync_minute_batch_custom_calls_on_segment",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        454,
+        478
+      ],
+      "summary": "验证 test_sync_minute_batch_custom_calls_on_segment 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_sync_minute_batch_custom_empty_df_skips_on_segment",
+      "type": "function",
+      "name": "test_sync_minute_batch_custom_empty_df_skips_on_segment",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        483,
+        501
+      ],
+      "summary": "验证 test_sync_minute_batch_custom_empty_df_skips_on_segment 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_sync_and_persist_minute_custom_persists",
+      "type": "function",
+      "name": "test_sync_and_persist_minute_custom_persists",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        506,
+        545
+      ],
+      "summary": "验证 test_sync_and_persist_minute_custom_persists 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_sync_and_persist_minute_holds_repository_write_lock",
+      "type": "function",
+      "name": "test_sync_and_persist_minute_holds_repository_write_lock",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        548,
+        577
+      ],
+      "summary": "验证 test_sync_and_persist_minute_holds_repository_write_lock 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_get_provider_exception_falls_back_to_tickflow",
+      "type": "function",
+      "name": "test_get_provider_exception_falls_back_to_tickflow",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        582,
+        608
+      ],
+      "summary": "验证 test_get_provider_exception_falls_back_to_tickflow 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_provider_has_dataset_exception_falls_back",
+      "type": "function",
+      "name": "test_provider_has_dataset_exception_falls_back",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        613,
+        635
+      ],
+      "summary": "验证 test_provider_has_dataset_exception_falls_back 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:_make_minute_config",
+      "type": "function",
+      "name": "_make_minute_config",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        644,
+        655
+      ],
+      "summary": "验证 _make_minute_config 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:_capture_request_rows",
+      "type": "function",
+      "name": "_capture_request_rows",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        658,
+        669
+      ],
+      "summary": "验证 _capture_request_rows 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_generic_http_get_minute_passes_asset_type_when_configured",
+      "type": "function",
+      "name": "test_generic_http_get_minute_passes_asset_type_when_configured",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        672,
+        681
+      ],
+      "summary": "验证 test_generic_http_get_minute_passes_asset_type_when_configured 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_generic_http_get_minute_passes_freq_when_configured",
+      "type": "function",
+      "name": "test_generic_http_get_minute_passes_freq_when_configured",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        684,
+        693
+      ],
+      "summary": "验证 test_generic_http_get_minute_passes_freq_when_configured 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_generic_http_get_minute_omits_params_when_not_configured",
+      "type": "function",
+      "name": "test_generic_http_get_minute_omits_params_when_not_configured",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        696,
+        706
+      ],
+      "summary": "验证 test_generic_http_get_minute_omits_params_when_not_configured 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_sync_and_persist_minute_resolver_exception_returns_zero",
+      "type": "function",
+      "name": "test_sync_and_persist_minute_resolver_exception_returns_zero",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        711,
+        740
+      ],
+      "summary": "验证 test_sync_and_persist_minute_resolver_exception_returns_zero 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_resolve_minute_provider_tickflow_returns_silent_fallback",
+      "type": "function",
+      "name": "test_resolve_minute_provider_tickflow_returns_silent_fallback",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        745,
+        750
+      ],
+      "summary": "验证 test_resolve_minute_provider_tickflow_returns_silent_fallback 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_resolve_minute_provider_no_dataset_returns_silent_fallback",
+      "type": "function",
+      "name": "test_resolve_minute_provider_no_dataset_returns_silent_fallback",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        753,
+        762
+      ],
+      "summary": "验证 test_resolve_minute_provider_no_dataset_returns_silent_fallback 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_resolve_minute_provider_has_dataset_exception_returns_err",
+      "type": "function",
+      "name": "test_resolve_minute_provider_has_dataset_exception_returns_err",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        765,
+        774
+      ],
+      "summary": "验证 test_resolve_minute_provider_has_dataset_exception_returns_err 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_resolve_minute_provider_get_provider_exception_returns_err",
+      "type": "function",
+      "name": "test_resolve_minute_provider_get_provider_exception_returns_err",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        777,
+        790
+      ],
+      "summary": "验证 test_resolve_minute_provider_get_provider_exception_returns_err 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_resolve_minute_provider_success_returns_provider",
+      "type": "function",
+      "name": "test_resolve_minute_provider_success_returns_provider",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        793,
+        807
+      ],
+      "summary": "验证 test_resolve_minute_provider_success_returns_provider 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_minute_allowed_resolver_exception_returns_false",
+      "type": "function",
+      "name": "test_minute_allowed_resolver_exception_returns_false",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        810,
+        825
+      ],
+      "summary": "验证 test_minute_allowed_resolver_exception_returns_false 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_intraday_monitor_support_resolver_exception_falls_back",
+      "type": "function",
+      "name": "test_intraday_monitor_support_resolver_exception_falls_back",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        828,
+        848
+      ],
+      "summary": "验证 test_intraday_monitor_support_resolver_exception_falls_back 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_sync_minute_single_rejects_index_symbol",
+      "type": "function",
+      "name": "test_sync_minute_single_rejects_index_symbol",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        853,
+        870
+      ],
+      "summary": "验证 test_sync_minute_single_rejects_index_symbol 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:_mock_minute_rows",
+      "type": "function",
+      "name": "_mock_minute_rows",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        876,
+        883
+      ],
+      "summary": "验证 _mock_minute_rows 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:_healthy_svc",
+      "type": "function",
+      "name": "_healthy_svc",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        886,
+        890
+      ],
+      "summary": "验证 _healthy_svc 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+      "type": "function",
+      "name": "test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        893,
+        927
+      ],
+      "summary": "验证 test_get_minute_batch_prefer_local_healthy_skips_stock_refetch 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_prefer_local_unhealthy_falls_back",
+      "type": "function",
+      "name": "test_get_minute_batch_prefer_local_unhealthy_falls_back",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        930,
+        955
+      ],
+      "summary": "验证 test_get_minute_batch_prefer_local_unhealthy_falls_back 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_no_flag_unaffected_even_if_healthy",
+      "type": "function",
+      "name": "test_get_minute_batch_no_flag_unaffected_even_if_healthy",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        958,
+        982
+      ],
+      "summary": "验证 test_get_minute_batch_no_flag_unaffected_even_if_healthy 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_minute_refresh_is_healthy_requires_recent_round",
+      "type": "function",
+      "name": "test_minute_refresh_is_healthy_requires_recent_round",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        985,
+        1013
+      ],
+      "summary": "验证 test_minute_refresh_is_healthy_requires_recent_round 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_minute_batch_compress_preference_default_and_toggle",
+      "type": "function",
+      "name": "test_minute_batch_compress_preference_default_and_toggle",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        1019,
+        1026
+      ],
+      "summary": "验证 test_minute_batch_compress_preference_default_and_toggle 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:_compress_mock_env",
+      "type": "function",
+      "name": "_compress_mock_env",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        1029,
+        1051
+      ],
+      "summary": "验证 _compress_mock_env 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_gzip_response_when_enabled",
+      "type": "function",
+      "name": "test_get_minute_batch_gzip_response_when_enabled",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        1054,
+        1069
+      ],
+      "summary": "验证 test_get_minute_batch_gzip_response_when_enabled 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_plain_when_disabled",
+      "type": "function",
+      "name": "test_get_minute_batch_plain_when_disabled",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        1072,
+        1080
+      ],
+      "summary": "验证 test_get_minute_batch_plain_when_disabled 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_plain_without_accept_encoding",
+      "type": "function",
+      "name": "test_get_minute_batch_plain_without_accept_encoding",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        1083,
+        1091
+      ],
+      "summary": "验证 test_get_minute_batch_plain_without_accept_encoding 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:_daily_mock_env",
+      "type": "function",
+      "name": "_daily_mock_env",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        1097,
+        1119
+      ],
+      "summary": "验证 _daily_mock_env 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_daily_batch_gzip_when_enabled",
+      "type": "function",
+      "name": "test_daily_batch_gzip_when_enabled",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        1122,
+        1134
+      ],
+      "summary": "验证 test_daily_batch_gzip_when_enabled 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_daily_batch_plain_when_disabled",
+      "type": "function",
+      "name": "test_daily_batch_plain_when_disabled",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        1137,
+        1142
+      ],
+      "summary": "验证 test_daily_batch_plain_when_disabled 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_daily_batch_independent_from_minute_switch",
+      "type": "function",
+      "name": "test_daily_batch_independent_from_minute_switch",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        1145,
+        1155
+      ],
+      "summary": "验证 test_daily_batch_independent_from_minute_switch 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_routing.py:test_preferences_parallel_saves_do_not_lose_each_other",
+      "type": "function",
+      "name": "test_preferences_parallel_saves_do_not_lose_each_other",
+      "filePath": "backend/tests/test_minute_routing.py",
+      "lineRange": [
+        1158,
+        1183
+      ],
+      "summary": "验证 test_preferences_parallel_saves_do_not_lose_each_other 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_stocksdk_provider.py",
+      "type": "file",
+      "name": "test_stocksdk_provider.py",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "summary": "针对stocksdk provider相关行为、边界条件和回归约束的自动化测试。",
+      "tags": [
+        "test",
+        "后端",
+        "python"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:_patch_run_job",
+      "type": "function",
+      "name": "_patch_run_job",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        20,
+        26
+      ],
+      "summary": "验证 _patch_run_job 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_get_daily_normalizes_and_echoes_symbol",
+      "type": "function",
+      "name": "test_get_daily_normalizes_and_echoes_symbol",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        29,
+        45
+      ],
+      "summary": "验证 test_get_daily_normalizes_and_echoes_symbol 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_get_adj_factors_from_bridge_ratio",
+      "type": "function",
+      "name": "test_get_adj_factors_from_bridge_ratio",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        48,
+        62
+      ],
+      "summary": "验证 test_get_adj_factors_from_bridge_ratio 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_get_minute_datetime_is_beijing_wall_clock",
+      "type": "function",
+      "name": "test_get_minute_datetime_is_beijing_wall_clock",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        65,
+        80
+      ],
+      "summary": "验证 test_get_minute_datetime_is_beijing_wall_clock 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_get_realtime_normalizes_units_without_mutating_bridge_rows",
+      "type": "function",
+      "name": "test_get_realtime_normalizes_units_without_mutating_bridge_rows",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        83,
+        96
+      ],
+      "summary": "验证 test_get_realtime_normalizes_units_without_mutating_bridge_rows 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_get_instruments_flatten_compatible",
+      "type": "function",
+      "name": "test_get_instruments_flatten_compatible",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        99,
+        108
+      ],
+      "summary": "验证 test_get_instruments_flatten_compatible 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_empty_symbols_returns_empty",
+      "type": "function",
+      "name": "test_empty_symbols_returns_empty",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        111,
+        115
+      ],
+      "summary": "验证 test_empty_symbols_returns_empty 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_bridge_error_degrades_to_empty",
+      "type": "function",
+      "name": "test_bridge_error_degrades_to_empty",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        118,
+        125
+      ],
+      "summary": "验证 test_bridge_error_degrades_to_empty 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_bridge_uses_utf8_error_tolerant_subprocess",
+      "type": "function",
+      "name": "test_bridge_uses_utf8_error_tolerant_subprocess",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        128,
+        147
+      ],
+      "summary": "验证 test_bridge_uses_utf8_error_tolerant_subprocess 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+      "type": "function",
+      "name": "test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        150,
+        201
+      ],
+      "summary": "验证 test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_plugin_discovered_in_loader",
+      "type": "function",
+      "name": "test_plugin_discovered_in_loader",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        204,
+        216
+      ],
+      "summary": "验证 test_plugin_discovered_in_loader 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_plugin_registered_when_available",
+      "type": "function",
+      "name": "test_plugin_registered_when_available",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        219,
+        233
+      ],
+      "summary": "验证 test_plugin_registered_when_available 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:_load_stocksdk_entry",
+      "type": "function",
+      "name": "_load_stocksdk_entry",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        236,
+        244
+      ],
+      "summary": "验证 _load_stocksdk_entry 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_builtin_not_editable",
+      "type": "function",
+      "name": "test_builtin_not_editable",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        247,
+        256
+      ],
+      "summary": "验证 test_builtin_not_editable 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:_sdk_rows",
+      "type": "function",
+      "name": "_sdk_rows",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        261,
+        270
+      ],
+      "summary": "验证 _sdk_rows 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_minute_degenerate_open_nulled",
+      "type": "function",
+      "name": "test_minute_degenerate_open_nulled",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        273,
+        280
+      ],
+      "summary": "验证 test_minute_degenerate_open_nulled 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_minute_real_open_kept",
+      "type": "function",
+      "name": "test_minute_real_open_kept",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        283,
+        289
+      ],
+      "summary": "验证 test_minute_real_open_kept 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_minute_short_day_open_kept",
+      "type": "function",
+      "name": "test_minute_short_day_open_kept",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        292,
+        296
+      ],
+      "summary": "验证 test_minute_short_day_open_kept 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_get_minute_splits_tail_into_single_day_jobs",
+      "type": "function",
+      "name": "test_get_minute_splits_tail_into_single_day_jobs",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        299,
+        319
+      ],
+      "summary": "验证 test_get_minute_splits_tail_into_single_day_jobs 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_stocksdk_provider.py:test_get_minute_single_day_no_split",
+      "type": "function",
+      "name": "test_get_minute_single_day_no_split",
+      "filePath": "backend/tests/test_stocksdk_provider.py",
+      "lineRange": [
+        322,
+        335
+      ],
+      "summary": "验证 test_get_minute_single_day_no_split 所覆盖的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "function",
+        "python"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/app/plugins/stocksdk/__init__.py",
+      "target": "file:backend/app/plugins/stocksdk/bridge.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/__init__.py",
+      "target": "file:backend/app/plugins/stocksdk/provider.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.py",
+      "target": "class:backend/app/plugins/stocksdk/bridge.py:StockSDKBridgeError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.py",
+      "target": "class:backend/app/plugins/stocksdk/bridge.py:StockSDKBridgeError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.py",
+      "target": "function:backend/app/plugins/stocksdk/bridge.py:_node_bin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.py",
+      "target": "function:backend/app/plugins/stocksdk/bridge.py:_node_bin",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.py",
+      "target": "function:backend/app/plugins/stocksdk/bridge.py:run_job",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.py",
+      "target": "function:backend/app/plugins/stocksdk/bridge.py:run_job",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.py",
+      "target": "function:backend/app/plugins/stocksdk/bridge.py:availability",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.py",
+      "target": "function:backend/app/plugins/stocksdk/bridge.py:availability",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/provider.py",
+      "target": "class:backend/app/plugins/stocksdk/provider.py:_StockSDKConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/provider.py",
+      "target": "class:backend/app/plugins/stocksdk/provider.py:_StockSDKConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/provider.py",
+      "target": "class:backend/app/plugins/stocksdk/provider.py:StockSDKProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/provider.py",
+      "target": "class:backend/app/plugins/stocksdk/provider.py:StockSDKProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/provider.py",
+      "target": "function:backend/app/plugins/stocksdk/provider.py:_yyyymmdd",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/provider.py",
+      "target": "function:backend/app/plugins/stocksdk/provider.py:_yyyymmdd",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/provider.py",
+      "target": "function:backend/app/plugins/stocksdk/provider.py:_preview",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/provider.py",
+      "target": "function:backend/app/plugins/stocksdk/provider.py:_preview",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/provider.py",
+      "target": "file:backend/app/data_providers/base.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/provider.py",
+      "target": "file:backend/app/data_providers/normalizer.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/provider.py",
+      "target": "file:backend/app/plugins/stocksdk/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/provider.py",
+      "target": "file:backend/app/plugins/stocksdk/bridge.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/provider.py",
+      "target": "file:backend/app/tickflow/rate_limits.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:_fake_sources",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:_fake_sources",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:_by_id",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:_by_id",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_registry_covers_all_routing_fields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_registry_covers_all_routing_fields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_matrix_without_third_party_sources",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_matrix_without_third_party_sources",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_candidates_only_available_unready_goes_pending",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_candidates_only_available_unready_goes_pending",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_tickflow_candidates_filtered_by_tier",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_tickflow_candidates_filtered_by_tier",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_current_tickflow_unmet_tier_flagged",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_current_tickflow_unmet_tier_flagged",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_usable_follows_effective_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_usable_follows_effective_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_unknown_or_empty_tier_fails_closed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_unknown_or_empty_tier_fails_closed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_adj_factor_routes_independently",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_adj_factor_routes_independently",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_depth5_capability_semantics",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_depth5_capability_semantics",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_unknown_current_display_falls_back_to_name",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_unknown_current_display_falls_back_to_name",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_full_minute_routable_like_other_capabilities",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "function:backend/tests/test_capability_matrix.py:test_full_minute_routable_like_other_capabilities",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "file:backend/app/data_providers/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_capability_matrix.py",
+      "target": "file:backend/app/data_providers/capabilities.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_mock_minute_df",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_mock_minute_df",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_setup_custom_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_setup_custom_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_custom_minute_provider_returns_1m_k",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_custom_minute_provider_returns_1m_k",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_stocksdk_get_minute_receives_freq_1m",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_stocksdk_get_minute_receives_freq_1m",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_custom_provider_exception_no_500",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_custom_provider_exception_no_500",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_provider_without_minute_dataset_fallback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_provider_without_minute_dataset_fallback",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_asset_type_threaded_to_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_asset_type_threaded_to_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_custom_success_skips_tickflow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_custom_success_skips_tickflow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_sync_minute_batch_custom_success_returns_directly",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_sync_minute_batch_custom_success_returns_directly",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_on_chunk_done_wrapped_to_3_args",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_on_chunk_done_wrapped_to_3_args",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_splits_stock_and_etf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_splits_stock_and_etf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_bars",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_bars",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_endpoint_mocks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_endpoint_mocks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_minute_batch_tail_stale_pulls_incremental_and_persists",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_minute_batch_tail_stale_pulls_incremental_and_persists",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_minute_batch_middle_hole_falls_back_to_full_day",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_minute_batch_middle_hole_falls_back_to_full_day",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_minute_batch_fresh_local_skips_pull",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_minute_batch_fresh_local_skips_pull",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_minute_batch_since_returns_only_new_bars",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_minute_batch_since_returns_only_new_bars",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_sync_minute_batch_custom_calls_on_segment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_sync_minute_batch_custom_calls_on_segment",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_sync_minute_batch_custom_empty_df_skips_on_segment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_sync_minute_batch_custom_empty_df_skips_on_segment",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_sync_and_persist_minute_custom_persists",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_sync_and_persist_minute_custom_persists",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_sync_and_persist_minute_holds_repository_write_lock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_sync_and_persist_minute_holds_repository_write_lock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_get_provider_exception_falls_back_to_tickflow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_get_provider_exception_falls_back_to_tickflow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_provider_has_dataset_exception_falls_back",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_provider_has_dataset_exception_falls_back",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_make_minute_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_make_minute_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_capture_request_rows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_capture_request_rows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_generic_http_get_minute_passes_asset_type_when_configured",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_generic_http_get_minute_passes_asset_type_when_configured",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_generic_http_get_minute_passes_freq_when_configured",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_generic_http_get_minute_passes_freq_when_configured",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_generic_http_get_minute_omits_params_when_not_configured",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_generic_http_get_minute_omits_params_when_not_configured",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_sync_and_persist_minute_resolver_exception_returns_zero",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_sync_and_persist_minute_resolver_exception_returns_zero",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_resolve_minute_provider_tickflow_returns_silent_fallback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_resolve_minute_provider_tickflow_returns_silent_fallback",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_resolve_minute_provider_no_dataset_returns_silent_fallback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_resolve_minute_provider_no_dataset_returns_silent_fallback",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_resolve_minute_provider_has_dataset_exception_returns_err",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_resolve_minute_provider_has_dataset_exception_returns_err",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_resolve_minute_provider_get_provider_exception_returns_err",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_resolve_minute_provider_get_provider_exception_returns_err",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_resolve_minute_provider_success_returns_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_resolve_minute_provider_success_returns_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_minute_allowed_resolver_exception_returns_false",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_minute_allowed_resolver_exception_returns_false",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_intraday_monitor_support_resolver_exception_falls_back",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_intraday_monitor_support_resolver_exception_falls_back",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_sync_minute_single_rejects_index_symbol",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_sync_minute_single_rejects_index_symbol",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_mock_minute_rows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_mock_minute_rows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_healthy_svc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_healthy_svc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_prefer_local_healthy_skips_stock_refetch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_prefer_local_unhealthy_falls_back",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_prefer_local_unhealthy_falls_back",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_no_flag_unaffected_even_if_healthy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_no_flag_unaffected_even_if_healthy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_minute_refresh_is_healthy_requires_recent_round",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_minute_refresh_is_healthy_requires_recent_round",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_minute_batch_compress_preference_default_and_toggle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_minute_batch_compress_preference_default_and_toggle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_compress_mock_env",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_compress_mock_env",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_gzip_response_when_enabled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_gzip_response_when_enabled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_plain_when_disabled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_plain_when_disabled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_plain_without_accept_encoding",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_get_minute_batch_plain_without_accept_encoding",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_daily_mock_env",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:_daily_mock_env",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_daily_batch_gzip_when_enabled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_daily_batch_gzip_when_enabled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_daily_batch_plain_when_disabled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_daily_batch_plain_when_disabled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_daily_batch_independent_from_minute_switch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_daily_batch_independent_from_minute_switch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_preferences_parallel_saves_do_not_lose_each_other",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "function:backend/tests/test_minute_routing.py:test_preferences_parallel_saves_do_not_lose_each_other",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "file:backend/app/data_providers/custom/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "file:backend/app/data_providers/custom/provider.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "file:backend/app/plugins/stocksdk/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "file:backend/app/plugins/stocksdk/provider.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "file:backend/app/services/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_minute_routing.py",
+      "target": "file:backend/app/services/kline_sync.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:_patch_run_job",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:_patch_run_job",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_get_daily_normalizes_and_echoes_symbol",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_get_daily_normalizes_and_echoes_symbol",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_get_adj_factors_from_bridge_ratio",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_get_adj_factors_from_bridge_ratio",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_get_minute_datetime_is_beijing_wall_clock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_get_minute_datetime_is_beijing_wall_clock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_get_realtime_normalizes_units_without_mutating_bridge_rows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_get_realtime_normalizes_units_without_mutating_bridge_rows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_get_instruments_flatten_compatible",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_get_instruments_flatten_compatible",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_empty_symbols_returns_empty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_empty_symbols_returns_empty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_bridge_error_degrades_to_empty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_bridge_error_degrades_to_empty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_bridge_uses_utf8_error_tolerant_subprocess",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_bridge_uses_utf8_error_tolerant_subprocess",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_bridge_mjs_resolves_local_sdk_and_maps_realtime_timestamp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_plugin_discovered_in_loader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_plugin_discovered_in_loader",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_plugin_registered_when_available",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_plugin_registered_when_available",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:_load_stocksdk_entry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:_load_stocksdk_entry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_builtin_not_editable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_builtin_not_editable",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:_sdk_rows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:_sdk_rows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_minute_degenerate_open_nulled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_minute_degenerate_open_nulled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_minute_real_open_kept",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_minute_real_open_kept",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_minute_short_day_open_kept",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_minute_short_day_open_kept",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_get_minute_splits_tail_into_single_day_jobs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_get_minute_splits_tail_into_single_day_jobs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_get_minute_single_day_no_split",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "function:backend/tests/test_stocksdk_provider.py:test_get_minute_single_day_no_split",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "file:backend/app/plugins/stocksdk/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "file:backend/app/plugins/stocksdk/bridge.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_stocksdk_provider.py",
+      "target": "file:backend/app/plugins/stocksdk/provider.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

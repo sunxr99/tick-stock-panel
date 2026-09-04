@@ -1,0 +1,221 @@
+{
+  "projectRoot": "D:\\stock\\myStockPanel\\tick-stock-panel",
+  "batchFiles": [
+    {
+      "path": "backend/app/api/ext_data.py",
+      "language": "python",
+      "sizeLines": 1182,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/api/overview.py",
+      "language": "python",
+      "sizeLines": 374,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/api/rps.py",
+      "language": "python",
+      "sizeLines": 73,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/concept_rotation_analyzer.py",
+      "language": "python",
+      "sizeLines": 390,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/ext_data.py",
+      "language": "python",
+      "sizeLines": 670,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/ext_presets.py",
+      "language": "python",
+      "sizeLines": 275,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/ext_pull.py",
+      "language": "python",
+      "sizeLines": 319,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/index_const.py",
+      "language": "python",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/market_mainline.py",
+      "language": "python",
+      "sizeLines": 298,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/market_overview_builder.py",
+      "language": "python",
+      "sizeLines": 595,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/market_recap.py",
+      "language": "python",
+      "sizeLines": 383,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/rps_rotation.py",
+      "language": "python",
+      "sizeLines": 225,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/services/sector_monitor.py",
+      "language": "python",
+      "sizeLines": 349,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_custom_provider_indices.py",
+      "language": "python",
+      "sizeLines": 191,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_dimension_intraday.py",
+      "language": "python",
+      "sizeLines": 158,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_ext_config_load_all_cache.py",
+      "language": "python",
+      "sizeLines": 99,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_ext_config_store_safety.py",
+      "language": "python",
+      "sizeLines": 43,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_ext_data_dimension_members.py",
+      "language": "python",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_ext_preset_dimension_values.py",
+      "language": "python",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_ext_upload_size_limit.py",
+      "language": "python",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_market_mainline.py",
+      "language": "python",
+      "sizeLines": 251,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_sector_monitor.py",
+      "language": "python",
+      "sizeLines": 211,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "backend/app/api/ext_data.py": [
+      "backend/app/services/ext_data.py",
+      "backend/app/services/ext_pull.py"
+    ],
+    "backend/app/api/overview.py": [
+      "backend/app/services/ext_data.py",
+      "backend/app/services/index_const.py",
+      "backend/app/services/screener.py"
+    ],
+    "backend/app/api/rps.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/concept_rotation_analyzer.py",
+      "backend/app/services/rps_rotation.py"
+    ],
+    "backend/app/services/concept_rotation_analyzer.py": [],
+    "backend/app/services/ext_data.py": [],
+    "backend/app/services/ext_presets.py": [
+      "backend/app/services/ext_data.py"
+    ],
+    "backend/app/services/ext_pull.py": [
+      "backend/app/services/ext_data.py"
+    ],
+    "backend/app/services/index_const.py": [],
+    "backend/app/services/market_mainline.py": [
+      "backend/app/services/rps_rotation.py"
+    ],
+    "backend/app/services/market_overview_builder.py": [
+      "backend/app/services/ext_data.py",
+      "backend/app/services/index_const.py",
+      "backend/app/services/screener.py"
+    ],
+    "backend/app/services/market_recap.py": [
+      "backend/app/services/market_overview_builder.py"
+    ],
+    "backend/app/services/rps_rotation.py": [
+      "backend/app/services/ext_data.py",
+      "backend/app/services/market_overview_builder.py"
+    ],
+    "backend/app/services/sector_monitor.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/ext_data.py",
+      "backend/app/services/index_const.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_custom_provider_indices.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/index_const.py"
+    ],
+    "backend/tests/test_dimension_intraday.py": [
+      "backend/app/api/ext_data.py",
+      "backend/app/services/ext_data.py"
+    ],
+    "backend/tests/test_ext_config_load_all_cache.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/ext_data.py"
+    ],
+    "backend/tests/test_ext_config_store_safety.py": [
+      "backend/app/services/ext_data.py"
+    ],
+    "backend/tests/test_ext_data_dimension_members.py": [
+      "backend/app/api/ext_data.py"
+    ],
+    "backend/tests/test_ext_preset_dimension_values.py": [
+      "backend/app/services/ext_presets.py",
+      "backend/app/services/market_overview_builder.py"
+    ],
+    "backend/tests/test_ext_upload_size_limit.py": [
+      "backend/app/api/ext_data.py"
+    ],
+    "backend/tests/test_market_mainline.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/market_mainline.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_sector_monitor.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/ext_data.py",
+      "backend/app/services/sector_monitor.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py"
+    ]
+  }
+}

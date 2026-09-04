@@ -1,0 +1,2677 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "type": "file",
+      "name": "test_robustness_metrics.py",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "summary": "为 robustness_metrics 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_all_losses_is_exact",
+      "type": "function",
+      "name": "test_sortino_all_losses_is_exact",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        21,
+        27
+      ],
+      "summary": "验证 sortino all losses is exact 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_no_downside_returns_none",
+      "type": "function",
+      "name": "test_sortino_no_downside_returns_none",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        30,
+        33
+      ],
+      "summary": "验证 sortino no downside returns none 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_exceeds_sharpe_when_downside_is_tamer",
+      "type": "function",
+      "name": "test_sortino_exceeds_sharpe_when_downside_is_tamer",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        36,
+        44
+      ],
+      "summary": "验证 sortino exceeds sharpe when downside is tamer 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_too_few_points",
+      "type": "function",
+      "name": "test_sortino_too_few_points",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        47,
+        49
+      ],
+      "summary": "验证 sortino too few points 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_is_deterministic_snapshot",
+      "type": "function",
+      "name": "test_mc_drawdown_is_deterministic_snapshot",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        62,
+        68
+      ],
+      "summary": "验证 mc drawdown is deterministic snapshot 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_p95_strictly_worse_and_negative",
+      "type": "function",
+      "name": "test_mc_drawdown_p95_strictly_worse_and_negative",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        71,
+        75
+      ],
+      "summary": "验证 mc drawdown p95 strictly worse and negative 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_ignores_non_finite",
+      "type": "function",
+      "name": "test_mc_drawdown_ignores_non_finite",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        78,
+        81
+      ],
+      "summary": "验证 mc drawdown ignores non finite 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_clips_sub_minus_100pct_pnl",
+      "type": "function",
+      "name": "test_mc_drawdown_clips_sub_minus_100pct_pnl",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        84,
+        91
+      ],
+      "summary": "验证 mc drawdown clips sub minus 100pct pnl 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_all_positive_has_zero_drawdown",
+      "type": "function",
+      "name": "test_mc_drawdown_all_positive_has_zero_drawdown",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        94,
+        99
+      ],
+      "summary": "验证 mc drawdown all positive has zero drawdown 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_too_few_trades",
+      "type": "function",
+      "name": "test_mc_drawdown_too_few_trades",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        102,
+        105
+      ],
+      "summary": "验证 mc drawdown too few trades 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:_trades",
+      "type": "function",
+      "name": "_trades",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        112,
+        120
+      ],
+      "summary": "实现 _trades，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_emits_robustness_fields",
+      "type": "function",
+      "name": "test_calc_stats_emits_robustness_fields",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        123,
+        131
+      ],
+      "summary": "验证 calc stats emits robustness fields 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_empty_trades_safe",
+      "type": "function",
+      "name": "test_calc_stats_empty_trades_safe",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        134,
+        137
+      ],
+      "summary": "验证 calc stats empty trades safe 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_portfolio_stats_emits_robustness_fields",
+      "type": "function",
+      "name": "test_portfolio_stats_emits_robustness_fields",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        140,
+        151
+      ],
+      "summary": "验证 portfolio stats emits robustness fields 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_independent_candidate_stats_emits_sortino_and_mc",
+      "type": "function",
+      "name": "test_independent_candidate_stats_emits_sortino_and_mc",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        154,
+        167
+      ],
+      "summary": "验证 independent candidate stats emits sortino and mc 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_lightweight_candidate_stats_do_not_call_monte_carlo",
+      "type": "function",
+      "name": "test_lightweight_candidate_stats_do_not_call_monte_carlo",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        170,
+        194
+      ],
+      "summary": "验证 lightweight candidate stats do not call monte carlo 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_all_wins_reports_sortino_none",
+      "type": "function",
+      "name": "test_calc_stats_all_wins_reports_sortino_none",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        197,
+        201
+      ],
+      "summary": "验证 calc stats all wins reports sortino none 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "type": "file",
+      "name": "test_strategy_backtest_correctness.py",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "summary": "为 strategy_backtest_correctness 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_StrategyEngineStub",
+      "type": "class",
+      "name": "_StrategyEngineStub",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        37,
+        42
+      ],
+      "summary": "定义 _StrategyEngineStub 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_RepoStub",
+      "type": "class",
+      "name": "_RepoStub",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        45,
+        50
+      ],
+      "summary": "定义 _RepoStub 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_EngineStub",
+      "type": "class",
+      "name": "_EngineStub",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        53,
+        121
+      ],
+      "summary": "定义 _EngineStub 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:_strategy",
+      "type": "function",
+      "name": "_strategy",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        16,
+        34
+      ],
+      "summary": "实现 _strategy，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_basic_filter_only_limits_entries_not_panel_rows",
+      "type": "function",
+      "name": "test_basic_filter_only_limits_entries_not_panel_rows",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        124,
+        165
+      ],
+      "summary": "验证 basic filter only limits entries not panel rows 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_non_matrix_strategy_applies_regime_filter_and_reports_config",
+      "type": "function",
+      "name": "test_non_matrix_strategy_applies_regime_filter_and_reports_config",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        168,
+        219
+      ],
+      "summary": "验证 non matrix strategy applies regime filter and reports config 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_regime_filter_matches_raw_five_level_states",
+      "type": "function",
+      "name": "test_regime_filter_matches_raw_five_level_states",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        222,
+        273
+      ],
+      "summary": "验证 regime filter matches raw five level states 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_selection_stats_explain_entry_trigger_filtering",
+      "type": "function",
+      "name": "test_selection_stats_explain_entry_trigger_filtering",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        276,
+        317
+      ],
+      "summary": "验证 selection stats explain entry trigger filtering 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_score_normalizes_inside_strategy_candidate_universe",
+      "type": "function",
+      "name": "test_score_normalizes_inside_strategy_candidate_universe",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        320,
+        334
+      ],
+      "summary": "验证 score normalizes inside strategy candidate universe 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_full_mode_executes_every_candidate_with_strategy_rules",
+      "type": "function",
+      "name": "test_full_mode_executes_every_candidate_with_strategy_rules",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        337,
+        371
+      ],
+      "summary": "验证 full mode executes every candidate with strategy rules 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_native_strategy_uses_shared_orchestrator_path",
+      "type": "function",
+      "name": "test_matrix_native_strategy_uses_shared_orchestrator_path",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        374,
+        423
+      ],
+      "summary": "验证 matrix native strategy uses shared orchestrator path 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_native_accepts_legacy_default_signal_overrides_but_rejects_replacements",
+      "type": "function",
+      "name": "test_matrix_native_accepts_legacy_default_signal_overrides_but_rejects_replacements",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        426,
+        476
+      ],
+      "summary": "验证 matrix native accepts legacy default signal overrides but rejects replacements 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_optimizer_preparation_loads_and_builds_base_data_once",
+      "type": "function",
+      "name": "test_matrix_optimizer_preparation_loads_and_builds_base_data_once",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        479,
+        534
+      ],
+      "summary": "验证 matrix optimizer preparation loads and builds base data once 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_prepare_signature_includes_regime_filter",
+      "type": "function",
+      "name": "test_matrix_prepare_signature_includes_regime_filter",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        537,
+        549
+      ],
+      "summary": "验证 matrix prepare signature includes regime filter 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_cache_preserves_trades_daily_equity_and_core_stats",
+      "type": "function",
+      "name": "test_matrix_cache_preserves_trades_daily_equity_and_core_stats",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        552,
+        638
+      ],
+      "summary": "验证 matrix cache preserves trades daily equity and core stats 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/tests/backtest/test_walkforward.py",
+      "type": "file",
+      "name": "test_walkforward.py",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "summary": "为 walkforward 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_walkforward.py:_FakeResult",
+      "type": "class",
+      "name": "_FakeResult",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        123,
+        125
+      ],
+      "summary": "定义 _FakeResult 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_walkforward.py:_FakeOptimizer",
+      "type": "class",
+      "name": "_FakeOptimizer",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        128,
+        138
+      ],
+      "summary": "定义 _FakeOptimizer 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_walkforward.py:_FakeEngine",
+      "type": "class",
+      "name": "_FakeEngine",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        147,
+        150
+      ],
+      "summary": "定义 _FakeEngine 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_walkforward.py:_FakeService",
+      "type": "class",
+      "name": "_FakeService",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        153,
+        162
+      ],
+      "summary": "定义 _FakeService 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_walkforward.py:_CountingEngine",
+      "type": "class",
+      "name": "_CountingEngine",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        191,
+        200
+      ],
+      "summary": "定义 _CountingEngine 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_walkforward.py:_NoParamsOptimizer",
+      "type": "class",
+      "name": "_NoParamsOptimizer",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        242,
+        246
+      ],
+      "summary": "定义 _NoParamsOptimizer 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_walkforward.py:_ErrorService",
+      "type": "class",
+      "name": "_ErrorService",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        249,
+        253
+      ],
+      "summary": "定义 _ErrorService 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_folds_rolling_windows",
+      "type": "function",
+      "name": "test_folds_rolling_windows",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        26,
+        36
+      ],
+      "summary": "验证 folds rolling windows 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_folds_test_starts_day_after_train_end",
+      "type": "function",
+      "name": "test_folds_test_starts_day_after_train_end",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        39,
+        43
+      ],
+      "summary": "验证 folds test starts day after train end 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_folds_no_test_beyond_end",
+      "type": "function",
+      "name": "test_folds_no_test_beyond_end",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        46,
+        49
+      ],
+      "summary": "验证 folds no test beyond end 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_folds_insufficient_span_raises",
+      "type": "function",
+      "name": "test_folds_insufficient_span_raises",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        52,
+        55
+      ],
+      "summary": "验证 folds insufficient span raises 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_folds_reject_nonpositive_windows",
+      "type": "function",
+      "name": "test_folds_reject_nonpositive_windows",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        58,
+        60
+      ],
+      "summary": "验证 folds reject nonpositive windows 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:_rec",
+      "type": "function",
+      "name": "_rec",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        67,
+        75
+      ],
+      "summary": "实现 _rec，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_aggregate_compounds_oos_returns",
+      "type": "function",
+      "name": "test_aggregate_compounds_oos_returns",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        78,
+        83
+      ],
+      "summary": "验证 aggregate compounds oos returns 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_aggregate_is_oos_degradation",
+      "type": "function",
+      "name": "test_aggregate_is_oos_degradation",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        86,
+        92
+      ],
+      "summary": "验证 aggregate is oos degradation 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_aggregate_consistency_fraction_positive",
+      "type": "function",
+      "name": "test_aggregate_consistency_fraction_positive",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        95,
+        99
+      ],
+      "summary": "验证 aggregate consistency fraction positive 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_aggregate_degradation_direction_aware_for_min_objective",
+      "type": "function",
+      "name": "test_aggregate_degradation_direction_aware_for_min_objective",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        102,
+        109
+      ],
+      "summary": "验证 aggregate degradation direction aware for min objective 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_aggregate_empty_folds",
+      "type": "function",
+      "name": "test_aggregate_empty_folds",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        112,
+        115
+      ],
+      "summary": "验证 aggregate empty folds 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:_wf_cfg",
+      "type": "function",
+      "name": "_wf_cfg",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        165,
+        172
+      ],
+      "summary": "实现 _wf_cfg，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_optimizes_train_applies_oos",
+      "type": "function",
+      "name": "test_walkforward_optimizes_train_applies_oos",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        175,
+        188
+      ],
+      "summary": "验证 walkforward optimizes train applies oos 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_cache_telemetry_computes_deltas",
+      "type": "function",
+      "name": "test_walkforward_cache_telemetry_computes_deltas",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        203,
+        215
+      ],
+      "summary": "验证 walkforward cache telemetry computes deltas 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_forces_position_mode_for_is_optimization",
+      "type": "function",
+      "name": "test_walkforward_forces_position_mode_for_is_optimization",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        218,
+        229
+      ],
+      "summary": "验证 walkforward forces position mode for is optimization 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_reports_degradation",
+      "type": "function",
+      "name": "test_walkforward_reports_degradation",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        232,
+        239
+      ],
+      "summary": "验证 walkforward reports degradation 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_skips_folds_without_optimized_params",
+      "type": "function",
+      "name": "test_walkforward_skips_folds_without_optimized_params",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        256,
+        264
+      ],
+      "summary": "验证 walkforward skips folds without optimized params 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_skips_oos_error_folds",
+      "type": "function",
+      "name": "test_walkforward_skips_oos_error_folds",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        267,
+        275
+      ],
+      "summary": "验证 walkforward skips oos error folds 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_cancel_stops",
+      "type": "function",
+      "name": "test_walkforward_cancel_stops",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        278,
+        287
+      ],
+      "summary": "验证 walkforward cancel stops 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_wf_job_key_distinguishes_windows",
+      "type": "function",
+      "name": "test_wf_job_key_distinguishes_windows",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        294,
+        297
+      ],
+      "summary": "验证 wf job key distinguishes windows 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_wf_job_key_distinguishes_params_and_overrides",
+      "type": "function",
+      "name": "test_wf_job_key_distinguishes_params_and_overrides",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        300,
+        313
+      ],
+      "summary": "验证 wf job key distinguishes params and overrides 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_walkforward.py:test_wf_cancel_by_echoed_key",
+      "type": "function",
+      "name": "test_wf_cancel_by_echoed_key",
+      "filePath": "backend/tests/backtest/test_walkforward.py",
+      "lineRange": [
+        316,
+        336
+      ],
+      "summary": "验证 wf cancel by echoed key 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/backtest/test_worker_process.py",
+      "type": "file",
+      "name": "test_worker_process.py",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "summary": "为 worker_process 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:_write_worker_strategy",
+      "type": "function",
+      "name": "_write_worker_strategy",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        21,
+        61
+      ],
+      "summary": "实现 _write_worker_strategy，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:_write_market_data",
+      "type": "function",
+      "name": "_write_market_data",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        64,
+        96
+      ],
+      "summary": "实现 _write_market_data，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:_write_mining_market_data",
+      "type": "function",
+      "name": "_write_mining_market_data",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        99,
+        139
+      ],
+      "summary": "实现 _write_mining_market_data，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:test_spawn_worker_returns_compact_result_and_memory_metrics",
+      "type": "function",
+      "name": "test_spawn_worker_returns_compact_result_and_memory_metrics",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        142,
+        167
+      ],
+      "summary": "验证 spawn worker returns compact result and memory metrics 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:test_spawn_optimizer_reuses_one_matrix_and_exits",
+      "type": "function",
+      "name": "test_spawn_optimizer_reuses_one_matrix_and_exits",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        170,
+        205
+      ],
+      "summary": "验证 spawn optimizer reuses one matrix and exits 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:test_spawn_walkforward_reuses_shared_matrix_across_folds",
+      "type": "function",
+      "name": "test_spawn_walkforward_reuses_shared_matrix_across_folds",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        208,
+        238
+      ],
+      "summary": "验证 spawn walkforward reuses shared matrix across folds 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:test_spawn_mining_writes_four_artifacts_and_returns_compact_summary",
+      "type": "function",
+      "name": "test_spawn_mining_writes_four_artifacts_and_returns_compact_summary",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        241,
+        293
+      ],
+      "summary": "验证 spawn mining writes four artifacts and returns compact summary 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:test_spawn_mining_benchmarks_strategy_on_every_outer_fold",
+      "type": "function",
+      "name": "test_spawn_mining_benchmarks_strategy_on_every_outer_fold",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        295,
+        349
+      ],
+      "summary": "验证 spawn mining benchmarks strategy on every outer fold 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:test_spawn_mining_rejects_generation_change_after_queue",
+      "type": "function",
+      "name": "test_spawn_mining_rejects_generation_change_after_queue",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        352,
+        394
+      ],
+      "summary": "验证 spawn mining rejects generation change after queue 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:test_worker_terminates_child_after_cancel_grace",
+      "type": "function",
+      "name": "test_worker_terminates_child_after_cancel_grace",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        397,
+        448
+      ],
+      "summary": "验证 worker terminates child after cancel grace 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:test_worker_accepts_delivered_result_when_child_exit_is_slow",
+      "type": "function",
+      "name": "test_worker_accepts_delivered_result_when_child_exit_is_slow",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        451,
+        504
+      ],
+      "summary": "验证 worker accepts delivered result when child exit is slow 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:test_spawn_walkforward_skips_folds_before_available_matrix_data",
+      "type": "function",
+      "name": "test_spawn_walkforward_skips_folds_before_available_matrix_data",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        507,
+        538
+      ],
+      "summary": "验证 spawn walkforward skips folds before available matrix data 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:_mining_runtime_services",
+      "type": "function",
+      "name": "_mining_runtime_services",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        541,
+        556
+      ],
+      "summary": "实现 _mining_runtime_services，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:_queue_mining_run",
+      "type": "function",
+      "name": "_queue_mining_run",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        559,
+        588
+      ],
+      "summary": "实现 _queue_mining_run，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:_patch_generation_drift",
+      "type": "function",
+      "name": "_patch_generation_drift",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        591,
+        609
+      ],
+      "summary": "实现 _patch_generation_drift，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:test_mining_rereads_snapshot_when_generation_commits_mid_read",
+      "type": "function",
+      "name": "test_mining_rereads_snapshot_when_generation_commits_mid_read",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        612,
+        638
+      ],
+      "summary": "验证 mining rereads snapshot when generation commits mid read 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_worker_process.py:test_mining_fails_with_guidance_when_generation_keeps_drifting",
+      "type": "function",
+      "name": "test_mining_fails_with_guidance_when_generation_keeps_drifting",
+      "filePath": "backend/tests/backtest/test_worker_process.py",
+      "lineRange": [
+        641,
+        661
+      ],
+      "summary": "验证 mining fails with guidance when generation keeps drifting 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "file:backend/app/backtest/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_all_losses_is_exact",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_all_losses_is_exact",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_no_downside_returns_none",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_no_downside_returns_none",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_exceeds_sharpe_when_downside_is_tamer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_exceeds_sharpe_when_downside_is_tamer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_too_few_points",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_too_few_points",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_is_deterministic_snapshot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_is_deterministic_snapshot",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_p95_strictly_worse_and_negative",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_p95_strictly_worse_and_negative",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_ignores_non_finite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_ignores_non_finite",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_clips_sub_minus_100pct_pnl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_clips_sub_minus_100pct_pnl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_all_positive_has_zero_drawdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_all_positive_has_zero_drawdown",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_too_few_trades",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_too_few_trades",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:_trades",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:_trades",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_emits_robustness_fields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_emits_robustness_fields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_empty_trades_safe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_empty_trades_safe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_portfolio_stats_emits_robustness_fields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_portfolio_stats_emits_robustness_fields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_independent_candidate_stats_emits_sortino_and_mc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_independent_candidate_stats_emits_sortino_and_mc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_lightweight_candidate_stats_do_not_call_monte_carlo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_lightweight_candidate_stats_do_not_call_monte_carlo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_all_wins_reports_sortino_none",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_all_wins_reports_sortino_none",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/backtest/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/backtest/matrix.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/backtest/strategy.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/services/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/services/regime_builder.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/strategy/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_StrategyEngineStub",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_StrategyEngineStub",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_RepoStub",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_RepoStub",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_EngineStub",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_EngineStub",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:_strategy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:_strategy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_basic_filter_only_limits_entries_not_panel_rows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_basic_filter_only_limits_entries_not_panel_rows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_non_matrix_strategy_applies_regime_filter_and_reports_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_non_matrix_strategy_applies_regime_filter_and_reports_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_regime_filter_matches_raw_five_level_states",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_regime_filter_matches_raw_five_level_states",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_selection_stats_explain_entry_trigger_filtering",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_selection_stats_explain_entry_trigger_filtering",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_score_normalizes_inside_strategy_candidate_universe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_score_normalizes_inside_strategy_candidate_universe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_full_mode_executes_every_candidate_with_strategy_rules",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_full_mode_executes_every_candidate_with_strategy_rules",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_native_strategy_uses_shared_orchestrator_path",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_native_strategy_uses_shared_orchestrator_path",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_native_accepts_legacy_default_signal_overrides_but_rejects_replacements",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_native_accepts_legacy_default_signal_overrides_but_rejects_replacements",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_optimizer_preparation_loads_and_builds_base_data_once",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_optimizer_preparation_loads_and_builds_base_data_once",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_prepare_signature_includes_regime_filter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_prepare_signature_includes_regime_filter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_cache_preserves_trades_daily_equity_and_core_stats",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_cache_preserves_trades_daily_equity_and_core_stats",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "file:backend/app/backtest/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "file:backend/app/backtest/walkforward.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "class:backend/tests/backtest/test_walkforward.py:_FakeResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "class:backend/tests/backtest/test_walkforward.py:_FakeResult",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "class:backend/tests/backtest/test_walkforward.py:_FakeOptimizer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "class:backend/tests/backtest/test_walkforward.py:_FakeOptimizer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "class:backend/tests/backtest/test_walkforward.py:_FakeEngine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "class:backend/tests/backtest/test_walkforward.py:_FakeEngine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "class:backend/tests/backtest/test_walkforward.py:_FakeService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "class:backend/tests/backtest/test_walkforward.py:_FakeService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "class:backend/tests/backtest/test_walkforward.py:_CountingEngine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "class:backend/tests/backtest/test_walkforward.py:_CountingEngine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "class:backend/tests/backtest/test_walkforward.py:_NoParamsOptimizer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "class:backend/tests/backtest/test_walkforward.py:_NoParamsOptimizer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "class:backend/tests/backtest/test_walkforward.py:_ErrorService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "class:backend/tests/backtest/test_walkforward.py:_ErrorService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_folds_rolling_windows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_folds_rolling_windows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_folds_test_starts_day_after_train_end",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_folds_test_starts_day_after_train_end",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_folds_no_test_beyond_end",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_folds_no_test_beyond_end",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_folds_insufficient_span_raises",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_folds_insufficient_span_raises",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_folds_reject_nonpositive_windows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_folds_reject_nonpositive_windows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:_rec",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:_rec",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_aggregate_compounds_oos_returns",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_aggregate_compounds_oos_returns",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_aggregate_is_oos_degradation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_aggregate_is_oos_degradation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_aggregate_consistency_fraction_positive",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_aggregate_consistency_fraction_positive",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_aggregate_degradation_direction_aware_for_min_objective",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_aggregate_degradation_direction_aware_for_min_objective",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_aggregate_empty_folds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_aggregate_empty_folds",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:_wf_cfg",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:_wf_cfg",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_optimizes_train_applies_oos",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_optimizes_train_applies_oos",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_cache_telemetry_computes_deltas",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_cache_telemetry_computes_deltas",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_forces_position_mode_for_is_optimization",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_forces_position_mode_for_is_optimization",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_reports_degradation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_reports_degradation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_skips_folds_without_optimized_params",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_skips_folds_without_optimized_params",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_skips_oos_error_folds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_skips_oos_error_folds",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_cancel_stops",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_walkforward_cancel_stops",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_wf_job_key_distinguishes_windows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_wf_job_key_distinguishes_windows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_wf_job_key_distinguishes_params_and_overrides",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_wf_job_key_distinguishes_params_and_overrides",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_wf_cancel_by_echoed_key",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_walkforward.py",
+      "target": "function:backend/tests/backtest/test_walkforward.py:test_wf_cancel_by_echoed_key",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "file:backend/app/backtest/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "file:backend/app/backtest/mining.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "file:backend/app/backtest/optimizer.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "file:backend/app/backtest/strategy.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "file:backend/app/backtest/walkforward.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "file:backend/app/backtest/worker.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "file:backend/app/enriched_generation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "file:backend/app/services/mining_jobs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:_write_worker_strategy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:_write_worker_strategy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:_write_market_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:_write_market_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:_write_mining_market_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:_write_mining_market_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_spawn_worker_returns_compact_result_and_memory_metrics",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_spawn_worker_returns_compact_result_and_memory_metrics",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_spawn_optimizer_reuses_one_matrix_and_exits",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_spawn_optimizer_reuses_one_matrix_and_exits",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_spawn_walkforward_reuses_shared_matrix_across_folds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_spawn_walkforward_reuses_shared_matrix_across_folds",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_spawn_mining_writes_four_artifacts_and_returns_compact_summary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_spawn_mining_writes_four_artifacts_and_returns_compact_summary",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_spawn_mining_benchmarks_strategy_on_every_outer_fold",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_spawn_mining_benchmarks_strategy_on_every_outer_fold",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_spawn_mining_rejects_generation_change_after_queue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_spawn_mining_rejects_generation_change_after_queue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_worker_terminates_child_after_cancel_grace",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_worker_terminates_child_after_cancel_grace",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_worker_accepts_delivered_result_when_child_exit_is_slow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_worker_accepts_delivered_result_when_child_exit_is_slow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_spawn_walkforward_skips_folds_before_available_matrix_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_spawn_walkforward_skips_folds_before_available_matrix_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:_mining_runtime_services",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:_mining_runtime_services",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:_queue_mining_run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:_queue_mining_run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:_patch_generation_drift",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:_patch_generation_drift",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_mining_rereads_snapshot_when_generation_commits_mid_read",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_mining_rereads_snapshot_when_generation_commits_mid_read",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_mining_fails_with_guidance_when_generation_keeps_drifting",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_worker_process.py",
+      "target": "function:backend/tests/backtest/test_worker_process.py:test_mining_fails_with_guidance_when_generation_keeps_drifting",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

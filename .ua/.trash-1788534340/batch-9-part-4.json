@@ -1,0 +1,2325 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/tests/test_regime_builder.py",
+      "type": "file",
+      "name": "test_regime_builder.py",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "summary": "为 regime_builder 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_classify_strong",
+      "type": "function",
+      "name": "test_classify_strong",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        26,
+        35
+      ],
+      "summary": "验证 classify strong 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_classify_weak",
+      "type": "function",
+      "name": "test_classify_weak",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        38,
+        47
+      ],
+      "summary": "验证 classify weak 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_classify_range",
+      "type": "function",
+      "name": "test_classify_range",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        50,
+        59
+      ],
+      "summary": "验证 classify range 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_classify_resilience_drives_weak",
+      "type": "function",
+      "name": "test_classify_resilience_drives_weak",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        62,
+        77
+      ],
+      "summary": "验证 classify resilience drives weak 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_classify_monotonic_up_pct",
+      "type": "function",
+      "name": "test_classify_monotonic_up_pct",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        80,
+        91
+      ],
+      "summary": "验证 classify monotonic up pct 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:_enriched_df",
+      "type": "function",
+      "name": "_enriched_df",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        97,
+        110
+      ],
+      "summary": "实现 _enriched_df，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_aggregate_daily_basic",
+      "type": "function",
+      "name": "test_aggregate_daily_basic",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        113,
+        133
+      ],
+      "summary": "验证 aggregate daily basic 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_aggregate_daily_ma20_above",
+      "type": "function",
+      "name": "test_aggregate_daily_ma20_above",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        136,
+        142
+      ],
+      "summary": "验证 aggregate daily ma20 above 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_aggregate_empty_returns_empty",
+      "type": "function",
+      "name": "test_aggregate_empty_returns_empty",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        145,
+        146
+      ],
+      "summary": "验证 aggregate empty returns empty 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_run_regime_batch_excludes_st",
+      "type": "function",
+      "name": "test_run_regime_batch_excludes_st",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        149,
+        183
+      ],
+      "summary": "验证 run regime batch excludes st 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_upsert_inserts_new",
+      "type": "function",
+      "name": "test_upsert_inserts_new",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        189,
+        197
+      ],
+      "summary": "验证 upsert inserts new 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_upsert_overwrites_existing_date",
+      "type": "function",
+      "name": "test_upsert_overwrites_existing_date",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        200,
+        220
+      ],
+      "summary": "验证 upsert overwrites existing date 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_coverage_metadata",
+      "type": "function",
+      "name": "test_coverage_metadata",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        223,
+        231
+      ],
+      "summary": "验证 coverage metadata 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_coverage_empty",
+      "type": "function",
+      "name": "test_coverage_empty",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        234,
+        237
+      ],
+      "summary": "验证 coverage empty 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_detect_stale_dates_by_mtime",
+      "type": "function",
+      "name": "test_detect_stale_dates_by_mtime",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        243,
+        275
+      ],
+      "summary": "验证 detect stale dates by mtime 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_compute_incremental_missing_dates",
+      "type": "function",
+      "name": "test_compute_incremental_missing_dates",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        278,
+        299
+      ],
+      "summary": "验证 compute incremental missing dates 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_t1_alignment",
+      "type": "function",
+      "name": "test_build_regime_mask_t1_alignment",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        305,
+        325
+      ],
+      "summary": "验证 build regime mask t1 alignment 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_min_score",
+      "type": "function",
+      "name": "test_build_regime_mask_min_score",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        328,
+        343
+      ],
+      "summary": "验证 build regime mask min score 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_none_when_no_filter",
+      "type": "function",
+      "name": "test_build_regime_mask_none_when_no_filter",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        346,
+        350
+      ],
+      "summary": "验证 build regime mask none when no filter 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_fails_when_no_data",
+      "type": "function",
+      "name": "test_build_regime_mask_fails_when_no_data",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        353,
+        360
+      ],
+      "summary": "验证 build regime mask fails when no data 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_fails_when_required_t1_date_is_missing",
+      "type": "function",
+      "name": "test_build_regime_mask_fails_when_required_t1_date_is_missing",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        363,
+        378
+      ],
+      "summary": "验证 build regime mask fails when required t1 date is missing 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_first_formal_day_requires_warmup_predecessor",
+      "type": "function",
+      "name": "test_build_regime_mask_first_formal_day_requires_warmup_predecessor",
+      "filePath": "backend/tests/test_regime_builder.py",
+      "lineRange": [
+        381,
+        407
+      ],
+      "summary": "验证 build regime mask first formal day requires warmup predecessor 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_repository_index.py",
+      "type": "file",
+      "name": "test_repository_index.py",
+      "filePath": "backend/tests/test_repository_index.py",
+      "summary": "为 repository_index 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_repository_index.py:repo",
+      "type": "function",
+      "name": "repo",
+      "filePath": "backend/tests/test_repository_index.py",
+      "lineRange": [
+        11,
+        12
+      ],
+      "summary": "实现 repo，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_repository_index.py:_write_index_instruments",
+      "type": "function",
+      "name": "_write_index_instruments",
+      "filePath": "backend/tests/test_repository_index.py",
+      "lineRange": [
+        15,
+        19
+      ],
+      "summary": "实现 _write_index_instruments，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_repository_index.py:test_name_map_includes_index",
+      "type": "function",
+      "name": "test_name_map_includes_index",
+      "filePath": "backend/tests/test_repository_index.py",
+      "lineRange": [
+        22,
+        29
+      ],
+      "summary": "验证 name map includes index 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_repository_index.py:test_name_map_stock_beats_index",
+      "type": "function",
+      "name": "test_name_map_stock_beats_index",
+      "filePath": "backend/tests/test_repository_index.py",
+      "lineRange": [
+        32,
+        46
+      ],
+      "summary": "验证 name map stock beats index 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_repository_index.py:_write_stock_instruments",
+      "type": "function",
+      "name": "_write_stock_instruments",
+      "filePath": "backend/tests/test_repository_index.py",
+      "lineRange": [
+        49,
+        59
+      ],
+      "summary": "实现 _write_stock_instruments，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_repository_index.py:test_name_map_partial_query_does_not_poison_cache",
+      "type": "function",
+      "name": "test_name_map_partial_query_does_not_poison_cache",
+      "filePath": "backend/tests/test_repository_index.py",
+      "lineRange": [
+        62,
+        75
+      ],
+      "summary": "验证 name map partial query does not poison cache 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_repository_index.py:test_name_map_cache_invalidated_on_instruments_refresh",
+      "type": "function",
+      "name": "test_name_map_cache_invalidated_on_instruments_refresh",
+      "filePath": "backend/tests/test_repository_index.py",
+      "lineRange": [
+        78,
+        83
+      ],
+      "summary": "验证 name map cache invalidated on instruments refresh 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_repository_index.py:test_execute_one_releases_parquet_file",
+      "type": "function",
+      "name": "test_execute_one_releases_parquet_file",
+      "filePath": "backend/tests/test_repository_index.py",
+      "lineRange": [
+        89,
+        105
+      ],
+      "summary": "验证 execute one releases parquet file 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_repository_index.py:_write_index_enriched",
+      "type": "function",
+      "name": "_write_index_enriched",
+      "filePath": "backend/tests/test_repository_index.py",
+      "lineRange": [
+        108,
+        112
+      ],
+      "summary": "实现 _write_index_enriched，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_repository_index.py:_index_rows",
+      "type": "function",
+      "name": "_index_rows",
+      "filePath": "backend/tests/test_repository_index.py",
+      "lineRange": [
+        115,
+        120
+      ],
+      "summary": "实现 _index_rows，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_repository_index.py:test_get_enriched_latest_asset_index",
+      "type": "function",
+      "name": "test_get_enriched_latest_asset_index",
+      "filePath": "backend/tests/test_repository_index.py",
+      "lineRange": [
+        123,
+        131
+      ],
+      "summary": "验证 get enriched latest asset index 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_repository_index.py:test_get_enriched_latest_asset_index_cold_no_refresh",
+      "type": "function",
+      "name": "test_get_enriched_latest_asset_index_cold_no_refresh",
+      "filePath": "backend/tests/test_repository_index.py",
+      "lineRange": [
+        134,
+        136
+      ],
+      "summary": "验证 get enriched latest asset index cold no refresh 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_repository_index.py:test_flush_live_enriched_asset_index_updates_cache",
+      "type": "function",
+      "name": "test_flush_live_enriched_asset_index_updates_cache",
+      "filePath": "backend/tests/test_repository_index.py",
+      "lineRange": [
+        139,
+        149
+      ],
+      "summary": "验证 flush live enriched asset index updates cache 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_repository_index.py:_merge_row",
+      "type": "function",
+      "name": "_merge_row",
+      "filePath": "backend/tests/test_repository_index.py",
+      "lineRange": [
+        152,
+        157
+      ],
+      "summary": "实现 _merge_row，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_repository_index.py:test_merge_live_enriched_asset_index_merges_cache",
+      "type": "function",
+      "name": "test_merge_live_enriched_asset_index_merges_cache",
+      "filePath": "backend/tests/test_repository_index.py",
+      "lineRange": [
+        160,
+        166
+      ],
+      "summary": "验证 merge live enriched asset index merges cache 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_screener_builtin_params.py",
+      "type": "file",
+      "name": "test_screener_builtin_params.py",
+      "filePath": "backend/tests/test_screener_builtin_params.py",
+      "summary": "为 screener_builtin_params 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/tests/test_screener_builtin_params.py:_CapturingScreenerService",
+      "type": "class",
+      "name": "_CapturingScreenerService",
+      "filePath": "backend/tests/test_screener_builtin_params.py",
+      "lineRange": [
+        11,
+        38
+      ],
+      "summary": "定义 _CapturingScreenerService 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/test_screener_builtin_params.py:_CapturingStrategyEngine",
+      "type": "class",
+      "name": "_CapturingStrategyEngine",
+      "filePath": "backend/tests/test_screener_builtin_params.py",
+      "lineRange": [
+        41,
+        72
+      ],
+      "summary": "定义 _CapturingStrategyEngine 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_screener_builtin_params.py:_api_request",
+      "type": "function",
+      "name": "_api_request",
+      "filePath": "backend/tests/test_screener_builtin_params.py",
+      "lineRange": [
+        75,
+        78
+      ],
+      "summary": "实现 _api_request，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_screener_builtin_params.py:_install_api_fakes",
+      "type": "function",
+      "name": "_install_api_fakes",
+      "filePath": "backend/tests/test_screener_builtin_params.py",
+      "lineRange": [
+        81,
+        87
+      ],
+      "summary": "实现 _install_api_fakes，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_screener_builtin_params.py:test_single_run_passes_saved_params_to_strategy_engine",
+      "type": "function",
+      "name": "test_single_run_passes_saved_params_to_strategy_engine",
+      "filePath": "backend/tests/test_screener_builtin_params.py",
+      "lineRange": [
+        90,
+        110
+      ],
+      "summary": "验证 single run passes saved params to strategy engine 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_screener_builtin_params.py:test_batch_run_passes_saved_params_to_strategy_engine",
+      "type": "function",
+      "name": "test_batch_run_passes_saved_params_to_strategy_engine",
+      "filePath": "backend/tests/test_screener_builtin_params.py",
+      "lineRange": [
+        113,
+        136
+      ],
+      "summary": "验证 batch run passes saved params to strategy engine 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_screener_builtin_params.py:test_batch_summary_response_still_writes_full_cache",
+      "type": "function",
+      "name": "test_batch_summary_response_still_writes_full_cache",
+      "filePath": "backend/tests/test_screener_builtin_params.py",
+      "lineRange": [
+        139,
+        160
+      ],
+      "summary": "验证 batch summary response still writes full cache 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_screener_etf.py",
+      "type": "file",
+      "name": "test_screener_etf.py",
+      "filePath": "backend/tests/test_screener_etf.py",
+      "summary": "为 screener_etf 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/tests/test_screener_etf.py:_FakeRepo",
+      "type": "class",
+      "name": "_FakeRepo",
+      "filePath": "backend/tests/test_screener_etf.py",
+      "lineRange": [
+        16,
+        32
+      ],
+      "summary": "定义 _FakeRepo 类型，封装 测试辅助状态与行为。",
+      "tags": [
+        "test",
+        "fixture",
+        "class",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_screener_etf.py:_engine",
+      "type": "function",
+      "name": "_engine",
+      "filePath": "backend/tests/test_screener_etf.py",
+      "lineRange": [
+        35,
+        36
+      ],
+      "summary": "实现 _engine，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_screener_etf.py:test_all_builtin_strategies_declare_asset_types_and_timeframes",
+      "type": "function",
+      "name": "test_all_builtin_strategies_declare_asset_types_and_timeframes",
+      "filePath": "backend/tests/test_screener_etf.py",
+      "lineRange": [
+        39,
+        45
+      ],
+      "summary": "验证 all builtin strategies declare asset types and timeframes 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_screener_etf.py:test_all_builtin_strategies_use_matrix_backend_only",
+      "type": "function",
+      "name": "test_all_builtin_strategies_use_matrix_backend_only",
+      "filePath": "backend/tests/test_screener_etf.py",
+      "lineRange": [
+        48,
+        58
+      ],
+      "summary": "验证 all builtin strategies use matrix backend only 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_screener_etf.py:test_all_builtin_matrix_formulas_accept_base_market_matrix",
+      "type": "function",
+      "name": "test_all_builtin_matrix_formulas_accept_base_market_matrix",
+      "filePath": "backend/tests/test_screener_etf.py",
+      "lineRange": [
+        61,
+        95
+      ],
+      "summary": "验证 all builtin matrix formulas accept base market matrix 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_screener_etf.py:test_limit_up_strategies_are_stock_only",
+      "type": "function",
+      "name": "test_limit_up_strategies_are_stock_only",
+      "filePath": "backend/tests/test_screener_etf.py",
+      "lineRange": [
+        98,
+        101
+      ],
+      "summary": "验证 limit up strategies are stock only 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_screener_etf.py:test_pure_technical_strategies_support_etf",
+      "type": "function",
+      "name": "test_pure_technical_strategies_support_etf",
+      "filePath": "backend/tests/test_screener_etf.py",
+      "lineRange": [
+        104,
+        112
+      ],
+      "summary": "验证 pure technical strategies support etf 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_screener_etf.py:test_custom_strategy_defaults_to_stock_and_daily",
+      "type": "function",
+      "name": "test_custom_strategy_defaults_to_stock_and_daily",
+      "filePath": "backend/tests/test_screener_etf.py",
+      "lineRange": [
+        115,
+        125
+      ],
+      "summary": "验证 custom strategy defaults to stock and daily 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_screener_etf.py:test_service_defaults_to_stock_dir",
+      "type": "function",
+      "name": "test_service_defaults_to_stock_dir",
+      "filePath": "backend/tests/test_screener_etf.py",
+      "lineRange": [
+        128,
+        131
+      ],
+      "summary": "验证 service defaults to stock dir 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_screener_etf.py:test_service_etf_uses_etf_dir",
+      "type": "function",
+      "name": "test_service_etf_uses_etf_dir",
+      "filePath": "backend/tests/test_screener_etf.py",
+      "lineRange": [
+        134,
+        137
+      ],
+      "summary": "验证 service etf uses etf dir 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_screener_etf.py:test_etf_strategy_runs_through_engine_context",
+      "type": "function",
+      "name": "test_etf_strategy_runs_through_engine_context",
+      "filePath": "backend/tests/test_screener_etf.py",
+      "lineRange": [
+        140,
+        176
+      ],
+      "summary": "验证 etf strategy runs through engine context 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_screener_etf.py:test_stock_only_strategy_on_etf_fails_explicitly",
+      "type": "function",
+      "name": "test_stock_only_strategy_on_etf_fails_explicitly",
+      "filePath": "backend/tests/test_screener_etf.py",
+      "lineRange": [
+        179,
+        190
+      ],
+      "summary": "验证 stock only strategy on etf fails explicitly 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "type": "file",
+      "name": "test_st_limit_and_sharpe.py",
+      "filePath": "backend/tests/test_st_limit_and_sharpe.py",
+      "summary": "为 st_limit_and_sharpe 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_st_limit_and_sharpe.py:test_near_limit_pct_st_only_on_main_board",
+      "type": "function",
+      "name": "test_near_limit_pct_st_only_on_main_board",
+      "filePath": "backend/tests/test_st_limit_and_sharpe.py",
+      "lineRange": [
+        22,
+        42
+      ],
+      "summary": "验证 near limit pct st only on main board 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_st_limit_and_sharpe.py:_two_day",
+      "type": "function",
+      "name": "_two_day",
+      "filePath": "backend/tests/test_st_limit_and_sharpe.py",
+      "lineRange": [
+        45,
+        64
+      ],
+      "summary": "实现 _two_day，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_st_limit_and_sharpe.py:_last_limit_up",
+      "type": "function",
+      "name": "_last_limit_up",
+      "filePath": "backend/tests/test_st_limit_and_sharpe.py",
+      "lineRange": [
+        67,
+        77
+      ],
+      "summary": "实现 _last_limit_up，承担 测试准备或断言的一项具体职责。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_st_limit_and_sharpe.py:test_st_chinext_limit_up_detected_at_20pct",
+      "type": "function",
+      "name": "test_st_chinext_limit_up_detected_at_20pct",
+      "filePath": "backend/tests/test_st_limit_and_sharpe.py",
+      "lineRange": [
+        80,
+        84
+      ],
+      "summary": "验证 st chinext limit up detected at 20pct 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_st_limit_and_sharpe.py:test_st_chinext_plus5pct_is_not_a_false_limit_up",
+      "type": "function",
+      "name": "test_st_chinext_plus5pct_is_not_a_false_limit_up",
+      "filePath": "backend/tests/test_st_limit_and_sharpe.py",
+      "lineRange": [
+        87,
+        90
+      ],
+      "summary": "验证 st chinext plus5pct is not a false limit up 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_st_limit_and_sharpe.py:test_st_main_board_historical_limit_is_5pct",
+      "type": "function",
+      "name": "test_st_main_board_historical_limit_is_5pct",
+      "filePath": "backend/tests/test_st_limit_and_sharpe.py",
+      "lineRange": [
+        93,
+        96
+      ],
+      "summary": "验证 st main board historical limit is 5pct 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_st_limit_and_sharpe.py:test_st_main_board_limit_changes_to_10pct_on_2026_07_06",
+      "type": "function",
+      "name": "test_st_main_board_limit_changes_to_10pct_on_2026_07_06",
+      "filePath": "backend/tests/test_st_limit_and_sharpe.py",
+      "lineRange": [
+        99,
+        108
+      ],
+      "summary": "验证 st main board limit changes to 10pct on 2026 07 06 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_st_limit_and_sharpe.py:test_near_limit_up_accepts_stocks_inside_configured_gap",
+      "type": "function",
+      "name": "test_near_limit_up_accepts_stocks_inside_configured_gap",
+      "filePath": "backend/tests/test_st_limit_and_sharpe.py",
+      "lineRange": [
+        111,
+        129
+      ],
+      "summary": "验证 near limit up accepts stocks inside configured gap 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_st_limit_and_sharpe.py:test_sharpe_annualization_matches_rebalance_frequency",
+      "type": "function",
+      "name": "test_sharpe_annualization_matches_rebalance_frequency",
+      "filePath": "backend/tests/test_st_limit_and_sharpe.py",
+      "lineRange": [
+        132,
+        146
+      ],
+      "summary": "验证 sharpe annualization matches rebalance frequency 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_strategy_build_stream.py",
+      "type": "file",
+      "name": "test_strategy_build_stream.py",
+      "filePath": "backend/tests/test_strategy_build_stream.py",
+      "summary": "为 strategy_build_stream 相关行为提供回归测试，覆盖关键业务约束和边界场景。",
+      "tags": [
+        "test",
+        "regression",
+        "backend",
+        "verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_strategy_build_stream.py:test_build_strategy_stream_yields_delta_and_normalized_result",
+      "type": "function",
+      "name": "test_build_strategy_stream_yields_delta_and_normalized_result",
+      "filePath": "backend/tests/test_strategy_build_stream.py",
+      "lineRange": [
+        39,
+        66
+      ],
+      "summary": "验证 build strategy stream yields delta and normalized result 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_strategy_build_stream.py:test_build_strategy_stream_repairs_missing_meta_once",
+      "type": "function",
+      "name": "test_build_strategy_stream_repairs_missing_meta_once",
+      "filePath": "backend/tests/test_strategy_build_stream.py",
+      "lineRange": [
+        70,
+        102
+      ],
+      "summary": "验证 build strategy stream repairs missing meta once 的预期行为与边界条件。",
+      "tags": [
+        "test",
+        "assertion",
+        "verification",
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "file:backend/app/services/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "file:backend/app/services/regime_builder.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_classify_strong",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_classify_strong",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_classify_weak",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_classify_weak",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_classify_range",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_classify_range",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_classify_resilience_drives_weak",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_classify_resilience_drives_weak",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_classify_monotonic_up_pct",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_classify_monotonic_up_pct",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:_enriched_df",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:_enriched_df",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_aggregate_daily_basic",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_aggregate_daily_basic",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_aggregate_daily_ma20_above",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_aggregate_daily_ma20_above",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_aggregate_empty_returns_empty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_aggregate_empty_returns_empty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_run_regime_batch_excludes_st",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_run_regime_batch_excludes_st",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_upsert_inserts_new",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_upsert_inserts_new",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_upsert_overwrites_existing_date",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_upsert_overwrites_existing_date",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_coverage_metadata",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_coverage_metadata",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_coverage_empty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_coverage_empty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_detect_stale_dates_by_mtime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_detect_stale_dates_by_mtime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_compute_incremental_missing_dates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_compute_incremental_missing_dates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_t1_alignment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_t1_alignment",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_min_score",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_min_score",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_none_when_no_filter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_none_when_no_filter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_fails_when_no_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_fails_when_no_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_fails_when_required_t1_date_is_missing",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_fails_when_required_t1_date_is_missing",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_first_formal_day_requires_warmup_predecessor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_regime_builder.py",
+      "target": "function:backend/tests/test_regime_builder.py:test_build_regime_mask_first_formal_day_requires_warmup_predecessor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "file:backend/app/tickflow/repository.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:repo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:repo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:_write_index_instruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:_write_index_instruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_name_map_includes_index",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_name_map_includes_index",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_name_map_stock_beats_index",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_name_map_stock_beats_index",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:_write_stock_instruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:_write_stock_instruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_name_map_partial_query_does_not_poison_cache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_name_map_partial_query_does_not_poison_cache",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_name_map_cache_invalidated_on_instruments_refresh",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_name_map_cache_invalidated_on_instruments_refresh",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_execute_one_releases_parquet_file",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_execute_one_releases_parquet_file",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:_write_index_enriched",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:_write_index_enriched",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:_index_rows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:_index_rows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_get_enriched_latest_asset_index",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_get_enriched_latest_asset_index",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_get_enriched_latest_asset_index_cold_no_refresh",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_get_enriched_latest_asset_index_cold_no_refresh",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_flush_live_enriched_asset_index_updates_cache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_flush_live_enriched_asset_index_updates_cache",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:_merge_row",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:_merge_row",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_merge_live_enriched_asset_index_merges_cache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_repository_index.py",
+      "target": "function:backend/tests/test_repository_index.py:test_merge_live_enriched_asset_index_merges_cache",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_builtin_params.py",
+      "target": "file:backend/app/api/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_screener_builtin_params.py",
+      "target": "file:backend/app/services/screener.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_screener_builtin_params.py",
+      "target": "class:backend/tests/test_screener_builtin_params.py:_CapturingScreenerService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_builtin_params.py",
+      "target": "class:backend/tests/test_screener_builtin_params.py:_CapturingScreenerService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_builtin_params.py",
+      "target": "class:backend/tests/test_screener_builtin_params.py:_CapturingStrategyEngine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_builtin_params.py",
+      "target": "class:backend/tests/test_screener_builtin_params.py:_CapturingStrategyEngine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_builtin_params.py",
+      "target": "function:backend/tests/test_screener_builtin_params.py:_api_request",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_builtin_params.py",
+      "target": "function:backend/tests/test_screener_builtin_params.py:_api_request",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_builtin_params.py",
+      "target": "function:backend/tests/test_screener_builtin_params.py:_install_api_fakes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_builtin_params.py",
+      "target": "function:backend/tests/test_screener_builtin_params.py:_install_api_fakes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_builtin_params.py",
+      "target": "function:backend/tests/test_screener_builtin_params.py:test_single_run_passes_saved_params_to_strategy_engine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_builtin_params.py",
+      "target": "function:backend/tests/test_screener_builtin_params.py:test_single_run_passes_saved_params_to_strategy_engine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_builtin_params.py",
+      "target": "function:backend/tests/test_screener_builtin_params.py:test_batch_run_passes_saved_params_to_strategy_engine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_builtin_params.py",
+      "target": "function:backend/tests/test_screener_builtin_params.py:test_batch_run_passes_saved_params_to_strategy_engine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_builtin_params.py",
+      "target": "function:backend/tests/test_screener_builtin_params.py:test_batch_summary_response_still_writes_full_cache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_builtin_params.py",
+      "target": "function:backend/tests/test_screener_builtin_params.py:test_batch_summary_response_still_writes_full_cache",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "file:backend/app/services/screener.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "file:backend/app/strategy/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "class:backend/tests/test_screener_etf.py:_FakeRepo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "class:backend/tests/test_screener_etf.py:_FakeRepo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:_engine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:_engine",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_all_builtin_strategies_declare_asset_types_and_timeframes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_all_builtin_strategies_declare_asset_types_and_timeframes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_all_builtin_strategies_use_matrix_backend_only",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_all_builtin_strategies_use_matrix_backend_only",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_all_builtin_matrix_formulas_accept_base_market_matrix",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_all_builtin_matrix_formulas_accept_base_market_matrix",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_limit_up_strategies_are_stock_only",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_limit_up_strategies_are_stock_only",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_pure_technical_strategies_support_etf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_pure_technical_strategies_support_etf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_custom_strategy_defaults_to_stock_and_daily",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_custom_strategy_defaults_to_stock_and_daily",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_service_defaults_to_stock_dir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_service_defaults_to_stock_dir",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_service_etf_uses_etf_dir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_service_etf_uses_etf_dir",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_etf_strategy_runs_through_engine_context",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_etf_strategy_runs_through_engine_context",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_stock_only_strategy_on_etf_fails_explicitly",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_screener_etf.py",
+      "target": "function:backend/tests/test_screener_etf.py:test_stock_only_strategy_on_etf_fails_explicitly",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "file:backend/app/backtest/factor.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "file:backend/app/backtest/matrix.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "file:backend/app/indicators/pipeline.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "file:backend/app/strategy/builtin/near_limit_up.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:test_near_limit_pct_st_only_on_main_board",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:test_near_limit_pct_st_only_on_main_board",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:_two_day",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:_two_day",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:_last_limit_up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:_last_limit_up",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:test_st_chinext_limit_up_detected_at_20pct",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:test_st_chinext_limit_up_detected_at_20pct",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:test_st_chinext_plus5pct_is_not_a_false_limit_up",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:test_st_chinext_plus5pct_is_not_a_false_limit_up",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:test_st_main_board_historical_limit_is_5pct",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:test_st_main_board_historical_limit_is_5pct",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:test_st_main_board_limit_changes_to_10pct_on_2026_07_06",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:test_st_main_board_limit_changes_to_10pct_on_2026_07_06",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:test_near_limit_up_accepts_stocks_inside_configured_gap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:test_near_limit_up_accepts_stocks_inside_configured_gap",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:test_sharpe_annualization_matches_rebalance_frequency",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_st_limit_and_sharpe.py",
+      "target": "function:backend/tests/test_st_limit_and_sharpe.py:test_sharpe_annualization_matches_rebalance_frequency",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_strategy_build_stream.py",
+      "target": "file:backend/app/api/strategy.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_strategy_build_stream.py",
+      "target": "file:backend/app/strategy/ai_generator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_strategy_build_stream.py",
+      "target": "function:backend/tests/test_strategy_build_stream.py:test_build_strategy_stream_yields_delta_and_normalized_result",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_strategy_build_stream.py",
+      "target": "function:backend/tests/test_strategy_build_stream.py:test_build_strategy_stream_yields_delta_and_normalized_result",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_strategy_build_stream.py",
+      "target": "function:backend/tests/test_strategy_build_stream.py:test_build_strategy_stream_repairs_missing_meta_once",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_strategy_build_stream.py",
+      "target": "function:backend/tests/test_strategy_build_stream.py:test_build_strategy_stream_repairs_missing_meta_once",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

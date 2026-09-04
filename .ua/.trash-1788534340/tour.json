@@ -1,0 +1,98 @@
+[
+  {
+    "order": 1,
+    "title": "项目全景",
+    "description": "先从 README 认识 TSP：这是一个自托管的 A 股智能量化工作台，覆盖多数据源能力路由、选股、监控、分析与回测。它还提供部署、配置和使用入口，为后续从运行时到前端界面的阅读建立共同坐标。",
+    "nodeIds": [
+      "document:README.md"
+    ]
+  },
+  {
+    "order": 2,
+    "title": "架构分层地图",
+    "description": "在了解产品目标后，阅读架构上下文可将代码按前端、API、量化领域、数据边界和扩展机制组织起来。用这张地图回看后续模块，能更容易区分请求边界、业务编排和底层数据访问各自的职责。",
+    "nodeIds": [
+      "document:docs/ai-context/architecture.md"
+    ]
+  },
+  {
+    "order": 3,
+    "title": "后端应用启动",
+    "description": "FastAPI 从 main.py 启动，并在此注册路由、生命周期任务和扩展加载流程。它是后端的汇聚点：外部 HTTP 请求由这里进入，再被分发到 API 与领域模块。",
+    "nodeIds": [
+      "file:backend/app/main.py",
+      "file:backend/app/extensions/loader.py"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "HTTP 路由边界",
+    "description": "routes.py 展示了 API 层如何承接 FastAPI 路由、请求校验和服务编排。沿着这条边界阅读，可以把面向浏览器的接口适配与后续量化、数据模块中的具体实现分开理解。",
+    "nodeIds": [
+      "file:backend/app/api/routes.py"
+    ]
+  },
+  {
+    "order": 5,
+    "title": "前端启动与导航",
+    "description": "main.tsx 负责前端 bootstrap，router.tsx 则组织股票工作台中的页面访问与引导逻辑。它们把用户操作导向不同功能页面，与前面的后端入口共同构成端到端应用的两端。",
+    "nodeIds": [
+      "file:frontend/src/main.tsx",
+      "file:frontend/src/router.tsx"
+    ]
+  },
+  {
+    "order": 6,
+    "title": "前端数据协作",
+    "description": "api.ts 是前端最重要的高扇入模块之一，集中封装向后端发起请求的方式。queryKeys.ts 为缓存和失效建立稳定键名，使页面在刷新行情、策略或设置后能保持一致的数据协作。",
+    "nodeIds": [
+      "file:frontend/src/lib/api.ts",
+      "file:frontend/src/lib/queryKeys.ts"
+    ]
+  },
+  {
+    "order": 7,
+    "title": "多源数据能力路由",
+    "description": "data_providers 的入口负责将外部市场数据纳入统一的能力访问与标准化边界。TickFlow 的 capabilities 与 repository 将能力选择和仓储访问分离，为指标、选股和回测提供可替换且口径一致的数据基础。",
+    "nodeIds": [
+      "file:backend/app/data_providers/__init__.py",
+      "file:backend/app/tickflow/capabilities.py",
+      "file:backend/app/tickflow/repository.py"
+    ]
+  },
+  {
+    "order": 8,
+    "title": "指标与策略引擎",
+    "description": "指标 pipeline 承接市场数据后的计算链路，策略 engine 则将选股、信号生成与量化评估组织为可执行能力。理解这一组模块后，能看到原始行情如何逐步变成可解释的策略结果。",
+    "nodeIds": [
+      "file:backend/app/indicators/pipeline.py",
+      "file:backend/app/strategy/engine.py"
+    ]
+  },
+  {
+    "order": 9,
+    "title": "回测矩阵",
+    "description": "matrix.py 是高连接度的回测核心，处理历史市场数据、策略信号与绩效计算。它把前面获得的数据和策略放进统一的历史评估框架，用于检验规则在不同样本下的表现。",
+    "nodeIds": [
+      "file:backend/app/backtest/matrix.py"
+    ]
+  },
+  {
+    "order": 10,
+    "title": "运行配置",
+    "description": ".env.example 汇集 TickFlow、AI、服务监听、认证与数据目录等部署时需要提供的环境变量。把它与应用入口对照阅读，可明确哪些能力由运行环境控制，而不是散落在业务逻辑中。",
+    "nodeIds": [
+      "config:.env.example"
+    ]
+  },
+  {
+    "order": 11,
+    "title": "容器化与交付",
+    "description": "Dockerfile 使用多阶段构建产出同时包含 FastAPI 和前端静态资源的运行镜像，docker-compose.yml 则定义端口、环境变量和数据卷等本地编排方式。它们将前面介绍的前后端与配置组合成可重复启动的自托管工作台。",
+    "nodeIds": [
+      "service:Dockerfile",
+      "service:docker-compose.yml"
+    ],
+    "languageLesson": "Docker 多阶段构建将前端编译和运行时镜像分开，既避免把构建依赖带入最终镜像，也能更好地利用分层缓存。Compose 通过环境变量与卷挂载把可变配置和持久化数据从镜像中剥离。"
+  }
+]

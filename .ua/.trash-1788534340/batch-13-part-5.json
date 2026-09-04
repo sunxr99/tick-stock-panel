@@ -1,0 +1,4860 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/app/services/pipeline_jobs.py",
+      "type": "file",
+      "name": "pipeline_jobs.py",
+      "filePath": "backend/app/services/pipeline_jobs.py",
+      "summary": "实现 pipeline_jobs 领域服务，供 API、任务或策略流程调用。",
+      "tags": [
+        "服务",
+        "后端",
+        "业务"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/pipeline_jobs.py:request_cancel",
+      "type": "function",
+      "name": "request_cancel",
+      "filePath": "backend/app/services/pipeline_jobs.py",
+      "lineRange": [
+        71,
+        78
+      ],
+      "summary": "在 pipeline_jobs.py 中实现 request_cancel，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/pipeline_jobs.py:is_cancelled",
+      "type": "function",
+      "name": "is_cancelled",
+      "filePath": "backend/app/services/pipeline_jobs.py",
+      "lineRange": [
+        81,
+        83
+      ],
+      "summary": "在 pipeline_jobs.py 中实现 is_cancelled，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/pipeline_jobs.py:_register_cancel_flag",
+      "type": "function",
+      "name": "_register_cancel_flag",
+      "filePath": "backend/app/services/pipeline_jobs.py",
+      "lineRange": [
+        86,
+        93
+      ],
+      "summary": "在 pipeline_jobs.py 中实现 _register_cancel_flag，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/pipeline_jobs.py:_default_store_dir",
+      "type": "function",
+      "name": "_default_store_dir",
+      "filePath": "backend/app/services/pipeline_jobs.py",
+      "lineRange": [
+        96,
+        98
+      ],
+      "summary": "在 pipeline_jobs.py 中实现 _default_store_dir，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/pipeline_jobs.py:_summary",
+      "type": "function",
+      "name": "_summary",
+      "filePath": "backend/app/services/pipeline_jobs.py",
+      "lineRange": [
+        453,
+        465
+      ],
+      "summary": "在 pipeline_jobs.py 中实现 _summary，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/pipeline_jobs.py:_duration_s",
+      "type": "function",
+      "name": "_duration_s",
+      "filePath": "backend/app/services/pipeline_jobs.py",
+      "lineRange": [
+        468,
+        476
+      ],
+      "summary": "在 pipeline_jobs.py 中实现 _duration_s，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/pipeline_jobs.py:try_acquire_run_slot",
+      "type": "function",
+      "name": "try_acquire_run_slot",
+      "filePath": "backend/app/services/pipeline_jobs.py",
+      "lineRange": [
+        504,
+        514
+      ],
+      "summary": "在 pipeline_jobs.py 中实现 try_acquire_run_slot，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/pipeline_jobs.py:release_run_slot",
+      "type": "function",
+      "name": "release_run_slot",
+      "filePath": "backend/app/services/pipeline_jobs.py",
+      "lineRange": [
+        517,
+        528
+      ],
+      "summary": "在 pipeline_jobs.py 中实现 release_run_slot，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/pipeline_jobs.py:_parse_utc",
+      "type": "function",
+      "name": "_parse_utc",
+      "filePath": "backend/app/services/pipeline_jobs.py",
+      "lineRange": [
+        531,
+        533
+      ],
+      "summary": "在 pipeline_jobs.py 中实现 _parse_utc，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/pipeline_jobs.py:JobCancelledError",
+      "type": "class",
+      "name": "JobCancelledError",
+      "filePath": "backend/app/services/pipeline_jobs.py",
+      "lineRange": [
+        47,
+        58
+      ],
+      "summary": "在 pipeline_jobs.py 中定义 JobCancelledError，封装相关的数据结构、状态或协作职责。",
+      "tags": [
+        "类",
+        "后端",
+        "模型"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/pipeline_jobs.py:JobStore",
+      "type": "class",
+      "name": "JobStore",
+      "filePath": "backend/app/services/pipeline_jobs.py",
+      "lineRange": [
+        104,
+        450
+      ],
+      "summary": "在 pipeline_jobs.py 中定义 JobStore，封装相关的数据结构、状态或协作职责。",
+      "tags": [
+        "类",
+        "后端",
+        "模型"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/services/preferences.py",
+      "type": "file",
+      "name": "preferences.py",
+      "filePath": "backend/app/services/preferences.py",
+      "summary": "实现 preferences 领域服务，供 API、任务或策略流程调用。",
+      "tags": [
+        "服务",
+        "后端",
+        "业务"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:_path",
+      "type": "function",
+      "name": "_path",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        23,
+        27
+      ],
+      "summary": "在 preferences.py 中实现 _path，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:_invalidate_cache",
+      "type": "function",
+      "name": "_invalidate_cache",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        30,
+        33
+      ],
+      "summary": "在 preferences.py 中实现 _invalidate_cache，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:load",
+      "type": "function",
+      "name": "load",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        36,
+        55
+      ],
+      "summary": "在 preferences.py 中实现 load，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:save",
+      "type": "function",
+      "name": "save",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        61,
+        74
+      ],
+      "summary": "在 preferences.py 中实现 save，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_realtime_quotes_enabled",
+      "type": "function",
+      "name": "get_realtime_quotes_enabled",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        77,
+        78
+      ],
+      "summary": "在 preferences.py 中实现 get_realtime_quotes_enabled，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_watchlist_groups_in_nav",
+      "type": "function",
+      "name": "get_watchlist_groups_in_nav",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        81,
+        83
+      ],
+      "summary": "在 preferences.py 中实现 get_watchlist_groups_in_nav，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_realtime_quote_interval",
+      "type": "function",
+      "name": "get_realtime_quote_interval",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        86,
+        87
+      ],
+      "summary": "在 preferences.py 中实现 get_realtime_quote_interval，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_realtime_quote_interval",
+      "type": "function",
+      "name": "set_realtime_quote_interval",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        90,
+        98
+      ],
+      "summary": "在 preferences.py 中实现 set_realtime_quote_interval，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_minute_sync_enabled",
+      "type": "function",
+      "name": "get_minute_sync_enabled",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        101,
+        102
+      ],
+      "summary": "在 preferences.py 中实现 get_minute_sync_enabled，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_minute_intraday_refresh",
+      "type": "function",
+      "name": "get_minute_intraday_refresh",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        105,
+        119
+      ],
+      "summary": "在 preferences.py 中实现 get_minute_intraday_refresh，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_minute_intraday_refresh_interval",
+      "type": "function",
+      "name": "get_minute_intraday_refresh_interval",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        127,
+        131
+      ],
+      "summary": "在 preferences.py 中实现 get_minute_intraday_refresh_interval，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:_normalize_ext_field",
+      "type": "function",
+      "name": "_normalize_ext_field",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        141,
+        161
+      ],
+      "summary": "在 preferences.py 中实现 _normalize_ext_field，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_monitor_ext_fields",
+      "type": "function",
+      "name": "get_monitor_ext_fields",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        164,
+        181
+      ],
+      "summary": "在 preferences.py 中实现 get_monitor_ext_fields，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_minute_sync_days",
+      "type": "function",
+      "name": "get_minute_sync_days",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        184,
+        185
+      ],
+      "summary": "在 preferences.py 中实现 get_minute_sync_days，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_minute_sync_segment_days",
+      "type": "function",
+      "name": "get_minute_sync_segment_days",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        188,
+        195
+      ],
+      "summary": "在 preferences.py 中实现 get_minute_sync_segment_days，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_minute_refresh_enabled",
+      "type": "function",
+      "name": "get_minute_refresh_enabled",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        206,
+        208
+      ],
+      "summary": "在 preferences.py 中实现 get_minute_refresh_enabled，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_minute_refresh_interval",
+      "type": "function",
+      "name": "get_minute_refresh_interval",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        211,
+        216
+      ],
+      "summary": "在 preferences.py 中实现 get_minute_refresh_interval，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_data_source_job_timeout_s",
+      "type": "function",
+      "name": "get_data_source_job_timeout_s",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        225,
+        233
+      ],
+      "summary": "在 preferences.py 中实现 get_data_source_job_timeout_s，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_data_source_long_job_timeout_s",
+      "type": "function",
+      "name": "get_data_source_long_job_timeout_s",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        236,
+        247
+      ],
+      "summary": "在 preferences.py 中实现 get_data_source_long_job_timeout_s，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_minute_batch_compress",
+      "type": "function",
+      "name": "get_minute_batch_compress",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        250,
+        255
+      ],
+      "summary": "在 preferences.py 中实现 get_minute_batch_compress，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_daily_batch_compress",
+      "type": "function",
+      "name": "get_daily_batch_compress",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        258,
+        261
+      ],
+      "summary": "在 preferences.py 中实现 get_daily_batch_compress，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:_allowed_data_providers",
+      "type": "function",
+      "name": "_allowed_data_providers",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        264,
+        269
+      ],
+      "summary": "在 preferences.py 中实现 _allowed_data_providers，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_daily_data_provider",
+      "type": "function",
+      "name": "get_daily_data_provider",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        272,
+        274
+      ],
+      "summary": "在 preferences.py 中实现 get_daily_data_provider，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_adj_factor_provider",
+      "type": "function",
+      "name": "get_adj_factor_provider",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        277,
+        280
+      ],
+      "summary": "在 preferences.py 中实现 get_adj_factor_provider，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_minute_data_provider",
+      "type": "function",
+      "name": "get_minute_data_provider",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        283,
+        285
+      ],
+      "summary": "在 preferences.py 中实现 get_minute_data_provider，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_full_minute_data_provider",
+      "type": "function",
+      "name": "get_full_minute_data_provider",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        288,
+        290
+      ],
+      "summary": "在 preferences.py 中实现 get_full_minute_data_provider，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_depth5_data_provider",
+      "type": "function",
+      "name": "get_depth5_data_provider",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        293,
+        295
+      ],
+      "summary": "在 preferences.py 中实现 get_depth5_data_provider，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_realtime_data_provider",
+      "type": "function",
+      "name": "get_realtime_data_provider",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        298,
+        300
+      ],
+      "summary": "在 preferences.py 中实现 get_realtime_data_provider，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_financial_provider",
+      "type": "function",
+      "name": "get_financial_provider",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        303,
+        305
+      ],
+      "summary": "在 preferences.py 中实现 get_financial_provider，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_pipeline_pull_a_share",
+      "type": "function",
+      "name": "get_pipeline_pull_a_share",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        310,
+        312
+      ],
+      "summary": "在 preferences.py 中实现 get_pipeline_pull_a_share，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_pipeline_pull_etf",
+      "type": "function",
+      "name": "get_pipeline_pull_etf",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        315,
+        317
+      ],
+      "summary": "在 preferences.py 中实现 get_pipeline_pull_etf，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_pipeline_pull_index",
+      "type": "function",
+      "name": "get_pipeline_pull_index",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        320,
+        322
+      ],
+      "summary": "在 preferences.py 中实现 get_pipeline_pull_index，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_pipeline_regime_enabled",
+      "type": "function",
+      "name": "get_pipeline_regime_enabled",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        325,
+        332
+      ],
+      "summary": "在 preferences.py 中实现 get_pipeline_regime_enabled，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_regime_batch_days",
+      "type": "function",
+      "name": "get_regime_batch_days",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        346,
+        355
+      ],
+      "summary": "在 preferences.py 中实现 get_regime_batch_days，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_regime_warmup_days",
+      "type": "function",
+      "name": "get_regime_warmup_days",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        358,
+        367
+      ],
+      "summary": "在 preferences.py 中实现 get_regime_warmup_days，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_mainline_max_members",
+      "type": "function",
+      "name": "get_mainline_max_members",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        381,
+        387
+      ],
+      "summary": "在 preferences.py 中实现 get_mainline_max_members，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_mainline_min_members",
+      "type": "function",
+      "name": "get_mainline_min_members",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        390,
+        396
+      ],
+      "summary": "在 preferences.py 中实现 get_mainline_min_members，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_mainline_blacklist",
+      "type": "function",
+      "name": "get_mainline_blacklist",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        399,
+        409
+      ],
+      "summary": "在 preferences.py 中实现 get_mainline_blacklist，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_sentiment_exclude_st",
+      "type": "function",
+      "name": "get_sentiment_exclude_st",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        412,
+        419
+      ],
+      "summary": "在 preferences.py 中实现 get_sentiment_exclude_st，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_sentiment_exclude_st",
+      "type": "function",
+      "name": "set_sentiment_exclude_st",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        422,
+        424
+      ],
+      "summary": "在 preferences.py 中实现 set_sentiment_exclude_st，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_mainline_filter_config",
+      "type": "function",
+      "name": "get_mainline_filter_config",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        427,
+        434
+      ],
+      "summary": "在 preferences.py 中实现 get_mainline_filter_config，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_mainline_filter_config",
+      "type": "function",
+      "name": "set_mainline_filter_config",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        437,
+        453
+      ],
+      "summary": "在 preferences.py 中实现 set_mainline_filter_config，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_pipeline_pull_types",
+      "type": "function",
+      "name": "get_pipeline_pull_types",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        459,
+        465
+      ],
+      "summary": "在 preferences.py 中实现 get_pipeline_pull_types，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_pipeline_pull_types",
+      "type": "function",
+      "name": "set_pipeline_pull_types",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        468,
+        475
+      ],
+      "summary": "在 preferences.py 中实现 set_pipeline_pull_types，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_pipeline_index_symbols",
+      "type": "function",
+      "name": "get_pipeline_index_symbols",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        478,
+        480
+      ],
+      "summary": "在 preferences.py 中实现 get_pipeline_index_symbols，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_pipeline_index_symbols",
+      "type": "function",
+      "name": "set_pipeline_index_symbols",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        483,
+        486
+      ],
+      "summary": "在 preferences.py 中实现 set_pipeline_index_symbols，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_pipeline_schedule",
+      "type": "function",
+      "name": "get_pipeline_schedule",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        489,
+        492
+      ],
+      "summary": "在 preferences.py 中实现 get_pipeline_schedule，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_pipeline_schedule",
+      "type": "function",
+      "name": "set_pipeline_schedule",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        495,
+        502
+      ],
+      "summary": "在 preferences.py 中实现 set_pipeline_schedule，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_instruments_schedule",
+      "type": "function",
+      "name": "get_instruments_schedule",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        505,
+        508
+      ],
+      "summary": "在 preferences.py 中实现 get_instruments_schedule，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_instruments_schedule",
+      "type": "function",
+      "name": "set_instruments_schedule",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        511,
+        518
+      ],
+      "summary": "在 preferences.py 中实现 set_instruments_schedule，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_enriched_batch_size",
+      "type": "function",
+      "name": "get_enriched_batch_size",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        521,
+        523
+      ],
+      "summary": "在 preferences.py 中实现 get_enriched_batch_size，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_enriched_batch_size",
+      "type": "function",
+      "name": "set_enriched_batch_size",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        526,
+        530
+      ],
+      "summary": "在 preferences.py 中实现 set_enriched_batch_size，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_index_daily_batch_size",
+      "type": "function",
+      "name": "get_index_daily_batch_size",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        533,
+        535
+      ],
+      "summary": "在 preferences.py 中实现 get_index_daily_batch_size，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_index_daily_batch_size",
+      "type": "function",
+      "name": "set_index_daily_batch_size",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        538,
+        542
+      ],
+      "summary": "在 preferences.py 中实现 set_index_daily_batch_size，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_limit_ladder_monitor_enabled",
+      "type": "function",
+      "name": "get_limit_ladder_monitor_enabled",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        547,
+        549
+      ],
+      "summary": "在 preferences.py 中实现 get_limit_ladder_monitor_enabled，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_depth_polling_interval",
+      "type": "function",
+      "name": "get_depth_polling_interval",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        552,
+        554
+      ],
+      "summary": "在 preferences.py 中实现 get_depth_polling_interval，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_depth_polling_interval",
+      "type": "function",
+      "name": "set_depth_polling_interval",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        557,
+        561
+      ],
+      "summary": "在 preferences.py 中实现 set_depth_polling_interval，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_depth_finalize_time",
+      "type": "function",
+      "name": "get_depth_finalize_time",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        564,
+        567
+      ],
+      "summary": "在 preferences.py 中实现 get_depth_finalize_time，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_depth_finalize_time",
+      "type": "function",
+      "name": "set_depth_finalize_time",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        570,
+        580
+      ],
+      "summary": "在 preferences.py 中实现 set_depth_finalize_time，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_review_schedule",
+      "type": "function",
+      "name": "get_review_schedule",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        588,
+        598
+      ],
+      "summary": "在 preferences.py 中实现 get_review_schedule，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_review_schedule",
+      "type": "function",
+      "name": "set_review_schedule",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        601,
+        612
+      ],
+      "summary": "在 preferences.py 中实现 set_review_schedule，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_mining_schedule",
+      "type": "function",
+      "name": "get_mining_schedule",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        618,
+        634
+      ],
+      "summary": "在 preferences.py 中实现 get_mining_schedule，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_mining_schedule",
+      "type": "function",
+      "name": "set_mining_schedule",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        637,
+        649
+      ],
+      "summary": "在 preferences.py 中实现 set_mining_schedule，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_review_push_channels",
+      "type": "function",
+      "name": "get_review_push_channels",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        652,
+        672
+      ],
+      "summary": "在 preferences.py 中实现 get_review_push_channels，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_review_push_channels",
+      "type": "function",
+      "name": "set_review_push_channels",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        675,
+        684
+      ],
+      "summary": "在 preferences.py 中实现 set_review_push_channels，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_realtime_pull_stock",
+      "type": "function",
+      "name": "get_realtime_pull_stock",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        702,
+        703
+      ],
+      "summary": "在 preferences.py 中实现 get_realtime_pull_stock，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_realtime_pull_etf",
+      "type": "function",
+      "name": "get_realtime_pull_etf",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        706,
+        708
+      ],
+      "summary": "在 preferences.py 中实现 get_realtime_pull_etf，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_realtime_quote_scope",
+      "type": "function",
+      "name": "set_realtime_quote_scope",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        711,
+        718
+      ],
+      "summary": "在 preferences.py 中实现 set_realtime_quote_scope，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_realtime_quote_scope",
+      "type": "function",
+      "name": "get_realtime_quote_scope",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        721,
+        725
+      ],
+      "summary": "在 preferences.py 中实现 get_realtime_quote_scope，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_sse_refresh_pages",
+      "type": "function",
+      "name": "get_sse_refresh_pages",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        728,
+        734
+      ],
+      "summary": "在 preferences.py 中实现 get_sse_refresh_pages，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_sse_refresh_pages",
+      "type": "function",
+      "name": "set_sse_refresh_pages",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        737,
+        740
+      ],
+      "summary": "在 preferences.py 中实现 set_sse_refresh_pages，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_strategy_monitor_enabled",
+      "type": "function",
+      "name": "get_strategy_monitor_enabled",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        743,
+        745
+      ],
+      "summary": "在 preferences.py 中实现 get_strategy_monitor_enabled，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_system_notify_enabled",
+      "type": "function",
+      "name": "get_system_notify_enabled",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        748,
+        750
+      ],
+      "summary": "在 preferences.py 中实现 get_system_notify_enabled，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_system_notify_enabled",
+      "type": "function",
+      "name": "set_system_notify_enabled",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        753,
+        756
+      ],
+      "summary": "在 preferences.py 中实现 set_system_notify_enabled，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_feishu_webhook_url",
+      "type": "function",
+      "name": "get_feishu_webhook_url",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        759,
+        761
+      ],
+      "summary": "在 preferences.py 中实现 get_feishu_webhook_url，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_feishu_webhook_secret",
+      "type": "function",
+      "name": "get_feishu_webhook_secret",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        764,
+        766
+      ],
+      "summary": "在 preferences.py 中实现 get_feishu_webhook_secret，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_feishu_webhook_url",
+      "type": "function",
+      "name": "set_feishu_webhook_url",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        769,
+        772
+      ],
+      "summary": "在 preferences.py 中实现 set_feishu_webhook_url，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_feishu_webhook_secret",
+      "type": "function",
+      "name": "set_feishu_webhook_secret",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        775,
+        778
+      ],
+      "summary": "在 preferences.py 中实现 set_feishu_webhook_secret，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_wecom_webhook_url",
+      "type": "function",
+      "name": "get_wecom_webhook_url",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        781,
+        787
+      ],
+      "summary": "在 preferences.py 中实现 get_wecom_webhook_url，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_wecom_webhook_url",
+      "type": "function",
+      "name": "set_wecom_webhook_url",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        790,
+        797
+      ],
+      "summary": "在 preferences.py 中实现 set_wecom_webhook_url，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_wecom_bot_id",
+      "type": "function",
+      "name": "get_wecom_bot_id",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        803,
+        805
+      ],
+      "summary": "在 preferences.py 中实现 get_wecom_bot_id，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_wecom_bot_id",
+      "type": "function",
+      "name": "set_wecom_bot_id",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        808,
+        811
+      ],
+      "summary": "在 preferences.py 中实现 set_wecom_bot_id，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_wecom_bot_secret",
+      "type": "function",
+      "name": "get_wecom_bot_secret",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        814,
+        816
+      ],
+      "summary": "在 preferences.py 中实现 get_wecom_bot_secret，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_wecom_bot_secret",
+      "type": "function",
+      "name": "set_wecom_bot_secret",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        819,
+        822
+      ],
+      "summary": "在 preferences.py 中实现 set_wecom_bot_secret，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_wecom_bot_enabled",
+      "type": "function",
+      "name": "get_wecom_bot_enabled",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        825,
+        827
+      ],
+      "summary": "在 preferences.py 中实现 get_wecom_bot_enabled，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_wecom_bot_enabled",
+      "type": "function",
+      "name": "set_wecom_bot_enabled",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        830,
+        833
+      ],
+      "summary": "在 preferences.py 中实现 set_wecom_bot_enabled，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_webhook_enabled_default",
+      "type": "function",
+      "name": "get_webhook_enabled_default",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        837,
+        842
+      ],
+      "summary": "在 preferences.py 中实现 get_webhook_enabled_default，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_webhook_enabled_default",
+      "type": "function",
+      "name": "set_webhook_enabled_default",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        845,
+        851
+      ],
+      "summary": "在 preferences.py 中实现 set_webhook_enabled_default，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_webhook_default_channels",
+      "type": "function",
+      "name": "get_webhook_default_channels",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        854,
+        870
+      ],
+      "summary": "在 preferences.py 中实现 get_webhook_default_channels，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_webhook_default_channels",
+      "type": "function",
+      "name": "set_webhook_default_channels",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        873,
+        882
+      ],
+      "summary": "在 preferences.py 中实现 set_webhook_default_channels，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_screener_auto_run",
+      "type": "function",
+      "name": "get_screener_auto_run",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        885,
+        887
+      ],
+      "summary": "在 preferences.py 中实现 get_screener_auto_run，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_strategy_monitor_ids",
+      "type": "function",
+      "name": "get_strategy_monitor_ids",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        890,
+        892
+      ],
+      "summary": "在 preferences.py 中实现 get_strategy_monitor_ids，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_realtime_monitor_config",
+      "type": "function",
+      "name": "set_realtime_monitor_config",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        895,
+        928
+      ],
+      "summary": "在 preferences.py 中实现 set_realtime_monitor_config，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_realtime_monitor_config",
+      "type": "function",
+      "name": "get_realtime_monitor_config",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        931,
+        943
+      ],
+      "summary": "在 preferences.py 中实现 get_realtime_monitor_config，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_nav_order",
+      "type": "function",
+      "name": "get_nav_order",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        946,
+        948
+      ],
+      "summary": "在 preferences.py 中实现 get_nav_order，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_nav_order",
+      "type": "function",
+      "name": "set_nav_order",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        951,
+        954
+      ],
+      "summary": "在 preferences.py 中实现 set_nav_order，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_nav_hidden",
+      "type": "function",
+      "name": "get_nav_hidden",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        957,
+        959
+      ],
+      "summary": "在 preferences.py 中实现 get_nav_hidden，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_nav_hidden",
+      "type": "function",
+      "name": "set_nav_hidden",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        962,
+        965
+      ],
+      "summary": "在 preferences.py 中实现 set_nav_hidden，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_watchlist_columns",
+      "type": "function",
+      "name": "get_watchlist_columns",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        968,
+        970
+      ],
+      "summary": "在 preferences.py 中实现 get_watchlist_columns，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_watchlist_columns",
+      "type": "function",
+      "name": "set_watchlist_columns",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        973,
+        976
+      ],
+      "summary": "在 preferences.py 中实现 set_watchlist_columns，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_screener_result_columns",
+      "type": "function",
+      "name": "get_screener_result_columns",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        979,
+        981
+      ],
+      "summary": "在 preferences.py 中实现 get_screener_result_columns，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_screener_result_columns",
+      "type": "function",
+      "name": "set_screener_result_columns",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        984,
+        987
+      ],
+      "summary": "在 preferences.py 中实现 set_screener_result_columns，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_onboarding_completed",
+      "type": "function",
+      "name": "get_onboarding_completed",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        992,
+        994
+      ],
+      "summary": "在 preferences.py 中实现 get_onboarding_completed，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_onboarding_completed",
+      "type": "function",
+      "name": "set_onboarding_completed",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        997,
+        1000
+      ],
+      "summary": "在 preferences.py 中实现 set_onboarding_completed，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:get_financial_sync_times",
+      "type": "function",
+      "name": "get_financial_sync_times",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        1006,
+        1008
+      ],
+      "summary": "在 preferences.py 中实现 get_financial_sync_times，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/preferences.py:set_financial_sync_time",
+      "type": "function",
+      "name": "set_financial_sync_time",
+      "filePath": "backend/app/services/preferences.py",
+      "lineRange": [
+        1011,
+        1015
+      ],
+      "summary": "在 preferences.py 中实现 set_financial_sync_time，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/quote_service.py",
+      "type": "file",
+      "name": "quote_service.py",
+      "filePath": "backend/app/services/quote_service.py",
+      "summary": "实现 quote_service 领域服务，供 API、任务或策略流程调用。",
+      "tags": [
+        "服务",
+        "后端",
+        "业务"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/quote_service.py:_persist_last_fetch",
+      "type": "function",
+      "name": "_persist_last_fetch",
+      "filePath": "backend/app/services/quote_service.py",
+      "lineRange": [
+        141,
+        155
+      ],
+      "summary": "在 quote_service.py 中实现 _persist_last_fetch，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/quote_service.py:_monitor_name_map",
+      "type": "function",
+      "name": "_monitor_name_map",
+      "filePath": "backend/app/services/quote_service.py",
+      "lineRange": [
+        158,
+        164
+      ],
+      "summary": "在 quote_service.py 中实现 _monitor_name_map，负责该模块的业务处理或辅助逻辑。",
+      "tags": [
+        "函数",
+        "后端",
+        "业务"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/quote_service.py:QuoteSubscriber",
+      "type": "class",
+      "name": "QuoteSubscriber",
+      "filePath": "backend/app/services/quote_service.py",
+      "lineRange": [
+        50,
+        132
+      ],
+      "summary": "在 quote_service.py 中定义 QuoteSubscriber，封装相关的数据结构、状态或协作职责。",
+      "tags": [
+        "类",
+        "后端",
+        "模型"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/services/quote_service.py:QuoteService",
+      "type": "class",
+      "name": "QuoteService",
+      "filePath": "backend/app/services/quote_service.py",
+      "lineRange": [
+        167,
+        1644
+      ],
+      "summary": "在 quote_service.py 中定义 QuoteService，封装相关的数据结构、状态或协作职责。",
+      "tags": [
+        "类",
+        "后端",
+        "模型"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:request_cancel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:request_cancel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:is_cancelled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:is_cancelled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:_register_cancel_flag",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:_register_cancel_flag",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:_default_store_dir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:_default_store_dir",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:_summary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:_summary",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:_duration_s",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:_duration_s",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:try_acquire_run_slot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:try_acquire_run_slot",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:release_run_slot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:release_run_slot",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:_parse_utc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "function:backend/app/services/pipeline_jobs.py:_parse_utc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "class:backend/app/services/pipeline_jobs.py:JobCancelledError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "class:backend/app/services/pipeline_jobs.py:JobCancelledError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "class:backend/app/services/pipeline_jobs.py:JobStore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/pipeline_jobs.py",
+      "target": "class:backend/app/services/pipeline_jobs.py:JobStore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:_path",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:_path",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:_invalidate_cache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:_invalidate_cache",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_realtime_quotes_enabled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_realtime_quotes_enabled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_watchlist_groups_in_nav",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_watchlist_groups_in_nav",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_realtime_quote_interval",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_realtime_quote_interval",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_realtime_quote_interval",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_realtime_quote_interval",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_sync_enabled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_sync_enabled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_intraday_refresh",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_intraday_refresh",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_intraday_refresh_interval",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_intraday_refresh_interval",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:_normalize_ext_field",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:_normalize_ext_field",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_monitor_ext_fields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_monitor_ext_fields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_sync_days",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_sync_days",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_sync_segment_days",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_sync_segment_days",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_refresh_enabled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_refresh_enabled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_refresh_interval",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_refresh_interval",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_data_source_job_timeout_s",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_data_source_job_timeout_s",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_data_source_long_job_timeout_s",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_data_source_long_job_timeout_s",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_batch_compress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_batch_compress",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_daily_batch_compress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_daily_batch_compress",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:_allowed_data_providers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:_allowed_data_providers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_daily_data_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_daily_data_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_adj_factor_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_adj_factor_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_data_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_minute_data_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_full_minute_data_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_full_minute_data_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_depth5_data_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_depth5_data_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_realtime_data_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_realtime_data_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_financial_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_financial_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_pull_a_share",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_pull_a_share",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_pull_etf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_pull_etf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_pull_index",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_pull_index",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_regime_enabled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_regime_enabled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_regime_batch_days",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_regime_batch_days",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_regime_warmup_days",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_regime_warmup_days",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_mainline_max_members",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_mainline_max_members",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_mainline_min_members",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_mainline_min_members",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_mainline_blacklist",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_mainline_blacklist",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_sentiment_exclude_st",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_sentiment_exclude_st",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_sentiment_exclude_st",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_sentiment_exclude_st",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_mainline_filter_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_mainline_filter_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_mainline_filter_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_mainline_filter_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_pull_types",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_pull_types",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_pipeline_pull_types",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_pipeline_pull_types",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_index_symbols",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_index_symbols",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_pipeline_index_symbols",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_pipeline_index_symbols",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_schedule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_schedule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_pipeline_schedule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_pipeline_schedule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_instruments_schedule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_instruments_schedule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_instruments_schedule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_instruments_schedule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_enriched_batch_size",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_enriched_batch_size",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_enriched_batch_size",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_enriched_batch_size",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_index_daily_batch_size",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_index_daily_batch_size",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_index_daily_batch_size",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_index_daily_batch_size",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_limit_ladder_monitor_enabled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_limit_ladder_monitor_enabled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_depth_polling_interval",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_depth_polling_interval",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_depth_polling_interval",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_depth_polling_interval",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_depth_finalize_time",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_depth_finalize_time",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_depth_finalize_time",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_depth_finalize_time",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_review_schedule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_review_schedule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_review_schedule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_review_schedule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_mining_schedule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_mining_schedule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_mining_schedule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_mining_schedule",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_review_push_channels",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_review_push_channels",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_review_push_channels",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_review_push_channels",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_realtime_pull_stock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_realtime_pull_stock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_realtime_pull_etf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_realtime_pull_etf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_realtime_quote_scope",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_realtime_quote_scope",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_realtime_quote_scope",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_realtime_quote_scope",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_sse_refresh_pages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_sse_refresh_pages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_sse_refresh_pages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_sse_refresh_pages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_strategy_monitor_enabled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_strategy_monitor_enabled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_system_notify_enabled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_system_notify_enabled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_system_notify_enabled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_system_notify_enabled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_feishu_webhook_url",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_feishu_webhook_url",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_feishu_webhook_secret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_feishu_webhook_secret",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_feishu_webhook_url",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_feishu_webhook_url",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_feishu_webhook_secret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_feishu_webhook_secret",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_wecom_webhook_url",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_wecom_webhook_url",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_wecom_webhook_url",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_wecom_webhook_url",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_wecom_bot_id",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_wecom_bot_id",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_wecom_bot_id",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_wecom_bot_id",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_wecom_bot_secret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_wecom_bot_secret",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_wecom_bot_secret",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_wecom_bot_secret",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_wecom_bot_enabled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_wecom_bot_enabled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_wecom_bot_enabled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_wecom_bot_enabled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_webhook_enabled_default",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_webhook_enabled_default",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_webhook_enabled_default",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_webhook_enabled_default",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_webhook_default_channels",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_webhook_default_channels",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_webhook_default_channels",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_webhook_default_channels",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_screener_auto_run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_screener_auto_run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_strategy_monitor_ids",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_strategy_monitor_ids",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_realtime_monitor_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_realtime_monitor_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_realtime_monitor_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_realtime_monitor_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_nav_order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_nav_order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_nav_order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_nav_order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_nav_hidden",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_nav_hidden",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_nav_hidden",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_nav_hidden",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_watchlist_columns",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_watchlist_columns",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_watchlist_columns",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_watchlist_columns",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_screener_result_columns",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_screener_result_columns",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_screener_result_columns",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_screener_result_columns",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_onboarding_completed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_onboarding_completed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_onboarding_completed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_onboarding_completed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_financial_sync_times",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:get_financial_sync_times",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_financial_sync_time",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/preferences.py",
+      "target": "function:backend/app/services/preferences.py:set_financial_sync_time",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:load",
+      "target": "function:backend/app/services/preferences.py:_path",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:save",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:save",
+      "target": "function:backend/app/services/preferences.py:_path",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:save",
+      "target": "function:backend/app/services/preferences.py:_invalidate_cache",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_quotes_enabled",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_watchlist_groups_in_nav",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_quote_interval",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_realtime_quote_interval",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_realtime_quote_interval",
+      "target": "function:backend/app/services/preferences.py:_path",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_realtime_quote_interval",
+      "target": "function:backend/app/services/preferences.py:_invalidate_cache",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_minute_sync_enabled",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_minute_intraday_refresh",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_minute_intraday_refresh_interval",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_monitor_ext_fields",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_monitor_ext_fields",
+      "target": "function:backend/app/services/preferences.py:_normalize_ext_field",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_monitor_ext_fields",
+      "target": "function:backend/app/services/preferences.py:_normalize_ext_field",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_minute_sync_days",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_minute_sync_segment_days",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_minute_refresh_enabled",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_minute_refresh_interval",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_data_source_job_timeout_s",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_data_source_long_job_timeout_s",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_minute_batch_compress",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_daily_batch_compress",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_daily_data_provider",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_daily_data_provider",
+      "target": "function:backend/app/services/preferences.py:_allowed_data_providers",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_adj_factor_provider",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_adj_factor_provider",
+      "target": "function:backend/app/services/preferences.py:_allowed_data_providers",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_minute_data_provider",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_minute_data_provider",
+      "target": "function:backend/app/services/preferences.py:_allowed_data_providers",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_full_minute_data_provider",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_full_minute_data_provider",
+      "target": "function:backend/app/services/preferences.py:_allowed_data_providers",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_depth5_data_provider",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_depth5_data_provider",
+      "target": "function:backend/app/services/preferences.py:_allowed_data_providers",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_data_provider",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_data_provider",
+      "target": "function:backend/app/services/preferences.py:_allowed_data_providers",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_financial_provider",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_financial_provider",
+      "target": "function:backend/app/services/preferences.py:_allowed_data_providers",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_pipeline_pull_a_share",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_pipeline_pull_etf",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_pipeline_pull_index",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_pipeline_regime_enabled",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_regime_batch_days",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_regime_warmup_days",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_mainline_max_members",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_mainline_min_members",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_mainline_blacklist",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_sentiment_exclude_st",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_sentiment_exclude_st",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_sentiment_exclude_st",
+      "target": "function:backend/app/services/preferences.py:get_sentiment_exclude_st",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_mainline_filter_config",
+      "target": "function:backend/app/services/preferences.py:get_mainline_min_members",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_mainline_filter_config",
+      "target": "function:backend/app/services/preferences.py:get_mainline_max_members",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_mainline_filter_config",
+      "target": "function:backend/app/services/preferences.py:get_mainline_blacklist",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_mainline_filter_config",
+      "target": "function:backend/app/services/preferences.py:get_sentiment_exclude_st",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_mainline_filter_config",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_mainline_filter_config",
+      "target": "function:backend/app/services/preferences.py:get_mainline_filter_config",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_pipeline_pull_types",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_pull_a_share",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_pipeline_pull_types",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_pull_etf",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_pipeline_pull_types",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_pull_index",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_pipeline_pull_types",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_pipeline_pull_types",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_pull_types",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_pipeline_index_symbols",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_pipeline_index_symbols",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_pipeline_index_symbols",
+      "target": "function:backend/app/services/preferences.py:get_pipeline_index_symbols",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_pipeline_schedule",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_pipeline_schedule",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_instruments_schedule",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_instruments_schedule",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_enriched_batch_size",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_enriched_batch_size",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_index_daily_batch_size",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_index_daily_batch_size",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_limit_ladder_monitor_enabled",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_depth_polling_interval",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_depth_polling_interval",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_depth_finalize_time",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_depth_finalize_time",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_review_schedule",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_review_schedule",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_mining_schedule",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_mining_schedule",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_review_push_channels",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_review_push_channels",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_pull_stock",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_pull_etf",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_realtime_quote_scope",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_realtime_quote_scope",
+      "target": "function:backend/app/services/preferences.py:get_realtime_quote_scope",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_quote_scope",
+      "target": "function:backend/app/services/preferences.py:get_realtime_pull_stock",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_quote_scope",
+      "target": "function:backend/app/services/preferences.py:get_realtime_pull_etf",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_sse_refresh_pages",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_sse_refresh_pages",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_sse_refresh_pages",
+      "target": "function:backend/app/services/preferences.py:get_sse_refresh_pages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_strategy_monitor_enabled",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_system_notify_enabled",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_system_notify_enabled",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_feishu_webhook_url",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_feishu_webhook_secret",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_feishu_webhook_url",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_feishu_webhook_url",
+      "target": "function:backend/app/services/preferences.py:get_feishu_webhook_url",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_feishu_webhook_secret",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_feishu_webhook_secret",
+      "target": "function:backend/app/services/preferences.py:get_feishu_webhook_secret",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_wecom_webhook_url",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_wecom_webhook_url",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_wecom_webhook_url",
+      "target": "function:backend/app/services/preferences.py:get_wecom_webhook_url",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_wecom_bot_id",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_wecom_bot_id",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_wecom_bot_id",
+      "target": "function:backend/app/services/preferences.py:get_wecom_bot_id",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_wecom_bot_secret",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_wecom_bot_secret",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_wecom_bot_secret",
+      "target": "function:backend/app/services/preferences.py:get_wecom_bot_secret",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_wecom_bot_enabled",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_wecom_bot_enabled",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_wecom_bot_enabled",
+      "target": "function:backend/app/services/preferences.py:get_wecom_bot_enabled",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_webhook_enabled_default",
+      "target": "function:backend/app/services/preferences.py:get_webhook_default_channels",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_webhook_enabled_default",
+      "target": "function:backend/app/services/preferences.py:set_webhook_default_channels",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_webhook_enabled_default",
+      "target": "function:backend/app/services/preferences.py:get_webhook_enabled_default",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_webhook_default_channels",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_webhook_default_channels",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_screener_auto_run",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_strategy_monitor_ids",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_realtime_monitor_config",
+      "target": "function:backend/app/services/preferences.py:_normalize_ext_field",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_realtime_monitor_config",
+      "target": "function:backend/app/services/preferences.py:_normalize_ext_field",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_realtime_monitor_config",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_realtime_monitor_config",
+      "target": "function:backend/app/services/preferences.py:get_realtime_monitor_config",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_monitor_config",
+      "target": "function:backend/app/services/preferences.py:get_sse_refresh_pages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_monitor_config",
+      "target": "function:backend/app/services/preferences.py:get_strategy_monitor_enabled",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_monitor_config",
+      "target": "function:backend/app/services/preferences.py:get_strategy_monitor_ids",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_monitor_config",
+      "target": "function:backend/app/services/preferences.py:get_screener_auto_run",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_monitor_config",
+      "target": "function:backend/app/services/preferences.py:get_minute_intraday_refresh",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_monitor_config",
+      "target": "function:backend/app/services/preferences.py:get_minute_intraday_refresh_interval",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_monitor_config",
+      "target": "function:backend/app/services/preferences.py:get_minute_refresh_enabled",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_monitor_config",
+      "target": "function:backend/app/services/preferences.py:get_minute_refresh_interval",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_realtime_monitor_config",
+      "target": "function:backend/app/services/preferences.py:get_monitor_ext_fields",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_nav_order",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_nav_order",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_nav_order",
+      "target": "function:backend/app/services/preferences.py:get_nav_order",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_nav_hidden",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_nav_hidden",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_nav_hidden",
+      "target": "function:backend/app/services/preferences.py:get_nav_hidden",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_watchlist_columns",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_watchlist_columns",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_screener_result_columns",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_screener_result_columns",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_onboarding_completed",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_onboarding_completed",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:get_financial_sync_times",
+      "target": "function:backend/app/services/preferences.py:load",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_financial_sync_time",
+      "target": "function:backend/app/services/preferences.py:get_financial_sync_times",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:backend/app/services/preferences.py:set_financial_sync_time",
+      "target": "function:backend/app/services/preferences.py:save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/quote_service.py",
+      "target": "function:backend/app/services/quote_service.py:_persist_last_fetch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/quote_service.py",
+      "target": "function:backend/app/services/quote_service.py:_persist_last_fetch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/quote_service.py",
+      "target": "function:backend/app/services/quote_service.py:_monitor_name_map",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/quote_service.py",
+      "target": "function:backend/app/services/quote_service.py:_monitor_name_map",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/quote_service.py",
+      "target": "class:backend/app/services/quote_service.py:QuoteSubscriber",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/quote_service.py",
+      "target": "class:backend/app/services/quote_service.py:QuoteSubscriber",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/quote_service.py",
+      "target": "class:backend/app/services/quote_service.py:QuoteService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/quote_service.py",
+      "target": "class:backend/app/services/quote_service.py:QuoteService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/quote_service.py",
+      "target": "file:backend/app/market_time.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/quote_service.py",
+      "target": "file:backend/app/parquet.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/quote_service.py",
+      "target": "file:backend/app/services/index_const.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/quote_service.py",
+      "target": "file:backend/app/strategy/intraday_signals.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

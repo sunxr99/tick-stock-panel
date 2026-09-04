@@ -1,0 +1,1383 @@
+{
+  "nodes": [
+    {
+      "id": "file:.gitattributes",
+      "type": "file",
+      "name": ".gitattributes",
+      "filePath": ".gitattributes",
+      "summary": "实现或承载 .gitattributes 对应的项目支持功能。",
+      "tags": [
+        "implementation",
+        "project-support",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:.serena/project.yml",
+      "type": "config",
+      "name": "project.yml",
+      "filePath": ".serena/project.yml",
+      "summary": "配置 project.yml 中声明的构建、运行或扩展参数，作为对应工具链或组件的输入。",
+      "tags": [
+        "configuration",
+        "tooling",
+        "project-settings"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:backend/app/custom/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "backend/app/custom/README.md",
+      "summary": "说明 README.md 涵盖的项目功能、操作流程或设计约束，供开发与使用时查阅。",
+      "tags": [
+        "documentation",
+        "project-guide",
+        "reference"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/custom/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "backend/app/custom/__init__.py",
+      "summary": "实现或承载 __init__.py 对应的项目支持功能。",
+      "tags": [
+        "implementation",
+        "project-support",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/custom/_template.py.example",
+      "type": "file",
+      "name": "_template.py.example",
+      "filePath": "backend/app/custom/_template.py.example",
+      "summary": "实现或承载 _template.py.example 对应的项目支持功能。",
+      "tags": [
+        "implementation",
+        "project-support",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/data_providers/schemas.py",
+      "type": "file",
+      "name": "schemas.py",
+      "filePath": "backend/app/data_providers/schemas.py",
+      "summary": "实现或承载 schemas.py 对应的项目支持功能。",
+      "tags": [
+        "implementation",
+        "project-support",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/desktop.py",
+      "type": "file",
+      "name": "desktop.py",
+      "filePath": "backend/app/desktop.py",
+      "summary": "桌面客户端入口：管理单实例、可用端口、后台 Uvicorn 服务与 pywebview 窗口的启动和退出。",
+      "tags": [
+        "desktop",
+        "entry-point",
+        "runtime"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/desktop.py:_ensure_data_dir_writable",
+      "type": "function",
+      "name": "_ensure_data_dir_writable",
+      "filePath": "backend/app/desktop.py",
+      "lineRange": [
+        33,
+        49
+      ],
+      "summary": "实现 _ensure_data_dir_writable 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/desktop.py:_acquire_single_instance",
+      "type": "function",
+      "name": "_acquire_single_instance",
+      "filePath": "backend/app/desktop.py",
+      "lineRange": [
+        52,
+        76
+      ],
+      "summary": "实现 _acquire_single_instance 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/desktop.py:_release_single_instance",
+      "type": "function",
+      "name": "_release_single_instance",
+      "filePath": "backend/app/desktop.py",
+      "lineRange": [
+        79,
+        86
+      ],
+      "summary": "实现 _release_single_instance 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/desktop.py:_guard_streams",
+      "type": "function",
+      "name": "_guard_streams",
+      "filePath": "backend/app/desktop.py",
+      "lineRange": [
+        89,
+        117
+      ],
+      "summary": "实现 _guard_streams 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/desktop.py:_setup_logging",
+      "type": "function",
+      "name": "_setup_logging",
+      "filePath": "backend/app/desktop.py",
+      "lineRange": [
+        120,
+        148
+      ],
+      "summary": "实现 _setup_logging 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/desktop.py:_show_crash",
+      "type": "function",
+      "name": "_show_crash",
+      "filePath": "backend/app/desktop.py",
+      "lineRange": [
+        151,
+        168
+      ],
+      "summary": "实现 _show_crash 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/desktop.py:_pid_alive",
+      "type": "function",
+      "name": "_pid_alive",
+      "filePath": "backend/app/desktop.py",
+      "lineRange": [
+        171,
+        187
+      ],
+      "summary": "实现 _pid_alive 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/desktop.py:_current_pid",
+      "type": "function",
+      "name": "_current_pid",
+      "filePath": "backend/app/desktop.py",
+      "lineRange": [
+        190,
+        193
+      ],
+      "summary": "实现 _current_pid 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/desktop.py:_find_free_port",
+      "type": "function",
+      "name": "_find_free_port",
+      "filePath": "backend/app/desktop.py",
+      "lineRange": [
+        196,
+        206
+      ],
+      "summary": "实现 _find_free_port 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/desktop.py:_run_uvmicorn",
+      "type": "function",
+      "name": "_run_uvmicorn",
+      "filePath": "backend/app/desktop.py",
+      "lineRange": [
+        209,
+        246
+      ],
+      "summary": "实现 _run_uvmicorn 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/desktop.py:_wait_for_server",
+      "type": "function",
+      "name": "_wait_for_server",
+      "filePath": "backend/app/desktop.py",
+      "lineRange": [
+        249,
+        267
+      ],
+      "summary": "实现 _wait_for_server 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/desktop.py:_open_window",
+      "type": "function",
+      "name": "_open_window",
+      "filePath": "backend/app/desktop.py",
+      "lineRange": [
+        270,
+        284
+      ],
+      "summary": "实现 _open_window 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/desktop.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "backend/app/desktop.py",
+      "lineRange": [
+        287,
+        345
+      ],
+      "summary": "实现 main 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:backend/app/plugins/fuyao/plugin.yaml",
+      "type": "config",
+      "name": "plugin.yaml",
+      "filePath": "backend/app/plugins/fuyao/plugin.yaml",
+      "summary": "配置 plugin.yaml 中声明的构建、运行或扩展参数，作为对应工具链或组件的输入。",
+      "tags": [
+        "configuration",
+        "tooling",
+        "project-settings"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/plugins/stocksdk/bridge.mjs",
+      "type": "file",
+      "name": "bridge.mjs",
+      "filePath": "backend/app/plugins/stocksdk/bridge.mjs",
+      "summary": "stock-sdk 的 Node 桥接程序：通过标准输入输出协议向 Python 后端提供日线、分钟线、实时行情和标的元数据。",
+      "tags": [
+        "implementation",
+        "project-support",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/plugins/stocksdk/bridge.mjs:loadSDK",
+      "type": "function",
+      "name": "loadSDK",
+      "filePath": "backend/app/plugins/stocksdk/bridge.mjs",
+      "lineRange": [
+        37,
+        65
+      ],
+      "summary": "实现 loadSDK 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/plugins/stocksdk/bridge.mjs:mapPool",
+      "type": "function",
+      "name": "mapPool",
+      "filePath": "backend/app/plugins/stocksdk/bridge.mjs",
+      "lineRange": [
+        85,
+        102
+      ],
+      "summary": "实现 mapPool 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/plugins/stocksdk/bridge.mjs:fetchWithRetry",
+      "type": "function",
+      "name": "fetchWithRetry",
+      "filePath": "backend/app/plugins/stocksdk/bridge.mjs",
+      "lineRange": [
+        131,
+        140
+      ],
+      "summary": "实现 fetchWithRetry 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/plugins/stocksdk/bridge.mjs:opDaily",
+      "type": "function",
+      "name": "opDaily",
+      "filePath": "backend/app/plugins/stocksdk/bridge.mjs",
+      "lineRange": [
+        149,
+        160
+      ],
+      "summary": "实现 opDaily 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/plugins/stocksdk/bridge.mjs:opAdj",
+      "type": "function",
+      "name": "opAdj",
+      "filePath": "backend/app/plugins/stocksdk/bridge.mjs",
+      "lineRange": [
+        162,
+        183
+      ],
+      "summary": "实现 opAdj 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/plugins/stocksdk/bridge.mjs:opMinute",
+      "type": "function",
+      "name": "opMinute",
+      "filePath": "backend/app/plugins/stocksdk/bridge.mjs",
+      "lineRange": [
+        185,
+        197
+      ],
+      "summary": "实现 opMinute 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/plugins/stocksdk/bridge.mjs:opRealtime",
+      "type": "function",
+      "name": "opRealtime",
+      "filePath": "backend/app/plugins/stocksdk/bridge.mjs",
+      "lineRange": [
+        199,
+        220
+      ],
+      "summary": "实现 opRealtime 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/plugins/stocksdk/bridge.mjs:opInstruments",
+      "type": "function",
+      "name": "opInstruments",
+      "filePath": "backend/app/plugins/stocksdk/bridge.mjs",
+      "lineRange": [
+        222,
+        246
+      ],
+      "summary": "实现 opInstruments 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/plugins/stocksdk/bridge.mjs:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "backend/app/plugins/stocksdk/bridge.mjs",
+      "lineRange": [
+        248,
+        291
+      ],
+      "summary": "实现 main 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:backend/app/plugins/stocksdk/package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "backend/app/plugins/stocksdk/package.json",
+      "summary": "配置 package.json 中声明的构建、运行或扩展参数，作为对应工具链或组件的输入。",
+      "tags": [
+        "configuration",
+        "tooling",
+        "project-settings"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:backend/app/plugins/stocksdk/plugin.yaml",
+      "type": "config",
+      "name": "plugin.yaml",
+      "filePath": "backend/app/plugins/stocksdk/plugin.yaml",
+      "summary": "配置 plugin.yaml 中声明的构建、运行或扩展参数，作为对应工具链或组件的输入。",
+      "tags": [
+        "configuration",
+        "tooling",
+        "project-settings"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/notify_adapter.py",
+      "type": "file",
+      "name": "notify_adapter.py",
+      "filePath": "backend/app/services/notify_adapter.py",
+      "summary": "跨平台系统通知适配器：检测可用后端并将通知分发到 Windows、macOS 或 Linux 实现。",
+      "tags": [
+        "implementation",
+        "project-support",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/notify_adapter.py:_detect_backend",
+      "type": "function",
+      "name": "_detect_backend",
+      "filePath": "backend/app/services/notify_adapter.py",
+      "lineRange": [
+        30,
+        51
+      ],
+      "summary": "实现 _detect_backend 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/notify_adapter.py:_truncate",
+      "type": "function",
+      "name": "_truncate",
+      "filePath": "backend/app/services/notify_adapter.py",
+      "lineRange": [
+        54,
+        57
+      ],
+      "summary": "实现 _truncate 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/notify_adapter.py:notify",
+      "type": "function",
+      "name": "notify",
+      "filePath": "backend/app/services/notify_adapter.py",
+      "lineRange": [
+        60,
+        92
+      ],
+      "summary": "实现 notify 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/notify_adapter.py:_notify_winotify",
+      "type": "function",
+      "name": "_notify_winotify",
+      "filePath": "backend/app/services/notify_adapter.py",
+      "lineRange": [
+        95,
+        106
+      ],
+      "summary": "实现 _notify_winotify 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/notify_adapter.py:_notify_osascript",
+      "type": "function",
+      "name": "_notify_osascript",
+      "filePath": "backend/app/services/notify_adapter.py",
+      "lineRange": [
+        109,
+        122
+      ],
+      "summary": "实现 _notify_osascript 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/notify_adapter.py:_notify_notify_send",
+      "type": "function",
+      "name": "_notify_notify_send",
+      "filePath": "backend/app/services/notify_adapter.py",
+      "lineRange": [
+        125,
+        136
+      ],
+      "summary": "实现 _notify_notify_send 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/webhook_adapter.py",
+      "type": "file",
+      "name": "webhook_adapter.py",
+      "filePath": "backend/app/services/webhook_adapter.py",
+      "summary": "飞书与企业微信 Webhook 适配器，负责 URL 校验、签名、限长处理和消息投递。",
+      "tags": [
+        "implementation",
+        "project-support",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/webhook_adapter.py:_truncate",
+      "type": "function",
+      "name": "_truncate",
+      "filePath": "backend/app/services/webhook_adapter.py",
+      "lineRange": [
+        42,
+        45
+      ],
+      "summary": "实现 _truncate 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/webhook_adapter.py:is_valid_feishu_url",
+      "type": "function",
+      "name": "is_valid_feishu_url",
+      "filePath": "backend/app/services/webhook_adapter.py",
+      "lineRange": [
+        48,
+        50
+      ],
+      "summary": "实现 is_valid_feishu_url 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/webhook_adapter.py:_gen_sign",
+      "type": "function",
+      "name": "_gen_sign",
+      "filePath": "backend/app/services/webhook_adapter.py",
+      "lineRange": [
+        53,
+        64
+      ],
+      "summary": "实现 _gen_sign 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/webhook_adapter.py:_truncate_card",
+      "type": "function",
+      "name": "_truncate_card",
+      "filePath": "backend/app/services/webhook_adapter.py",
+      "lineRange": [
+        67,
+        70
+      ],
+      "summary": "实现 _truncate_card 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/webhook_adapter.py:_truncate_to_bytes",
+      "type": "function",
+      "name": "_truncate_to_bytes",
+      "filePath": "backend/app/services/webhook_adapter.py",
+      "lineRange": [
+        73,
+        90
+      ],
+      "summary": "实现 _truncate_to_bytes 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/webhook_adapter.py:_post_feishu",
+      "type": "function",
+      "name": "_post_feishu",
+      "filePath": "backend/app/services/webhook_adapter.py",
+      "lineRange": [
+        96,
+        146
+      ],
+      "summary": "实现 _post_feishu 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/webhook_adapter.py:send_feishu",
+      "type": "function",
+      "name": "send_feishu",
+      "filePath": "backend/app/services/webhook_adapter.py",
+      "lineRange": [
+        149,
+        171
+      ],
+      "summary": "实现 send_feishu 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/webhook_adapter.py:send_feishu_card",
+      "type": "function",
+      "name": "send_feishu_card",
+      "filePath": "backend/app/services/webhook_adapter.py",
+      "lineRange": [
+        174,
+        218
+      ],
+      "summary": "实现 send_feishu_card 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/webhook_adapter.py:is_valid_wecom_url",
+      "type": "function",
+      "name": "is_valid_wecom_url",
+      "filePath": "backend/app/services/webhook_adapter.py",
+      "lineRange": [
+        239,
+        255
+      ],
+      "summary": "实现 is_valid_wecom_url 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/webhook_adapter.py:normalize_wecom_url",
+      "type": "function",
+      "name": "normalize_wecom_url",
+      "filePath": "backend/app/services/webhook_adapter.py",
+      "lineRange": [
+        258,
+        265
+      ],
+      "summary": "实现 normalize_wecom_url 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/webhook_adapter.py:_post_wecom",
+      "type": "function",
+      "name": "_post_wecom",
+      "filePath": "backend/app/services/webhook_adapter.py",
+      "lineRange": [
+        268,
+        292
+      ],
+      "summary": "实现 _post_wecom 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/webhook_adapter.py:send_wecom",
+      "type": "function",
+      "name": "send_wecom",
+      "filePath": "backend/app/services/webhook_adapter.py",
+      "lineRange": [
+        295,
+        316
+      ],
+      "summary": "实现 send_wecom 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/webhook_adapter.py:send_wecom_markdown",
+      "type": "function",
+      "name": "send_wecom_markdown",
+      "filePath": "backend/app/services/webhook_adapter.py",
+      "lineRange": [
+        319,
+        345
+      ],
+      "summary": "实现 send_wecom_markdown 所负责的局部处理或编排逻辑。",
+      "tags": [
+        "function",
+        "implementation",
+        "project-support"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_ensure_data_dir_writable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_ensure_data_dir_writable",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_acquire_single_instance",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_acquire_single_instance",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_release_single_instance",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_release_single_instance",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_guard_streams",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_guard_streams",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_setup_logging",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_setup_logging",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_show_crash",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_show_crash",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_pid_alive",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_pid_alive",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_current_pid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_current_pid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_find_free_port",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_find_free_port",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_run_uvmicorn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_run_uvmicorn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_wait_for_server",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_wait_for_server",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_open_window",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:_open_window",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/desktop.py",
+      "target": "function:backend/app/desktop.py:main",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.mjs",
+      "target": "function:backend/app/plugins/stocksdk/bridge.mjs:loadSDK",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.mjs",
+      "target": "function:backend/app/plugins/stocksdk/bridge.mjs:mapPool",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.mjs",
+      "target": "function:backend/app/plugins/stocksdk/bridge.mjs:fetchWithRetry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.mjs",
+      "target": "function:backend/app/plugins/stocksdk/bridge.mjs:opDaily",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.mjs",
+      "target": "function:backend/app/plugins/stocksdk/bridge.mjs:opAdj",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.mjs",
+      "target": "function:backend/app/plugins/stocksdk/bridge.mjs:opMinute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.mjs",
+      "target": "function:backend/app/plugins/stocksdk/bridge.mjs:opRealtime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.mjs",
+      "target": "function:backend/app/plugins/stocksdk/bridge.mjs:opInstruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/plugins/stocksdk/bridge.mjs",
+      "target": "function:backend/app/plugins/stocksdk/bridge.mjs:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/notify_adapter.py",
+      "target": "function:backend/app/services/notify_adapter.py:_detect_backend",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/notify_adapter.py",
+      "target": "function:backend/app/services/notify_adapter.py:_detect_backend",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/notify_adapter.py",
+      "target": "function:backend/app/services/notify_adapter.py:_truncate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/notify_adapter.py",
+      "target": "function:backend/app/services/notify_adapter.py:_truncate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/notify_adapter.py",
+      "target": "function:backend/app/services/notify_adapter.py:notify",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/notify_adapter.py",
+      "target": "function:backend/app/services/notify_adapter.py:notify",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/notify_adapter.py",
+      "target": "function:backend/app/services/notify_adapter.py:_notify_winotify",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/notify_adapter.py",
+      "target": "function:backend/app/services/notify_adapter.py:_notify_winotify",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/notify_adapter.py",
+      "target": "function:backend/app/services/notify_adapter.py:_notify_osascript",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/notify_adapter.py",
+      "target": "function:backend/app/services/notify_adapter.py:_notify_osascript",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/notify_adapter.py",
+      "target": "function:backend/app/services/notify_adapter.py:_notify_notify_send",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/notify_adapter.py",
+      "target": "function:backend/app/services/notify_adapter.py:_notify_notify_send",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:_truncate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:_truncate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:is_valid_feishu_url",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:is_valid_feishu_url",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:_gen_sign",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:_gen_sign",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:_truncate_card",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:_truncate_card",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:_truncate_to_bytes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:_truncate_to_bytes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:_post_feishu",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:_post_feishu",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:send_feishu",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:send_feishu",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:send_feishu_card",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:send_feishu_card",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:is_valid_wecom_url",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:is_valid_wecom_url",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:normalize_wecom_url",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:normalize_wecom_url",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:_post_wecom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:_post_wecom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:send_wecom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:send_wecom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:send_wecom_markdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:backend/app/services/webhook_adapter.py",
+      "target": "function:backend/app/services/webhook_adapter.py:send_wecom_markdown",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

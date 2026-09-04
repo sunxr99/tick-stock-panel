@@ -1,0 +1,779 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/app/services/mining_candidates.py",
+      "type": "file",
+      "name": "mining_candidates.py",
+      "filePath": "backend/app/services/mining_candidates.py",
+      "summary": "实现 mining_candidates.py 的项目内部业务支持能力。",
+      "tags": [
+        "backend",
+        "service",
+        "market-data",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/services/mining_candidates.py:MiningCandidateService",
+      "type": "class",
+      "name": "MiningCandidateService",
+      "filePath": "backend/app/services/mining_candidates.py",
+      "lineRange": [
+        61,
+        783
+      ],
+      "summary": "定义 MiningCandidateService 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/mining_candidates.py:_published_strategy_id",
+      "type": "function",
+      "name": "_published_strategy_id",
+      "filePath": "backend/app/services/mining_candidates.py",
+      "lineRange": [
+        786,
+        789
+      ],
+      "summary": "实现 _published_strategy_id，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/mining_candidates.py:_optional_string",
+      "type": "function",
+      "name": "_optional_string",
+      "filePath": "backend/app/services/mining_candidates.py",
+      "lineRange": [
+        792,
+        793
+      ],
+      "summary": "实现 _optional_string，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/mining_jobs.py",
+      "type": "file",
+      "name": "mining_jobs.py",
+      "filePath": "backend/app/services/mining_jobs.py",
+      "summary": "实现 mining_jobs.py 的项目内部业务支持能力。",
+      "tags": [
+        "backend",
+        "service",
+        "market-data",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/services/mining_jobs.py:MiningRunStoreError",
+      "type": "class",
+      "name": "MiningRunStoreError",
+      "filePath": "backend/app/services/mining_jobs.py",
+      "lineRange": [
+        86,
+        87
+      ],
+      "summary": "定义 MiningRunStoreError 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/mining_jobs.py:MiningRunValidationError",
+      "type": "class",
+      "name": "MiningRunValidationError",
+      "filePath": "backend/app/services/mining_jobs.py",
+      "lineRange": [
+        90,
+        91
+      ],
+      "summary": "定义 MiningRunValidationError 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/mining_jobs.py:InvalidMiningStatusTransitionError",
+      "type": "class",
+      "name": "InvalidMiningStatusTransitionError",
+      "filePath": "backend/app/services/mining_jobs.py",
+      "lineRange": [
+        94,
+        95
+      ],
+      "summary": "定义 InvalidMiningStatusTransitionError 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/services/mining_jobs.py:MiningRunStore",
+      "type": "class",
+      "name": "MiningRunStore",
+      "filePath": "backend/app/services/mining_jobs.py",
+      "lineRange": [
+        123,
+        547
+      ],
+      "summary": "定义 MiningRunStore 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/mining_jobs.py:canonicalize_request",
+      "type": "function",
+      "name": "canonicalize_request",
+      "filePath": "backend/app/services/mining_jobs.py",
+      "lineRange": [
+        98,
+        102
+      ],
+      "summary": "实现 canonicalize_request，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/mining_jobs.py:compute_run_signature",
+      "type": "function",
+      "name": "compute_run_signature",
+      "filePath": "backend/app/services/mining_jobs.py",
+      "lineRange": [
+        105,
+        120
+      ],
+      "summary": "实现 compute_run_signature，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/mining_jobs.py:_canonicalize_json_value",
+      "type": "function",
+      "name": "_canonicalize_json_value",
+      "filePath": "backend/app/services/mining_jobs.py",
+      "lineRange": [
+        550,
+        580
+      ],
+      "summary": "实现 _canonicalize_json_value，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/mining_jobs.py:_read_json",
+      "type": "function",
+      "name": "_read_json",
+      "filePath": "backend/app/services/mining_jobs.py",
+      "lineRange": [
+        583,
+        587
+      ],
+      "summary": "实现 _read_json，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/mining_jobs.py:_atomic_write_json",
+      "type": "function",
+      "name": "_atomic_write_json",
+      "filePath": "backend/app/services/mining_jobs.py",
+      "lineRange": [
+        590,
+        595
+      ],
+      "summary": "实现 _atomic_write_json，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/mining_jobs.py:_atomic_write_text",
+      "type": "function",
+      "name": "_atomic_write_text",
+      "filePath": "backend/app/services/mining_jobs.py",
+      "lineRange": [
+        598,
+        609
+      ],
+      "summary": "实现 _atomic_write_text，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/mining_jobs.py:_now_iso",
+      "type": "function",
+      "name": "_now_iso",
+      "filePath": "backend/app/services/mining_jobs.py",
+      "lineRange": [
+        612,
+        613
+      ],
+      "summary": "实现 _now_iso，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/mining_jobs.py:_manifest_sort_key",
+      "type": "function",
+      "name": "_manifest_sort_key",
+      "filePath": "backend/app/services/mining_jobs.py",
+      "lineRange": [
+        616,
+        620
+      ],
+      "summary": "实现 _manifest_sort_key，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/services/mining_manager.py",
+      "type": "file",
+      "name": "mining_manager.py",
+      "filePath": "backend/app/services/mining_manager.py",
+      "summary": "实现 mining_manager.py 的项目内部业务支持能力。",
+      "tags": [
+        "backend",
+        "service",
+        "market-data",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/services/mining_manager.py:MiningJobManager",
+      "type": "class",
+      "name": "MiningJobManager",
+      "filePath": "backend/app/services/mining_manager.py",
+      "lineRange": [
+        35,
+        263
+      ],
+      "summary": "定义 MiningJobManager 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:backend/app/services/mining_preflight.py",
+      "type": "file",
+      "name": "mining_preflight.py",
+      "filePath": "backend/app/services/mining_preflight.py",
+      "summary": "实现 mining_preflight.py 的项目内部业务支持能力。",
+      "tags": [
+        "backend",
+        "service",
+        "market-data",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:backend/app/services/mining_preflight.py:MiningAvailability",
+      "type": "class",
+      "name": "MiningAvailability",
+      "filePath": "backend/app/services/mining_preflight.py",
+      "lineRange": [
+        19,
+        37
+      ],
+      "summary": "定义 MiningAvailability 类型，封装 该模块的核心状态与行为。",
+      "tags": [
+        "class",
+        "domain-model",
+        "service",
+        "implementation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/mining_preflight.py:enriched_partition_dates",
+      "type": "function",
+      "name": "enriched_partition_dates",
+      "filePath": "backend/app/services/mining_preflight.py",
+      "lineRange": [
+        40,
+        59
+      ],
+      "summary": "实现 enriched_partition_dates，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/mining_preflight.py:mining_availability",
+      "type": "function",
+      "name": "mining_availability",
+      "filePath": "backend/app/services/mining_preflight.py",
+      "lineRange": [
+        62,
+        106
+      ],
+      "summary": "实现 mining_availability，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/mining_preflight.py:require_mining_availability",
+      "type": "function",
+      "name": "require_mining_availability",
+      "filePath": "backend/app/services/mining_preflight.py",
+      "lineRange": [
+        109,
+        139
+      ],
+      "summary": "实现 require_mining_availability，承担 当前模块的一项具体职责。",
+      "tags": [
+        "function",
+        "implementation",
+        "business-logic",
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/app/services/mining_candidates.py",
+      "target": "file:backend/app/backtest/candidates.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/mining_candidates.py",
+      "target": "file:backend/app/backtest/factor.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/mining_candidates.py",
+      "target": "file:backend/app/backtest/mining.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/mining_candidates.py",
+      "target": "file:backend/app/services/mining_jobs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/mining_candidates.py",
+      "target": "file:backend/app/strategy/ai_generator.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/mining_candidates.py",
+      "target": "file:backend/app/strategy/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/mining_candidates.py",
+      "target": "class:backend/app/services/mining_candidates.py:MiningCandidateService",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_candidates.py",
+      "target": "class:backend/app/services/mining_candidates.py:MiningCandidateService",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_candidates.py",
+      "target": "function:backend/app/services/mining_candidates.py:_published_strategy_id",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_candidates.py",
+      "target": "function:backend/app/services/mining_candidates.py:_published_strategy_id",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_candidates.py",
+      "target": "function:backend/app/services/mining_candidates.py:_optional_string",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_candidates.py",
+      "target": "function:backend/app/services/mining_candidates.py:_optional_string",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "class:backend/app/services/mining_jobs.py:MiningRunStoreError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "class:backend/app/services/mining_jobs.py:MiningRunStoreError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "class:backend/app/services/mining_jobs.py:MiningRunValidationError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "class:backend/app/services/mining_jobs.py:MiningRunValidationError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "class:backend/app/services/mining_jobs.py:InvalidMiningStatusTransitionError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "class:backend/app/services/mining_jobs.py:InvalidMiningStatusTransitionError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "class:backend/app/services/mining_jobs.py:MiningRunStore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "class:backend/app/services/mining_jobs.py:MiningRunStore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "function:backend/app/services/mining_jobs.py:canonicalize_request",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "function:backend/app/services/mining_jobs.py:canonicalize_request",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "function:backend/app/services/mining_jobs.py:compute_run_signature",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "function:backend/app/services/mining_jobs.py:compute_run_signature",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "function:backend/app/services/mining_jobs.py:_canonicalize_json_value",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "function:backend/app/services/mining_jobs.py:_canonicalize_json_value",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "function:backend/app/services/mining_jobs.py:_read_json",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "function:backend/app/services/mining_jobs.py:_read_json",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "function:backend/app/services/mining_jobs.py:_atomic_write_json",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "function:backend/app/services/mining_jobs.py:_atomic_write_json",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "function:backend/app/services/mining_jobs.py:_atomic_write_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "function:backend/app/services/mining_jobs.py:_atomic_write_text",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "function:backend/app/services/mining_jobs.py:_now_iso",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "function:backend/app/services/mining_jobs.py:_now_iso",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "function:backend/app/services/mining_jobs.py:_manifest_sort_key",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_jobs.py",
+      "target": "function:backend/app/services/mining_jobs.py:_manifest_sort_key",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_manager.py",
+      "target": "file:backend/app/backtest/worker.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/mining_manager.py",
+      "target": "file:backend/app/services/heavy_job_limiter.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/mining_manager.py",
+      "target": "file:backend/app/services/mining_jobs.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/mining_manager.py",
+      "target": "class:backend/app/services/mining_manager.py:MiningJobManager",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_manager.py",
+      "target": "class:backend/app/services/mining_manager.py:MiningJobManager",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_preflight.py",
+      "target": "file:backend/app/backtest/mining.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/mining_preflight.py",
+      "target": "file:backend/app/tickflow/repository.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/mining_preflight.py",
+      "target": "class:backend/app/services/mining_preflight.py:MiningAvailability",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_preflight.py",
+      "target": "class:backend/app/services/mining_preflight.py:MiningAvailability",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_preflight.py",
+      "target": "function:backend/app/services/mining_preflight.py:enriched_partition_dates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_preflight.py",
+      "target": "function:backend/app/services/mining_preflight.py:enriched_partition_dates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_preflight.py",
+      "target": "function:backend/app/services/mining_preflight.py:mining_availability",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_preflight.py",
+      "target": "function:backend/app/services/mining_preflight.py:mining_availability",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/mining_preflight.py",
+      "target": "function:backend/app/services/mining_preflight.py:require_mining_availability",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/mining_preflight.py",
+      "target": "function:backend/app/services/mining_preflight.py:require_mining_availability",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}
