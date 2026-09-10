@@ -487,6 +487,7 @@ def _compute_storage(data_dir: Path) -> dict:
         "enriched": data_dir / "kline_daily_enriched",
         "index_daily": data_dir / "kline_index_daily",
         "index_enriched": data_dir / "kline_index_enriched",
+        "index_minute": data_dir / "kline_index_minute",
         "index_instruments": data_dir / "instruments_index",
         "etf_daily": data_dir / "kline_etf_daily",
         "etf_enriched": data_dir / "kline_etf_enriched",
@@ -632,7 +633,7 @@ def clear_data(request: Request):
 
     for sub in (
         "kline_daily", "kline_daily_enriched", "kline_index_daily", "kline_index_enriched",
-        "kline_etf_daily", "kline_etf_enriched", "kline_etf_minute", "kline_minute",
+        "kline_etf_daily", "kline_etf_enriched", "kline_etf_minute", "kline_index_minute", "kline_minute",
         "adj_factor", "adj_factor_etf", "instruments", "instruments_index", "instruments_etf", "pools", "financials",
         "backtest_results", "screener_results", "ai_cache",
     ):

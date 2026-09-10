@@ -24,6 +24,36 @@ _history_cache: dict[tuple[str, date, int], tuple[float, pl.DataFrame]] = {}
 _HISTORY_CACHE_TTL = 120.0  # 秒
 
 
+def _load_wyckoff_concept_context(repo: KlineRepository, as_of: date, top_n: int) -> tuple[dict[str, list[str]], list[str]]:
+    """Reuse current concept membership and limit-up mainlines for Wyckoff L3."""
+    from app.services.market_mainline import load_mainline_history
+    from app.services.rps_rotation import _load_concept_map_df
+
+    loaded = _load_concept_map_df(repo, "concept")
+    map_df = loaded[0] if isinstance(loaded, tuple) else loaded
+    concept_map: dict[str, list[str]] = {}
+    if not map_df.is_empty():
+        grouped = map_df.group_by("_sym_up").agg(pl.col("concept").unique().sort())
+        concept_map = {
+            str(row["_sym_up"]): [str(value) for value in row["concept"]]
+            for row in grouped.iter_rows(named=True)
+        }
+
+    history = load_mainline_history(repo.store.data_dir, "concept")
+    if history.is_empty() or top_n <= 0 or not {"date", "member", "rank"} <= set(history.columns):
+        return concept_map, []
+    hot = (
+        history.filter(
+            (pl.col("date").cast(pl.Date, strict=False) == as_of)
+            & (pl.col("rank") <= top_n)
+        )
+        .sort("rank")
+        .get_column("member")
+        .to_list()
+    )
+    return concept_map, [str(value) for value in hot]
+
+
 @dataclass
 class ScreenerResult:
     as_of: date
@@ -242,7 +272,11 @@ class ScreenerService:
         )
 
         warmup = 60
-        start = target_date - timedelta(days=min((lookback_days + warmup) * 2, 180))
+        # lookback_days 的单位是交易日。此前 180 个自然日的硬上限会让
+        # MA200 / 长周期 RPS 类策略永远拿不到声明的历史长度：180 个自然日
+        # 实际只有约 120 个交易日。按窗口加 warmup 的自然日估算扫描，再在
+        # 下方以真实交易日序列精确裁剪。
+        start = target_date - timedelta(days=(lookback_days + warmup) * 2)
 
         enriched_dir = self.repo.store.data_dir / self._enriched_dirname
         read_cols = ["symbol", "date", "open", "high", "low", "close", "volume",
@@ -415,6 +449,44 @@ class ScreenerService:
         history = None
         if history_bars > 1:
             history = self._load_enriched_history(as_of, history_bars)
+        # 威科夫漏斗需要真实指数基准，不能用个股池的均值替代。
+        if any(engine.get(strategy_id).execution_backend == "wyckoff_funnel" for strategy_id in strategy_ids):
+            from datetime import timedelta
+            from app.services.tushare_metadata import load_tushare_sector_map
+
+            benchmark = self.repo.get_index_daily(
+                "000001.SH",
+                as_of - timedelta(days=history_bars * 2),
+                as_of,
+                columns=["date", "open", "high", "low", "close", "volume", "amount", "pct_chg"],
+            )
+            market = dict(market or {})
+            market["wyckoff_benchmark"] = benchmark
+            sector_metadata = load_tushare_sector_map(self.repo.store.data_dir)
+            market["wyckoff_sector_map"] = sector_metadata.mapping
+            market["wyckoff_sector_map_source"] = sector_metadata.source
+            market["wyckoff_sector_map_cached_at"] = sector_metadata.cached_at
+            wyckoff_config = next(
+                engine.get(strategy_id).wyckoff_config
+                for strategy_id in strategy_ids
+                if engine.get(strategy_id).execution_backend == "wyckoff_funnel"
+            )
+            concept_map, hot_concepts = _load_wyckoff_concept_context(
+                self.repo,
+                as_of,
+                int(wyckoff_config.top_n_sectors),
+            )
+            market["wyckoff_concept_map"] = concept_map
+            market["wyckoff_hot_concepts"] = hot_concepts
+            market["wyckoff_concept_map_source"] = "ext_data_snapshot"
+            market["wyckoff_hot_concepts_source"] = "market_mainline_concept_rank"
+            logger.info(
+                "Wyckoff metadata: industry=%s/%d concepts=%d hot_concepts=%d",
+                sector_metadata.source,
+                len(sector_metadata.mapping),
+                len(concept_map),
+                len(hot_concepts),
+            )
         return StrategyDataContext(
             asset_type=self.asset_type,
             timeframe=timeframe,

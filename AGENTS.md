@@ -25,6 +25,10 @@ Tick Stock Panel（TSP）是 A 股数据、选股、监控、分析与回测面�
 
 ## AI 上下文与检索规则
 
+### CZSC 开发规则
+
+CZSC 任务先读 `docs/strategy/CZSC_INTEGRATION_V2.md`、`CZSC_RESONANCE.md`、`CZSC_SOURCE_MAP.md`、`CZSC_SIGNAL_CATALOG.md`、`CZSC_DATA_CONTRACT.md` 与 `CZSC_V1_AUDIT.md`。不得默认全量扫描 `reference/czsc-master`；仅在文档未覆盖、版本变化、文档与代码冲突、需确认具体函数或新增能力时回到 reference，并优先 Serena 精确定位。每次新增 CZSC 能力同步更新这些文档。
+
 - 先索引，后读取；先静态分析，后语义分析；只读完成当前任务必需的最小范围。每次任务开始时，不重新“学习整个项目”。
 - Understand Anything 已完成本项目的全量图谱。涉及整体架构、模块/领域关系或已有项目知识时，优先查询该图谱；不要为理解任务重新全量扫描源码。
 - 确定性信息（文件定位、类/方法/符号定义、引用、调用、继承、实现）优先使用 Serena：先 `get_symbols_overview` / `find_symbol`，再按需用 `find_referencing_symbols`、`find_implementations`。不要用大范围源码阅读替代静态分析。

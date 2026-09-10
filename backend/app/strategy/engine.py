@@ -207,6 +207,7 @@ class StrategyDef:
     # 仅 minute_filter: META["daily_history_bars"] 声明需要的日线历史窗口 (0=不需要;
     # >0 时 filter_minute_history 必须接受 daily 关键字, 引擎注入 context.daily_history)
     minute_daily_bars: int = 0
+    wyckoff_config: Any | None = None
 
 
 @dataclass
@@ -220,6 +221,8 @@ class StrategyResult:
     scores: dict[str, float] = field(default_factory=dict)
     entry_signal_hits: list[dict] = field(default_factory=list)
     exit_signal_hits: list[dict] = field(default_factory=list)
+    # 策略级证据只随一次执行结果返回；禁止复制到每只股票的行数据中。
+    evidence: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass
@@ -379,12 +382,18 @@ class StrategyEngine:
             if candidate != path
         ]
         dependency_names = frozenset(candidate.stem for candidate in dependency_paths)
+        normalized_path = str(path).replace("\\", "/")
+        builtin_imports = (
+            frozenset({"app.wyckoff.config", "app.custom.chanlun"})
+            if "/builtin/" in normalized_path
+            else frozenset()
+        )
         try:
             code = path.read_text(encoding="utf-8")
             from app.strategy.ai_generator import AIStrategyGenerator
             AIStrategyGenerator._validate_safety(
                 code,
-                extra_allowed_import_modules=dependency_names,
+                extra_allowed_import_modules=dependency_names | builtin_imports,
             )
             for dependency_path in dependency_paths:
                 AIStrategyGenerator._validate_safety(
@@ -490,7 +499,7 @@ class StrategyEngine:
                 ),
             )
         )
-        valid_backends = {"polars_expr", "matrix_native", "python_history_legacy", "composite", "minute_filter"}
+        valid_backends = {"polars_expr", "matrix_native", "python_history_legacy", "composite", "minute_filter", "wyckoff_funnel"}
         if execution_backend not in valid_backends:
             raise ValueError(
                 f"unsupported execution backend {execution_backend!r}; "
@@ -500,6 +509,7 @@ class StrategyEngine:
         matrix_strategy = getattr(mod, "MATRIX_STRATEGY", None)
         composite_spec: CompositeSpec | None = None
         minute_daily_bars = 0
+        wyckoff_config = None
         if execution_backend == "matrix_native":
             from app.backtest.matrix import MatrixStrategy
 
@@ -558,6 +568,10 @@ class StrategyEngine:
                         "minute_filter daily_history_bars requires "
                         "filter_minute_history to accept a 'daily' keyword"
                     )
+        elif execution_backend == "wyckoff_funnel":
+            wyckoff_config = getattr(mod, "WYCKOFF_CONFIG", None)
+            if wyckoff_config is None or filter_fn is not None or filter_history_fn is not None:
+                raise ValueError("wyckoff_funnel strategy must declare only WYCKOFF_CONFIG")
         elif filter_history_fn is None or filter_fn is not None:
             raise ValueError("python_history_legacy strategy must declare only filter_history")
 
@@ -583,6 +597,7 @@ class StrategyEngine:
             composite=composite_spec,
             filter_minute_history_fn=filter_minute_history_fn,
             minute_daily_bars=minute_daily_bars,
+            wyckoff_config=wyckoff_config,
         )
 
     def reload(self) -> None:
@@ -732,6 +747,8 @@ class StrategyEngine:
                     required,
                     int(strategy.matrix_strategy.required_warmup_bars(params)) + 1,
                 )
+            elif strategy.execution_backend == "wyckoff_funnel":
+                required = max(required, int(strategy.wyckoff_config.trading_days))
             elif strategy.execution_backend == "composite":
                 # composite 预热 = 各子策略预热的 max。
                 # 子策略已通过加载期校验(非嵌套叶子), 这里展开一层即可。
@@ -911,6 +928,9 @@ class StrategyEngine:
                 started_at=t0,
             )
 
+        if s.execution_backend == "wyckoff_funnel":
+            return self._run_wyckoff_funnel(strategy_id, s, context, started_at=t0)
+
         if s.execution_backend == "composite":
             return self._run_composite_strategy(
                 strategy_id,
@@ -1058,6 +1078,164 @@ class StrategyEngine:
             entry_signal_hits=entry_signal_hits,
             exit_signal_hits=exit_signal_hits,
         )
+
+    def _run_wyckoff_funnel(
+        self, strategy_id: str, strategy: StrategyDef, context: StrategyDataContext, *, started_at: float
+    ) -> StrategyResult:
+        """Execute the dedicated all-market Wyckoff funnel backend."""
+        from app.wyckoff.funnel import run_funnel
+
+        if context.history is None or context.history.is_empty():
+            raise ValueError("wyckoff_funnel requires full-market daily history")
+        market = context.market if isinstance(context.market, dict) else {}
+        benchmark = market.get("wyckoff_benchmark")
+        if benchmark is None or benchmark.is_empty():
+            raise ValueError("wyckoff_funnel requires the configured benchmark history")
+        current = context.current if context.current is not None else pl.DataFrame()
+        partitions = context.history.partition_by("symbol", as_dict=True, maintain_order=True)
+        df_map = {
+            str(key[0] if isinstance(key, tuple) else key): frame.drop("symbol").to_pandas()
+            for key, frame in partitions.items()
+        }
+        symbols = list(df_map)
+        name_map = self._wyckoff_string_map(current, "name")
+        sector_map = market.get("wyckoff_sector_map")
+        if not isinstance(sector_map, dict):
+            sector_map = self._wyckoff_string_map(current, "industry")
+        concept_map = market.get("wyckoff_concept_map")
+        hot_concepts = market.get("wyckoff_hot_concepts")
+        cap_map = self._wyckoff_float_map(current, "total_market_cap", divisor=1e8)
+        result = run_funnel(
+            symbols,
+            df_map,
+            benchmark=benchmark.to_pandas(),
+            name_map=name_map,
+            market_cap_map=cap_map,
+            sector_map=sector_map,
+            concept_map=concept_map if isinstance(concept_map, dict) else None,
+            hot_concepts=hot_concepts if isinstance(hot_concepts, list) else None,
+            cfg=strategy.wyckoff_config,
+        )
+        trigger_lists: dict[str, list[str]] = {}
+        for trigger, hits in result.triggers.items():
+            for symbol, _score in hits:
+                trigger_lists.setdefault(symbol, []).append(trigger)
+        from app.wyckoff.v2 import analyze_wyckoff_v2
+
+        as_of = str(context.as_of)
+        v2_payloads: dict[str, dict] = {}
+        v2_errors: dict[str, str] = {}
+        v2_event_counts: dict[str, int] = {}
+        v2_entry_counts: dict[str, int] = {}
+        for symbol in result.layer3_symbols:
+            try:
+                analysis = analyze_wyckoff_v2(symbol, df_map[symbol])
+                payload = analysis.latest_payload(as_of)
+                v2_payloads[symbol] = payload
+                for event_type, count in analysis.diagnostics["event_counts"].items():
+                    v2_event_counts[event_type] = v2_event_counts.get(event_type, 0) + count
+                for entry in payload["entries"]:
+                    entry_type = str(entry["entry_type"])
+                    v2_entry_counts[entry_type] = v2_entry_counts.get(entry_type, 0) + 1
+            except (KeyError, TypeError, ValueError) as exc:
+                # The legacy funnel result is deliberately not fail-opened or
+                # fail-closed by v2 diagnostics.  Surface the per-symbol error
+                # in evidence instead of silently manufacturing a v2 signal.
+                logger.warning("wyckoff v2 analysis skipped for %s: %s", symbol, exc)
+                v2_errors[symbol] = str(exc)
+        trigger_map = {
+            symbol: payload["signals"][0]
+            for symbol, payload in v2_payloads.items()
+            if payload["signals"]
+        }
+        # CZSC is deliberately evaluated only after Wyckoff L3 has narrowed
+        # the universe.  Its result is supplemental row evidence used by the
+        # result-page toggle; it must not alter Wyckoff's formal funnel result.
+        czsc_rows_by_symbol: dict[str, dict] = {}
+        czsc_event_identity_version = 0
+        try:
+            from app.custom.chanlun import (
+                CZSC_EVENT_IDENTITY_VERSION,
+                filter_daily_czsc_buy_points,
+            )
+
+            czsc_rows_by_symbol = {
+                str(row["symbol"]): row
+                for row in filter_daily_czsc_buy_points(
+                    context.history.filter(pl.col("symbol").is_in(result.layer3_symbols))
+                ).to_dicts()
+            }
+            czsc_event_identity_version = CZSC_EVENT_IDENTITY_VERSION
+        except Exception as exc:  # pragma: no cover - optional CZSC dependency isolation
+            logger.warning("Wyckoff result CZSC B-point enrichment skipped: %s", exc)
+        snapshot = result.to_snapshot()
+        snapshot["v2"] = {
+            "mode": "parallel_diagnostics",
+            "affects_formal_selection": False,
+            "analysed_symbols": len(v2_payloads),
+            "errors": v2_errors,
+            "event_counts": v2_event_counts,
+            "latest_entry_counts": v2_entry_counts,
+        }
+        # The funnel determines *which* symbols enter the result set, while
+        # ``current`` is the already-enriched same-day snapshot used to render
+        # quote and indicator columns.  Keep those fields on the result row so
+        # the stock table does not lose close/change/amount/RSI/momentum data.
+        current_rows_by_symbol = (
+            {
+                str(row["symbol"]): row
+                for row in current.iter_rows(named=True)
+                if row.get("symbol") is not None
+            }
+            if not current.is_empty() and "symbol" in current.columns
+            else {}
+        )
+        rows = [
+            {
+                **current_rows_by_symbol.get(symbol, {}),
+                "symbol": symbol,
+                "score": float(symbol in result.layer3_symbols),
+                "wyckoff_channel": result.channel_map.get(symbol, ""),
+                "wyckoff_stage": result.stage_map.get(symbol, ""),
+                "wyckoff_trigger": trigger_map.get(symbol, ""),
+                "wyckoff_signals": v2_payloads.get(symbol, {}).get("signals", []),
+                "wyckoff_legacy_signals": trigger_lists.get(symbol, []),
+                "wyckoff_v2_entries": v2_payloads.get(symbol, {}).get("entries", []),
+                "wyckoff_v2_events": v2_payloads.get(symbol, {}).get("events", []),
+                "wyckoff_v2_active_event": v2_payloads.get(symbol, {}).get("active_event"),
+                "wyckoff_source": result.final_traces.get(symbol, {}).get("source", "L3 strict"),
+                "wyckoff_l3_path": result.final_traces.get(symbol, {}).get("l3_path", "unknown"),
+                "wyckoff_l4": result.final_traces.get(symbol, {}).get("l4", "reject"),
+                "wyckoff_l4_failure": result.final_traces.get(symbol, {}).get("l4_failure"),
+                "czsc_buy_types": czsc_rows_by_symbol.get(symbol, {}).get("czsc_buy_types", []),
+                "czsc_buy_signals": czsc_rows_by_symbol.get(symbol, {}).get("czsc_buy_signals", []),
+                "czsc_confirmation_time": czsc_rows_by_symbol.get(symbol, {}).get("czsc_confirmation_time"),
+                "czsc_event_identity_version": czsc_event_identity_version,
+            }
+            for symbol in result.layer3_symbols
+        ]
+        logger.info("wyckoff_funnel diagnostics: %s", result.diagnostics)
+        return StrategyResult(
+            as_of=context.as_of,
+            strategy_id=strategy_id,
+            rows=rows,
+            total=len(rows),
+            elapsed_ms=(time.perf_counter() - started_at) * 1000,
+            scores={row["symbol"]: row["score"] for row in rows},
+            evidence={"wyckoff_snapshot": snapshot},
+        )
+
+    @staticmethod
+    def _wyckoff_string_map(frame: pl.DataFrame, column: str) -> dict[str, str]:
+        if frame.is_empty() or column not in frame.columns or "symbol" not in frame.columns:
+            return {}
+        return {str(row["symbol"]): str(row[column] or "") for row in frame.select("symbol", column).iter_rows(named=True)}
+
+    @staticmethod
+    def _wyckoff_float_map(frame: pl.DataFrame, column: str, *, divisor: float) -> dict[str, float]:
+        if frame.is_empty() or column not in frame.columns or "symbol" not in frame.columns:
+            return {}
+        return {str(row["symbol"]): float(row[column] or 0) / divisor for row in frame.select("symbol", column).iter_rows(named=True)}
 
     @staticmethod
     def _effective_signals(overrides: dict, key: str, default: list[str]) -> list[str]:

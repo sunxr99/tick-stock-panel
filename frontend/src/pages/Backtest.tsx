@@ -6,9 +6,10 @@ import { FactorDiscovery } from './backtest/FactorDiscovery'
 import { ResearchCandidatesDialog } from './backtest/ResearchCandidatesDialog'
 import { RobustnessValidation } from './backtest/RobustnessValidation'
 import { StrategyBacktest } from './backtest/StrategyBacktest'
+import { WyckoffV2Backtest } from './backtest/WyckoffV2Backtest'
 import { type ResearchCandidate } from '@/lib/api'
 
-type Tab = 'factor' | 'strategy' | 'robustness'
+type Tab = 'factor' | 'strategy' | 'robustness' | 'wyckoff'
 
 const MODES: Record<Tab, { title: string; subtitle: string; icon: typeof BarChart3 }> = {
   factor: {
@@ -25,6 +26,11 @@ const MODES: Record<Tab, { title: string; subtitle: string; icon: typeof BarChar
     title: '验证',
     subtitle: '参数敏感性与滚动样本外',
     icon: ShieldCheck,
+  },
+  wyckoff: {
+    title: 'Wyckoff V2',
+    subtitle: '独立事件研究回测，不影响正式选股',
+    icon: FlaskConical,
   },
 }
 
@@ -109,6 +115,7 @@ export function Backtest() {
           />
         )}
         {activeTab === 'robustness' && <RobustnessValidation />}
+        {activeTab === 'wyckoff' && <WyckoffV2Backtest />}
       </main>
 
       {candidatesOpen && (

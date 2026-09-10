@@ -68,18 +68,22 @@ def get_index_minute(
     symbol: str = Query(..., description="指数代码, 如 000001.SH"),
     trade_date: date | None = Query(None, alias="date", description="交易日期, 默认今天"),
 ):
-    """实时读取指数分钟 K。不写入股票分钟 parquet。"""
+    """读取指数分钟 K; 本地独立分区优先, 缺失时实时补拉。"""
     repo = request.app.state.repo
     info = _index_info(repo, symbol)
     day = trade_date or date.today()
-    df = kline_sync.fetch_minute_single(symbol, day, asset_type="index")
+    df = repo.get_minute(symbol, day, asset_type="index")
+    source = "local" if not df.is_empty() else "none"
+    if df.is_empty():
+        df = kline_sync.fetch_minute_single(symbol, day, asset_type="index")
+        source = "live" if not df.is_empty() else "none"
     return {
         "symbol": symbol,
         "name": info.get("name"),
         "index_info": info,
         "date": str(day),
         "rows": df.to_dicts(),
-        "source": "live" if not df.is_empty() else "none",
+        "source": source,
     }
 
 

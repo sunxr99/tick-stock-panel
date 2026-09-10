@@ -1305,6 +1305,36 @@ export interface MiningScheduleConfig {
 }
 
 export type ResearchCandidateKind = 'factor' | 'strategy'
+
+export interface WyckoffChartData {
+  symbol: string
+  as_of?: string | null
+  status: 'ok' | 'not_selected'
+  message?: string
+  channel?: string
+  stage?: string
+  trigger?: string
+  layers?: { l1: boolean; l2: boolean; l3: boolean }
+  trading_range?: { support: number; resistance: number; mid: number } | null
+  triggers?: Record<string, { symbol: string; score: number } | null>
+  top_sectors?: string[]
+}
+
+export interface WyckoffV2Run {
+  run_id: string
+  status: 'QUEUED' | 'RUNNING' | 'SUCCESS' | 'FAILED'
+  progress?: { processed_symbols: number; total_symbols: number; percent: number }
+  elapsed_seconds?: number
+  error?: string | null
+  reused?: boolean
+}
+
+export interface WyckoffV2EventPage {
+  items: Array<Record<string, unknown>>
+  total: number
+  offset: number
+  limit: number
+}
 export type ResearchCandidateStatus = 'pending' | 'validated' | 'rejected'
 
 export interface ResearchCandidate {
@@ -2166,6 +2196,11 @@ export const api = {
       method: 'POST',
       body: JSON.stringify({ symbol, ...(days != null ? { days } : {}) }),
     }),
+  syncCzscMinutes: (symbol: string, dailyDays = 250) =>
+    request<{ status: string; job_id: string; symbol: string; daily_start?: string; daily_end?: string }>('/api/kline/sync_czsc_minutes', {
+      method: 'POST',
+      body: JSON.stringify({ symbol, daily_days: dailyDays }),
+    }),
   clearMinute: () =>
     request<{ status: string; removed: number }>('/api/kline/clear_minute', {
       method: 'POST',
@@ -2299,6 +2334,8 @@ export const api = {
     )
     return { presets: data.strategies, load_errors: data.load_errors }
   },
+  wyckoffChartData: (symbol: string) =>
+    request<WyckoffChartData>(`/api/strategies/wyckoff/${encodeURIComponent(symbol)}`, { quiet: true }),
   screenerRunPreset: (strategy_id: string, pool?: string[], asOf?: string, extColumns?: string, assetType: 'stock' | 'etf' = 'stock', timeframe: '1d' | '1m' = '1d') =>
     request<ScreenerResult>('/api/screener/run_preset', {
       method: 'POST',
@@ -2387,6 +2424,14 @@ export const api = {
   },
 
   backtestStatus: () => request<{ available: boolean }>('/api/backtest/status'),
+
+  wyckoffV2Run: (payload: { start_date: string; end_date: string; entries: string[]; experiment_variants?: string[]; benchmark: 'all_a' | '000300.SH' | 'none'; horizons: number[]; force_recompute: boolean }) =>
+    request<WyckoffV2Run>('/api/wyckoff/v2/backtest/run', { method: 'POST', body: JSON.stringify(payload) }),
+  wyckoffV2Status: (runId: string) => request<WyckoffV2Run>(`/api/wyckoff/v2/backtest/${encodeURIComponent(runId)}`),
+  wyckoffV2Summary: (runId: string) => request<Record<string, unknown>>(`/api/wyckoff/v2/backtest/${encodeURIComponent(runId)}/summary`),
+  wyckoffV2Events: (runId: string, offset = 0, limit = 100) => request<WyckoffV2EventPage>(`/api/wyckoff/v2/backtest/${encodeURIComponent(runId)}/events?offset=${offset}&limit=${limit}`),
+  wyckoffV2ExportUrl: (runId: string) => `/api/wyckoff/v2/backtest/${encodeURIComponent(runId)}/export`,
+  wyckoffV2ReportUrl: (runId: string) => `/api/wyckoff/v2/backtest/${encodeURIComponent(runId)}/report`,
 
   backtestRun: (payload: {
     symbols: string[]

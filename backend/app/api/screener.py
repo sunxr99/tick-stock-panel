@@ -221,6 +221,7 @@ def _update_cache_strategy(data_dir, as_of: str, strategy_id: str, safe_data: di
             "total": safe_data.get("total", 0),
             "as_of": as_of,
             "rows": safe_data.get("rows", []),
+            "evidence": safe_data.get("evidence", {}),
         }
         strategy_cache.write_cache(data_dir, as_of, results)
 
@@ -581,6 +582,7 @@ def run_all(request: Request, body: Optional[dict] = None):
             "total": result.total,
             "as_of": str(as_of),
             "rows": safe_rows,
+            "evidence": _safe(asdict(result)).get("evidence", {}),
         }
 
     elapsed = (time.perf_counter() - t_total) * 1000

@@ -29,6 +29,7 @@ from app.strategy.scoring import (
     effective_scoring,
     effective_scoring_directions,
 )
+from app.services import strategy_cache
 
 router = APIRouter(prefix="/api/strategies", tags=["strategies"])
 logger = logging.getLogger(__name__)
@@ -302,6 +303,47 @@ class MonitorStartRequest(BaseModel):
 # ── 列表 / 详情 ─────────────────────────────────────────────────────
 
 
+@router.get("/wyckoff/{symbol}")
+def get_wyckoff_chart_data(symbol: str, request: Request):
+    """Return the latest persisted Wyckoff funnel evidence for one stock chart."""
+    normalized = str(symbol).strip()
+    cached = strategy_cache.read_cache(_data_dir(request))
+    if not cached:
+        raise HTTPException(status_code=404, detail="尚无威科夫漏斗运行结果，请先手动运行该策略")
+    result = (cached.get("results") or {}).get("wyckoff_funnel") or {}
+    rows = result.get("rows") or []
+    row = next((item for item in rows if str(item.get("symbol")) == normalized), None)
+    if row is None:
+        return {
+            "symbol": normalized,
+            "as_of": cached.get("as_of"),
+            "status": "not_selected",
+            "message": "该股票未进入最近一次威科夫漏斗 L3 结果",
+        }
+    # 新缓存把全市场快照存到策略级 evidence，只存一份；兼容旧缓存中每行的副本。
+    evidence = result.get("evidence") if isinstance(result.get("evidence"), dict) else {}
+    snapshot = evidence.get("wyckoff_snapshot") or row.get("wyckoff_snapshot") or {}
+    return {
+        "symbol": normalized,
+        "as_of": result.get("as_of") or cached.get("as_of"),
+        "status": "ok",
+        "channel": row.get("wyckoff_channel", ""),
+        "stage": row.get("wyckoff_stage", ""),
+        "trigger": row.get("wyckoff_trigger", ""),
+        "layers": {
+            "l1": normalized in snapshot.get("layer1_symbols", []),
+            "l2": normalized in snapshot.get("layer2_symbols", []),
+            "l3": normalized in snapshot.get("layer3_symbols", []),
+        },
+        "trading_range": (snapshot.get("trading_ranges") or {}).get(normalized),
+        "triggers": {
+            key: next((item for item in hits if item.get("symbol") == normalized), None)
+            for key, hits in (snapshot.get("triggers") or {}).items()
+        },
+        "top_sectors": snapshot.get("top_sectors", []),
+    }
+
+
 @router.get("")
 def list_strategies(
     request: Request,
@@ -382,6 +424,9 @@ def run_strategy(req: RunRequest, request: Request):
         )
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e)) from e
+
+    if req.strategy_id == "wyckoff_funnel":
+        strategy_cache.write_cache(data_dir, str(as_of), {req.strategy_id: _safe(asdict(result))})
 
     return _safe(asdict(result))
 

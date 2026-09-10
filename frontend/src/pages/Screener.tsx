@@ -38,6 +38,27 @@ import {
 
 // 获取策略为占位功能, 暂时隐藏入口; 恢复时改回 true
 const SHOW_STRATEGY_STORE = false
+const WYCKOFF_FUNNEL_ID = 'wyckoff_funnel'
+const CZSC_DAILY_BUY_POINT_ID = 'czsc_daily_buy_point'
+const CZSC_EVENT_IDENTITY_VERSION = 2
+const WYCKOFF_CONFIRMED_ENTRIES = new Set([
+  'spring_standard',
+  'spring_conservative',
+  'lps_standard',
+])
+
+function hasConfirmedWyckoffEntry(row: Record<string, unknown>): boolean {
+  return Array.isArray(row.wyckoff_signals)
+    && row.wyckoff_signals.some(signal => WYCKOFF_CONFIRMED_ENTRIES.has(String(signal)))
+}
+
+function hasCzscDailyBuyPoint(row: Record<string, unknown>): boolean {
+  return Array.isArray(row.czsc_buy_types) && row.czsc_buy_types.length > 0
+}
+
+function hasCurrentCzscEventIdentity(row: Record<string, unknown>): boolean {
+  return Number(row.czsc_event_identity_version) >= CZSC_EVENT_IDENTITY_VERSION
+}
 
 export function Screener() {
   const [assetType, setAssetType] = useState<'stock' | 'etf'>('stock')
@@ -94,6 +115,8 @@ export function Screener() {
   // 截断提示可关闭 (仅本次会话, 不持久化)
   const [intradayCapDismissed, setIntradayCapDismissed] = useState(false)
   const [showAll, setShowAll] = useState(false)
+  const [wyckoffSignalsOnly, setWyckoffSignalsOnly] = useState(false)
+  const [wyckoffCzscBuyOnly, setWyckoffCzscBuyOnly] = useState(false)
   const [showFilter, setShowFilter] = useState(false)
   const [filter, setFilter] = useState<ScreenerFilterType>(defaultFilter)
   const filterMap = useRef<Map<string, ScreenerFilterType>>(new Map())
@@ -392,6 +415,12 @@ export function Screener() {
     let rows = showAll
       ? applyFilter(allRows, filter)
       : filteredRows
+    if (!showAll && activeStrategy === WYCKOFF_FUNNEL_ID && wyckoffSignalsOnly) {
+      rows = rows.filter(hasConfirmedWyckoffEntry)
+    }
+    if (!showAll && activeStrategy === WYCKOFF_FUNNEL_ID && wyckoffCzscBuyOnly) {
+      rows = rows.filter(hasCzscDailyBuyPoint)
+    }
     // 排序：用户点了表头则按该列，否则默认评分降序
     rows = sort
       ? sortRows(rows, columns)
@@ -408,7 +437,7 @@ export function Screener() {
       }
     }
     return mainRows
-  }, [showAll, allRows, filteredRows, filter, activeStrategy, strategyLimits, expiredRows, sort, sortRows, columns])
+  }, [showAll, allRows, filteredRows, filter, activeStrategy, wyckoffSignalsOnly, wyckoffCzscBuyOnly, strategyLimits, expiredRows, sort, sortRows, columns])
 
   // 日k列是否启用 → 决定是否加载批量 kline 数据
   const candleColumn = useMemo(() =>
@@ -525,6 +554,22 @@ export function Screener() {
       qc.invalidateQueries({ queryKey: ['screener-cached'] })
     },
   })
+
+  // Result caches created before the strict CZSC event-identity rule may carry
+  // false reappearances.  Recompute this one strategy once instead of treating
+  // a stale cached row as a valid current B point.
+  useEffect(() => {
+    if (
+      showAll
+      || activeStrategy !== CZSC_DAILY_BUY_POINT_ID
+      || !result
+      || result.strategy !== CZSC_DAILY_BUY_POINT_ID
+      || run.isPending
+    ) return
+    if (result.rows.some(row => !hasCurrentCzscEventIdentity(row))) {
+      run.mutate({ id: CZSC_DAILY_BUY_POINT_ID, date: asOf, timeframe: '1d' })
+    }
+  }, [activeStrategy, asOf, result, run, showAll])
 
   const handleRun = (s: ScreenerStrategy) => {
     handleStrategySwitch(s.id)
@@ -905,6 +950,49 @@ export function Screener() {
                         </>
                       )}
                     </div>
+                  )}
+                  {!showAll && activeStrategy === WYCKOFF_FUNNEL_ID && !!result?.rows.length && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => setWyckoffSignalsOnly(value => !value)}
+                        title={wyckoffSignalsOnly
+                          ? '显示全部 Wyckoff 候选（含尚未触发的观察股）'
+                          : '仅显示已确认的 Spring Test、保守 Spring 或 LPS 买点；Spring 预警不计入'}
+                        className={`inline-flex items-center gap-1.5 h-7 px-2.5 rounded-btn border text-xs font-medium transition-colors cursor-pointer ${
+                          wyckoffSignalsOnly
+                            ? 'border-accent/50 bg-accent/10 text-accent'
+                            : 'border-border bg-surface text-secondary hover:text-accent hover:border-accent/50'
+                        }`}
+                      >
+                        <Sparkles className="h-3 w-3" />
+                        {wyckoffSignalsOnly ? '仅看确认买点' : '全部候选'}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const next = !wyckoffCzscBuyOnly
+                          setWyckoffCzscBuyOnly(next)
+                          // Existing disk cache rows predate this enrichment.
+                          // Refresh once on demand so the filter never treats
+                          // an old cached result as proof of "no B point".
+                          if (next && result?.rows.some(row => !hasCurrentCzscEventIdentity(row))) {
+                            run.mutate({ id: WYCKOFF_FUNNEL_ID, date: asOf, timeframe: '1d' })
+                          }
+                        }}
+                        title={wyckoffCzscBuyOnly
+                          ? '显示全部 Wyckoff 候选'
+                          : '仅显示最后一根已收盘日K首次确认 CZSC B1、B2 或 B3 的 Wyckoff 候选'}
+                        className={`inline-flex items-center gap-1.5 h-7 px-2.5 rounded-btn border text-xs font-medium transition-colors cursor-pointer ${
+                          wyckoffCzscBuyOnly
+                            ? 'border-accent/50 bg-accent/10 text-accent'
+                            : 'border-border bg-surface text-secondary hover:text-accent hover:border-accent/50'
+                        }`}
+                      >
+                        <Sparkles className="h-3 w-3" />
+                        {wyckoffCzscBuyOnly ? 'CZSC 新B点' : '筛 CZSC 新B点'}
+                      </button>
+                    </>
                   )}
                   {displayRows.length > 0 && (
                     <WatchlistAddMenu

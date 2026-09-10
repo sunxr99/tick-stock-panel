@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback, useRef, useMemo } from 'react'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { X } from 'lucide-react'
-import { type KlineRow, type FinancialMetricRecord } from '@/lib/api'
+import { api, type KlineRow, type FinancialMetricRecord } from '@/lib/api'
 import { klineDailyQueryOptions, klineMinuteQueryOptions, klineMinuteRangeQueryOptions, DEFAULT_INTRADAY_DAYS } from '@/lib/kline'
 import { StockInfoBar } from '@/components/StockInfoBar'
 import { StockDailyKChart, getDefaultRange, toOHLC } from '@/components/StockDailyKChart'
@@ -110,6 +110,36 @@ export function StockPanel({
   const rows = useMemo(() => toOHLC(rawRows), [rawRows])
   const stockInfo = kline.data?.stock_info
   const name = kline.data?.name
+  const wyckoff = useQuery({
+    queryKey: ['wyckoff-chart', symbol],
+    queryFn: () => api.wyckoffChartData(symbol),
+    enabled: !!symbol,
+    retry: false,
+    staleTime: 60_000,
+  })
+  const wyckoffOverlay = useMemo(() => {
+    const data = wyckoff.data
+    if (data?.status !== 'ok' || !data.trading_range) return { markers: [], lines: [] as ChartPriceLine[] }
+    const asOf = String(data.as_of ?? '').slice(0, 10)
+    const range = data.trading_range
+    const markers: ChartMarker[] = Object.entries(data.triggers ?? {})
+      .filter(([, hit]) => !!hit && !!asOf)
+      .map(([kind]) => ({
+        date: asOf,
+        kind: kind === 'sos' ? 'buy' : 'neutral',
+        above: kind === 'sos',
+        label: kind.toUpperCase(),
+        color: kind === 'sos' ? '#f59e0b' : '#a78bfa',
+      }))
+    return {
+      markers,
+      lines: [
+        { value: range.resistance, label: 'Wyckoff 阻力', color: '#f97316' },
+        { value: range.mid, label: 'Wyckoff 中轴', color: '#a78bfa' },
+        { value: range.support, label: 'Wyckoff 支撑', color: '#22c55e' },
+      ] as ChartPriceLine[],
+    }
+  }, [wyckoff.data])
 
   const handleDateClick = useCallback((date: string) => {
     setSelectedDate(date)
@@ -205,9 +235,9 @@ export function StockPanel({
           height={height}
           className={`${dailyKlineFlex} min-w-0`}
           dateRange={dateRange}
-          markers={markers}
+          markers={[...(markers ?? []), ...wyckoffOverlay.markers]}
           ranges={ranges}
-          priceLines={priceLines}
+          priceLines={[...(priceLines ?? []), ...wyckoffOverlay.lines]}
           showLimitMarkers={showLimitMarkers}
           showMarkerToggle={showMarkerToggle}
           linkedPrice={linkedPrice}

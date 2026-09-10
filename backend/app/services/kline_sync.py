@@ -761,6 +761,7 @@ def sync_minute_batch(
     segment_trading_days: int = 20,
     on_segment: Callable[[pl.DataFrame], None] | None = None,
     asset_type: AssetType = "stock",
+    freq: str = "1m",
 ) -> pl.DataFrame:
     """批量拉取多股分钟 K。
 
@@ -780,7 +781,7 @@ def sync_minute_batch(
     """
     df, fallback = _try_custom_minute(
         symbols, start_time=start_time, end_time=end_time,
-        asset_type=asset_type, freq="1m", on_chunk_done=on_chunk_done,
+        asset_type=asset_type, freq=freq, on_chunk_done=on_chunk_done,
     )
     if not fallback:
         # 自定义源成功: 遵守与 TickFlow 路径一致的 on_segment 契约。
@@ -830,7 +831,7 @@ def sync_minute_batch(
             try:
                 if cur_start and cur_end:
                     raw = tf.klines.batch(
-                        chunk, period="1m",
+                        chunk, period=freq,
                         start_time=_datetime_to_ms(cur_start),
                         end_time=_datetime_to_ms(cur_end),
                         count=10000,
@@ -838,11 +839,11 @@ def sync_minute_batch(
                         as_dataframe=False, show_progress=False,
                     )
                 else:
-                    raw = tf.klines.batch(chunk, period="1m", count=count or 1200,
+                    raw = tf.klines.batch(chunk, period=freq, count=count or 1200,
                                           adjust="forward",
                                           as_dataframe=False, show_progress=False)
             except Exception as e:  # noqa: BLE001
-                logger.warning("minute batch fetch failed for %d symbols: %s", len(chunk), e)
+                logger.warning("%s batch fetch failed for %d symbols: %s", freq, len(chunk), e)
                 continue
 
             seg = _normalize_minute(_compact_klines_to_df(raw))
@@ -1212,10 +1213,18 @@ def fetch_adj_factor_single(symbol: str) -> pl.DataFrame:
     return _normalize_adj_factor(raw)
 
 
-def _latest_minute_datetime(repo: KlineRepository) -> datetime | None:
+def _minute_table(asset_type: AssetType) -> str:
+    return "kline_minute" if asset_type == "stock" else f"kline_{asset_type}_minute"
+
+
+def _minute_dir(repo: KlineRepository, asset_type: AssetType):
+    return repo.store.data_dir / _minute_table(asset_type)
+
+
+def _latest_minute_datetime(repo: KlineRepository, asset_type: AssetType = "stock") -> datetime | None:
     """本地分钟 K 数据的最新时间。"""
     try:
-        res = repo.execute_one("SELECT max(datetime) FROM kline_minute")
+        res = repo.execute_one(f"SELECT max(datetime) FROM {_minute_table(asset_type)}")
         if res and res[0]:
             d = res[0]
             if isinstance(d, datetime):
@@ -1226,10 +1235,10 @@ def _latest_minute_datetime(repo: KlineRepository) -> datetime | None:
     return None
 
 
-def _earliest_minute_datetime(repo: KlineRepository) -> datetime | None:
+def _earliest_minute_datetime(repo: KlineRepository, asset_type: AssetType = "stock") -> datetime | None:
     """本地分钟 K 数据的最早时间 (用于向前扩展的起点)。"""
     try:
-        res = repo.execute_one("SELECT min(datetime) FROM kline_minute")
+        res = repo.execute_one(f"SELECT min(datetime) FROM {_minute_table(asset_type)}")
         if res and res[0]:
             d = res[0]
             if isinstance(d, datetime):
@@ -1328,6 +1337,7 @@ def sync_and_persist_minute(
     on_chunk_done: Callable[[int, int, str], None] | None = None,
     extend_backward: bool = False,
     force_full_days: bool = False,
+    asset_type: AssetType = "stock",
 ) -> int:
     """同步分钟 K 并存到 Parquet(前复权价格, SDK 端 adjust=qfq)。返回写入行数。
 
@@ -1349,18 +1359,21 @@ def sync_and_persist_minute(
     if not minute_is_custom and not capset.has(Cap.KLINE_MINUTE_BATCH):
         return 0
 
-    # 迁移:旧版 _normalize_minute 未转换 timestamp→datetime,导致全部 datetime 为 null
-    # 检测到后直接清除(这些数据无法使用)
-    _cleanup_null_datetime_minute(repo)
-
-    # 迁移:旧版按 symbol= 分区转为 date= 分区
-    _migrate_symbol_to_date_partition(repo)
+    if asset_type == "stock":
+        # 迁移仅适用于历史股票分钟表；指数/ETF 从首版即按独立 date 分区存储。
+        _cleanup_null_datetime_minute(repo)
+        _migrate_symbol_to_date_partition(repo)
 
     now = datetime.now()
 
     if extend_backward:
         # 向前扩展模式: 从本地最早数据往前补, 叠加已有数据避免缺口。
-        earliest_dt = _earliest_minute_datetime(repo)
+        # 保持 stock 既有 helper 调用形态，兼容外部扩展/测试对该 helper 的单参替换。
+        earliest_dt = (
+            _earliest_minute_datetime(repo)
+            if asset_type == "stock"
+            else _earliest_minute_datetime(repo, asset_type)
+        )
         # 按交易日换算自然日 (7/5 系数)。>41 交易日时 +10 天余量覆盖节假日。
         # (分段由 sync_minute_batch 的 segment_trading_days 控制, 与此处的区间天数独立。)
         calendar_days = int(days * 7 / 5) + (10 if days > 41 else 0)
@@ -1374,7 +1387,11 @@ def sync_and_persist_minute(
     else:
         # 默认增量模式: 首次拉取回溯 N 天, 已有数据则从最新时间增量补到今天
         # force_full_days=True: 强制回溯 days 自然日 (个股补齐历史, 不增量)
-        last_dt = _latest_minute_datetime(repo)
+        last_dt = (
+            _latest_minute_datetime(repo)
+            if asset_type == "stock"
+            else _latest_minute_datetime(repo, asset_type)
+        )
         if force_full_days:
             # 按交易日换算自然日 (7/5 系数), 确保覆盖足够交易日
             calendar_days = int(days * 7 / 5) + 5
@@ -1395,7 +1412,7 @@ def sync_and_persist_minute(
 
     # 流式落盘: 每段拉完立即写盘, 内存峰值 = 单段 (而非全量)。
     # 全量攒内存曾导致 1 年全市场分钟 K OOM 卡死 (3 亿行 / 数十 GB)。
-    minute_dir = repo.store.data_dir / "kline_minute"
+    minute_dir = _minute_dir(repo, asset_type)
     written_box = [0]  # list 闭包, 绕过 Python 闭包外层赋值
 
     def _persist(seg_df: pl.DataFrame) -> None:
@@ -1411,7 +1428,7 @@ def sync_and_persist_minute(
         on_chunk_done=on_chunk_done,
         segment_trading_days=segment_days,
         on_segment=_persist,
-        asset_type="stock",
+        asset_type=asset_type,
     )
 
     if written_box[0] == 0:
@@ -1421,12 +1438,92 @@ def sync_and_persist_minute(
     # 刷新视图
     try:
         d = repo.store.data_dir.as_posix()
+        table = _minute_table(asset_type)
         repo.db.execute(
-            f"""CREATE OR REPLACE VIEW kline_minute AS
-                SELECT * FROM read_parquet('{d}/kline_minute/**/*.parquet', union_by_name=true)"""
+            f"""CREATE OR REPLACE VIEW {table} AS
+                SELECT * FROM read_parquet('{d}/{table}/**/*.parquet', union_by_name=true)"""
         )
     except Exception as e:  # noqa: BLE001
-        logger.warning("refresh kline_minute view failed: %s", e)
+        logger.warning("refresh %s view failed: %s", _minute_table(asset_type), e)
 
-    logger.info("minute K synced: %d rows (%d symbols)", written, len(symbols))
+    logger.info("%s minute K synced: %d rows (%d symbols)", asset_type, written, len(symbols))
     return written
+
+
+def sync_and_persist_czsc_native_minutes(
+    symbol: str,
+    repo: KlineRepository,
+    capset: CapabilitySet,
+    *,
+    start_time: datetime,
+    end_time: datetime | None = None,
+    freqs: tuple[str, ...] = ("15m", "30m", "60m"),
+    on_chunk_done: Callable[[str, int, int, str], None] | None = None,
+    asset_type: AssetType = "stock",
+) -> dict[str, int]:
+    """按需同步单股的供应商原生 CZSC 分钟周期，并与 1 分钟库隔离。
+
+    ``start_time`` 由调用方从当前日线分析窗口的真实起点确定。这里不读取
+    全库最早分钟 K，也不生成 1 分钟数据；每个周期直接请求提供商的对应 period。
+    """
+    if not symbol:
+        return {}
+    if not freqs or any(freq not in {"15m", "30m", "60m"} for freq in freqs):
+        raise ValueError("CZSC 原生分钟周期仅支持 15m、30m、60m")
+    if end_time is None:
+        end_time = cn_now()
+    if start_time >= end_time:
+        raise ValueError("CZSC 分钟同步起点必须早于终点")
+
+    minute_provider = preferences.get_minute_data_provider()
+    _, fallback, _ = _resolve_minute_provider(minute_provider)
+    if fallback and not capset.has(Cap.KLINE_MINUTE_BATCH):
+        return {}
+
+    root = repo.store.data_dir / "kline_czsc_minute"
+    results: dict[str, int] = {}
+    limit = resolve_limit(
+        capset,
+        Cap.KLINE_MINUTE_BATCH,
+        default_batch=100,
+        default_rpm=30,
+        default_rpm_when_unset=False,
+    )
+    segment_days = preferences.get_minute_sync_segment_days()
+
+    for freq in freqs:
+        written_box = [0]
+
+        def _persist(segment: pl.DataFrame, *, _freq: str = freq) -> None:
+            with repo._write_lock:
+                written_box[0] += _write_minute_partition(
+                    segment,
+                    root / f"freq={_freq}",
+                )
+
+        def _progress(done: int, total: int, label: str, *, _freq: str = freq) -> None:
+            if on_chunk_done is not None:
+                on_chunk_done(_freq, done, total, label)
+
+        sync_minute_batch(
+            [symbol],
+            start_time=start_time,
+            end_time=end_time,
+            batch_size=limit.batch,
+            rpm=limit.rpm,
+            on_chunk_done=_progress,
+            segment_trading_days=segment_days,
+            on_segment=_persist,
+            asset_type=asset_type,
+            freq=freq,
+        )
+        results[freq] = written_box[0]
+
+    logger.info(
+        "CZSC native minute K synced: symbol=%s range=%s~%s rows=%s",
+        symbol,
+        start_time.date(),
+        end_time.date(),
+        results,
+    )
+    return results

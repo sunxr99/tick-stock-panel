@@ -34,9 +34,45 @@ export const SIGNAL_FIELDS: [string, string, SignalType][] = [
   ['signal_boll_breakdown_lower', '布林下破', 'bear'],
 ]
 
+const WYCKOFF_SIGNAL_LABELS: Record<string, Signal> = {
+  // A same-bar Spring recovery has no subsequent supply Test.  Keep it
+  // visible for early research, but do not present it as a confirmed buy.
+  spring_aggressive: { label: 'Wyckoff Spring · 预警（未确认）', type: 'neutral' },
+  spring_standard: { label: 'Wyckoff Spring Test · 标准介入', type: 'bull' },
+  spring_conservative: { label: 'Wyckoff Spring · 保守确认', type: 'bull' },
+  lps_standard: { label: 'Wyckoff LPS · 标准介入', type: 'bull' },
+  sos: { label: '旧 Wyckoff SOS · 观察', type: 'neutral' },
+  spring: { label: '旧 Wyckoff Spring · 观察', type: 'neutral' },
+  lps: { label: '旧 Wyckoff LPS · 观察', type: 'neutral' },
+  evr: { label: '旧 Wyckoff EVR · 观察', type: 'neutral' },
+}
+
+const CZSC_BUY_POINT_LABELS: Record<string, Signal> = {
+  一买: { label: 'CZSC · B1', type: 'bull' },
+  二买: { label: 'CZSC · B2', type: 'bull' },
+  三买: { label: 'CZSC · B3', type: 'bull' },
+}
+
 /** 从一行数据中提取已命中的信号列表 */
 export function getSignals(r: Record<string, any>): Signal[] {
-  return SIGNAL_FIELDS.filter(([key]) => r[key]).map(([, label, type]) => ({ label, type }))
+  const builtin = SIGNAL_FIELDS
+    .filter(([key]) => r[key])
+    .map(([, label, type]) => ({ label, type }))
+  // v2 仅把独立状态机产生的实际 Entry 放进该字段；旧 L4 形态触发
+  // 仍保留在 wyckoff_legacy_signals 作对照，避免把观察事件误显示为买点。
+  const rawWyckoff = Array.isArray(r.wyckoff_signals)
+    ? r.wyckoff_signals
+    : r.wyckoff_trigger ? [r.wyckoff_trigger] : []
+  const wyckoff = [...new Set(rawWyckoff.map((item: unknown) => String(item).toLowerCase()))]
+    .map(trigger => WYCKOFF_SIGNAL_LABELS[trigger])
+    .filter((signal): signal is Signal => !!signal)
+  const czsc = [...new Set(
+    (Array.isArray(r.czsc_buy_types) ? r.czsc_buy_types : [])
+      .map((item: unknown) => String(item)),
+  )]
+    .map(pointType => CZSC_BUY_POINT_LABELS[pointType])
+    .filter((signal): signal is Signal => !!signal)
+  return [...czsc, ...wyckoff, ...builtin]
 }
 
 /** 信号类型 → tailwind 颜色类 */

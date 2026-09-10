@@ -541,7 +541,7 @@ def run_now(
     else:
         skipped.append("sync_index")
 
-    # Step 2.5: 分钟 K 同步(可选) — 未启用或无 capability 时静默跳过(不 emit)
+    # Step 2.5: 分钟 K 同步(可选) — 股票与产品固定的核心指数各自写独立存储。
     from app.services import preferences
     minute_on = preferences.get_minute_sync_enabled()
     minute_days = preferences.get_minute_sync_days()
@@ -558,6 +558,11 @@ def run_now(
         written_minute = kline_sync.sync_and_persist_minute(
             minute_symbols, repo, capset, days=minute_days,
             on_chunk_done=_minute_chunk_progress,
+        )
+        from app.services.index_const import CORE_INDEX_SYMBOLS
+        written_minute += kline_sync.sync_and_persist_minute(
+            list(CORE_INDEX_SYMBOLS), repo, capset, days=minute_days,
+            on_chunk_done=_minute_chunk_progress, asset_type="index",
         )
         minute_dir = repo.store.data_dir / "kline_minute"
         minute_cover_days = len(list(minute_dir.glob("date=*"))) if minute_dir.exists() else 0
@@ -677,6 +682,7 @@ def _refresh_single_view(repo: KlineRepository, name: str) -> None:
         "kline_etf_daily": f"{d}/kline_etf_daily/**/*.parquet",
         "kline_etf_enriched": f"{d}/kline_etf_enriched/**/*.parquet",
         "kline_etf_minute": f"{d}/kline_etf_minute/**/*.parquet",
+        "kline_index_minute": f"{d}/kline_index_minute/**/*.parquet",
         "kline_minute": f"{d}/kline_minute/**/*.parquet",
         "adj_factor": f"{d}/adj_factor/**/*.parquet",
         "adj_factor_etf": f"{d}/adj_factor_etf/**/*.parquet",

@@ -35,6 +35,7 @@ from app.api import (
     stock_analysis,
     strategy,
     watchlist,
+    wyckoff_v2,
 )
 from app.api import auth as auth_api
 from app.api import settings as settings_api
@@ -108,6 +109,8 @@ async def _application_lifespan(app: FastAPI):
     mining_manager = MiningJobManager(store.data_dir)
     recovered_mining_runs = mining_manager.recover_interrupted()
     app.state.mining_manager = mining_manager
+    from app.wyckoff.v2.research_service import WyckoffV2ResearchService
+    app.state.wyckoff_v2_research_service = WyckoffV2ResearchService(store.data_dir)
     if recovered_mining_runs:
         logger.warning("recovered %d interrupted mining runs", recovered_mining_runs)
     # 在接受回测请求前固定 managed generation，避免首批并发 worker 各自创建版本。
@@ -349,6 +352,9 @@ async def _application_lifespan(app: FastAPI):
         mmanager = getattr(app.state, "mining_manager", None)
         if mmanager:
             mmanager.shutdown()
+        wyckoff_research = getattr(app.state, "wyckoff_v2_research_service", None)
+        if wyckoff_research:
+            wyckoff_research.shutdown()
         if app.state.scheduler:
             app.state.scheduler.shutdown(wait=False)
         ps = getattr(app.state, "pull_scheduler", None)
@@ -454,6 +460,7 @@ app.include_router(kline.router)
 app.include_router(watchlist.router)
 app.include_router(screener.router)
 app.include_router(backtest.router)
+app.include_router(wyckoff_v2.router)
 app.include_router(mining.router)
 app.include_router(intraday.router)
 app.include_router(indices.router)

@@ -64,6 +64,9 @@ export const QK = {
     ? ['strategy-link-options', assetType] as const
     : ['strategy-link-options'] as const,
   strategyDetail:       (id: string) => ['strategy-detail', id] as const,
+  wyckoffV2Run:         (id: string) => ['wyckoff-v2-run', id] as const,
+  wyckoffV2Summary:     (id: string) => ['wyckoff-v2-summary', id] as const,
+  wyckoffV2Events:      (id: string, offset: number, limit: number) => ['wyckoff-v2-events', id, offset, limit] as const,
 
   // Data / Pipeline
   dataStatus:           ['data-status'] as const,

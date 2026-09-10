@@ -5,7 +5,7 @@ import gzip
 import json
 import logging
 import math
-from datetime import date, timedelta
+from datetime import date, datetime, time, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 from functools import lru_cache
@@ -672,10 +672,12 @@ def get_minute_batch(request: Request, body: dict):
             if recent_date is not None:
                 trade_date = recent_date
 
-    # Step 1: 本地优先 — 一次 scan 读全部 symbol 当日分钟K (股票 / ETF 分钟数据分开存储)
+    # Step 1: 本地优先 — 三类资产的分钟K物理隔离, 不能按代码格式混读。
     etf_set = repo.get_etf_symbol_set()
-    stock_syms = [s for s in symbols if s not in etf_set]
+    index_set = repo.get_index_symbol_set()
+    stock_syms = [s for s in symbols if s not in etf_set and s not in index_set]
     etf_syms = [s for s in symbols if s in etf_set]
+    index_syms = [s for s in symbols if s in index_set]
     df_local = repo.get_minute_batch(stock_syms, trade_date)
     if etf_syms:
         df_etf = repo.get_minute_batch(etf_syms, trade_date, asset_type="etf")
@@ -683,6 +685,12 @@ def get_minute_batch(request: Request, body: dict):
             df_local = df_etf
         elif not df_etf.is_empty():
             df_local = pl.concat([df_local, df_etf], how="diagonal_relaxed")
+    if index_syms:
+        df_index = repo.get_minute_batch(index_syms, trade_date, asset_type="index")
+        if df_local.is_empty():
+            df_local = df_index
+        elif not df_index.is_empty():
+            df_local = pl.concat([df_local, df_index], how="diagonal_relaxed")
 
     # 期望条数 (盘中按当前时刻估算, 盘后 240)
     now = cn_now()
@@ -738,18 +746,18 @@ def get_minute_batch(request: Request, body: dict):
         full_minute_healthy = bool(svc is not None and svc.is_healthy())
     if full_minute_healthy:
         # 股票缺口不补拉, 本地有多少给多少 (服务下一轮写入补全);
-        # ETF 不在 universe 内, 维持补拉
+        # ETF、指数不在股票全量分钟 universe 内, 维持按需补拉。
         for sym in [*full_pull, *stale_last]:
-            if sym not in etf_set:
+            if sym not in etf_set and sym not in index_set:
                 sub = local_parts.get(sym)
                 if sub is not None and not sub.is_empty():
                     result[sym] = sub.to_dicts()
-        full_pull = [s for s in full_pull if s in etf_set]
-        stale_last = {s: t for s, t in stale_last.items() if s in etf_set}
+        full_pull = [s for s in full_pull if s in etf_set or s in index_set]
+        stale_last = {s: t for s, t in stale_last.items() if s in etf_set or s in index_set}
 
     # Step 2: 补拉并落盘 (取到即写, upsert 语义; 下一轮命中本地, 请求量骤降)。
     # 落盘失败只降级 (log 后继续返回本轮数据), 不影响响应 —— 持久化是优化而非正确性前提。
-    # 契约: 本端点只接受 stock/ETF (指数分钟K走 /api/index/minute 独立路径),
+    # 契约: 三类资产均按独立 minute 表落盘,
     # 按 asset_type 拆分调用 (自定义源 / TickFlow 路由均依赖 asset_type 正确传递)。
     day_start = datetime(trade_date.year, trade_date.month, trade_date.day, 9, 25, 0)
     session_end = datetime(trade_date.year, trade_date.month, trade_date.day, 15, 5, 0)
@@ -757,6 +765,7 @@ def get_minute_batch(request: Request, body: dict):
     minute_dirs = {
         "stock": repo.store.data_dir / "kline_minute",
         "etf": repo.store.data_dir / "kline_etf_minute",
+        "index": repo.store.data_dir / "kline_index_minute",
     }
     live_map: dict[str, pl.DataFrame] = {}
 
@@ -785,15 +794,17 @@ def get_minute_batch(request: Request, body: dict):
         for part in df_live.partition_by("symbol", maintain_order=True):
             live_map[part["symbol"][0]] = part.sort("datetime")
 
-    _pull("stock", [s for s in full_pull if s not in etf_set], day_start)
+    _pull("stock", [s for s in full_pull if s not in etf_set and s not in index_set], day_start)
     _pull("etf", [s for s in full_pull if s in etf_set], day_start)
+    _pull("index", [s for s in full_pull if s in index_set], day_start)
     if stale_last:
         # 增量公共起点 = 最旧的最后一根本身: 最后一根是形成中的动态K (分钟内
         # 收盘/量/额持续变化), 必须重拉并以定版值覆盖; 重叠由 upsert/合并去重吸收
         inc_start = min(stale_last.values())
         if inc_start < session_end:
-            _pull("stock", [s for s in stale_last if s not in etf_set], inc_start)
+            _pull("stock", [s for s in stale_last if s not in etf_set and s not in index_set], inc_start)
             _pull("etf", [s for s in stale_last if s in etf_set], inc_start)
+            _pull("index", [s for s in stale_last if s in index_set], inc_start)
 
     # 合并: 有增量/回填的 symbol = 本地 + 拉取 upsert; 仅拉到的 (missing) 直接进结果
     for sym, sub in local_parts.items():
@@ -850,10 +861,6 @@ def get_minute_range(
         "asset_type": asset_type,
         "requested_days": days,
     }
-
-    # 指数分钟 K 不落本地仓库, 最新分时仍由 /api/index/minute 实时读取。
-    if asset_type == "index":
-        return {**base_response, "sessions": [], "source": "none"}
 
     end = cn_today()
     start = end - timedelta(days=days * 3 + 20)
@@ -1104,10 +1111,11 @@ async def sync_minute(request: Request):
                     universe = sorted(set(universe) | set(inst["symbol"].to_list()))
                 except Exception:  # noqa: BLE001
                     pass
-            # 剔除指数 symbol: 指数分钟K无本地存储, 落库会污染 kline_minute
             index_set = repo.get_index_symbol_set()
             universe = [s for s in universe if s not in index_set]
-            progress("sync_minute", 10, f"标的池 {len(universe)} 只")
+            from app.services.index_const import CORE_INDEX_SYMBOLS
+            index_symbols = sorted(index_set & set(CORE_INDEX_SYMBOLS)) or list(CORE_INDEX_SYMBOLS)
+            progress("sync_minute", 10, f"股票池 {len(universe)} 只，核心指数 {len(index_symbols)} 只")
 
             days = override_days if override_days else get_minute_sync_days()
             # extend=1 → 向前扩展; days>=365 也自动向前扩展
@@ -1119,17 +1127,25 @@ async def sync_minute(request: Request):
                 progress("sync_minute", pct, f"拉取分钟K… {done}/{total} 批 [{seg_label}]")
 
             def _run():
-                return kline_sync.sync_and_persist_minute(
+                stock_rows = kline_sync.sync_and_persist_minute(
                     universe, repo, capset, days=days,
                     extend_backward=extend_backward,
                     on_chunk_done=_on_chunk,
                 )
+                index_rows = kline_sync.sync_and_persist_minute(
+                    index_symbols, repo, capset, days=days,
+                    extend_backward=extend_backward,
+                    on_chunk_done=_on_chunk,
+                    asset_type="index",
+                )
+                return stock_rows + index_rows
 
             written = await loop.run_in_executor(_long_task_executor, _run)
 
             # 刷新视图
             from app.jobs.daily_pipeline import _refresh_single_view
             _refresh_single_view(repo, "kline_minute")
+            _refresh_single_view(repo, "kline_index_minute")
 
             progress("done", 100, f"分钟 K 同步完成,{written} 行")
             job_store.succeed(job_id, {"minute_rows": written, "universe_size": len(universe)})
@@ -1172,10 +1188,7 @@ async def sync_minute_single(request: Request, body: dict):
     repo = request.app.state.repo
     capset = request.app.state.capabilities
 
-    # 指数分钟K无本地存储, 落库会污染股票分钟表 kline_minute;
-    # 指数分钟数据走 /api/index/minute 实时读取, 此端点显式拒绝。
-    if repo.resolve_asset_type(symbol) == "index":
-        raise HTTPException(status_code=400, detail="指数分钟K不支持落库同步 (指数分钟数据走 /api/index/minute 实时读取)")
+    asset_type = repo.resolve_asset_type(symbol)
 
     if not _minute_allowed(capset):
         raise HTTPException(status_code=403, detail="需要 Pro+ 权限")
@@ -1184,15 +1197,140 @@ async def sync_minute_single(request: Request, body: dict):
     loop = asyncio.get_event_loop()
 
     def _run():
-        return kline_sync.sync_and_persist_minute([symbol], repo, capset, days=days, force_full_days=True)
+        return kline_sync.sync_and_persist_minute(
+            [symbol], repo, capset, days=days, force_full_days=True, asset_type=asset_type,
+        )
 
     written = await loop.run_in_executor(_long_task_executor, _run)
 
     # 刷新视图
     from app.jobs.daily_pipeline import _refresh_single_view
-    _refresh_single_view(repo, "kline_minute")
+    _refresh_single_view(repo, "kline_minute" if asset_type == "stock" else f"kline_{asset_type}_minute")
 
     return {"status": "ok", "symbol": symbol, "rows": written}
+
+
+def _czsc_daily_analysis_window(repo, symbol: str, daily_days: int) -> tuple[str, datetime, datetime]:
+    """返回当前 CZSC 日线窗口实际覆盖的起止时刻。
+
+    起点取本地日线在同一 ``daily_days`` 窗口内的首根真实交易日，而不是用
+    自然日估算，也不是全库最早分钟数据。这让原生分钟同步与日线主图对齐。
+    """
+    asset_type = repo.resolve_asset_type(symbol)
+    end_date = cn_today()
+    frame = repo.get_daily_asset(
+        asset_type,
+        symbol,
+        end_date - timedelta(days=daily_days * 2 + 30),
+        end_date,
+        columns=["date"],
+    )
+    if frame.is_empty() or "date" not in frame.columns:
+        raise HTTPException(status_code=404, detail="本地无足够日K数据，请先同步日K")
+    dates = sorted(value for value in frame["date"].drop_nulls().to_list() if isinstance(value, date))
+    if not dates:
+        raise HTTPException(status_code=404, detail="本地日K缺少有效日期，无法确定分钟同步范围")
+    return (
+        asset_type,
+        datetime.combine(dates[0], time.min),
+        datetime.combine(dates[-1], time.max),
+    )
+
+
+@router.post("/sync_czsc_minutes")
+async def sync_czsc_minutes(request: Request, body: dict):
+    """异步同步单股 CZSC 所需的原生 15m / 30m / 60m K。
+
+    请求范围严格对齐当前日线分析窗口；不写入 ``kline_minute``，不隐式执行
+    CZSC 分析，也不把 1 分钟 K 聚合后伪装成供应商原生周期。
+    """
+    import asyncio
+
+    from app.api.data import invalidate_storage_cache
+    from app.services.pipeline_jobs import JobCancelledError, job_store, release_run_slot, try_acquire_run_slot
+
+    symbol = body.get("symbol", "").strip()
+    if not symbol:
+        raise HTTPException(status_code=400, detail="symbol 不能为空")
+    daily_days = body.get("daily_days", 250)
+    if isinstance(daily_days, bool) or not isinstance(daily_days, int) or not 30 <= daily_days <= 2000:
+        raise HTTPException(status_code=400, detail="daily_days 必须在 30 到 2000 之间")
+
+    repo = request.app.state.repo
+    capset = request.app.state.capabilities
+    if not _minute_allowed(capset):
+        raise HTTPException(status_code=403, detail="需要 Pro+ 分钟K权限或已配置分钟数据源")
+    asset_type, start_time, end_time = _czsc_daily_analysis_window(repo, symbol, daily_days)
+
+    job_id, is_new = job_store.create(long_running=True)
+    if not is_new:
+        return {"status": "reused", "job_id": job_id}
+
+    async def task() -> None:
+        if not try_acquire_run_slot(job_id):
+            job_store.fail(job_id, "已有数据任务在运行(或上一次任务卡死未结束)，请稍后再试")
+            return
+        loop = asyncio.get_event_loop()
+        frequencies = ("15m", "30m", "60m")
+        order = {freq: index for index, freq in enumerate(frequencies)}
+        try:
+            job_store.start(job_id)
+            job_store.progress(
+                job_id,
+                "sync_czsc_minute",
+                3,
+                f"{symbol}：按日线窗口 {start_time.date()} ~ {end_time.date()} 同步原生分钟K…",
+            )
+
+            def _on_chunk(freq: str, done: int, total: int, label: str) -> None:
+                completed = (order[freq] + done / max(total, 1)) / len(frequencies)
+                job_store.progress(
+                    job_id,
+                    "sync_czsc_minute",
+                    3 + int(completed * 92),
+                    f"{symbol}：{freq} 原生K {done}/{total} 段 [{label}]",
+                )
+
+            def _run() -> dict[str, int]:
+                return kline_sync.sync_and_persist_czsc_native_minutes(
+                    symbol,
+                    repo,
+                    capset,
+                    start_time=start_time,
+                    end_time=end_time,
+                    on_chunk_done=_on_chunk,
+                    asset_type=asset_type,
+                )
+
+            rows_by_freq = await loop.run_in_executor(_long_task_executor, _run)
+            total_rows = sum(rows_by_freq.values())
+            job_store.progress(job_id, "done", 100, f"{symbol}：CZSC 原生分钟K同步完成，共 {total_rows} 行")
+            job_store.succeed(job_id, {
+                "symbol": symbol,
+                "asset_type": asset_type,
+                "start_date": start_time.date().isoformat(),
+                "end_date": end_time.date().isoformat(),
+                "rows_by_freq": rows_by_freq,
+                "minute_rows": total_rows,
+            })
+            invalidate_storage_cache()
+        except JobCancelledError:
+            invalidate_storage_cache()
+        except Exception as exc:  # noqa: BLE001
+            logger.exception("CZSC native minute sync failed: symbol=%s", symbol)
+            job_store.fail(job_id, str(exc))
+            invalidate_storage_cache()
+        finally:
+            release_run_slot(job_id)
+
+    asyncio.create_task(task())
+    return {
+        "status": "started",
+        "job_id": job_id,
+        "symbol": symbol,
+        "daily_start": start_time.date().isoformat(),
+        "daily_end": end_time.date().isoformat(),
+    }
 
 
 @router.post("/clear_minute")

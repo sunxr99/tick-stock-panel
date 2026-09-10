@@ -47,3 +47,34 @@ def test_new_date_resets_results_and_ever_rows(tmp_path):
     assert cached["as_of"] == "2026-07-21"
     assert set(cached["results"]) == {"strategy_b"}
     assert set(cached["today_ever_rows"]) == {"strategy_b"}
+
+
+def test_cache_compacts_legacy_per_row_wyckoff_snapshot(tmp_path):
+    snapshot = {"layer1_symbols": ["000001.SZ"], "trading_ranges": {"000001.SZ": {"low": 1.0}}}
+    strategy_cache.write_cache(tmp_path, "2026-07-20", {
+        "wyckoff_funnel": {
+            "total": 2,
+            "as_of": "2026-07-20",
+            "rows": [
+                {"symbol": "000001.SZ", "wyckoff_snapshot": snapshot},
+                {"symbol": "000002.SZ", "wyckoff_snapshot": snapshot},
+            ],
+        },
+    })
+
+    cached = strategy_cache.read_cache(tmp_path)
+    result = cached["results"]["wyckoff_funnel"]
+
+    assert all("wyckoff_snapshot" not in row for row in result["rows"])
+    assert result["evidence"]["wyckoff_snapshot"] == snapshot
+    ever_rows = cached["today_ever_rows"]["wyckoff_funnel"].values()
+    assert all("wyckoff_snapshot" not in row for row in ever_rows)
+
+
+def test_read_cache_skips_file_over_size_limit(monkeypatch, tmp_path):
+    monkeypatch.setattr(strategy_cache, "_MAX_CACHE_BYTES", 10)
+    path = tmp_path / "user_data" / "strategy_cache.json"
+    path.parent.mkdir()
+    path.write_text("{" + "x" * 10 + "}", encoding="utf-8")
+
+    assert strategy_cache.read_cache(tmp_path) is None

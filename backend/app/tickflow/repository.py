@@ -101,6 +101,7 @@ class DataStore:
             "kline_etf_daily",
             "kline_etf_enriched",
             "kline_etf_minute",
+            "kline_index_minute",
             "kline_minute",
             "adj_factor",
             "adj_factor_etf",
@@ -203,6 +204,8 @@ class DataStore:
                 SELECT * FROM read_parquet('{d}/kline_etf_enriched/**/*.parquet', union_by_name=true)""",
             f"""CREATE OR REPLACE VIEW kline_etf_minute AS
                 SELECT * FROM read_parquet('{d}/kline_etf_minute/**/*.parquet', union_by_name=true)""",
+            f"""CREATE OR REPLACE VIEW kline_index_minute AS
+                SELECT * FROM read_parquet('{d}/kline_index_minute/**/*.parquet', union_by_name=true)""",
             f"""CREATE OR REPLACE VIEW kline_minute AS
                 SELECT * FROM read_parquet('{d}/kline_minute/**/*.parquet', union_by_name=true)""",
             f"""CREATE OR REPLACE VIEW adj_factor AS
@@ -296,6 +299,12 @@ class DataStore:
                        'etf' AS asset_type, 'tickflow' AS source
                 FROM kline_etf_minute
             """)
+        if self._has_parquet("kline_index_minute"):
+            minute_parts.append("""
+                SELECT symbol, datetime, open, high, low, close, volume, amount,
+                       'index' AS asset_type, 'tickflow' AS source
+                FROM kline_index_minute
+            """)
 
         if self._has_parquet("instruments"):
             inst_parts.append("""
@@ -383,6 +392,10 @@ class KlineRepository:
         self._etf_enriched_glob = str(store.data_dir / "kline_etf_enriched" / "**" / "*.parquet")
         self._minute_glob = str(store.data_dir / "kline_minute" / "**" / "*.parquet")
         self._etf_minute_glob = str(store.data_dir / "kline_etf_minute" / "**" / "*.parquet")
+        self._index_minute_glob = str(store.data_dir / "kline_index_minute" / "**" / "*.parquet")
+        # CZSC 的供应商原生 15/30/60 分钟 K 与 1 分钟分时/回测数据隔离存放。
+        # 两者同一时间戳的 OHLCV 不可互相覆盖，也不能让通用分钟查询误读高周期 K。
+        self._czsc_minute_dir = store.data_dir / "kline_czsc_minute"
         self._inst_glob = str(store.data_dir / "instruments" / "**" / "*.parquet")
         self._index_inst_glob = str(store.data_dir / "instruments_index" / "**" / "*.parquet")
         self._etf_inst_glob = str(store.data_dir / "instruments_etf" / "**" / "*.parquet")
@@ -1566,8 +1579,12 @@ class KlineRepository:
         return pl.DataFrame()
 
     def _minute_glob_for(self, asset_type: str) -> str:
-        """按资产类型选择分钟K parquet glob。ETF 分钟数据独立存储于 kline_etf_minute。"""
-        return self._etf_minute_glob if asset_type == "etf" else self._minute_glob
+        """按资产类型选择分钟K parquet glob，三类资产物理隔离。"""
+        if asset_type == "etf":
+            return self._etf_minute_glob
+        if asset_type == "index":
+            return self._index_minute_glob
+        return self._minute_glob
 
     def get_minute(
         self,
@@ -1637,6 +1654,45 @@ class KlineRepository:
             )
         except Exception as e:  # noqa: BLE001
             logger.warning("分钟K范围查询失败: %s", e)
+            return pl.DataFrame()
+
+    def get_czsc_minute_range(
+        self,
+        symbol: str,
+        start: date,
+        end: date,
+        freq: str,
+    ) -> pl.DataFrame:
+        """读取 CZSC 专用的供应商原生分钟周期 K。
+
+        该存储不属于通用 ``kline_minute``：后者固定为 1 分钟，服务于分时图和
+        分钟级回测；这里仅保存个股按需同步的 15m/30m/60m 原生 K，避免混频。
+        """
+        if freq not in {"15m", "30m", "60m"}:
+            raise ValueError(f"不支持的 CZSC 分钟周期: {freq}")
+        root = self._czsc_minute_dir / f"freq={freq}"
+        if not root.exists():
+            return pl.DataFrame()
+        try:
+            lf = pl.scan_parquet(str(root / "**" / "*.parquet"))
+            available = set(lf.collect_schema().names())
+            columns = [
+                column for column in (
+                    "symbol", "datetime", "open", "high", "low", "close", "volume", "amount",
+                ) if column in available
+            ]
+            return (
+                lf.select(columns)
+                .filter(
+                    (pl.col("symbol") == symbol)
+                    & (pl.col("datetime").dt.date() >= start)
+                    & (pl.col("datetime").dt.date() <= end)
+                )
+                .sort("datetime")
+                .collect(streaming=True)
+            )
+        except Exception as e:  # noqa: BLE001
+            logger.warning("CZSC 原生 %s 分钟K查询失败: %s", freq, e)
             return pl.DataFrame()
 
     def get_minute_by_dates(
@@ -1843,7 +1899,10 @@ class KlineRepository:
         # 注意: 必须走 execute_one (cursor+close)。直连 self.db.execute(...).fetchone()
         # 的未消费结果集会把首个分区 parquet 的句柄钉在共享连接上, Windows 下阻塞
         # 同步写入的 os.replace → 个股分时"补齐数据"500。
-        table = "kline_etf_minute" if asset_type == "etf" else "kline_minute"
+        table = {
+            "etf": "kline_etf_minute",
+            "index": "kline_index_minute",
+        }.get(asset_type, "kline_minute")
         try:
             row = self.execute_one(
                 f"SELECT max(CAST(datetime AS DATE)) FROM {table} WHERE symbol = ?",
@@ -2116,6 +2175,7 @@ class KlineRepository:
             "kline_etf_daily": f"{d}/kline_etf_daily/**/*.parquet",
             "kline_etf_enriched": f"{d}/kline_etf_enriched/**/*.parquet",
             "kline_etf_minute": f"{d}/kline_etf_minute/**/*.parquet",
+            "kline_index_minute": f"{d}/kline_index_minute/**/*.parquet",
             "kline_minute": f"{d}/kline_minute/**/*.parquet",
             "adj_factor": f"{d}/adj_factor/**/*.parquet",
             "adj_factor_etf": f"{d}/adj_factor_etf/**/*.parquet",

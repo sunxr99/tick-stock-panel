@@ -3,7 +3,7 @@
 缓存结构:
   {
     "as_of": "2024-01-15",
-    "results": { strategy_id: { total, as_of, rows } },
+    "results": { strategy_id: { total, as_of, rows, evidence? } },
     "today_ever_matched": { strategy_id: [symbol, ...] },    // 今日曾命中 symbol 并集
     "today_ever_rows": { strategy_id: { symbol: row_data } },// 今日曾命中的完整行数据
     "updated_at": 1705324800000  # Unix ms
@@ -35,6 +35,27 @@ def _json_default(obj: Any) -> Any:
 logger = logging.getLogger(__name__)
 
 _CACHE_FILENAME = "strategy_cache.json"
+_MAX_CACHE_BYTES = 64 * 1024 * 1024
+
+
+class _CacheSizeExceededError(Exception):
+    """Raised before an oversized cache payload reaches disk."""
+
+
+class _SizeLimitedTextWriter:
+    """File wrapper that lets json.dump stop before writing an unbounded cache."""
+
+    def __init__(self, stream: Any, max_bytes: int) -> None:
+        self._stream = stream
+        self._max_bytes = max_bytes
+        self._written = 0
+
+    def write(self, value: str) -> int:
+        next_size = self._written + len(value.encode("utf-8"))
+        if next_size > self._max_bytes:
+            raise _CacheSizeExceededError
+        self._written = next_size
+        return self._stream.write(value)
 
 # 读写同一 JSON 文件的进程内锁: write_cache 的 read-modify-write 与并发 read_cache
 # 无锁会丢更新/读到半写文件。read_cache 与 write_cache 共用此锁; write 内部复用
@@ -87,15 +108,54 @@ def _read_cache_unlocked(data_dir: Path) -> dict | None:
     if not path.exists():
         return None
     try:
+        size = path.stat().st_size
+        if size > _MAX_CACHE_BYTES:
+            logger.warning(
+                "策略缓存过大，跳过读取: %s (%.1f MiB，限制 %.1f MiB)",
+                path,
+                size / 1024 / 1024,
+                _MAX_CACHE_BYTES / 1024 / 1024,
+            )
+            return None
         text = path.read_text(encoding="utf-8")
         if not text.strip():
             return None
         cached = json.loads(text)
     except Exception as e:  # noqa: BLE001
-        logger.warning("读取策略缓存失败: %s", e)
+        logger.warning("读取策略缓存失败 (%s): %s", type(e).__name__, e)
         return None
 
     return cached
+
+
+def _compact_result(result: Any, as_of: str) -> dict[str, Any]:
+    """Keep cache rows small while retaining strategy-level evidence once."""
+    if not isinstance(result, dict):
+        return {"total": 0, "as_of": as_of, "rows": []}
+
+    rows: list[dict] = []
+    legacy_snapshot = None
+    for row in result.get("rows") or []:
+        if not isinstance(row, dict):
+            continue
+        compact_row = dict(row)
+        snapshot = compact_row.pop("wyckoff_snapshot", None)
+        if legacy_snapshot is None and isinstance(snapshot, dict):
+            legacy_snapshot = snapshot
+        rows.append(compact_row)
+
+    compact = {
+        "total": int(result.get("total") or 0),
+        "as_of": str(result.get("as_of") or as_of),
+        "rows": rows,
+    }
+    evidence = result.get("evidence")
+    if isinstance(evidence, dict) and evidence:
+        compact["evidence"] = evidence
+    elif legacy_snapshot is not None:
+        # 兼容旧执行结果：提取一次快照，不再随每一行重复写入。
+        compact["evidence"] = {"wyckoff_snapshot": legacy_snapshot}
+    return compact
 
 
 def _rows_to_symbol_map(rows: list[dict]) -> dict[str, dict]:
@@ -133,6 +193,10 @@ def _write_cache_locked(
     results: dict[str, Any],
 ) -> None:
     """持 _file_lock 后的实际写入逻辑 (read-merge-write + 原子替换)。"""
+    results = {
+        str(strategy_id): _compact_result(result, as_of)
+        for strategy_id, result in results.items()
+    }
     # 读取旧缓存 (已持锁, 走不重入的 _read_cache_unlocked)
     old = _read_cache_unlocked(data_dir)
     old_as_of = old.get("as_of") if old else None
@@ -178,13 +242,29 @@ def _write_cache_locked(
         "enriched_mtime": enriched_mtime,
         "updated_at": int(time.time() * 1000),
     }
+    tmp = path.with_name(path.name + ".tmp")
     try:
         # 原子写: 先写临时文件再 os.replace, 避免读侧读到半写的 JSON
-        tmp = path.with_name(path.name + ".tmp")
-        tmp.write_text(json.dumps(payload, ensure_ascii=False, default=_json_default), encoding="utf-8")
+        with tmp.open("w", encoding="utf-8") as stream:
+            json.dump(
+                payload,
+                _SizeLimitedTextWriter(stream, _MAX_CACHE_BYTES),
+                ensure_ascii=False,
+                default=_json_default,
+            )
         os.replace(tmp, path)
         total_rows = sum(len(r.get("rows", [])) for r in merged_results.values())
         total_ever = sum(len(v) for v in today_ever_matched.values())
-        logger.info("策略缓存已写入: %s, %d 策略, %d 命中, %d 曾命中", as_of, len(merged_results), total_rows, total_ever)
+        logger.info(
+            "策略缓存已写入: %s, %d 策略, %d 命中, %d 曾命中",
+            as_of,
+            len(merged_results),
+            total_rows,
+            total_ever,
+        )
+    except _CacheSizeExceededError:
+        tmp.unlink(missing_ok=True)
+        logger.warning("策略缓存超过 %.1f MiB，已放弃写入", _MAX_CACHE_BYTES / 1024 / 1024)
     except Exception as e:  # noqa: BLE001
+        tmp.unlink(missing_ok=True)
         logger.warning("写入策略缓存失败: %s", e)

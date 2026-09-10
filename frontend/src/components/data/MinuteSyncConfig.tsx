@@ -63,7 +63,7 @@ export function MinuteSyncConfig({ hasCap, onJobStart }: { hasCap: boolean; onJo
   const [fetchingMode, setFetchingMode] = useState<'' | '40d' | '1y'>('')
   const handleFetch = (mode: '40d' | '1y') => {
     if (!hasMinuteCap) return
-    // 单次获取 = 按「分段大小」拉一段 (向前扩展); 1年 = 拉365天按分段切多段
+    // 单次获取 = 按「分段大小」拉一段 (向前扩展); 1年 = 向全库最早分钟数据继续扩展365天。
     const fetchDays = mode === '40d' ? localSegment : 365
     setFetchingMode(mode)
     api.syncMinute(fetchDays, true).then((res) => {
@@ -178,12 +178,12 @@ export function MinuteSyncConfig({ hasCap, onJobStart }: { hasCap: boolean; onJo
           {fetchingMode === '1y' ? (
             <><Loader2 className="h-3.5 w-3.5 animate-spin" /><span>分段获取中…</span></>
           ) : (
-            <><Calendar className="h-3.5 w-3.5" /><span>获取最近 1 年</span><span className="text-[9px] opacity-70">分段拉取</span></>
+            <><Calendar className="h-3.5 w-3.5" /><span>向前扩展 1 年</span><span className="text-[9px] opacity-70">全库历史</span></>
           )}
         </button>
         </div>
         <div className="text-[10px] text-muted leading-relaxed">
-          A股标的 · 前复权价格 · 从本地最早数据向前叠加 ·{' '}
+          A股标的 · 前复权价格 · 此处从全库最早分钟数据继续向前叠加，不用于补齐单只股票的历史缺口。{' '}
           均按上方「分段大小」分段拉取、每段即落盘
         </div>
       </div>

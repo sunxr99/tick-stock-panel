@@ -86,6 +86,24 @@ def test_name_map_cache_invalidated_on_instruments_refresh(repo):
 import datetime as _dt
 
 
+def test_index_minute_isolated_from_stock_minute(repo):
+    from app.services.kline_sync import _write_minute_partition
+
+    minute = pl.DataFrame({
+        "symbol": ["000001.SH"],
+        "datetime": [_dt.datetime(2026, 7, 23, 9, 30)],
+        "open": [3000.0], "high": [3001.0], "low": [2999.0], "close": [3000.5],
+        "volume": [100.0], "amount": [300050.0],
+    })
+    _write_minute_partition(minute, repo.store.data_dir / "kline_index_minute")
+
+    index_rows = repo.get_minute("000001.SH", _dt.date(2026, 7, 23), asset_type="index")
+    stock_rows = repo.get_minute("000001.SH", _dt.date(2026, 7, 23), asset_type="stock")
+
+    assert index_rows["close"].to_list() == [3000.5]
+    assert stock_rows.is_empty()
+
+
 def test_execute_one_releases_parquet_file(repo):
     minute_dir = repo.store.data_dir / "kline_minute" / "date=2026-07-23"
     minute_dir.mkdir(parents=True, exist_ok=True)
