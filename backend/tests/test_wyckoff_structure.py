@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import numpy as np
 import pandas as pd
+import pytest
 
 from app.wyckoff.config import FunnelConfig
 from app.wyckoff.wyckoff_structure import (
+    _ensure_pct_chg,
     _range_quality,
     build_structure_shadow,
     detect_structure_triggers,
@@ -37,6 +39,21 @@ def test_identify_trading_range_from_repeated_swings() -> None:
     assert 11.5 <= trading_range.resistance <= 12.5
     assert trading_range.support_tests >= 2
     assert trading_range.resistance_tests >= 2
+    assert trading_range.range_start is not None
+    assert trading_range.range_confirmed_at is not None
+    assert trading_range.range_start <= trading_range.range_confirmed_at
+
+
+def test_range_metadata_is_as_of_safe_and_prefix_reproducible() -> None:
+    frame = _range_df()
+    prefix = frame.iloc[:90].copy()
+    first = identify_trading_range(prefix, FunnelConfig(), exclude_last=1)
+    second = identify_trading_range(prefix, FunnelConfig(), exclude_last=1)
+
+    assert first is not None and second is not None
+    assert first == second
+    assert first.range_confirmed_at == prefix["date"].iloc[-1].date()
+    assert first.range_start <= first.range_confirmed_at
 
 
 def test_range_quality_scores_width_relative_to_atr() -> None:
@@ -81,6 +98,53 @@ def test_structure_sos_uses_dynamic_resistance() -> None:
 
     assert result.triggers["sos"]
     assert result.stage_map["000001"] == "Markup"
+
+
+def test_structure_converts_decimal_change_pct_for_sos() -> None:
+    frame = _range_df().drop(columns="pct_chg")
+    frame["change_pct"] = frame["close"].pct_change().fillna(0.0)
+    frame.loc[frame.index[-1], ["open", "high", "low", "close", "volume", "change_pct"]] = [
+        11.6,
+        12.9,
+        11.5,
+        12.65,
+        3_000_000.0,
+        0.07,
+    ]
+
+    result = detect_structure_triggers(
+        ["000001"], {"000001": frame}, FunnelConfig(sos_pct_min=5.0, sos_vol_ratio=2.0)
+    )
+
+    assert result.triggers["sos"]
+
+
+def test_structure_rejects_conflicting_return_units() -> None:
+    frame = _range_df()
+    frame["change_pct"] = frame["pct_chg"] / 100.0
+    frame.loc[frame.index[-1], "change_pct"] = 0.01
+
+    with pytest.raises(ValueError, match="disagree"):
+        _ensure_pct_chg(frame)
+
+
+def test_legacy_lps_requires_support_retest_and_recovery_confirmation() -> None:
+    frame = _range_df()
+    frame.loc[frame.index[-2], ["open", "high", "low", "close", "volume", "pct_chg"]] = [
+        10.2, 10.5, 10.0, 10.4, 100_000.0, 0.0,
+    ]
+    frame.loc[frame.index[-1], ["open", "high", "low", "close", "volume", "pct_chg"]] = [
+        10.2, 10.85, 10.0, 10.7, 100_000.0, 2.9,
+    ]
+
+    confirmed = detect_structure_triggers(["000001"], {"000001": frame}, FunnelConfig())
+    assert confirmed.triggers["lps"]
+
+    frame.loc[frame.index[-1], ["open", "high", "low", "close", "pct_chg"]] = [
+        10.1, 10.35, 10.0, 10.2, 0.0,
+    ]
+    rejected = detect_structure_triggers(["000001"], {"000001": frame}, FunnelConfig())
+    assert rejected.triggers["lps"] == []
 
 
 def test_structure_shadow_keeps_structure_only_signal_observational() -> None:

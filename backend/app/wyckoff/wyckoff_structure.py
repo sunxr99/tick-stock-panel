@@ -8,8 +8,10 @@ not alter any formal strategy selection until Layer 4 is migrated and wired.
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
+from datetime import date
 from typing import NamedTuple
 
+import numpy as np
 import pandas as pd
 
 from app.wyckoff._price_math import sort_by_date_if_needed, swing_values
@@ -26,6 +28,10 @@ class TradingRange:
     support_tests: int
     resistance_tests: int
     quality_score: float
+    # Observation metadata only: these dates describe the exact input window
+    # visible when this range was identified; they do not alter range rules.
+    range_start: date | None = None
+    range_confirmed_at: date | None = None
 
 
 class StructureTriggerResult(NamedTuple):
@@ -45,6 +51,8 @@ class _StructureSeries(NamedTuple):
 class _LastBar(NamedTuple):
     width: float
     last_close: float
+    prev_close: float
+    last_high: float
     last_low: float
     prev_low: float
     last_pct: float
@@ -62,10 +70,29 @@ class _RangeCandidate(NamedTuple):
 
 
 def _ensure_pct_chg(df: pd.DataFrame) -> pd.Series:
-    if "pct_chg" in df.columns:
-        pct = _to_numeric(df["pct_chg"])
-        if not pct.isna().all():
-            return pct
+    """Return daily returns in percentage points without value-based guessing.
+
+    Benchmark ``pct_chg`` is already percentage points.  Enriched stock
+    ``change_pct`` is decimal, so it is converted explicitly at this boundary.
+    When both arrive, disagreement is a data-contract error rather than an
+    invitation to silently choose one of two different return series.
+    """
+    pct = _to_numeric(df["pct_chg"]) if "pct_chg" in df.columns else pd.Series(index=df.index, dtype=float)
+    change_points = (
+        _to_numeric(df["change_pct"]) * 100.0
+        if "change_pct" in df.columns
+        else pd.Series(index=df.index, dtype=float)
+    )
+    overlap = pct.notna() & change_points.notna()
+    # Vendor ``pct_chg`` is commonly rounded to two decimal percentage points;
+    # allow that representation error, but never infer units from magnitude.
+    if overlap.any() and not np.isclose(
+        pct.loc[overlap], change_points.loc[overlap], rtol=1e-6, atol=0.01
+    ).all():
+        raise ValueError("pct_chg and change_pct disagree after unit normalization")
+    combined = pct.combine_first(change_points)
+    if not combined.isna().all():
+        return combined
     return _to_numeric(df["close"]).pct_change() * 100.0
 
 
@@ -219,6 +246,14 @@ def identify_trading_range(
     candidate = _range_candidate(df, cfg, lookback, swing_window, exclude_last, min_bars)
     if candidate is None:
         return None
+    zone = _range_zone(df, lookback=lookback, min_bars=min_bars, exclude_last=exclude_last)
+    if zone is None:
+        return None
+    sorted_input = sort_by_date_if_needed(df)
+    start_value = zone["date"].iloc[0] if "date" in zone.columns else None
+    confirmed_value = sorted_input["date"].iloc[-1] if "date" in sorted_input.columns else None
+    range_start = start_value.date() if hasattr(start_value, "date") else start_value if isinstance(start_value, date) else None
+    range_confirmed_at = confirmed_value.date() if hasattr(confirmed_value, "date") else confirmed_value if isinstance(confirmed_value, date) else None
     quality_score = _range_quality(
         candidate.width_pct,
         candidate.drift_pct,
@@ -236,6 +271,8 @@ def identify_trading_range(
         support_tests=candidate.support_tests,
         resistance_tests=candidate.resistance_tests,
         quality_score=quality_score,
+        range_start=range_start,
+        range_confirmed_at=range_confirmed_at,
     )
 
 
@@ -273,6 +310,8 @@ def _last_bar(series: _StructureSeries, tr: TradingRange) -> _LastBar:
     return _LastBar(
         width=tr.resistance - tr.support,
         last_close=float(series.close.iloc[-1]),
+        prev_close=float(series.close.iloc[-2]) if len(series.close) >= 2 else float(series.close.iloc[-1]),
+        last_high=float(series.high.iloc[-1]),
         last_low=float(series.low.iloc[-1]),
         prev_low=float(series.low.iloc[-2]) if len(series.low) >= 2 else float(series.low.iloc[-1]),
         last_pct=last_pct,
@@ -308,11 +347,31 @@ def _lps_trigger_score(series: _StructureSeries, bar: _LastBar, tr: TradingRange
     lookback = max(int(cfg.lps_lookback), 1)
     dry_ratio = _recent_ref_volume_ratio(series.volume, lookback, max(int(cfg.lps_vol_ref_window), 10))
     recent_lows = series.low.tail(lookback)
-    near_support = float(recent_lows.min()) <= tr.support + bar.width * 0.35
-    holds_support = bar.last_close > tr.support
-    if dry_ratio is None or not near_support or not holds_support or dry_ratio > float(cfg.lps_vol_dry_ratio):
+    support_zone = tr.support + bar.width * float(cfg.lps_support_zone_max)
+    tested_support = float(recent_lows.min()) <= support_zone
+    true_range = pd.concat(
+        [
+            series.high - series.low,
+            (series.high - series.close.shift()).abs(),
+            (series.low - series.close.shift()).abs(),
+        ],
+        axis=1,
+    ).max(axis=1)
+    atr = float(true_range.tail(max(int(cfg.spring_tr_atr_window), 1)).mean())
+    recovered = bar.last_close - tr.support >= atr * float(cfg.lps_recovery_atr_min)
+    spread = max(bar.last_high - bar.last_low, 1e-9)
+    close_position = (bar.last_close - bar.last_low) / spread
+    confirmed = bar.last_close >= bar.prev_close
+    if (
+        dry_ratio is None
+        or not tested_support
+        or not recovered
+        or not confirmed
+        or close_position < float(cfg.lps_close_position_min)
+        or dry_ratio > float(cfg.lps_vol_dry_ratio)
+    ):
         return None
-    return float((1.0 - dry_ratio) + tr.quality_score)
+    return float((1.0 - dry_ratio) + tr.quality_score + close_position)
 
 
 def _evr_trigger_score(series: _StructureSeries, bar: _LastBar, tr: TradingRange, cfg: FunnelConfig) -> float | None:

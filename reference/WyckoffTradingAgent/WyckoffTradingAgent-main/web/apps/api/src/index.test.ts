@@ -1,0 +1,59 @@
+import { describe, expect, it, vi } from 'vitest'
+import { createApiApp } from './app'
+import { app } from './index'
+
+describe('API middleware', () => {
+  it('adds request and security headers', async () => {
+    const response = await app.request('/api/health', {
+      headers: {
+        Origin: 'http://localhost:5173',
+        'X-Request-Id': 'test-request-1',
+      },
+    }, { CHAT_TOOL_APPROVAL_SECRET: 'a'.repeat(64) })
+
+    expect(response.status).toBe(200)
+    expect(response.headers.get('X-Request-Id')).toBe('test-request-1')
+    expect(response.headers.get('X-Content-Type-Options')).toBe('nosniff')
+    expect(response.headers.get('Access-Control-Allow-Origin')).toBe('http://localhost:5173')
+  })
+
+  it('fails readiness when the production chat signing secret is absent', async () => {
+    const response = await app.request('/api/health')
+
+    expect(response.status).toBe(503)
+    expect(await response.json()).toEqual({
+      status: 'unhealthy',
+      missing: ['CHAT_TOOL_APPROVAL_SECRET'],
+    })
+  })
+
+  it('rejects oversized API request bodies before routing', async () => {
+    const response = await app.request('/api/unknown', {
+      method: 'POST',
+      body: 'x'.repeat(256 * 1024 + 1),
+    })
+
+    expect(response.status).toBe(413)
+    expect(await response.json()).toMatchObject({ error: 'Request body is too large' })
+    expect(response.headers.get('X-Request-Id')).toBeTruthy()
+  })
+
+  it('returns structured not-found responses', async () => {
+    const response = await app.request('/api/unknown')
+
+    expect(response.status).toBe(404)
+    expect(await response.json()).toMatchObject({ error: 'Not Found' })
+  })
+
+  it('logs unhandled API errors to Workers Logs', async () => {
+    const api = createApiApp()
+    api.get('/api/boom', () => {
+      throw new Error('boom')
+    })
+    const error = vi.spyOn(console, 'error').mockImplementation(() => undefined)
+    const response = await api.request('/api/boom')
+    expect(response.status).toBe(500)
+    expect(String(error.mock.calls[0]?.[0])).toContain('"event":"worker_error"')
+    error.mockRestore()
+  })
+})

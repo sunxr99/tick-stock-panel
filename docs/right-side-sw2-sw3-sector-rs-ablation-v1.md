@@ -1,0 +1,68 @@
+# Right-side SW2 + SW3 Sector/RS ablation V1
+
+**Final status: `SW3_INCREMENT_NOT_SUPPORTED`**
+
+## Frozen contract
+
+The fixed random-12 dates and their frozen Wyckoff candidate pools, forward labels, VP fields and RiskBucket fields are reused unchanged. Only Opportunity ordering is compared: Legacy is the frozen SW1 Sector/RS score; V2 is `0.40 × (0.70 × SW2SectorStrength + 0.30 × SW3SectorStrength) + 0.60 × (0.40 × MarketRS + 0.40 × SW2RS + 0.20 × SW3RS)`. No weighting scan or refit was run.
+
+Dates (12): 2025-12-15, 2025-12-18, 2026-01-30, 2026-02-26, 2026-03-10, 2026-03-26, 2026-04-13, 2026-05-12, 2026-05-21, 2026-06-17, 2026-07-20, 2026-08-10.
+
+Candidate observations: 11328. V2 unavailable observations: 1; they are not silently assigned an industry. The V2 Top150 therefore uses available rows only.
+
+## Top150 outcome metrics
+
+| group | horizon | n | mean return | median return | mean excess | median excess | positive rate | mean MAE | mean MFE | mean portfolio MDD | beat benchmark dates |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Legacy | T+5 | 1795 | 1.72% | 0.00% | 1.16% | -0.67% | 49.92% | -6.83% | 9.95% | -3.10% | 7/12 |
+| Legacy | T+10 | 1791 | 2.00% | -0.14% | 1.95% | -0.45% | 49.36% | -9.28% | 14.74% | -5.31% | 8/12 |
+| Legacy | T+20 | 1785 | 5.47% | -0.84% | 4.73% | -2.33% | 47.79% | -12.74% | 23.89% | -8.57% | 6/12 |
+| SW2 only diagnostic | T+5 | 1793 | 1.39% | -0.19% | 0.83% | -1.05% | 48.69% | -7.01% | 9.84% | -3.09% | 7/12 |
+| SW2 only diagnostic | T+10 | 1790 | 1.76% | -0.40% | 1.71% | -0.88% | 48.04% | -9.52% | 14.61% | -5.12% | 8/12 |
+| SW2 only diagnostic | T+20 | 1784 | 4.68% | -1.21% | 3.95% | -2.52% | 47.65% | -12.96% | 23.35% | -8.57% | 6/12 |
+| SW2+SW3 V2 | T+5 | 1792 | 1.49% | -0.17% | 0.93% | -1.01% | 48.94% | -6.99% | 9.94% | -3.00% | 7/12 |
+| SW2+SW3 V2 | T+10 | 1789 | 1.85% | -0.24% | 1.80% | -0.83% | 48.63% | -9.45% | 14.68% | -4.97% | 9/12 |
+| SW2+SW3 V2 | T+20 | 1782 | 4.71% | -1.18% | 3.98% | -2.61% | 47.59% | -12.94% | 23.48% | -8.44% | 6/12 |
+
+`SW2 only diagnostic` is not a tuned alternative or production candidate. It holds the official 0.40/0.60 Opportunity split and compares an SW2-only hierarchy to answer whether the fixed SW3 increment adds evidence.
+
+## Top150 industry concentration
+
+| group | level | mean largest industry share | mean Top3 share | mean industry count | mean missing names |
+| --- | --- | --- | --- | --- | --- |
+| Legacy | SW2 | 18.22% | 36.39% | 34.08 | 0.00 |
+| Legacy | SW3 | 9.39% | 20.72% | 59.33 | 0.00 |
+| SW2 only diagnostic | SW2 | 18.11% | 36.78% | 34.17 | 0.00 |
+| SW2 only diagnostic | SW3 | 8.67% | 20.67% | 58.67 | 0.00 |
+| SW2+SW3 V2 | SW2 | 16.61% | 34.44% | 37.83 | 0.00 |
+| SW2+SW3 V2 | SW3 | 8.39% | 19.33% | 63.00 | 0.00 |
+
+## Date-level V2 versus Legacy
+
+`V2 return wins / ties / losses` compares equal-weight portfolio terminal return on the same fixed signal dates. A positive MDD difference is healthier because it is closer to zero.
+
+| horizon | matched dates | V2 return wins / ties / losses | mean Δ return | healthier V2 MDD dates | mean Δ MDD |
+| --- | --- | --- | --- | --- | --- |
+| T+5 | 12 | 5/0/7 | -0.23% | 7/12 | 0.10% |
+| T+10 | 12 | 5/0/7 | -0.16% | 10/12 | 0.33% |
+| T+20 | 12 | 3/0/9 | -0.74% | 8/12 | 0.14% |
+
+## Required answers
+
+- T+10 V2 vs Legacy mean return: 1.85% vs 2.00%.
+- T+10 V2 vs Legacy median excess: -0.83% vs -0.45%.
+- T+10 V2 vs Legacy mean portfolio MDD: -4.97% vs -5.31%.
+- T+10 SW2+SW3 vs SW2-only diagnostic mean/median excess: 1.80%/-0.83% vs 1.71%/-0.88%.
+- 1–2. No: V2 does not raise T+10 Top150 mean return or median excess versus Legacy; T+5/T+20 are also shown above, so a single horizon is not selected.
+- 3. No mean improvement exists to attribute to a few right-tail names. The weaker V2 mean and median together instead indicate a broad lack of return improvement in this sample.
+- 4. Mixed risk: V2's constituent MAE is slightly more negative at all reported horizons, while its equal-weight portfolio MDD is shallower. The MDD improvement does not offset weaker reward metrics.
+- 5. No: V2 reduces both the largest-industry and Top3 shares at SW2 and SW3, while increasing the number of represented industries. Concentration is descriptive only and never changes selection.
+- 6. SW3 has a small T+10 improvement over the SW2-only diagnostic, but both are weaker than Legacy. That is not sufficient evidence for an incremental production benefit.
+- 7. SW2 remains the frozen research main level by design (70% Sector, 40% RS), but this result does not support promoting either SW2-only or SW2+SW3 over Legacy.
+- 8. Yes: across 12 dates, SW3 has 338 industries on average; 9.75 have fewer than 2 members and 54.83 have fewer than 5 (maximum 55). This supports retaining the lower SW3 weight and explicit availability diagnostics.
+- 9. No: do not replace Legacy under this fixed sample and these frozen weights.
+- 10. Yes, hierarchy resonance remains a display/research topic only; no resonance bonus or penalty is introduced by this result.
+
+## Decision boundary
+
+This report's status is `SW3_INCREMENT_NOT_SUPPORTED`. It does not replace the formal Legacy strategy. A promotion decision requires the stated evidence to hold in an independently refreshed fixed sample without changing any weight.

@@ -82,6 +82,12 @@ class Settings(BaseSettings):
     # TickFlow
     tickflow_api_key: str = Field(default="", description="留空启用 free 模式")
 
+    # Tushare Pro
+    # Kept here (rather than relying on ``os.environ``) so the root ``.env``
+    # remains the single configuration source in development and deployment.
+    tushare_token: str = ""
+    tushare_api_url: str = "https://api.tushare.pro"
+
     # AI
     ai_provider: str = "openai_compat"
     ai_base_url: str = "https://api.zhaji.dev/v1"

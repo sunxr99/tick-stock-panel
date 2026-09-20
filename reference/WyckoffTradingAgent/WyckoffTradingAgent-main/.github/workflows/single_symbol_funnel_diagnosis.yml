@@ -1,0 +1,94 @@
+name: Single Symbol Funnel Diagnosis
+
+on:
+  workflow_dispatch:
+    inputs:
+      symbol:
+        description: "股票代码（逗号分隔可批量，同一市场），如 002980,301511,301018"
+        required: true
+        type: string
+      start_date:
+        description: "回看起始日期 YYYY-MM-DD"
+        required: true
+        type: string
+      end_date:
+        description: "回看结束日期 YYYY-MM-DD"
+        required: true
+        type: string
+      trading_days:
+        description: "起始日前置交易日数量"
+        required: false
+        default: "320"
+        type: string
+
+concurrency:
+  group: single-symbol-funnel-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      PYTHONUNBUFFERED: "1"
+      FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+      TICKFLOW_API_KEY: ${{ secrets.TICKFLOW_API_KEY }}
+      TICKFLOW_KLINE_RATE_LIMIT_PER_MIN: "110"
+      TUSHARE_TOKEN: ${{ secrets.TUSHARE_TOKEN }}
+      TZ: Asia/Shanghai
+      GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Run single symbol diagnosis
+        env:
+          INPUT_SYMBOL: ${{ inputs.symbol }}
+          INPUT_START_DATE: ${{ inputs.start_date }}
+          INPUT_END_DATE: ${{ inputs.end_date }}
+          INPUT_TRADING_DAYS: ${{ inputs.trading_days }}
+        run: |
+          set -o pipefail
+          [[ "$INPUT_SYMBOL" =~ ^[A-Za-z0-9.,_-]+$ ]] || { echo "Invalid symbol"; exit 2; }
+          [[ "$INPUT_START_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "Invalid start_date"; exit 2; }
+          [[ "$INPUT_END_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "Invalid end_date"; exit 2; }
+          [[ "$INPUT_TRADING_DAYS" =~ ^[0-9]{1,4}$ ]] || { echo "Invalid trading_days"; exit 2; }
+          mkdir -p logs/single_symbol_funnel
+          python -u scripts/single_symbol_funnel_diagnosis.py \
+            --symbol "$INPUT_SYMBOL" \
+            --start-date "$INPUT_START_DATE" \
+            --end-date "$INPUT_END_DATE" \
+            --trading-days "$INPUT_TRADING_DAYS" \
+            --output-dir "${{ github.workspace }}/logs/single_symbol_funnel" \
+            2>&1 | tee "${{ github.workspace }}/logs/single_symbol_funnel/console.log"
+
+      - name: Append report summary
+        if: always()
+        run: |
+          find logs/single_symbol_funnel -name "report.md" | sort | while read f; do
+            cat "$f" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+          done
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: single-symbol-funnel-run${{ github.run_number }}
+          path: logs/single_symbol_funnel/*
+          retention-days: 14
+          if-no-files-found: warn

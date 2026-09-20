@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import logging
 from collections.abc import Callable
+from datetime import date
 from pathlib import Path
 
 import polars as pl
@@ -631,6 +632,24 @@ def run_now(
             stage_errors.append(f"compute_mainline: {e}")
             skipped.append("mainline")
 
+    # Step 2.8: Persist the current THS concept membership under the actual
+    # completed enriched market date.  This is deliberately independent from
+    # manual Wyckoff runs: future point-in-time concept research needs one
+    # auditable snapshot for every successful daily pipeline.
+    concept_membership_snapshot: dict[str, object]
+    try:
+        emit("capture_concept_membership", 94, "保存同花顺概念成员快照…")
+        concept_membership_snapshot = _capture_daily_concept_membership_snapshot(
+            repo, expected_as_of=today
+        )
+        status = str(concept_membership_snapshot["status"])
+        emit("capture_concept_membership", 94, f"同花顺概念快照: {status}")
+        logger.info("capture_concept_membership: %s", concept_membership_snapshot)
+    except Exception as e:  # noqa: BLE001
+        logger.warning("capture_concept_membership failed (soft): %s", e)
+        concept_membership_snapshot = {"status": "capture_failed", "error": str(e)}
+        stage_errors.append(f"concept membership snapshot: {e}")
+
     # Step 3: 刷新视图
     emit("refresh_views", 95, "刷新 DuckDB 视图…")
     _refresh_views(repo)
@@ -651,6 +670,7 @@ def run_now(
         "minute_rows": written_minute,
         "regime_days": regime_days,
         "mainline_rows": mainline_rows,
+        "concept_membership_snapshot": concept_membership_snapshot,
         "lagging_symbols": len(lagging_symbols),
         "integrity_repair_from": repair_start.isoformat() if repair_start else None,
         "integrity_issues": len(integrity_issues),
@@ -664,6 +684,24 @@ def run_now(
         raise PipelineStageError(stage_errors)
 
     return result
+
+
+def _capture_daily_concept_membership_snapshot(
+    repo: KlineRepository, *, expected_as_of: date
+) -> dict[str, object]:
+    """Capture THS membership only when this pipeline completed its market date."""
+    as_of = repo.latest_enriched_date()
+    if as_of is None:
+        return {"status": "skipped_missing_enriched_date"}
+    if as_of != expected_as_of:
+        return {
+            "status": "skipped_stale_enriched_date",
+            "latest_enriched_date": as_of.isoformat(),
+            "expected_as_of": expected_as_of.isoformat(),
+        }
+    from app.services.wyckoff_research_snapshot import capture_current_membership_snapshots
+
+    return capture_current_membership_snapshots(repo, as_of=as_of, kinds=("concept",))
 
 
 def _refresh_views(repo: KlineRepository) -> None:

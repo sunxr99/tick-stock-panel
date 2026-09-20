@@ -1713,11 +1713,16 @@ class KlineRepository:
         """
         if not symbols or not dates:
             return pl.DataFrame()
-        base = self._etf_minute_glob.rsplit("/", 2)[0] if asset_type == "etf" else self._minute_glob.rsplit("/", 2)[0]
+        # Do not derive a directory from the glob string: it is rendered with
+        # backslashes on Windows, while the former ``rsplit('/')`` version
+        # silently produced no paths and made every exact-date minute caller
+        # look like it had no local data.
+        dirname = "kline_etf_minute" if asset_type == "etf" else "kline_minute"
+        base = self.store.data_dir / dirname
         # 收集存在的分区文件路径, 避免对不存在的文件 scan 报错
-        parts: list[str] = []
+        parts: list[Path] = []
         for d in dates:
-            p = f"{base}/date={d.isoformat()}/part.parquet"
+            p = base / f"date={d.isoformat()}" / "part.parquet"
             if Path(p).exists():
                 parts.append(p)
         if not parts:
@@ -1735,6 +1740,21 @@ class KlineRepository:
         except Exception as e:  # noqa: BLE001
             logger.warning("分钟K按日期查询失败: %s", e)
             return pl.DataFrame()
+
+    def get_minute_by_dates_and_symbols(
+        self,
+        dates: list[date],
+        symbols: list[str],
+        asset_type: str = "stock",
+    ) -> pl.DataFrame:
+        """Batch minute read for a candidate universe and explicit trade dates.
+
+        The query reads each requested date partition once, then applies one
+        vectorized symbol filter.  It is intentionally separate from the
+        single-candidate convenience call so batch VP orchestration cannot
+        accidentally regress to a symbol-by-symbol partition scan.
+        """
+        return self.get_minute_by_dates(symbols, dates, asset_type=asset_type)
 
     # ================================================================
     # Polars 查询内部方法

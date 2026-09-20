@@ -119,6 +119,21 @@ def test_adapter_normalizes_only_floating_point_ohlc_noise() -> None:
     assert out.loc[0, "low"] == 9.0
 
 
+def test_adapter_normalizes_only_tiny_negative_volume_amount_noise() -> None:
+    noisy = pl.DataFrame({
+        "date": [date(2026, 1, 5), date(2026, 1, 6)],
+        "open": [10.0, 10.0], "high": [10.0, 10.0], "low": [10.0, 10.0], "close": [10.0, 10.0],
+        "volume": [-1e-10, 0.0], "amount": [0.0, -3.7253e-9],
+    })
+    out = _validate_and_standardize(noisy, "000628.SZ", timestamp_col="date")
+    assert out["vol"].tolist() == [0.0, 0.0]
+    assert out["amount"].tolist() == [0.0, 0.0]
+
+    bad = noisy.with_columns(pl.lit(-0.001).alias("amount"))
+    with pytest.raises(ValueError, match="volume/amount"):
+        _validate_and_standardize(bad, "000628.SZ", timestamp_col="date")
+
+
 def test_daily_structure_has_event_and_confirmation_time() -> None:
     import czsc
 

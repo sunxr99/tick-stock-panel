@@ -16,10 +16,10 @@ from typing import Any
 import httpx
 
 from app import secrets_store
+from app.config import settings
 
 logger = logging.getLogger(__name__)
 
-TUSHARE_PRO_URL = "https://api.tushare.pro"
 SECTOR_CACHE_TTL_SECONDS = 24 * 60 * 60
 
 
@@ -44,14 +44,14 @@ def load_tushare_sector_map(data_dir: Path, *, now: float | None = None) -> Sect
     if cached and cached_at is not None and timestamp - cached_at < SECTOR_CACHE_TTL_SECONDS:
         return SectorMapResult(cached, "tushare_cache_fresh", cached_at)
 
-    token = secrets_store.get_env_backed_secret("tushare_token", "TUSHARE_TOKEN")
+    token = secrets_store.get_tushare_token()
     if not token:
         logger.warning("Wyckoff industry metadata unavailable: TUSHARE_TOKEN is not configured")
         return _stale_or_empty(cached, cached_at)
 
     try:
         response = httpx.post(
-            TUSHARE_PRO_URL,
+            settings.tushare_api_url.rstrip("/"),
             json={
                 "api_name": "stock_basic",
                 "token": token,

@@ -117,14 +117,22 @@ class FunnelConfig:
     sector_count_quantile: float = 0.70
     sector_super_strength_quantile: float = 0.90
     sector_heat_bypass_min_count: int = 0
-    use_concept_map: bool = True
+    # Formal L3 resonance is industry based.  Concepts may still be opted in
+    # for an explicitly configured research run, but must not silently change
+    # the production candidate universe.
+    use_concept_map: bool = False
     l3_keep_strength_min: float = 0.60
     l3_leader_strength_min: float = 0.80
     l3_hot_leader_strength_min: float = 0.55
 
-    lps_lookback: int = 3
+    # Legacy-L4 LPS is only a research trigger.  Keep its rules explicit and
+    # independent from Wyckoff V2's event/state machine.
+    lps_lookback: int = 2
     lps_vol_dry_ratio: float = 0.65
     lps_vol_ref_window: int = 60
+    lps_support_zone_max: float = 0.15
+    lps_recovery_atr_min: float = 0.25
+    lps_close_position_min: float = 0.55
 
     enable_evr_trigger: bool = True
     evr_vol_ratio: float = 1.8

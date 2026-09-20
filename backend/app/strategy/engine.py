@@ -160,6 +160,10 @@ class StrategyDataContext:
     daily_history: pl.DataFrame | None = None
     market: Any | None = None
     cache_key: str | None = None
+    # Optional repository for post-selection, read-only enrichments such as
+    # Sector/RS candidate research context.  Strategies themselves still consume only
+    # the materialized current/history frames above.
+    repo: Any | None = None
 
 
 @dataclass(frozen=True)
@@ -929,7 +933,13 @@ class StrategyEngine:
             )
 
         if s.execution_backend == "wyckoff_funnel":
-            return self._run_wyckoff_funnel(strategy_id, s, context, started_at=t0)
+            return self._run_wyckoff_funnel(
+                strategy_id,
+                s,
+                context,
+                overrides=overrides,
+                started_at=t0,
+            )
 
         if s.execution_backend == "composite":
             return self._run_composite_strategy(
@@ -1080,7 +1090,13 @@ class StrategyEngine:
         )
 
     def _run_wyckoff_funnel(
-        self, strategy_id: str, strategy: StrategyDef, context: StrategyDataContext, *, started_at: float
+        self,
+        strategy_id: str,
+        strategy: StrategyDef,
+        context: StrategyDataContext,
+        *,
+        overrides: dict | None = None,
+        started_at: float,
     ) -> StrategyResult:
         """Execute the dedicated all-market Wyckoff funnel backend."""
         from app.wyckoff.funnel import run_funnel
@@ -1116,6 +1132,33 @@ class StrategyEngine:
             hot_concepts=hot_concepts if isinstance(hot_concepts, list) else None,
             cfg=strategy.wyckoff_config,
         )
+        # Keep the funnel's cross-sectional calculation on the full market
+        # universe.  Applying a board subset before ``run_funnel`` would alter
+        # Layer 2 strength/RPS meanings.  The saved strategy-card basic filter
+        # instead controls which formal L3 candidates are exposed afterwards,
+        # matching the behavior of other strategy backends.
+        basic_filter = dict(getattr(strategy, "basic_filter", {}) or {})
+        if (overrides or {}).get("basic_filter"):
+            basic_filter.update(overrides["basic_filter"])
+        filter_applied = bool(
+            basic_filter
+            and basic_filter.get("enabled", True)
+            and not current.is_empty()
+            and "symbol" in current.columns
+        )
+        if filter_applied:
+            eligible_symbols = {
+                str(symbol)
+                for symbol in self._apply_basic_filter(current, basic_filter)
+                .get_column("symbol")
+                .drop_nulls()
+                .to_list()
+            }
+            candidate_symbols = [
+                symbol for symbol in result.layer3_symbols if symbol in eligible_symbols
+            ]
+        else:
+            candidate_symbols = list(result.layer3_symbols)
         trigger_lists: dict[str, list[str]] = {}
         for trigger, hits in result.triggers.items():
             for symbol, _score in hits:
@@ -1127,7 +1170,7 @@ class StrategyEngine:
         v2_errors: dict[str, str] = {}
         v2_event_counts: dict[str, int] = {}
         v2_entry_counts: dict[str, int] = {}
-        for symbol in result.layer3_symbols:
+        for symbol in candidate_symbols:
             try:
                 analysis = analyze_wyckoff_v2(symbol, df_map[symbol])
                 payload = analysis.latest_payload(as_of)
@@ -1162,13 +1205,18 @@ class StrategyEngine:
             czsc_rows_by_symbol = {
                 str(row["symbol"]): row
                 for row in filter_daily_czsc_buy_points(
-                    context.history.filter(pl.col("symbol").is_in(result.layer3_symbols))
+                    context.history.filter(pl.col("symbol").is_in(candidate_symbols))
                 ).to_dicts()
             }
             czsc_event_identity_version = CZSC_EVENT_IDENTITY_VERSION
         except Exception as exc:  # pragma: no cover - optional CZSC dependency isolation
             logger.warning("Wyckoff result CZSC B-point enrichment skipped: %s", exc)
         snapshot = result.to_snapshot()
+        snapshot["l3_grouping"] = {
+            "kind": "industry",
+            "level": 1,
+            "source": market.get("wyckoff_sector_map_source", "current_enriched_industry"),
+        }
         snapshot["v2"] = {
             "mode": "parallel_diagnostics",
             "affects_formal_selection": False,
@@ -1190,7 +1238,7 @@ class StrategyEngine:
             if not current.is_empty() and "symbol" in current.columns
             else {}
         )
-        rows = [
+        candidates = [
             {
                 **current_rows_by_symbol.get(symbol, {}),
                 "symbol": symbol,
@@ -1200,6 +1248,8 @@ class StrategyEngine:
                 "wyckoff_trigger": trigger_map.get(symbol, ""),
                 "wyckoff_signals": v2_payloads.get(symbol, {}).get("signals", []),
                 "wyckoff_legacy_signals": trigger_lists.get(symbol, []),
+                "wyckoff_research_trigger": symbol in result.research_trigger_symbols,
+                "wyckoff_research_trigger_types": trigger_lists.get(symbol, []),
                 "wyckoff_v2_entries": v2_payloads.get(symbol, {}).get("entries", []),
                 "wyckoff_v2_events": v2_payloads.get(symbol, {}).get("events", []),
                 "wyckoff_v2_active_event": v2_payloads.get(symbol, {}).get("active_event"),
@@ -1207,13 +1257,107 @@ class StrategyEngine:
                 "wyckoff_l3_path": result.final_traces.get(symbol, {}).get("l3_path", "unknown"),
                 "wyckoff_l4": result.final_traces.get(symbol, {}).get("l4", "reject"),
                 "wyckoff_l4_failure": result.final_traces.get(symbol, {}).get("l4_failure"),
+                # Observation metadata produced on this exact as_of history;
+                # no future-confirmed range is backfilled into prior rows.
+                "wyckoff_range_start": result.trading_ranges.get(symbol, {}).get("range_start"),
+                "wyckoff_range_confirmed_at": result.trading_ranges.get(symbol, {}).get("range_confirmed_at"),
                 "czsc_buy_types": czsc_rows_by_symbol.get(symbol, {}).get("czsc_buy_types", []),
                 "czsc_buy_signals": czsc_rows_by_symbol.get(symbol, {}).get("czsc_buy_signals", []),
                 "czsc_confirmation_time": czsc_rows_by_symbol.get(symbol, {}).get("czsc_confirmation_time"),
                 "czsc_event_identity_version": czsc_event_identity_version,
             }
-            for symbol in result.layer3_symbols
+            for symbol in candidate_symbols
         ]
+        from app.services.wyckoff_candidate_ranking import rank_wyckoff_candidates
+
+        ranked_context_rows = rank_wyckoff_candidates(
+            context.repo,
+            as_of=context.as_of,
+            candidates=candidates,
+        )
+        # Sector/RS remains a transparent research context only.  Do not let
+        # its currently unvalidated forward-return relationship alter the
+        # Wyckoff candidate order or the generic strategy score contract.
+        ranked_by_symbol = {
+            str(row.get("symbol")): row for row in ranked_context_rows
+        }
+        research_level_by_priority = {
+            "PRIORITY_A": "POSITIVE_STATE",
+            "PRIORITY_B": "NEUTRAL_STATE",
+            "PRIORITY_C": "RISK_STATE",
+            "UNKNOWN": "UNAVAILABLE",
+        }
+        # Candidate Pool V1: the frozen raw strength composition is the only
+        # membership rank. VP is attached below as a route/disclosure, never a
+        # score adjustment or eligibility filter.
+        from app.services.right_side_candidates import (
+            RIGHT_SIDE_CANDIDATE_LIMIT,
+            industry_concentration,
+            order_rows,
+            risk_route,
+        )
+        from app.services.volume_profile import (
+            DataGranularity,
+            ProfileQuality,
+            VolumeProfileMode,
+            VolumeProfileService,
+        )
+
+        ranked_candidates = sorted(
+            ranked_context_rows,
+            key=lambda row: (
+                -float(row.get("strength_score") or float("-inf")),
+                str(row.get("symbol") or ""),
+            ),
+        )[:RIGHT_SIDE_CANDIDATE_LIMIT]
+        vp_service = VolumeProfileService(context.repo)
+        vp_context = vp_service.prepare_batch_context(
+            symbols=[str(row["symbol"]) for row in ranked_candidates],
+            as_of=context.as_of,
+        )
+        vp_rows = vp_service.build_batch(
+            vp_context,
+            symbols=[str(row["symbol"]) for row in ranked_candidates],
+            mode=VolumeProfileMode.FULL,
+        )
+        rows = []
+        for candidate_order, candidate in enumerate(ranked_candidates, start=1):
+            row = dict(ranked_by_symbol.get(str(candidate["symbol"]), candidate))
+            row["research_context_score"] = row.pop("final_rank_score", None)
+            row["research_context_rank"] = row.pop("rank", None)
+            row["research_context_level"] = research_level_by_priority.get(
+                row.pop("priority_level", "UNKNOWN"), "UNAVAILABLE"
+            )
+            row["candidate_order"] = candidate_order
+            row["opportunity_score"] = row.get("strength_score")
+            # The generic result table calls this column "score".  In this
+            # dedicated candidate pool its only meaning is the frozen
+            # OpportunityScore, not a VP-adjusted score.
+            row["score"] = row["opportunity_score"]
+            profiles = vp_rows.get(str(row["symbol"]), {})
+            vp20, vp60 = profiles.get("vp20"), profiles.get("vp60")
+            complete = bool(
+                vp20 and vp60
+                and vp20.quality == ProfileQuality.FULL
+                and vp60.quality == ProfileQuality.FULL
+                and vp20.data_granularity == DataGranularity.MINUTE_1M
+                and vp60.data_granularity == DataGranularity.MINUTE_1M
+                and not vp20.fallback_used and not vp60.fallback_used
+            )
+            vp20_extension = str(vp20.extension_context) if vp20 else None
+            vp60_extension = str(vp60.extension_context) if vp60 else None
+            row["vp_risk_bucket"], row["vp_risk_score"] = risk_route(vp20_extension, vp60_extension, complete=complete)
+            row.update({
+                "vp20_extension": vp20_extension, "vp60_extension": vp60_extension,
+                "vp20_position": str(vp20.position_context) if vp20 else None,
+                "vp60_position": str(vp60.position_context) if vp60 else None,
+                "vp20_acceptance": str(vp20.acceptance_context) if vp20 else None,
+                "vp60_acceptance": str(vp60.acceptance_context) if vp60 else None,
+                "timing_status": None,
+                "ranking_mode": "right_side_candidate_pool_v1",
+            })
+            rows.append(row)
+        rows = order_rows(rows, limit=RIGHT_SIDE_CANDIDATE_LIMIT)
         logger.info("wyckoff_funnel diagnostics: %s", result.diagnostics)
         return StrategyResult(
             as_of=context.as_of,
@@ -1221,8 +1365,21 @@ class StrategyEngine:
             rows=rows,
             total=len(rows),
             elapsed_ms=(time.perf_counter() - started_at) * 1000,
-            scores={row["symbol"]: row["score"] for row in rows},
-            evidence={"wyckoff_snapshot": snapshot},
+            scores={},
+            evidence={
+                "wyckoff_snapshot": snapshot,
+                "all_wyckoff_candidate_count": len(result.layer3_symbols),
+                "wyckoff_research_trigger_count": len(result.research_trigger_symbols),
+                "wyckoff_research_trigger_affects_formal_selection": False,
+                "basic_filter_candidate_count": len(candidates),
+                "basic_filter_applied": filter_applied,
+                "right_side_candidate_limit": RIGHT_SIDE_CANDIDATE_LIMIT,
+                "risk_distribution": {
+                    bucket: sum(row.get("vp_risk_bucket") == bucket for row in rows)
+                    for bucket in ("EXTREME", "HIGH", "MEDIUM", "LOW", "UNKNOWN")
+                },
+                "industry_concentration": industry_concentration(rows),
+            },
         )
 
     @staticmethod

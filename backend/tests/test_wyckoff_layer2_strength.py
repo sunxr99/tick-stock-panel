@@ -6,6 +6,8 @@ import pandas as pd
 from app.wyckoff.config import FunnelConfig
 from app.wyckoff.layer2_strength import (
     RpsContext,
+    _dry_volume_ok,
+    _trend_volume_ok,
     build_benchmark_context,
     build_rps_context,
     evaluate_layer2_symbol,
@@ -117,3 +119,24 @@ def test_layer2_rs_uses_enriched_decimal_change_pct() -> None:
 
     assert result.channels["momentum"] is True
     assert result.passed is True
+
+
+def test_dry_volume_requires_a_consistently_dry_recent_window() -> None:
+    frame = _frame(1.1, n=80)
+    frame.loc[frame.index[-5:-1], "volume"] = 1_200_000.0
+    frame.loc[frame.index[-1], "volume"] = 100.0
+    config = FunnelConfig(dry_vol_ref_window=60, dry_vol_lookback=5)
+
+    assert _dry_volume_ok(frame, frame["close"], float(frame["close"].iloc[-1]), config) is False
+
+    frame.loc[frame.index[-5:], "volume"] = 100.0
+    assert _dry_volume_ok(frame, frame["close"], float(frame["close"].iloc[-1]), config) is True
+
+
+def test_trend_volume_fails_closed_without_a_valid_reference_window() -> None:
+    short = _frame(1.1, n=19)
+    zero = _frame(1.1, n=30)
+    zero["volume"] = 0.0
+
+    assert _trend_volume_ok(short, 0.7) is False
+    assert _trend_volume_ok(zero, 0.7) is False

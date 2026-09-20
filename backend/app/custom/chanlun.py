@@ -45,6 +45,10 @@ _NATIVE_MINUTE_FREQS = {"15分钟": "15m", "30分钟": "30m", "60分钟": "60m"}
 _HIGHER_CONTEXT = {"15分钟": ("30分钟", "60分钟", "日线"), "30分钟": ("60分钟", "日线"), "60分钟": ("日线",), "日线": ()}
 _MIN_SIGNAL_BARS = 10
 _OHLC_FLOAT_EPSILON = 1e-8
+# Minute allocation can leave a zero-volume tail bar with a few nanoyuan of
+# negative amount after floating-point cancellation.  This is far below a
+# currency unit; larger negative turnover remains a data-quality failure.
+_VOLUME_AMOUNT_FLOAT_EPSILON = 1e-8
 _DAILY_CLOSE_TIME = time(15, 5)
 _MINUTE_CLOSE_TIMES = {
     "15m": (time(9, 45), time(10), time(10, 15), time(10, 30), time(10, 45), time(11), time(11, 15), time(11, 30), time(13, 15), time(13, 30), time(13, 45), time(14), time(14, 15), time(14, 30), time(14, 45), time(15)),
@@ -98,6 +102,9 @@ def _validate_and_standardize(frame: pl.DataFrame, symbol: str, *, timestamp_col
         raise ValueError("行情 OHLCV/amount 含空值；拒绝以 0 静默替代")
     if (out[["open", "close", "high", "low"]] <= 0).any().any():
         raise ValueError("行情 OHLC 需为正数")
+    for column in ("vol", "amount"):
+        tiny_negative = (out[column] < 0) & (out[column] > -_VOLUME_AMOUNT_FLOAT_EPSILON)
+        out.loc[tiny_negative, column] = 0.0
     if (out[["vol", "amount"]] < 0).any().any():
         raise ValueError("行情 volume/amount 不可为负")
     upper = out[["open", "close", "low"]].max(axis=1)

@@ -116,7 +116,11 @@ def evaluate_layer2_symbol(
     }
     channels = {key: bool(value) for key, value in channels.items()}
     labels = _channel_labels(channels)
-    pre_ignition = not labels and _pre_ignition_ok(df, close, last, ma_long, bullish, hold_ma20, slow, cfg)
+    pre_ignition = bool(
+        cfg.enable_pre_ignition_watch
+        and not labels
+        and _pre_ignition_ok(df, close, last, ma_long, bullish, hold_ma20, slow, cfg)
+    )
     return Layer2SymbolResult(bool(labels), "+".join(labels), pre_ignition, channels)
 
 
@@ -225,7 +229,14 @@ def _dry_volume_ok(df: pd.DataFrame, close: pd.Series, last: float, cfg: FunnelC
     if not cfg.enable_dry_vol_channel or len(df) < cfg.dry_vol_ref_window or last > float(close.tail(cfg.dry_vol_ref_window).min()) * (1 + cfg.dry_vol_price_from_low_max):
         return False
     volume = pd.to_numeric(df.get("volume"), errors="coerce").tail(cfg.dry_vol_ref_window).dropna()
-    return len(volume) >= 50 and float(volume.tail(cfg.dry_vol_lookback).min()) <= float(volume.quantile(cfg.dry_vol_quantile))
+    lookback = max(int(cfg.dry_vol_lookback), 1)
+    if len(volume) < 50 + lookback:
+        return False
+    recent = volume.tail(lookback)
+    reference = volume.iloc[:-lookback]
+    # One isolated low-volume day is common noise.  A dry-up channel requires
+    # the complete recent window to be low against the preceding reference.
+    return bool(recent.max() <= reference.quantile(cfg.dry_vol_quantile))
 
 
 def _rs_divergence_ok(df: pd.DataFrame, close: pd.Series, last: float, bench: pd.DataFrame | None, cfg: FunnelConfig) -> bool:
@@ -243,7 +254,10 @@ def _rs_divergence_ok(df: pd.DataFrame, close: pd.Series, last: float, bench: pd
 
 def _trend_volume_ok(df: pd.DataFrame, minimum: float) -> bool:
     volume = pd.to_numeric(df.get("volume"), errors="coerce").dropna()
-    return len(volume) < 20 or volume.tail(20).mean() <= 0 or volume.tail(5).mean() / volume.tail(20).mean() >= minimum
+    if len(volume) < 20:
+        return False
+    reference = float(volume.tail(20).mean())
+    return bool(reference > 0 and float(volume.tail(5).mean()) / reference >= minimum)
 
 
 def _structural_volume_ok(df: pd.DataFrame) -> bool:

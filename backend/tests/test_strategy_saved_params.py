@@ -98,3 +98,17 @@ def test_save_config_rejects_invalid_scoring_direction(tmp_path):
             strategy_id="saved_params",
             overrides={"scoring_directions": {"rsi_14": "sideways"}},
         ), request)
+
+
+def test_save_config_rejects_contradictory_basic_filter_range(tmp_path):
+    engine, _ = _make_engine()
+    request = SimpleNamespace(app=SimpleNamespace(state=SimpleNamespace(
+        strategy_engine=engine,
+        repo=SimpleNamespace(store=SimpleNamespace(data_dir=tmp_path)),
+    )))
+
+    with pytest.raises(HTTPException, match="换手率下限不能高于上限"):
+        strategy_api.save_config(strategy_api.SaveConfigRequest(
+            strategy_id="saved_params",
+            overrides={"basic_filter": {"turnover_min": 5, "turnover_max": 0}},
+        ), request)

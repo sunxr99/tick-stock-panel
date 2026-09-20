@@ -1,0 +1,81 @@
+name: Momentum Regime Eval
+
+# 动量体检：RPS 闸门还值不值得留，以及能不能跟着市场动态调。
+#
+# ⚠️ start 不是评估区间：RPS 慢腿 120 日预热把起点往后推 120 个交易日，尾部再扣 H+1 天。
+#   原默认 start=2025-01-01 取 402 天行情，真正评估的只有 271 天（2025-07-04 起），
+#   而这个窗口把结论读反了（同一份行情、H=10、生产档 65/70）：
+#       271 个评估日  超额 +0.070  t=+0.28  期望为零：无选择价值
+#       513 个评估日  超额 -0.320  t=-2.08  负贡献
+#   H=5 同向（+0.050 → -0.151）。故默认 start 提到 2024-01-01，取数约 24 分钟。
+#   看样本范围只能看产物里的 eval_window，不能看 start。
+#
+# 首轮（2026-08-31，271 个评估日）读数是「动量没坏，是平的」，那三条结论只在短窗成立：
+#   闸门相对流动性域内的超额 H=5 +0.05pct（t=+0.31）、H=10 +0.07pct（t=+0.28）。
+#   绝对收益 +0.432%（t=+0.96）对域内基准 +0.362%（t=+1.27）——均值高 0.07pct 而 t 值更低。
+#   阈值扫描 75/80..30/40 全期 t 值恒在 +0.88~+1.11：阈值只改振幅，不改期望。
+#   四种动态切换设计（IC 二值、IC 连续、宽度/波动、惩罚极端动量）走前全部失效。
+# 长样本上闸门是负贡献，与 core/momentum_regime_eval.py 第五条（动量只能做顶部负筛）同向。
+# 每周重跑的意义：持续确认闸门方向，并在它转为持续为负时能被看见——这恰恰要求样本够长。
+on:
+  schedule:
+    # UTC 周六 03:40 = 北京时间周六 11:40，紧随 gate-alpha（10:40）之后，错开取数高峰。
+    - cron: "40 3 * * 6"
+  workflow_dispatch:
+    inputs:
+      horizon:
+        description: "前瞻交易日数，逗号分隔可一次跑多个"
+        default: "10,5"
+      start:
+        description: "行情起始（不是评估区间：预热吃掉 120 个交易日，真实区间见产物 eval_window）"
+        default: "2024-01-01"
+
+concurrency:
+  group: momentum-regime-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    # 逐日取数约 1.6s/天，893 天约 24 分钟；留足余量避免 tushare 限频重试时被砍。
+    timeout-minutes: 90
+    env:
+      PYTHONUNBUFFERED: "1"
+      # 只读全市场日线，不写库；故不设 WYCKOFF_WRITE_CONTEXT。
+      TUSHARE_TOKEN: ${{ secrets.TUSHARE_TOKEN }}
+      FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+      TZ: Asia/Shanghai
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      # H=10 与 H=5 一起跑：季度符号在两个持有期上一致，才说明结论不是持有期挑出来的。
+      # 脚本内部复用同一份行情，多加一个 horizon 不会重复取数。
+      - name: Evaluate momentum regime
+        run: |
+          python scripts/evaluate_momentum_regime.py \
+            --horizon "${{ github.event.inputs.horizon || '10,5' }}" \
+            --start "${{ github.event.inputs.start || '2024-01-01' }}"
+
+      - name: Upload evidence
+        uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: momentum-regime-evidence
+          # 与脚本 --out 默认值保持一致。artifacts/ 在 .gitignore 里，写那儿会匹配不到文件。
+          path: docs/evidence/momentum_regime_h*.json
+          if-no-files-found: warn

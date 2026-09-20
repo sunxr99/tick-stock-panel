@@ -69,6 +69,16 @@ def get_tickflow_key() -> str:
     return settings.tickflow_api_key or ""
 
 
+def get_tushare_token() -> str:
+    """Return the Tushare token from local secrets or the configured ``.env``."""
+    val = load().get("tushare_token")
+    if val:
+        return str(val).strip()
+    from app.config import settings
+
+    return settings.tushare_token or ""
+
+
 def get_ai_key() -> str:
     """取当前 AI Key:secrets.json 优先,否则 .env。"""
     val = load().get("ai_api_key")

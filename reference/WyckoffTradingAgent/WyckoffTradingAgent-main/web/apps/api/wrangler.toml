@@ -1,0 +1,61 @@
+name = "wyckoff-api"
+main = "src/index.ts"
+compatibility_date = "2024-12-18"
+compatibility_flags = ["nodejs_compat"]
+
+# Free Workers Logs: ~200k events/day, 3-day retention. No Supabase writes.
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+[observability.logs]
+invocation_logs = true
+
+[vars]
+ENVIRONMENT = "production"
+CHAT_DAILY_LIMIT_PER_USER = "80"
+CHAT_MIN_INTERVAL_MS = "2500"
+AGENT_SANDBOX_ENABLED = "true"
+AGENT_SANDBOX_TIMEOUT_MS = "60000"
+AGENT_RUN_TTL_SECONDS = "3600"
+AGENT_RUN_DAILY_LIMIT_PER_USER = "20"
+AGENT_RUN_DAILY_CPU_LIMIT_MS = "120000"
+AGENT_RUN_MIN_INTERVAL_MS = "10000"
+SANDBOX_BRIDGE_URL = "https://wyckoff-agent-sandbox.vercel.app/api/sandbox-run"
+
+[[durable_objects.bindings]]
+name = "AGENT_RUN_NOTIFIER"
+class_name = "AgentRunNotifier"
+
+# 手机遥控的信箱：手机与电脑各连一条 WS，由它按 connId 定向转发。
+[[durable_objects.bindings]]
+name = "REMOTE_RELAY"
+class_name = "RemoteRelay"
+
+# SQLite-backed classes are the only Durable Objects available on the free plan.
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["AgentRunNotifier"]
+
+# 新 class 要独立的 tag —— v1 已经部署过，改它会被 Cloudflare 拒绝。
+[[migrations]]
+tag = "v2"
+new_sqlite_classes = ["RemoteRelay"]
+
+[[queues.producers]]
+queue = "wyckoff-agent-runs"
+binding = "AGENT_RUN_QUEUE"
+
+[[queues.consumers]]
+queue = "wyckoff-agent-runs"
+max_batch_size = 1
+max_batch_timeout = 1
+max_concurrency = 1
+max_retries = 3
+dead_letter_queue = "wyckoff-agent-runs-dlq"
+
+[[queues.consumers]]
+queue = "wyckoff-agent-runs-dlq"
+max_batch_size = 1
+max_batch_timeout = 1
+max_retries = 3

@@ -36,7 +36,7 @@ def test_layer3_prefers_multi_symbol_strong_concept() -> None:
     survivors, top = layer3_sector_resonance(
         symbols,
         {},
-        FunnelConfig(sector_min_count=2, top_n_sectors=1),
+        FunnelConfig(sector_min_count=2, top_n_sectors=1, use_concept_map=True),
         base_symbols=symbols,
         df_map=histories,
         concept_map=concepts,
@@ -57,7 +57,22 @@ def test_layer3_falls_back_to_industry_when_concepts_absent() -> None:
     )
 
     assert top == ["半导体"]
-    assert survivors == symbols
+    assert survivors == ["000001", "000002"]
+
+
+def test_layer3_rejects_when_group_metadata_is_unavailable() -> None:
+    symbols = ["000001", "000002", "000003"]
+
+    survivors, top = layer3_sector_resonance(
+        symbols,
+        {},
+        FunnelConfig(),
+        base_symbols=symbols,
+        df_map={symbol: _history(1.2) for symbol in symbols},
+    )
+
+    assert survivors == []
+    assert top == []
 
 
 def test_wyckoff_concept_context_uses_same_day_limit_up_mainlines(monkeypatch) -> None:
@@ -81,3 +96,22 @@ def test_wyckoff_concept_context_uses_same_day_limit_up_mainlines(monkeypatch) -
 
     assert concept_map["000001.SZ"] == ["机器人", "算力"]
     assert hot_concepts == ["机器人", "算力"]
+
+
+def test_wyckoff_industry_context_uses_sw1_from_rps_membership(monkeypatch) -> None:
+    from app.services import rps_rotation
+    from app.services.screener import _load_wyckoff_industry_context
+
+    mapping = pl.DataFrame({
+        "_sym_up": ["000001.SZ", "000002.SZ"],
+        "industry": ["银行-股份制银行", "电子-半导体"],
+        "sw1_name": ["银行", "电子"],
+    })
+    monkeypatch.setattr(rps_rotation, "_load_concept_map_df", lambda *_args, **_kwargs: (mapping, 2))
+    monkeypatch.setattr(rps_rotation, "membership_source_for_kind", lambda _kind: "tushare_sw_index_member_all")
+    repo = SimpleNamespace(store=SimpleNamespace(data_dir=Path(".")))
+
+    sector_map, source = _load_wyckoff_industry_context(repo, pd.Timestamp("2026-09-08").date())
+
+    assert sector_map == {"000001.SZ": "银行", "000002.SZ": "电子"}
+    assert source == "tushare_sw_index_member_all"

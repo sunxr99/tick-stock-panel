@@ -1,0 +1,33 @@
+{
+  "name": "Python 3",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bookworm",
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "README.md",
+        "docs/STREAMLIT_MVP_ARCHITECTURE.md"
+      ]
+    },
+    "vscode": {
+      "settings": {},
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  },
+  "updateContentCommand": "[ -f packages.txt ] && sudo apt update && sudo apt upgrade -y && sudo xargs apt install -y <packages.txt; [ -f requirements.txt ] && pip3 install --user -r requirements.txt; echo '✅ Packages installed and Requirements met'",
+  "postAttachCommand": {
+    "status": "echo 'Streamlit is retired on main. Use wyckoff, wyckoff dashboard, or cd web/apps/web && pnpm dev.'"
+  },
+  "portsAttributes": {
+    "5173": {
+      "label": "CF Pages Web App",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "forwardPorts": [
+    5173
+  ]
+}

@@ -41,23 +41,65 @@ const SHOW_STRATEGY_STORE = false
 const WYCKOFF_FUNNEL_ID = 'wyckoff_funnel'
 const CZSC_DAILY_BUY_POINT_ID = 'czsc_daily_buy_point'
 const CZSC_EVENT_IDENTITY_VERSION = 2
-const WYCKOFF_CONFIRMED_ENTRIES = new Set([
-  'spring_standard',
-  'spring_conservative',
-  'lps_standard',
-])
-
-function hasConfirmedWyckoffEntry(row: Record<string, unknown>): boolean {
-  return Array.isArray(row.wyckoff_signals)
-    && row.wyckoff_signals.some(signal => WYCKOFF_CONFIRMED_ENTRIES.has(String(signal)))
-}
-
-function hasCzscDailyBuyPoint(row: Record<string, unknown>): boolean {
-  return Array.isArray(row.czsc_buy_types) && row.czsc_buy_types.length > 0
-}
 
 function hasCurrentCzscEventIdentity(row: Record<string, unknown>): boolean {
   return Number(row.czsc_event_identity_version) >= CZSC_EVENT_IDENTITY_VERSION
+}
+
+const RIGHT_SIDE_RISK_BUCKETS = [
+  { key: 'EXTREME', label: 'EXTREME', hint: '高动量 / 高扩张 / 高追涨风险', className: 'border-rose-500/30 bg-rose-500/10 text-rose-300' },
+  { key: 'HIGH', label: 'HIGH', hint: '强趋势 / 较高路径风险', className: 'border-orange-400/30 bg-orange-400/10 text-orange-300' },
+  { key: 'MEDIUM', label: 'MEDIUM', hint: '中等扩张', className: 'border-sky-400/30 bg-sky-400/10 text-sky-300' },
+  { key: 'LOW', label: 'LOW', hint: '位置相对温和', className: 'border-emerald-400/30 bg-emerald-400/10 text-emerald-300' },
+  { key: 'UNKNOWN', label: 'UNKNOWN', hint: 'VP 数据质量不足，暂不路由', className: 'border-slate-400/30 bg-slate-400/10 text-slate-300' },
+] as const
+
+function numericEvidence(value: unknown): number | null {
+  const number = Number(value)
+  return Number.isFinite(number) ? number : null
+}
+
+function RightSideCandidateSummary({ result }: { result: ScreenerResult }) {
+  const evidence = result.evidence ?? {}
+  const limit = numericEvidence(evidence.right_side_candidate_limit)
+  const sourceCount = numericEvidence(evidence.all_wyckoff_candidate_count)
+  const researchTriggerCount = numericEvidence(evidence.wyckoff_research_trigger_count)
+  const distribution = evidence.risk_distribution
+  const counts = distribution && typeof distribution === 'object'
+    ? distribution as Record<string, unknown>
+    : {}
+
+  return (
+    <div className="rounded-card border border-border bg-surface px-4 py-3 space-y-3">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+        <div>
+          <div className="flex items-center gap-2 text-sm font-medium text-foreground">
+            <span>Right-Side Candidates</span>
+            {limit != null && <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs text-accent">Top{limit}</span>}
+          </div>
+          <p className="mt-1 text-xs text-muted">
+            {sourceCount != null ? `L3 正式候选 ${sourceCount} 只` : ''}
+            {researchTriggerCount != null ? `；L4 研究触发 ${researchTriggerCount} 只（不构成交易信号）` : ''}
+            {(sourceCount != null || researchTriggerCount != null) ? ' → ' : ''}
+            当前正式候选集合仍使用 Legacy OpportunityScore；SW2+SW3 V2（Sector：SW2 70% + SW3 30%；RS：市场 40% + SW2 40% + SW3 20%）仅供展示与消融研究，VP 仅作风险路由。
+          </p>
+        </div>
+        <span className="text-xs text-muted">候选：{result.total}</span>
+      </div>
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
+        {RIGHT_SIDE_RISK_BUCKETS.map(bucket => (
+          <div key={bucket.key} className={`rounded-btn border px-2.5 py-2 ${bucket.className}`} title={bucket.hint}>
+            <div className="flex items-center justify-between gap-2 text-[11px] font-medium">
+              <span>{bucket.label}</span>
+              <span className="num">{numericEvidence(counts[bucket.key]) ?? 0}</span>
+            </div>
+            <p className="mt-0.5 text-[10px] opacity-75 leading-snug">{bucket.hint}</p>
+          </div>
+        ))}
+      </div>
+      <p className="text-[11px] text-muted">风险分组描述位置与潜在回撤路径，不构成买入、卖出或优劣判断；每组内仍按 OpportunityScore 降序。</p>
+    </div>
+  )
 }
 
 export function Screener() {
@@ -115,8 +157,6 @@ export function Screener() {
   // 截断提示可关闭 (仅本次会话, 不持久化)
   const [intradayCapDismissed, setIntradayCapDismissed] = useState(false)
   const [showAll, setShowAll] = useState(false)
-  const [wyckoffSignalsOnly, setWyckoffSignalsOnly] = useState(false)
-  const [wyckoffCzscBuyOnly, setWyckoffCzscBuyOnly] = useState(false)
   const [showFilter, setShowFilter] = useState(false)
   const [filter, setFilter] = useState<ScreenerFilterType>(defaultFilter)
   const filterMap = useRef<Map<string, ScreenerFilterType>>(new Map())
@@ -407,7 +447,8 @@ export function Screener() {
       .map(([, row]) => ({ ...row, _expired: true }))
   }, [singleCachedQuery.data, result, asOf])
 
-  // 表头排序（受控）：用户点击列则按该列；未点时下方按评分默认降序
+  // 表头排序（受控）：用户点击列则按该列；未点时普通策略按评分降序。
+  // Wyckoff 保留后端漏斗产生的候选顺序，Sector/RS 只展示研究上下文。
   const { sort, toggle, sortRows } = useTableSort()
 
   // 当前显示的行数据 (全部模式 或 单策略模式) + 失效行
@@ -415,16 +456,11 @@ export function Screener() {
     let rows = showAll
       ? applyFilter(allRows, filter)
       : filteredRows
-    if (!showAll && activeStrategy === WYCKOFF_FUNNEL_ID && wyckoffSignalsOnly) {
-      rows = rows.filter(hasConfirmedWyckoffEntry)
-    }
-    if (!showAll && activeStrategy === WYCKOFF_FUNNEL_ID && wyckoffCzscBuyOnly) {
-      rows = rows.filter(hasCzscDailyBuyPoint)
-    }
-    // 排序：用户点了表头则按该列，否则默认评分降序
     rows = sort
       ? sortRows(rows, columns)
-      : [...rows].sort((a, b) => (b.score ?? -Infinity) - (a.score ?? -Infinity))
+      : activeStrategy === WYCKOFF_FUNNEL_ID
+        ? [...rows]
+        : [...rows].sort((a, b) => (b.score ?? -Infinity) - (a.score ?? -Infinity))
     const limit = !showAll && activeStrategy
       ? strategyLimits[activeStrategy] ?? null
       : null
@@ -437,7 +473,7 @@ export function Screener() {
       }
     }
     return mainRows
-  }, [showAll, allRows, filteredRows, filter, activeStrategy, wyckoffSignalsOnly, wyckoffCzscBuyOnly, strategyLimits, expiredRows, sort, sortRows, columns])
+  }, [showAll, allRows, filteredRows, filter, activeStrategy, strategyLimits, expiredRows, sort, sortRows, columns])
 
   // 日k列是否启用 → 决定是否加载批量 kline 数据
   const candleColumn = useMemo(() =>
@@ -951,49 +987,6 @@ export function Screener() {
                       )}
                     </div>
                   )}
-                  {!showAll && activeStrategy === WYCKOFF_FUNNEL_ID && !!result?.rows.length && (
-                    <>
-                      <button
-                        type="button"
-                        onClick={() => setWyckoffSignalsOnly(value => !value)}
-                        title={wyckoffSignalsOnly
-                          ? '显示全部 Wyckoff 候选（含尚未触发的观察股）'
-                          : '仅显示已确认的 Spring Test、保守 Spring 或 LPS 买点；Spring 预警不计入'}
-                        className={`inline-flex items-center gap-1.5 h-7 px-2.5 rounded-btn border text-xs font-medium transition-colors cursor-pointer ${
-                          wyckoffSignalsOnly
-                            ? 'border-accent/50 bg-accent/10 text-accent'
-                            : 'border-border bg-surface text-secondary hover:text-accent hover:border-accent/50'
-                        }`}
-                      >
-                        <Sparkles className="h-3 w-3" />
-                        {wyckoffSignalsOnly ? '仅看确认买点' : '全部候选'}
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          const next = !wyckoffCzscBuyOnly
-                          setWyckoffCzscBuyOnly(next)
-                          // Existing disk cache rows predate this enrichment.
-                          // Refresh once on demand so the filter never treats
-                          // an old cached result as proof of "no B point".
-                          if (next && result?.rows.some(row => !hasCurrentCzscEventIdentity(row))) {
-                            run.mutate({ id: WYCKOFF_FUNNEL_ID, date: asOf, timeframe: '1d' })
-                          }
-                        }}
-                        title={wyckoffCzscBuyOnly
-                          ? '显示全部 Wyckoff 候选'
-                          : '仅显示最后一根已收盘日K首次确认 CZSC B1、B2 或 B3 的 Wyckoff 候选'}
-                        className={`inline-flex items-center gap-1.5 h-7 px-2.5 rounded-btn border text-xs font-medium transition-colors cursor-pointer ${
-                          wyckoffCzscBuyOnly
-                            ? 'border-accent/50 bg-accent/10 text-accent'
-                            : 'border-border bg-surface text-secondary hover:text-accent hover:border-accent/50'
-                        }`}
-                      >
-                        <Sparkles className="h-3 w-3" />
-                        {wyckoffCzscBuyOnly ? 'CZSC 新B点' : '筛 CZSC 新B点'}
-                      </button>
-                    </>
-                  )}
                   {displayRows.length > 0 && (
                     <WatchlistAddMenu
                       onSelect={handleBatchAdd}
@@ -1069,6 +1062,9 @@ export function Screener() {
                 />
               ) : (
                 <>
+                  {!showAll && activeStrategy === WYCKOFF_FUNNEL_ID && result?.evidence?.right_side_candidate_limit != null && (
+                    <RightSideCandidateSummary result={result} />
+                  )}
                   <ScreenerTable
                     rows={displayRows}
                     columns={columns}

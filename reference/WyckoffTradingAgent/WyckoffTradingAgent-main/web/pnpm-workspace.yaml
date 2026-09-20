@@ -1,0 +1,17 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+overrides:
+  '@babel/core': 7.29.6
+  esbuild: 0.25.12
+  nanoid: 3.3.18
+  undici: 7.29.0
+  ws: 8.21.0
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true
+minimumReleaseAgeExclude:
+  - '@ai-sdk/gateway@3.0.131'
+  - '@ai-sdk/react@3.0.207'
+  - ai@6.0.205

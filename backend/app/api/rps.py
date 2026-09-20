@@ -5,12 +5,18 @@
 """
 from __future__ import annotations
 
-from fastapi import APIRouter, Query, Request
+from dataclasses import asdict
+from datetime import date
+from typing import Annotated
+
+from fastapi import APIRouter, HTTPException, Query, Request
+from fastapi.encoders import jsonable_encoder
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
 from app.services import rps_rotation
 from app.services.concept_rotation_analyzer import analyze_rotation_stream
+from app.services.relative_strength import build_relative_strength
 
 router = APIRouter(prefix="/api/rps", tags=["rps"])
 
@@ -30,6 +36,56 @@ def get_rotation(
         concept_count: 去重维度成员总数
     """
     return rps_rotation.build_rps_rotation(request.app.state.repo, days, kind, level)
+
+
+@router.get("/sector-strength")
+def get_sector_strength(
+    request: Request,
+    as_of: Annotated[date | None, Query(description="Strict trading date; defaults to latest enriched date")] = None,
+    kind: str = Query("concept", pattern="concept|industry", description="维度: concept 概念 / industry 行业"),
+    level: int | None = Query(None, ge=1, le=3, description="行业层级(仅 kind=industry): 1/2/3 级"),
+) -> dict:
+    """只读返回指定交易日的冻结 Sector Strength V1.1 全量结果。
+
+    返回行中的 ``sector_id`` 可原样作为 ``/relative-strength`` 的重复
+    ``sector_id`` 查询参数。此接口不做 Top-N 截断或候选池过滤。
+    """
+    rows = rps_rotation.build_sector_strength(
+        request.app.state.repo, kind=kind, level=level, as_of=as_of
+    )
+    return {
+        "rows": jsonable_encoder([asdict(row) for row in rows]),
+        "total": len(rows),
+        "requested_as_of": as_of.isoformat() if as_of else None,
+    }
+
+
+@router.get("/relative-strength")
+def get_relative_strength(
+    request: Request,
+    sector_id: Annotated[list[str], Query(
+        min_length=1,
+        description="Repeat stable Sector Strength sector_id values; industry and concept can be mixed",
+    )],
+    as_of: Annotated[date | None, Query(description="Strict trading date; defaults to latest enriched date")] = None,
+) -> dict:
+    """只读返回指定 Sector Strength 板块范围内的个股 RS V1 结果。
+
+    概念多归属会保留为多个 ``(symbol, sector_id)`` 结果; 没有 Top-N、
+    分数阈值或任何交易信号副作用。
+    """
+    try:
+        rows = build_relative_strength(
+            request.app.state.repo, sector_ids=sector_id, as_of=as_of
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+    return {
+        "rows": jsonable_encoder([asdict(row) for row in rows]),
+        "total": len(rows),
+        "requested_as_of": as_of.isoformat() if as_of else None,
+        "sector_ids": sorted(set(sector_id)),
+    }
 
 
 class AnalyzeRequest(BaseModel):

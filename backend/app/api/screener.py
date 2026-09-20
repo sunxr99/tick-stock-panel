@@ -577,6 +577,16 @@ def run_all(request: Request, body: Optional[dict] = None):
 
     results: dict[str, dict] = {}
     for sid, result in engine_results.items():
+        if sid == "wyckoff_funnel":
+            from app.services.wyckoff_research_snapshot import capture_wyckoff_research_snapshot
+
+            try:
+                result.evidence["research_snapshot"] = capture_wyckoff_research_snapshot(
+                    repo, as_of=as_of, rows=result.rows
+                )
+            except Exception:
+                logger.exception("Wyckoff research snapshot capture failed")
+                result.evidence["research_snapshot"] = {"status": "capture_failed"}
         safe_rows = _safe(asdict(result)).get("rows", [])
         results[sid] = {
             "total": result.total,

@@ -1,0 +1,214 @@
+name: Wyckoff Funnel
+
+on:
+  schedule:
+    # 北京时间周日到周四 17:17（UTC 9:17），为下一交易日做盘后准备。
+    - cron: '17 9 * * 0-4'
+  workflow_dispatch:
+    inputs:
+      end_calendar_day:
+        description: "可选：回放目标自然日，例如 2026-05-26"
+        required: false
+        type: string
+
+concurrency:
+  group: step4-oms-a-share-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONUNBUFFERED: "1"
+      WYCKOFF_WRITE_CONTEXT: "server_job"
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+      FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+      TICKFLOW_API_KEY: ${{ secrets.TICKFLOW_API_KEY }}
+      # TickFlow 日K批量上限为 120/min、200标的/次；主漏斗优先走批量接口。
+      TICKFLOW_KLINE_RATE_LIMIT_PER_MIN: "110"
+      FUNNEL_EXECUTOR_MODE: "thread"
+      FUNNEL_MAX_WORKERS: "4"
+      FUNNEL_BATCH_SIZE: "200"
+      FUNNEL_BATCH_SLEEP: "0.55"
+      END_CALENDAR_DAY: ${{ github.event.inputs.end_calendar_day || '' }}
+      DEFAULT_LLM_PROVIDER: ${{ secrets.DEFAULT_LLM_PROVIDER }}
+      STEP3_LLM_PROVIDER: ${{ vars.STEP3_LLM_PROVIDER || secrets.STEP3_LLM_PROVIDER || 'efficiency' }}
+      STEP3_LLM_FALLBACK_PROVIDERS: ${{ vars.STEP3_LLM_FALLBACK_PROVIDERS || secrets.STEP3_LLM_FALLBACK_PROVIDERS || 'gemini' }}
+      STEP3_SEND_COMPLIANCE_BRIEF: "1"
+      STEP4_LLM_PROVIDER: ${{ vars.STEP4_LLM_PROVIDER || secrets.STEP4_LLM_PROVIDER || 'efficiency' }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_MODEL: ${{ secrets.GEMINI_MODEL }}
+      1ROUTE_API_KEY: ${{ secrets.ONEROUTE_API_KEY }}
+      1ROUTE_MODEL: ${{ secrets.ONEROUTE_MODEL }}
+      1ROUTE_BASE_URL: ${{ secrets.ONEROUTE_BASE_URL }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+      OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      DEEPSEEK_MODEL: ${{ secrets.DEEPSEEK_MODEL }}
+      DEEPSEEK_BASE_URL: ${{ secrets.DEEPSEEK_BASE_URL }}
+      QWEN_API_KEY: ${{ secrets.QWEN_API_KEY }}
+      QWEN_MODEL: ${{ secrets.QWEN_MODEL }}
+      QWEN_BASE_URL: ${{ secrets.QWEN_BASE_URL }}
+      ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
+      ZHIPU_MODEL: ${{ secrets.ZHIPU_MODEL }}
+      ZHIPU_BASE_URL: ${{ secrets.ZHIPU_BASE_URL }}
+      MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
+      MINIMAX_MODEL: ${{ secrets.MINIMAX_MODEL }}
+      MINIMAX_BASE_URL: ${{ secrets.MINIMAX_BASE_URL }}
+      VOLCENGINE_API_KEY: ${{ secrets.VOLCENGINE_API_KEY }}
+      VOLCENGINE_MODEL: ${{ secrets.VOLCENGINE_MODEL }}
+      VOLCENGINE_BASE_URL: ${{ secrets.VOLCENGINE_BASE_URL }}
+      EFFICIENCY_API_KEY: ${{ secrets.EFFICIENCY_API_KEY }}
+      EFFICIENCY_MODEL: ${{ secrets.EFFICIENCY_MODEL }}
+      EFFICIENCY_BASE_URL: ${{ secrets.EFFICIENCY_BASE_URL }}
+      TUSHARE_TOKEN: ${{ secrets.TUSHARE_TOKEN }}
+      MY_PORTFOLIO_STATE: ${{ secrets.MY_PORTFOLIO_STATE }}
+      TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+      TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      SUPABASE_USER_ID: ${{ secrets.SUPABASE_USER_ID }}
+      # 影子账本（paper ledger）：shadow_* 五张表与 seed 账户已建好，开启记账。
+      # 只写 USER_SHADOW:*（写入侧有前缀硬断言），挂在 Step4 之后且异常被吞，不影响实盘。
+      # 需要停掉时把 vars.SHADOW_LEDGER_ENABLED 设为 0，不必改 workflow。
+      SHADOW_LEDGER_ENABLED: ${{ vars.SHADOW_LEDGER_ENABLED || '1' }}
+      RAG_SEMANTIC_VETO_ENABLED: ${{ vars.RAG_SEMANTIC_VETO_ENABLED || '1' }}
+      RAG_SEMANTIC_PROVIDER: ${{ vars.RAG_SEMANTIC_PROVIDER || secrets.RAG_SEMANTIC_PROVIDER || 'efficiency' }}
+      # 实盘风控：ATR/结构止损优先，-12% 仅灾难地板；非主线 5 日时间管理见 holding_time_policy
+      STEP4_BUY_HARD_STOP_ENABLED: "1"
+      # 止损 12% -> 5%。生产回测（66 交易日/123 笔/含真实成本）四档单调：
+      #   无止损  总收益 -16.49%  夏普 -1.965  回撤 -24.69%  VaR95 -22.14%
+      #   -12%    总收益  -5.71%  夏普 -0.794  回撤 -14.51%  VaR95 -12.18%（原实盘值）
+      #   -8%     总收益  +0.04%  夏普 -0.068  回撤 -10.22%  VaR95  -9.70%
+      #   -5%     总收益  +7.31%  夏普 +0.871  回撤  -7.25%  VaR95  -9.69%
+      # 代价是胜率由 46.34% 降到 37.40%——机制是用更多小亏换掉少数巨亏，
+      # 收益来自「没有大亏」而非「多赚」，故执行纪律不能中途干预。
+      STEP4_BUY_HARD_STOP_PCT: "5.0"
+      STEP4_BUY_STOP_MODE: "floor"
+      STEP4_PROBE_BUDGET_LIMIT: "0.10"
+      STEP4_REPAIR_PROBE_BUDGET_LIMIT: "0.05"
+      STEP4_ATTACK_BUDGET_LIMIT: "0.20"
+      STEP4_BUY_BLOCK_REGIMES: "UNKNOWN,NEUTRAL,PANIC_REPAIR,RISK_OFF,CRASH,BLACK_SWAN"
+      # 联动实测放开：BEAR_REBOUND 超额 +4.08pct(4/4 为正)、RISK_ON +6.07pct(3/3)。
+      # RISK_ON 已从豁免名单移除（移除后自动回落到代码默认禁买集）。
+      # 此前依「联动实测 +6.07pct（3/3 为正）」放开，但那只有 3 个样本日。
+      # 两次独立的跨周期回测均显示该档为负，且样本在扩大后更差：
+      #   2026-08-21 六个月网格：4 笔  胜率 25.0%  均收 -2.96%
+      #   2026-08-22 六周期网格：6 笔  胜率 16.7%  均收 -5.03%（中位 -6.81%）
+      # 回测生成的交易手册亦明确写「RISK_ON 禁止新仓｜生产市场闸门固定禁止，
+      # 不以近期样本收益解禁」。样本仍偏小（6 笔），但两次同向为负、方向与放开依据相反，
+      # 且禁买是保守侧，故先恢复禁买。
+      STEP4_BUY_ALLOW_REGIMES: "BEAR_REBOUND"
+      # 留空：叠加验证显示该改动与 5% 止损重复用药。同区间 66 交易日：
+      #   仅止损 -5%          总收益 +7.31%  夏普 +0.871  Accum +1.776
+      #   禁 evr/sos + 止损5%  总收益 -0.14%  夏普 -0.122  Accum +0.610
+      # 两者单独都改善（禁 evr/sos 单独 -15.82%->-6.31%），但叠加后差 7.45pct。
+      # 原因：两个改动解决的是同一个问题（Trend 类亏损）。止损已把 Trend 从
+      # -3.109 控到 -1.196，此时再砍 Trend 只是把席位让给排名更靠后的次级 Accum
+      # 候选，Accum 均值因此从 +1.776 掉到 +0.610。开关保留，需要时可再开。
+      STEP4_BLOCK_BUY_SIGNAL_TYPES: ""
+      STEP4_REQUIRE_CONFIRMED_BUY_CANDIDATE: "1"
+      # AI 候选选择：按可交易 L4 收口，避免裸 SOS/EVR 噪声直接进入执行链路。
+      FUNNEL_AI_SELECTION_MODE: ${{ vars.FUNNEL_AI_SELECTION_MODE || 'tradeable_l4' }}
+      FUNNEL_AI_TOTAL_CAP: "8"
+      FUNNEL_AI_MAX_PER_SECTOR: "2"
+      # 生产按质量池统一裁剪；动态配额仅保留 shadow 对照。
+      FUNNEL_DYNAMIC_POLICY: ${{ vars.FUNNEL_DYNAMIC_POLICY || secrets.FUNNEL_DYNAMIC_POLICY || 'shadow' }}
+      FUNNEL_DYNAMIC_POLICY_HORIZON: "5"
+      STRATEGY_ATTRIBUTION_MAX_AGE_DAYS: "7"
+      FUNNEL_DEFENSIVE_FORCE_QUOTA: "1"
+      # A 股赚钱书：RISK_ON 禁新仓；NEUTRAL 主线/趋势主导
+      FUNNEL_AI_RISK_ON_TREND: "5"
+      FUNNEL_AI_RISK_ON_ACCUM: "1"
+      FUNNEL_LOSS_GUARD_RISK_ON_PRE5_RET: "35.0"
+      FUNNEL_MAX_STRUCTURE_STOP_PCT: "12.0"
+      FUNNEL_AI_RISK_OFF_TREND: "0"
+      FUNNEL_AI_RISK_OFF_ACCUM: "0"
+      # NEUTRAL 已于 #280 并入禁买（超额 -4.35pct、CI [-6.80,-2.07] 不跨 0），
+      # 配额保留用于 shadow 对照，不占正式推荐。
+      FUNNEL_AI_NEUTRAL_TREND: "5"
+      FUNNEL_AI_NEUTRAL_ACCUM: "1"
+      # BEAR_REBOUND 的 AI 配额由 0 -> 5/1，与其买入闸门放开对齐。
+      # 此前不一致：#280 把 BEAR_REBOUND 移出禁买名单（联动实测超额 +4.08pct、4/4 为正），
+      # 但该档 AI 配额仍是 0，候选进了池子也拿不到复核席位——2026-08-17 那天池内 4 只
+      # 候选（大北农/南方精工/宿迁联盛/新相微）次日全涨 9.7%~10.1%，而 AI 正式推荐 0 只。
+      FUNNEL_AI_BEAR_REBOUND_TREND: "5"
+      FUNNEL_AI_BEAR_REBOUND_ACCUM: "1"
+      # PANIC_REPAIR 单独成族并保持 0：超额 -4.09pct，与 BEAR_REBOUND 方向相反。
+      FUNNEL_AI_PANIC_REPAIR_TREND: "0"
+      FUNNEL_AI_PANIC_REPAIR_ACCUM: "0"
+      FUNNEL_L2_BYPASS_AI_ENABLED: "0"
+      FUNNEL_STRATEGIC_L2_BYPASS_AI_CAP: "2"
+      FUNNEL_THEME_RADAR_PROMOTE_CAP: "2"
+      FUNNEL_ENFORCE_TARGET_TRADE_DATE: "1"
+      FUNNEL_DATA_FRESHNESS_HARD_FAIL: "1"
+      DAILY_JOB_ARTIFACTS_DIR: ${{ github.workspace }}/artifacts
+      TZ: Asia/Shanghai
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Prepare artifact dirs
+        run: mkdir -p logs artifacts
+
+      - name: Run daily job
+        run: |
+          set -o pipefail
+          python -u scripts/daily_job.py --logs ${{ github.workspace }}/logs/daily_job.log \
+            2>&1 | tee -a ${{ github.workspace }}/logs/daily_job.console.log
+
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: daily-job-artifacts-${{ github.run_number }}
+          path: |
+            logs/*.log
+            artifacts/**
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Notify on failure
+        if: failure()
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          WORKFLOW: ${{ github.workflow }}
+          REF: ${{ github.ref_name }}
+        run: |
+          python -c "
+          import os, urllib.request, json
+          url = os.environ.get('FEISHU_WEBHOOK_URL', '')
+          if not url:
+            print('FEISHU_WEBHOOK_URL 未配置，跳过失败通知')
+            exit(0)
+          content = '**Run**: ' + os.environ.get('RUN_URL', '') + '\n**Workflow**: ' + os.environ.get('WORKFLOW', '') + '\n**Branch**: ' + os.environ.get('REF', '')
+          payload = {
+            'msg_type': 'interactive',
+            'card': {
+              'header': {'title': {'tag': 'plain_text', 'content': '❌ 定时任务失败'}},
+              'elements': [{'tag': 'div', 'text': {'tag': 'lark_md', 'content': content}}]
+            }
+          }
+          req = urllib.request.Request(url, data=json.dumps(payload).encode(), headers={'Content-Type': 'application/json'})
+          try:
+            urllib.request.urlopen(req, timeout=10)
+          except Exception as e:
+            print('warning: 失败通知发送异常:', e)
+          "

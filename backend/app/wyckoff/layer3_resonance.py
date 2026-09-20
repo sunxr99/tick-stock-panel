@@ -61,12 +61,15 @@ def evaluate_layer3_sector_resonance(
     base_symbols = base_symbols or symbols
     use_concept = bool(cfg.use_concept_map and concept_map)
     counts, groups = _groups(symbols, sector_map, concept_map, use_concept)
+    # L3 is the convergence gate, not an availability fallback.  Passing the
+    # complete L2 pool when membership metadata is absent changes a data
+    # outage into hundreds of apparently valid candidates.
     if not counts:
         return Layer3Result(
-            survivors=list(symbols),
+            survivors=[],
             top_sectors=[],
-            paths={symbol: "fallback_missing_group_metadata" for symbol in symbols},
-            used_missing_group_fallback=True,
+            paths={symbol: "rejected_missing_group_metadata" for symbol in symbols},
+            used_missing_group_fallback=False,
             used_minimum_survivor_fallback=False,
         )
     base_counts, _ = _groups(base_symbols, sector_map, concept_map, use_concept)
@@ -100,13 +103,11 @@ def evaluate_layer3_sector_resonance(
             paths[symbol] = "strict_leader_strength"
         else:
             paths[symbol] = "rejected"
-    minimum_survivor_fallback = len(survivors) < 3
-    if minimum_survivor_fallback:
-        for symbol in symbols:
-            if paths[symbol] == "rejected":
-                paths[symbol] = "fallback_minimum_survivors"
+    # A thin market group is evidence that the strict resonance predicate did
+    # not find candidates.  It is never a reason to return every L2 symbol.
+    minimum_survivor_fallback = False
     return Layer3Result(
-        survivors=survivors if not minimum_survivor_fallback else list(symbols),
+        survivors=survivors,
         top_sectors=top,
         paths=paths,
         used_missing_group_fallback=False,

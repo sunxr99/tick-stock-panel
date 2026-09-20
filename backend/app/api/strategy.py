@@ -426,6 +426,15 @@ def run_strategy(req: RunRequest, request: Request):
         raise HTTPException(status_code=404, detail=str(e)) from e
 
     if req.strategy_id == "wyckoff_funnel":
+        from app.services.wyckoff_research_snapshot import capture_wyckoff_research_snapshot
+
+        try:
+            result.evidence["research_snapshot"] = capture_wyckoff_research_snapshot(
+                request.app.state.repo, as_of=as_of, rows=result.rows
+            )
+        except Exception:
+            logger.exception("Wyckoff research snapshot capture failed")
+            result.evidence["research_snapshot"] = {"status": "capture_failed"}
         strategy_cache.write_cache(data_dir, str(as_of), {req.strategy_id: _safe(asdict(result))})
 
     return _safe(asdict(result))
@@ -473,6 +482,16 @@ def run_all(req: RunAllRequest, request: Request):
         overrides_map={sid: all_overrides.get(sid, {}) for sid in strategy_ids},
         strategy_ids=strategy_ids,
     ).items():
+        if sid == "wyckoff_funnel":
+            from app.services.wyckoff_research_snapshot import capture_wyckoff_research_snapshot
+
+            try:
+                result.evidence["research_snapshot"] = capture_wyckoff_research_snapshot(
+                    request.app.state.repo, as_of=as_of, rows=result.rows
+                )
+            except Exception:
+                logger.exception("Wyckoff research snapshot capture failed")
+                result.evidence["research_snapshot"] = {"status": "capture_failed"}
         results[sid] = {"total": result.total, "as_of": str(as_of)}
 
     return {"as_of": str(as_of), "results": results}
@@ -487,10 +506,12 @@ def save_config(req: SaveConfigRequest, request: Request):
     _get_public_strategy(engine, req.strategy_id)
 
     _validate_scoring_config(req.overrides)
+    _validate_basic_filter_config(req.overrides)
     # 剥离与策略默认值相同的字段，只保存用户真正修改过的值
     overrides = _strip_defaults(req.strategy_id, req.overrides, engine)
 
     strategy_config.save_override(_data_dir(request), req.strategy_id, overrides)
+    _invalidate_strategy_runtime(request)
     return {"ok": True}
 
 
@@ -502,11 +523,13 @@ def patch_config(req: SaveConfigRequest, request: Request):
     overrides = strategy_config.load_override(data_dir, req.strategy_id)
     overrides.update(req.overrides)
     _validate_scoring_config(overrides)
+    _validate_basic_filter_config(overrides)
     strategy_config.save_override(
         data_dir,
         req.strategy_id,
         _strip_defaults(req.strategy_id, overrides, engine),
     )
+    _invalidate_strategy_runtime(request)
     return {"ok": True}
 
 
@@ -529,6 +552,37 @@ def _validate_scoring_config(overrides: dict) -> None:
             raise HTTPException(status_code=400, detail=f"评分因子 {invalid[0]} 的方向无效")
     if "scoring_replace" in overrides and not isinstance(overrides["scoring_replace"], bool):
         raise HTTPException(status_code=400, detail="scoring_replace 必须是布尔值")
+
+
+_BASIC_FILTER_BOUNDS = (
+    ("price_min", "price_max", "价格"),
+    ("market_cap_min", "market_cap_max", "总市值"),
+    ("float_cap_min", "float_cap_max", "流通市值"),
+    ("amount_min", "amount_max", "成交额"),
+    ("turnover_min", "turnover_max", "换手率"),
+)
+
+
+def _validate_basic_filter_config(overrides: dict) -> None:
+    """Reject contradictory basic-filter intervals before they can empty a pool."""
+    basic_filter = overrides.get("basic_filter")
+    if basic_filter is None:
+        return
+    if not isinstance(basic_filter, dict):
+        raise HTTPException(status_code=400, detail="基础过滤必须是对象")
+
+    for min_key, max_key, label in _BASIC_FILTER_BOUNDS:
+        minimum = basic_filter.get(min_key)
+        maximum = basic_filter.get(max_key)
+        for value, field_label in ((minimum, "下限"), (maximum, "上限")):
+            if value is not None and (
+                isinstance(value, bool)
+                or not isinstance(value, (int, float))
+                or not math.isfinite(value)
+            ):
+                raise HTTPException(status_code=400, detail=f"{label}{field_label}必须是有限数字")
+        if minimum is not None and maximum is not None and minimum > maximum:
+            raise HTTPException(status_code=400, detail=f"{label}下限不能高于上限")
 
 
 def _strip_defaults(strategy_id: str, overrides: dict, engine) -> dict:

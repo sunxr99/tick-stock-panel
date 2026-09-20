@@ -54,6 +54,33 @@ def _load_wyckoff_concept_context(repo: KlineRepository, as_of: date, top_n: int
     return concept_map, [str(value) for value in hot]
 
 
+def _load_wyckoff_industry_context(repo: KlineRepository, as_of: date) -> tuple[dict[str, str], str]:
+    """Build formal L3's SW1 map from the same point-in-time source as RPS.
+
+    L3 counts a single, stable industry group per stock.  Selecting SW1 here
+    aligns its grouping granularity with the Sector Strength rank and avoids
+    the stale/current Tushare metadata map used by the old funnel path.
+    """
+    from app.services.rps_rotation import _load_concept_map_df, membership_source_for_kind
+
+    map_df, _ = _load_concept_map_df(repo, "industry", as_of=as_of)
+    source = membership_source_for_kind("industry")
+    if map_df.is_empty():
+        return {}, source
+    group_column = "sw1_name" if "sw1_name" in map_df.columns else "industry"
+    selected_columns = ["_sym_up", "industry"]
+    if group_column not in selected_columns:
+        selected_columns.append(group_column)
+    mapping: dict[str, str] = {}
+    for row in map_df.select(selected_columns).unique().sort(["_sym_up", group_column]).iter_rows(named=True):
+        group = str(row.get(group_column) or "").strip()
+        if not group:
+            group = str(row.get("industry") or "").split("-", 1)[0].strip()
+        if group:
+            mapping.setdefault(str(row["_sym_up"]), group)
+    return mapping, source
+
+
 @dataclass
 class ScreenerResult:
     as_of: date
@@ -440,6 +467,7 @@ class ScreenerService:
                 daily_history=daily_history,
                 market=None,
                 cache_key=cache_key,
+                repo=self.repo,
             )
         history_bars = engine.required_history_bars(
             strategy_ids,
@@ -452,7 +480,6 @@ class ScreenerService:
         # 威科夫漏斗需要真实指数基准，不能用个股池的均值替代。
         if any(engine.get(strategy_id).execution_backend == "wyckoff_funnel" for strategy_id in strategy_ids):
             from datetime import timedelta
-            from app.services.tushare_metadata import load_tushare_sector_map
 
             benchmark = self.repo.get_index_daily(
                 "000001.SH",
@@ -462,28 +489,30 @@ class ScreenerService:
             )
             market = dict(market or {})
             market["wyckoff_benchmark"] = benchmark
-            sector_metadata = load_tushare_sector_map(self.repo.store.data_dir)
-            market["wyckoff_sector_map"] = sector_metadata.mapping
-            market["wyckoff_sector_map_source"] = sector_metadata.source
-            market["wyckoff_sector_map_cached_at"] = sector_metadata.cached_at
+            industry_map, industry_source = _load_wyckoff_industry_context(self.repo, as_of)
+            market["wyckoff_sector_map"] = industry_map
+            market["wyckoff_sector_map_source"] = industry_source
+            market["wyckoff_sector_map_level"] = "SW1"
             wyckoff_config = next(
                 engine.get(strategy_id).wyckoff_config
                 for strategy_id in strategy_ids
                 if engine.get(strategy_id).execution_backend == "wyckoff_funnel"
             )
-            concept_map, hot_concepts = _load_wyckoff_concept_context(
-                self.repo,
-                as_of,
-                int(wyckoff_config.top_n_sectors),
-            )
+            concept_map, hot_concepts = ({}, [])
+            if wyckoff_config.use_concept_map:
+                concept_map, hot_concepts = _load_wyckoff_concept_context(
+                    self.repo,
+                    as_of,
+                    int(wyckoff_config.top_n_sectors),
+                )
             market["wyckoff_concept_map"] = concept_map
             market["wyckoff_hot_concepts"] = hot_concepts
             market["wyckoff_concept_map_source"] = "ext_data_snapshot"
             market["wyckoff_hot_concepts_source"] = "market_mainline_concept_rank"
             logger.info(
                 "Wyckoff metadata: industry=%s/%d concepts=%d hot_concepts=%d",
-                sector_metadata.source,
-                len(sector_metadata.mapping),
+                industry_source,
+                len(industry_map),
                 len(concept_map),
                 len(hot_concepts),
             )
@@ -495,6 +524,7 @@ class ScreenerService:
             history=history,
             market=market,
             cache_key=cache_key,
+            repo=self.repo,
         )
 
     def _load_minute_history(self, as_of: date, current: pl.DataFrame | None) -> pl.DataFrame:

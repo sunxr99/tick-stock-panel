@@ -34,6 +34,9 @@ class FunnelResult:
     triggers: dict[str, list[tuple[str, float]]]
     stage_map: dict[str, str]
     trading_ranges: dict[str, dict]
+    # Legacy L4 structure hits are a separately labelled research pool.  They
+    # never expand or contract the formal L3 candidate universe.
+    research_trigger_symbols: list[str] = field(default_factory=list)
     diagnostics: dict = field(default_factory=dict)
     final_traces: dict[str, dict] = field(default_factory=dict)
 
@@ -49,6 +52,7 @@ class FunnelResult:
             "triggers": {key: [{"symbol": symbol, "score": score} for symbol, score in hits] for key, hits in self.triggers.items()},
             "stage_map": self.stage_map,
             "trading_ranges": self.trading_ranges,
+            "research_trigger_symbols": self.research_trigger_symbols,
             "diagnostics": self.diagnostics,
         }
 
@@ -117,13 +121,14 @@ def run_funnel(
         traces[symbol]["l3"] = l3_result.paths[symbol]
     structure = detect_structure_triggers(l3, df_map, config)
     l4_hits = {symbol for hits in structure.triggers.values() for symbol, _ in hits}
+    research_trigger_symbols = [symbol for symbol in l3 if symbol in l4_hits]
     final_traces: dict[str, dict] = {}
     for symbol in l3:
         l3_path = l3_result.paths.get(symbol, "unknown")
         final_traces[symbol] = {
             "symbol": symbol,
             "name": names.get(symbol, ""),
-            "source": "L3 fallback" if l3_path.startswith("fallback") else "L3 strict",
+            "source": "L3 strict",
             "layers": ["L1", "L2 strict", "L3"],
             "l1": traces[symbol].get("l1", "unknown"),
             "l2": traces[symbol].get("l2", "unknown"),
@@ -133,12 +138,12 @@ def run_funnel(
             "l4_failure": None if symbol in l4_hits else (
                 "no_l4_trigger" if symbol in structure.trading_ranges else "no_trading_range"
             ),
-            "candidate_lane": False,
+            "research_trigger": symbol in l4_hits,
             "mainline": False,
             "fallback": l3_path.startswith("fallback"),
             "bypass": False,
             "merge": False,
-            "returned_because": "current implementation returns all L3 survivors; L4 is observation only",
+            "returned_because": "formal L3 pass; any legacy L4 hit is a separate research trigger",
         }
     source_counts = {
         source: sum(trace["source"] == source for trace in final_traces.values())
@@ -160,15 +165,18 @@ def run_funnel(
             "fallback_pass": source_counts["L3 fallback"],
         },
         "l4": {**_stage_count(len(l3), len(l4_hits)), "strict_pass": len(l4_hits), "bypass": 0},
-        "candidate_lane": {"count": 0, "implemented": False},
+        "research_trigger_pool": {
+            "count": len(research_trigger_symbols),
+            "affects_formal_selection": False,
+        },
         "mainline": {"count": 0, "implemented": False},
         "fallback_pool": {"count": 0, "implemented": False},
         "merge": {"before": len(l3), "after": len(l3), "deduplicated": len(l3), "executed": False},
         "final": {"before_response": final_count, "api_rows": final_count, "strategy_total": final_count},
     }
     diagnostics = {
-        "semantics": "L3 survivors plus L4 observation evidence; not an L4-strict selected list",
-        "pipeline": ["Universe", "L1", "L2", "L3", "L4 observation", "Final=L3"],
+        "semantics": "formal L3 industry resonance; legacy L4 hits are research triggers only",
+        "pipeline": ["Universe", "L1", "L2", "L3 formal", "L4 research triggers", "Final=L3"],
         "stage_counts": stage_counts,
         "source_counts": source_counts,
         "l3_fallback": {
@@ -191,6 +199,7 @@ def run_funnel(
         triggers=structure.triggers,
         stage_map=structure.stage_map,
         trading_ranges={symbol: asdict(value) for symbol, value in structure.trading_ranges.items()},
+        research_trigger_symbols=research_trigger_symbols,
         diagnostics=diagnostics,
         final_traces=final_traces,
     )

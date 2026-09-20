@@ -335,6 +335,7 @@ export interface ScreenerResult {
   rows: any[]
   total: number
   elapsed_ms: number
+  evidence?: Record<string, unknown>
 }
 
 export interface ScreenerResultSummary {
