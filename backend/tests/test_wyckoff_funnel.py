@@ -14,7 +14,7 @@ from app.services.volume_profile import (
 )
 from app.strategy.engine import StrategyDataContext, StrategyEngine
 from app.wyckoff.config import FunnelConfig
-from app.wyckoff.funnel import FunnelResult, run_funnel
+from app.wyckoff.funnel import FunnelResult, _liquid_enough, run_funnel
 
 
 def _history(multiplier: float) -> pd.DataFrame:
@@ -142,6 +142,12 @@ def test_funnel_l1_excludes_st_before_any_later_layer() -> None:
     assert "000002" not in result.layer2_symbols
 
 
+def test_funnel_l1_rejects_missing_liquidity_data() -> None:
+    frame = _history(1.2).drop(columns=["amount", "volume"])
+
+    assert _liquid_enough(frame, FunnelConfig()) is False
+
+
 def test_engine_keeps_wyckoff_snapshot_once_at_result_level(monkeypatch) -> None:
     snapshot = FunnelResult(
         layer1_symbols=["000001.SZ", "000002.SZ"],
@@ -266,7 +272,10 @@ def test_engine_keeps_wyckoff_snapshot_once_at_result_level(monkeypatch) -> None
     assert result.rows[1]["czsc_confirmation_time"] is None
     assert result.rows[0]["czsc_event_identity_version"] == 2
     assert result.rows[1]["czsc_event_identity_version"] == 2
-    assert result.rows[0]["opportunity_rank"] == 1
+    assert result.rows[0]["research_candidate_rank"] == 1
+    assert result.rows[0]["research_candidate_score"] == 76.0
+    assert result.rows[0]["research_candidate_score_status"] == "UNVERIFIED_RESEARCH"
+    assert result.rows[0]["score"] is None
     assert result.rows[0]["vp_risk_bucket"] == "EXTREME"
     assert result.rows[0]["timing_status"] is None
     assert result.evidence["all_wyckoff_candidate_count"] == 2
@@ -285,11 +294,14 @@ def test_engine_keeps_wyckoff_snapshot_once_at_result_level(monkeypatch) -> None
     assert result.rows[0]["research_context_rank"] == 1
     assert result.rows[1]["research_context_rank"] == 2
     assert result.rows[0]["research_context_level"] == "NEUTRAL_STATE"
-    assert result.rows[0]["candidate_order"] == 1
-    assert result.rows[1]["candidate_order"] == 2
+    assert result.rows[0]["research_candidate_rank"] == 1
+    assert result.rows[1]["research_candidate_rank"] == 2
     assert "final_rank_score" not in result.rows[0]
     assert ranking_calls[0][0] == history["date"][0]
     assert result.scores == {}
+    assert result.evidence["formal_candidate_selection"] == "l3_plus_basic_filter_only"
+    assert result.evidence["research_candidate_order_status"] == "UNVERIFIED_RESEARCH"
+    assert result.evidence["vp_research_coverage_count"] == 2
     assert result.evidence["wyckoff_snapshot"]["v2"]["affects_formal_selection"] is False
 
 

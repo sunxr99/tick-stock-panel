@@ -1,0 +1,173 @@
+{
+  "projectRoot": "D:\\stock\\myStockPanel\\tick-stock-panel",
+  "batchFiles": [
+    {
+      "path": "backend/app/strategy/builtin/wyckoff_funnel.py",
+      "language": "python",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/wyckoff/_price_math.py",
+      "language": "python",
+      "sizeLines": 111,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/wyckoff/adapter.py",
+      "language": "python",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/wyckoff/cn_boards.py",
+      "language": "python",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/wyckoff/config.py",
+      "language": "python",
+      "sizeLines": 146,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/wyckoff/funnel.py",
+      "language": "python",
+      "sizeLines": 300,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/wyckoff/layer2_strength.py",
+      "language": "python",
+      "sizeLines": 289,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/wyckoff/layer3_resonance.py",
+      "language": "python",
+      "sizeLines": 179,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/wyckoff/limit_move.py",
+      "language": "python",
+      "sizeLines": 120,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/wyckoff/trend_drawdown_risk.py",
+      "language": "python",
+      "sizeLines": 71,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/app/wyckoff/wyckoff_structure.py",
+      "language": "python",
+      "sizeLines": 481,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_wyckoff_adapter.py",
+      "language": "python",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_wyckoff_funnel.py",
+      "language": "python",
+      "sizeLines": 369,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_wyckoff_layer2_strength.py",
+      "language": "python",
+      "sizeLines": 142,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_wyckoff_layer3_resonance.py",
+      "language": "python",
+      "sizeLines": 117,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_wyckoff_limit_move.py",
+      "language": "python",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_wyckoff_structure.py",
+      "language": "python",
+      "sizeLines": 171,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_wyckoff_trend_drawdown_risk.py",
+      "language": "python",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "backend/app/strategy/builtin/wyckoff_funnel.py": [
+      "backend/app/wyckoff/config.py"
+    ],
+    "backend/app/wyckoff/_price_math.py": [],
+    "backend/app/wyckoff/adapter.py": [],
+    "backend/app/wyckoff/cn_boards.py": [],
+    "backend/app/wyckoff/config.py": [],
+    "backend/app/wyckoff/funnel.py": [
+      "backend/app/wyckoff/cn_boards.py",
+      "backend/app/wyckoff/config.py",
+      "backend/app/wyckoff/layer2_strength.py",
+      "backend/app/wyckoff/layer3_resonance.py",
+      "backend/app/wyckoff/limit_move.py",
+      "backend/app/wyckoff/wyckoff_structure.py"
+    ],
+    "backend/app/wyckoff/layer2_strength.py": [
+      "backend/app/wyckoff/config.py",
+      "backend/app/wyckoff/trend_drawdown_risk.py"
+    ],
+    "backend/app/wyckoff/layer3_resonance.py": [
+      "backend/app/wyckoff/config.py"
+    ],
+    "backend/app/wyckoff/limit_move.py": [
+      "backend/app/wyckoff/cn_boards.py"
+    ],
+    "backend/app/wyckoff/trend_drawdown_risk.py": [],
+    "backend/app/wyckoff/wyckoff_structure.py": [
+      "backend/app/wyckoff/_price_math.py",
+      "backend/app/wyckoff/config.py"
+    ],
+    "backend/tests/test_wyckoff_adapter.py": [
+      "backend/app/wyckoff/adapter.py",
+      "backend/app/wyckoff/cn_boards.py"
+    ],
+    "backend/tests/test_wyckoff_funnel.py": [
+      "backend/app/services/volume_profile.py",
+      "backend/app/strategy/engine.py",
+      "backend/app/wyckoff/config.py",
+      "backend/app/wyckoff/funnel.py"
+    ],
+    "backend/tests/test_wyckoff_layer2_strength.py": [
+      "backend/app/wyckoff/config.py",
+      "backend/app/wyckoff/layer2_strength.py"
+    ],
+    "backend/tests/test_wyckoff_layer3_resonance.py": [
+      "backend/app/wyckoff/config.py",
+      "backend/app/wyckoff/layer3_resonance.py"
+    ],
+    "backend/tests/test_wyckoff_limit_move.py": [
+      "backend/app/wyckoff/limit_move.py"
+    ],
+    "backend/tests/test_wyckoff_structure.py": [
+      "backend/app/wyckoff/config.py",
+      "backend/app/wyckoff/wyckoff_structure.py"
+    ],
+    "backend/tests/test_wyckoff_trend_drawdown_risk.py": [
+      "backend/app/wyckoff/trend_drawdown_risk.py"
+    ]
+  }
+}

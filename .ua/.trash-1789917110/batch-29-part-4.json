@@ -1,0 +1,1513 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/app/services/kline_sync.py",
+      "type": "file",
+      "name": "kline_sync.py",
+      "filePath": "backend/app/services/kline_sync.py",
+      "summary": "实现 kline_sync.py 中的业务服务逻辑，供上层接口或任务调用。",
+      "tags": [
+        "服务层",
+        "业务逻辑",
+        "源码"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_atomic_write_parquet",
+      "type": "function",
+      "name": "_atomic_write_parquet",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        28,
+        40
+      ],
+      "summary": "定义 _atomic_write_parquet，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_normalize_daily",
+      "type": "function",
+      "name": "_normalize_daily",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        49,
+        88
+      ],
+      "summary": "定义 _normalize_daily，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:sync_daily_batch",
+      "type": "function",
+      "name": "sync_daily_batch",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        91,
+        152
+      ],
+      "summary": "定义 sync_daily_batch，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:sync_and_persist_daily_batch",
+      "type": "function",
+      "name": "sync_and_persist_daily_batch",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        155,
+        228
+      ],
+      "summary": "定义 sync_and_persist_daily_batch，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:sync_daily_by_quotes",
+      "type": "function",
+      "name": "sync_daily_by_quotes",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        231,
+        279
+      ],
+      "summary": "定义 sync_daily_by_quotes，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_normalize_adj_factor",
+      "type": "function",
+      "name": "_normalize_adj_factor",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        282,
+        323
+      ],
+      "summary": "定义 _normalize_adj_factor，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:sync_adj_factor",
+      "type": "function",
+      "name": "sync_adj_factor",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        326,
+        440
+      ],
+      "summary": "定义 sync_adj_factor，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_enforce_minute_beijing_wallclock",
+      "type": "function",
+      "name": "_enforce_minute_beijing_wallclock",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        456,
+        519
+      ],
+      "summary": "定义 _enforce_minute_beijing_wallclock，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_normalize_minute",
+      "type": "function",
+      "name": "_normalize_minute",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        522,
+        581
+      ],
+      "summary": "定义 _normalize_minute，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_compact_klines_to_df",
+      "type": "function",
+      "name": "_compact_klines_to_df",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        584,
+        615
+      ],
+      "summary": "定义 _compact_klines_to_df，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_timestamp_to_beijing_datetime",
+      "type": "function",
+      "name": "_timestamp_to_beijing_datetime",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        618,
+        628
+      ],
+      "summary": "定义 _timestamp_to_beijing_datetime，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_datetime_to_ms",
+      "type": "function",
+      "name": "_datetime_to_ms",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        631,
+        633
+      ],
+      "summary": "定义 _datetime_to_ms，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_write_minute_partition",
+      "type": "function",
+      "name": "_write_minute_partition",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        636,
+        661
+      ],
+      "summary": "定义 _write_minute_partition，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_resolve_minute_provider",
+      "type": "function",
+      "name": "_resolve_minute_provider",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        664,
+        689
+      ],
+      "summary": "定义 _resolve_minute_provider，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_try_custom_minute",
+      "type": "function",
+      "name": "_try_custom_minute",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        692,
+        750
+      ],
+      "summary": "定义 _try_custom_minute，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:sync_minute_batch",
+      "type": "function",
+      "name": "sync_minute_batch",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        753,
+        866
+      ],
+      "summary": "定义 sync_minute_batch，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:intraday_monitor_support",
+      "type": "function",
+      "name": "intraday_monitor_support",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        869,
+        908
+      ],
+      "summary": "定义 intraday_monitor_support，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:fetch_intraday_monitor_batch",
+      "type": "function",
+      "name": "fetch_intraday_monitor_batch",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        911,
+        955
+      ],
+      "summary": "定义 fetch_intraday_monitor_batch，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:fetch_intraday_full_market_burst",
+      "type": "function",
+      "name": "fetch_intraday_full_market_burst",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        958,
+        1035
+      ],
+      "summary": "定义 fetch_intraday_full_market_burst，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:fetch_intraday_universe_increment",
+      "type": "function",
+      "name": "fetch_intraday_universe_increment",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        1038,
+        1065
+      ],
+      "summary": "定义 fetch_intraday_universe_increment，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_resolve_full_minute_provider",
+      "type": "function",
+      "name": "_resolve_full_minute_provider",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        1068,
+        1088
+      ],
+      "summary": "定义 _resolve_full_minute_provider，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:fetch_intraday_custom_batch",
+      "type": "function",
+      "name": "fetch_intraday_custom_batch",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        1091,
+        1131
+      ],
+      "summary": "定义 fetch_intraday_custom_batch，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:fetch_intraday_custom_latest",
+      "type": "function",
+      "name": "fetch_intraday_custom_latest",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        1134,
+        1159
+      ],
+      "summary": "定义 fetch_intraday_custom_latest，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:fetch_minute_single",
+      "type": "function",
+      "name": "fetch_minute_single",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        1162,
+        1198
+      ],
+      "summary": "定义 fetch_minute_single，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:fetch_adj_factor_single",
+      "type": "function",
+      "name": "fetch_adj_factor_single",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        1201,
+        1213
+      ],
+      "summary": "定义 fetch_adj_factor_single，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_minute_table",
+      "type": "function",
+      "name": "_minute_table",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        1216,
+        1217
+      ],
+      "summary": "定义 _minute_table，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_minute_dir",
+      "type": "function",
+      "name": "_minute_dir",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        1220,
+        1221
+      ],
+      "summary": "定义 _minute_dir，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_latest_minute_datetime",
+      "type": "function",
+      "name": "_latest_minute_datetime",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        1224,
+        1235
+      ],
+      "summary": "定义 _latest_minute_datetime，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_earliest_minute_datetime",
+      "type": "function",
+      "name": "_earliest_minute_datetime",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        1238,
+        1249
+      ],
+      "summary": "定义 _earliest_minute_datetime，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_cleanup_null_datetime_minute",
+      "type": "function",
+      "name": "_cleanup_null_datetime_minute",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        1252,
+        1269
+      ],
+      "summary": "定义 _cleanup_null_datetime_minute，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:_migrate_symbol_to_date_partition",
+      "type": "function",
+      "name": "_migrate_symbol_to_date_partition",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        1272,
+        1329
+      ],
+      "summary": "定义 _migrate_symbol_to_date_partition，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:sync_and_persist_minute",
+      "type": "function",
+      "name": "sync_and_persist_minute",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        1332,
+        1450
+      ],
+      "summary": "定义 sync_and_persist_minute，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/kline_sync.py:sync_and_persist_czsc_native_minutes",
+      "type": "function",
+      "name": "sync_and_persist_czsc_native_minutes",
+      "filePath": "backend/app/services/kline_sync.py",
+      "lineRange": [
+        1453,
+        1529
+      ],
+      "summary": "定义 sync_and_persist_czsc_native_minutes，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/app/services/market_mainline.py",
+      "type": "file",
+      "name": "market_mainline.py",
+      "filePath": "backend/app/services/market_mainline.py",
+      "summary": "实现 market_mainline.py 中的业务服务逻辑，供上层接口或任务调用。",
+      "tags": [
+        "服务层",
+        "业务逻辑",
+        "源码"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/market_mainline.py:_resolve_filter_config",
+      "type": "function",
+      "name": "_resolve_filter_config",
+      "filePath": "backend/app/services/market_mainline.py",
+      "lineRange": [
+        47,
+        65
+      ],
+      "summary": "定义 _resolve_filter_config，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_mainline.py:mainline_path",
+      "type": "function",
+      "name": "mainline_path",
+      "filePath": "backend/app/services/market_mainline.py",
+      "lineRange": [
+        68,
+        69
+      ],
+      "summary": "定义 mainline_path，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_mainline.py:load_risk_warning_symbols",
+      "type": "function",
+      "name": "load_risk_warning_symbols",
+      "filePath": "backend/app/services/market_mainline.py",
+      "lineRange": [
+        75,
+        98
+      ],
+      "summary": "定义 load_risk_warning_symbols，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "数据读取",
+        "业务逻辑",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_mainline.py:load_mainline_history",
+      "type": "function",
+      "name": "load_mainline_history",
+      "filePath": "backend/app/services/market_mainline.py",
+      "lineRange": [
+        101,
+        113
+      ],
+      "summary": "定义 load_mainline_history，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "数据读取",
+        "业务逻辑",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_mainline.py:_industry_member",
+      "type": "function",
+      "name": "_industry_member",
+      "filePath": "backend/app/services/market_mainline.py",
+      "lineRange": [
+        116,
+        120
+      ],
+      "summary": "定义 _industry_member，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_mainline.py:compute_mainline_range",
+      "type": "function",
+      "name": "compute_mainline_range",
+      "filePath": "backend/app/services/market_mainline.py",
+      "lineRange": [
+        123,
+        252
+      ],
+      "summary": "定义 compute_mainline_range，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/market_mainline.py:upsert_mainline_history",
+      "type": "function",
+      "name": "upsert_mainline_history",
+      "filePath": "backend/app/services/market_mainline.py",
+      "lineRange": [
+        255,
+        279
+      ],
+      "summary": "定义 upsert_mainline_history，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/market_mainline.py:compute_mainline_incremental",
+      "type": "function",
+      "name": "compute_mainline_incremental",
+      "filePath": "backend/app/services/market_mainline.py",
+      "lineRange": [
+        282,
+        298
+      ],
+      "summary": "定义 compute_mainline_incremental，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_atomic_write_parquet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_atomic_write_parquet",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_normalize_daily",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_normalize_daily",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:sync_daily_batch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:sync_daily_batch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:sync_and_persist_daily_batch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:sync_and_persist_daily_batch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:sync_daily_by_quotes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:sync_daily_by_quotes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_normalize_adj_factor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_normalize_adj_factor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:sync_adj_factor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:sync_adj_factor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_enforce_minute_beijing_wallclock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_enforce_minute_beijing_wallclock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_normalize_minute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_normalize_minute",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_compact_klines_to_df",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_compact_klines_to_df",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_timestamp_to_beijing_datetime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_timestamp_to_beijing_datetime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_datetime_to_ms",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_datetime_to_ms",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_write_minute_partition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_write_minute_partition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_resolve_minute_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_resolve_minute_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_try_custom_minute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_try_custom_minute",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:sync_minute_batch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:sync_minute_batch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:intraday_monitor_support",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:intraday_monitor_support",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:fetch_intraday_monitor_batch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:fetch_intraday_monitor_batch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:fetch_intraday_full_market_burst",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:fetch_intraday_full_market_burst",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:fetch_intraday_universe_increment",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:fetch_intraday_universe_increment",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_resolve_full_minute_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_resolve_full_minute_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:fetch_intraday_custom_batch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:fetch_intraday_custom_batch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:fetch_intraday_custom_latest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:fetch_intraday_custom_latest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:fetch_minute_single",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:fetch_minute_single",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:fetch_adj_factor_single",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:fetch_adj_factor_single",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_minute_table",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_minute_table",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_minute_dir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_minute_dir",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_latest_minute_datetime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_latest_minute_datetime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_earliest_minute_datetime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_earliest_minute_datetime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_cleanup_null_datetime_minute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_cleanup_null_datetime_minute",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_migrate_symbol_to_date_partition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:_migrate_symbol_to_date_partition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:sync_and_persist_minute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:sync_and_persist_minute",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:sync_and_persist_czsc_native_minutes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "function:backend/app/services/kline_sync.py:sync_and_persist_czsc_native_minutes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/data_providers/base.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/indicators/pipeline.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/market_time.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/services/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/services/preferences.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/tickflow/capabilities.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/tickflow/client.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/tickflow/rate_limits.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/tickflow/repository.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/data_providers/base.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/indicators/pipeline.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/market_time.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/services/__init__.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/tickflow/capabilities.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/tickflow/client.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/tickflow/rate_limits.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/tickflow/repository.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/api/indices.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/api/kline.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/app/jobs/daily_pipeline.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/scripts/pull_full_market_minute_history.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/tests/test_atomic_write_retry.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/tests/test_intraday_burst_fault_isolation.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/tests/test_intraday_monitor_signals.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/tests/test_kline_sync_timezone.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/tests/test_minute_range_api.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/tests/test_minute_routing.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/kline_sync.py",
+      "target": "file:backend/tests/test_minute_timezone_contract.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:_resolve_filter_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:_resolve_filter_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:mainline_path",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:mainline_path",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:load_risk_warning_symbols",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:load_risk_warning_symbols",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:load_mainline_history",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:load_mainline_history",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:_industry_member",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:_industry_member",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:compute_mainline_range",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:compute_mainline_range",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:upsert_mainline_history",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:upsert_mainline_history",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:compute_mainline_incremental",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "function:backend/app/services/market_mainline.py:compute_mainline_incremental",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "file:backend/app/services/rps_rotation.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/market_mainline.py",
+      "target": "file:backend/tests/test_market_mainline.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

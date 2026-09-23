@@ -1,0 +1,607 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 4,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 4,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/test/e2e/artifact-host.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 227,
+      "nonEmptyLines": 208,
+      "callGraph": [
+        {
+          "caller": "destroy",
+          "callee": "view.webContents.close",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/test/e2e/harness.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 157,
+      "nonEmptyLines": 150,
+      "functions": [
+        {
+          "name": "reporter",
+          "startLine": 27,
+          "endLine": 64,
+          "params": []
+        },
+        {
+          "name": "launchApp",
+          "startLine": 77,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "seedSessions",
+          "startLine": 97,
+          "endLine": 123,
+          "params": [
+            "win",
+            "home",
+            "rows"
+          ]
+        },
+        {
+          "name": "backendReady",
+          "startLine": 138,
+          "endLine": 142,
+          "params": [
+            "win"
+          ]
+        },
+        {
+          "name": "openSettings",
+          "startLine": 145,
+          "endLine": 151,
+          "params": [
+            "win",
+            "sectionLabel"
+          ]
+        },
+        {
+          "name": "closeSettings",
+          "startLine": 154,
+          "endLine": 157,
+          "params": [
+            "win"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "APP_DIR",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "reporter",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "launchApp",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "seedSessions",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "backendReady",
+          "line": 138,
+          "isDefault": false
+        },
+        {
+          "name": "openSettings",
+          "line": 145,
+          "isDefault": false
+        },
+        {
+          "name": "closeSettings",
+          "line": 154,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "write",
+          "callee": "process.stdout.write",
+          "lineNumber": 30
+        },
+        {
+          "caller": "reporter",
+          "callee": "write",
+          "lineNumber": 33
+        },
+        {
+          "caller": "reporter",
+          "callee": "fn",
+          "lineNumber": 40
+        },
+        {
+          "caller": "reporter",
+          "callee": "write",
+          "lineNumber": 40
+        },
+        {
+          "caller": "reporter",
+          "callee": "write",
+          "lineNumber": 42
+        },
+        {
+          "caller": "reporter",
+          "callee": "skipped.push",
+          "lineNumber": 53
+        },
+        {
+          "caller": "reporter",
+          "callee": "write",
+          "lineNumber": 54
+        },
+        {
+          "caller": "skipped",
+          "callee": "skipped.slice",
+          "lineNumber": 57
+        },
+        {
+          "caller": "finish",
+          "callee": "write",
+          "lineNumber": 59
+        },
+        {
+          "caller": "finish",
+          "callee": "skipped.join",
+          "lineNumber": 59
+        },
+        {
+          "caller": "finish",
+          "callee": "write",
+          "lineNumber": 60
+        },
+        {
+          "caller": "launchApp",
+          "callee": "mkdtemp",
+          "lineNumber": 78
+        },
+        {
+          "caller": "launchApp",
+          "callee": "join",
+          "lineNumber": 78
+        },
+        {
+          "caller": "launchApp",
+          "callee": "tmpdir",
+          "lineNumber": 78
+        },
+        {
+          "caller": "launchApp",
+          "callee": "mkdtemp",
+          "lineNumber": 79
+        },
+        {
+          "caller": "launchApp",
+          "callee": "join",
+          "lineNumber": 79
+        },
+        {
+          "caller": "launchApp",
+          "callee": "tmpdir",
+          "lineNumber": 79
+        },
+        {
+          "caller": "launchApp",
+          "callee": "electron.launch",
+          "lineNumber": 83
+        },
+        {
+          "caller": "seedSessions",
+          "callee": "import",
+          "lineNumber": 98
+        },
+        {
+          "caller": "seedSessions",
+          "callee": "join",
+          "lineNumber": 99
+        },
+        {
+          "caller": "seedSessions",
+          "callee": "Date.now",
+          "lineNumber": 100
+        },
+        {
+          "caller": "seedSessions",
+          "callee": "probe\n        .prepare(\"SELECT name FROM sqlite_master WHERE type='table' AND name IN ('chat_log','chat_session')\")\n        .all",
+          "lineNumber": 105
+        },
+        {
+          "caller": "seedSessions",
+          "callee": "probe\n        .prepare",
+          "lineNumber": 105
+        },
+        {
+          "caller": "seedSessions",
+          "callee": "probe.close",
+          "lineNumber": 108
+        },
+        {
+          "caller": "seedSessions",
+          "callee": "Date.now",
+          "lineNumber": 111
+        },
+        {
+          "caller": "seedSessions",
+          "callee": "win.waitForTimeout",
+          "lineNumber": 112
+        },
+        {
+          "caller": "seedSessions",
+          "callee": "db.prepare(\"INSERT INTO chat_log(session_id,user_id,role,content) VALUES(?,'','user',?)\").run",
+          "lineNumber": 116
+        },
+        {
+          "caller": "seedSessions",
+          "callee": "db.prepare",
+          "lineNumber": 116
+        },
+        {
+          "caller": "seedSessions",
+          "callee": "db.prepare('INSERT INTO chat_session(session_id,user_id,title) VALUES(?,?,?)').run",
+          "lineNumber": 117
+        },
+        {
+          "caller": "seedSessions",
+          "callee": "db.prepare",
+          "lineNumber": 117
+        },
+        {
+          "caller": "seedSessions",
+          "callee": "db.close",
+          "lineNumber": 119
+        },
+        {
+          "caller": "seedSessions",
+          "callee": "win.locator('.side-new').click",
+          "lineNumber": 121
+        },
+        {
+          "caller": "seedSessions",
+          "callee": "win.locator",
+          "lineNumber": 121
+        },
+        {
+          "caller": "seedSessions",
+          "callee": "win.waitForSelector",
+          "lineNumber": 122
+        },
+        {
+          "caller": "backendReady",
+          "callee": "win.locator('.icb.has-dot')\n    .waitFor({ state: 'detached', timeout })\n    .then",
+          "lineNumber": 139
+        },
+        {
+          "caller": "backendReady",
+          "callee": "win.locator('.icb.has-dot')\n    .waitFor",
+          "lineNumber": 139
+        },
+        {
+          "caller": "backendReady",
+          "callee": "win.locator",
+          "lineNumber": 139
+        },
+        {
+          "caller": "openSettings",
+          "callee": "win.locator('.acct').click",
+          "lineNumber": 146
+        },
+        {
+          "caller": "openSettings",
+          "callee": "win.locator",
+          "lineNumber": 146
+        },
+        {
+          "caller": "openSettings",
+          "callee": "win.waitForTimeout",
+          "lineNumber": 147
+        },
+        {
+          "caller": "openSettings",
+          "callee": "win.locator('.mi, .menu-item, button', { hasText: '设置' }).first().click",
+          "lineNumber": 148
+        },
+        {
+          "caller": "openSettings",
+          "callee": "win.locator('.mi, .menu-item, button', { hasText: '设置' }).first",
+          "lineNumber": 148
+        },
+        {
+          "caller": "openSettings",
+          "callee": "win.locator",
+          "lineNumber": 148
+        },
+        {
+          "caller": "openSettings",
+          "callee": "win.waitForSelector",
+          "lineNumber": 149
+        },
+        {
+          "caller": "openSettings",
+          "callee": "win.locator('.dlg-n', { hasText: sectionLabel }).click",
+          "lineNumber": 150
+        },
+        {
+          "caller": "openSettings",
+          "callee": "win.locator",
+          "lineNumber": 150
+        },
+        {
+          "caller": "closeSettings",
+          "callee": "win.locator('.dlg-x').click",
+          "lineNumber": 155
+        },
+        {
+          "caller": "closeSettings",
+          "callee": "win.locator",
+          "lineNumber": 155
+        },
+        {
+          "caller": "closeSettings",
+          "callee": "win.waitForSelector",
+          "lineNumber": 156
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/test/e2e/login.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 89,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/test/e2e/workbench.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 533,
+      "nonEmptyLines": 484,
+      "callGraph": [
+        {
+          "caller": "stored",
+          "callee": "JSON.parse",
+          "lineNumber": 218
+        },
+        {
+          "caller": "stored",
+          "callee": "readFile",
+          "lineNumber": 218
+        },
+        {
+          "caller": "stored",
+          "callee": "join",
+          "lineNumber": 218
+        },
+        {
+          "caller": "stored",
+          "callee": "Array.isArray",
+          "lineNumber": 219
+        },
+        {
+          "caller": "stored",
+          "callee": "list.find",
+          "lineNumber": 220
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.click",
+          "lineNumber": 225
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.waitForSelector",
+          "lineNumber": 226
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.fill",
+          "lineNumber": 227
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.fill",
+          "lineNumber": 228
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.locator('form.sf .sf-row', { hasText: '重复' }).locator('select').first",
+          "lineNumber": 230
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.locator('form.sf .sf-row', { hasText: '重复' }).locator",
+          "lineNumber": 230
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.locator",
+          "lineNumber": 230
+        },
+        {
+          "caller": "createTask",
+          "callee": "repeatBox.selectOption",
+          "lineNumber": 231
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.locator('form.sf .sf-row', { hasText: '重复' }).locator('select').nth(1).selectOption",
+          "lineNumber": 234
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.locator('form.sf .sf-row', { hasText: '重复' }).locator('select').nth",
+          "lineNumber": 234
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.locator('form.sf .sf-row', { hasText: '重复' }).locator",
+          "lineNumber": 234
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.locator",
+          "lineNumber": 234
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.locator",
+          "lineNumber": 237
+        },
+        {
+          "caller": "createTask",
+          "callee": "timeRow.locator('select').nth(0).selectOption",
+          "lineNumber": 238
+        },
+        {
+          "caller": "createTask",
+          "callee": "timeRow.locator('select').nth",
+          "lineNumber": 238
+        },
+        {
+          "caller": "createTask",
+          "callee": "timeRow.locator",
+          "lineNumber": 238
+        },
+        {
+          "caller": "createTask",
+          "callee": "timeRow.locator('select').nth(1).selectOption",
+          "lineNumber": 239
+        },
+        {
+          "caller": "createTask",
+          "callee": "timeRow.locator('select').nth",
+          "lineNumber": 239
+        },
+        {
+          "caller": "createTask",
+          "callee": "timeRow.locator",
+          "lineNumber": 239
+        },
+        {
+          "caller": "createTask",
+          "callee": "(await win.textContent('form.sf .sf-preview'))?.trim",
+          "lineNumber": 241
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.textContent",
+          "lineNumber": 241
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.locator('form.sf .mbtn.primary').click",
+          "lineNumber": 242
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.locator",
+          "lineNumber": 242
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.waitForSelector",
+          "lineNumber": 243
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.locator('.schedule-card', { hasText: name }).waitFor",
+          "lineNumber": 246
+        },
+        {
+          "caller": "createTask",
+          "callee": "win.locator",
+          "lineNumber": 246
+        },
+        {
+          "caller": "createTask",
+          "callee": "stored",
+          "lineNumber": 247
+        },
+        {
+          "caller": "cols",
+          "callee": "document.querySelector",
+          "lineNumber": 301
+        },
+        {
+          "caller": "cols",
+          "callee": "getComputedStyle",
+          "lineNumber": 302
+        },
+        {
+          "caller": "right",
+          "callee": "document.querySelector(sel)?.getBoundingClientRect",
+          "lineNumber": 305
+        },
+        {
+          "caller": "right",
+          "callee": "document.querySelector",
+          "lineNumber": 305
+        },
+        {
+          "caller": "right",
+          "callee": "rect.right.toFixed",
+          "lineNumber": 306
+        },
+        {
+          "caller": "sessionCount",
+          "callee": "win.locator('[data-testid=session-list] .sess-row').count",
+          "lineNumber": 347
+        },
+        {
+          "caller": "sessionCount",
+          "callee": "win.locator",
+          "lineNumber": 347
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

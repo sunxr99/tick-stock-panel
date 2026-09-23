@@ -1,0 +1,7692 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 18,
+  "filesSkipped": [
+    "backend/scripts/start_sw_sector_validation_v4.ps1",
+    "docs/czscEvent/CZSC/信号函数模块深度介绍.docx",
+    "docs/czscEvent/CZSC/性能基准测试：在本地复现 CZSC _ CzscTrader 吞吐量.docx",
+    "docs/czscEvent/CZSC/案例：lightweight_charts 缠论可视化.docx",
+    "docs/czscEvent/CZSC/案例：使用 Tushare 数据执行缠论事件选股.docx",
+    "docs/czscEvent/CZSC/案例：基于 Event 的策略回测 + wbt HTML 报告.docx",
+    "docs/czscEvent/CZSC/案例：把信号函数画到 K 线主图（plot_czsc_signals）.docx"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 18,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 12,
+      "failed": 0,
+      "skipped": 6
+    }
+  },
+  "results": [
+    {
+      "path": "backend/app/wyckoff/wyckoff_events.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 88,
+      "functions": [
+        {
+          "name": "_norm_set",
+          "startLine": 44,
+          "endLine": 45,
+          "params": [
+            "values"
+          ]
+        },
+        {
+          "name": "_base_reasons",
+          "startLine": 48,
+          "endLine": 58,
+          "params": [
+            "stage",
+            "channel",
+            "regime",
+            "score"
+          ]
+        },
+        {
+          "name": "_event",
+          "startLine": 61,
+          "endLine": 70,
+          "params": [
+            "spec",
+            "base_reasons"
+          ]
+        },
+        {
+          "name": "_score_confidence",
+          "startLine": 73,
+          "endLine": 74,
+          "params": [
+            "score",
+            "high_threshold"
+          ]
+        },
+        {
+          "name": "_event_spec",
+          "startLine": 77,
+          "endLine": 90,
+          "params": [
+            "trigger_set",
+            "stage",
+            "score"
+          ]
+        },
+        {
+          "name": "classify_wyckoff_event",
+          "startLine": 93,
+          "endLine": 108,
+          "params": [
+            "triggers",
+            "stage",
+            "channel",
+            "score",
+            "regime"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WyckoffEvent",
+          "startLine": 14,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "event_id",
+            "label",
+            "track",
+            "action",
+            "confidence",
+            "reasons",
+            "watch_points"
+          ]
+        },
+        {
+          "name": "_EventSpec",
+          "startLine": 25,
+          "endLine": 32,
+          "methods": [],
+          "properties": [
+            "event_id",
+            "label",
+            "track",
+            "action",
+            "confidence",
+            "reasons",
+            "watch_points"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WyckoffEvent",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "_EventSpec",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "_norm_set",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "_base_reasons",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "_event",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "_score_confidence",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "_event_spec",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "classify_wyckoff_event",
+          "line": 93,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_norm_set",
+          "callee": "str(value or \"\").strip().lower",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_norm_set",
+          "callee": "str(value or \"\").strip",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_norm_set",
+          "callee": "str",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_norm_set",
+          "callee": "str(value or \"\").strip",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_norm_set",
+          "callee": "str",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_base_reasons",
+          "callee": "reasons.append",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_base_reasons",
+          "callee": "reasons.append",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_base_reasons",
+          "callee": "reasons.append",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_base_reasons",
+          "callee": "reasons.append",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_base_reasons",
+          "callee": "float",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_event",
+          "callee": "WyckoffEvent",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_event",
+          "callee": "tuple",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_event_spec",
+          "callee": "replace",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_event_spec",
+          "callee": "_score_confidence",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_event_spec",
+          "callee": "replace",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_event_spec",
+          "callee": "_score_confidence",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_event_spec",
+          "callee": "replace",
+          "lineNumber": 87
+        },
+        {
+          "caller": "classify_wyckoff_event",
+          "callee": "str(stage or \"\").strip",
+          "lineNumber": 102
+        },
+        {
+          "caller": "classify_wyckoff_event",
+          "callee": "str",
+          "lineNumber": 102
+        },
+        {
+          "caller": "classify_wyckoff_event",
+          "callee": "str(channel or \"\").strip",
+          "lineNumber": 103
+        },
+        {
+          "caller": "classify_wyckoff_event",
+          "callee": "str",
+          "lineNumber": 103
+        },
+        {
+          "caller": "classify_wyckoff_event",
+          "callee": "str(regime or \"\").strip().upper",
+          "lineNumber": 104
+        },
+        {
+          "caller": "classify_wyckoff_event",
+          "callee": "str(regime or \"\").strip",
+          "lineNumber": 104
+        },
+        {
+          "caller": "classify_wyckoff_event",
+          "callee": "str",
+          "lineNumber": 104
+        },
+        {
+          "caller": "classify_wyckoff_event",
+          "callee": "_event",
+          "lineNumber": 105
+        },
+        {
+          "caller": "classify_wyckoff_event",
+          "callee": "_event_spec",
+          "lineNumber": 106
+        },
+        {
+          "caller": "classify_wyckoff_event",
+          "callee": "_norm_set",
+          "lineNumber": 106
+        },
+        {
+          "caller": "classify_wyckoff_event",
+          "callee": "_base_reasons",
+          "lineNumber": 107
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 6,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "backend/pyproject.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 90,
+      "nonEmptyLines": 81,
+      "sections": [
+        {
+          "heading": "project",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "project.optional-dependencies",
+          "level": 2,
+          "line": 46
+        },
+        {
+          "heading": "build-system",
+          "level": 1,
+          "line": 74
+        },
+        {
+          "heading": "tool.hatch.build.targets.wheel",
+          "level": 5,
+          "line": 78
+        },
+        {
+          "heading": "tool.ruff",
+          "level": 2,
+          "line": 81
+        },
+        {
+          "heading": "tool.ruff.lint",
+          "level": 3,
+          "line": 85
+        },
+        {
+          "heading": "tool.pytest.ini_options",
+          "level": 3,
+          "line": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "backend/scripts/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/scripts/analyze_right_side_random12_frozen_validation.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 425,
+      "nonEmptyLines": 374,
+      "functions": [
+        {
+          "name": "_fmt",
+          "startLine": 26,
+          "endLine": 37,
+          "params": [
+            "value",
+            "pct",
+            "digits"
+          ]
+        },
+        {
+          "name": "_md_table",
+          "startLine": 40,
+          "endLine": 43,
+          "params": [
+            "headers",
+            "rows"
+          ]
+        },
+        {
+          "name": "_profile_full",
+          "startLine": 46,
+          "endLine": 51,
+          "params": [
+            "frame",
+            "profile"
+          ]
+        },
+        {
+          "name": "_add_levels",
+          "startLine": 54,
+          "endLine": 63,
+          "params": [
+            "frame"
+          ]
+        },
+        {
+          "name": "_acceptance_states",
+          "startLine": 66,
+          "endLine": 75,
+          "params": [
+            "frame",
+            "profile"
+          ]
+        },
+        {
+          "name": "_sample_status",
+          "startLine": 78,
+          "endLine": 81,
+          "params": [
+            "frame"
+          ]
+        },
+        {
+          "name": "_pf",
+          "startLine": 84,
+          "endLine": 89,
+          "params": [
+            "values"
+          ]
+        },
+        {
+          "name": "_metrics",
+          "startLine": 92,
+          "endLine": 106,
+          "params": [
+            "frame",
+            "horizon"
+          ]
+        },
+        {
+          "name": "_metric_table",
+          "startLine": 109,
+          "endLine": 133,
+          "params": [
+            "groups"
+          ]
+        },
+        {
+          "name": "_date_stat",
+          "startLine": 136,
+          "endLine": 149,
+          "params": [
+            "frame",
+            "horizon",
+            "field"
+          ]
+        },
+        {
+          "name": "_date_comparison",
+          "startLine": 152,
+          "endLine": 181,
+          "params": [
+            "left",
+            "right",
+            "horizon",
+            "field",
+            "left_label",
+            "right_label"
+          ]
+        },
+        {
+          "name": "_date_comparison_table",
+          "startLine": 184,
+          "endLine": 202,
+          "params": [
+            "comparisons"
+          ]
+        },
+        {
+          "name": "_month_direction",
+          "startLine": 205,
+          "endLine": 230,
+          "params": [
+            "left",
+            "right",
+            "horizon",
+            "field",
+            "left_label",
+            "right_label"
+          ]
+        },
+        {
+          "name": "_verdict",
+          "startLine": 233,
+          "endLine": 242,
+          "params": [
+            "comparison",
+            "left",
+            "right"
+          ]
+        },
+        {
+          "name": "_combined_verdict",
+          "startLine": 245,
+          "endLine": 252,
+          "params": [
+            "values"
+          ]
+        },
+        {
+          "name": "_load",
+          "startLine": 255,
+          "endLine": 265,
+          "params": [
+            "input_dir"
+          ]
+        },
+        {
+          "name": "_append_h1",
+          "startLine": 268,
+          "endLine": 291,
+          "params": [
+            "lines",
+            "frame"
+          ]
+        },
+        {
+          "name": "_append_h2",
+          "startLine": 294,
+          "endLine": 308,
+          "params": [
+            "lines",
+            "frame"
+          ]
+        },
+        {
+          "name": "_append_h3",
+          "startLine": 311,
+          "endLine": 330,
+          "params": [
+            "lines",
+            "frame"
+          ]
+        },
+        {
+          "name": "_append_h4",
+          "startLine": 333,
+          "endLine": 355,
+          "params": [
+            "lines",
+            "frame"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 358,
+          "endLine": 421,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_fmt",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "_md_table",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "_profile_full",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "_add_levels",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "_acceptance_states",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "_sample_status",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "_pf",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "_metrics",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "_metric_table",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "_date_stat",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "_date_comparison",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "_date_comparison_table",
+          "line": 184,
+          "isDefault": false
+        },
+        {
+          "name": "_month_direction",
+          "line": 205,
+          "isDefault": false
+        },
+        {
+          "name": "_verdict",
+          "line": 233,
+          "isDefault": false
+        },
+        {
+          "name": "_combined_verdict",
+          "line": 245,
+          "isDefault": false
+        },
+        {
+          "name": "_load",
+          "line": 255,
+          "isDefault": false
+        },
+        {
+          "name": "_append_h1",
+          "line": 268,
+          "isDefault": false
+        },
+        {
+          "name": "_append_h2",
+          "line": 294,
+          "isDefault": false
+        },
+        {
+          "name": "_append_h3",
+          "line": 311,
+          "isDefault": false
+        },
+        {
+          "name": "_append_h4",
+          "line": 333,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 358,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_fmt",
+          "callee": "float",
+          "lineNumber": 30
+        },
+        {
+          "caller": "_fmt",
+          "callee": "str",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_fmt",
+          "callee": "np.isfinite",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_md_table",
+          "callee": "\" | \".join",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_md_table",
+          "callee": "\" | \".join",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_md_table",
+          "callee": "len",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_md_table",
+          "callee": "body.extend",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_md_table",
+          "callee": "\" | \".join",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_md_table",
+          "callee": "str",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_md_table",
+          "callee": "\"\\n\".join",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_profile_full",
+          "callee": "frame.loc[\n        (frame[f\"{profile}_quality\"] == \"FULL\")\n        & (frame[f\"{profile}_data_granularity\"] == \"MINUTE_1M\")\n        & (~frame[f\"{profile}_fallback_used\"].fillna(True))\n    ].copy",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_profile_full",
+          "callee": "frame[f\"{profile}_fallback_used\"].fillna",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_add_levels",
+          "callee": "frame.copy",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_add_levels",
+          "callee": "result.groupby(\"signal_date\")[source].rank",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_add_levels",
+          "callee": "result.groupby",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_add_levels",
+          "callee": "pd.cut",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_add_levels",
+          "callee": "pd.to_numeric(result[\"_entry_open_1d\"], errors=\"coerce\").gt",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_add_levels",
+          "callee": "pd.to_numeric",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_add_levels",
+          "callee": "pd.to_numeric(result[\"return_20d\"], errors=\"coerce\").notna",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_add_levels",
+          "callee": "pd.to_numeric",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_acceptance_states",
+          "callee": "frame[f\"{profile}_position\"].eq",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_acceptance_states",
+          "callee": "frame[f\"{profile}_poc_state\"].eq",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_acceptance_states",
+          "callee": "frame[f\"{profile}_value_area_state\"].eq",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_sample_status",
+          "callee": "len",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_sample_status",
+          "callee": "frame[\"signal_date\"].nunique",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_pf",
+          "callee": "values.loc[values > 0].sum",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_pf",
+          "callee": "values.loc[values < 0].sum",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_pf",
+          "callee": "float",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_metrics",
+          "callee": "frame.dropna",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_metrics",
+          "callee": "len",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_metrics",
+          "callee": "subset[\"symbol\"].nunique",
+          "lineNumber": 97
+        },
+        {
+          "caller": "_metrics",
+          "callee": "subset[\"signal_date\"].nunique",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_metrics",
+          "callee": "float",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_metrics",
+          "callee": "excess.mean",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_metrics",
+          "callee": "len",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_metrics",
+          "callee": "float",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_metrics",
+          "callee": "excess.median",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_metrics",
+          "callee": "len",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_metrics",
+          "callee": "float",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_metrics",
+          "callee": "(excess > 0).mean",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_metrics",
+          "callee": "len",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_metrics",
+          "callee": "_pf",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_metrics",
+          "callee": "float",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_metrics",
+          "callee": "subset[f\"mae_{horizon}d\"].mean",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_metrics",
+          "callee": "len",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_metrics",
+          "callee": "float",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_metrics",
+          "callee": "subset[f\"mfe_{horizon}d\"].mean",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_metrics",
+          "callee": "len",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_metrics",
+          "callee": "_sample_status",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_metrics",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "rows.append",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_fmt",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_fmt",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_fmt",
+          "lineNumber": 123
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_fmt",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_fmt",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_fmt",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_md_table",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "frame.dropna",
+          "lineNumber": 138
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.groupby(\"signal_date\")[f\"excess_return_{horizon}d\"].mean",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.groupby",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.groupby(\"signal_date\")[f\"excess_return_{horizon}d\"].median",
+          "lineNumber": 142
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.groupby",
+          "lineNumber": 142
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.assign(_positive=subset[f\"excess_return_{horizon}d\"].gt(0)).groupby(\"signal_date\")[\"_positive\"].mean",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.assign(_positive=subset[f\"excess_return_{horizon}d\"].gt(0)).groupby",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.assign",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset[f\"excess_return_{horizon}d\"].gt",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.groupby(\"signal_date\")[f\"mae_{horizon}d\"].mean",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.groupby",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.groupby(\"signal_date\")[f\"mfe_{horizon}d\"].mean",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.groupby",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "ValueError",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "pd.concat(\n        [_date_stat(left, horizon, field).rename(\"left\"), _date_stat(right, horizon, field).rename(\"right\")],\n        axis=1,\n        join=\"inner\",\n    ).dropna",
+          "lineNumber": 161
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "pd.concat",
+          "lineNumber": 161
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "_date_stat(left, horizon, field).rename",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "_date_stat",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "_date_stat(right, horizon, field).rename",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "_date_stat",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "int",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "(difference > 0).sum",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "int",
+          "lineNumber": 168
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "(difference < 0).sum",
+          "lineNumber": 168
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "int",
+          "lineNumber": 169
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "(difference == 0).sum",
+          "lineNumber": 169
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "len",
+          "lineNumber": 174
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "len",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "len",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "float",
+          "lineNumber": 179
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "difference.mean",
+          "lineNumber": 179
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "len",
+          "lineNumber": 179
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "float",
+          "lineNumber": 180
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "difference.median",
+          "lineNumber": 180
+        },
+        {
+          "caller": "_date_comparison",
+          "callee": "len",
+          "lineNumber": 180
+        },
+        {
+          "caller": "_date_comparison_table",
+          "callee": "_md_table",
+          "lineNumber": 185
+        },
+        {
+          "caller": "_date_comparison_table",
+          "callee": "_fmt",
+          "lineNumber": 196
+        },
+        {
+          "caller": "_date_comparison_table",
+          "callee": "_fmt",
+          "lineNumber": 197
+        },
+        {
+          "caller": "_date_comparison_table",
+          "callee": "_fmt",
+          "lineNumber": 198
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "left.assign",
+          "lineNumber": 214
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "left[\"signal_date\"].dt.strftime",
+          "lineNumber": 214
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "right.assign",
+          "lineNumber": 215
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "right[\"signal_date\"].dt.strftime",
+          "lineNumber": 215
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "_date_stat(left_month, horizon, field).rename",
+          "lineNumber": 216
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "_date_stat",
+          "lineNumber": 216
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "_date_stat(right_month, horizon, field).rename",
+          "lineNumber": 217
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "_date_stat",
+          "lineNumber": 217
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "pd.to_datetime",
+          "lineNumber": 219
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "pd.to_datetime",
+          "lineNumber": 220
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "left_values.groupby(left_values.index.strftime(\"%Y-%m\")).mean",
+          "lineNumber": 221
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "left_values.groupby",
+          "lineNumber": 221
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "left_values.index.strftime",
+          "lineNumber": 221
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "right_values.groupby(right_values.index.strftime(\"%Y-%m\")).mean",
+          "lineNumber": 222
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "right_values.groupby",
+          "lineNumber": 222
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "right_values.index.strftime",
+          "lineNumber": 222
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "pd.concat([left_by_month, right_by_month], axis=1, join=\"inner\").dropna",
+          "lineNumber": 223
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "pd.concat",
+          "lineNumber": 223
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "int",
+          "lineNumber": 226
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "(diff > 0).sum",
+          "lineNumber": 226
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "len",
+          "lineNumber": 226
+        },
+        {
+          "caller": "_month_direction",
+          "callee": "len",
+          "lineNumber": 228
+        },
+        {
+          "caller": "_verdict",
+          "callee": "_sample_status",
+          "lineNumber": 234
+        },
+        {
+          "caller": "_verdict",
+          "callee": "_sample_status",
+          "lineNumber": 234
+        },
+        {
+          "caller": "_combined_verdict",
+          "callee": "all",
+          "lineNumber": 246
+        },
+        {
+          "caller": "_combined_verdict",
+          "callee": "any",
+          "lineNumber": 248
+        },
+        {
+          "caller": "_combined_verdict",
+          "callee": "any",
+          "lineNumber": 248
+        },
+        {
+          "caller": "_combined_verdict",
+          "callee": "all",
+          "lineNumber": 250
+        },
+        {
+          "caller": "_load",
+          "callee": "json.loads",
+          "lineNumber": 256
+        },
+        {
+          "caller": "_load",
+          "callee": "(input_dir / \"progress.json\").read_text",
+          "lineNumber": 256
+        },
+        {
+          "caller": "_load",
+          "callee": "state.get",
+          "lineNumber": 257
+        },
+        {
+          "caller": "_load",
+          "callee": "ValueError",
+          "lineNumber": 258
+        },
+        {
+          "caller": "_load",
+          "callee": "sorted",
+          "lineNumber": 259
+        },
+        {
+          "caller": "_load",
+          "callee": "(input_dir / \"snapshots\").glob",
+          "lineNumber": 259
+        },
+        {
+          "caller": "_load",
+          "callee": "len",
+          "lineNumber": 261
+        },
+        {
+          "caller": "_load",
+          "callee": "len",
+          "lineNumber": 261
+        },
+        {
+          "caller": "_load",
+          "callee": "ValueError",
+          "lineNumber": 262
+        },
+        {
+          "caller": "_load",
+          "callee": "len",
+          "lineNumber": 262
+        },
+        {
+          "caller": "_load",
+          "callee": "len",
+          "lineNumber": 262
+        },
+        {
+          "caller": "_load",
+          "callee": "pd.concat",
+          "lineNumber": 263
+        },
+        {
+          "caller": "_load",
+          "callee": "pd.read_parquet",
+          "lineNumber": 263
+        },
+        {
+          "caller": "_load",
+          "callee": "pd.to_datetime",
+          "lineNumber": 264
+        },
+        {
+          "caller": "_load",
+          "callee": "_add_levels",
+          "lineNumber": 265
+        },
+        {
+          "caller": "_append_h1",
+          "callee": "lines.extend",
+          "lineNumber": 270
+        },
+        {
+          "caller": "_append_h1",
+          "callee": "_profile_full",
+          "lineNumber": 272
+        },
+        {
+          "caller": "_append_h1",
+          "callee": "_date_comparison",
+          "lineNumber": 274
+        },
+        {
+          "caller": "_append_h1",
+          "callee": "_date_comparison",
+          "lineNumber": 275
+        },
+        {
+          "caller": "_append_h1",
+          "callee": "_date_comparison",
+          "lineNumber": 277
+        },
+        {
+          "caller": "_append_h1",
+          "callee": "_verdict",
+          "lineNumber": 281
+        },
+        {
+          "caller": "_append_h1",
+          "callee": "_verdict",
+          "lineNumber": 282
+        },
+        {
+          "caller": "_append_h1",
+          "callee": "verdicts.append",
+          "lineNumber": 289
+        },
+        {
+          "caller": "_append_h1",
+          "callee": "lines.extend",
+          "lineNumber": 290
+        },
+        {
+          "caller": "_append_h1",
+          "callee": "profile.upper",
+          "lineNumber": 290
+        },
+        {
+          "caller": "_append_h1",
+          "callee": "_metric_table",
+          "lineNumber": 290
+        },
+        {
+          "caller": "_append_h1",
+          "callee": "_date_comparison_table",
+          "lineNumber": 290
+        },
+        {
+          "caller": "_append_h1",
+          "callee": "_month_direction",
+          "lineNumber": 290
+        },
+        {
+          "caller": "_append_h1",
+          "callee": "_combined_verdict",
+          "lineNumber": 291
+        },
+        {
+          "caller": "_append_h2",
+          "callee": "lines.extend",
+          "lineNumber": 296
+        },
+        {
+          "caller": "_append_h2",
+          "callee": "_acceptance_states",
+          "lineNumber": 298
+        },
+        {
+          "caller": "_append_h2",
+          "callee": "_profile_full",
+          "lineNumber": 298
+        },
+        {
+          "caller": "_append_h2",
+          "callee": "_date_comparison",
+          "lineNumber": 300
+        },
+        {
+          "caller": "_append_h2",
+          "callee": "_date_comparison",
+          "lineNumber": 304
+        },
+        {
+          "caller": "_append_h2",
+          "callee": "_verdict",
+          "lineNumber": 305
+        },
+        {
+          "caller": "_append_h2",
+          "callee": "verdicts.append",
+          "lineNumber": 306
+        },
+        {
+          "caller": "_append_h2",
+          "callee": "lines.extend",
+          "lineNumber": 307
+        },
+        {
+          "caller": "_append_h2",
+          "callee": "profile.upper",
+          "lineNumber": 307
+        },
+        {
+          "caller": "_append_h2",
+          "callee": "_metric_table",
+          "lineNumber": 307
+        },
+        {
+          "caller": "_append_h2",
+          "callee": "list",
+          "lineNumber": 307
+        },
+        {
+          "caller": "_append_h2",
+          "callee": "groups.items",
+          "lineNumber": 307
+        },
+        {
+          "caller": "_append_h2",
+          "callee": "_date_comparison_table",
+          "lineNumber": 307
+        },
+        {
+          "caller": "_append_h2",
+          "callee": "_month_direction",
+          "lineNumber": 307
+        },
+        {
+          "caller": "_append_h2",
+          "callee": "_combined_verdict",
+          "lineNumber": 308
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "lines.extend",
+          "lineNumber": 313
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "_profile_full",
+          "lineNumber": 315
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "_acceptance_states",
+          "lineNumber": 316
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "label.startswith",
+          "lineNumber": 320
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "source[column].astype",
+          "lineNumber": 321
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "source[column].astype",
+          "lineNumber": 322
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "groups.extend",
+          "lineNumber": 323
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "comparisons.append",
+          "lineNumber": 324
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "_date_comparison",
+          "lineNumber": 324
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "comparisons.append",
+          "lineNumber": 325
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "_date_comparison",
+          "lineNumber": 325
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "_verdict",
+          "lineNumber": 327
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "verdicts.append",
+          "lineNumber": 328
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "lines.extend",
+          "lineNumber": 329
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "profile.upper",
+          "lineNumber": 329
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "_metric_table",
+          "lineNumber": 329
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "_date_comparison_table",
+          "lineNumber": 329
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "_month_direction",
+          "lineNumber": 329
+        },
+        {
+          "caller": "_append_h3",
+          "callee": "_combined_verdict",
+          "lineNumber": 330
+        },
+        {
+          "caller": "_append_h4",
+          "callee": "lines.extend",
+          "lineNumber": 335
+        },
+        {
+          "caller": "_append_h4",
+          "callee": "_profile_full",
+          "lineNumber": 337
+        },
+        {
+          "caller": "_append_h4",
+          "callee": "_date_comparison",
+          "lineNumber": 342
+        },
+        {
+          "caller": "_append_h4",
+          "callee": "_date_comparison",
+          "lineNumber": 346
+        },
+        {
+          "caller": "_append_h4",
+          "callee": "_date_comparison",
+          "lineNumber": 350
+        },
+        {
+          "caller": "_append_h4",
+          "callee": "_verdict",
+          "lineNumber": 351
+        },
+        {
+          "caller": "_append_h4",
+          "callee": "verdicts.append",
+          "lineNumber": 352
+        },
+        {
+          "caller": "_append_h4",
+          "callee": "full[\"rs_level\"].astype",
+          "lineNumber": 353
+        },
+        {
+          "caller": "_append_h4",
+          "callee": "lines.extend",
+          "lineNumber": 354
+        },
+        {
+          "caller": "_append_h4",
+          "callee": "profile.upper",
+          "lineNumber": 354
+        },
+        {
+          "caller": "_append_h4",
+          "callee": "_metric_table",
+          "lineNumber": 354
+        },
+        {
+          "caller": "_append_h4",
+          "callee": "_date_comparison_table",
+          "lineNumber": 354
+        },
+        {
+          "caller": "_append_h4",
+          "callee": "_month_direction",
+          "lineNumber": 354
+        },
+        {
+          "caller": "_append_h4",
+          "callee": "_combined_verdict",
+          "lineNumber": 355
+        },
+        {
+          "caller": "main",
+          "callee": "argparse.ArgumentParser",
+          "lineNumber": 359
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 360
+        },
+        {
+          "caller": "main",
+          "callee": "Path",
+          "lineNumber": 360
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 361
+        },
+        {
+          "caller": "main",
+          "callee": "Path",
+          "lineNumber": 361
+        },
+        {
+          "caller": "main",
+          "callee": "parser.parse_args",
+          "lineNumber": 362
+        },
+        {
+          "caller": "main",
+          "callee": "_load",
+          "lineNumber": 364
+        },
+        {
+          "caller": "main",
+          "callee": "args.input_dir.resolve",
+          "lineNumber": 364
+        },
+        {
+          "caller": "main",
+          "callee": "float",
+          "lineNumber": 366
+        },
+        {
+          "caller": "main",
+          "callee": "state.get",
+          "lineNumber": 366
+        },
+        {
+          "caller": "main",
+          "callee": "sum",
+          "lineNumber": 366
+        },
+        {
+          "caller": "main",
+          "callee": "item.get",
+          "lineNumber": 366
+        },
+        {
+          "caller": "main",
+          "callee": "date_runs.values",
+          "lineNumber": 366
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 367
+        },
+        {
+          "caller": "main",
+          "callee": "_profile_full",
+          "lineNumber": 367
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 368
+        },
+        {
+          "caller": "main",
+          "callee": "_profile_full",
+          "lineNumber": 368
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 369
+        },
+        {
+          "caller": "main",
+          "callee": "int",
+          "lineNumber": 370
+        },
+        {
+          "caller": "main",
+          "callee": "frame[\"tradable_next_open_proxy\"].sum",
+          "lineNumber": 370
+        },
+        {
+          "caller": "main",
+          "callee": "_md_table",
+          "lineNumber": 378
+        },
+        {
+          "caller": "main",
+          "callee": "\"、\".join",
+          "lineNumber": 382
+        },
+        {
+          "caller": "main",
+          "callee": "\"、\".join",
+          "lineNumber": 383
+        },
+        {
+          "caller": "main",
+          "callee": "', '.join",
+          "lineNumber": 384
+        },
+        {
+          "caller": "main",
+          "callee": "frame[\"symbol\"].nunique",
+          "lineNumber": 386
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 390
+        },
+        {
+          "caller": "main",
+          "callee": "state.get",
+          "lineNumber": 391
+        },
+        {
+          "caller": "main",
+          "callee": "_md_table",
+          "lineNumber": 400
+        },
+        {
+          "caller": "main",
+          "callee": "value.get",
+          "lineNumber": 400
+        },
+        {
+          "caller": "main",
+          "callee": "value.get",
+          "lineNumber": 400
+        },
+        {
+          "caller": "main",
+          "callee": "value.get",
+          "lineNumber": 400
+        },
+        {
+          "caller": "main",
+          "callee": "value.get",
+          "lineNumber": 400
+        },
+        {
+          "caller": "main",
+          "callee": "value.get",
+          "lineNumber": 400
+        },
+        {
+          "caller": "main",
+          "callee": "value.get",
+          "lineNumber": 400
+        },
+        {
+          "caller": "main",
+          "callee": "value.get",
+          "lineNumber": 400
+        },
+        {
+          "caller": "main",
+          "callee": "sorted",
+          "lineNumber": 400
+        },
+        {
+          "caller": "main",
+          "callee": "date_runs.items",
+          "lineNumber": 400
+        },
+        {
+          "caller": "main",
+          "callee": "_append_h1",
+          "lineNumber": 405
+        },
+        {
+          "caller": "main",
+          "callee": "_append_h2",
+          "lineNumber": 406
+        },
+        {
+          "caller": "main",
+          "callee": "_append_h3",
+          "lineNumber": 407
+        },
+        {
+          "caller": "main",
+          "callee": "_append_h4",
+          "lineNumber": 408
+        },
+        {
+          "caller": "main",
+          "callee": "lines.extend",
+          "lineNumber": 409
+        },
+        {
+          "caller": "main",
+          "callee": "_md_table",
+          "lineNumber": 412
+        },
+        {
+          "caller": "main",
+          "callee": "args.output.parent.mkdir",
+          "lineNumber": 419
+        },
+        {
+          "caller": "main",
+          "callee": "args.output.write_text",
+          "lineNumber": 420
+        },
+        {
+          "caller": "main",
+          "callee": "\"\\n\".join",
+          "lineNumber": 420
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 421
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 21,
+        "functionCount": 21,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/scripts/analyze_vp_first_random5.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 371,
+      "nonEmptyLines": 326,
+      "functions": [
+        {
+          "name": "_pct",
+          "startLine": 30,
+          "endLine": 31,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "_percent_points",
+          "startLine": 34,
+          "endLine": 36,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "_number",
+          "startLine": 39,
+          "endLine": 40,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "_markdown_table",
+          "startLine": 43,
+          "endLine": 47,
+          "params": [
+            "headers",
+            "rows"
+          ]
+        },
+        {
+          "name": "_pf",
+          "startLine": 50,
+          "endLine": 55,
+          "params": [
+            "values"
+          ]
+        },
+        {
+          "name": "_metric_rows",
+          "startLine": 58,
+          "endLine": 83,
+          "params": [
+            "groups"
+          ]
+        },
+        {
+          "name": "_metric_table",
+          "startLine": 86,
+          "endLine": 103,
+          "params": [
+            "groups"
+          ]
+        },
+        {
+          "name": "_quantile_rows",
+          "startLine": 106,
+          "endLine": 135,
+          "params": [
+            "frame",
+            "profile",
+            "label"
+          ]
+        },
+        {
+          "name": "_add_levels",
+          "startLine": 138,
+          "endLine": 155,
+          "params": [
+            "frame"
+          ]
+        },
+        {
+          "name": "_profile_full",
+          "startLine": 158,
+          "endLine": 163,
+          "params": [
+            "frame",
+            "profile"
+          ]
+        },
+        {
+          "name": "_groups_by_value",
+          "startLine": 166,
+          "endLine": 170,
+          "params": [
+            "frame",
+            "column",
+            "prefix"
+          ]
+        },
+        {
+          "name": "_acceptance_groups",
+          "startLine": 173,
+          "endLine": 179,
+          "params": [
+            "frame",
+            "profile",
+            "prefix"
+          ]
+        },
+        {
+          "name": "_acceptance_by_level",
+          "startLine": 182,
+          "endLine": 192,
+          "params": [
+            "frame",
+            "profile",
+            "level"
+          ]
+        },
+        {
+          "name": "_acceptance_by_state",
+          "startLine": 195,
+          "endLine": 206,
+          "params": [
+            "frame",
+            "profile",
+            "state"
+          ]
+        },
+        {
+          "name": "_component_groups",
+          "startLine": 209,
+          "endLine": 218,
+          "params": [
+            "frame",
+            "profile"
+          ]
+        },
+        {
+          "name": "_field_inventory",
+          "startLine": 221,
+          "endLine": 239,
+          "params": [
+            "frame"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 242,
+          "endLine": 367,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "GroupSpec",
+          "startLine": 25,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "label",
+            "frame"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GroupSpec",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "_pct",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "_percent_points",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "_number",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "_markdown_table",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "_pf",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "_metric_rows",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "_metric_table",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "_quantile_rows",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "_add_levels",
+          "line": 138,
+          "isDefault": false
+        },
+        {
+          "name": "_profile_full",
+          "line": 158,
+          "isDefault": false
+        },
+        {
+          "name": "_groups_by_value",
+          "line": 166,
+          "isDefault": false
+        },
+        {
+          "name": "_acceptance_groups",
+          "line": 173,
+          "isDefault": false
+        },
+        {
+          "name": "_acceptance_by_level",
+          "line": 182,
+          "isDefault": false
+        },
+        {
+          "name": "_acceptance_by_state",
+          "line": 195,
+          "isDefault": false
+        },
+        {
+          "name": "_component_groups",
+          "line": 209,
+          "isDefault": false
+        },
+        {
+          "name": "_field_inventory",
+          "line": 221,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 242,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_pct",
+          "callee": "np.isfinite",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_percent_points",
+          "callee": "np.isfinite",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_number",
+          "callee": "np.isfinite",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_markdown_table",
+          "callee": "\" | \".join",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_markdown_table",
+          "callee": "\" | \".join",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_markdown_table",
+          "callee": "len",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_markdown_table",
+          "callee": "rendered.append",
+          "lineNumber": 46
+        },
+        {
+          "caller": "_markdown_table",
+          "callee": "\" | \".join",
+          "lineNumber": 46
+        },
+        {
+          "caller": "_markdown_table",
+          "callee": "str",
+          "lineNumber": 46
+        },
+        {
+          "caller": "_markdown_table",
+          "callee": "\"\\n\".join",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_pf",
+          "callee": "float",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_pf",
+          "callee": "values[values > 0].sum",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_pf",
+          "callee": "float",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_pf",
+          "callee": "values[values < 0].sum",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "group.frame[f\"excess_return_{horizon}d\"].dropna",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "group.frame[f\"mae_{horizon}d\"].dropna",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "group.frame[f\"mfe_{horizon}d\"].dropna",
+          "lineNumber": 64
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "len",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "group.frame[\"signal_date\"].nunique",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "rows.append",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "str",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "str",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "group.frame.loc[excess.index, \"symbol\"].nunique",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "str",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "group.frame.loc[excess.index, \"signal_date\"].nunique",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "_pct",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "excess.mean",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "_pct",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "excess.median",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "_pct",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "(excess > 0).mean",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "_number",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "_pf",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "_pct",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "mae.mean",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "len",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "_pct",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "mfe.mean",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_metric_rows",
+          "callee": "len",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_markdown_table",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_metric_rows",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "frame[column].dropna",
+          "lineNumber": 115
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "rows.append",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "value.quantile",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "rows.append",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "str",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "len",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "_percent_points",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "value.min",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "column.endswith",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "_number",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "value.min",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "_percent_points",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "column.endswith",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "_number",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "_percent_points",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "column.endswith",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "_number",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "_percent_points",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "column.endswith",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "_number",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "_percent_points",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "column.endswith",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "_number",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "_percent_points",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "column.endswith",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "_number",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "_percent_points",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "column.endswith",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "_number",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "_percent_points",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "value.max",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "column.endswith",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "_number",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_quantile_rows",
+          "callee": "value.max",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_add_levels",
+          "callee": "frame.copy",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_add_levels",
+          "callee": "result.groupby(\"signal_date\")[score].rank",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_add_levels",
+          "callee": "result.groupby",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_add_levels",
+          "callee": "pd.cut(\n            percentile,\n            bins=[0.0, 0.2, 0.4, 0.6, 0.8, 1.0],\n            labels=LEVELS,\n            include_lowest=True,\n        ).astype",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_add_levels",
+          "callee": "pd.cut",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_add_levels",
+          "callee": "result.groupby(\"signal_date\")[\"symbol\"].transform",
+          "lineNumber": 151
+        },
+        {
+          "caller": "_add_levels",
+          "callee": "result.groupby",
+          "lineNumber": 151
+        },
+        {
+          "caller": "_add_levels",
+          "callee": "np.floor",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_profile_full",
+          "callee": "frame.loc[\n        (frame[f\"{profile}_quality\"] == \"FULL\")\n        & (frame[f\"{profile}_data_granularity\"] == \"MINUTE_1M\")\n        & (~frame[f\"{profile}_fallback_used\"].fillna(True))\n    ].copy",
+          "lineNumber": 159
+        },
+        {
+          "caller": "_profile_full",
+          "callee": "frame[f\"{profile}_fallback_used\"].fillna",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_groups_by_value",
+          "callee": "GroupSpec",
+          "lineNumber": 168
+        },
+        {
+          "caller": "_groups_by_value",
+          "callee": "frame.groupby",
+          "lineNumber": 169
+        },
+        {
+          "caller": "_acceptance_groups",
+          "callee": "GroupSpec",
+          "lineNumber": 177
+        },
+        {
+          "caller": "_acceptance_groups",
+          "callee": "GroupSpec",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_acceptance_by_level",
+          "callee": "groups.append",
+          "lineNumber": 186
+        },
+        {
+          "caller": "_acceptance_by_level",
+          "callee": "GroupSpec",
+          "lineNumber": 187
+        },
+        {
+          "caller": "_acceptance_by_state",
+          "callee": "sorted",
+          "lineNumber": 197
+        },
+        {
+          "caller": "_acceptance_by_state",
+          "callee": "str",
+          "lineNumber": 197
+        },
+        {
+          "caller": "_acceptance_by_state",
+          "callee": "frame[state].dropna().unique",
+          "lineNumber": 197
+        },
+        {
+          "caller": "_acceptance_by_state",
+          "callee": "frame[state].dropna",
+          "lineNumber": 197
+        },
+        {
+          "caller": "_acceptance_by_state",
+          "callee": "groups.append",
+          "lineNumber": 200
+        },
+        {
+          "caller": "_acceptance_by_state",
+          "callee": "GroupSpec",
+          "lineNumber": 201
+        },
+        {
+          "caller": "_component_groups",
+          "callee": "GroupSpec",
+          "lineNumber": 214
+        },
+        {
+          "caller": "_component_groups",
+          "callee": "GroupSpec",
+          "lineNumber": 215
+        },
+        {
+          "caller": "_component_groups",
+          "callee": "GroupSpec",
+          "lineNumber": 216
+        },
+        {
+          "caller": "_component_groups",
+          "callee": "GroupSpec",
+          "lineNumber": 217
+        },
+        {
+          "caller": "_field_inventory",
+          "callee": "\"\\n\".join",
+          "lineNumber": 232
+        },
+        {
+          "caller": "_field_inventory",
+          "callee": "', '.join",
+          "lineNumber": 234
+        },
+        {
+          "caller": "_field_inventory",
+          "callee": "', '.join",
+          "lineNumber": 235
+        },
+        {
+          "caller": "main",
+          "callee": "sorted",
+          "lineNumber": 243
+        },
+        {
+          "caller": "main",
+          "callee": "INPUT_DIR.glob",
+          "lineNumber": 243
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 244
+        },
+        {
+          "caller": "main",
+          "callee": "SystemExit",
+          "lineNumber": 245
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 245
+        },
+        {
+          "caller": "main",
+          "callee": "pd.concat",
+          "lineNumber": 246
+        },
+        {
+          "caller": "main",
+          "callee": "pd.read_parquet",
+          "lineNumber": 246
+        },
+        {
+          "caller": "main",
+          "callee": "pd.to_datetime",
+          "lineNumber": 247
+        },
+        {
+          "caller": "main",
+          "callee": "_add_levels",
+          "lineNumber": 248
+        },
+        {
+          "caller": "main",
+          "callee": "_profile_full",
+          "lineNumber": 249
+        },
+        {
+          "caller": "main",
+          "callee": "_profile_full",
+          "lineNumber": 250
+        },
+        {
+          "caller": "main",
+          "callee": "_groups_by_value",
+          "lineNumber": 254
+        },
+        {
+          "caller": "main",
+          "callee": "_acceptance_groups",
+          "lineNumber": 255
+        },
+        {
+          "caller": "main",
+          "callee": "_groups_by_value",
+          "lineNumber": 256
+        },
+        {
+          "caller": "main",
+          "callee": "_acceptance_groups",
+          "lineNumber": 257
+        },
+        {
+          "caller": "main",
+          "callee": "_acceptance_groups",
+          "lineNumber": 259
+        },
+        {
+          "caller": "main",
+          "callee": "_acceptance_groups",
+          "lineNumber": 260
+        },
+        {
+          "caller": "main",
+          "callee": "_acceptance_groups",
+          "lineNumber": 261
+        },
+        {
+          "caller": "main",
+          "callee": "_acceptance_groups",
+          "lineNumber": 262
+        },
+        {
+          "caller": "main",
+          "callee": "_field_inventory",
+          "lineNumber": 280
+        },
+        {
+          "caller": "main",
+          "callee": "_metric_table",
+          "lineNumber": 292
+        },
+        {
+          "caller": "main",
+          "callee": "_metric_table",
+          "lineNumber": 296
+        },
+        {
+          "caller": "main",
+          "callee": "_metric_table",
+          "lineNumber": 302
+        },
+        {
+          "caller": "main",
+          "callee": "_metric_table",
+          "lineNumber": 308
+        },
+        {
+          "caller": "main",
+          "callee": "_acceptance_by_level",
+          "lineNumber": 308
+        },
+        {
+          "caller": "main",
+          "callee": "_metric_table",
+          "lineNumber": 312
+        },
+        {
+          "caller": "main",
+          "callee": "_acceptance_by_level",
+          "lineNumber": 312
+        },
+        {
+          "caller": "main",
+          "callee": "_metric_table",
+          "lineNumber": 318
+        },
+        {
+          "caller": "main",
+          "callee": "_acceptance_by_level",
+          "lineNumber": 318
+        },
+        {
+          "caller": "main",
+          "callee": "_metric_table",
+          "lineNumber": 322
+        },
+        {
+          "caller": "main",
+          "callee": "_acceptance_by_level",
+          "lineNumber": 322
+        },
+        {
+          "caller": "main",
+          "callee": "_metric_table",
+          "lineNumber": 326
+        },
+        {
+          "caller": "main",
+          "callee": "_acceptance_by_state",
+          "lineNumber": 326
+        },
+        {
+          "caller": "main",
+          "callee": "_metric_table",
+          "lineNumber": 330
+        },
+        {
+          "caller": "main",
+          "callee": "_acceptance_by_state",
+          "lineNumber": 330
+        },
+        {
+          "caller": "main",
+          "callee": "_metric_table",
+          "lineNumber": 336
+        },
+        {
+          "caller": "main",
+          "callee": "_component_groups",
+          "lineNumber": 336
+        },
+        {
+          "caller": "main",
+          "callee": "_metric_table",
+          "lineNumber": 340
+        },
+        {
+          "caller": "main",
+          "callee": "_component_groups",
+          "lineNumber": 340
+        },
+        {
+          "caller": "main",
+          "callee": "_markdown_table",
+          "lineNumber": 346
+        },
+        {
+          "caller": "main",
+          "callee": "_quantile_rows",
+          "lineNumber": 349
+        },
+        {
+          "caller": "main",
+          "callee": "_quantile_rows",
+          "lineNumber": 350
+        },
+        {
+          "caller": "main",
+          "callee": "_quantile_rows",
+          "lineNumber": 351
+        },
+        {
+          "caller": "main",
+          "callee": "_quantile_rows",
+          "lineNumber": 352
+        },
+        {
+          "caller": "main",
+          "callee": "OUTPUT_PATH.write_text",
+          "lineNumber": 365
+        },
+        {
+          "caller": "main",
+          "callee": "\"\\n\".join",
+          "lineNumber": 365
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 366
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 367
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 367
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 367
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 367
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 367
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 18,
+        "functionCount": 17,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/scripts/cleanup_halt_days.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 96,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "_scan_dirty",
+          "startLine": 29,
+          "endLine": 37,
+          "params": [
+            "table"
+          ]
+        },
+        {
+          "name": "_clean_table",
+          "startLine": 40,
+          "endLine": 73,
+          "params": [
+            "table",
+            "dry_run"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 76,
+          "endLine": 92,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_scan_dirty",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "_clean_table",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 76,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_scan_dirty",
+          "callee": "str",
+          "lineNumber": 30
+        },
+        {
+          "caller": "_scan_dirty",
+          "callee": "pl.ScanCastOptions",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_scan_dirty",
+          "callee": "pl.scan_parquet(glob, hive_partitioning=True, cast_options=cast)\r\n        .filter(HALT_PRED)\r\n        .select(\"symbol\", \"date\")\r\n        .collect",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_scan_dirty",
+          "callee": "pl.scan_parquet(glob, hive_partitioning=True, cast_options=cast)\r\n        .filter(HALT_PRED)\r\n        .select",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_scan_dirty",
+          "callee": "pl.scan_parquet(glob, hive_partitioning=True, cast_options=cast)\r\n        .filter",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_scan_dirty",
+          "callee": "pl.scan_parquet",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_clean_table",
+          "callee": "_scan_dirty",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_clean_table",
+          "callee": "dirty.is_empty",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_clean_table",
+          "callee": "logger.info",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_clean_table",
+          "callee": "dirty[\"date\"].unique().sort",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_clean_table",
+          "callee": "dirty[\"date\"].unique",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_clean_table",
+          "callee": "part.exists",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_clean_table",
+          "callee": "logger.warning",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_clean_table",
+          "callee": "pl.read_parquet",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_clean_table",
+          "callee": "df.filter",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_clean_table",
+          "callee": "logger.info",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_clean_table",
+          "callee": "part.unlink",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_clean_table",
+          "callee": "logger.info",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_clean_table",
+          "callee": "cleaned.write_parquet",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_clean_table",
+          "callee": "logger.info",
+          "lineNumber": 71
+        },
+        {
+          "caller": "main",
+          "callee": "argparse.ArgumentParser",
+          "lineNumber": 77
+        },
+        {
+          "caller": "main",
+          "callee": "ap.add_argument",
+          "lineNumber": 78
+        },
+        {
+          "caller": "main",
+          "callee": "ap.parse_args",
+          "lineNumber": 79
+        },
+        {
+          "caller": "main",
+          "callee": "logging.basicConfig",
+          "lineNumber": 81
+        },
+        {
+          "caller": "main",
+          "callee": "_clean_table",
+          "lineNumber": 89
+        },
+        {
+          "caller": "main",
+          "callee": "logger.info",
+          "lineNumber": 92
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/scripts/run_right_side_rank_research.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 353,
+      "nonEmptyLines": 299,
+      "functions": [
+        {
+          "name": "_read_json",
+          "startLine": 28,
+          "endLine": 29,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "_write_json",
+          "startLine": 32,
+          "endLine": 34,
+          "params": [
+            "path",
+            "value"
+          ]
+        },
+        {
+          "name": "_is_full",
+          "startLine": 37,
+          "endLine": 42,
+          "params": [
+            "frame",
+            "profile"
+          ]
+        },
+        {
+          "name": "_acceptance_context",
+          "startLine": 45,
+          "endLine": 69,
+          "params": [
+            "frame"
+          ]
+        },
+        {
+          "name": "_risk_bucket",
+          "startLine": 72,
+          "endLine": 79,
+          "params": [
+            "vp20",
+            "vp60"
+          ]
+        },
+        {
+          "name": "_rank",
+          "startLine": 82,
+          "endLine": 86,
+          "params": [
+            "frame",
+            "columns",
+            "ascending"
+          ]
+        },
+        {
+          "name": "_derive",
+          "startLine": 89,
+          "endLine": 131,
+          "params": [
+            "frame"
+          ]
+        },
+        {
+          "name": "_fmt",
+          "startLine": 134,
+          "endLine": 140,
+          "params": [
+            "value",
+            "pct",
+            "digits"
+          ]
+        },
+        {
+          "name": "_table",
+          "startLine": 143,
+          "endLine": 148,
+          "params": [
+            "headers",
+            "rows"
+          ]
+        },
+        {
+          "name": "_pf",
+          "startLine": 151,
+          "endLine": 154,
+          "params": [
+            "values"
+          ]
+        },
+        {
+          "name": "_metrics",
+          "startLine": 157,
+          "endLine": 168,
+          "params": [
+            "frame",
+            "horizon"
+          ]
+        },
+        {
+          "name": "_metrics_table",
+          "startLine": 171,
+          "endLine": 177,
+          "params": [
+            "groups"
+          ]
+        },
+        {
+          "name": "_date_stat",
+          "startLine": 180,
+          "endLine": 188,
+          "params": [
+            "frame",
+            "horizon",
+            "metric"
+          ]
+        },
+        {
+          "name": "_comparison",
+          "startLine": 191,
+          "endLine": 194,
+          "params": [
+            "left",
+            "right",
+            "horizon",
+            "metric",
+            "label"
+          ]
+        },
+        {
+          "name": "_comparison_table",
+          "startLine": 197,
+          "endLine": 198,
+          "params": [
+            "items"
+          ]
+        },
+        {
+          "name": "_month_consistency",
+          "startLine": 201,
+          "endLine": 208,
+          "params": [
+            "left",
+            "right",
+            "horizon",
+            "metric",
+            "label"
+          ]
+        },
+        {
+          "name": "_selection",
+          "startLine": 211,
+          "endLine": 212,
+          "params": [
+            "frame",
+            "rank",
+            "top_n"
+          ]
+        },
+        {
+          "name": "_status",
+          "startLine": 215,
+          "endLine": 225,
+          "params": [
+            "alpha",
+            "risk",
+            "same_selection"
+          ]
+        },
+        {
+          "name": "_right_tail_marker",
+          "startLine": 228,
+          "endLine": 232,
+          "params": [
+            "frame",
+            "horizon"
+          ]
+        },
+        {
+          "name": "_render_report",
+          "startLine": 235,
+          "endLine": 296,
+          "params": [
+            "frame",
+            "source_state",
+            "rank_state"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 299,
+          "endLine": 349,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_read_json",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "_write_json",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "_is_full",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "_acceptance_context",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "_risk_bucket",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "_rank",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "_derive",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "_fmt",
+          "line": 134,
+          "isDefault": false
+        },
+        {
+          "name": "_table",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "_pf",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "_metrics",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "_metrics_table",
+          "line": 171,
+          "isDefault": false
+        },
+        {
+          "name": "_date_stat",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "_comparison",
+          "line": 191,
+          "isDefault": false
+        },
+        {
+          "name": "_comparison_table",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "_month_consistency",
+          "line": 201,
+          "isDefault": false
+        },
+        {
+          "name": "_selection",
+          "line": 211,
+          "isDefault": false
+        },
+        {
+          "name": "_status",
+          "line": 215,
+          "isDefault": false
+        },
+        {
+          "name": "_right_tail_marker",
+          "line": 228,
+          "isDefault": false
+        },
+        {
+          "name": "_render_report",
+          "line": 235,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 299,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_read_json",
+          "callee": "json.loads",
+          "lineNumber": 29
+        },
+        {
+          "caller": "_read_json",
+          "callee": "path.read_text",
+          "lineNumber": 29
+        },
+        {
+          "caller": "_read_json",
+          "callee": "path.exists",
+          "lineNumber": 29
+        },
+        {
+          "caller": "_write_json",
+          "callee": "path.parent.mkdir",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_write_json",
+          "callee": "path.write_text",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_write_json",
+          "callee": "json.dumps",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_is_full",
+          "callee": "frame[f\"{profile}_quality\"].eq",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_is_full",
+          "callee": "frame[f\"{profile}_data_granularity\"].eq",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_is_full",
+          "callee": "frame[f\"{profile}_fallback_used\"].fillna",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_acceptance_context",
+          "callee": "pd.Series",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_acceptance_context",
+          "callee": "pd.Series",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_acceptance_context",
+          "callee": "frame[f\"{profile}_position\"].eq",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_acceptance_context",
+          "callee": "frame[f\"{profile}_poc_state\"].eq",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_acceptance_context",
+          "callee": "frame[f\"{profile}_value_area_state\"].eq",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_acceptance_context",
+          "callee": "d_by_profile.append",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_acceptance_context",
+          "callee": "np.select",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_acceptance_context",
+          "callee": "pd.Series",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_acceptance_context",
+          "callee": "result.map(ACCEPTANCE_PRIORITY).astype",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_acceptance_context",
+          "callee": "result.map",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_risk_bucket",
+          "callee": "str",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_risk_bucket",
+          "callee": "str",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_risk_bucket",
+          "callee": "any",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_risk_bucket",
+          "callee": "max",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_rank",
+          "callee": "frame.sort_values",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_rank",
+          "callee": "pd.Series",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_rank",
+          "callee": "np.arange",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_rank",
+          "callee": "len",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_derive",
+          "callee": "frame.copy",
+          "lineNumber": 90
+        },
+        {
+          "caller": "_derive",
+          "callee": "next",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_derive",
+          "callee": "pd.to_numeric",
+          "lineNumber": 97
+        },
+        {
+          "caller": "_derive",
+          "callee": "pd.to_numeric",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_derive",
+          "callee": "result[\"opportunity_score\"].notna",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_derive",
+          "callee": "_acceptance_context",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_derive",
+          "callee": "result[\"vp20_extension_fixed\"].map",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_derive",
+          "callee": "result[\"vp60_extension_fixed\"].map",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_derive",
+          "callee": "_is_full",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_derive",
+          "callee": "_is_full",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_derive",
+          "callee": "_risk_bucket",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_derive",
+          "callee": "zip",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_derive",
+          "callee": "pd.to_numeric(result[\"_entry_open_1d\"], errors=\"coerce\").gt",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_derive",
+          "callee": "pd.to_numeric",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_derive",
+          "callee": "pd.to_numeric(result[\"return_20d\"], errors=\"coerce\").notna",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_derive",
+          "callee": "pd.to_numeric",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_derive",
+          "callee": "result.loc[result[\"opportunity_complete\"]].copy",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_derive",
+          "callee": "ranked[\"symbol\"].astype",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_derive",
+          "callee": "_rank",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_derive",
+          "callee": "_rank",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_derive",
+          "callee": "ranked[\"risk_score\"].fillna",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_derive",
+          "callee": "float",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_derive",
+          "callee": "_rank",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_derive",
+          "callee": "pd.Series",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_derive",
+          "callee": "ranked[column].astype",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_derive",
+          "callee": "result.drop",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_fmt",
+          "callee": "pd.isna",
+          "lineNumber": 135
+        },
+        {
+          "caller": "_fmt",
+          "callee": "float",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_fmt",
+          "callee": "np.isfinite",
+          "lineNumber": 138
+        },
+        {
+          "caller": "_table",
+          "callee": "\"\\n\".join",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_table",
+          "callee": "\" | \".join",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_table",
+          "callee": "\" | \".join",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_table",
+          "callee": "len",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_table",
+          "callee": "\" | \".join",
+          "lineNumber": 147
+        },
+        {
+          "caller": "_table",
+          "callee": "str",
+          "lineNumber": 147
+        },
+        {
+          "caller": "_pf",
+          "callee": "values.loc[values > 0].sum",
+          "lineNumber": 152
+        },
+        {
+          "caller": "_pf",
+          "callee": "values.loc[values < 0].sum",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_pf",
+          "callee": "float",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_metrics",
+          "callee": "frame.dropna",
+          "lineNumber": 159
+        },
+        {
+          "caller": "_metrics",
+          "callee": "len",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_metrics",
+          "callee": "subset[\"symbol\"].nunique",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_metrics",
+          "callee": "subset[\"signal_date\"].nunique",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_metrics",
+          "callee": "int",
+          "lineNumber": 163
+        },
+        {
+          "caller": "_metrics",
+          "callee": "subset[\"tradable_next_open_proxy\"].sum",
+          "lineNumber": 163
+        },
+        {
+          "caller": "_metrics",
+          "callee": "subset[f\"return_{horizon}d\"].mean",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_metrics",
+          "callee": "subset[f\"return_{horizon}d\"].median",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_metrics",
+          "callee": "excess.mean",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_metrics",
+          "callee": "excess.median",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_metrics",
+          "callee": "(excess > 0).mean",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_metrics",
+          "callee": "_pf",
+          "lineNumber": 166
+        },
+        {
+          "caller": "_metrics",
+          "callee": "subset[f\"mae_{horizon}d\"].mean",
+          "lineNumber": 166
+        },
+        {
+          "caller": "_metrics",
+          "callee": "subset[f\"mfe_{horizon}d\"].mean",
+          "lineNumber": 166
+        },
+        {
+          "caller": "_metrics",
+          "callee": "len",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_metrics",
+          "callee": "subset[\"signal_date\"].nunique",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_metrics_table",
+          "callee": "_metrics",
+          "lineNumber": 175
+        },
+        {
+          "caller": "_metrics_table",
+          "callee": "rows.append",
+          "lineNumber": 176
+        },
+        {
+          "caller": "_metrics_table",
+          "callee": "_fmt",
+          "lineNumber": 176
+        },
+        {
+          "caller": "_metrics_table",
+          "callee": "_fmt",
+          "lineNumber": 176
+        },
+        {
+          "caller": "_metrics_table",
+          "callee": "_fmt",
+          "lineNumber": 176
+        },
+        {
+          "caller": "_metrics_table",
+          "callee": "_fmt",
+          "lineNumber": 176
+        },
+        {
+          "caller": "_metrics_table",
+          "callee": "_fmt",
+          "lineNumber": 176
+        },
+        {
+          "caller": "_metrics_table",
+          "callee": "_fmt",
+          "lineNumber": 176
+        },
+        {
+          "caller": "_metrics_table",
+          "callee": "_fmt",
+          "lineNumber": 176
+        },
+        {
+          "caller": "_metrics_table",
+          "callee": "_fmt",
+          "lineNumber": 176
+        },
+        {
+          "caller": "_metrics_table",
+          "callee": "_table",
+          "lineNumber": 177
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "frame.dropna",
+          "lineNumber": 181
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.groupby(\"signal_date\")[f\"excess_return_{horizon}d\"].mean",
+          "lineNumber": 183
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.groupby",
+          "lineNumber": 183
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.groupby(\"signal_date\")[f\"excess_return_{horizon}d\"].median",
+          "lineNumber": 185
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.groupby",
+          "lineNumber": 185
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.assign(_positive=subset[f\"excess_return_{horizon}d\"].gt(0)).groupby(\"signal_date\")[\"_positive\"].mean",
+          "lineNumber": 187
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.assign(_positive=subset[f\"excess_return_{horizon}d\"].gt(0)).groupby",
+          "lineNumber": 187
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.assign",
+          "lineNumber": 187
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset[f\"excess_return_{horizon}d\"].gt",
+          "lineNumber": 187
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.groupby(\"signal_date\")[f\"{metric}_{horizon}d\"].mean",
+          "lineNumber": 188
+        },
+        {
+          "caller": "_date_stat",
+          "callee": "subset.groupby",
+          "lineNumber": 188
+        },
+        {
+          "caller": "_comparison",
+          "callee": "pd.concat([_date_stat(left, horizon, metric).rename(\"left\"), _date_stat(right, horizon, metric).rename(\"right\")], axis=1, join=\"inner\").dropna",
+          "lineNumber": 192
+        },
+        {
+          "caller": "_comparison",
+          "callee": "pd.concat",
+          "lineNumber": 192
+        },
+        {
+          "caller": "_comparison",
+          "callee": "_date_stat(left, horizon, metric).rename",
+          "lineNumber": 192
+        },
+        {
+          "caller": "_comparison",
+          "callee": "_date_stat",
+          "lineNumber": 192
+        },
+        {
+          "caller": "_comparison",
+          "callee": "_date_stat(right, horizon, metric).rename",
+          "lineNumber": 192
+        },
+        {
+          "caller": "_comparison",
+          "callee": "_date_stat",
+          "lineNumber": 192
+        },
+        {
+          "caller": "_comparison",
+          "callee": "len",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_comparison",
+          "callee": "int",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_comparison",
+          "callee": "(diff > 0).sum",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_comparison",
+          "callee": "int",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_comparison",
+          "callee": "(diff < 0).sum",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_comparison",
+          "callee": "int",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_comparison",
+          "callee": "(diff == 0).sum",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_comparison",
+          "callee": "(diff > 0).mean",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_comparison",
+          "callee": "len",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_comparison",
+          "callee": "diff.mean",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_comparison",
+          "callee": "len",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_comparison",
+          "callee": "diff.median",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_comparison",
+          "callee": "len",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_comparison_table",
+          "callee": "_table",
+          "lineNumber": 198
+        },
+        {
+          "caller": "_comparison_table",
+          "callee": "_fmt",
+          "lineNumber": 198
+        },
+        {
+          "caller": "_comparison_table",
+          "callee": "_fmt",
+          "lineNumber": 198
+        },
+        {
+          "caller": "_comparison_table",
+          "callee": "_fmt",
+          "lineNumber": 198
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "_date_stat",
+          "lineNumber": 202
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "_date_stat",
+          "lineNumber": 202
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "pd.concat([left_dates.rename(\"left\"), right_dates.rename(\"right\")], axis=1, join=\"inner\").dropna",
+          "lineNumber": 203
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "pd.concat",
+          "lineNumber": 203
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "left_dates.rename",
+          "lineNumber": 203
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "right_dates.rename",
+          "lineNumber": 203
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "pd.to_datetime(joined.index).strftime",
+          "lineNumber": 206
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "pd.to_datetime",
+          "lineNumber": 206
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "joined.assign(month=month).groupby(\"month\").apply",
+          "lineNumber": 207
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "joined.assign(month=month).groupby",
+          "lineNumber": 207
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "joined.assign",
+          "lineNumber": 207
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "(group[\"left\"] - group[\"right\"]).mean",
+          "lineNumber": 207
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "int",
+          "lineNumber": 208
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "(diff > 0).sum",
+          "lineNumber": 208
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "len",
+          "lineNumber": 208
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "', '.join",
+          "lineNumber": 208
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "_fmt",
+          "lineNumber": 208
+        },
+        {
+          "caller": "_month_consistency",
+          "callee": "diff.items",
+          "lineNumber": 208
+        },
+        {
+          "caller": "_selection",
+          "callee": "frame.loc[frame[rank].notna() & frame[rank].le(top_n)].copy",
+          "lineNumber": 212
+        },
+        {
+          "caller": "_selection",
+          "callee": "frame[rank].notna",
+          "lineNumber": 212
+        },
+        {
+          "caller": "_selection",
+          "callee": "frame[rank].le",
+          "lineNumber": 212
+        },
+        {
+          "caller": "_status",
+          "callee": "int",
+          "lineNumber": 218
+        },
+        {
+          "caller": "_status",
+          "callee": "int",
+          "lineNumber": 218
+        },
+        {
+          "caller": "_status",
+          "callee": "float",
+          "lineNumber": 220
+        },
+        {
+          "caller": "_status",
+          "callee": "float",
+          "lineNumber": 220
+        },
+        {
+          "caller": "_status",
+          "callee": "float",
+          "lineNumber": 221
+        },
+        {
+          "caller": "_status",
+          "callee": "float",
+          "lineNumber": 221
+        },
+        {
+          "caller": "_status",
+          "callee": "float",
+          "lineNumber": 222
+        },
+        {
+          "caller": "_status",
+          "callee": "float",
+          "lineNumber": 222
+        },
+        {
+          "caller": "_status",
+          "callee": "float",
+          "lineNumber": 223
+        },
+        {
+          "caller": "_status",
+          "callee": "float",
+          "lineNumber": 223
+        },
+        {
+          "caller": "_right_tail_marker",
+          "callee": "_metrics",
+          "lineNumber": 229
+        },
+        {
+          "caller": "_right_tail_marker",
+          "callee": "abs",
+          "lineNumber": 230
+        },
+        {
+          "caller": "_right_tail_marker",
+          "callee": "abs",
+          "lineNumber": 230
+        },
+        {
+          "caller": "_render_report",
+          "callee": "sorted",
+          "lineNumber": 236
+        },
+        {
+          "caller": "_render_report",
+          "callee": "pd.to_datetime(frame[\"signal_date\"]).dt.strftime(\"%Y-%m-%d\").unique",
+          "lineNumber": 236
+        },
+        {
+          "caller": "_render_report",
+          "callee": "pd.to_datetime(frame[\"signal_date\"]).dt.strftime",
+          "lineNumber": 236
+        },
+        {
+          "caller": "_render_report",
+          "callee": "pd.to_datetime",
+          "lineNumber": 236
+        },
+        {
+          "caller": "_render_report",
+          "callee": "sorted",
+          "lineNumber": 237
+        },
+        {
+          "caller": "_render_report",
+          "callee": "pd.to_datetime(frame[\"signal_date\"]).dt.strftime(\"%Y-%m\").unique",
+          "lineNumber": 237
+        },
+        {
+          "caller": "_render_report",
+          "callee": "pd.to_datetime(frame[\"signal_date\"]).dt.strftime",
+          "lineNumber": 237
+        },
+        {
+          "caller": "_render_report",
+          "callee": "pd.to_datetime",
+          "lineNumber": 237
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_is_full(frame, \"vp20\").sum",
+          "lineNumber": 238
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_is_full",
+          "lineNumber": 238
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_is_full(frame, \"vp60\").sum",
+          "lineNumber": 238
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_is_full",
+          "lineNumber": 238
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_table",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_render_report",
+          "callee": "\"、\".join",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_render_report",
+          "callee": "\"、\".join",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_render_report",
+          "callee": "len",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_render_report",
+          "callee": "frame['symbol'].nunique",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_render_report",
+          "callee": "len",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_render_report",
+          "callee": "len",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_render_report",
+          "callee": "len",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_render_report",
+          "callee": "len",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_render_report",
+          "callee": "rank_state.get",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_render_report",
+          "callee": "len",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_render_report",
+          "callee": "int",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_render_report",
+          "callee": "frame['tradable_next_open_proxy'].sum",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_metrics_table",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_selection",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_selection",
+          "lineNumber": 242
+        },
+        {
+          "caller": "_render_report",
+          "callee": "v0_comparisons.append",
+          "lineNumber": 245
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_comparison",
+          "lineNumber": 245
+        },
+        {
+          "caller": "_render_report",
+          "callee": "lines.extend",
+          "lineNumber": 246
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_comparison_table",
+          "lineNumber": 246
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_selection",
+          "lineNumber": 248
+        },
+        {
+          "caller": "_render_report",
+          "callee": "lines.append",
+          "lineNumber": 249
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_month_consistency",
+          "lineNumber": 249
+        },
+        {
+          "caller": "_render_report",
+          "callee": "lines.append",
+          "lineNumber": 250
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_month_consistency",
+          "lineNumber": 250
+        },
+        {
+          "caller": "_render_report",
+          "callee": "lines.append",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_render_report",
+          "callee": "lines.extend",
+          "lineNumber": 254
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_selection",
+          "lineNumber": 257
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_selection",
+          "lineNumber": 258
+        },
+        {
+          "caller": "_render_report",
+          "callee": "version_ranks.items",
+          "lineNumber": 258
+        },
+        {
+          "caller": "_render_report",
+          "callee": "lines.extend",
+          "lineNumber": 259
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_metrics_table",
+          "lineNumber": 259
+        },
+        {
+          "caller": "_render_report",
+          "callee": "version_ranks.items",
+          "lineNumber": 261
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_selection",
+          "lineNumber": 262
+        },
+        {
+          "caller": "_render_report",
+          "callee": "comparisons.append",
+          "lineNumber": 265
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_comparison",
+          "lineNumber": 265
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_comparison",
+          "lineNumber": 266
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_comparison",
+          "lineNumber": 267
+        },
+        {
+          "caller": "_render_report",
+          "callee": "candidate[[\"signal_date\", \"symbol\"]].sort_values([\"signal_date\", \"symbol\"]).equals",
+          "lineNumber": 268
+        },
+        {
+          "caller": "_render_report",
+          "callee": "candidate[[\"signal_date\", \"symbol\"]].sort_values",
+          "lineNumber": 268
+        },
+        {
+          "caller": "_render_report",
+          "callee": "baseline[[\"signal_date\", \"symbol\"]].sort_values",
+          "lineNumber": 268
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_status",
+          "lineNumber": 269
+        },
+        {
+          "caller": "_render_report",
+          "callee": "status_rows.append",
+          "lineNumber": 270
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_right_tail_marker",
+          "lineNumber": 270
+        },
+        {
+          "caller": "_render_report",
+          "callee": "lines.extend",
+          "lineNumber": 271
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_comparison_table",
+          "lineNumber": 271
+        },
+        {
+          "caller": "_render_report",
+          "callee": "version_ranks.items",
+          "lineNumber": 272
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_selection",
+          "lineNumber": 273
+        },
+        {
+          "caller": "_render_report",
+          "callee": "lines.append",
+          "lineNumber": 274
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_month_consistency",
+          "lineNumber": 274
+        },
+        {
+          "caller": "_render_report",
+          "callee": "lines.append",
+          "lineNumber": 275
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_month_consistency",
+          "lineNumber": 275
+        },
+        {
+          "caller": "_render_report",
+          "callee": "lines.append",
+          "lineNumber": 276
+        },
+        {
+          "caller": "_render_report",
+          "callee": "lines.extend",
+          "lineNumber": 277
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_table",
+          "lineNumber": 277
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_selection",
+          "lineNumber": 279
+        },
+        {
+          "caller": "_render_report",
+          "callee": "lines.extend",
+          "lineNumber": 281
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_metrics_table",
+          "lineNumber": 281
+        },
+        {
+          "caller": "_render_report",
+          "callee": "risk_comparisons.append",
+          "lineNumber": 288
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_comparison",
+          "lineNumber": 288
+        },
+        {
+          "caller": "_render_report",
+          "callee": "top50[\"risk_bucket\"].eq",
+          "lineNumber": 289
+        },
+        {
+          "caller": "_render_report",
+          "callee": "risk_comparisons.append",
+          "lineNumber": 292
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_comparison",
+          "lineNumber": 292
+        },
+        {
+          "caller": "_render_report",
+          "callee": "lines.extend",
+          "lineNumber": 293
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_comparison_table",
+          "lineNumber": 293
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_month_consistency",
+          "lineNumber": 293
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_table",
+          "lineNumber": 293
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_right_tail_marker",
+          "lineNumber": 293
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_right_tail_marker",
+          "lineNumber": 293
+        },
+        {
+          "caller": "_render_report",
+          "callee": "_right_tail_marker",
+          "lineNumber": 293
+        },
+        {
+          "caller": "_render_report",
+          "callee": "lines.extend",
+          "lineNumber": 295
+        },
+        {
+          "caller": "_render_report",
+          "callee": "\"\\n\".join",
+          "lineNumber": 296
+        },
+        {
+          "caller": "main",
+          "callee": "argparse.ArgumentParser",
+          "lineNumber": 300
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 301
+        },
+        {
+          "caller": "main",
+          "callee": "Path",
+          "lineNumber": 301
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 302
+        },
+        {
+          "caller": "main",
+          "callee": "Path",
+          "lineNumber": 302
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 303
+        },
+        {
+          "caller": "main",
+          "callee": "Path",
+          "lineNumber": 303
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 304
+        },
+        {
+          "caller": "main",
+          "callee": "parser.parse_args",
+          "lineNumber": 305
+        },
+        {
+          "caller": "main",
+          "callee": "args.input_dir.resolve",
+          "lineNumber": 306
+        },
+        {
+          "caller": "main",
+          "callee": "args.output_dir.resolve",
+          "lineNumber": 307
+        },
+        {
+          "caller": "main",
+          "callee": "args.report.resolve",
+          "lineNumber": 308
+        },
+        {
+          "caller": "main",
+          "callee": "_read_json",
+          "lineNumber": 309
+        },
+        {
+          "caller": "main",
+          "callee": "source_state.get",
+          "lineNumber": 310
+        },
+        {
+          "caller": "main",
+          "callee": "ValueError",
+          "lineNumber": 311
+        },
+        {
+          "caller": "main",
+          "callee": "sorted",
+          "lineNumber": 312
+        },
+        {
+          "caller": "main",
+          "callee": "(source / \"snapshots\").glob",
+          "lineNumber": 312
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 314
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 314
+        },
+        {
+          "caller": "main",
+          "callee": "ValueError",
+          "lineNumber": 315
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 315
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 315
+        },
+        {
+          "caller": "main",
+          "callee": "_read_json",
+          "lineNumber": 318
+        },
+        {
+          "caller": "main",
+          "callee": "str",
+          "lineNumber": 318
+        },
+        {
+          "caller": "main",
+          "callee": "snapshot_dir.mkdir",
+          "lineNumber": 319
+        },
+        {
+          "caller": "main",
+          "callee": "time.perf_counter",
+          "lineNumber": 320
+        },
+        {
+          "caller": "main",
+          "callee": "source_file.stem.removeprefix",
+          "lineNumber": 322
+        },
+        {
+          "caller": "main",
+          "callee": "target.exists",
+          "lineNumber": 324
+        },
+        {
+          "caller": "main",
+          "callee": "state[\"date_runs\"].setdefault",
+          "lineNumber": 325
+        },
+        {
+          "caller": "main",
+          "callee": "str",
+          "lineNumber": 325
+        },
+        {
+          "caller": "main",
+          "callee": "time.perf_counter",
+          "lineNumber": 327
+        },
+        {
+          "caller": "main",
+          "callee": "_derive",
+          "lineNumber": 329
+        },
+        {
+          "caller": "main",
+          "callee": "pd.read_parquet",
+          "lineNumber": 329
+        },
+        {
+          "caller": "main",
+          "callee": "derived.to_parquet",
+          "lineNumber": 330
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 331
+        },
+        {
+          "caller": "main",
+          "callee": "time.perf_counter",
+          "lineNumber": 331
+        },
+        {
+          "caller": "main",
+          "callee": "str",
+          "lineNumber": 331
+        },
+        {
+          "caller": "main",
+          "callee": "str",
+          "lineNumber": 333
+        },
+        {
+          "caller": "main",
+          "callee": "time.perf_counter",
+          "lineNumber": 333
+        },
+        {
+          "caller": "main",
+          "callee": "_write_json",
+          "lineNumber": 335
+        },
+        {
+          "caller": "main",
+          "callee": "_write_json",
+          "lineNumber": 337
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 338
+        },
+        {
+          "caller": "main",
+          "callee": "sorted",
+          "lineNumber": 339
+        },
+        {
+          "caller": "main",
+          "callee": "snapshot_dir.glob",
+          "lineNumber": 339
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 340
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 340
+        },
+        {
+          "caller": "main",
+          "callee": "ValueError",
+          "lineNumber": 341
+        },
+        {
+          "caller": "main",
+          "callee": "pd.concat",
+          "lineNumber": 342
+        },
+        {
+          "caller": "main",
+          "callee": "pd.read_parquet",
+          "lineNumber": 342
+        },
+        {
+          "caller": "main",
+          "callee": "pd.to_datetime",
+          "lineNumber": 343
+        },
+        {
+          "caller": "main",
+          "callee": "float",
+          "lineNumber": 345
+        },
+        {
+          "caller": "main",
+          "callee": "state.get",
+          "lineNumber": 345
+        },
+        {
+          "caller": "main",
+          "callee": "time.perf_counter",
+          "lineNumber": 345
+        },
+        {
+          "caller": "main",
+          "callee": "_write_json",
+          "lineNumber": 346
+        },
+        {
+          "caller": "main",
+          "callee": "report.parent.mkdir",
+          "lineNumber": 347
+        },
+        {
+          "caller": "main",
+          "callee": "report.write_text",
+          "lineNumber": 348
+        },
+        {
+          "caller": "main",
+          "callee": "_render_report",
+          "lineNumber": 348
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 349
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 21,
+        "functionCount": 21,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/scripts/run_right_side_strength_vp_screening_research.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 315,
+      "nonEmptyLines": 285,
+      "functions": [
+        {
+          "name": "rd",
+          "startLine": 19,
+          "endLine": 20,
+          "params": [
+            "p"
+          ]
+        },
+        {
+          "name": "wr",
+          "startLine": 23,
+          "endLine": 25,
+          "params": [
+            "p",
+            "x"
+          ]
+        },
+        {
+          "name": "fmt",
+          "startLine": 28,
+          "endLine": 35,
+          "params": [
+            "x",
+            "p"
+          ]
+        },
+        {
+          "name": "tab",
+          "startLine": 38,
+          "endLine": 45,
+          "params": [
+            "h",
+            "r"
+          ]
+        },
+        {
+          "name": "pf",
+          "startLine": 48,
+          "endLine": 50,
+          "params": [
+            "x"
+          ]
+        },
+        {
+          "name": "met",
+          "startLine": 53,
+          "endLine": 69,
+          "params": [
+            "f",
+            "n"
+          ]
+        },
+        {
+          "name": "mt",
+          "startLine": 72,
+          "endLine": 113,
+          "params": [
+            "groups",
+            "hs"
+          ]
+        },
+        {
+          "name": "ds",
+          "startLine": 116,
+          "endLine": 124,
+          "params": [
+            "f",
+            "n",
+            "k"
+          ]
+        },
+        {
+          "name": "cmp",
+          "startLine": 127,
+          "endLine": 141,
+          "params": [
+            "a",
+            "b",
+            "n",
+            "k",
+            "label"
+          ]
+        },
+        {
+          "name": "month",
+          "startLine": 144,
+          "endLine": 154,
+          "params": [
+            "a",
+            "b",
+            "k"
+          ]
+        },
+        {
+          "name": "render",
+          "startLine": 157,
+          "endLine": 266,
+          "params": [
+            "f",
+            "state"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 269,
+          "endLine": 311,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "rd",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "wr",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "fmt",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "tab",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "pf",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "met",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "mt",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "ds",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "cmp",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "month",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "render",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 269,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "rd",
+          "callee": "json.loads",
+          "lineNumber": 20
+        },
+        {
+          "caller": "rd",
+          "callee": "p.read_text",
+          "lineNumber": 20
+        },
+        {
+          "caller": "rd",
+          "callee": "p.exists",
+          "lineNumber": 20
+        },
+        {
+          "caller": "wr",
+          "callee": "p.parent.mkdir",
+          "lineNumber": 24
+        },
+        {
+          "caller": "wr",
+          "callee": "p.write_text",
+          "lineNumber": 25
+        },
+        {
+          "caller": "wr",
+          "callee": "json.dumps",
+          "lineNumber": 25
+        },
+        {
+          "caller": "fmt",
+          "callee": "pd.isna",
+          "lineNumber": 31
+        },
+        {
+          "caller": "fmt",
+          "callee": "np.isfinite",
+          "lineNumber": 31
+        },
+        {
+          "caller": "fmt",
+          "callee": "float",
+          "lineNumber": 31
+        },
+        {
+          "caller": "fmt",
+          "callee": "float",
+          "lineNumber": 32
+        },
+        {
+          "caller": "fmt",
+          "callee": "float",
+          "lineNumber": 34
+        },
+        {
+          "caller": "tab",
+          "callee": "\"\\n\".join",
+          "lineNumber": 39
+        },
+        {
+          "caller": "tab",
+          "callee": "\" | \".join",
+          "lineNumber": 41
+        },
+        {
+          "caller": "tab",
+          "callee": "\" | \".join",
+          "lineNumber": 42
+        },
+        {
+          "caller": "tab",
+          "callee": "len",
+          "lineNumber": 42
+        },
+        {
+          "caller": "tab",
+          "callee": "\" | \".join",
+          "lineNumber": 43
+        },
+        {
+          "caller": "tab",
+          "callee": "map",
+          "lineNumber": 43
+        },
+        {
+          "caller": "pf",
+          "callee": "x[x < 0].sum",
+          "lineNumber": 49
+        },
+        {
+          "caller": "pf",
+          "callee": "x[x > 0].sum",
+          "lineNumber": 50
+        },
+        {
+          "caller": "met",
+          "callee": "f.dropna",
+          "lineNumber": 54
+        },
+        {
+          "caller": "met",
+          "callee": "dict",
+          "lineNumber": 56
+        },
+        {
+          "caller": "met",
+          "callee": "len",
+          "lineNumber": 57
+        },
+        {
+          "caller": "met",
+          "callee": "d.symbol.nunique",
+          "lineNumber": 58
+        },
+        {
+          "caller": "met",
+          "callee": "d.signal_date.nunique",
+          "lineNumber": 59
+        },
+        {
+          "caller": "met",
+          "callee": "d[f\"return_{n}d\"].mean",
+          "lineNumber": 60
+        },
+        {
+          "caller": "met",
+          "callee": "d[f\"return_{n}d\"].median",
+          "lineNumber": 61
+        },
+        {
+          "caller": "met",
+          "callee": "e.mean",
+          "lineNumber": 62
+        },
+        {
+          "caller": "met",
+          "callee": "e.median",
+          "lineNumber": 63
+        },
+        {
+          "caller": "met",
+          "callee": "(e > 0).mean",
+          "lineNumber": 64
+        },
+        {
+          "caller": "met",
+          "callee": "pf",
+          "lineNumber": 65
+        },
+        {
+          "caller": "met",
+          "callee": "d[f\"mae_{n}d\"].mean",
+          "lineNumber": 66
+        },
+        {
+          "caller": "met",
+          "callee": "d[f\"mfe_{n}d\"].mean",
+          "lineNumber": 67
+        },
+        {
+          "caller": "met",
+          "callee": "len",
+          "lineNumber": 68
+        },
+        {
+          "caller": "met",
+          "callee": "d.signal_date.nunique",
+          "lineNumber": 68
+        },
+        {
+          "caller": "mt",
+          "callee": "met",
+          "lineNumber": 76
+        },
+        {
+          "caller": "mt",
+          "callee": "r.append",
+          "lineNumber": 77
+        },
+        {
+          "caller": "mt",
+          "callee": "fmt",
+          "lineNumber": 84
+        },
+        {
+          "caller": "mt",
+          "callee": "fmt",
+          "lineNumber": 85
+        },
+        {
+          "caller": "mt",
+          "callee": "fmt",
+          "lineNumber": 86
+        },
+        {
+          "caller": "mt",
+          "callee": "fmt",
+          "lineNumber": 87
+        },
+        {
+          "caller": "mt",
+          "callee": "fmt",
+          "lineNumber": 88
+        },
+        {
+          "caller": "mt",
+          "callee": "fmt",
+          "lineNumber": 89
+        },
+        {
+          "caller": "mt",
+          "callee": "fmt",
+          "lineNumber": 90
+        },
+        {
+          "caller": "mt",
+          "callee": "fmt",
+          "lineNumber": 91
+        },
+        {
+          "caller": "mt",
+          "callee": "tab",
+          "lineNumber": 95
+        },
+        {
+          "caller": "ds",
+          "callee": "f.dropna",
+          "lineNumber": 117
+        },
+        {
+          "caller": "ds",
+          "callee": "d.groupby(\"signal_date\")[f\"excess_return_{n}d\"].mean",
+          "lineNumber": 119
+        },
+        {
+          "caller": "ds",
+          "callee": "d.groupby",
+          "lineNumber": 119
+        },
+        {
+          "caller": "ds",
+          "callee": "d.groupby(\"signal_date\")[f\"excess_return_{n}d\"].median",
+          "lineNumber": 121
+        },
+        {
+          "caller": "ds",
+          "callee": "d.groupby",
+          "lineNumber": 121
+        },
+        {
+          "caller": "ds",
+          "callee": "d.assign(q=d[f\"excess_return_{n}d\"].gt(0)).groupby(\"signal_date\").q.mean",
+          "lineNumber": 123
+        },
+        {
+          "caller": "ds",
+          "callee": "d.assign(q=d[f\"excess_return_{n}d\"].gt(0)).groupby",
+          "lineNumber": 123
+        },
+        {
+          "caller": "ds",
+          "callee": "d.assign",
+          "lineNumber": 123
+        },
+        {
+          "caller": "ds",
+          "callee": "d[f\"excess_return_{n}d\"].gt",
+          "lineNumber": 123
+        },
+        {
+          "caller": "ds",
+          "callee": "d.groupby(\"signal_date\")[f\"{k}_{n}d\"].mean",
+          "lineNumber": 124
+        },
+        {
+          "caller": "ds",
+          "callee": "d.groupby",
+          "lineNumber": 124
+        },
+        {
+          "caller": "cmp",
+          "callee": "pd.concat([ds(a, n, k).rename(\"a\"), ds(b, n, k).rename(\"b\")], axis=1, join=\"inner\").dropna",
+          "lineNumber": 128
+        },
+        {
+          "caller": "cmp",
+          "callee": "pd.concat",
+          "lineNumber": 128
+        },
+        {
+          "caller": "cmp",
+          "callee": "ds(a, n, k).rename",
+          "lineNumber": 128
+        },
+        {
+          "caller": "cmp",
+          "callee": "ds",
+          "lineNumber": 128
+        },
+        {
+          "caller": "cmp",
+          "callee": "ds(b, n, k).rename",
+          "lineNumber": 128
+        },
+        {
+          "caller": "cmp",
+          "callee": "ds",
+          "lineNumber": 128
+        },
+        {
+          "caller": "cmp",
+          "callee": "len",
+          "lineNumber": 134
+        },
+        {
+          "caller": "cmp",
+          "callee": "int",
+          "lineNumber": 135
+        },
+        {
+          "caller": "cmp",
+          "callee": "(x > 0).sum",
+          "lineNumber": 135
+        },
+        {
+          "caller": "cmp",
+          "callee": "int",
+          "lineNumber": 136
+        },
+        {
+          "caller": "cmp",
+          "callee": "(x < 0).sum",
+          "lineNumber": 136
+        },
+        {
+          "caller": "cmp",
+          "callee": "int",
+          "lineNumber": 137
+        },
+        {
+          "caller": "cmp",
+          "callee": "(x == 0).sum",
+          "lineNumber": 137
+        },
+        {
+          "caller": "cmp",
+          "callee": "fmt",
+          "lineNumber": 138
+        },
+        {
+          "caller": "cmp",
+          "callee": "(x > 0).mean",
+          "lineNumber": 138
+        },
+        {
+          "caller": "cmp",
+          "callee": "len",
+          "lineNumber": 138
+        },
+        {
+          "caller": "cmp",
+          "callee": "fmt",
+          "lineNumber": 139
+        },
+        {
+          "caller": "cmp",
+          "callee": "x.mean",
+          "lineNumber": 139
+        },
+        {
+          "caller": "cmp",
+          "callee": "len",
+          "lineNumber": 139
+        },
+        {
+          "caller": "cmp",
+          "callee": "fmt",
+          "lineNumber": 140
+        },
+        {
+          "caller": "cmp",
+          "callee": "x.median",
+          "lineNumber": 140
+        },
+        {
+          "caller": "cmp",
+          "callee": "len",
+          "lineNumber": 140
+        },
+        {
+          "caller": "month",
+          "callee": "pd.concat(\n        [ds(a, 10, k).rename(\"a\"), ds(b, 10, k).rename(\"b\")], axis=1, join=\"inner\"\n    ).dropna",
+          "lineNumber": 145
+        },
+        {
+          "caller": "month",
+          "callee": "pd.concat",
+          "lineNumber": 145
+        },
+        {
+          "caller": "month",
+          "callee": "ds(a, 10, k).rename",
+          "lineNumber": 146
+        },
+        {
+          "caller": "month",
+          "callee": "ds",
+          "lineNumber": 146
+        },
+        {
+          "caller": "month",
+          "callee": "ds(b, 10, k).rename",
+          "lineNumber": 146
+        },
+        {
+          "caller": "month",
+          "callee": "ds",
+          "lineNumber": 146
+        },
+        {
+          "caller": "month",
+          "callee": "pd.to_datetime(z.index).strftime",
+          "lineNumber": 150
+        },
+        {
+          "caller": "month",
+          "callee": "pd.to_datetime",
+          "lineNumber": 150
+        },
+        {
+          "caller": "month",
+          "callee": "z.groupby(\"m\").apply",
+          "lineNumber": 151
+        },
+        {
+          "caller": "month",
+          "callee": "z.groupby",
+          "lineNumber": 151
+        },
+        {
+          "caller": "month",
+          "callee": "(x.a - x.b).mean",
+          "lineNumber": 151
+        },
+        {
+          "caller": "month",
+          "callee": "int",
+          "lineNumber": 152
+        },
+        {
+          "caller": "month",
+          "callee": "(q > 0).sum",
+          "lineNumber": 152
+        },
+        {
+          "caller": "month",
+          "callee": "len",
+          "lineNumber": 152
+        },
+        {
+          "caller": "month",
+          "callee": "\"、\".join",
+          "lineNumber": 152
+        },
+        {
+          "caller": "month",
+          "callee": "fmt",
+          "lineNumber": 153
+        },
+        {
+          "caller": "month",
+          "callee": "q.items",
+          "lineNumber": 153
+        },
+        {
+          "caller": "render",
+          "callee": "pd.to_datetime",
+          "lineNumber": 158
+        },
+        {
+          "caller": "render",
+          "callee": "\"、\".join",
+          "lineNumber": 159
+        },
+        {
+          "caller": "render",
+          "callee": "sorted",
+          "lineNumber": 159
+        },
+        {
+          "caller": "render",
+          "callee": "f.signal_date.dt.strftime(\"%Y-%m-%d\").unique",
+          "lineNumber": 159
+        },
+        {
+          "caller": "render",
+          "callee": "f.signal_date.dt.strftime",
+          "lineNumber": 159
+        },
+        {
+          "caller": "render",
+          "callee": "mt",
+          "lineNumber": 171
+        },
+        {
+          "caller": "render",
+          "callee": "f.v0_rank.le",
+          "lineNumber": 171
+        },
+        {
+          "caller": "render",
+          "callee": "f.v0_rank.le",
+          "lineNumber": 175
+        },
+        {
+          "caller": "render",
+          "callee": "base.risk_bucket.eq",
+          "lineNumber": 177
+        },
+        {
+          "caller": "render",
+          "callee": "base.risk_bucket.isin",
+          "lineNumber": 181
+        },
+        {
+          "caller": "render",
+          "callee": "base.risk_bucket.isin",
+          "lineNumber": 182
+        },
+        {
+          "caller": "render",
+          "callee": "base.risk_bucket.isin",
+          "lineNumber": 183
+        },
+        {
+          "caller": "render",
+          "callee": "cov.append",
+          "lineNumber": 185
+        },
+        {
+          "caller": "render",
+          "callee": "len",
+          "lineNumber": 189
+        },
+        {
+          "caller": "render",
+          "callee": "len",
+          "lineNumber": 190
+        },
+        {
+          "caller": "render",
+          "callee": "len",
+          "lineNumber": 190
+        },
+        {
+          "caller": "render",
+          "callee": "x.symbol.nunique",
+          "lineNumber": 191
+        },
+        {
+          "caller": "render",
+          "callee": "x.signal_date.nunique",
+          "lineNumber": 192
+        },
+        {
+          "caller": "render",
+          "callee": "mt",
+          "lineNumber": 198
+        },
+        {
+          "caller": "render",
+          "callee": "tab",
+          "lineNumber": 200
+        },
+        {
+          "caller": "render",
+          "callee": "base.risk_bucket.isin",
+          "lineNumber": 204
+        },
+        {
+          "caller": "render",
+          "callee": "base.risk_bucket.isin",
+          "lineNumber": 205
+        },
+        {
+          "caller": "render",
+          "callee": "base.risk_bucket.isin",
+          "lineNumber": 206
+        },
+        {
+          "caller": "render",
+          "callee": "cmp",
+          "lineNumber": 210
+        },
+        {
+          "caller": "render",
+          "callee": "tab",
+          "lineNumber": 217
+        },
+        {
+          "caller": "render",
+          "callee": "month",
+          "lineNumber": 233
+        },
+        {
+          "caller": "render",
+          "callee": "month",
+          "lineNumber": 233
+        },
+        {
+          "caller": "render",
+          "callee": "base.risk_bucket.eq",
+          "lineNumber": 238
+        },
+        {
+          "caller": "render",
+          "callee": "pos.append",
+          "lineNumber": 239
+        },
+        {
+          "caller": "render",
+          "callee": "len",
+          "lineNumber": 242
+        },
+        {
+          "caller": "render",
+          "callee": "len",
+          "lineNumber": 243
+        },
+        {
+          "caller": "render",
+          "callee": "len",
+          "lineNumber": 243
+        },
+        {
+          "caller": "render",
+          "callee": "(x.vp20_position.eq('ABOVE_VAH') | x.vp60_position.eq('ABOVE_VAH')).mean",
+          "lineNumber": 244
+        },
+        {
+          "caller": "render",
+          "callee": "x.vp20_position.eq",
+          "lineNumber": 244
+        },
+        {
+          "caller": "render",
+          "callee": "x.vp60_position.eq",
+          "lineNumber": 244
+        },
+        {
+          "caller": "render",
+          "callee": "len",
+          "lineNumber": 245
+        },
+        {
+          "caller": "render",
+          "callee": "(x.vp20_acceptance.eq('ABOVE_VAH_ACCEPTED') | x.vp60_acceptance.eq('ABOVE_VAH_ACCEPTED')).mean",
+          "lineNumber": 247
+        },
+        {
+          "caller": "render",
+          "callee": "x.vp20_acceptance.eq",
+          "lineNumber": 247
+        },
+        {
+          "caller": "render",
+          "callee": "x.vp60_acceptance.eq",
+          "lineNumber": 247
+        },
+        {
+          "caller": "render",
+          "callee": "len",
+          "lineNumber": 248
+        },
+        {
+          "caller": "render",
+          "callee": "tab",
+          "lineNumber": 255
+        },
+        {
+          "caller": "render",
+          "callee": "\"\\n\".join",
+          "lineNumber": 266
+        },
+        {
+          "caller": "main",
+          "callee": "argparse.ArgumentParser",
+          "lineNumber": 270
+        },
+        {
+          "caller": "main",
+          "callee": "ap.add_argument",
+          "lineNumber": 271
+        },
+        {
+          "caller": "main",
+          "callee": "Path",
+          "lineNumber": 274
+        },
+        {
+          "caller": "main",
+          "callee": "ap.add_argument",
+          "lineNumber": 276
+        },
+        {
+          "caller": "main",
+          "callee": "Path",
+          "lineNumber": 279
+        },
+        {
+          "caller": "main",
+          "callee": "ap.add_argument",
+          "lineNumber": 281
+        },
+        {
+          "caller": "main",
+          "callee": "Path",
+          "lineNumber": 282
+        },
+        {
+          "caller": "main",
+          "callee": "ap.parse_args",
+          "lineNumber": 284
+        },
+        {
+          "caller": "main",
+          "callee": "a.input_dir.resolve",
+          "lineNumber": 285
+        },
+        {
+          "caller": "main",
+          "callee": "a.output_dir.resolve",
+          "lineNumber": 286
+        },
+        {
+          "caller": "main",
+          "callee": "rd",
+          "lineNumber": 287
+        },
+        {
+          "caller": "main",
+          "callee": "st.get",
+          "lineNumber": 288
+        },
+        {
+          "caller": "main",
+          "callee": "ValueError",
+          "lineNumber": 289
+        },
+        {
+          "caller": "main",
+          "callee": "od.mkdir",
+          "lineNumber": 291
+        },
+        {
+          "caller": "main",
+          "callee": "rd",
+          "lineNumber": 293
+        },
+        {
+          "caller": "main",
+          "callee": "str",
+          "lineNumber": 293
+        },
+        {
+          "caller": "main",
+          "callee": "time.perf_counter",
+          "lineNumber": 294
+        },
+        {
+          "caller": "main",
+          "callee": "sorted",
+          "lineNumber": 295
+        },
+        {
+          "caller": "main",
+          "callee": "(src / \"snapshots\").glob",
+          "lineNumber": 295
+        },
+        {
+          "caller": "main",
+          "callee": "p.stem.removeprefix",
+          "lineNumber": 297
+        },
+        {
+          "caller": "main",
+          "callee": "q.exists",
+          "lineNumber": 298
+        },
+        {
+          "caller": "main",
+          "callee": "pd.read_parquet(p).copy",
+          "lineNumber": 299
+        },
+        {
+          "caller": "main",
+          "callee": "pd.read_parquet",
+          "lineNumber": 299
+        },
+        {
+          "caller": "main",
+          "callee": "x.v0_rank.le",
+          "lineNumber": 301
+        },
+        {
+          "caller": "main",
+          "callee": "x.v0_rank.le",
+          "lineNumber": 302
+        },
+        {
+          "caller": "main",
+          "callee": "x.v0_rank.le",
+          "lineNumber": 303
+        },
+        {
+          "caller": "main",
+          "callee": "x.to_parquet",
+          "lineNumber": 304
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 305
+        },
+        {
+          "caller": "main",
+          "callee": "wr",
+          "lineNumber": 306
+        },
+        {
+          "caller": "main",
+          "callee": "pd.concat",
+          "lineNumber": 307
+        },
+        {
+          "caller": "main",
+          "callee": "pd.read_parquet",
+          "lineNumber": 307
+        },
+        {
+          "caller": "main",
+          "callee": "sorted",
+          "lineNumber": 307
+        },
+        {
+          "caller": "main",
+          "callee": "od.glob",
+          "lineNumber": 307
+        },
+        {
+          "caller": "main",
+          "callee": "state.update",
+          "lineNumber": 308
+        },
+        {
+          "caller": "main",
+          "callee": "time.perf_counter",
+          "lineNumber": 308
+        },
+        {
+          "caller": "main",
+          "callee": "wr",
+          "lineNumber": 309
+        },
+        {
+          "caller": "main",
+          "callee": "a.report.resolve().write_text",
+          "lineNumber": 310
+        },
+        {
+          "caller": "main",
+          "callee": "a.report.resolve",
+          "lineNumber": 310
+        },
+        {
+          "caller": "main",
+          "callee": "render",
+          "lineNumber": 310
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 311
+        },
+        {
+          "caller": "main",
+          "callee": "a.report.resolve",
+          "lineNumber": 311
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 12,
+        "functionCount": 12,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/fixtures/strategies/minute_red_streak.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 169,
+      "nonEmptyLines": 153,
+      "functions": [
+        {
+          "name": "_recent_limit_ups",
+          "startLine": 89,
+          "endLine": 113,
+          "params": [
+            "daily",
+            "lookback"
+          ]
+        },
+        {
+          "name": "filter_minute_history",
+          "startLine": 116,
+          "endLine": 169,
+          "params": [
+            "df",
+            "params",
+            "daily"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_recent_limit_ups",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "filter_minute_history",
+          "line": 116,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "pl.DataFrame",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "daily.is_empty",
+          "lineNumber": 97
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "{\"signal_limit_up\", \"signal_broken_limit_up\"}.issubset",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "daily.select(\"symbol\", \"date\", \"signal_limit_up\", \"signal_broken_limit_up\")\r\n        .sort([\"symbol\", \"date\"])\r\n        .filter(pl.int_range(pl.len()).over(\"symbol\") >= pl.len().over(\"symbol\") - lookback)\r\n        .group_by(\"symbol\")\r\n        .agg(\r\n            recent_limit_ups=(\r\n                pl.col(\"signal_limit_up\").fill_null(False)\r\n                | pl.col(\"signal_broken_limit_up\").fill_null(False)\r\n            ).sum()\r\n        )\r\n        .filter",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "daily.select(\"symbol\", \"date\", \"signal_limit_up\", \"signal_broken_limit_up\")\r\n        .sort([\"symbol\", \"date\"])\r\n        .filter(pl.int_range(pl.len()).over(\"symbol\") >= pl.len().over(\"symbol\") - lookback)\r\n        .group_by(\"symbol\")\r\n        .agg",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "daily.select(\"symbol\", \"date\", \"signal_limit_up\", \"signal_broken_limit_up\")\r\n        .sort([\"symbol\", \"date\"])\r\n        .filter(pl.int_range(pl.len()).over(\"symbol\") >= pl.len().over(\"symbol\") - lookback)\r\n        .group_by",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "daily.select(\"symbol\", \"date\", \"signal_limit_up\", \"signal_broken_limit_up\")\r\n        .sort([\"symbol\", \"date\"])\r\n        .filter",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "daily.select(\"symbol\", \"date\", \"signal_limit_up\", \"signal_broken_limit_up\")\r\n        .sort",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "daily.select",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "pl.int_range(pl.len()).over",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "pl.int_range",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "pl.len",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "pl.len().over",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "pl.len",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "(\r\n                pl.col(\"signal_limit_up\").fill_null(False)\r\n                | pl.col(\"signal_broken_limit_up\").fill_null(False)\r\n            ).sum",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "pl.col(\"signal_limit_up\").fill_null",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "pl.col",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "pl.col(\"signal_broken_limit_up\").fill_null",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "pl.col",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_recent_limit_ups",
+          "callee": "pl.col",
+          "lineNumber": 112
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "int",
+          "lineNumber": 125
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "params.get",
+          "lineNumber": 125
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "min",
+          "lineNumber": 126
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "int",
+          "lineNumber": 126
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "params.get",
+          "lineNumber": 126
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "min",
+          "lineNumber": 127
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "int",
+          "lineNumber": 127
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "params.get",
+          "lineNumber": 127
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "params.get",
+          "lineNumber": 128
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "df.sort([\"symbol\", \"datetime\"])\r\n        .filter(pl.int_range(pl.len()).over(\"symbol\") < bars)\r\n        .with_columns",
+          "lineNumber": 133
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "df.sort([\"symbol\", \"datetime\"])\r\n        .filter",
+          "lineNumber": 133
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "df.sort",
+          "lineNumber": 133
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.int_range(pl.len()).over",
+          "lineNumber": 134
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.int_range",
+          "lineNumber": 134
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.len",
+          "lineNumber": 134
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "(pl.col(\"close\") > pl.col(\"open\")).cast",
+          "lineNumber": 135
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col",
+          "lineNumber": 135
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col",
+          "lineNumber": 135
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "windowed.group_by(\"symbol\").agg",
+          "lineNumber": 138
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "windowed.group_by",
+          "lineNumber": 138
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.len",
+          "lineNumber": 139
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col(\"_red\").sum",
+          "lineNumber": 140
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col",
+          "lineNumber": 140
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col(\"datetime\").max",
+          "lineNumber": 141
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col",
+          "lineNumber": 141
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col(\"close\").sort_by(\"datetime\").last",
+          "lineNumber": 143
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col(\"close\").sort_by",
+          "lineNumber": 143
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col",
+          "lineNumber": 143
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col(\"high\").max",
+          "lineNumber": 144
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col",
+          "lineNumber": 144
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col(\"low\").min",
+          "lineNumber": 145
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col",
+          "lineNumber": 145
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col(\"volume\").sum",
+          "lineNumber": 146
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col",
+          "lineNumber": 146
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col(\"amount\").sum",
+          "lineNumber": 147
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col",
+          "lineNumber": 147
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "windowed.sort([rank_by, \"datetime\"], descending=[True, True])\r\n        .filter(pl.int_range(pl.len()).over(\"symbol\") < top_red)\r\n        .group_by(\"symbol\")\r\n        .agg",
+          "lineNumber": 151
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "windowed.sort([rank_by, \"datetime\"], descending=[True, True])\r\n        .filter(pl.int_range(pl.len()).over(\"symbol\") < top_red)\r\n        .group_by",
+          "lineNumber": 151
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "windowed.sort([rank_by, \"datetime\"], descending=[True, True])\r\n        .filter",
+          "lineNumber": 151
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "windowed.sort",
+          "lineNumber": 151
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.int_range(pl.len()).over",
+          "lineNumber": 152
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.int_range",
+          "lineNumber": 152
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.len",
+          "lineNumber": 152
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col(\"_red\").sum",
+          "lineNumber": 154
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col",
+          "lineNumber": 154
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "window.join(top, on=\"symbol\", how=\"inner\")\r\n        .filter(\r\n            (pl.col(\"bars_checked\") >= bars)\r\n            & (pl.col(\"red_count\") >= min_red)\r\n            & (pl.col(\"top_red_count\") >= top_red)\r\n        )\r\n        .drop",
+          "lineNumber": 158
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "window.join(top, on=\"symbol\", how=\"inner\")\r\n        .filter",
+          "lineNumber": 158
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "window.join",
+          "lineNumber": 158
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col",
+          "lineNumber": 160
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col",
+          "lineNumber": 161
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "pl.col",
+          "lineNumber": 162
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "params.get",
+          "lineNumber": 166
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "max",
+          "lineNumber": 167
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "min",
+          "lineNumber": 167
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "int",
+          "lineNumber": 167
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "params.get",
+          "lineNumber": 167
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "result.join",
+          "lineNumber": 168
+        },
+        {
+          "caller": "filter_minute_history",
+          "callee": "_recent_limit_ups",
+          "lineNumber": 168
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/test_right_side_top150_vp_portfolio_backtest.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "_module",
+          "startLine": 12,
+          "endLine": 26,
+          "params": []
+        },
+        {
+          "name": "test_portfolio_path_uses_daily_equal_weight_nav_for_drawdown",
+          "startLine": 29,
+          "endLine": 57,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_module",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "test_portfolio_path_uses_daily_equal_weight_nav_for_drawdown",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_module",
+          "callee": "Path(__file__).resolve",
+          "lineNumber": 13
+        },
+        {
+          "caller": "_module",
+          "callee": "Path",
+          "lineNumber": 13
+        },
+        {
+          "caller": "_module",
+          "callee": "sys.path.insert",
+          "lineNumber": 14
+        },
+        {
+          "caller": "_module",
+          "callee": "str",
+          "lineNumber": 14
+        },
+        {
+          "caller": "_module",
+          "callee": "importlib.util.spec_from_file_location",
+          "lineNumber": 16
+        },
+        {
+          "caller": "_module",
+          "callee": "importlib.util.module_from_spec",
+          "lineNumber": 21
+        },
+        {
+          "caller": "_module",
+          "callee": "spec.loader.exec_module",
+          "lineNumber": 23
+        },
+        {
+          "caller": "_module",
+          "callee": "sys.path.remove",
+          "lineNumber": 26
+        },
+        {
+          "caller": "_module",
+          "callee": "str",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_portfolio_path_uses_daily_equal_weight_nav_for_drawdown",
+          "callee": "_module",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_portfolio_path_uses_daily_equal_weight_nav_for_drawdown",
+          "callee": "date",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test_portfolio_path_uses_daily_equal_weight_nav_for_drawdown",
+          "callee": "date",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test_portfolio_path_uses_daily_equal_weight_nav_for_drawdown",
+          "callee": "pd.DataFrame",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_portfolio_path_uses_daily_equal_weight_nav_for_drawdown",
+          "callee": "pd.DataFrame",
+          "lineNumber": 38
+        },
+        {
+          "caller": "test_portfolio_path_uses_daily_equal_weight_nav_for_drawdown",
+          "callee": "module._portfolio_path",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_portfolio_path_uses_daily_equal_weight_nav_for_drawdown",
+          "callee": "date",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_portfolio_path_uses_daily_equal_weight_nav_for_drawdown",
+          "callee": "pytest.approx",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_portfolio_path_uses_daily_equal_weight_nav_for_drawdown",
+          "callee": "pytest.approx",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_portfolio_path_uses_daily_equal_weight_nav_for_drawdown",
+          "callee": "pytest.approx",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_portfolio_path_uses_daily_equal_weight_nav_for_drawdown",
+          "callee": "result.daily_nav[\"portfolio_nav\"].tolist",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_portfolio_path_uses_daily_equal_weight_nav_for_drawdown",
+          "callee": "pytest.approx",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/test_wyckoff_current_random12_backtest.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 129,
+      "nonEmptyLines": 101,
+      "functions": [
+        {
+          "name": "_module",
+          "startLine": 12,
+          "endLine": 26,
+          "params": []
+        },
+        {
+          "name": "test_select_dates_is_seeded_and_month_stratified",
+          "startLine": 29,
+          "endLine": 41,
+          "params": []
+        },
+        {
+          "name": "test_eligible_dates_requires_complete_forward_horizon",
+          "startLine": 44,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "test_eligible_dates_rejects_missing_benchmark_exit",
+          "startLine": 54,
+          "endLine": 64,
+          "params": []
+        },
+        {
+          "name": "test_report_separates_return_benchmark_and_excess",
+          "startLine": 67,
+          "endLine": 93,
+          "params": []
+        },
+        {
+          "name": "test_signal_row_excludes_nested_ui_evidence",
+          "startLine": 96,
+          "endLine": 119,
+          "params": []
+        },
+        {
+          "name": "test_first_interrupted_parquet_write_is_safe_to_restart",
+          "startLine": 122,
+          "endLine": 129,
+          "params": [
+            "tmp_path"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_module",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "test_select_dates_is_seeded_and_month_stratified",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "test_eligible_dates_requires_complete_forward_horizon",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "test_eligible_dates_rejects_missing_benchmark_exit",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "test_report_separates_return_benchmark_and_excess",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "test_signal_row_excludes_nested_ui_evidence",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "test_first_interrupted_parquet_write_is_safe_to_restart",
+          "line": 122,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_module",
+          "callee": "Path(__file__).resolve",
+          "lineNumber": 13
+        },
+        {
+          "caller": "_module",
+          "callee": "Path",
+          "lineNumber": 13
+        },
+        {
+          "caller": "_module",
+          "callee": "sys.path.insert",
+          "lineNumber": 14
+        },
+        {
+          "caller": "_module",
+          "callee": "str",
+          "lineNumber": 14
+        },
+        {
+          "caller": "_module",
+          "callee": "importlib.util.spec_from_file_location",
+          "lineNumber": 16
+        },
+        {
+          "caller": "_module",
+          "callee": "importlib.util.module_from_spec",
+          "lineNumber": 21
+        },
+        {
+          "caller": "_module",
+          "callee": "spec.loader.exec_module",
+          "lineNumber": 23
+        },
+        {
+          "caller": "_module",
+          "callee": "sys.path.remove",
+          "lineNumber": 26
+        },
+        {
+          "caller": "_module",
+          "callee": "str",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_select_dates_is_seeded_and_month_stratified",
+          "callee": "_module",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_select_dates_is_seeded_and_month_stratified",
+          "callee": "date",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_select_dates_is_seeded_and_month_stratified",
+          "callee": "date",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_select_dates_is_seeded_and_month_stratified",
+          "callee": "date",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_select_dates_is_seeded_and_month_stratified",
+          "callee": "date",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_select_dates_is_seeded_and_month_stratified",
+          "callee": "date",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_select_dates_is_seeded_and_month_stratified",
+          "callee": "date",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_select_dates_is_seeded_and_month_stratified",
+          "callee": "module._select_dates",
+          "lineNumber": 37
+        },
+        {
+          "caller": "test_select_dates_is_seeded_and_month_stratified",
+          "callee": "len",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_select_dates_is_seeded_and_month_stratified",
+          "callee": "len",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_select_dates_is_seeded_and_month_stratified",
+          "callee": "value.strftime",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_eligible_dates_requires_complete_forward_horizon",
+          "callee": "_module",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_eligible_dates_requires_complete_forward_horizon",
+          "callee": "date",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_eligible_dates_requires_complete_forward_horizon",
+          "callee": "range",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_eligible_dates_requires_complete_forward_horizon",
+          "callee": "module._eligible_dates",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_eligible_dates_requires_complete_forward_horizon",
+          "callee": "date",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_eligible_dates_requires_complete_forward_horizon",
+          "callee": "date",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_eligible_dates_rejects_missing_benchmark_exit",
+          "callee": "_module",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_eligible_dates_rejects_missing_benchmark_exit",
+          "callee": "date",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_eligible_dates_rejects_missing_benchmark_exit",
+          "callee": "range",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_eligible_dates_rejects_missing_benchmark_exit",
+          "callee": "module._eligible_dates",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_eligible_dates_rejects_missing_benchmark_exit",
+          "callee": "date",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_eligible_dates_rejects_missing_benchmark_exit",
+          "callee": "date",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_eligible_dates_rejects_missing_benchmark_exit",
+          "callee": "range",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_report_separates_return_benchmark_and_excess",
+          "callee": "_module",
+          "lineNumber": 68
+        },
+        {
+          "caller": "test_report_separates_return_benchmark_and_excess",
+          "callee": "pl.DataFrame",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_report_separates_return_benchmark_and_excess",
+          "callee": "date",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_report_separates_return_benchmark_and_excess",
+          "callee": "date",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_report_separates_return_benchmark_and_excess",
+          "callee": "module._report",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_report_separates_return_benchmark_and_excess",
+          "callee": "Path",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_report_separates_return_benchmark_and_excess",
+          "callee": "pytest.approx",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_report_separates_return_benchmark_and_excess",
+          "callee": "pytest.approx",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_report_separates_return_benchmark_and_excess",
+          "callee": "pytest.approx",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_signal_row_excludes_nested_ui_evidence",
+          "callee": "_module",
+          "lineNumber": 97
+        },
+        {
+          "caller": "test_signal_row_excludes_nested_ui_evidence",
+          "callee": "module._signal_row",
+          "lineNumber": 99
+        },
+        {
+          "caller": "test_signal_row_excludes_nested_ui_evidence",
+          "callee": "date",
+          "lineNumber": 100
+        },
+        {
+          "caller": "test_signal_row_excludes_nested_ui_evidence",
+          "callee": "date",
+          "lineNumber": 110
+        },
+        {
+          "caller": "test_first_interrupted_parquet_write_is_safe_to_restart",
+          "callee": "_module",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_first_interrupted_parquet_write_is_safe_to_restart",
+          "callee": "incomplete.write_bytes",
+          "lineNumber": 125
+        },
+        {
+          "caller": "test_first_interrupted_parquet_write_is_safe_to_restart",
+          "callee": "module._load_stored_signals",
+          "lineNumber": 127
+        },
+        {
+          "caller": "test_first_interrupted_parquet_write_is_safe_to_restart",
+          "callee": "result.is_empty",
+          "lineNumber": 129
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/test_wyckoff_events.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 17,
+      "functions": [
+        {
+          "name": "test_right_side_ignition_has_high_confidence_for_high_score",
+          "startLine": 6,
+          "endLine": 11,
+          "params": []
+        },
+        {
+          "name": "test_accumulation_repair_resonance_precedes_individual_trigger",
+          "startLine": 14,
+          "endLine": 19,
+          "params": []
+        },
+        {
+          "name": "test_unknown_or_empty_signal_is_observation_only",
+          "startLine": 22,
+          "endLine": 27,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_right_side_ignition_has_high_confidence_for_high_score",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "test_accumulation_repair_resonance_precedes_individual_trigger",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "test_unknown_or_empty_signal_is_observation_only",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_right_side_ignition_has_high_confidence_for_high_score",
+          "callee": "classify_wyckoff_event",
+          "lineNumber": 7
+        },
+        {
+          "caller": "test_accumulation_repair_resonance_precedes_individual_trigger",
+          "callee": "classify_wyckoff_event",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_unknown_or_empty_signal_is_observation_only",
+          "callee": "classify_wyckoff_event",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "docs/czscEvent/CZSC/CZSC 1.0.X 版本使用说明和案例.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 142,
+      "nonEmptyLines": 76,
+      "sections": [
+        {
+          "heading": "CZSC 1\\.0\\.X 版本使用说明和案例",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "一、快速速查表（按场景找案例）",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "二、案例详细介绍",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "案例 1 · 基于 Event 的策略回测 \\+ wbt HTML 报告",
+          "level": 3,
+          "line": 22
+        },
+        {
+          "heading": "案例 2 · lightweight\\_charts 缠论可视化",
+          "level": 3,
+          "line": 36
+        },
+        {
+          "heading": "案例 3 · 把信号函数画到 K 线主图（plot\\_czsc\\_signals）",
+          "level": 3,
+          "line": 50
+        },
+        {
+          "heading": "案例 4 · 性能基准测试：在本地复现 CZSC / CzscTrader 吞吐量",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "案例 5 · 信号函数模块深入介绍",
+          "level": 3,
+          "line": 78
+        },
+        {
+          "heading": "案例 6 · Tushare 真实数据跑 Event 策略回测",
+          "level": 3,
+          "line": 96
+        },
+        {
+          "heading": "案例 7 · 量化研究基础知识",
+          "level": 3,
+          "line": 112
+        },
+        {
+          "heading": "案例 8 · 使用 Tushare 数据执行缠论事件选股",
+          "level": 3,
+          "line": 126
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "docs/examples/custom-data-source/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 43,
+      "nonEmptyLines": 29,
+      "sections": [
+        {
+          "heading": "自定义数据源 mock 联调示例",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "运行 mock 服务",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "接入项目",
+          "level": 2,
+          "line": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "docs/examples/custom-data-source/mock_server.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 129,
+      "nonEmptyLines": 108,
+      "functions": [
+        {
+          "name": "_parse_symbols",
+          "startLine": 32,
+          "endLine": 37,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "_payload",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "_parse_date",
+          "startLine": 49,
+          "endLine": 56,
+          "params": [
+            "value",
+            "fallback"
+          ]
+        },
+        {
+          "name": "daily",
+          "startLine": 60,
+          "endLine": 83,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "adj_factor",
+          "startLine": 87,
+          "endLine": 97,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "realtime",
+          "startLine": 101,
+          "endLine": 125,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_parse_symbols",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "_payload",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "_parse_date",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "daily",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "adj_factor",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "realtime",
+          "line": 100,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_parse_symbols",
+          "callee": "isinstance",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_parse_symbols",
+          "callee": "str",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_parse_symbols",
+          "callee": "str",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_parse_symbols",
+          "callee": "isinstance",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_parse_symbols",
+          "callee": "s.strip",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_parse_symbols",
+          "callee": "value.split",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_parse_symbols",
+          "callee": "s.strip",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_parse_symbols",
+          "callee": "list",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_payload",
+          "callee": "request.json",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_payload",
+          "callee": "dict",
+          "lineNumber": 46
+        },
+        {
+          "caller": "_parse_date",
+          "callee": "str",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_parse_date",
+          "callee": "date.fromisoformat",
+          "lineNumber": 54
+        },
+        {
+          "caller": "daily",
+          "callee": "_payload",
+          "lineNumber": 61
+        },
+        {
+          "caller": "daily",
+          "callee": "_parse_symbols",
+          "lineNumber": 62
+        },
+        {
+          "caller": "daily",
+          "callee": "body.get",
+          "lineNumber": 62
+        },
+        {
+          "caller": "daily",
+          "callee": "_parse_date",
+          "lineNumber": 63
+        },
+        {
+          "caller": "daily",
+          "callee": "body.get",
+          "lineNumber": 63
+        },
+        {
+          "caller": "daily",
+          "callee": "date.today",
+          "lineNumber": 63
+        },
+        {
+          "caller": "daily",
+          "callee": "_parse_date",
+          "lineNumber": 64
+        },
+        {
+          "caller": "daily",
+          "callee": "body.get",
+          "lineNumber": 64
+        },
+        {
+          "caller": "daily",
+          "callee": "timedelta",
+          "lineNumber": 64
+        },
+        {
+          "caller": "daily",
+          "callee": "cur.weekday",
+          "lineNumber": 68
+        },
+        {
+          "caller": "daily",
+          "callee": "rows.append",
+          "lineNumber": 72
+        },
+        {
+          "caller": "daily",
+          "callee": "cur.isoformat",
+          "lineNumber": 74
+        },
+        {
+          "caller": "daily",
+          "callee": "round",
+          "lineNumber": 75
+        },
+        {
+          "caller": "daily",
+          "callee": "round",
+          "lineNumber": 76
+        },
+        {
+          "caller": "daily",
+          "callee": "round",
+          "lineNumber": 77
+        },
+        {
+          "caller": "daily",
+          "callee": "round",
+          "lineNumber": 78
+        },
+        {
+          "caller": "daily",
+          "callee": "round",
+          "lineNumber": 80
+        },
+        {
+          "caller": "daily",
+          "callee": "timedelta",
+          "lineNumber": 82
+        },
+        {
+          "caller": "adj_factor",
+          "callee": "_payload",
+          "lineNumber": 88
+        },
+        {
+          "caller": "adj_factor",
+          "callee": "_parse_symbols",
+          "lineNumber": 89
+        },
+        {
+          "caller": "adj_factor",
+          "callee": "body.get",
+          "lineNumber": 89
+        },
+        {
+          "caller": "adj_factor",
+          "callee": "date.today",
+          "lineNumber": 90
+        },
+        {
+          "caller": "adj_factor",
+          "callee": "today.isoformat",
+          "lineNumber": 94
+        },
+        {
+          "caller": "realtime",
+          "callee": "datetime.now().isoformat",
+          "lineNumber": 102
+        },
+        {
+          "caller": "realtime",
+          "callee": "datetime.now",
+          "lineNumber": 102
+        },
+        {
+          "caller": "realtime",
+          "callee": "enumerate",
+          "lineNumber": 104
+        },
+        {
+          "caller": "realtime",
+          "callee": "SYMBOLS.items",
+          "lineNumber": 104
+        },
+        {
+          "caller": "realtime",
+          "callee": "round",
+          "lineNumber": 106
+        },
+        {
+          "caller": "realtime",
+          "callee": "round",
+          "lineNumber": 107
+        },
+        {
+          "caller": "realtime",
+          "callee": "rows.append",
+          "lineNumber": 108
+        },
+        {
+          "caller": "realtime",
+          "callee": "round",
+          "lineNumber": 113
+        },
+        {
+          "caller": "realtime",
+          "callee": "round",
+          "lineNumber": 114
+        },
+        {
+          "caller": "realtime",
+          "callee": "round",
+          "lineNumber": 115
+        },
+        {
+          "caller": "realtime",
+          "callee": "round",
+          "lineNumber": 117
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "docs/examples/custom-data-source/mock_source.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 58,
+      "nonEmptyLines": 55,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "display_name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "auth",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "datasets",
+          "level": 1,
+          "line": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "docs/implementation/volume-profile/volume-profile-v1-batch-performance.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 148,
+      "nonEmptyLines": 104,
+      "sections": [
+        {
+          "heading": "Volume Profile V1: 批量读取与运行级缓存性能改造",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "结论",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "修改文件",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "原始瓶颈与 Profiling",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "BatchMinuteDataContext",
+          "level": 2,
+          "line": 51
+        },
+        {
+          "heading": "Lite 与 Full",
+          "level": 2,
+          "line": 76
+        },
+        {
+          "heading": "一致性与 Non-Repainting",
+          "level": 2,
+          "line": 95
+        },
+        {
+          "heading": "内存控制",
+          "level": 2,
+          "line": 108
+        },
+        {
+          "heading": "可复现实测",
+          "level": 2,
+          "line": 118
+        },
+        {
+          "heading": "回答",
+          "level": 2,
+          "line": 127
+        },
+        {
+          "heading": "当前限制",
+          "level": 2,
+          "line": 144
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "docs/implementation/volume-profile/volume-profile-v1-minute-implementation.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 201,
+      "nonEmptyLines": 152,
+      "sections": [
+        {
+          "heading": "Volume Profile Engine V1（分钟 OHLCV）",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "结论",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "文件与边界",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "输入、模式与数据质量",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "Range Overlap、价格桶与 Volume Conservation",
+          "level": 2,
+          "line": 50
+        },
+        {
+          "heading": "POC、Value Area、HVN/LVN",
+          "level": 2,
+          "line": 66
+        },
+        {
+          "heading": "VP20、VP60 与 WyckoffRangeVP",
+          "level": 2,
+          "line": 74
+        },
+        {
+          "heading": "动态、位置、接受与延展上下文",
+          "level": 2,
+          "line": 85
+        },
+        {
+          "heading": "Non-Repainting",
+          "level": 2,
+          "line": 116
+        },
+        {
+          "heading": "单元测试与真实样本",
+          "level": 2,
+          "line": 124
+        },
+        {
+          "heading": "性能",
+          "level": 2,
+          "line": 164
+        },
+        {
+          "heading": "当前限制与下一步",
+          "level": 2,
+          "line": 178
+        },
+        {
+          "heading": "最终回答",
+          "level": 3,
+          "line": 186
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    }
+  ]
+}

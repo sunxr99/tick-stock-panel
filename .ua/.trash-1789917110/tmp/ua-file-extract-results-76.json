@@ -1,0 +1,1584 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 3,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 3,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/scripts/check_pr_policy.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 219,
+      "nonEmptyLines": 185,
+      "functions": [
+        {
+          "name": "_heading_names",
+          "startLine": 63,
+          "endLine": 77,
+          "params": [
+            "body"
+          ]
+        },
+        {
+          "name": "_dangerous_files",
+          "startLine": 80,
+          "endLine": 95,
+          "params": [
+            "changed_files"
+          ]
+        },
+        {
+          "name": "_dependency_only_change",
+          "startLine": 98,
+          "endLine": 107,
+          "params": [
+            "changed_files"
+          ]
+        },
+        {
+          "name": "validate_policy",
+          "startLine": 110,
+          "endLine": 139,
+          "params": [
+            "body",
+            "changed_files",
+            "automated_dependency_pr"
+          ]
+        },
+        {
+          "name": "_load_body",
+          "startLine": 142,
+          "endLine": 153,
+          "params": [
+            "args"
+          ]
+        },
+        {
+          "name": "_load_event",
+          "startLine": 156,
+          "endLine": 160,
+          "params": [
+            "args"
+          ]
+        },
+        {
+          "name": "_is_dependabot_event",
+          "startLine": 163,
+          "endLine": 173,
+          "params": [
+            "event"
+          ]
+        },
+        {
+          "name": "_load_changed_files",
+          "startLine": 176,
+          "endLine": 185,
+          "params": [
+            "args"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 188,
+          "endLine": 215,
+          "params": [
+            "argv"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PolicyResult",
+          "startLine": 54,
+          "endLine": 57,
+          "methods": [],
+          "properties": [
+            "ok",
+            "failures",
+            "warnings"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PolicyResult",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "_heading_names",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "_dangerous_files",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "_dependency_only_change",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "validate_policy",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "_load_body",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "_load_event",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "_is_dependabot_event",
+          "line": 163,
+          "isDefault": false
+        },
+        {
+          "name": "_load_changed_files",
+          "line": 176,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 188,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_heading_names",
+          "callee": "set",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_heading_names",
+          "callee": "body.splitlines",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_heading_names",
+          "callee": "re.match",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_heading_names",
+          "callee": "match.group(1).strip().lower",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_heading_names",
+          "callee": "match.group(1).strip",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_heading_names",
+          "callee": "match.group",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_heading_names",
+          "callee": "headings.add",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_heading_names",
+          "callee": "headings.update",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_heading_names",
+          "callee": "part.strip",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_heading_names",
+          "callee": "_HEADING_SPLIT_RE.split",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_heading_names",
+          "callee": "part.strip",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_dangerous_files",
+          "callee": "raw_path.strip",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_dangerous_files",
+          "callee": "path.lower",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_dangerous_files",
+          "callee": "Path(path).name.lower",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_dangerous_files",
+          "callee": "Path",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_dangerous_files",
+          "callee": "Path(path).suffix.lower",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_dangerous_files",
+          "callee": "Path",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_dangerous_files",
+          "callee": "dangerous.append",
+          "lineNumber": 90
+        },
+        {
+          "caller": "_dangerous_files",
+          "callee": "dangerous.append",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_dangerous_files",
+          "callee": "lower_path.startswith",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_dangerous_files",
+          "callee": "dangerous.append",
+          "lineNumber": 94
+        },
+        {
+          "caller": "_dependency_only_change",
+          "callee": "raw_path.strip",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_dependency_only_change",
+          "callee": "Path",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_dependency_only_change",
+          "callee": "path.endswith",
+          "lineNumber": 105
+        },
+        {
+          "caller": "validate_policy",
+          "callee": "body.strip",
+          "lineNumber": 118
+        },
+        {
+          "caller": "validate_policy",
+          "callee": "PolicyResult",
+          "lineNumber": 120
+        },
+        {
+          "caller": "validate_policy",
+          "callee": "_heading_names",
+          "lineNumber": 122
+        },
+        {
+          "caller": "validate_policy",
+          "callee": "headings.intersection",
+          "lineNumber": 124
+        },
+        {
+          "caller": "validate_policy",
+          "callee": "failures.append",
+          "lineNumber": 125
+        },
+        {
+          "caller": "validate_policy",
+          "callee": "headings.intersection",
+          "lineNumber": 126
+        },
+        {
+          "caller": "validate_policy",
+          "callee": "failures.append",
+          "lineNumber": 127
+        },
+        {
+          "caller": "validate_policy",
+          "callee": "pattern.search",
+          "lineNumber": 130
+        },
+        {
+          "caller": "validate_policy",
+          "callee": "failures.append",
+          "lineNumber": 131
+        },
+        {
+          "caller": "validate_policy",
+          "callee": "_dangerous_files",
+          "lineNumber": 134
+        },
+        {
+          "caller": "validate_policy",
+          "callee": "failures.append",
+          "lineNumber": 136
+        },
+        {
+          "caller": "validate_policy",
+          "callee": "warnings.append",
+          "lineNumber": 137
+        },
+        {
+          "caller": "validate_policy",
+          "callee": "\", \".join",
+          "lineNumber": 137
+        },
+        {
+          "caller": "validate_policy",
+          "callee": "PolicyResult",
+          "lineNumber": 139
+        },
+        {
+          "caller": "validate_policy",
+          "callee": "tuple",
+          "lineNumber": 139
+        },
+        {
+          "caller": "validate_policy",
+          "callee": "tuple",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_load_body",
+          "callee": "Path(args.body_file).read_text",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_load_body",
+          "callee": "Path",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_load_body",
+          "callee": "os.environ.get",
+          "lineNumber": 147
+        },
+        {
+          "caller": "_load_body",
+          "callee": "json.loads",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_load_body",
+          "callee": "Path(event_path).read_text",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_load_body",
+          "callee": "Path",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_load_body",
+          "callee": "data.get(\"pull_request\", {}).get",
+          "lineNumber": 150
+        },
+        {
+          "caller": "_load_body",
+          "callee": "data.get",
+          "lineNumber": 150
+        },
+        {
+          "caller": "_load_body",
+          "callee": "isinstance",
+          "lineNumber": 151
+        },
+        {
+          "caller": "_load_body",
+          "callee": "SystemExit",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_load_event",
+          "callee": "os.environ.get",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_load_event",
+          "callee": "json.loads",
+          "lineNumber": 160
+        },
+        {
+          "caller": "_load_event",
+          "callee": "Path(event_path).read_text",
+          "lineNumber": 160
+        },
+        {
+          "caller": "_load_event",
+          "callee": "Path",
+          "lineNumber": 160
+        },
+        {
+          "caller": "_is_dependabot_event",
+          "callee": "isinstance",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_is_dependabot_event",
+          "callee": "event.get",
+          "lineNumber": 166
+        },
+        {
+          "caller": "_is_dependabot_event",
+          "callee": "pull_request.get",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_is_dependabot_event",
+          "callee": "isinstance",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_is_dependabot_event",
+          "callee": "event.get",
+          "lineNumber": 168
+        },
+        {
+          "caller": "_is_dependabot_event",
+          "callee": "pr_user.get",
+          "lineNumber": 170
+        },
+        {
+          "caller": "_is_dependabot_event",
+          "callee": "isinstance",
+          "lineNumber": 170
+        },
+        {
+          "caller": "_is_dependabot_event",
+          "callee": "sender.get",
+          "lineNumber": 171
+        },
+        {
+          "caller": "_is_dependabot_event",
+          "callee": "isinstance",
+          "lineNumber": 171
+        },
+        {
+          "caller": "_is_dependabot_event",
+          "callee": "any",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_is_dependabot_event",
+          "callee": "str(login or \"\").lower",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_is_dependabot_event",
+          "callee": "str",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_load_changed_files",
+          "callee": "line.strip",
+          "lineNumber": 181
+        },
+        {
+          "caller": "_load_changed_files",
+          "callee": "Path(args.changed_files_file).read_text(encoding=\"utf-8\").splitlines",
+          "lineNumber": 182
+        },
+        {
+          "caller": "_load_changed_files",
+          "callee": "Path(args.changed_files_file).read_text",
+          "lineNumber": 182
+        },
+        {
+          "caller": "_load_changed_files",
+          "callee": "Path",
+          "lineNumber": 182
+        },
+        {
+          "caller": "_load_changed_files",
+          "callee": "line.strip",
+          "lineNumber": 183
+        },
+        {
+          "caller": "main",
+          "callee": "argparse.ArgumentParser",
+          "lineNumber": 189
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 190
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 191
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 192
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 193
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 194
+        },
+        {
+          "caller": "main",
+          "callee": "parser.parse_args",
+          "lineNumber": 195
+        },
+        {
+          "caller": "main",
+          "callee": "_load_changed_files",
+          "lineNumber": 197
+        },
+        {
+          "caller": "main",
+          "callee": "_load_event",
+          "lineNumber": 198
+        },
+        {
+          "caller": "main",
+          "callee": "validate_policy",
+          "lineNumber": 199
+        },
+        {
+          "caller": "main",
+          "callee": "_load_body",
+          "lineNumber": 200
+        },
+        {
+          "caller": "main",
+          "callee": "_is_dependabot_event",
+          "lineNumber": 202
+        },
+        {
+          "caller": "main",
+          "callee": "_dependency_only_change",
+          "lineNumber": 202
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 205
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 207
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 210
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 212
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 214
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/scripts/check_workflow_hygiene.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 173,
+      "nonEmptyLines": 136,
+      "functions": [
+        {
+          "name": "_workflow_on",
+          "startLine": 17,
+          "endLine": 18,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "_trigger_names",
+          "startLine": 21,
+          "endLine": 28,
+          "params": [
+            "raw_on"
+          ]
+        },
+        {
+          "name": "_steps",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "job"
+          ]
+        },
+        {
+          "name": "_has_upload_artifact",
+          "startLine": 36,
+          "endLine": 37,
+          "params": [
+            "job"
+          ]
+        },
+        {
+          "name": "_prepares_logs",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "job"
+          ]
+        },
+        {
+          "name": "_has_direct_input_interpolation",
+          "startLine": 49,
+          "endLine": 50,
+          "params": [
+            "job"
+          ]
+        },
+        {
+          "name": "_check_action_versions",
+          "startLine": 72,
+          "endLine": 96,
+          "params": [
+            "path",
+            "data"
+          ]
+        },
+        {
+          "name": "_check_workflow",
+          "startLine": 99,
+          "endLine": 134,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "_check_desktop_packaging_scope",
+          "startLine": 137,
+          "endLine": 146,
+          "params": []
+        },
+        {
+          "name": "main",
+          "startLine": 149,
+          "endLine": 169,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_workflow_on",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "_trigger_names",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "_steps",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "_has_upload_artifact",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "_prepares_logs",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "_has_direct_input_interpolation",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "_check_action_versions",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "_check_workflow",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "_check_desktop_packaging_scope",
+          "line": 137,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 149,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_workflow_on",
+          "callee": "data.get",
+          "lineNumber": 18
+        },
+        {
+          "caller": "_workflow_on",
+          "callee": "data.get",
+          "lineNumber": 18
+        },
+        {
+          "caller": "_trigger_names",
+          "callee": "isinstance",
+          "lineNumber": 22
+        },
+        {
+          "caller": "_trigger_names",
+          "callee": "isinstance",
+          "lineNumber": 24
+        },
+        {
+          "caller": "_trigger_names",
+          "callee": "str",
+          "lineNumber": 25
+        },
+        {
+          "caller": "_trigger_names",
+          "callee": "isinstance",
+          "lineNumber": 26
+        },
+        {
+          "caller": "_trigger_names",
+          "callee": "str",
+          "lineNumber": 27
+        },
+        {
+          "caller": "_trigger_names",
+          "callee": "set",
+          "lineNumber": 28
+        },
+        {
+          "caller": "_steps",
+          "callee": "job.get",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_steps",
+          "callee": "isinstance",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_has_upload_artifact",
+          "callee": "any",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_has_upload_artifact",
+          "callee": "str(step.get(\"uses\", \"\")).startswith",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_has_upload_artifact",
+          "callee": "str",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_has_upload_artifact",
+          "callee": "step.get",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_has_upload_artifact",
+          "callee": "_steps",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_prepares_logs",
+          "callee": "_steps",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_prepares_logs",
+          "callee": "str(step.get(\"name\", \"\")).lower",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_prepares_logs",
+          "callee": "str",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_prepares_logs",
+          "callee": "step.get",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_prepares_logs",
+          "callee": "str(step.get(\"run\", \"\")).lower",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_prepares_logs",
+          "callee": "str",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_prepares_logs",
+          "callee": "step.get",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_has_direct_input_interpolation",
+          "callee": "any",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_has_direct_input_interpolation",
+          "callee": "str",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_has_direct_input_interpolation",
+          "callee": "step.get",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_has_direct_input_interpolation",
+          "callee": "_steps",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_check_action_versions",
+          "callee": "data.get",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_check_action_versions",
+          "callee": "isinstance",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_check_action_versions",
+          "callee": "jobs.items",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_check_action_versions",
+          "callee": "isinstance",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_check_action_versions",
+          "callee": "_steps",
+          "lineNumber": 80
+        },
+        {
+          "caller": "_check_action_versions",
+          "callee": "str",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_check_action_versions",
+          "callee": "step.get",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_check_action_versions",
+          "callee": "uses.partition",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_check_action_versions",
+          "callee": "MIN_ACTION_MAJORS.get",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_check_action_versions",
+          "callee": "ref.startswith",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_check_action_versions",
+          "callee": "ref[1:2].isdigit",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_check_action_versions",
+          "callee": "int",
+          "lineNumber": 91
+        },
+        {
+          "caller": "_check_action_versions",
+          "callee": "ref[1:].split",
+          "lineNumber": 91
+        },
+        {
+          "caller": "_check_action_versions",
+          "callee": "failures.append",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "yaml.safe_load",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "path.read_text",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "isinstance",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "_workflow_on",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "_trigger_names",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "failures.append",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "bool",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "triggers.intersection",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "triggers.intersection",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "data.get",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "failures.append",
+          "lineNumber": 115
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "data.get",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "isinstance",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "permissions.get",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "failures.append",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "failures.extend",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "_check_action_versions",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "data.get",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "isinstance",
+          "lineNumber": 123
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "jobs.items",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "isinstance",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "failures.append",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "_prepares_logs",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "_has_upload_artifact",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "failures.append",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "_has_direct_input_interpolation",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_check_workflow",
+          "callee": "failures.append",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_check_desktop_packaging_scope",
+          "callee": "yaml.safe_load",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_check_desktop_packaging_scope",
+          "callee": "path.read_text",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_check_desktop_packaging_scope",
+          "callee": "data.get",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_check_desktop_packaging_scope",
+          "callee": "jobs.get(job_name, {}).get",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_check_desktop_packaging_scope",
+          "callee": "jobs.get",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_check_desktop_packaging_scope",
+          "callee": "failures.append",
+          "lineNumber": 145
+        },
+        {
+          "caller": "main",
+          "callee": "sorted",
+          "lineNumber": 151
+        },
+        {
+          "caller": "main",
+          "callee": "WORKFLOW_DIR.glob",
+          "lineNumber": 151
+        },
+        {
+          "caller": "main",
+          "callee": "sorted",
+          "lineNumber": 151
+        },
+        {
+          "caller": "main",
+          "callee": "WORKFLOW_DIR.glob",
+          "lineNumber": 151
+        },
+        {
+          "caller": "main",
+          "callee": "failures.extend",
+          "lineNumber": 152
+        },
+        {
+          "caller": "main",
+          "callee": "_check_workflow",
+          "lineNumber": 152
+        },
+        {
+          "caller": "main",
+          "callee": "failures.extend",
+          "lineNumber": 154
+        },
+        {
+          "caller": "main",
+          "callee": "_check_desktop_packaging_scope",
+          "lineNumber": 154
+        },
+        {
+          "caller": "main",
+          "callee": "yaml.safe_load",
+          "lineNumber": 158
+        },
+        {
+          "caller": "main",
+          "callee": "(WORKFLOW_DIR / name).read_text",
+          "lineNumber": 158
+        },
+        {
+          "caller": "main",
+          "callee": "data.get(\"concurrency\", {}).get",
+          "lineNumber": 159
+        },
+        {
+          "caller": "main",
+          "callee": "data.get",
+          "lineNumber": 159
+        },
+        {
+          "caller": "main",
+          "callee": "failures.append",
+          "lineNumber": 160
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 163
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 165
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 168
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 10,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/test_ci_policy_gates.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 205,
+      "nonEmptyLines": 145,
+      "functions": [
+        {
+          "name": "test_pr_policy_accepts_bilingual_summary_and_validation",
+          "startLine": 9,
+          "endLine": 14,
+          "params": []
+        },
+        {
+          "name": "test_pr_policy_accepts_slash_separated_bilingual_headings",
+          "startLine": 17,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "test_pr_policy_accepts_pipe_separated_bilingual_headings",
+          "startLine": 24,
+          "endLine": 27,
+          "params": []
+        },
+        {
+          "name": "test_pr_policy_still_rejects_missing_sections_after_split",
+          "startLine": 30,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "test_pr_policy_blocks_logs_and_secret_like_body",
+          "startLine": 39,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "test_pr_policy_allows_dependabot_dependency_body_without_manual_headings",
+          "startLine": 49,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "test_pr_policy_still_blocks_dependabot_secret_body",
+          "startLine": 57,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "test_dependabot_relaxation_requires_dependency_files",
+          "startLine": 66,
+          "endLine": 71,
+          "params": []
+        },
+        {
+          "name": "test_workflow_hygiene_requires_concurrency_for_manual_automation",
+          "startLine": 74,
+          "endLine": 92,
+          "params": [
+            "tmp_path"
+          ]
+        },
+        {
+          "name": "test_workflow_hygiene_accepts_logs_with_artifact",
+          "startLine": 95,
+          "endLine": 121,
+          "params": [
+            "tmp_path"
+          ]
+        },
+        {
+          "name": "test_signal_feedback_manual_dynamic_approval_is_explicit",
+          "startLine": 124,
+          "endLine": 132,
+          "params": []
+        },
+        {
+          "name": "test_ci_runs_python_suite_once_and_reuses_it_for_coverage",
+          "startLine": 135,
+          "endLine": 140,
+          "params": []
+        },
+        {
+          "name": "test_weekly_reflection_gate_reads_trigger_cron_not_wall_clock",
+          "startLine": 143,
+          "endLine": 162,
+          "params": []
+        },
+        {
+          "name": "test_review_shadow_backtest_collects_traces_from_failed_funnel_runs_too",
+          "startLine": 165,
+          "endLine": 180,
+          "params": []
+        },
+        {
+          "name": "test_review_shadow_backtest_reads_min_days_from_core",
+          "startLine": 183,
+          "endLine": 194,
+          "params": []
+        },
+        {
+          "name": "test_worker_deploy_invokes_the_package_script_explicitly",
+          "startLine": 197,
+          "endLine": 205,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_pr_policy_accepts_bilingual_summary_and_validation",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "test_pr_policy_accepts_slash_separated_bilingual_headings",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "test_pr_policy_accepts_pipe_separated_bilingual_headings",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "test_pr_policy_still_rejects_missing_sections_after_split",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "test_pr_policy_blocks_logs_and_secret_like_body",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "test_pr_policy_allows_dependabot_dependency_body_without_manual_headings",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "test_pr_policy_still_blocks_dependabot_secret_body",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "test_dependabot_relaxation_requires_dependency_files",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "test_workflow_hygiene_requires_concurrency_for_manual_automation",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "test_workflow_hygiene_accepts_logs_with_artifact",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "test_signal_feedback_manual_dynamic_approval_is_explicit",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "test_ci_runs_python_suite_once_and_reuses_it_for_coverage",
+          "line": 135,
+          "isDefault": false
+        },
+        {
+          "name": "test_weekly_reflection_gate_reads_trigger_cron_not_wall_clock",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "test_review_shadow_backtest_collects_traces_from_failed_funnel_runs_too",
+          "line": 165,
+          "isDefault": false
+        },
+        {
+          "name": "test_review_shadow_backtest_reads_min_days_from_core",
+          "line": 183,
+          "isDefault": false
+        },
+        {
+          "name": "test_worker_deploy_invokes_the_package_script_explicitly",
+          "line": 197,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_pr_policy_accepts_bilingual_summary_and_validation",
+          "callee": "validate_policy",
+          "lineNumber": 12
+        },
+        {
+          "caller": "test_pr_policy_accepts_slash_separated_bilingual_headings",
+          "callee": "validate_policy",
+          "lineNumber": 21
+        },
+        {
+          "caller": "test_pr_policy_accepts_pipe_separated_bilingual_headings",
+          "callee": "validate_policy",
+          "lineNumber": 27
+        },
+        {
+          "caller": "test_pr_policy_still_rejects_missing_sections_after_split",
+          "callee": "validate_policy",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_pr_policy_still_rejects_missing_sections_after_split",
+          "callee": "any",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_pr_policy_still_rejects_missing_sections_after_split",
+          "callee": "any",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_pr_policy_blocks_logs_and_secret_like_body",
+          "callee": "validate_policy",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_pr_policy_blocks_logs_and_secret_like_body",
+          "callee": "any",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_pr_policy_blocks_logs_and_secret_like_body",
+          "callee": "any",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_pr_policy_allows_dependabot_dependency_body_without_manual_headings",
+          "callee": "validate_policy",
+          "lineNumber": 52
+        },
+        {
+          "caller": "test_pr_policy_still_blocks_dependabot_secret_body",
+          "callee": "validate_policy",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_pr_policy_still_blocks_dependabot_secret_body",
+          "callee": "any",
+          "lineNumber": 63
+        },
+        {
+          "caller": "test_dependabot_relaxation_requires_dependency_files",
+          "callee": "_is_dependabot_event",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_dependabot_relaxation_requires_dependency_files",
+          "callee": "_dependency_only_change",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_dependabot_relaxation_requires_dependency_files",
+          "callee": "_dependency_only_change",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_workflow_hygiene_requires_concurrency_for_manual_automation",
+          "callee": "workflow.write_text",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_workflow_hygiene_requires_concurrency_for_manual_automation",
+          "callee": "\"\"\"\nname: Manual\non:\n  workflow_dispatch:\njobs:\n  run:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v7\n\"\"\".lstrip",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_workflow_hygiene_requires_concurrency_for_manual_automation",
+          "callee": "_check_workflow",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_workflow_hygiene_requires_concurrency_for_manual_automation",
+          "callee": "any",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_workflow_hygiene_accepts_logs_with_artifact",
+          "callee": "workflow.write_text",
+          "lineNumber": 97
+        },
+        {
+          "caller": "test_workflow_hygiene_accepts_logs_with_artifact",
+          "callee": "\"\"\"\nname: Manual\non:\n  workflow_dispatch:\nconcurrency:\n  group: manual-${{ github.ref }}\n  cancel-in-progress: true\npermissions:\n  contents: read\njobs:\n  run:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Prepare logs dir\n        run: mkdir -p logs\n      - uses: actions/upload-artifact@v7\n        with:\n          name: logs\n          path: logs/*\n\"\"\".lstrip",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_workflow_hygiene_accepts_logs_with_artifact",
+          "callee": "_check_workflow",
+          "lineNumber": 121
+        },
+        {
+          "caller": "test_signal_feedback_manual_dynamic_approval_is_explicit",
+          "callee": "Path(\".github/workflows/signal_feedback.yml\").read_text",
+          "lineNumber": 125
+        },
+        {
+          "caller": "test_signal_feedback_manual_dynamic_approval_is_explicit",
+          "callee": "Path",
+          "lineNumber": 125
+        },
+        {
+          "caller": "test_ci_runs_python_suite_once_and_reuses_it_for_coverage",
+          "callee": "Path(\".github/workflows/ci.yml\").read_text",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_ci_runs_python_suite_once_and_reuses_it_for_coverage",
+          "callee": "Path",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_ci_runs_python_suite_once_and_reuses_it_for_coverage",
+          "callee": "workflow.count",
+          "lineNumber": 138
+        },
+        {
+          "caller": "test_weekly_reflection_gate_reads_trigger_cron_not_wall_clock",
+          "callee": "Path(\".github/workflows/signal_feedback.yml\").read_text",
+          "lineNumber": 156
+        },
+        {
+          "caller": "test_weekly_reflection_gate_reads_trigger_cron_not_wall_clock",
+          "callee": "Path",
+          "lineNumber": 156
+        },
+        {
+          "caller": "test_review_shadow_backtest_collects_traces_from_failed_funnel_runs_too",
+          "callee": "Path(\".github/workflows/review_shadow_backtest.yml\").read_text",
+          "lineNumber": 176
+        },
+        {
+          "caller": "test_review_shadow_backtest_collects_traces_from_failed_funnel_runs_too",
+          "callee": "Path",
+          "lineNumber": 176
+        },
+        {
+          "caller": "test_review_shadow_backtest_reads_min_days_from_core",
+          "callee": "Path(\".github/workflows/review_shadow_backtest.yml\").read_text",
+          "lineNumber": 190
+        },
+        {
+          "caller": "test_review_shadow_backtest_reads_min_days_from_core",
+          "callee": "Path",
+          "lineNumber": 190
+        },
+        {
+          "caller": "test_worker_deploy_invokes_the_package_script_explicitly",
+          "callee": "Path(\".github/workflows/worker_deploy.yml\").read_text",
+          "lineNumber": 198
+        },
+        {
+          "caller": "test_worker_deploy_invokes_the_package_script_explicitly",
+          "callee": "Path",
+          "lineNumber": 198
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 16,
+        "functionCount": 16,
+        "classCount": 0
+      }
+    }
+  ]
+}

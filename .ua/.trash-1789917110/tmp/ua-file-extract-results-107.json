@@ -1,0 +1,1582 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 14,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 14,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 14
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/ARCHITECTURE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 1043,
+      "nonEmptyLines": 798,
+      "sections": [
+        {
+          "heading": "系统架构",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "系统全景",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "React Web App（Cloudflare Pages）",
+          "level": 2,
+          "line": 50
+        },
+        {
+          "heading": "架构概览",
+          "level": 3,
+          "line": 52
+        },
+        {
+          "heading": "技术栈",
+          "level": 3,
+          "line": 135
+        },
+        {
+          "heading": "页面结构",
+          "level": 3,
+          "line": 148
+        },
+        {
+          "heading": "Provider Stream 兼容",
+          "level": 3,
+          "line": 162
+        },
+        {
+          "heading": "与 CLI 的能力差异",
+          "level": 3,
+          "line": 166
+        },
+        {
+          "heading": "Agent 架构",
+          "level": 2,
+          "line": 172
+        },
+        {
+          "heading": "三通道复用",
+          "level": 3,
+          "line": 174
+        },
+        {
+          "heading": "ReAct 循环（Reasoning + Acting）",
+          "level": 3,
+          "line": 205
+        },
+        {
+          "heading": "工具注册口径",
+          "level": 3,
+          "line": 237
+        },
+        {
+          "heading": "工具路由原则",
+          "level": 3,
+          "line": 255
+        },
+        {
+          "heading": "提示词驱动规划",
+          "level": 3,
+          "line": 266
+        },
+        {
+          "heading": "后台任务架构",
+          "level": 3,
+          "line": 294
+        },
+        {
+          "heading": "消息排队与转向",
+          "level": 3,
+          "line": 316
+        },
+        {
+          "heading": "Conversation Turn 状态机",
+          "level": 3,
+          "line": 335
+        },
+        {
+          "heading": "CLI Provider 层",
+          "level": 3,
+          "line": 345
+        },
+        {
+          "heading": "MCP Server",
+          "level": 3,
+          "line": 369
+        },
+        {
+          "heading": "TUI 视觉层次",
+          "level": 3,
+          "line": 394
+        },
+        {
+          "heading": "Agent 记忆系统",
+          "level": 2,
+          "line": 413
+        },
+        {
+          "heading": "写入时机",
+          "level": 3,
+          "line": 417
+        },
+        {
+          "heading": "分层与追溯",
+          "level": 3,
+          "line": 439
+        },
+        {
+          "heading": "自动清理",
+          "level": 3,
+          "line": 452
+        },
+        {
+          "heading": "检索注入",
+          "level": 3,
+          "line": 456
+        },
+        {
+          "heading": "记忆类型",
+          "level": 3,
+          "line": 481
+        },
+        {
+          "heading": "上下文压缩",
+          "level": 2,
+          "line": 491
+        },
+        {
+          "heading": "动态阈值",
+          "level": 3,
+          "line": 495
+        },
+        {
+          "heading": "压缩策略",
+          "level": 3,
+          "line": 514
+        },
+        {
+          "heading": "工具确认机制",
+          "level": 3,
+          "line": 535
+        },
+        {
+          "heading": "Doom Loop 防护",
+          "level": 3,
+          "line": 548
+        },
+        {
+          "heading": "并发工具执行",
+          "level": 3,
+          "line": 554
+        },
+        {
+          "heading": "本地可视化面板",
+          "level": 2,
+          "line": 558
+        },
+        {
+          "heading": "功能",
+          "level": 3,
+          "line": 564
+        },
+        {
+          "heading": "特性",
+          "level": 3,
+          "line": 578
+        },
+        {
+          "heading": "对话日志",
+          "level": 2,
+          "line": 584
+        },
+        {
+          "heading": "文件日志",
+          "level": 3,
+          "line": 586
+        },
+        {
+          "heading": "SQLite chat_log 表",
+          "level": 3,
+          "line": 590
+        },
+        {
+          "heading": "本地持久化（~/.wyckoff/）",
+          "level": 2,
+          "line": 612
+        },
+        {
+          "heading": "SQLite 表（wyckoff.db）",
+          "level": 3,
+          "line": 621
+        },
+        {
+          "heading": "待执行的 Supabase DDL",
+          "level": 4,
+          "line": 630
+        },
+        {
+          "heading": "Supabase → SQLite 同步",
+          "level": 3,
+          "line": 650
+        },
+        {
+          "heading": "主线漏斗引擎",
+          "level": 2,
+          "line": 663
+        },
+        {
+          "heading": "信号确认状态机",
+          "level": 2,
+          "line": 693
+        },
+        {
+          "heading": "信号反馈与动态策略闭环",
+          "level": 2,
+          "line": 704
+        },
+        {
+          "heading": "持仓诊断",
+          "level": 2,
+          "line": 715
+        },
+        {
+          "heading": "Pipeline（定时任务）",
+          "level": 2,
+          "line": 729
+        },
+        {
+          "heading": "本地调度：常驻 daemon",
+          "level": 3,
+          "line": 731
+        },
+        {
+          "heading": "无人监督的写操作边界",
+          "level": 3,
+          "line": 748
+        },
+        {
+          "heading": "MCP 入口：写操作默认拒绝",
+          "level": 3,
+          "line": 777
+        },
+        {
+          "heading": "客户端方向：接入外部 MCP server",
+          "level": 3,
+          "line": 790
+        },
+        {
+          "heading": "飞书报告卡片",
+          "level": 3,
+          "line": 812
+        },
+        {
+          "heading": "GitHub Actions 主要工作流",
+          "level": 3,
+          "line": 816
+        },
+        {
+          "heading": "已退役的截面因子组合回测",
+          "level": 3,
+          "line": 843
+        },
+        {
+          "heading": "手动触发工作流",
+          "level": 3,
+          "line": 850
+        },
+        {
+          "heading": "数据源",
+          "level": 2,
+          "line": 861
+        },
+        {
+          "heading": "ToolSurface 执行边界",
+          "level": 3,
+          "line": 883
+        },
+        {
+          "heading": "分析数据质量与历史 meta",
+          "level": 3,
+          "line": 887
+        },
+        {
+          "heading": "云端存储（Supabase）",
+          "level": 2,
+          "line": 893
+        },
+        {
+          "heading": "成交回填与执行审计",
+          "level": 3,
+          "line": 920
+        },
+        {
+          "heading": "CLI 命令",
+          "level": 2,
+          "line": 977
+        },
+        {
+          "heading": "安装方式",
+          "level": 2,
+          "line": 1007
+        },
+        {
+          "heading": "目录结构",
+          "level": 2,
+          "line": 1017
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 63
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/A_SHARE_FUNNEL_FLOW.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 593,
+      "nonEmptyLines": 469,
+      "sections": [
+        {
+          "heading": "A 股主漏斗执行流程",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "一、系统全景：上下游关系",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "二、主入口：`daily_job.py` 完整执行链",
+          "level": 2,
+          "line": 76
+        },
+        {
+          "heading": "阶段与代码映射",
+          "level": 3,
+          "line": 113
+        },
+        {
+          "heading": "三、Step2 漏斗内部：主线发现 + 多车道详细流程",
+          "level": 2,
+          "line": 146
+        },
+        {
+          "heading": "正式候选来源",
+          "level": 3,
+          "line": 248
+        },
+        {
+          "heading": "数据质量与诊断口径",
+          "level": 3,
+          "line": 279
+        },
+        {
+          "heading": "L4 触发信号",
+          "level": 3,
+          "line": 291
+        },
+        {
+          "heading": "外部观察名单",
+          "level": 3,
+          "line": 314
+        },
+        {
+          "heading": "四、Step3 AI 研报流程",
+          "level": 2,
+          "line": 325
+        },
+        {
+          "heading": "五、Step4 OMS 持仓决断",
+          "level": 2,
+          "line": 355
+        },
+        {
+          "heading": "回放与确认安全边界",
+          "level": 3,
+          "line": 392
+        },
+        {
+          "heading": "影子账本（paper）",
+          "level": 3,
+          "line": 396
+        },
+        {
+          "heading": "报告执行纪律",
+          "level": 3,
+          "line": 401
+        },
+        {
+          "heading": "六、次日开盘执行与持仓诊断（与日漏斗串联）",
+          "level": 2,
+          "line": 407
+        },
+        {
+          "heading": "七、跨日反馈闭环",
+          "level": 2,
+          "line": 434
+        },
+        {
+          "heading": "八、上下游相对顺序",
+          "level": 2,
+          "line": 471
+        },
+        {
+          "heading": "九、Supabase 数据流",
+          "level": 2,
+          "line": 479
+        },
+        {
+          "heading": "十、数据源降级链（OHLCV）",
+          "level": 2,
+          "line": 514
+        },
+        {
+          "heading": "十一、当前生产配置要点",
+          "level": 2,
+          "line": 539
+        },
+        {
+          "heading": "数据缺失导致的禁买要能被认出来",
+          "level": 3,
+          "line": 565
+        },
+        {
+          "heading": "相关文档",
+          "level": 2,
+          "line": 585
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 22
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/COST_MODEL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 74,
+      "nonEmptyLines": 50,
+      "sections": [
+        {
+          "heading": "WyckoffAgent 运行成本与共享生态",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "基础设施月度开销明细",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "为什么设置「知识星球」共享入口？",
+          "level": 2,
+          "line": 34
+        },
+        {
+          "heading": "💰 账本对比",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "星球会员专属权益",
+          "level": 2,
+          "line": 53
+        },
+        {
+          "heading": "微信扫码加入知识星球",
+          "level": 2,
+          "line": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/DESKTOP_RELEASE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 94,
+      "nonEmptyLines": 68,
+      "sections": [
+        {
+          "heading": "Desktop packaging and release",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Outputs",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Candidate versus public release",
+          "level": 2,
+          "line": 35
+        },
+        {
+          "heading": "Zero-cost signing policy",
+          "level": 2,
+          "line": 66
+        },
+        {
+          "heading": "User-visible update channel",
+          "level": 2,
+          "line": 77
+        },
+        {
+          "heading": "Release notes minimum",
+          "level": 2,
+          "line": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/FUNDAMENTAL_THEME_LANE_TECHNICAL_DESIGN.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 647,
+      "nonEmptyLines": 492,
+      "sections": [
+        {
+          "heading": "产业基本面独立召回通道：技术方案与验证协议",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. 决策摘要",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "2. 为什么要改",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "2.1 现有漏斗的召回边界",
+          "level": 3,
+          "line": 58
+        },
+        {
+          "heading": "2.2 数据已经存在，但接线不完整",
+          "level": 3,
+          "line": 68
+        },
+        {
+          "heading": "2.3 已确认的代码键缺陷",
+          "level": 3,
+          "line": 86
+        },
+        {
+          "heading": "3. 目标、非目标与安全边界",
+          "level": 2,
+          "line": 112
+        },
+        {
+          "heading": "3.1 目标",
+          "level": 3,
+          "line": 114
+        },
+        {
+          "heading": "3.2 非目标",
+          "level": 3,
+          "line": 123
+        },
+        {
+          "heading": "4. 总体架构",
+          "level": 2,
+          "line": 132
+        },
+        {
+          "heading": "5. 数据契约",
+          "level": 2,
+          "line": 162
+        },
+        {
+          "heading": "5.1 股票代码",
+          "level": 3,
+          "line": 164
+        },
+        {
+          "heading": "5.2 Point-in-time 因子行",
+          "level": 3,
+          "line": 195
+        },
+        {
+          "heading": "5.3 候选行",
+          "level": 3,
+          "line": 245
+        },
+        {
+          "heading": "6. 数据获取与归档设计",
+          "level": 2,
+          "line": 268
+        },
+        {
+          "heading": "6.1 财务历史",
+          "level": 3,
+          "line": 270
+        },
+        {
+          "heading": "6.2 估值与交易截面",
+          "level": 3,
+          "line": 283
+        },
+        {
+          "heading": "6.3 预告、快报和机构预期",
+          "level": 3,
+          "line": 294
+        },
+        {
+          "heading": "6.4 题材、公告与新闻",
+          "level": 3,
+          "line": 311
+        },
+        {
+          "heading": "7. 因子与候选生成",
+          "level": 2,
+          "line": 325
+        },
+        {
+          "heading": "7.1 股票池和硬门槛",
+          "level": 3,
+          "line": 327
+        },
+        {
+          "heading": "7.2 预注册特征",
+          "level": 3,
+          "line": 341
+        },
+        {
+          "heading": "7.3 价格的角色",
+          "level": 3,
+          "line": 369
+        },
+        {
+          "heading": "7.4 排序与组合约束",
+          "level": 3,
+          "line": 380
+        },
+        {
+          "heading": "8. 回测设计",
+          "level": 2,
+          "line": 387
+        },
+        {
+          "heading": "8.1 独立研究工作流",
+          "level": 3,
+          "line": 389
+        },
+        {
+          "heading": "8.2 时间口径与执行",
+          "level": 3,
+          "line": 421
+        },
+        {
+          "heading": "8.3 基准和统计",
+          "level": 3,
+          "line": 430
+        },
+        {
+          "heading": "8.4 防过拟合",
+          "level": 3,
+          "line": 450
+        },
+        {
+          "heading": "9. 如何验证改得对不对",
+          "level": 2,
+          "line": 458
+        },
+        {
+          "heading": "9.1 层 A：数据正确性",
+          "level": 3,
+          "line": 462
+        },
+        {
+          "heading": "9.2 层 B：回测真实性",
+          "level": 3,
+          "line": 479
+        },
+        {
+          "heading": "9.3 层 C：研究晋级门槛",
+          "level": 3,
+          "line": 492
+        },
+        {
+          "heading": "9.4 层 D：线上 Shadow 晋级门槛",
+          "level": 3,
+          "line": 507
+        },
+        {
+          "heading": "10. 分阶段实施计划",
+          "level": 2,
+          "line": 519
+        },
+        {
+          "heading": "Phase 0：建立独立工作区",
+          "level": 3,
+          "line": 521
+        },
+        {
+          "heading": "Phase 1：修复数据契约 —— 已完成",
+          "level": 3,
+          "line": 528
+        },
+        {
+          "heading": "Phase 2：结构化数据归档 —— 已暂停",
+          "level": 3,
+          "line": 558
+        },
+        {
+          "heading": "Phase 3：纯函数因子和独立回测 —— 已暂停",
+          "level": 3,
+          "line": 565
+        },
+        {
+          "heading": "Phase 4：依据结果决策 —— 已暂停",
+          "level": 3,
+          "line": 576
+        },
+        {
+          "heading": "Phase 5：文档和运维同步",
+          "level": 3,
+          "line": 583
+        },
+        {
+          "heading": "11. 测试与提交门禁",
+          "level": 2,
+          "line": 598
+        },
+        {
+          "heading": "12. 执行约束与验收清单",
+          "level": 2,
+          "line": 626
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 43
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/ITERATION_STRATEGY.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 1084,
+      "nonEmptyLines": 834,
+      "sections": [
+        {
+          "heading": "Wyckoff 系统迭代与研究治理",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "当前阶段",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "基本面质量 Overlay 本地结论（2026-07-18）",
+          "level": 3,
+          "line": 37
+        },
+        {
+          "heading": "研究对象与证据台账",
+          "level": 2,
+          "line": 61
+        },
+        {
+          "heading": "晋级证据门槛",
+          "level": 2,
+          "line": 79
+        },
+        {
+          "heading": "触发阈值标定",
+          "level": 2,
+          "line": 136
+        },
+        {
+          "heading": "选择层增益",
+          "level": 2,
+          "line": 156
+        },
+        {
+          "heading": "原始信号池的退出基准",
+          "level": 2,
+          "line": 170
+        },
+        {
+          "heading": "L4 形态信号四层归因结论（2026-07-28）",
+          "level": 2,
+          "line": 181
+        },
+        {
+          "heading": "后续两条路（不再调现有形态参数）",
+          "level": 2,
+          "line": 213
+        },
+        {
+          "heading": "路径 A：换信息源（在现有漏斗上加正交特征）",
+          "level": 3,
+          "line": 217
+        },
+        {
+          "heading": "2026-08-14：signal health 与资金佐证的前瞻检验（可复算）",
+          "level": 4,
+          "line": 235
+        },
+        {
+          "heading": "路径 B：换问题形式（不再做「每日择一只做 10 日波段」）",
+          "level": 3,
+          "line": 289
+        },
+        {
+          "heading": "截面因子前瞻筛查（2026-07-28）",
+          "level": 2,
+          "line": 302
+        },
+        {
+          "heading": "合成价值分的组合级验证（2026-07-28）",
+          "level": 2,
+          "line": 324
+        },
+        {
+          "heading": "组合级引擎揭示的三处口径错误（2026-07-28）",
+          "level": 2,
+          "line": 355
+        },
+        {
+          "heading": "连续历史检验：合成价值分已冻结（2026-07-29，2026-08-01 完成冷复核）",
+          "level": 2,
+          "line": 376
+        },
+        {
+          "heading": "实盘反馈验收：瓶颈在执行不在信号（2026-07-29）",
+          "level": 2,
+          "line": 421
+        },
+        {
+          "heading": "漏斗体检：两处静默失效（2026-07-29）",
+          "level": 2,
+          "line": 483
+        },
+        {
+          "heading": "两条运维验收项的判据修正（2026-08-09）",
+          "level": 2,
+          "line": 514
+        },
+        {
+          "heading": "A50 单数据源：不加备用源（2026-08-09 核查）",
+          "level": 3,
+          "line": 546
+        },
+        {
+          "heading": "产业基本面召回通道：立论前提未成立（2026-08-08）",
+          "level": 2,
+          "line": 593
+        },
+        {
+          "heading": "20% 回撤门槛的因子消融（可复算）",
+          "level": 4,
+          "line": 614
+        },
+        {
+          "heading": "跟踪止损锚定：假设被否决，锚定是有效信号（2026-08-08）",
+          "level": 2,
+          "line": 672
+        },
+        {
+          "heading": "Step3 财务字段的验收协议（2026-08-09 登记，`exploring`）",
+          "level": 2,
+          "line": 720
+        },
+        {
+          "heading": "为什么不能用「修复前后对比」当主检验",
+          "level": 3,
+          "line": 729
+        },
+        {
+          "heading": "先决问题：采纳侧样本恒空，但这是设计生效而非故障",
+          "level": 3,
+          "line": 737
+        },
+        {
+          "heading": "预注册口径（改为不依赖 `ai_recommended`）",
+          "level": 3,
+          "line": 776
+        },
+        {
+          "heading": "为什么不能用「修复前后对比」当主检验",
+          "level": 3,
+          "line": 793
+        },
+        {
+          "heading": "结论与下一步",
+          "level": 3,
+          "line": 800
+        },
+        {
+          "heading": "`priority_score`：当前样本无判别力，暂缓改动（2026-08-09）",
+          "level": 2,
+          "line": 814
+        },
+        {
+          "heading": "一、原始的 −0.068 未能复现，且形状比符号更重要",
+          "level": 3,
+          "line": 819
+        },
+        {
+          "heading": "二、替代排序键对照：随机对照赢过所有真实键",
+          "level": 3,
+          "line": 841
+        },
+        {
+          "heading": "三、为何原措辞需要修正",
+          "level": 3,
+          "line": 865
+        },
+        {
+          "heading": "结论",
+          "level": 3,
+          "line": 875
+        },
+        {
+          "heading": "快照股票池带幸存者偏差",
+          "level": 2,
+          "line": 884
+        },
+        {
+          "heading": "已实现（2026-08-09）",
+          "level": 3,
+          "line": 899
+        },
+        {
+          "heading": "更正：ST 不是偏差来源（2026-08-10）",
+          "level": 3,
+          "line": 921
+        },
+        {
+          "heading": "PIT 名称已实现（2026-08-10）",
+          "level": 3,
+          "line": 935
+        },
+        {
+          "heading": "PIT 复核结果：结论未被推翻（2026-08-10）",
+          "level": 3,
+          "line": 956
+        },
+        {
+          "heading": "港美漏斗：美股负 alpha，港股基准曾有 145 天空洞（2026-08-11）",
+          "level": 2,
+          "line": 975
+        },
+        {
+          "heading": "美股漏斗跑输基准",
+          "level": 3,
+          "line": 985
+        },
+        {
+          "heading": "港股基准 ETF 停更 145 天（已修）",
+          "level": 3,
+          "line": 1002
+        },
+        {
+          "heading": "结论",
+          "level": 3,
+          "line": 1017
+        },
+        {
+          "heading": "Shadow 到生产的边界",
+          "level": 2,
+          "line": 1025
+        },
+        {
+          "heading": "研究优先级",
+          "level": 2,
+          "line": 1037
+        },
+        {
+          "heading": "反过拟合纪律",
+          "level": 2,
+          "line": 1065
+        },
+        {
+          "heading": "运营复盘",
+          "level": 2,
+          "line": 1074
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 48
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/OPERATOR_PLAYBOOK.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 179,
+      "nonEmptyLines": 128,
+      "sections": [
+        {
+          "heading": "A 股操作手册（日漏斗 × 次日开盘）",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. 一句话原则",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "2. 双书结构",
+          "level": 2,
+          "line": 22
+        },
+        {
+          "heading": "3. 市场闸门（先看报告顶部）",
+          "level": 2,
+          "line": 34
+        },
+        {
+          "heading": "4. 每日流程",
+          "level": 2,
+          "line": 49
+        },
+        {
+          "heading": "盘后：日漏斗报告",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "次日：跨日确认 + 开盘买入",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "持仓",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "成交后必须回填",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "5. 下单检查清单（缺一不可）",
+          "level": 2,
+          "line": 121
+        },
+        {
+          "heading": "6. 报告上哪里看规则",
+          "level": 2,
+          "line": 131
+        },
+        {
+          "heading": "7. 常见错误",
+          "level": 2,
+          "line": 143
+        },
+        {
+          "heading": "策略语义变更后的历史回刷",
+          "level": 3,
+          "line": 153
+        },
+        {
+          "heading": "8. 相关代码与配置",
+          "level": 2,
+          "line": 170
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/PLANET_MEMBERSHIP.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 168,
+      "nonEmptyLines": 133,
+      "sections": [
+        {
+          "heading": "星球会员",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "能力边界",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "数据契约",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "线上改名与发布顺序",
+          "level": 2,
+          "line": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/PYPI_RELEASE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 29,
+      "nonEmptyLines": 23,
+      "sections": [
+        {
+          "heading": "PyPI Patch 自动发布",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "一次性配置",
+          "level": 2,
+          "line": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/README_EN.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 350,
+      "nonEmptyLines": 246,
+      "sections": [
+        {
+          "heading": "Wyckoff Trading Agent",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "Documentation",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "Special Thanks",
+          "level": 2,
+          "line": 39
+        },
+        {
+          "heading": "Online Usage",
+          "level": 2,
+          "line": 55
+        },
+        {
+          "heading": "Desktop",
+          "level": 3,
+          "line": 73
+        },
+        {
+          "heading": "Features",
+          "level": 2,
+          "line": 79
+        },
+        {
+          "heading": "Data Sources",
+          "level": 2,
+          "line": 101
+        },
+        {
+          "heading": "Local Usage",
+          "level": 2,
+          "line": 114
+        },
+        {
+          "heading": "CLI — Recommended",
+          "level": 3,
+          "line": 116
+        },
+        {
+          "heading": "One-line Install (recommended)",
+          "level": 3,
+          "line": 120
+        },
+        {
+          "heading": "Homebrew",
+          "level": 3,
+          "line": 128
+        },
+        {
+          "heading": "pip",
+          "level": 3,
+          "line": 135
+        },
+        {
+          "heading": "Start Using — One-Click Agent Setup",
+          "level": 3,
+          "line": 143
+        },
+        {
+          "heading": "Local Dashboard",
+          "level": 3,
+          "line": 167
+        },
+        {
+          "heading": "Backtest Grid",
+          "level": 3,
+          "line": 181
+        },
+        {
+          "heading": "Local Web",
+          "level": 3,
+          "line": 189
+        },
+        {
+          "heading": "Tools",
+          "level": 2,
+          "line": 201
+        },
+        {
+          "heading": "Mainline Funnel",
+          "level": 2,
+          "line": 226
+        },
+        {
+          "heading": "Daily Automation",
+          "level": 2,
+          "line": 240
+        },
+        {
+          "heading": "Model Support",
+          "level": 2,
+          "line": 254
+        },
+        {
+          "heading": "Configuration",
+          "level": 2,
+          "line": 260
+        },
+        {
+          "heading": "Persistent local schedules and approvals",
+          "level": 3,
+          "line": 281
+        },
+        {
+          "heading": "External MCP servers",
+          "level": 3,
+          "line": 285
+        },
+        {
+          "heading": "MCP Server",
+          "level": 2,
+          "line": 289
+        },
+        {
+          "heading": "Wyckoff Skills",
+          "level": 2,
+          "line": 319
+        },
+        {
+          "heading": "Community",
+          "level": 2,
+          "line": 325
+        },
+        {
+          "heading": "Sponsor",
+          "level": 2,
+          "line": 331
+        },
+        {
+          "heading": "Disclaimer",
+          "level": 2,
+          "line": 339
+        },
+        {
+          "heading": "License",
+          "level": 2,
+          "line": 343
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 29
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/SIGNAL_FEEDBACK_LOOP.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 354,
+      "nonEmptyLines": 276,
+      "sections": [
+        {
+          "heading": "信号反馈与动态策略闭环",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "一句话",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "定时流程",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "顺序语义",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "动态策略模式",
+          "level": 2,
+          "line": 71
+        },
+        {
+          "heading": "核心数据表",
+          "level": 2,
+          "line": 102
+        },
+        {
+          "heading": "外部观察 Shadow",
+          "level": 2,
+          "line": 115
+        },
+        {
+          "heading": "L2 旁路 Shadow",
+          "level": 2,
+          "line": 130
+        },
+        {
+          "heading": "信号生命周期",
+          "level": 2,
+          "line": 141
+        },
+        {
+          "heading": "Price-Action Footprint",
+          "level": 2,
+          "line": 156
+        },
+        {
+          "heading": "External Capital Context",
+          "level": 2,
+          "line": 169
+        },
+        {
+          "heading": "Candidate Shadow Score",
+          "level": 2,
+          "line": 187
+        },
+        {
+          "heading": "动态影子晋级",
+          "level": 3,
+          "line": 203
+        },
+        {
+          "heading": "Entry Quality",
+          "level": 2,
+          "line": 225
+        },
+        {
+          "heading": "Shadow 复盘怎么看",
+          "level": 2,
+          "line": 238
+        },
+        {
+          "heading": "策略治理器",
+          "level": 3,
+          "line": 301
+        },
+        {
+          "heading": "和迭代策略的对应关系",
+          "level": 2,
+          "line": 343
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/STEP3_EVIDENCE_SNAPSHOT.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 7,
+      "nonEmptyLines": 4,
+      "sections": [
+        {
+          "heading": "Step3 证据快照",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/STEP3_SNAPSHOT_CACHE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 7,
+      "nonEmptyLines": 4,
+      "sections": [
+        {
+          "heading": "Step3 dataSnapshotHash 缓存",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/STREAMLIT_MVP_ARCHITECTURE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 92,
+      "nonEmptyLines": 61,
+      "sections": [
+        {
+          "heading": "Streamlit MVP 产品架构归档",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "产品定位",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "运行架构",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "下线原因",
+          "level": 2,
+          "line": 55
+        },
+        {
+          "heading": "效果图",
+          "level": 2,
+          "line": 64
+        },
+        {
+          "heading": "读盘室",
+          "level": 3,
+          "line": 66
+        },
+        {
+          "heading": "大师模式",
+          "level": 3,
+          "line": 70
+        },
+        {
+          "heading": "沙里淘金",
+          "level": 3,
+          "line": 74
+        },
+        {
+          "heading": "持仓管理",
+          "level": 3,
+          "line": 78
+        },
+        {
+          "heading": "形态复盘",
+          "level": 3,
+          "line": 82
+        },
+        {
+          "heading": "数据导出",
+          "level": 3,
+          "line": 86
+        },
+        {
+          "heading": "设置",
+          "level": 3,
+          "line": 90
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    }
+  ]
+}

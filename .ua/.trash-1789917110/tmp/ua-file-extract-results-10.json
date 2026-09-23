@@ -1,0 +1,7153 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 33,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 33,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 33,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/integrations/data_source_akshare.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "fetch_stock_akshare",
+          "startLine": 17,
+          "endLine": 28,
+          "params": [
+            "symbol",
+            "start",
+            "end",
+            "adjust"
+          ]
+        },
+        {
+          "name": "_fetch_stock_akshare_once",
+          "startLine": 31,
+          "endLine": 46,
+          "params": [
+            "symbol",
+            "start",
+            "end",
+            "adjust"
+          ]
+        },
+        {
+          "name": "_is_retryable_akshare_error",
+          "startLine": 49,
+          "endLine": 60,
+          "params": [
+            "err"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "fetch_stock_akshare",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "_fetch_stock_akshare_once",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "_is_retryable_akshare_error",
+          "line": 49,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fetch_stock_akshare",
+          "callee": "range",
+          "lineNumber": 18
+        },
+        {
+          "caller": "fetch_stock_akshare",
+          "callee": "_fetch_stock_akshare_once",
+          "lineNumber": 20
+        },
+        {
+          "caller": "fetch_stock_akshare",
+          "callee": "_is_retryable_akshare_error",
+          "lineNumber": 24
+        },
+        {
+          "caller": "fetch_stock_akshare",
+          "callee": "time.sleep",
+          "lineNumber": 25
+        },
+        {
+          "caller": "fetch_stock_akshare",
+          "callee": "max",
+          "lineNumber": 25
+        },
+        {
+          "caller": "fetch_stock_akshare",
+          "callee": "RuntimeError",
+          "lineNumber": 28
+        },
+        {
+          "caller": "_fetch_stock_akshare_once",
+          "callee": "ak.stock_zh_a_hist",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_fetch_stock_akshare_once",
+          "callee": "RuntimeError",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_fetch_stock_akshare_once",
+          "callee": "df.copy",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_fetch_stock_akshare_once",
+          "callee": "pd.to_datetime(df[\"日期\"], errors=\"coerce\").dt.strftime",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_fetch_stock_akshare_once",
+          "callee": "pd.to_datetime",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_is_retryable_akshare_error",
+          "callee": "_compact_error(err).lower",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_is_retryable_akshare_error",
+          "callee": "_compact_error",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_is_retryable_akshare_error",
+          "callee": "any",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_is_retryable_akshare_error",
+          "callee": "isinstance",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/integrations/data_source_baostock.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 142,
+      "nonEmptyLines": 119,
+      "functions": [
+        {
+          "name": "baostock_circuit_state",
+          "startLine": 31,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "baostock_mark_success",
+          "startLine": 36,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "baostock_mark_failure",
+          "startLine": 42,
+          "endLine": 51,
+          "params": [
+            "reason",
+            "debug_enabled"
+          ]
+        },
+        {
+          "name": "fetch_stock_baostock",
+          "startLine": 54,
+          "endLine": 63,
+          "params": [
+            "symbol",
+            "start",
+            "end"
+          ]
+        },
+        {
+          "name": "_query_history_rows",
+          "startLine": 66,
+          "endLine": 91,
+          "params": [
+            "bs_code",
+            "start_dash",
+            "end_dash",
+            "started"
+          ]
+        },
+        {
+          "name": "_baostock_frame",
+          "startLine": 94,
+          "endLine": 114,
+          "params": [
+            "rows",
+            "fields"
+          ]
+        },
+        {
+          "name": "_logout_on_exit",
+          "startLine": 117,
+          "endLine": 125,
+          "params": []
+        },
+        {
+          "name": "_ensure_login",
+          "startLine": 128,
+          "endLine": 142,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "baostock_circuit_state",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "baostock_mark_success",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "baostock_mark_failure",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "fetch_stock_baostock",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "_query_history_rows",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "_baostock_frame",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "_logout_on_exit",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "_ensure_login",
+          "line": 128,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "baostock_mark_failure",
+          "callee": "logger.debug",
+          "lineNumber": 51
+        },
+        {
+          "caller": "fetch_stock_baostock",
+          "callee": "symbol.startswith",
+          "lineNumber": 55
+        },
+        {
+          "caller": "fetch_stock_baostock",
+          "callee": "time.monotonic",
+          "lineNumber": 58
+        },
+        {
+          "caller": "fetch_stock_baostock",
+          "callee": "_query_history_rows",
+          "lineNumber": 60
+        },
+        {
+          "caller": "fetch_stock_baostock",
+          "callee": "RuntimeError",
+          "lineNumber": 62
+        },
+        {
+          "caller": "fetch_stock_baostock",
+          "callee": "_baostock_frame",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_query_history_rows",
+          "callee": "socket.getdefaulttimeout",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_query_history_rows",
+          "callee": "socket.setdefaulttimeout",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_query_history_rows",
+          "callee": "_ensure_login",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_query_history_rows",
+          "callee": "bs.query_history_k_data_plus",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_query_history_rows",
+          "callee": "RuntimeError",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_query_history_rows",
+          "callee": "rs.next",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_query_history_rows",
+          "callee": "time.monotonic",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_query_history_rows",
+          "callee": "TimeoutError",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_query_history_rows",
+          "callee": "rows.append",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_query_history_rows",
+          "callee": "rs.get_row_data",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_query_history_rows",
+          "callee": "socket.setdefaulttimeout",
+          "lineNumber": 91
+        },
+        {
+          "caller": "_baostock_frame",
+          "callee": "pd.DataFrame",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_baostock_frame",
+          "callee": "df.rename",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_baostock_frame",
+          "callee": "pd.to_datetime(df[\"日期\"], errors=\"coerce\").dt.strftime",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_baostock_frame",
+          "callee": "pd.to_datetime",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_baostock_frame",
+          "callee": "pd.to_numeric",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_baostock_frame",
+          "callee": "df[list(STOCK_HIST_COLUMNS)].copy",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_baostock_frame",
+          "callee": "list",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_logout_on_exit",
+          "callee": "suppress",
+          "lineNumber": 123
+        },
+        {
+          "caller": "_logout_on_exit",
+          "callee": "bs.logout",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_ensure_login",
+          "callee": "bs.login",
+          "lineNumber": 135
+        },
+        {
+          "caller": "_ensure_login",
+          "callee": "RuntimeError",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_ensure_login",
+          "callee": "atexit.register",
+          "lineNumber": 140
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/integrations/data_source_efinance.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 37,
+      "functions": [
+        {
+          "name": "fetch_stock_efinance",
+          "startLine": 13,
+          "endLine": 19,
+          "params": [
+            "symbol",
+            "start",
+            "end"
+          ]
+        },
+        {
+          "name": "_import_efinance_with_cache_patch",
+          "startLine": 22,
+          "endLine": 49,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "fetch_stock_efinance",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "_import_efinance_with_cache_patch",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fetch_stock_efinance",
+          "callee": "_import_efinance_with_cache_patch",
+          "lineNumber": 14
+        },
+        {
+          "caller": "fetch_stock_efinance",
+          "callee": "ef.stock.get_quote_history",
+          "lineNumber": 15
+        },
+        {
+          "caller": "fetch_stock_efinance",
+          "callee": "result.get",
+          "lineNumber": 16
+        },
+        {
+          "caller": "fetch_stock_efinance",
+          "callee": "str",
+          "lineNumber": 16
+        },
+        {
+          "caller": "fetch_stock_efinance",
+          "callee": "isinstance",
+          "lineNumber": 16
+        },
+        {
+          "caller": "fetch_stock_efinance",
+          "callee": "hasattr",
+          "lineNumber": 17
+        },
+        {
+          "caller": "fetch_stock_efinance",
+          "callee": "RuntimeError",
+          "lineNumber": 18
+        },
+        {
+          "caller": "fetch_stock_efinance",
+          "callee": "normalize_efinance_columns",
+          "lineNumber": 19
+        },
+        {
+          "caller": "_patched_mkdir",
+          "callee": "original_mkdir",
+          "lineNumber": 30
+        },
+        {
+          "caller": "_patched_mkdir",
+          "callee": "str",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_import_efinance_with_cache_patch",
+          "callee": "Path",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_import_efinance_with_cache_patch",
+          "callee": "tempfile.gettempdir",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_import_efinance_with_cache_patch",
+          "callee": "suppress",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_import_efinance_with_cache_patch",
+          "callee": "cache_dir.mkdir",
+          "lineNumber": 46
+        },
+        {
+          "caller": "_import_efinance_with_cache_patch",
+          "callee": "str",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/integrations/data_source_format.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 156,
+      "nonEmptyLines": 129,
+      "functions": [
+        {
+          "name": "compact_error",
+          "startLine": 11,
+          "endLine": 16,
+          "params": [
+            "exc",
+            "max_len"
+          ]
+        },
+        {
+          "name": "to_ts_code",
+          "startLine": 51,
+          "endLine": 55,
+          "params": [
+            "symbol"
+          ]
+        },
+        {
+          "name": "tag_source",
+          "startLine": 58,
+          "endLine": 60,
+          "params": [
+            "df",
+            "source"
+          ]
+        },
+        {
+          "name": "hist_date_text",
+          "startLine": 63,
+          "endLine": 64,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "normalize_efinance_columns",
+          "startLine": 67,
+          "endLine": 83,
+          "params": [
+            "df"
+          ]
+        },
+        {
+          "name": "tickflow_daily_window",
+          "startLine": 86,
+          "endLine": 97,
+          "params": [
+            "start",
+            "end"
+          ]
+        },
+        {
+          "name": "tickflow_daily_count",
+          "startLine": 100,
+          "endLine": 102,
+          "params": [
+            "start_d",
+            "end_d",
+            "max_count"
+          ]
+        },
+        {
+          "name": "tickflow_adjust_mode",
+          "startLine": 105,
+          "endLine": 115,
+          "params": [
+            "adjust"
+          ]
+        },
+        {
+          "name": "tickflow_daily_frame",
+          "startLine": 118,
+          "endLine": 141,
+          "params": [
+            "df",
+            "start_d",
+            "end_d"
+          ]
+        },
+        {
+          "name": "_rename_prefixed_column",
+          "startLine": 144,
+          "endLine": 150,
+          "params": [
+            "df",
+            "standard"
+          ]
+        },
+        {
+          "name": "_tickflow_amplitude",
+          "startLine": 153,
+          "endLine": 156,
+          "params": [
+            "df",
+            "prev_ref"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "compact_error",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "to_ts_code",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "tag_source",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "hist_date_text",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "normalize_efinance_columns",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "tickflow_daily_window",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "tickflow_daily_count",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "tickflow_adjust_mode",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "tickflow_daily_frame",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "_rename_prefixed_column",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "_tickflow_amplitude",
+          "line": 153,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "compact_error",
+          "callee": "str(exc or \"\").strip().replace",
+          "lineNumber": 12
+        },
+        {
+          "caller": "compact_error",
+          "callee": "str(exc or \"\").strip",
+          "lineNumber": 12
+        },
+        {
+          "caller": "compact_error",
+          "callee": "str",
+          "lineNumber": 12
+        },
+        {
+          "caller": "compact_error",
+          "callee": "re.sub",
+          "lineNumber": 13
+        },
+        {
+          "caller": "compact_error",
+          "callee": "len",
+          "lineNumber": 14
+        },
+        {
+          "caller": "compact_error",
+          "callee": "type",
+          "lineNumber": 16
+        },
+        {
+          "caller": "compact_error",
+          "callee": "type",
+          "lineNumber": 16
+        },
+        {
+          "caller": "to_ts_code",
+          "callee": "str(symbol).strip",
+          "lineNumber": 52
+        },
+        {
+          "caller": "to_ts_code",
+          "callee": "str",
+          "lineNumber": 52
+        },
+        {
+          "caller": "to_ts_code",
+          "callee": "code.startswith",
+          "lineNumber": 55
+        },
+        {
+          "caller": "hist_date_text",
+          "callee": "value.strftime",
+          "lineNumber": 64
+        },
+        {
+          "caller": "hist_date_text",
+          "callee": "isinstance",
+          "lineNumber": 64
+        },
+        {
+          "caller": "hist_date_text",
+          "callee": "str(value).replace",
+          "lineNumber": 64
+        },
+        {
+          "caller": "hist_date_text",
+          "callee": "str",
+          "lineNumber": 64
+        },
+        {
+          "caller": "normalize_efinance_columns",
+          "callee": "df.copy",
+          "lineNumber": 68
+        },
+        {
+          "caller": "normalize_efinance_columns",
+          "callee": "str(column).endswith",
+          "lineNumber": 71
+        },
+        {
+          "caller": "normalize_efinance_columns",
+          "callee": "str",
+          "lineNumber": 71
+        },
+        {
+          "caller": "normalize_efinance_columns",
+          "callee": "str",
+          "lineNumber": 71
+        },
+        {
+          "caller": "normalize_efinance_columns",
+          "callee": "work.rename",
+          "lineNumber": 72
+        },
+        {
+          "caller": "normalize_efinance_columns",
+          "callee": "_rename_prefixed_column",
+          "lineNumber": 75
+        },
+        {
+          "caller": "normalize_efinance_columns",
+          "callee": "RuntimeError",
+          "lineNumber": 78
+        },
+        {
+          "caller": "normalize_efinance_columns",
+          "callee": "work.assign",
+          "lineNumber": 81
+        },
+        {
+          "caller": "normalize_efinance_columns",
+          "callee": "pd.to_datetime(work[\"日期\"]).dt.strftime",
+          "lineNumber": 82
+        },
+        {
+          "caller": "normalize_efinance_columns",
+          "callee": "pd.to_datetime",
+          "lineNumber": 82
+        },
+        {
+          "caller": "normalize_efinance_columns",
+          "callee": "work[list(STOCK_HIST_COLUMNS)].copy",
+          "lineNumber": 83
+        },
+        {
+          "caller": "normalize_efinance_columns",
+          "callee": "list",
+          "lineNumber": 83
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "datetime.strptime(start, \"%Y%m%d\").date",
+          "lineNumber": 88
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "datetime.strptime",
+          "lineNumber": 88
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "datetime.strptime(end, \"%Y%m%d\").date",
+          "lineNumber": 89
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "datetime.strptime",
+          "lineNumber": 89
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "RuntimeError",
+          "lineNumber": 91
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "RuntimeError",
+          "lineNumber": 93
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "timezone",
+          "lineNumber": 94
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "timedelta",
+          "lineNumber": 94
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "datetime.combine",
+          "lineNumber": 95
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "datetime.min.time",
+          "lineNumber": 95
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "datetime.combine",
+          "lineNumber": 96
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "timedelta",
+          "lineNumber": 96
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "datetime.min.time",
+          "lineNumber": 96
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "timedelta",
+          "lineNumber": 96
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "int",
+          "lineNumber": 97
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "start_dt.timestamp",
+          "lineNumber": 97
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "int",
+          "lineNumber": 97
+        },
+        {
+          "caller": "tickflow_daily_window",
+          "callee": "end_dt.timestamp",
+          "lineNumber": 97
+        },
+        {
+          "caller": "tickflow_daily_count",
+          "callee": "min",
+          "lineNumber": 102
+        },
+        {
+          "caller": "tickflow_daily_count",
+          "callee": "max",
+          "lineNumber": 102
+        },
+        {
+          "caller": "tickflow_daily_count",
+          "callee": "max",
+          "lineNumber": 102
+        },
+        {
+          "caller": "tickflow_daily_count",
+          "callee": "int",
+          "lineNumber": 102
+        },
+        {
+          "caller": "tickflow_adjust_mode",
+          "callee": "str(adjust or \"\").strip().lower",
+          "lineNumber": 106
+        },
+        {
+          "caller": "tickflow_adjust_mode",
+          "callee": "str(adjust or \"\").strip",
+          "lineNumber": 106
+        },
+        {
+          "caller": "tickflow_adjust_mode",
+          "callee": "str",
+          "lineNumber": 106
+        },
+        {
+          "caller": "tickflow_adjust_mode",
+          "callee": "mapped.get",
+          "lineNumber": 115
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "df[(df[\"date\"] >= start_d.isoformat()) & (df[\"date\"] <= end_d.isoformat())].copy",
+          "lineNumber": 119
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "start_d.isoformat",
+          "lineNumber": 119
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "end_d.isoformat",
+          "lineNumber": 119
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "RuntimeError",
+          "lineNumber": 121
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "pd.to_numeric",
+          "lineNumber": 122
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "out.get",
+          "lineNumber": 122
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "pd.to_numeric",
+          "lineNumber": 123
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "out.get",
+          "lineNumber": 123
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "prev_close.where",
+          "lineNumber": 124
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "prev_ref.notna().sum",
+          "lineNumber": 125
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "prev_ref.notna",
+          "lineNumber": 125
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "close.shift",
+          "lineNumber": 126
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "pd.DataFrame",
+          "lineNumber": 127
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "pd.to_numeric",
+          "lineNumber": 130
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "out.get",
+          "lineNumber": 130
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "pd.to_numeric",
+          "lineNumber": 131
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "out.get",
+          "lineNumber": 131
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "pd.to_numeric",
+          "lineNumber": 132
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "out.get",
+          "lineNumber": 132
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "pd.to_numeric",
+          "lineNumber": 134
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "out.get",
+          "lineNumber": 134
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "pd.to_numeric",
+          "lineNumber": 135
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "out.get",
+          "lineNumber": 135
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "_tickflow_amplitude",
+          "lineNumber": 138
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "result[list(STOCK_HIST_COLUMNS)].copy",
+          "lineNumber": 141
+        },
+        {
+          "caller": "tickflow_daily_frame",
+          "callee": "list",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_rename_prefixed_column",
+          "callee": "str(column).startswith",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_rename_prefixed_column",
+          "callee": "str",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_rename_prefixed_column",
+          "callee": "df.rename",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_tickflow_amplitude",
+          "callee": "pd.to_numeric",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_tickflow_amplitude",
+          "callee": "df.get",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_tickflow_amplitude",
+          "callee": "pd.to_numeric",
+          "lineNumber": 155
+        },
+        {
+          "caller": "_tickflow_amplitude",
+          "callee": "df.get",
+          "lineNumber": 155
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/integrations/data_source_tickflow.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "fetch_stock_tickflow",
+          "startLine": 28,
+          "endLine": 45,
+          "params": [
+            "symbol",
+            "start",
+            "end",
+            "adjust"
+          ]
+        },
+        {
+          "name": "attach_tickflow_limit_notices",
+          "startLine": 48,
+          "endLine": 58,
+          "params": [
+            "df",
+            "notices"
+          ]
+        },
+        {
+          "name": "_get_tickflow_client",
+          "startLine": 61,
+          "endLine": 77,
+          "params": []
+        },
+        {
+          "name": "_emit_tickflow_limit_notice_once",
+          "startLine": 80,
+          "endLine": 86,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "fetch_stock_tickflow",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "attach_tickflow_limit_notices",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "_get_tickflow_client",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "_emit_tickflow_limit_notice_once",
+          "line": 80,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fetch_stock_tickflow",
+          "callee": "_get_tickflow_client",
+          "lineNumber": 29
+        },
+        {
+          "caller": "fetch_stock_tickflow",
+          "callee": "RuntimeError",
+          "lineNumber": 31
+        },
+        {
+          "caller": "fetch_stock_tickflow",
+          "callee": "tickflow_daily_window",
+          "lineNumber": 33
+        },
+        {
+          "caller": "fetch_stock_tickflow",
+          "callee": "client.get_klines",
+          "lineNumber": 34
+        },
+        {
+          "caller": "fetch_stock_tickflow",
+          "callee": "tickflow_daily_count",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fetch_stock_tickflow",
+          "callee": "tickflow_adjust_mode",
+          "lineNumber": 41
+        },
+        {
+          "caller": "fetch_stock_tickflow",
+          "callee": "RuntimeError",
+          "lineNumber": 44
+        },
+        {
+          "caller": "fetch_stock_tickflow",
+          "callee": "tickflow_daily_frame",
+          "lineNumber": 45
+        },
+        {
+          "caller": "attach_tickflow_limit_notices",
+          "callee": "str(item or \"\").strip",
+          "lineNumber": 51
+        },
+        {
+          "caller": "attach_tickflow_limit_notices",
+          "callee": "str",
+          "lineNumber": 51
+        },
+        {
+          "caller": "attach_tickflow_limit_notices",
+          "callee": "uniq.append",
+          "lineNumber": 53
+        },
+        {
+          "caller": "attach_tickflow_limit_notices",
+          "callee": "_emit_tickflow_limit_notice_once",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_get_tickflow_client",
+          "callee": "os.getenv(\"TICKFLOW_API_KEY\", \"\").strip",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_get_tickflow_client",
+          "callee": "os.getenv",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_get_tickflow_client",
+          "callee": "TickFlowClient",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_get_tickflow_client",
+          "callee": "logger.debug",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_emit_tickflow_limit_notice_once",
+          "callee": "logger.warning",
+          "lineNumber": 86
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/integrations/data_source_tushare.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "fetch_stock_tushare",
+          "startLine": 14,
+          "endLine": 28,
+          "params": [
+            "symbol",
+            "start",
+            "end"
+          ]
+        },
+        {
+          "name": "_raise_tushare_empty",
+          "startLine": 31,
+          "endLine": 39,
+          "params": [
+            "pro",
+            "ts_code",
+            "start",
+            "end"
+          ]
+        },
+        {
+          "name": "_normalize_tushare_frame",
+          "startLine": 42,
+          "endLine": 61,
+          "params": [
+            "df"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "fetch_stock_tushare",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "_raise_tushare_empty",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "_normalize_tushare_frame",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fetch_stock_tushare",
+          "callee": "get_pro",
+          "lineNumber": 17
+        },
+        {
+          "caller": "fetch_stock_tushare",
+          "callee": "RuntimeError",
+          "lineNumber": 19
+        },
+        {
+          "caller": "fetch_stock_tushare",
+          "callee": "wait_for_rate_limit",
+          "lineNumber": 23
+        },
+        {
+          "caller": "fetch_stock_tushare",
+          "callee": "to_ts_code",
+          "lineNumber": 24
+        },
+        {
+          "caller": "fetch_stock_tushare",
+          "callee": "ts.pro_bar",
+          "lineNumber": 25
+        },
+        {
+          "caller": "fetch_stock_tushare",
+          "callee": "_raise_tushare_empty",
+          "lineNumber": 27
+        },
+        {
+          "caller": "fetch_stock_tushare",
+          "callee": "_normalize_tushare_frame",
+          "lineNumber": 28
+        },
+        {
+          "caller": "_raise_tushare_empty",
+          "callee": "pro.daily",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_raise_tushare_empty",
+          "callee": "logger.debug",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_raise_tushare_empty",
+          "callee": "RuntimeError",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_raise_tushare_empty",
+          "callee": "RuntimeError",
+          "lineNumber": 38
+        },
+        {
+          "caller": "_raise_tushare_empty",
+          "callee": "RuntimeError",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_normalize_tushare_frame",
+          "callee": "df.rename",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_normalize_tushare_frame",
+          "callee": "pd.to_numeric",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_normalize_tushare_frame",
+          "callee": "pd.to_numeric",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_normalize_tushare_frame",
+          "callee": "out[\"日期\"].astype",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_normalize_tushare_frame",
+          "callee": "out[list(STOCK_HIST_COLUMNS)].copy",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_normalize_tushare_frame",
+          "callee": "list",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/integrations/tickflow_notice.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "is_tickflow_rate_limited_error",
+          "startLine": 23,
+          "endLine": 34,
+          "params": [
+            "err"
+          ]
+        },
+        {
+          "name": "record_tickflow_limit_event",
+          "startLine": 37,
+          "endLine": 45,
+          "params": [
+            "err"
+          ]
+        },
+        {
+          "name": "has_recent_tickflow_limit_event",
+          "startLine": 48,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "append_tickflow_limit_hint",
+          "startLine": 57,
+          "endLine": 65,
+          "params": [
+            "text"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "is_tickflow_rate_limited_error",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "record_tickflow_limit_event",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "has_recent_tickflow_limit_event",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "append_tickflow_limit_hint",
+          "line": 57,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "is_tickflow_rate_limited_error",
+          "callee": "str(err or \"\").lower",
+          "lineNumber": 24
+        },
+        {
+          "caller": "is_tickflow_rate_limited_error",
+          "callee": "str",
+          "lineNumber": 24
+        },
+        {
+          "caller": "is_tickflow_rate_limited_error",
+          "callee": "any",
+          "lineNumber": 34
+        },
+        {
+          "caller": "record_tickflow_limit_event",
+          "callee": "is_tickflow_rate_limited_error",
+          "lineNumber": 38
+        },
+        {
+          "caller": "record_tickflow_limit_event",
+          "callee": "time.monotonic",
+          "lineNumber": 40
+        },
+        {
+          "caller": "record_tickflow_limit_event",
+          "callee": "_EVENTS.append",
+          "lineNumber": 42
+        },
+        {
+          "caller": "record_tickflow_limit_event",
+          "callee": "_EVENTS.pop",
+          "lineNumber": 45
+        },
+        {
+          "caller": "has_recent_tickflow_limit_event",
+          "callee": "time.monotonic",
+          "lineNumber": 49
+        },
+        {
+          "caller": "has_recent_tickflow_limit_event",
+          "callee": "_EVENTS.pop",
+          "lineNumber": 53
+        },
+        {
+          "caller": "has_recent_tickflow_limit_event",
+          "callee": "bool",
+          "lineNumber": 54
+        },
+        {
+          "caller": "append_tickflow_limit_hint",
+          "callee": "str",
+          "lineNumber": 58
+        },
+        {
+          "caller": "append_tickflow_limit_hint",
+          "callee": "has_recent_tickflow_limit_event",
+          "lineNumber": 59
+        },
+        {
+          "caller": "append_tickflow_limit_hint",
+          "callee": "content.strip",
+          "lineNumber": 63
+        },
+        {
+          "caller": "append_tickflow_limit_hint",
+          "callee": "content.rstrip",
+          "lineNumber": 65
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/scripts/holding_diagnosis_job.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 8,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 10,
+          "endLine": 11,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "main",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "run_holding_diagnosis_job",
+          "lineNumber": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_data_source_akshare.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "test_fetch_stock_akshare_retries_transient_disconnect_and_normalizes_date",
+          "startLine": 12,
+          "endLine": 41,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_fetch_stock_akshare_retries_transient_disconnect_and_normalizes_date",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_fetch_stock_akshare_retries_transient_disconnect_and_normalizes_date",
+          "callee": "ModuleType",
+          "lineNumber": 14
+        },
+        {
+          "caller": "fake_hist",
+          "callee": "calls.append",
+          "lineNumber": 17
+        },
+        {
+          "caller": "fake_hist",
+          "callee": "len",
+          "lineNumber": 18
+        },
+        {
+          "caller": "fake_hist",
+          "callee": "RemoteDisconnected",
+          "lineNumber": 19
+        },
+        {
+          "caller": "fake_hist",
+          "callee": "pd.DataFrame",
+          "lineNumber": 20
+        },
+        {
+          "caller": "test_fetch_stock_akshare_retries_transient_disconnect_and_normalizes_date",
+          "callee": "monkeypatch.setitem",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test_fetch_stock_akshare_retries_transient_disconnect_and_normalizes_date",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_fetch_stock_akshare_retries_transient_disconnect_and_normalizes_date",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_fetch_stock_akshare_retries_transient_disconnect_and_normalizes_date",
+          "callee": "provider.fetch_stock_akshare",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_fetch_stock_akshare_retries_transient_disconnect_and_normalizes_date",
+          "callee": "len",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_data_source_baostock.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 55,
+      "functions": [
+        {
+          "name": "_reset_provider_state",
+          "startLine": 29,
+          "endLine": 35,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_fetch_stock_baostock_normalizes_rows_and_uses_exchange_prefix",
+          "startLine": 38,
+          "endLine": 62,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_baostock_circuit_opens_after_configured_failures",
+          "startLine": 65,
+          "endLine": 75,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "_FakeResult",
+          "startLine": 12,
+          "endLine": 26,
+          "methods": [
+            "__init__",
+            "next",
+            "get_row_data"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_FakeResult",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "_reset_provider_state",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "test_fetch_stock_baostock_normalizes_rows_and_uses_exchange_prefix",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "test_baostock_circuit_opens_after_configured_failures",
+          "line": 65,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "next",
+          "callee": "len",
+          "lineNumber": 23
+        },
+        {
+          "caller": "_reset_provider_state",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 30
+        },
+        {
+          "caller": "_reset_provider_state",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_reset_provider_state",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_reset_provider_state",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_reset_provider_state",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_reset_provider_state",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_fetch_stock_baostock_normalizes_rows_and_uses_exchange_prefix",
+          "callee": "_reset_provider_state",
+          "lineNumber": 39
+        },
+        {
+          "caller": "fake_query",
+          "callee": "captured.update",
+          "lineNumber": 43
+        },
+        {
+          "caller": "fake_query",
+          "callee": "_FakeResult",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_fetch_stock_baostock_normalizes_rows_and_uses_exchange_prefix",
+          "callee": "SimpleNamespace",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_fetch_stock_baostock_normalizes_rows_and_uses_exchange_prefix",
+          "callee": "SimpleNamespace",
+          "lineNumber": 47
+        },
+        {
+          "caller": "test_fetch_stock_baostock_normalizes_rows_and_uses_exchange_prefix",
+          "callee": "monkeypatch.setitem",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_fetch_stock_baostock_normalizes_rows_and_uses_exchange_prefix",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 52
+        },
+        {
+          "caller": "test_fetch_stock_baostock_normalizes_rows_and_uses_exchange_prefix",
+          "callee": "provider.fetch_stock_baostock",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_fetch_stock_baostock_normalizes_rows_and_uses_exchange_prefix",
+          "callee": "tuple",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_fetch_stock_baostock_normalizes_rows_and_uses_exchange_prefix",
+          "callee": "float",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_fetch_stock_baostock_normalizes_rows_and_uses_exchange_prefix",
+          "callee": "pd.isna",
+          "lineNumber": 62
+        },
+        {
+          "caller": "test_baostock_circuit_opens_after_configured_failures",
+          "callee": "_reset_provider_state",
+          "lineNumber": 66
+        },
+        {
+          "caller": "test_baostock_circuit_opens_after_configured_failures",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 67
+        },
+        {
+          "caller": "test_baostock_circuit_opens_after_configured_failures",
+          "callee": "provider.baostock_mark_failure",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_baostock_circuit_opens_after_configured_failures",
+          "callee": "provider.baostock_circuit_state",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_baostock_circuit_opens_after_configured_failures",
+          "callee": "provider.baostock_mark_failure",
+          "lineNumber": 72
+        },
+        {
+          "caller": "test_baostock_circuit_opens_after_configured_failures",
+          "callee": "provider.baostock_circuit_state",
+          "lineNumber": 73
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_data_source_efinance.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "_install_fake_efinance",
+          "startLine": 13,
+          "endLine": 27,
+          "params": [
+            "monkeypatch",
+            "quote_result"
+          ]
+        },
+        {
+          "name": "test_fetch_stock_efinance_normalizes_quote_history_and_cache_config",
+          "startLine": 30,
+          "endLine": 53,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_fetch_stock_efinance_rejects_empty_payload",
+          "startLine": 56,
+          "endLine": 60,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_install_fake_efinance",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "test_fetch_stock_efinance_normalizes_quote_history_and_cache_config",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "test_fetch_stock_efinance_rejects_empty_payload",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_install_fake_efinance",
+          "callee": "ModuleType",
+          "lineNumber": 14
+        },
+        {
+          "caller": "_install_fake_efinance",
+          "callee": "ModuleType",
+          "lineNumber": 16
+        },
+        {
+          "caller": "fake_quote_history",
+          "callee": "fake_quote_history.calls.append",
+          "lineNumber": 19
+        },
+        {
+          "caller": "_install_fake_efinance",
+          "callee": "SimpleNamespace",
+          "lineNumber": 24
+        },
+        {
+          "caller": "_install_fake_efinance",
+          "callee": "monkeypatch.setitem",
+          "lineNumber": 25
+        },
+        {
+          "caller": "_install_fake_efinance",
+          "callee": "monkeypatch.setitem",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_fetch_stock_efinance_normalizes_quote_history_and_cache_config",
+          "callee": "pd.DataFrame",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test_fetch_stock_efinance_normalizes_quote_history_and_cache_config",
+          "callee": "_install_fake_efinance",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_fetch_stock_efinance_normalizes_quote_history_and_cache_config",
+          "callee": "provider.fetch_stock_efinance",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_fetch_stock_efinance_normalizes_quote_history_and_cache_config",
+          "callee": "tuple",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_fetch_stock_efinance_normalizes_quote_history_and_cache_config",
+          "callee": "float",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_fetch_stock_efinance_normalizes_quote_history_and_cache_config",
+          "callee": "str",
+          "lineNumber": 52
+        },
+        {
+          "caller": "test_fetch_stock_efinance_normalizes_quote_history_and_cache_config",
+          "callee": "str(fake_pkg.config.SEARCH_RESULT_CACHE_PATH).endswith",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_fetch_stock_efinance_normalizes_quote_history_and_cache_config",
+          "callee": "str",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_fetch_stock_efinance_rejects_empty_payload",
+          "callee": "_install_fake_efinance",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_fetch_stock_efinance_rejects_empty_payload",
+          "callee": "pd.DataFrame",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_fetch_stock_efinance_rejects_empty_payload",
+          "callee": "pytest.raises",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_fetch_stock_efinance_rejects_empty_payload",
+          "callee": "provider.fetch_stock_efinance",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_data_source_format.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "test_to_ts_code_resolves_cn_exchange_suffix",
+          "startLine": 19,
+          "endLine": 22,
+          "params": []
+        },
+        {
+          "name": "test_normalize_efinance_columns_returns_standard_stock_hist_columns",
+          "startLine": 25,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "test_tickflow_daily_frame_uses_standard_columns_and_adjust_modes",
+          "startLine": 46,
+          "endLine": 67,
+          "params": []
+        },
+        {
+          "name": "test_tickflow_window_and_hist_date_text_normalize_dates",
+          "startLine": 70,
+          "endLine": 78,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_to_ts_code_resolves_cn_exchange_suffix",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "test_normalize_efinance_columns_returns_standard_stock_hist_columns",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "test_tickflow_daily_frame_uses_standard_columns_and_adjust_modes",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "test_tickflow_window_and_hist_date_text_normalize_dates",
+          "line": 70,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_to_ts_code_resolves_cn_exchange_suffix",
+          "callee": "to_ts_code",
+          "lineNumber": 20
+        },
+        {
+          "caller": "test_to_ts_code_resolves_cn_exchange_suffix",
+          "callee": "to_ts_code",
+          "lineNumber": 21
+        },
+        {
+          "caller": "test_to_ts_code_resolves_cn_exchange_suffix",
+          "callee": "to_ts_code",
+          "lineNumber": 22
+        },
+        {
+          "caller": "test_normalize_efinance_columns_returns_standard_stock_hist_columns",
+          "callee": "pd.DataFrame",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_normalize_efinance_columns_returns_standard_stock_hist_columns",
+          "callee": "normalize_efinance_columns",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_normalize_efinance_columns_returns_standard_stock_hist_columns",
+          "callee": "tuple",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_normalize_efinance_columns_returns_standard_stock_hist_columns",
+          "callee": "pd.isna",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_tickflow_daily_frame_uses_standard_columns_and_adjust_modes",
+          "callee": "pd.DataFrame",
+          "lineNumber": 47
+        },
+        {
+          "caller": "test_tickflow_daily_frame_uses_standard_columns_and_adjust_modes",
+          "callee": "tickflow_daily_frame",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_tickflow_daily_frame_uses_standard_columns_and_adjust_modes",
+          "callee": "date",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_tickflow_daily_frame_uses_standard_columns_and_adjust_modes",
+          "callee": "date",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_tickflow_daily_frame_uses_standard_columns_and_adjust_modes",
+          "callee": "tuple",
+          "lineNumber": 62
+        },
+        {
+          "caller": "test_tickflow_daily_frame_uses_standard_columns_and_adjust_modes",
+          "callee": "list",
+          "lineNumber": 63
+        },
+        {
+          "caller": "test_tickflow_daily_frame_uses_standard_columns_and_adjust_modes",
+          "callee": "round",
+          "lineNumber": 64
+        },
+        {
+          "caller": "test_tickflow_daily_frame_uses_standard_columns_and_adjust_modes",
+          "callee": "float",
+          "lineNumber": 64
+        },
+        {
+          "caller": "test_tickflow_daily_frame_uses_standard_columns_and_adjust_modes",
+          "callee": "tickflow_adjust_mode",
+          "lineNumber": 65
+        },
+        {
+          "caller": "test_tickflow_daily_frame_uses_standard_columns_and_adjust_modes",
+          "callee": "tickflow_adjust_mode",
+          "lineNumber": 66
+        },
+        {
+          "caller": "test_tickflow_daily_frame_uses_standard_columns_and_adjust_modes",
+          "callee": "tickflow_adjust_mode",
+          "lineNumber": 67
+        },
+        {
+          "caller": "test_tickflow_window_and_hist_date_text_normalize_dates",
+          "callee": "tickflow_daily_window",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_tickflow_window_and_hist_date_text_normalize_dates",
+          "callee": "date",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_tickflow_window_and_hist_date_text_normalize_dates",
+          "callee": "date",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_tickflow_window_and_hist_date_text_normalize_dates",
+          "callee": "tickflow_daily_count",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_tickflow_window_and_hist_date_text_normalize_dates",
+          "callee": "hist_date_text",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_tickflow_window_and_hist_date_text_normalize_dates",
+          "callee": "date",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_tickflow_window_and_hist_date_text_normalize_dates",
+          "callee": "hist_date_text",
+          "lineNumber": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_data_source_tickflow.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 37,
+      "functions": [
+        {
+          "name": "test_fetch_stock_tickflow_uses_client_window_and_normalizes_frame",
+          "startLine": 12,
+          "endLine": 39,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_attach_tickflow_limit_notices_deduplicates_attrs",
+          "startLine": 42,
+          "endLine": 50,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_fetch_stock_tickflow_uses_client_window_and_normalizes_frame",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "test_attach_tickflow_limit_notices_deduplicates_attrs",
+          "line": 42,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fake_get_klines",
+          "callee": "captured.update",
+          "lineNumber": 16
+        },
+        {
+          "caller": "fake_get_klines",
+          "callee": "pd.DataFrame",
+          "lineNumber": 17
+        },
+        {
+          "caller": "test_fetch_stock_tickflow_uses_client_window_and_normalizes_frame",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_fetch_stock_tickflow_uses_client_window_and_normalizes_frame",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test_fetch_stock_tickflow_uses_client_window_and_normalizes_frame",
+          "callee": "SimpleNamespace",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test_fetch_stock_tickflow_uses_client_window_and_normalizes_frame",
+          "callee": "provider.fetch_stock_tickflow",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_fetch_stock_tickflow_uses_client_window_and_normalizes_frame",
+          "callee": "tuple",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_fetch_stock_tickflow_uses_client_window_and_normalizes_frame",
+          "callee": "float",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_attach_tickflow_limit_notices_deduplicates_attrs",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_attach_tickflow_limit_notices_deduplicates_attrs",
+          "callee": "pd.DataFrame",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_attach_tickflow_limit_notices_deduplicates_attrs",
+          "callee": "provider.attach_tickflow_limit_notices",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_data_source_tushare.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "test_fetch_stock_tushare_normalizes_pro_bar_units",
+          "startLine": 18,
+          "endLine": 49,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_fetch_stock_tushare_skips_when_token_missing",
+          "startLine": 52,
+          "endLine": 56,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "_FakePro",
+          "startLine": 13,
+          "endLine": 15,
+          "methods": [
+            "daily"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_FakePro",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "test_fetch_stock_tushare_normalizes_pro_bar_units",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "test_fetch_stock_tushare_skips_when_token_missing",
+          "line": 52,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "daily",
+          "callee": "pd.DataFrame",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_fetch_stock_tushare_normalizes_pro_bar_units",
+          "callee": "ModuleType",
+          "lineNumber": 20
+        },
+        {
+          "caller": "fake_pro_bar",
+          "callee": "captured.update",
+          "lineNumber": 23
+        },
+        {
+          "caller": "fake_pro_bar",
+          "callee": "pd.DataFrame",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_fetch_stock_tushare_normalizes_pro_bar_units",
+          "callee": "monkeypatch.setitem",
+          "lineNumber": 38
+        },
+        {
+          "caller": "test_fetch_stock_tushare_normalizes_pro_bar_units",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_fetch_stock_tushare_normalizes_pro_bar_units",
+          "callee": "_FakePro",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_fetch_stock_tushare_normalizes_pro_bar_units",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_fetch_stock_tushare_normalizes_pro_bar_units",
+          "callee": "provider.fetch_stock_tushare",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_fetch_stock_tushare_normalizes_pro_bar_units",
+          "callee": "tuple",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_fetch_stock_tushare_normalizes_pro_bar_units",
+          "callee": "isinstance",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_fetch_stock_tushare_normalizes_pro_bar_units",
+          "callee": "captured.pop",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_fetch_stock_tushare_normalizes_pro_bar_units",
+          "callee": "float",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_fetch_stock_tushare_normalizes_pro_bar_units",
+          "callee": "float",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_fetch_stock_tushare_skips_when_token_missing",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_fetch_stock_tushare_skips_when_token_missing",
+          "callee": "pytest.raises",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_fetch_stock_tushare_skips_when_token_missing",
+          "callee": "provider.fetch_stock_tushare",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_feishu_backtest_card.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 57,
+      "functions": [
+        {
+          "name": "test_send_backtest_card_builds_rich_card",
+          "startLine": 6,
+          "endLine": 64,
+          "params": [
+            "monkeypatch",
+            "tmp_path"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_send_backtest_card_builds_rich_card",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_send_backtest_card_builds_rich_card",
+          "callee": "summary.write_text",
+          "lineNumber": 9
+        },
+        {
+          "caller": "test_send_backtest_card_builds_rich_card",
+          "callee": "\"\\n\".join",
+          "lineNumber": 10
+        },
+        {
+          "caller": "test_send_backtest_card_builds_rich_card",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_send_backtest_card_builds_rich_card",
+          "callee": "feishu.send_backtest_card",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_send_backtest_card_builds_rich_card",
+          "callee": "str",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_send_backtest_card_builds_rich_card",
+          "callee": "str",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_feishu_report_card.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "test_generic_report_card_builds_intro_sections_and_warning_note",
+          "startLine": 4,
+          "endLine": 19,
+          "params": []
+        },
+        {
+          "name": "test_generic_report_card_selects_semantic_header_color",
+          "startLine": 22,
+          "endLine": 27,
+          "params": []
+        },
+        {
+          "name": "test_generic_report_card_prioritizes_explicit_today_conclusion",
+          "startLine": 30,
+          "endLine": 41,
+          "params": []
+        },
+        {
+          "name": "test_post_card_uses_wide_semantic_rich_layout",
+          "startLine": 44,
+          "endLine": 68,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_card_chunk_falls_back_to_legacy_layout",
+          "startLine": 71,
+          "endLine": 80,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_send_feishu_notification_splits_full_name_list_without_dropping",
+          "startLine": 83,
+          "endLine": 104,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_generic_report_card_builds_intro_sections_and_warning_note",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "test_generic_report_card_selects_semantic_header_color",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "test_generic_report_card_prioritizes_explicit_today_conclusion",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "test_post_card_uses_wide_semantic_rich_layout",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "test_card_chunk_falls_back_to_legacy_layout",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "test_send_feishu_notification_splits_full_name_list_without_dropping",
+          "line": 83,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_generic_report_card_builds_intro_sections_and_warning_note",
+          "callee": "build_report_card_elements",
+          "lineNumber": 5
+        },
+        {
+          "caller": "test_generic_report_card_builds_intro_sections_and_warning_note",
+          "callee": "item.get",
+          "lineNumber": 16
+        },
+        {
+          "caller": "test_generic_report_card_selects_semantic_header_color",
+          "callee": "report_card_template",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_generic_report_card_selects_semantic_header_color",
+          "callee": "report_card_template",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_generic_report_card_selects_semantic_header_color",
+          "callee": "report_card_template",
+          "lineNumber": 25
+        },
+        {
+          "caller": "test_generic_report_card_selects_semantic_header_color",
+          "callee": "report_card_template",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_generic_report_card_selects_semantic_header_color",
+          "callee": "report_card_template",
+          "lineNumber": 27
+        },
+        {
+          "caller": "test_generic_report_card_prioritizes_explicit_today_conclusion",
+          "callee": "report_card_template",
+          "lineNumber": 38
+        },
+        {
+          "caller": "test_generic_report_card_prioritizes_explicit_today_conclusion",
+          "callee": "build_report_card_elements",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_generic_report_card_prioritizes_explicit_today_conclusion",
+          "callee": "next",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_generic_report_card_prioritizes_explicit_today_conclusion",
+          "callee": "item.get",
+          "lineNumber": 40
+        },
+        {
+          "caller": "fake_post",
+          "callee": "captured.update",
+          "lineNumber": 57
+        },
+        {
+          "caller": "fake_post",
+          "callee": "Response",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_post_card_uses_wide_semantic_rich_layout",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_post_card_uses_wide_semantic_rich_layout",
+          "callee": "feishu._post_card",
+          "lineNumber": 62
+        },
+        {
+          "caller": "test_post_card_uses_wide_semantic_rich_layout",
+          "callee": "len",
+          "lineNumber": 68
+        },
+        {
+          "caller": "test_card_chunk_falls_back_to_legacy_layout",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_card_chunk_falls_back_to_legacy_layout",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_card_chunk_falls_back_to_legacy_layout",
+          "callee": "calls.append",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_card_chunk_falls_back_to_legacy_layout",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_card_chunk_falls_back_to_legacy_layout",
+          "callee": "calls.append",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_card_chunk_falls_back_to_legacy_layout",
+          "callee": "feishu._send_card_chunk",
+          "lineNumber": 79
+        },
+        {
+          "caller": "test_send_feishu_notification_splits_full_name_list_without_dropping",
+          "callee": "range",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_send_feishu_notification_splits_full_name_list_without_dropping",
+          "callee": "\"\\n\".join",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_send_feishu_notification_splits_full_name_list_without_dropping",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_send_feishu_notification_splits_full_name_list_without_dropping",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_send_feishu_notification_splits_full_name_list_without_dropping",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_send_feishu_notification_splits_full_name_list_without_dropping",
+          "callee": "sent.append",
+          "lineNumber": 95
+        },
+        {
+          "caller": "test_send_feishu_notification_splits_full_name_list_without_dropping",
+          "callee": "feishu.send_feishu_notification",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_send_feishu_notification_splits_full_name_list_without_dropping",
+          "callee": "len",
+          "lineNumber": 101
+        },
+        {
+          "caller": "test_send_feishu_notification_splits_full_name_list_without_dropping",
+          "callee": "\"\".join",
+          "lineNumber": 102
+        },
+        {
+          "caller": "test_send_feishu_notification_splits_full_name_list_without_dropping",
+          "callee": "all",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_send_feishu_notification_splits_full_name_list_without_dropping",
+          "callee": "sent[0][0].startswith",
+          "lineNumber": 104
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_feishu_text.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "test_normalize_lark_md_converts_table_to_bullet_lines",
+          "startLine": 6,
+          "endLine": 20,
+          "params": []
+        },
+        {
+          "name": "test_normalize_lark_md_handles_multiple_tables_and_plain_text",
+          "startLine": 23,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "test_normalize_lark_md_ignores_non_table_pipe_lines",
+          "startLine": 48,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "test_split_lark_md_keeps_every_tracking_name_across_chunks",
+          "startLine": 54,
+          "endLine": 60,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_normalize_lark_md_converts_table_to_bullet_lines",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "test_normalize_lark_md_handles_multiple_tables_and_plain_text",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "test_normalize_lark_md_ignores_non_table_pipe_lines",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "test_split_lark_md_keeps_every_tracking_name_across_chunks",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_normalize_lark_md_converts_table_to_bullet_lines",
+          "callee": "\"\\n\".join",
+          "lineNumber": 7
+        },
+        {
+          "caller": "test_normalize_lark_md_converts_table_to_bullet_lines",
+          "callee": "normalize_lark_md",
+          "lineNumber": 16
+        },
+        {
+          "caller": "test_normalize_lark_md_handles_multiple_tables_and_plain_text",
+          "callee": "\"\\n\".join",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_normalize_lark_md_handles_multiple_tables_and_plain_text",
+          "callee": "normalize_lark_md",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_normalize_lark_md_ignores_non_table_pipe_lines",
+          "callee": "normalize_lark_md",
+          "lineNumber": 50
+        },
+        {
+          "caller": "test_split_lark_md_keeps_every_tracking_name_across_chunks",
+          "callee": "range",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_split_lark_md_keeps_every_tracking_name_across_chunks",
+          "callee": "\"\\n\".join",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_split_lark_md_keeps_every_tracking_name_across_chunks",
+          "callee": "split_lark_md",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_split_lark_md_keeps_every_tracking_name_across_chunks",
+          "callee": "len",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_split_lark_md_keeps_every_tracking_name_across_chunks",
+          "callee": "\"\".join",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_split_lark_md_keeps_every_tracking_name_across_chunks",
+          "callee": "all",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_notification_channels.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "test_split_telegram_message_splits_long_lines",
+          "startLine": 8,
+          "endLine": 11,
+          "params": []
+        },
+        {
+          "name": "test_send_to_telegram_posts_numbered_chunks",
+          "startLine": 14,
+          "endLine": 28,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_enterprise_markdown_webhooks_shape_payload",
+          "startLine": 31,
+          "endLine": 45,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_split_telegram_message_splits_long_lines",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "test_send_to_telegram_posts_numbered_chunks",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "test_enterprise_markdown_webhooks_shape_payload",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_split_telegram_message_splits_long_lines",
+          "callee": "telegram.split_telegram_message",
+          "lineNumber": 9
+        },
+        {
+          "caller": "test_send_to_telegram_posts_numbered_chunks",
+          "callee": "monkeypatch.delenv",
+          "lineNumber": 16
+        },
+        {
+          "caller": "test_send_to_telegram_posts_numbered_chunks",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 17
+        },
+        {
+          "caller": "test_send_to_telegram_posts_numbered_chunks",
+          "callee": "str",
+          "lineNumber": 17
+        },
+        {
+          "caller": "fake_post",
+          "callee": "calls.append",
+          "lineNumber": 20
+        },
+        {
+          "caller": "fake_post",
+          "callee": "SimpleNamespace",
+          "lineNumber": 21
+        },
+        {
+          "caller": "test_send_to_telegram_posts_numbered_chunks",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_send_to_telegram_posts_numbered_chunks",
+          "callee": "telegram.send_to_telegram",
+          "lineNumber": 25
+        },
+        {
+          "caller": "test_send_to_telegram_posts_numbered_chunks",
+          "callee": "call[\"json\"][\"text\"].split",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_send_to_telegram_posts_numbered_chunks",
+          "callee": "all",
+          "lineNumber": 28
+        },
+        {
+          "caller": "test_enterprise_markdown_webhooks_shape_payload",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_enterprise_markdown_webhooks_shape_payload",
+          "callee": "str",
+          "lineNumber": 33
+        },
+        {
+          "caller": "fake_post",
+          "callee": "calls.append",
+          "lineNumber": 36
+        },
+        {
+          "caller": "fake_post",
+          "callee": "SimpleNamespace",
+          "lineNumber": 37
+        },
+        {
+          "caller": "test_enterprise_markdown_webhooks_shape_payload",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_enterprise_markdown_webhooks_shape_payload",
+          "callee": "markdown_webhooks.send_wecom_notification",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_enterprise_markdown_webhooks_shape_payload",
+          "callee": "markdown_webhooks.send_dingtalk_notification",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_tickflow_notice.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 13,
+      "functions": [
+        {
+          "name": "test_is_tickflow_rate_limited_error_markers",
+          "startLine": 6,
+          "endLine": 9,
+          "params": []
+        },
+        {
+          "name": "test_append_tickflow_limit_hint",
+          "startLine": 12,
+          "endLine": 19,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_is_tickflow_rate_limited_error_markers",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "test_append_tickflow_limit_hint",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_is_tickflow_rate_limited_error_markers",
+          "callee": "tn.is_tickflow_rate_limited_error",
+          "lineNumber": 7
+        },
+        {
+          "caller": "test_is_tickflow_rate_limited_error_markers",
+          "callee": "tn.is_tickflow_rate_limited_error",
+          "lineNumber": 8
+        },
+        {
+          "caller": "test_is_tickflow_rate_limited_error_markers",
+          "callee": "tn.is_tickflow_rate_limited_error",
+          "lineNumber": 9
+        },
+        {
+          "caller": "test_append_tickflow_limit_hint",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 13
+        },
+        {
+          "caller": "test_append_tickflow_limit_hint",
+          "callee": "tn.append_tickflow_limit_hint",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_append_tickflow_limit_hint",
+          "callee": "tn.record_tickflow_limit_event",
+          "lineNumber": 17
+        },
+        {
+          "caller": "test_append_tickflow_limit_hint",
+          "callee": "tn.append_tickflow_limit_hint",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/utils/test_feishu_table_flatten.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 103,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "test_index_and_name_become_bold_title",
+          "startLine": 14,
+          "endLine": 20,
+          "params": []
+        },
+        {
+          "name": "test_metrics_move_to_indented_second_line",
+          "startLine": 23,
+          "endLine": 26,
+          "params": []
+        },
+        {
+          "name": "test_placeholder_row_collapses_to_single_note",
+          "startLine": 29,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "test_wide_table_keeps_all_columns",
+          "startLine": 42,
+          "endLine": 53,
+          "params": []
+        },
+        {
+          "name": "test_table_without_index_or_identity_keeps_legacy_single_line",
+          "startLine": 56,
+          "endLine": 70,
+          "params": []
+        },
+        {
+          "name": "test_trend_watch_table_has_no_name_column",
+          "startLine": 73,
+          "endLine": 83,
+          "params": []
+        },
+        {
+          "name": "test_missing_trailing_cells_do_not_crash",
+          "startLine": 86,
+          "endLine": 94,
+          "params": []
+        },
+        {
+          "name": "test_non_table_content_is_untouched",
+          "startLine": 97,
+          "endLine": 103,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_index_and_name_become_bold_title",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "test_metrics_move_to_indented_second_line",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "test_placeholder_row_collapses_to_single_note",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "test_wide_table_keeps_all_columns",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "test_table_without_index_or_identity_keeps_legacy_single_line",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "test_trend_watch_table_has_no_name_column",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "test_missing_trailing_cells_do_not_crash",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "test_non_table_content_is_untouched",
+          "line": 97,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_index_and_name_become_bold_title",
+          "callee": "normalize_lark_md",
+          "lineNumber": 16
+        },
+        {
+          "caller": "test_metrics_move_to_indented_second_line",
+          "callee": "normalize_lark_md",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_placeholder_row_collapses_to_single_note",
+          "callee": "normalize_lark_md",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_wide_table_keeps_all_columns",
+          "callee": "normalize_lark_md",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_table_without_index_or_identity_keeps_legacy_single_line",
+          "callee": "normalize_lark_md",
+          "lineNumber": 67
+        },
+        {
+          "caller": "test_trend_watch_table_has_no_name_column",
+          "callee": "normalize_lark_md",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_missing_trailing_cells_do_not_crash",
+          "callee": "normalize_lark_md",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_non_table_content_is_untouched",
+          "callee": "normalize_lark_md",
+          "lineNumber": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/utils/test_markdown_webhooks.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "test_dingtalk_webhook_splits_oversized_utf8_message",
+          "startLine": 13,
+          "endLine": 24,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "_Response",
+          "startLine": 4,
+          "endLine": 10,
+          "methods": [
+            "json"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_Response",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "test_dingtalk_webhook_splits_oversized_utf8_message",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_dingtalk_webhook_splits_oversized_utf8_message",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_dingtalk_webhook_splits_oversized_utf8_message",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 16
+        },
+        {
+          "caller": "test_dingtalk_webhook_splits_oversized_utf8_message",
+          "callee": "payloads.append",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_dingtalk_webhook_splits_oversized_utf8_message",
+          "callee": "_Response",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_dingtalk_webhook_splits_oversized_utf8_message",
+          "callee": "markdown_webhooks.send_dingtalk_notification",
+          "lineNumber": 22
+        },
+        {
+          "caller": "test_dingtalk_webhook_splits_oversized_utf8_message",
+          "callee": "len",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_dingtalk_webhook_splits_oversized_utf8_message",
+          "callee": "all",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_dingtalk_webhook_splits_oversized_utf8_message",
+          "callee": "len",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_dingtalk_webhook_splits_oversized_utf8_message",
+          "callee": "item[\"markdown\"][\"text\"].encode",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/utils/test_notification_capabilities.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 9,
+      "functions": [
+        {
+          "name": "test_notification_capabilities_describe_existing_webhook_channels",
+          "startLine": 4,
+          "endLine": 7,
+          "params": []
+        },
+        {
+          "name": "test_split_utf8_text_preserves_multibyte_content_and_limit",
+          "startLine": 10,
+          "endLine": 14,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_notification_capabilities_describe_existing_webhook_channels",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "test_split_utf8_text_preserves_multibyte_content_and_limit",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_notification_capabilities_describe_existing_webhook_channels",
+          "callee": "notification_capabilities",
+          "lineNumber": 5
+        },
+        {
+          "caller": "test_notification_capabilities_describe_existing_webhook_channels",
+          "callee": "notification_capabilities",
+          "lineNumber": 6
+        },
+        {
+          "caller": "test_notification_capabilities_describe_existing_webhook_channels",
+          "callee": "notification_capabilities",
+          "lineNumber": 7
+        },
+        {
+          "caller": "test_split_utf8_text_preserves_multibyte_content_and_limit",
+          "callee": "split_utf8_text",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_split_utf8_text_preserves_multibyte_content_and_limit",
+          "callee": "\"\".join(chunks).replace",
+          "lineNumber": 13
+        },
+        {
+          "caller": "test_split_utf8_text_preserves_multibyte_content_and_limit",
+          "callee": "\"\".join",
+          "lineNumber": 13
+        },
+        {
+          "caller": "test_split_utf8_text_preserves_multibyte_content_and_limit",
+          "callee": "all",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_split_utf8_text_preserves_multibyte_content_and_limit",
+          "callee": "len",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_split_utf8_text_preserves_multibyte_content_and_limit",
+          "callee": "chunk.encode",
+          "lineNumber": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/workflows/test_single_symbol_diagnosis_outputs.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "_summary",
+          "startLine": 35,
+          "endLine": 42,
+          "params": []
+        },
+        {
+          "name": "test_build_single_symbol_report_renders_daily_rows",
+          "startLine": 45,
+          "endLine": 50,
+          "params": []
+        },
+        {
+          "name": "test_write_single_symbol_outputs_writes_csv_json_and_markdown",
+          "startLine": 53,
+          "endLine": 61,
+          "params": [
+            "tmp_path"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Spec",
+          "startLine": 10,
+          "endLine": 13,
+          "methods": [],
+          "properties": [
+            "market",
+            "symbol",
+            "label"
+          ]
+        },
+        {
+          "name": "Row",
+          "startLine": 17,
+          "endLine": 32,
+          "methods": [],
+          "properties": [
+            "date",
+            "status",
+            "failed_layer",
+            "reason",
+            "triggers",
+            "trigger_scores",
+            "abc_grade",
+            "abc_count",
+            "channel",
+            "close",
+            "pct_chg",
+            "vol_ratio",
+            "amount_avg_wan",
+            "ma50",
+            "ma200"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Spec",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "Row",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "_summary",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "test_build_single_symbol_report_renders_daily_rows",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "test_write_single_symbol_outputs_writes_csv_json_and_markdown",
+          "line": 53,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_build_single_symbol_report_renders_daily_rows",
+          "callee": "build_single_symbol_report",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_build_single_symbol_report_renders_daily_rows",
+          "callee": "Spec",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_build_single_symbol_report_renders_daily_rows",
+          "callee": "Row",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_build_single_symbol_report_renders_daily_rows",
+          "callee": "_summary",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_write_single_symbol_outputs_writes_csv_json_and_markdown",
+          "callee": "write_single_symbol_outputs",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_write_single_symbol_outputs_writes_csv_json_and_markdown",
+          "callee": "Spec",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_write_single_symbol_outputs_writes_csv_json_and_markdown",
+          "callee": "Row",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_write_single_symbol_outputs_writes_csv_json_and_markdown",
+          "callee": "_summary",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_write_single_symbol_outputs_writes_csv_json_and_markdown",
+          "callee": "sorted",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_write_single_symbol_outputs_writes_csv_json_and_markdown",
+          "callee": "(tmp_path / \"report.md\").read_text",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_write_single_symbol_outputs_writes_csv_json_and_markdown",
+          "callee": "(tmp_path / \"daily_diagnostics.csv\").read_text",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_write_single_symbol_outputs_writes_csv_json_and_markdown",
+          "callee": "json.loads",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_write_single_symbol_outputs_writes_csv_json_and_markdown",
+          "callee": "(tmp_path / \"summary.json\").read_text",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/utils/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/utils/feishu.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 252,
+      "nonEmptyLines": 219,
+      "functions": [
+        {
+          "name": "_post_card",
+          "startLine": 17,
+          "endLine": 30,
+          "params": [
+            "webhook_url",
+            "title",
+            "chunk"
+          ]
+        },
+        {
+          "name": "_post_legacy_card",
+          "startLine": 33,
+          "endLine": 41,
+          "params": [
+            "webhook_url",
+            "title",
+            "chunk"
+          ]
+        },
+        {
+          "name": "_post_rich_card",
+          "startLine": 44,
+          "endLine": 61,
+          "params": [
+            "webhook_url",
+            "title",
+            "elements",
+            "template"
+          ]
+        },
+        {
+          "name": "_post_interactive_payload",
+          "startLine": 64,
+          "endLine": 80,
+          "params": [
+            "webhook_url",
+            "payload",
+            "timeout"
+          ]
+        },
+        {
+          "name": "send_backtest_card",
+          "startLine": 83,
+          "endLine": 93,
+          "params": [
+            "webhook_url",
+            "summary_path"
+          ]
+        },
+        {
+          "name": "_send_rich_card_with_retry",
+          "startLine": 96,
+          "endLine": 112,
+          "params": [
+            "webhook_url",
+            "title",
+            "elements",
+            "template",
+            "label"
+          ]
+        },
+        {
+          "name": "send_feishu_notification",
+          "startLine": 115,
+          "endLine": 131,
+          "params": [
+            "webhook_url",
+            "title",
+            "content"
+          ]
+        },
+        {
+          "name": "_send_card_chunk",
+          "startLine": 134,
+          "endLine": 155,
+          "params": [
+            "webhook_url",
+            "title",
+            "chunk",
+            "idx",
+            "total"
+          ]
+        },
+        {
+          "name": "_feishu_api_base_url",
+          "startLine": 158,
+          "endLine": 159,
+          "params": []
+        },
+        {
+          "name": "_feishu_file_credentials",
+          "startLine": 162,
+          "endLine": 172,
+          "params": [
+            "chat_id",
+            "app_id",
+            "app_secret"
+          ]
+        },
+        {
+          "name": "_tenant_access_token",
+          "startLine": 175,
+          "endLine": 188,
+          "params": [
+            "app_id",
+            "app_secret"
+          ]
+        },
+        {
+          "name": "_upload_feishu_file",
+          "startLine": 191,
+          "endLine": 208,
+          "params": [
+            "file_path",
+            "token"
+          ]
+        },
+        {
+          "name": "_send_feishu_file_message",
+          "startLine": 211,
+          "endLine": 226,
+          "params": [
+            "file_key",
+            "token",
+            "chat_id",
+            "receive_id_type"
+          ]
+        },
+        {
+          "name": "send_feishu_file",
+          "startLine": 229,
+          "endLine": 252,
+          "params": [
+            "file_path",
+            "chat_id",
+            "app_id",
+            "app_secret",
+            "receive_id_type"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_post_card",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "_post_legacy_card",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "_post_rich_card",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "_post_interactive_payload",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "send_backtest_card",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "_send_rich_card_with_retry",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "send_feishu_notification",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "_send_card_chunk",
+          "line": 134,
+          "isDefault": false
+        },
+        {
+          "name": "_feishu_api_base_url",
+          "line": 158,
+          "isDefault": false
+        },
+        {
+          "name": "_feishu_file_credentials",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "_tenant_access_token",
+          "line": 175,
+          "isDefault": false
+        },
+        {
+          "name": "_upload_feishu_file",
+          "line": 191,
+          "isDefault": false
+        },
+        {
+          "name": "_send_feishu_file_message",
+          "line": 211,
+          "isDefault": false
+        },
+        {
+          "name": "send_feishu_file",
+          "line": 229,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_post_card",
+          "callee": "utils.feishu_report_card.build_report_card_elements",
+          "lineNumber": 18
+        },
+        {
+          "caller": "_post_card",
+          "callee": "utils.feishu_report_card.report_card_template",
+          "lineNumber": 25
+        },
+        {
+          "caller": "_post_card",
+          "callee": "_post_interactive_payload",
+          "lineNumber": 30
+        },
+        {
+          "caller": "_post_legacy_card",
+          "callee": "_post_interactive_payload",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_post_rich_card",
+          "callee": "_post_interactive_payload",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_post_interactive_payload",
+          "callee": "requests.post",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_post_interactive_payload",
+          "callee": "webhook_url.strip",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_post_interactive_payload",
+          "callee": "resp.json",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_post_interactive_payload",
+          "callee": "int",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_post_interactive_payload",
+          "callee": "data.get",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_post_interactive_payload",
+          "callee": "data.get",
+          "lineNumber": 80
+        },
+        {
+          "caller": "send_backtest_card",
+          "callee": "webhook_url.strip",
+          "lineNumber": 84
+        },
+        {
+          "caller": "send_backtest_card",
+          "callee": "open",
+          "lineNumber": 87
+        },
+        {
+          "caller": "send_backtest_card",
+          "callee": "file.read",
+          "lineNumber": 88
+        },
+        {
+          "caller": "send_backtest_card",
+          "callee": "utils.feishu_backtest_card.build_backtest_card_elements",
+          "lineNumber": 89
+        },
+        {
+          "caller": "send_backtest_card",
+          "callee": "_send_rich_card_with_retry",
+          "lineNumber": 90
+        },
+        {
+          "caller": "send_backtest_card",
+          "callee": "print",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_send_rich_card_with_retry",
+          "callee": "range",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_send_rich_card_with_retry",
+          "callee": "_post_rich_card",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_send_rich_card_with_retry",
+          "callee": "print",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_send_rich_card_with_retry",
+          "callee": "time.sleep",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_send_rich_card_with_retry",
+          "callee": "print",
+          "lineNumber": 111
+        },
+        {
+          "caller": "send_feishu_notification",
+          "callee": "webhook_url.strip",
+          "lineNumber": 116
+        },
+        {
+          "caller": "send_feishu_notification",
+          "callee": "utils.feishu_text.annotate_financial_terms",
+          "lineNumber": 119
+        },
+        {
+          "caller": "send_feishu_notification",
+          "callee": "append_tickflow_limit_hint",
+          "lineNumber": 119
+        },
+        {
+          "caller": "send_feishu_notification",
+          "callee": "utils.feishu_text.normalize_lark_md",
+          "lineNumber": 120
+        },
+        {
+          "caller": "send_feishu_notification",
+          "callee": "utils.feishu_text.split_lark_md",
+          "lineNumber": 121
+        },
+        {
+          "caller": "send_feishu_notification",
+          "callee": "int",
+          "lineNumber": 121
+        },
+        {
+          "caller": "send_feishu_notification",
+          "callee": "os.getenv",
+          "lineNumber": 121
+        },
+        {
+          "caller": "send_feishu_notification",
+          "callee": "enumerate",
+          "lineNumber": 123
+        },
+        {
+          "caller": "send_feishu_notification",
+          "callee": "_send_card_chunk",
+          "lineNumber": 124
+        },
+        {
+          "caller": "send_feishu_notification",
+          "callee": "len",
+          "lineNumber": 124
+        },
+        {
+          "caller": "send_feishu_notification",
+          "callee": "len",
+          "lineNumber": 126
+        },
+        {
+          "caller": "send_feishu_notification",
+          "callee": "time.sleep",
+          "lineNumber": 127
+        },
+        {
+          "caller": "send_feishu_notification",
+          "callee": "print",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_send_card_chunk",
+          "callee": "range",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_send_card_chunk",
+          "callee": "_post_card",
+          "lineNumber": 138
+        },
+        {
+          "caller": "_send_card_chunk",
+          "callee": "print",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_send_card_chunk",
+          "callee": "len",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_send_card_chunk",
+          "callee": "print",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_send_card_chunk",
+          "callee": "len",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_send_card_chunk",
+          "callee": "time.sleep",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_send_card_chunk",
+          "callee": "_post_legacy_card",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_send_card_chunk",
+          "callee": "print",
+          "lineNumber": 151
+        },
+        {
+          "caller": "_send_card_chunk",
+          "callee": "print",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_feishu_api_base_url",
+          "callee": "os.getenv(\"FEISHU_OPENAPI_BASE_URL\", \"https://open.feishu.cn/open-apis\").strip().rstrip",
+          "lineNumber": 159
+        },
+        {
+          "caller": "_feishu_api_base_url",
+          "callee": "os.getenv(\"FEISHU_OPENAPI_BASE_URL\", \"https://open.feishu.cn/open-apis\").strip",
+          "lineNumber": 159
+        },
+        {
+          "caller": "_feishu_api_base_url",
+          "callee": "os.getenv",
+          "lineNumber": 159
+        },
+        {
+          "caller": "_feishu_file_credentials",
+          "callee": "(app_id or os.getenv(\"FEISHU_APP_ID\", \"\")).strip",
+          "lineNumber": 163
+        },
+        {
+          "caller": "_feishu_file_credentials",
+          "callee": "os.getenv",
+          "lineNumber": 163
+        },
+        {
+          "caller": "_feishu_file_credentials",
+          "callee": "(app_secret or os.getenv(\"FEISHU_APP_SECRET\", \"\")).strip",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_feishu_file_credentials",
+          "callee": "os.getenv",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_feishu_file_credentials",
+          "callee": "(\n        chat_id\n        or os.getenv(\"FEISHU_PREVIEW_CHAT_ID\", \"\")\n        or os.getenv(\"FEISHU_CHAT_ID\", \"\")\n        or os.getenv(\"LARK_PREVIEW_CHAT_ID\", \"\")\n        or os.getenv(\"LARK_CHAT_ID\", \"\")\n    ).strip",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_feishu_file_credentials",
+          "callee": "os.getenv",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_feishu_file_credentials",
+          "callee": "os.getenv",
+          "lineNumber": 168
+        },
+        {
+          "caller": "_feishu_file_credentials",
+          "callee": "os.getenv",
+          "lineNumber": 169
+        },
+        {
+          "caller": "_feishu_file_credentials",
+          "callee": "os.getenv",
+          "lineNumber": 170
+        },
+        {
+          "caller": "_tenant_access_token",
+          "callee": "requests.post",
+          "lineNumber": 176
+        },
+        {
+          "caller": "_tenant_access_token",
+          "callee": "_feishu_api_base_url",
+          "lineNumber": 177
+        },
+        {
+          "caller": "_tenant_access_token",
+          "callee": "resp.raise_for_status",
+          "lineNumber": 181
+        },
+        {
+          "caller": "_tenant_access_token",
+          "callee": "resp.json",
+          "lineNumber": 182
+        },
+        {
+          "caller": "_tenant_access_token",
+          "callee": "int",
+          "lineNumber": 183
+        },
+        {
+          "caller": "_tenant_access_token",
+          "callee": "payload.get",
+          "lineNumber": 183
+        },
+        {
+          "caller": "_tenant_access_token",
+          "callee": "RuntimeError",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_tenant_access_token",
+          "callee": "str",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_tenant_access_token",
+          "callee": "payload.get",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_tenant_access_token",
+          "callee": "str(payload.get(\"tenant_access_token\", \"\") or \"\").strip",
+          "lineNumber": 185
+        },
+        {
+          "caller": "_tenant_access_token",
+          "callee": "str",
+          "lineNumber": 185
+        },
+        {
+          "caller": "_tenant_access_token",
+          "callee": "payload.get",
+          "lineNumber": 185
+        },
+        {
+          "caller": "_tenant_access_token",
+          "callee": "RuntimeError",
+          "lineNumber": 187
+        },
+        {
+          "caller": "_upload_feishu_file",
+          "callee": "os.path.basename",
+          "lineNumber": 192
+        },
+        {
+          "caller": "_upload_feishu_file",
+          "callee": "open",
+          "lineNumber": 193
+        },
+        {
+          "caller": "_upload_feishu_file",
+          "callee": "requests.post",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_upload_feishu_file",
+          "callee": "_feishu_api_base_url",
+          "lineNumber": 195
+        },
+        {
+          "caller": "_upload_feishu_file",
+          "callee": "resp.raise_for_status",
+          "lineNumber": 201
+        },
+        {
+          "caller": "_upload_feishu_file",
+          "callee": "resp.json",
+          "lineNumber": 202
+        },
+        {
+          "caller": "_upload_feishu_file",
+          "callee": "int",
+          "lineNumber": 203
+        },
+        {
+          "caller": "_upload_feishu_file",
+          "callee": "payload.get",
+          "lineNumber": 203
+        },
+        {
+          "caller": "_upload_feishu_file",
+          "callee": "RuntimeError",
+          "lineNumber": 204
+        },
+        {
+          "caller": "_upload_feishu_file",
+          "callee": "str",
+          "lineNumber": 204
+        },
+        {
+          "caller": "_upload_feishu_file",
+          "callee": "payload.get",
+          "lineNumber": 204
+        },
+        {
+          "caller": "_upload_feishu_file",
+          "callee": "str((payload.get(\"data\") or {}).get(\"file_key\", \"\") or \"\").strip",
+          "lineNumber": 205
+        },
+        {
+          "caller": "_upload_feishu_file",
+          "callee": "str",
+          "lineNumber": 205
+        },
+        {
+          "caller": "_upload_feishu_file",
+          "callee": "(payload.get(\"data\") or {}).get",
+          "lineNumber": 205
+        },
+        {
+          "caller": "_upload_feishu_file",
+          "callee": "payload.get",
+          "lineNumber": 205
+        },
+        {
+          "caller": "_upload_feishu_file",
+          "callee": "RuntimeError",
+          "lineNumber": 207
+        },
+        {
+          "caller": "_send_feishu_file_message",
+          "callee": "requests.post",
+          "lineNumber": 212
+        },
+        {
+          "caller": "_send_feishu_file_message",
+          "callee": "_feishu_api_base_url",
+          "lineNumber": 213
+        },
+        {
+          "caller": "_send_feishu_file_message",
+          "callee": "json.dumps",
+          "lineNumber": 219
+        },
+        {
+          "caller": "_send_feishu_file_message",
+          "callee": "resp.raise_for_status",
+          "lineNumber": 223
+        },
+        {
+          "caller": "_send_feishu_file_message",
+          "callee": "resp.json",
+          "lineNumber": 224
+        },
+        {
+          "caller": "_send_feishu_file_message",
+          "callee": "int",
+          "lineNumber": 225
+        },
+        {
+          "caller": "_send_feishu_file_message",
+          "callee": "payload.get",
+          "lineNumber": 225
+        },
+        {
+          "caller": "_send_feishu_file_message",
+          "callee": "RuntimeError",
+          "lineNumber": 226
+        },
+        {
+          "caller": "_send_feishu_file_message",
+          "callee": "str",
+          "lineNumber": 226
+        },
+        {
+          "caller": "_send_feishu_file_message",
+          "callee": "payload.get",
+          "lineNumber": 226
+        },
+        {
+          "caller": "send_feishu_file",
+          "callee": "os.path.isfile",
+          "lineNumber": 237
+        },
+        {
+          "caller": "send_feishu_file",
+          "callee": "print",
+          "lineNumber": 238
+        },
+        {
+          "caller": "send_feishu_file",
+          "callee": "_feishu_file_credentials",
+          "lineNumber": 240
+        },
+        {
+          "caller": "send_feishu_file",
+          "callee": "print",
+          "lineNumber": 242
+        },
+        {
+          "caller": "send_feishu_file",
+          "callee": "_tenant_access_token",
+          "lineNumber": 245
+        },
+        {
+          "caller": "send_feishu_file",
+          "callee": "_upload_feishu_file",
+          "lineNumber": 246
+        },
+        {
+          "caller": "send_feishu_file",
+          "callee": "_send_feishu_file_message",
+          "lineNumber": 247
+        },
+        {
+          "caller": "send_feishu_file",
+          "callee": "print",
+          "lineNumber": 248
+        },
+        {
+          "caller": "send_feishu_file",
+          "callee": "os.path.basename",
+          "lineNumber": 248
+        },
+        {
+          "caller": "send_feishu_file",
+          "callee": "print",
+          "lineNumber": 251
+        },
+        {
+          "caller": "send_feishu_file",
+          "callee": "type",
+          "lineNumber": 251
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 14,
+        "functionCount": 14,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/utils/feishu_backtest_card.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 220,
+      "nonEmptyLines": 183,
+      "functions": [
+        {
+          "name": "_extract_number",
+          "startLine": 29,
+          "endLine": 37,
+          "params": [
+            "content",
+            "keyword"
+          ]
+        },
+        {
+          "name": "_extract_text",
+          "startLine": 40,
+          "endLine": 44,
+          "params": [
+            "content",
+            "keyword"
+          ]
+        },
+        {
+          "name": "_fmt_metric",
+          "startLine": 47,
+          "endLine": 48,
+          "params": [
+            "val",
+            "spec"
+          ]
+        },
+        {
+          "name": "_parse_vertical_table",
+          "startLine": 51,
+          "endLine": 73,
+          "params": [
+            "content",
+            "header_keyword"
+          ]
+        },
+        {
+          "name": "_fill_table_row",
+          "startLine": 76,
+          "endLine": 79,
+          "params": [
+            "result",
+            "col_names",
+            "parts"
+          ]
+        },
+        {
+          "name": "_parse_card_data",
+          "startLine": 82,
+          "endLine": 98,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "_summary_elements",
+          "startLine": 101,
+          "endLine": 106,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "_core_metric_elements",
+          "startLine": 109,
+          "endLine": 126,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "_metric_column",
+          "startLine": 129,
+          "endLine": 135,
+          "params": [
+            "label",
+            "value"
+          ]
+        },
+        {
+          "name": "_track_elements",
+          "startLine": 138,
+          "endLine": 145,
+          "params": [
+            "track_data"
+          ]
+        },
+        {
+          "name": "_track_columns",
+          "startLine": 148,
+          "endLine": 158,
+          "params": [
+            "track_data"
+          ]
+        },
+        {
+          "name": "_track_text",
+          "startLine": 161,
+          "endLine": 167,
+          "params": [
+            "name",
+            "data",
+            "icons"
+          ]
+        },
+        {
+          "name": "_regime_elements",
+          "startLine": 170,
+          "endLine": 176,
+          "params": [
+            "regime_data"
+          ]
+        },
+        {
+          "name": "_regime_columns",
+          "startLine": 179,
+          "endLine": 196,
+          "params": [
+            "regime_data"
+          ]
+        },
+        {
+          "name": "_regime_text",
+          "startLine": 199,
+          "endLine": 205,
+          "params": [
+            "name",
+            "data",
+            "regime_icons"
+          ]
+        },
+        {
+          "name": "build_backtest_card_elements",
+          "startLine": 208,
+          "endLine": 220,
+          "params": [
+            "content"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BacktestCardData",
+          "startLine": 12,
+          "endLine": 26,
+          "methods": [],
+          "properties": [
+            "win",
+            "avg",
+            "sharpe",
+            "mdd",
+            "trades",
+            "hold",
+            "sl",
+            "tp",
+            "trail",
+            "bt_range",
+            "top_n",
+            "pool",
+            "track_data",
+            "regime_data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BacktestCardData",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "_extract_number",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "_extract_text",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "_fmt_metric",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "_parse_vertical_table",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "_fill_table_row",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "_parse_card_data",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "_summary_elements",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "_core_metric_elements",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "_metric_column",
+          "line": 129,
+          "isDefault": false
+        },
+        {
+          "name": "_track_elements",
+          "line": 138,
+          "isDefault": false
+        },
+        {
+          "name": "_track_columns",
+          "line": 148,
+          "isDefault": false
+        },
+        {
+          "name": "_track_text",
+          "line": 161,
+          "isDefault": false
+        },
+        {
+          "name": "_regime_elements",
+          "line": 170,
+          "isDefault": false
+        },
+        {
+          "name": "_regime_columns",
+          "line": 179,
+          "isDefault": false
+        },
+        {
+          "name": "_regime_text",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "build_backtest_card_elements",
+          "line": 208,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_extract_number",
+          "callee": "content.split",
+          "lineNumber": 30
+        },
+        {
+          "caller": "_extract_number",
+          "callee": "line.split(\":\")[-1].strip().rstrip",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_extract_number",
+          "callee": "line.split(\":\")[-1].strip",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_extract_number",
+          "callee": "line.split",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_extract_number",
+          "callee": "float",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_extract_text",
+          "callee": "content.split",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_extract_text",
+          "callee": "line.split(\":\")[-1].strip",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_extract_text",
+          "callee": "line.split",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_fmt_metric",
+          "callee": "format",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_parse_vertical_table",
+          "callee": "content.split",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_parse_vertical_table",
+          "callee": "line.startswith",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_parse_vertical_table",
+          "callee": "c.strip",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_parse_vertical_table",
+          "callee": "line.split",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_parse_vertical_table",
+          "callee": "line.startswith",
+          "lineNumber": 64
+        },
+        {
+          "caller": "_parse_vertical_table",
+          "callee": "line.startswith",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_parse_vertical_table",
+          "callee": "part.strip",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_parse_vertical_table",
+          "callee": "line.split",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_parse_vertical_table",
+          "callee": "len",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_parse_vertical_table",
+          "callee": "len",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_parse_vertical_table",
+          "callee": "_fill_table_row",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_parse_vertical_table",
+          "callee": "line.startswith",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_parse_vertical_table",
+          "callee": "line.strip",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_fill_table_row",
+          "callee": "enumerate",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_parse_card_data",
+          "callee": "BacktestCardData",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_parse_card_data",
+          "callee": "_extract_number",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_parse_card_data",
+          "callee": "_extract_number",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_parse_card_data",
+          "callee": "_extract_number",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_parse_card_data",
+          "callee": "_extract_number",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_parse_card_data",
+          "callee": "_extract_number",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_parse_card_data",
+          "callee": "_extract_text",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_parse_card_data",
+          "callee": "_extract_text",
+          "lineNumber": 90
+        },
+        {
+          "caller": "_parse_card_data",
+          "callee": "_extract_text",
+          "lineNumber": 91
+        },
+        {
+          "caller": "_parse_card_data",
+          "callee": "_extract_text",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_parse_card_data",
+          "callee": "_extract_text",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_parse_card_data",
+          "callee": "_extract_text",
+          "lineNumber": 94
+        },
+        {
+          "caller": "_parse_card_data",
+          "callee": "_extract_text",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_parse_card_data",
+          "callee": "_parse_vertical_table",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_parse_card_data",
+          "callee": "_parse_vertical_table",
+          "lineNumber": 97
+        },
+        {
+          "caller": "_summary_elements",
+          "callee": "lark_md_div",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_summary_elements",
+          "callee": "lark_md_div",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_core_metric_elements",
+          "callee": "_fmt_metric",
+          "lineNumber": 112
+        },
+        {
+          "caller": "_core_metric_elements",
+          "callee": "_fmt_metric",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_core_metric_elements",
+          "callee": "_fmt_metric",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_core_metric_elements",
+          "callee": "_fmt_metric",
+          "lineNumber": 115
+        },
+        {
+          "caller": "_core_metric_elements",
+          "callee": "int",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_core_metric_elements",
+          "callee": "_metric_column",
+          "lineNumber": 123
+        },
+        {
+          "caller": "_metric_column",
+          "callee": "lark_md_div",
+          "lineNumber": 134
+        },
+        {
+          "caller": "_track_elements",
+          "callee": "lark_md_div",
+          "lineNumber": 142
+        },
+        {
+          "caller": "_track_elements",
+          "callee": "_track_columns",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_track_columns",
+          "callee": "lark_md_div",
+          "lineNumber": 155
+        },
+        {
+          "caller": "_track_columns",
+          "callee": "_track_text",
+          "lineNumber": 155
+        },
+        {
+          "caller": "_track_columns",
+          "callee": "track_data.items",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_track_text",
+          "callee": "icons.get",
+          "lineNumber": 163
+        },
+        {
+          "caller": "_track_text",
+          "callee": "data.get",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_track_text",
+          "callee": "data.get",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_track_text",
+          "callee": "data.get",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_track_text",
+          "callee": "data.get",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_track_text",
+          "callee": "data.get",
+          "lineNumber": 166
+        },
+        {
+          "caller": "_regime_elements",
+          "callee": "lark_md_div",
+          "lineNumber": 174
+        },
+        {
+          "caller": "_regime_elements",
+          "callee": "_regime_columns",
+          "lineNumber": 175
+        },
+        {
+          "caller": "_regime_columns",
+          "callee": "lark_md_div",
+          "lineNumber": 193
+        },
+        {
+          "caller": "_regime_columns",
+          "callee": "_regime_text",
+          "lineNumber": 193
+        },
+        {
+          "caller": "_regime_columns",
+          "callee": "regime_data.items",
+          "lineNumber": 195
+        },
+        {
+          "caller": "_regime_text",
+          "callee": "name.replace",
+          "lineNumber": 200
+        },
+        {
+          "caller": "_regime_text",
+          "callee": "regime_icons.get",
+          "lineNumber": 202
+        },
+        {
+          "caller": "_regime_text",
+          "callee": "data.get",
+          "lineNumber": 203
+        },
+        {
+          "caller": "_regime_text",
+          "callee": "data.get",
+          "lineNumber": 203
+        },
+        {
+          "caller": "_regime_text",
+          "callee": "data.get",
+          "lineNumber": 204
+        },
+        {
+          "caller": "build_backtest_card_elements",
+          "callee": "_parse_card_data",
+          "lineNumber": 209
+        },
+        {
+          "caller": "build_backtest_card_elements",
+          "callee": "_summary_elements",
+          "lineNumber": 211
+        },
+        {
+          "caller": "build_backtest_card_elements",
+          "callee": "_core_metric_elements",
+          "lineNumber": 212
+        },
+        {
+          "caller": "build_backtest_card_elements",
+          "callee": "_track_elements",
+          "lineNumber": 213
+        },
+        {
+          "caller": "build_backtest_card_elements",
+          "callee": "_regime_elements",
+          "lineNumber": 214
+        },
+        {
+          "caller": "build_backtest_card_elements",
+          "callee": "has_recent_tickflow_limit_event",
+          "lineNumber": 216
+        },
+        {
+          "caller": "build_backtest_card_elements",
+          "callee": "elements.append",
+          "lineNumber": 217
+        },
+        {
+          "caller": "build_backtest_card_elements",
+          "callee": "elements.append",
+          "lineNumber": 218
+        },
+        {
+          "caller": "build_backtest_card_elements",
+          "callee": "lark_note",
+          "lineNumber": 218
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 17,
+        "functionCount": 16,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/utils/feishu_report_card.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 115,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "report_card_template",
+          "startLine": 14,
+          "endLine": 33,
+          "params": [
+            "title",
+            "content"
+          ]
+        },
+        {
+          "name": "build_report_card_elements",
+          "startLine": 36,
+          "endLine": 50,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "_content_blocks",
+          "startLine": 53,
+          "endLine": 71,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "_heading_text",
+          "startLine": 74,
+          "endLine": 76,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "_flush_body",
+          "startLine": 79,
+          "endLine": 83,
+          "params": [
+            "blocks",
+            "body",
+            "kind"
+          ]
+        },
+        {
+          "name": "_intro_panel",
+          "startLine": 86,
+          "endLine": 99,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "_section_icon",
+          "startLine": 102,
+          "endLine": 115,
+          "params": [
+            "text"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "report_card_template",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "build_report_card_elements",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "_content_blocks",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "_heading_text",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "_flush_body",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "_intro_panel",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "_section_icon",
+          "line": 102,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "report_card_template",
+          "callee": "f\"{title}\\n{content}\".upper",
+          "lineNumber": 15
+        },
+        {
+          "caller": "report_card_template",
+          "callee": "_TODAY_CONCLUSION.search",
+          "lineNumber": 16
+        },
+        {
+          "caller": "report_card_template",
+          "callee": "str",
+          "lineNumber": 16
+        },
+        {
+          "caller": "report_card_template",
+          "callee": "conclusion.group(1).upper",
+          "lineNumber": 18
+        },
+        {
+          "caller": "report_card_template",
+          "callee": "conclusion.group",
+          "lineNumber": 18
+        },
+        {
+          "caller": "report_card_template",
+          "callee": "any",
+          "lineNumber": 19
+        },
+        {
+          "caller": "report_card_template",
+          "callee": "any",
+          "lineNumber": 21
+        },
+        {
+          "caller": "report_card_template",
+          "callee": "any",
+          "lineNumber": 23
+        },
+        {
+          "caller": "report_card_template",
+          "callee": "any",
+          "lineNumber": 25
+        },
+        {
+          "caller": "report_card_template",
+          "callee": "any",
+          "lineNumber": 27
+        },
+        {
+          "caller": "report_card_template",
+          "callee": "any",
+          "lineNumber": 29
+        },
+        {
+          "caller": "report_card_template",
+          "callee": "any",
+          "lineNumber": 31
+        },
+        {
+          "caller": "build_report_card_elements",
+          "callee": "_content_blocks",
+          "lineNumber": 37
+        },
+        {
+          "caller": "build_report_card_elements",
+          "callee": "elements.append",
+          "lineNumber": 42
+        },
+        {
+          "caller": "build_report_card_elements",
+          "callee": "elements.append",
+          "lineNumber": 43
+        },
+        {
+          "caller": "build_report_card_elements",
+          "callee": "lark_md_div",
+          "lineNumber": 43
+        },
+        {
+          "caller": "build_report_card_elements",
+          "callee": "_section_icon",
+          "lineNumber": 43
+        },
+        {
+          "caller": "build_report_card_elements",
+          "callee": "elements.append",
+          "lineNumber": 45
+        },
+        {
+          "caller": "build_report_card_elements",
+          "callee": "lark_note",
+          "lineNumber": 45
+        },
+        {
+          "caller": "build_report_card_elements",
+          "callee": "elements.append",
+          "lineNumber": 47
+        },
+        {
+          "caller": "build_report_card_elements",
+          "callee": "_intro_panel",
+          "lineNumber": 47
+        },
+        {
+          "caller": "build_report_card_elements",
+          "callee": "elements.append",
+          "lineNumber": 49
+        },
+        {
+          "caller": "build_report_card_elements",
+          "callee": "lark_md_div",
+          "lineNumber": 49
+        },
+        {
+          "caller": "build_report_card_elements",
+          "callee": "lark_md_div",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_content_blocks",
+          "callee": "str(content or \"\").splitlines",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_content_blocks",
+          "callee": "str",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_content_blocks",
+          "callee": "raw.strip",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_content_blocks",
+          "callee": "_heading_text",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_content_blocks",
+          "callee": "_flush_body",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_content_blocks",
+          "callee": "blocks.append",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_content_blocks",
+          "callee": "text.startswith",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_content_blocks",
+          "callee": "_flush_body",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_content_blocks",
+          "callee": "blocks.append",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_content_blocks",
+          "callee": "body.append",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_content_blocks",
+          "callee": "_flush_body",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_heading_text",
+          "callee": "_BOLD_HEADING.fullmatch",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_heading_text",
+          "callee": "match.group(1).strip",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_heading_text",
+          "callee": "match.group",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_flush_body",
+          "callee": "\"\\n\".join(body).strip",
+          "lineNumber": 80
+        },
+        {
+          "caller": "_flush_body",
+          "callee": "\"\\n\".join",
+          "lineNumber": 80
+        },
+        {
+          "caller": "_flush_body",
+          "callee": "body.clear",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_flush_body",
+          "callee": "blocks.append",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_intro_panel",
+          "callee": "lark_md_div",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_section_icon",
+          "callee": "any",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_section_icon",
+          "callee": "any",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_section_icon",
+          "callee": "any",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_section_icon",
+          "callee": "any",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_section_icon",
+          "callee": "any",
+          "lineNumber": 113
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/utils/feishu_text.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 192,
+      "nonEmptyLines": 160,
+      "functions": [
+        {
+          "name": "annotate_financial_terms",
+          "startLine": 41,
+          "endLine": 48,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "_is_table_row",
+          "startLine": 54,
+          "endLine": 55,
+          "params": [
+            "stripped"
+          ]
+        },
+        {
+          "name": "_split_table_row",
+          "startLine": 58,
+          "endLine": 59,
+          "params": [
+            "stripped"
+          ]
+        },
+        {
+          "name": "_table_block_to_lines",
+          "startLine": 70,
+          "endLine": 106,
+          "params": [
+            "header",
+            "rows"
+          ]
+        },
+        {
+          "name": "_is_placeholder_row",
+          "startLine": 109,
+          "endLine": 112,
+          "params": [
+            "row"
+          ]
+        },
+        {
+          "name": "_placeholder_text",
+          "startLine": 115,
+          "endLine": 117,
+          "params": [
+            "row"
+          ]
+        },
+        {
+          "name": "_consume_table",
+          "startLine": 120,
+          "endLine": 127,
+          "params": [
+            "lines",
+            "start"
+          ]
+        },
+        {
+          "name": "normalize_lark_md",
+          "startLine": 130,
+          "endLine": 157,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "split_lark_md",
+          "startLine": 160,
+          "endLine": 184,
+          "params": [
+            "content",
+            "max_len"
+          ]
+        },
+        {
+          "name": "lark_md_div",
+          "startLine": 187,
+          "endLine": 188,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "lark_note",
+          "startLine": 191,
+          "endLine": 192,
+          "params": [
+            "content"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "annotate_financial_terms",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "_is_table_row",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "_split_table_row",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "_table_block_to_lines",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "_is_placeholder_row",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "_placeholder_text",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "_consume_table",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "normalize_lark_md",
+          "line": 130,
+          "isDefault": false
+        },
+        {
+          "name": "split_lark_md",
+          "line": 160,
+          "isDefault": false
+        },
+        {
+          "name": "lark_md_div",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "lark_note",
+          "line": 191,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "annotate_financial_terms",
+          "callee": "pattern.sub",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_is_table_row",
+          "callee": "stripped.startswith",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_is_table_row",
+          "callee": "stripped.endswith",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_is_table_row",
+          "callee": "stripped.count",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_split_table_row",
+          "callee": "cell.strip",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_split_table_row",
+          "callee": "stripped.strip(\"|\").split",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_split_table_row",
+          "callee": "stripped.strip",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "enumerate",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "enumerate",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "_is_placeholder_row",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "out.append",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "_placeholder_text",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "len",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "len",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "enumerate",
+          "lineNumber": 91
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "len",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "\" · \".join",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "len",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "enumerate",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "out.append",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "\"，\".join",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "prefix.rstrip",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "out.append",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_table_block_to_lines",
+          "callee": "' | '.join",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_is_placeholder_row",
+          "callee": "len",
+          "lineNumber": 112
+        },
+        {
+          "caller": "_is_placeholder_row",
+          "callee": "len",
+          "lineNumber": 112
+        },
+        {
+          "caller": "_consume_table",
+          "callee": "_split_table_row",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_consume_table",
+          "callee": "lines[start].strip",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_consume_table",
+          "callee": "len",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_consume_table",
+          "callee": "_is_table_row",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_consume_table",
+          "callee": "lines[idx].strip",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_consume_table",
+          "callee": "rows.append",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_consume_table",
+          "callee": "_split_table_row",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_consume_table",
+          "callee": "lines[idx].strip",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_consume_table",
+          "callee": "_table_block_to_lines",
+          "lineNumber": 127
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "content.replace(\"<\", \"&lt;\").replace",
+          "lineNumber": 131
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "content.replace",
+          "lineNumber": 131
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "safe_content.replace(\"\\r\\n\", \"\\n\").replace(\"\\r\", \"\\n\").split",
+          "lineNumber": 132
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "safe_content.replace(\"\\r\\n\", \"\\n\").replace",
+          "lineNumber": 132
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "safe_content.replace",
+          "lineNumber": 132
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "len",
+          "lineNumber": 135
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "lines[i].rstrip",
+          "lineNumber": 136
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "line.strip",
+          "lineNumber": 137
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "out.append",
+          "lineNumber": 139
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "stripped.startswith",
+          "lineNumber": 142
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "stripped.lstrip(\"#\").strip",
+          "lineNumber": 143
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "stripped.lstrip",
+          "lineNumber": 143
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "out.append",
+          "lineNumber": 144
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "out.append",
+          "lineNumber": 148
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "_is_table_row",
+          "lineNumber": 151
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "len",
+          "lineNumber": 151
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "_TABLE_SEPARATOR_RE.match",
+          "lineNumber": 151
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "lines[i + 1].strip",
+          "lineNumber": 151
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "_consume_table",
+          "lineNumber": 152
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "out.extend",
+          "lineNumber": 153
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "out.append",
+          "lineNumber": 155
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "\"\\n\".join(out).strip",
+          "lineNumber": 157
+        },
+        {
+          "caller": "normalize_lark_md",
+          "callee": "\"\\n\".join",
+          "lineNumber": 157
+        },
+        {
+          "caller": "split_lark_md",
+          "callee": "len",
+          "lineNumber": 161
+        },
+        {
+          "caller": "split_lark_md",
+          "callee": "content.split",
+          "lineNumber": 164
+        },
+        {
+          "caller": "split_lark_md",
+          "callee": "len",
+          "lineNumber": 169
+        },
+        {
+          "caller": "split_lark_md",
+          "callee": "chunks.append",
+          "lineNumber": 173
+        },
+        {
+          "caller": "split_lark_md",
+          "callee": "len",
+          "lineNumber": 175
+        },
+        {
+          "caller": "split_lark_md",
+          "callee": "len",
+          "lineNumber": 179
+        },
+        {
+          "caller": "split_lark_md",
+          "callee": "chunks.append",
+          "lineNumber": 180
+        },
+        {
+          "caller": "split_lark_md",
+          "callee": "chunks.append",
+          "lineNumber": 183
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/utils/markdown_webhooks.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "_markdown_body",
+          "startLine": 11,
+          "endLine": 13,
+          "params": [
+            "title",
+            "content"
+          ]
+        },
+        {
+          "name": "_webhook_payload",
+          "startLine": 16,
+          "endLine": 19,
+          "params": [
+            "tag",
+            "title",
+            "body"
+          ]
+        },
+        {
+          "name": "_send_webhook_markdown",
+          "startLine": 22,
+          "endLine": 47,
+          "params": [
+            "tag",
+            "webhook_url",
+            "title",
+            "content"
+          ]
+        },
+        {
+          "name": "send_wecom_notification",
+          "startLine": 50,
+          "endLine": 51,
+          "params": [
+            "webhook_url",
+            "title",
+            "content"
+          ]
+        },
+        {
+          "name": "send_dingtalk_notification",
+          "startLine": 54,
+          "endLine": 55,
+          "params": [
+            "webhook_url",
+            "title",
+            "content"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_markdown_body",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "_webhook_payload",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "_send_webhook_markdown",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "send_wecom_notification",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "send_dingtalk_notification",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_markdown_body",
+          "callee": "append_tickflow_limit_hint",
+          "lineNumber": 12
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "str(webhook_url or \"\").strip",
+          "lineNumber": 23
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "str",
+          "lineNumber": 23
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "_markdown_body",
+          "lineNumber": 27
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "split_utf8_text",
+          "lineNumber": 28
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "notification_capabilities",
+          "lineNumber": 28
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "enumerate",
+          "lineNumber": 29
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "len",
+          "lineNumber": 30
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "len",
+          "lineNumber": 30
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "requests.post",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "_webhook_payload",
+          "lineNumber": 34
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "print",
+          "lineNumber": 38
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "resp.json",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "data.get",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "print",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "data.get",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "data.get",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_send_webhook_markdown",
+          "callee": "print",
+          "lineNumber": 46
+        },
+        {
+          "caller": "send_wecom_notification",
+          "callee": "_send_webhook_markdown",
+          "lineNumber": 51
+        },
+        {
+          "caller": "send_dingtalk_notification",
+          "callee": "_send_webhook_markdown",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/utils/notification_capabilities.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 60,
+      "functions": [
+        {
+          "name": "notification_capabilities",
+          "startLine": 27,
+          "endLine": 29,
+          "params": [
+            "channel"
+          ]
+        },
+        {
+          "name": "split_utf8_text",
+          "startLine": 32,
+          "endLine": 55,
+          "params": [
+            "text",
+            "max_bytes"
+          ]
+        },
+        {
+          "name": "_text_pieces",
+          "startLine": 58,
+          "endLine": 60,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "_split_long_piece",
+          "startLine": 63,
+          "endLine": 74,
+          "params": [
+            "text",
+            "limit"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NotificationCapabilities",
+          "startLine": 9,
+          "endLine": 14,
+          "methods": [],
+          "properties": [
+            "channel",
+            "markdown",
+            "max_bytes",
+            "supports_cards",
+            "supports_files"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NotificationCapabilities",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "notification_capabilities",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "split_utf8_text",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "_text_pieces",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "_split_long_piece",
+          "line": 63,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "notification_capabilities",
+          "callee": "CHANNEL_CAPABILITIES.get",
+          "lineNumber": 29
+        },
+        {
+          "caller": "notification_capabilities",
+          "callee": "NotificationCapabilities",
+          "lineNumber": 29
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "str",
+          "lineNumber": 34
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "max",
+          "lineNumber": 35
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "int",
+          "lineNumber": 35
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "len",
+          "lineNumber": 36
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "raw.encode",
+          "lineNumber": 36
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "_text_pieces",
+          "lineNumber": 41
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "len",
+          "lineNumber": 43
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "candidate.encode",
+          "lineNumber": 43
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "chunks.append",
+          "lineNumber": 44
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "current.rstrip",
+          "lineNumber": 44
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "len",
+          "lineNumber": 46
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "piece.encode",
+          "lineNumber": 46
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "chunks.append",
+          "lineNumber": 50
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "current.rstrip",
+          "lineNumber": 50
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "chunks.extend",
+          "lineNumber": 52
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "_split_long_piece",
+          "lineNumber": 52
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "chunks.append",
+          "lineNumber": 54
+        },
+        {
+          "caller": "split_utf8_text",
+          "callee": "current.rstrip",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_text_pieces",
+          "callee": "text.splitlines",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_split_long_piece",
+          "callee": "len",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_split_long_piece",
+          "callee": "(current + char).encode",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_split_long_piece",
+          "callee": "chunks.append",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_split_long_piece",
+          "callee": "chunks.append",
+          "lineNumber": 73
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/utils/telegram.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "split_telegram_message",
+          "startLine": 14,
+          "endLine": 32,
+          "params": [
+            "content",
+            "max_len"
+          ]
+        },
+        {
+          "name": "_append_long_line_chunks",
+          "startLine": 35,
+          "endLine": 41,
+          "params": [
+            "chunks",
+            "current",
+            "line",
+            "max_len"
+          ]
+        },
+        {
+          "name": "_telegram_proxies",
+          "startLine": 44,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "_telegram_payload",
+          "startLine": 49,
+          "endLine": 54,
+          "params": [
+            "chat_id",
+            "chunk",
+            "idx",
+            "total"
+          ]
+        },
+        {
+          "name": "send_to_telegram",
+          "startLine": 57,
+          "endLine": 71,
+          "params": [
+            "message_text",
+            "tg_bot_token",
+            "tg_chat_id"
+          ]
+        },
+        {
+          "name": "_post_telegram_chunk",
+          "startLine": 74,
+          "endLine": 83,
+          "params": [
+            "url",
+            "payload",
+            "proxies"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "split_telegram_message",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "_append_long_line_chunks",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "_telegram_proxies",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "_telegram_payload",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "send_to_telegram",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "_post_telegram_chunk",
+          "line": 74,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "split_telegram_message",
+          "callee": "len",
+          "lineNumber": 15
+        },
+        {
+          "caller": "split_telegram_message",
+          "callee": "content.splitlines",
+          "lineNumber": 19
+        },
+        {
+          "caller": "split_telegram_message",
+          "callee": "len",
+          "lineNumber": 20
+        },
+        {
+          "caller": "split_telegram_message",
+          "callee": "_append_long_line_chunks",
+          "lineNumber": 21
+        },
+        {
+          "caller": "split_telegram_message",
+          "callee": "len",
+          "lineNumber": 24
+        },
+        {
+          "caller": "split_telegram_message",
+          "callee": "len",
+          "lineNumber": 24
+        },
+        {
+          "caller": "split_telegram_message",
+          "callee": "chunks.append",
+          "lineNumber": 28
+        },
+        {
+          "caller": "split_telegram_message",
+          "callee": "current.rstrip",
+          "lineNumber": 28
+        },
+        {
+          "caller": "split_telegram_message",
+          "callee": "chunks.append",
+          "lineNumber": 31
+        },
+        {
+          "caller": "split_telegram_message",
+          "callee": "current.rstrip",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_append_long_line_chunks",
+          "callee": "chunks.append",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_append_long_line_chunks",
+          "callee": "current.rstrip",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_append_long_line_chunks",
+          "callee": "len",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_append_long_line_chunks",
+          "callee": "chunks.append",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_append_long_line_chunks",
+          "callee": "line[start : start + max_len].rstrip",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_telegram_proxies",
+          "callee": "os.getenv(\"PROXY_URL\", \"\").strip",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_telegram_proxies",
+          "callee": "os.getenv",
+          "lineNumber": 45
+        },
+        {
+          "caller": "send_to_telegram",
+          "callee": "str(tg_bot_token or \"\").strip",
+          "lineNumber": 58
+        },
+        {
+          "caller": "send_to_telegram",
+          "callee": "str",
+          "lineNumber": 58
+        },
+        {
+          "caller": "send_to_telegram",
+          "callee": "str(tg_chat_id or \"\").strip",
+          "lineNumber": 59
+        },
+        {
+          "caller": "send_to_telegram",
+          "callee": "str",
+          "lineNumber": 59
+        },
+        {
+          "caller": "send_to_telegram",
+          "callee": "append_tickflow_limit_hint",
+          "lineNumber": 60
+        },
+        {
+          "caller": "send_to_telegram",
+          "callee": "print",
+          "lineNumber": 62
+        },
+        {
+          "caller": "send_to_telegram",
+          "callee": "split_telegram_message",
+          "lineNumber": 66
+        },
+        {
+          "caller": "send_to_telegram",
+          "callee": "_telegram_proxies",
+          "lineNumber": 67
+        },
+        {
+          "caller": "send_to_telegram",
+          "callee": "enumerate",
+          "lineNumber": 68
+        },
+        {
+          "caller": "send_to_telegram",
+          "callee": "_post_telegram_chunk",
+          "lineNumber": 69
+        },
+        {
+          "caller": "send_to_telegram",
+          "callee": "_telegram_payload",
+          "lineNumber": 69
+        },
+        {
+          "caller": "send_to_telegram",
+          "callee": "len",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_post_telegram_chunk",
+          "callee": "requests.post",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_post_telegram_chunk",
+          "callee": "print",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_post_telegram_chunk",
+          "callee": "print",
+          "lineNumber": 82
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/workflows/holding_diagnosis_job.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "runtime_from_env",
+          "startLine": 36,
+          "endLine": 41,
+          "params": []
+        },
+        {
+          "name": "run_holding_diagnosis_job",
+          "startLine": 44,
+          "endLine": 60,
+          "params": [
+            "runtime"
+          ]
+        },
+        {
+          "name": "_build_holding_diagnosis_report",
+          "startLine": 63,
+          "endLine": 81,
+          "params": [
+            "context",
+            "portfolio_id",
+            "deadline_at",
+            "started_at"
+          ]
+        },
+        {
+          "name": "_send_holding_report",
+          "startLine": 84,
+          "endLine": 94,
+          "params": [
+            "report",
+            "runtime"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "HoldingDiagnosisRuntime",
+          "startLine": 30,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "tg_bot_token",
+            "tg_chat_id",
+            "portfolio_id"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HoldingDiagnosisRuntime",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "runtime_from_env",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "run_holding_diagnosis_job",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "_build_holding_diagnosis_report",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "_send_holding_report",
+          "line": 84,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "runtime_from_env",
+          "callee": "HoldingDiagnosisRuntime",
+          "lineNumber": 37
+        },
+        {
+          "caller": "runtime_from_env",
+          "callee": "os.getenv(\"TG_BOT_TOKEN\", \"\").strip",
+          "lineNumber": 38
+        },
+        {
+          "caller": "runtime_from_env",
+          "callee": "os.getenv",
+          "lineNumber": 38
+        },
+        {
+          "caller": "runtime_from_env",
+          "callee": "os.getenv(\"TG_CHAT_ID\", \"\").strip",
+          "lineNumber": 39
+        },
+        {
+          "caller": "runtime_from_env",
+          "callee": "os.getenv",
+          "lineNumber": 39
+        },
+        {
+          "caller": "runtime_from_env",
+          "callee": "default_holding_portfolio_id",
+          "lineNumber": 40
+        },
+        {
+          "caller": "run_holding_diagnosis_job",
+          "callee": "time.time",
+          "lineNumber": 45
+        },
+        {
+          "caller": "run_holding_diagnosis_job",
+          "callee": "runtime_from_env",
+          "lineNumber": 46
+        },
+        {
+          "caller": "run_holding_diagnosis_job",
+          "callee": "datetime.now",
+          "lineNumber": 47
+        },
+        {
+          "caller": "run_holding_diagnosis_job",
+          "callee": "timedelta",
+          "lineNumber": 47
+        },
+        {
+          "caller": "run_holding_diagnosis_job",
+          "callee": "print",
+          "lineNumber": 48
+        },
+        {
+          "caller": "run_holding_diagnosis_job",
+          "callee": "resolve_holding_portfolio_context",
+          "lineNumber": 50
+        },
+        {
+          "caller": "run_holding_diagnosis_job",
+          "callee": "print",
+          "lineNumber": 52
+        },
+        {
+          "caller": "run_holding_diagnosis_job",
+          "callee": "holding_no_position_meta",
+          "lineNumber": 52
+        },
+        {
+          "caller": "run_holding_diagnosis_job",
+          "callee": "_build_holding_diagnosis_report",
+          "lineNumber": 55
+        },
+        {
+          "caller": "run_holding_diagnosis_job",
+          "callee": "print",
+          "lineNumber": 58
+        },
+        {
+          "caller": "run_holding_diagnosis_job",
+          "callee": "_send_holding_report",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_build_holding_diagnosis_report",
+          "callee": "fetch_holding_daily_frames",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_build_holding_diagnosis_report",
+          "callee": "fetch_holding_benchmark",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_build_holding_diagnosis_report",
+          "callee": "build_holding_advices",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_build_holding_diagnosis_report",
+          "callee": "FunnelConfig",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_build_holding_diagnosis_report",
+          "callee": "build_holdings_markdown",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_build_holding_diagnosis_report",
+          "callee": "holding_portfolio_meta",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_build_holding_diagnosis_report",
+          "callee": "run_holding_llm_report",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_send_holding_report",
+          "callee": "send_to_telegram",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_send_holding_report",
+          "callee": "print",
+          "lineNumber": 91
+        },
+        {
+          "caller": "_send_holding_report",
+          "callee": "bool",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_send_holding_report",
+          "callee": "print",
+          "lineNumber": 93
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/workflows/single_symbol_diagnosis_outputs.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 89,
+      "functions": [
+        {
+          "name": "write_single_symbol_outputs",
+          "startLine": 15,
+          "endLine": 30,
+          "params": [
+            "output_dir",
+            "spec",
+            "rows",
+            "summary"
+          ]
+        },
+        {
+          "name": "notify_single_symbol_feishu",
+          "startLine": 33,
+          "endLine": 41,
+          "params": [
+            "spec",
+            "summary",
+            "report_path"
+          ]
+        },
+        {
+          "name": "build_single_symbol_report",
+          "startLine": 44,
+          "endLine": 62,
+          "params": [
+            "spec",
+            "rows",
+            "summary"
+          ]
+        },
+        {
+          "name": "_write_csv",
+          "startLine": 65,
+          "endLine": 70,
+          "params": [
+            "path",
+            "rows"
+          ]
+        },
+        {
+          "name": "_json_payload",
+          "startLine": 73,
+          "endLine": 79,
+          "params": [
+            "spec",
+            "rows",
+            "summary"
+          ]
+        },
+        {
+          "name": "_feishu_content",
+          "startLine": 82,
+          "endLine": 94,
+          "params": [
+            "spec",
+            "summary",
+            "report_path"
+          ]
+        },
+        {
+          "name": "_report_row",
+          "startLine": 97,
+          "endLine": 102,
+          "params": [
+            "row"
+          ]
+        },
+        {
+          "name": "_fmt",
+          "startLine": 105,
+          "endLine": 106,
+          "params": [
+            "value",
+            "digits",
+            "suffix"
+          ]
+        },
+        {
+          "name": "_fmt_counts",
+          "startLine": 109,
+          "endLine": 110,
+          "params": [
+            "counts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "write_single_symbol_outputs",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "notify_single_symbol_feishu",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "build_single_symbol_report",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "_write_csv",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "_json_payload",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "_feishu_content",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "_report_row",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "_fmt",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "_fmt_counts",
+          "line": 109,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "write_single_symbol_outputs",
+          "callee": "output_dir.mkdir",
+          "lineNumber": 18
+        },
+        {
+          "caller": "write_single_symbol_outputs",
+          "callee": "_write_csv",
+          "lineNumber": 24
+        },
+        {
+          "caller": "write_single_symbol_outputs",
+          "callee": "paths[\"json\"].write_text",
+          "lineNumber": 25
+        },
+        {
+          "caller": "write_single_symbol_outputs",
+          "callee": "json.dumps",
+          "lineNumber": 26
+        },
+        {
+          "caller": "write_single_symbol_outputs",
+          "callee": "_json_payload",
+          "lineNumber": 26
+        },
+        {
+          "caller": "write_single_symbol_outputs",
+          "callee": "paths[\"md\"].write_text",
+          "lineNumber": 29
+        },
+        {
+          "caller": "write_single_symbol_outputs",
+          "callee": "build_single_symbol_report",
+          "lineNumber": 29
+        },
+        {
+          "caller": "write_single_symbol_outputs",
+          "callee": "str",
+          "lineNumber": 30
+        },
+        {
+          "caller": "write_single_symbol_outputs",
+          "callee": "paths.items",
+          "lineNumber": 30
+        },
+        {
+          "caller": "notify_single_symbol_feishu",
+          "callee": "os.getenv(\"FEISHU_WEBHOOK_URL\", \"\").strip",
+          "lineNumber": 34
+        },
+        {
+          "caller": "notify_single_symbol_feishu",
+          "callee": "os.getenv",
+          "lineNumber": 34
+        },
+        {
+          "caller": "notify_single_symbol_feishu",
+          "callee": "send_feishu_notification",
+          "lineNumber": 37
+        },
+        {
+          "caller": "notify_single_symbol_feishu",
+          "callee": "_feishu_content",
+          "lineNumber": 40
+        },
+        {
+          "caller": "build_single_symbol_report",
+          "callee": "_fmt_counts",
+          "lineNumber": 52
+        },
+        {
+          "caller": "build_single_symbol_report",
+          "callee": "lines.extend",
+          "lineNumber": 61
+        },
+        {
+          "caller": "build_single_symbol_report",
+          "callee": "_report_row",
+          "lineNumber": 61
+        },
+        {
+          "caller": "build_single_symbol_report",
+          "callee": "\"\\n\".join",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "path.open",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "csv.DictWriter",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "list",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "asdict(rows[0]).keys",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "asdict",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "writer.writeheader",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "writer.writerow",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "asdict",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_json_payload",
+          "callee": "asdict",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_json_payload",
+          "callee": "asdict",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_feishu_content",
+          "callee": "os.getenv(\"GITHUB_RUN_URL\", \"\").strip",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_feishu_content",
+          "callee": "os.getenv",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_feishu_content",
+          "callee": "\"\\n\".join",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_feishu_content",
+          "callee": "_fmt_counts",
+          "lineNumber": 90
+        },
+        {
+          "caller": "_report_row",
+          "callee": "_fmt",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_report_row",
+          "callee": "_fmt",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_report_row",
+          "callee": "_fmt",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_fmt_counts",
+          "callee": "\" / \".join",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_fmt_counts",
+          "callee": "sorted",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_fmt_counts",
+          "callee": "counts.items",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 9,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    }
+  ]
+}

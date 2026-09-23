@@ -331,6 +331,26 @@ def _sos_trigger_score(series: _StructureSeries, bar: _LastBar, tr: TradingRange
     return float(score + tr.quality_score)
 
 
+def detect_sos(frame: pd.DataFrame, cfg: FunnelConfig, *, lookback: int = 90) -> float | None:
+    """Return the current-bar SOS score for Layer 2 using shared range rules.
+
+    The range deliberately excludes the current bar, matching
+    ``detect_structure_triggers``.  That lets today's breakout test a range
+    visible before today's close instead of redefining the resistance with the
+    breakout itself.
+    """
+    if frame is None or frame.empty or len(frame) < 60:
+        return None
+    sorted_frame = sort_by_date_if_needed(frame).copy()
+    trading_range = identify_trading_range(sorted_frame, cfg, lookback=lookback, exclude_last=1)
+    if trading_range is None:
+        return None
+    series = _structure_series(sorted_frame)
+    if series is None:
+        return None
+    return _sos_trigger_score(series, _last_bar(series, trading_range), trading_range, cfg)
+
+
 def _spring_trigger_score(series: _StructureSeries, bar: _LastBar, tr: TradingRange, cfg: FunnelConfig) -> float | None:
     vol_ratio = _last_ref_volume_ratio(series.volume, 5)
     pierced = min(bar.prev_low, bar.last_low) <= tr.support * 0.995

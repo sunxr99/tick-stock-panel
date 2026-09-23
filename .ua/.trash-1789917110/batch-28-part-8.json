@@ -1,0 +1,1797 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/app/services/ai_provider.py",
+      "type": "file",
+      "name": "ai_provider.py",
+      "filePath": "backend/app/services/ai_provider.py",
+      "summary": "实现 ai_provider.py 中的业务服务逻辑，供上层接口或任务调用。",
+      "tags": [
+        "服务层",
+        "业务逻辑",
+        "源码"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:sanitize_focus",
+      "type": "function",
+      "name": "sanitize_focus",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        89,
+        102
+      ],
+      "summary": "定义 sanitize_focus，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:current_ai_provider",
+      "type": "function",
+      "name": "current_ai_provider",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        105,
+        106
+      ],
+      "summary": "定义 current_ai_provider，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:current_openai_model",
+      "type": "function",
+      "name": "current_openai_model",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        109,
+        110
+      ],
+      "summary": "定义 current_openai_model，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:current_codex_model",
+      "type": "function",
+      "name": "current_codex_model",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        113,
+        120
+      ],
+      "summary": "定义 current_codex_model，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:current_ai_model",
+      "type": "function",
+      "name": "current_ai_model",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        123,
+        126
+      ],
+      "summary": "定义 current_ai_model，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:current_openai_reasoning_effort",
+      "type": "function",
+      "name": "current_openai_reasoning_effort",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        129,
+        133
+      ],
+      "summary": "定义 current_openai_reasoning_effort，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:current_ai_max_output_tokens",
+      "type": "function",
+      "name": "current_ai_max_output_tokens",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        136,
+        138
+      ],
+      "summary": "定义 current_ai_max_output_tokens，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:current_ai_context_window",
+      "type": "function",
+      "name": "current_ai_context_window",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        141,
+        143
+      ],
+      "summary": "定义 current_ai_context_window，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_resolve_max_tokens",
+      "type": "function",
+      "name": "_resolve_max_tokens",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        146,
+        155
+      ],
+      "summary": "定义 _resolve_max_tokens，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_estimate_input_tokens",
+      "type": "function",
+      "name": "_estimate_input_tokens",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        158,
+        165
+      ],
+      "summary": "定义 _estimate_input_tokens，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_check_input_budget",
+      "type": "function",
+      "name": "_check_input_budget",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        168,
+        184
+      ],
+      "summary": "定义 _check_input_budget，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:current_codex_command",
+      "type": "function",
+      "name": "current_codex_command",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        187,
+        191
+      ],
+      "summary": "定义 current_codex_command，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:current_codex_reasoning_effort",
+      "type": "function",
+      "name": "current_codex_reasoning_effort",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        194,
+        200
+      ],
+      "summary": "定义 current_codex_reasoning_effort，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:is_codex_cli_provider",
+      "type": "function",
+      "name": "is_codex_cli_provider",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        203,
+        204
+      ],
+      "summary": "定义 is_codex_cli_provider，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:normalize_codex_model",
+      "type": "function",
+      "name": "normalize_codex_model",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        207,
+        216
+      ],
+      "summary": "定义 normalize_codex_model，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:normalize_codex_reasoning_effort",
+      "type": "function",
+      "name": "normalize_codex_reasoning_effort",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        219,
+        221
+      ],
+      "summary": "定义 normalize_codex_reasoning_effort，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:normalize_codex_command",
+      "type": "function",
+      "name": "normalize_codex_command",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        224,
+        230
+      ],
+      "summary": "定义 normalize_codex_command，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:normalize_openai_base_url",
+      "type": "function",
+      "name": "normalize_openai_base_url",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        236,
+        248
+      ],
+      "summary": "定义 normalize_openai_base_url，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:codex_cli_available",
+      "type": "function",
+      "name": "codex_cli_available",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        251,
+        270
+      ],
+      "summary": "定义 codex_cli_available，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:ai_configured",
+      "type": "function",
+      "name": "ai_configured",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        273,
+        277
+      ],
+      "summary": "定义 ai_configured，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:generate_ai_text",
+      "type": "function",
+      "name": "generate_ai_text",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        280,
+        303
+      ],
+      "summary": "定义 generate_ai_text，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:stream_ai_text",
+      "type": "function",
+      "name": "stream_ai_text",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        306,
+        332
+      ],
+      "summary": "定义 stream_ai_text，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_run_openai_once",
+      "type": "function",
+      "name": "_run_openai_once",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        335,
+        368
+      ],
+      "summary": "定义 _run_openai_once，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_stream_openai",
+      "type": "function",
+      "name": "_stream_openai",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        371,
+        418
+      ],
+      "summary": "定义 _stream_openai，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_openai_client",
+      "type": "function",
+      "name": "_openai_client",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        421,
+        431
+      ],
+      "summary": "定义 _openai_client，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_is_temperature_rejected",
+      "type": "function",
+      "name": "_is_temperature_rejected",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        440,
+        447
+      ],
+      "summary": "定义 _is_temperature_rejected，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_is_reasoning_effort_rejected",
+      "type": "function",
+      "name": "_is_reasoning_effort_rejected",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        450,
+        457
+      ],
+      "summary": "定义 _is_reasoning_effort_rejected，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_openai_error_param",
+      "type": "function",
+      "name": "_openai_error_param",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        460,
+        467
+      ],
+      "summary": "定义 _openai_error_param，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_openai_retry_kwargs",
+      "type": "function",
+      "name": "_openai_retry_kwargs",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        470,
+        479
+      ],
+      "summary": "定义 _openai_retry_kwargs，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_openai_kwargs",
+      "type": "function",
+      "name": "_openai_kwargs",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        482,
+        497
+      ],
+      "summary": "定义 _openai_kwargs，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_is_openai_transport_error",
+      "type": "function",
+      "name": "_is_openai_transport_error",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        500,
+        514
+      ],
+      "summary": "定义 _is_openai_transport_error，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_format_openai_error",
+      "type": "function",
+      "name": "_format_openai_error",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        517,
+        547
+      ],
+      "summary": "定义 _format_openai_error，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_openai_error_detail",
+      "type": "function",
+      "name": "_openai_error_detail",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        550,
+        575
+      ],
+      "summary": "定义 _openai_error_detail，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_looks_like_html",
+      "type": "function",
+      "name": "_looks_like_html",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        578,
+        580
+      ],
+      "summary": "定义 _looks_like_html，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_compact_error_text",
+      "type": "function",
+      "name": "_compact_error_text",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        583,
+        587
+      ],
+      "summary": "定义 _compact_error_text，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_run_codex_cli",
+      "type": "function",
+      "name": "_run_codex_cli",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        590,
+        645
+      ],
+      "summary": "定义 _run_codex_cli，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_run_codex_process",
+      "type": "function",
+      "name": "_run_codex_process",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        648,
+        665
+      ],
+      "summary": "定义 _run_codex_process，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_codex_process_env",
+      "type": "function",
+      "name": "_codex_process_env",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        668,
+        682
+      ],
+      "summary": "定义 _codex_process_env，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_remove_tree_best_effort",
+      "type": "function",
+      "name": "_remove_tree_best_effort",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        685,
+        699
+      ],
+      "summary": "定义 _remove_tree_best_effort，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_remove_auth_files",
+      "type": "function",
+      "name": "_remove_auth_files",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        702,
+        712
+      ],
+      "summary": "定义 _remove_auth_files，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_make_writable_and_retry",
+      "type": "function",
+      "name": "_make_writable_and_retry",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        715,
+        724
+      ],
+      "summary": "定义 _make_writable_and_retry，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_codex_prompt",
+      "type": "function",
+      "name": "_codex_prompt",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        727,
+        740
+      ],
+      "summary": "定义 _codex_prompt，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_codex_base_command",
+      "type": "function",
+      "name": "_codex_base_command",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        743,
+        751
+      ],
+      "summary": "定义 _codex_base_command，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_resolve_command",
+      "type": "function",
+      "name": "_resolve_command",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        754,
+        774
+      ],
+      "summary": "定义 _resolve_command，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_resolve_windows_codex_command",
+      "type": "function",
+      "name": "_resolve_windows_codex_command",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        777,
+        803
+      ],
+      "summary": "定义 _resolve_windows_codex_command，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_resolve_windows_desktop_codex",
+      "type": "function",
+      "name": "_resolve_windows_desktop_codex",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        806,
+        824
+      ],
+      "summary": "定义 _resolve_windows_desktop_codex，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_prepare_codex_home",
+      "type": "function",
+      "name": "_prepare_codex_home",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        827,
+        833
+      ],
+      "summary": "定义 _prepare_codex_home，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_codex_home",
+      "type": "function",
+      "name": "_codex_home",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        836,
+        837
+      ],
+      "summary": "定义 _codex_home，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_write_compatible_codex_config",
+      "type": "function",
+      "name": "_write_compatible_codex_config",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        840,
+        878
+      ],
+      "summary": "定义 _write_compatible_codex_config，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_active_codex_provider",
+      "type": "function",
+      "name": "_active_codex_provider",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        881,
+        901
+      ],
+      "summary": "定义 _active_codex_provider，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_read_codex_config",
+      "type": "function",
+      "name": "_read_codex_config",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        904,
+        914
+      ],
+      "summary": "定义 _read_codex_config，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_read_codex_config_lenient",
+      "type": "function",
+      "name": "_read_codex_config_lenient",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        917,
+        927
+      ],
+      "summary": "定义 _read_codex_config_lenient，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_toml_string",
+      "type": "function",
+      "name": "_toml_string",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        930,
+        932
+      ],
+      "summary": "定义 _toml_string，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_toml_key",
+      "type": "function",
+      "name": "_toml_key",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        935,
+        939
+      ],
+      "summary": "定义 _toml_key，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_clean_process_text",
+      "type": "function",
+      "name": "_clean_process_text",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        942,
+        944
+      ],
+      "summary": "定义 _clean_process_text，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/services/ai_provider.py:_read_output_file",
+      "type": "function",
+      "name": "_read_output_file",
+      "filePath": "backend/app/services/ai_provider.py",
+      "lineRange": [
+        947,
+        950
+      ],
+      "summary": "定义 _read_output_file，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:sanitize_focus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:sanitize_focus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_ai_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_ai_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_openai_model",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_openai_model",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_codex_model",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_codex_model",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_ai_model",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_ai_model",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_openai_reasoning_effort",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_openai_reasoning_effort",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_ai_max_output_tokens",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_ai_max_output_tokens",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_ai_context_window",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_ai_context_window",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_resolve_max_tokens",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_resolve_max_tokens",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_estimate_input_tokens",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_estimate_input_tokens",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_check_input_budget",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_check_input_budget",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_codex_command",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_codex_command",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_codex_reasoning_effort",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:current_codex_reasoning_effort",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:is_codex_cli_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:is_codex_cli_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:normalize_codex_model",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:normalize_codex_model",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:normalize_codex_reasoning_effort",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:normalize_codex_reasoning_effort",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:normalize_codex_command",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:normalize_codex_command",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:normalize_openai_base_url",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:normalize_openai_base_url",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:codex_cli_available",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:codex_cli_available",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:ai_configured",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:ai_configured",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:generate_ai_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:generate_ai_text",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:stream_ai_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:stream_ai_text",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_run_openai_once",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_run_openai_once",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_stream_openai",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_stream_openai",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_openai_client",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_openai_client",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_is_temperature_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_is_temperature_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_is_reasoning_effort_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_is_reasoning_effort_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_openai_error_param",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_openai_error_param",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_openai_retry_kwargs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_openai_retry_kwargs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_openai_kwargs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_openai_kwargs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_is_openai_transport_error",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_is_openai_transport_error",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_format_openai_error",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_format_openai_error",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_openai_error_detail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_openai_error_detail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_looks_like_html",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_looks_like_html",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_compact_error_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_compact_error_text",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_run_codex_cli",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_run_codex_cli",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_run_codex_process",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_run_codex_process",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_codex_process_env",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_codex_process_env",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_remove_tree_best_effort",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_remove_tree_best_effort",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_remove_auth_files",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_remove_auth_files",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_make_writable_and_retry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_make_writable_and_retry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_codex_prompt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_codex_prompt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_codex_base_command",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_codex_base_command",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_resolve_command",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_resolve_command",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_resolve_windows_codex_command",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_resolve_windows_codex_command",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_resolve_windows_desktop_codex",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_resolve_windows_desktop_codex",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_prepare_codex_home",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_prepare_codex_home",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_codex_home",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_codex_home",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_write_compatible_codex_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_write_compatible_codex_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_active_codex_provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_active_codex_provider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_read_codex_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_read_codex_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_read_codex_config_lenient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_read_codex_config_lenient",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_toml_string",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_toml_string",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_toml_key",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_toml_key",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_clean_process_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_clean_process_text",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_read_output_file",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "function:backend/app/services/ai_provider.py:_read_output_file",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "file:backend/app/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "file:backend/app/config.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "file:backend/app/secrets_store.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "file:backend/app/__init__.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "file:backend/app/config.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/services/ai_provider.py",
+      "target": "file:backend/tests/test_ai_provider.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

@@ -110,6 +110,14 @@ export const QK = {
 
   // 概念涨幅轮动矩阵
   rpsRotation:          (days: number) => ['rps-rotation', days] as const,
+  sectorRotationLatest: (kind: 'industry' | 'concept', level = 3) => ['sector-rotation', 'latest', kind, level] as const,
+  sectorRotationHistory: (kind: 'industry' | 'concept', sectorId: string | null, level = 3) => ['sector-rotation', 'history', kind, sectorId, level] as const,
+  eastmoneyHotRotationLatest: (category: 'theme' | 'sentiment' | 'style' | 'all') => ['eastmoney-hot-rotation', 'latest', category] as const,
+  eastmoneyHotRotationHistory: (tsCode: string | null) => ['eastmoney-hot-rotation', 'history', tsCode] as const,
+  eastmoneyHotRotationMembers: (tsCode: string | null, tradeDate: string | null) => ['eastmoney-hot-rotation', 'members', tsCode, tradeDate] as const,
+  tdxHotRotationLatest: (category: 'concept' | 'industry' | 'style' | 'all') => ['tdx-hot-rotation', 'latest', category] as const,
+  tdxHotRotationHistory: (tsCode: string | null) => ['tdx-hot-rotation', 'history', tsCode] as const,
+  tdxHotRotationMembers: (tsCode: string | null, tradeDate: string | null) => ['tdx-hot-rotation', 'members', tsCode, tradeDate] as const,
 
   // 市场环境(Regime) — 日级离线计算, 不进 SSE 刷新
   regimeHistory:        (limit?: number) => ['regime-history', limit ?? 0] as const,

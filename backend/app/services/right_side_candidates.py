@@ -3,30 +3,60 @@ from __future__ import annotations
 
 from collections import Counter
 
-RIGHT_SIDE_CANDIDATE_LIMIT = 150
+VP_RESEARCH_COVERAGE_LIMIT = 150
 RISK_ORDER = {"EXTREME": 0, "HIGH": 1, "MEDIUM": 2, "LOW": 3, "UNKNOWN": 4}
 EXTENSION_RISK = {"VP_NORMAL": 0, "VP_ELEVATED": 1, "VP_EXTENDED": 2, "VP_EXTREME": 3}
+_DOWNSIDE_POSITION_RISK = 2  # HIGH: price has broken below the value area.
 
 
-def risk_route(vp20: object, vp60: object, *, complete: bool) -> tuple[str, float | None]:
-    """Use the frozen research mapping; never alter OpportunityScore."""
+def risk_route(
+    vp20: object,
+    vp60: object,
+    *,
+    position20: object,
+    position60: object,
+    complete: bool,
+) -> tuple[str, float | None]:
+    """Route VP presentation risk; it never changes formal membership.
+
+    Extension measures only upside distance above VAH.  A complete profile
+    below VAL is a separate downside location, so it must not inherit the
+    otherwise-normal extension state and be presented as LOW risk.
+    """
     values = (str(vp20), str(vp60))
     if not complete or any(value not in EXTENSION_RISK for value in values):
         return "UNKNOWN", None
     maximum = max(EXTENSION_RISK[value] for value in values)
-    return ("LOW", "MEDIUM", "HIGH", "EXTREME")[maximum], (sum(EXTENSION_RISK[value] for value in values) / 6) * 100
+    extension_score = (sum(EXTENSION_RISK[value] for value in values) / 6) * 100
+    if "BELOW_VAL" in (str(position20), str(position60)):
+        maximum = max(maximum, _DOWNSIDE_POSITION_RISK)
+        extension_score = max(extension_score, _DOWNSIDE_POSITION_RISK / 3 * 100)
+    return ("LOW", "MEDIUM", "HIGH", "EXTREME")[maximum], extension_score
 
 
-def order_rows(rows: list[dict[str, object]], *, limit: int = RIGHT_SIDE_CANDIDATE_LIMIT) -> list[dict[str, object]]:
-    """Top-N is opportunity-only; VP changes route display, never membership."""
-    ranked = sorted(rows, key=lambda row: (-float(row.get("opportunity_score") or float("-inf")), str(row.get("symbol") or "")))[:limit]
+def order_rows(rows: list[dict[str, object]]) -> list[dict[str, object]]:
+    """Order every formal row for presentation without applying a Top-N gate."""
+    ranked = sorted(
+        rows,
+        key=lambda row: (
+            -float(row.get("research_candidate_score") or float("-inf")),
+            str(row.get("symbol") or ""),
+        ),
+    )
     for index, row in enumerate(ranked, start=1):
-        row["opportunity_rank"] = index
-    return sorted(ranked, key=lambda row: (RISK_ORDER.get(str(row.get("vp_risk_bucket")), 4), -float(row.get("opportunity_score") or float("-inf")), str(row.get("symbol") or "")))
+        row["research_candidate_rank"] = index
+    return sorted(
+        ranked,
+        key=lambda row: (
+            RISK_ORDER.get(str(row.get("vp_risk_bucket")), 4),
+            -float(row.get("research_candidate_score") or float("-inf")),
+            str(row.get("symbol") or ""),
+        ),
+    )
 
 
 def industry_concentration(rows: list[dict[str, object]]) -> dict[str, dict[str, float | int]]:
-    """Return Top150 SW2/SW3 concentration without changing membership/order."""
+    """Return formal-pool SW2/SW3 concentration without changing membership/order."""
     total = len(rows)
     result: dict[str, dict[str, float | int]] = {}
     for level in ("sw2", "sw3"):

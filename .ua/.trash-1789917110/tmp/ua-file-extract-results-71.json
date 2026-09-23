@@ -1,0 +1,1029 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 4,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 4,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/core/news_chart_events.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 164,
+      "nonEmptyLines": 140,
+      "functions": [
+        {
+          "name": "select_news_chart_events",
+          "startLine": 45,
+          "endLine": 66,
+          "params": [
+            "items",
+            "start",
+            "end",
+            "session_dates",
+            "limit",
+            "symbol",
+            "name"
+          ]
+        },
+        {
+          "name": "events_as_dicts",
+          "startLine": 69,
+          "endLine": 70,
+          "params": [
+            "events"
+          ]
+        },
+        {
+          "name": "classify_headline",
+          "startLine": 73,
+          "endLine": 84,
+          "params": [
+            "title",
+            "content"
+          ]
+        },
+        {
+          "name": "snap_to_session",
+          "startLine": 87,
+          "endLine": 95,
+          "params": [
+            "raw_date",
+            "session_dates"
+          ]
+        },
+        {
+          "name": "_event_from_item",
+          "startLine": 98,
+          "endLine": 134,
+          "params": [
+            "item",
+            "start_day",
+            "end_day",
+            "sessions",
+            "seen",
+            "symbol",
+            "name"
+          ]
+        },
+        {
+          "name": "_one_per_day",
+          "startLine": 137,
+          "endLine": 145,
+          "params": [
+            "events"
+          ]
+        },
+        {
+          "name": "_mentions_symbol",
+          "startLine": 148,
+          "endLine": 152,
+          "params": [
+            "title",
+            "content",
+            "symbol",
+            "name"
+          ]
+        },
+        {
+          "name": "_title_key",
+          "startLine": 155,
+          "endLine": 156,
+          "params": [
+            "title"
+          ]
+        },
+        {
+          "name": "_parse_day",
+          "startLine": 159,
+          "endLine": 164,
+          "params": [
+            "raw"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "NewsChartEvent",
+          "startLine": 34,
+          "endLine": 42,
+          "methods": [],
+          "properties": [
+            "date",
+            "kind",
+            "sentiment",
+            "title",
+            "summary",
+            "source",
+            "url",
+            "score"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "NewsChartEvent",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "select_news_chart_events",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "events_as_dicts",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "classify_headline",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "snap_to_session",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "_event_from_item",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "_one_per_day",
+          "line": 137,
+          "isDefault": false
+        },
+        {
+          "name": "_mentions_symbol",
+          "line": 148,
+          "isDefault": false
+        },
+        {
+          "name": "_title_key",
+          "line": 155,
+          "isDefault": false
+        },
+        {
+          "name": "_parse_day",
+          "line": 159,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "select_news_chart_events",
+          "callee": "_parse_day",
+          "lineNumber": 55
+        },
+        {
+          "caller": "select_news_chart_events",
+          "callee": "_parse_day",
+          "lineNumber": 55
+        },
+        {
+          "caller": "select_news_chart_events",
+          "callee": "_parse_day",
+          "lineNumber": 58
+        },
+        {
+          "caller": "select_news_chart_events",
+          "callee": "set",
+          "lineNumber": 60
+        },
+        {
+          "caller": "select_news_chart_events",
+          "callee": "_event_from_item",
+          "lineNumber": 62
+        },
+        {
+          "caller": "select_news_chart_events",
+          "callee": "scored.append",
+          "lineNumber": 64
+        },
+        {
+          "caller": "select_news_chart_events",
+          "callee": "scored.sort",
+          "lineNumber": 65
+        },
+        {
+          "caller": "select_news_chart_events",
+          "callee": "_one_per_day",
+          "lineNumber": 66
+        },
+        {
+          "caller": "select_news_chart_events",
+          "callee": "max",
+          "lineNumber": 66
+        },
+        {
+          "caller": "select_news_chart_events",
+          "callee": "int",
+          "lineNumber": 66
+        },
+        {
+          "caller": "events_as_dicts",
+          "callee": "asdict",
+          "lineNumber": 70
+        },
+        {
+          "caller": "classify_headline",
+          "callee": "any",
+          "lineNumber": 75
+        },
+        {
+          "caller": "classify_headline",
+          "callee": "next",
+          "lineNumber": 77
+        },
+        {
+          "caller": "classify_headline",
+          "callee": "KIND_KEYWORDS.items",
+          "lineNumber": 77
+        },
+        {
+          "caller": "classify_headline",
+          "callee": "any",
+          "lineNumber": 77
+        },
+        {
+          "caller": "classify_headline",
+          "callee": "any",
+          "lineNumber": 80
+        },
+        {
+          "caller": "classify_headline",
+          "callee": "any",
+          "lineNumber": 81
+        },
+        {
+          "caller": "classify_headline",
+          "callee": "sum",
+          "lineNumber": 83
+        },
+        {
+          "caller": "snap_to_session",
+          "callee": "_parse_day",
+          "lineNumber": 88
+        },
+        {
+          "caller": "snap_to_session",
+          "callee": "day.isoformat",
+          "lineNumber": 91
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "str(item.get(\"title\") or \"\").strip",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "str",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "item.get",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "_parse_day",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "str",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "item.get",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "item.get",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "_mentions_symbol",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "str",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "item.get",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "classify_headline",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "str",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "item.get",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "snap_to_session",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "published.isoformat",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "_title_key",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "seen.add",
+          "lineNumber": 123
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "str(item.get(\"content\") or title).strip().replace",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "str(item.get(\"content\") or title).strip",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "str",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "item.get",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "NewsChartEvent",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "str",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "item.get",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "str",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_event_from_item",
+          "callee": "item.get",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_one_per_day",
+          "callee": "set",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_one_per_day",
+          "callee": "used_days.add",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_one_per_day",
+          "callee": "kept.append",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_mentions_symbol",
+          "callee": "bool",
+          "lineNumber": 152
+        },
+        {
+          "caller": "_mentions_symbol",
+          "callee": "bool",
+          "lineNumber": 152
+        },
+        {
+          "caller": "_title_key",
+          "callee": "\"\".join",
+          "lineNumber": 156
+        },
+        {
+          "caller": "_title_key",
+          "callee": "title.lower",
+          "lineNumber": 156
+        },
+        {
+          "caller": "_title_key",
+          "callee": "ch.isalnum",
+          "lineNumber": 156
+        },
+        {
+          "caller": "_parse_day",
+          "callee": "str(raw or \"\").strip",
+          "lineNumber": 160
+        },
+        {
+          "caller": "_parse_day",
+          "callee": "str",
+          "lineNumber": 160
+        },
+        {
+          "caller": "_parse_day",
+          "callee": "datetime.strptime(text, \"%Y-%m-%d\").date",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_parse_day",
+          "callee": "datetime.strptime",
+          "lineNumber": 162
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 9,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/integrations/stock_news_events.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "load_news_chart_events",
+          "startLine": 18,
+          "endLine": 41,
+          "params": [
+            "code",
+            "start",
+            "end",
+            "session_dates",
+            "limit",
+            "name"
+          ]
+        },
+        {
+          "name": "fetch_eastmoney_stock_news",
+          "startLine": 44,
+          "endLine": 54,
+          "params": [
+            "code",
+            "pages"
+          ]
+        },
+        {
+          "name": "_request_news_page",
+          "startLine": 57,
+          "endLine": 73,
+          "params": [
+            "code",
+            "page"
+          ]
+        },
+        {
+          "name": "_search_param",
+          "startLine": 76,
+          "endLine": 94,
+          "params": [
+            "code",
+            "page"
+          ]
+        },
+        {
+          "name": "_parse_jsonp",
+          "startLine": 97,
+          "endLine": 102,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "_normalize_article",
+          "startLine": 105,
+          "endLine": 113,
+          "params": [
+            "item"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "load_news_chart_events",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "fetch_eastmoney_stock_news",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "_request_news_page",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "_search_param",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "_parse_jsonp",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "_normalize_article",
+          "line": 105,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "load_news_chart_events",
+          "callee": "str(code or \"\").strip",
+          "lineNumber": 27
+        },
+        {
+          "caller": "load_news_chart_events",
+          "callee": "str",
+          "lineNumber": 27
+        },
+        {
+          "caller": "load_news_chart_events",
+          "callee": "symbol.isdigit",
+          "lineNumber": 28
+        },
+        {
+          "caller": "load_news_chart_events",
+          "callee": "len",
+          "lineNumber": 28
+        },
+        {
+          "caller": "load_news_chart_events",
+          "callee": "fetch_eastmoney_stock_news",
+          "lineNumber": 30
+        },
+        {
+          "caller": "load_news_chart_events",
+          "callee": "events_as_dicts",
+          "lineNumber": 31
+        },
+        {
+          "caller": "load_news_chart_events",
+          "callee": "select_news_chart_events",
+          "lineNumber": 32
+        },
+        {
+          "caller": "fetch_eastmoney_stock_news",
+          "callee": "range",
+          "lineNumber": 46
+        },
+        {
+          "caller": "fetch_eastmoney_stock_news",
+          "callee": "max",
+          "lineNumber": 46
+        },
+        {
+          "caller": "fetch_eastmoney_stock_news",
+          "callee": "int",
+          "lineNumber": 46
+        },
+        {
+          "caller": "fetch_eastmoney_stock_news",
+          "callee": "_request_news_page",
+          "lineNumber": 47
+        },
+        {
+          "caller": "fetch_eastmoney_stock_news",
+          "callee": "payload.get(\"result\", {}).get",
+          "lineNumber": 48
+        },
+        {
+          "caller": "fetch_eastmoney_stock_news",
+          "callee": "payload.get",
+          "lineNumber": 48
+        },
+        {
+          "caller": "fetch_eastmoney_stock_news",
+          "callee": "isinstance",
+          "lineNumber": 48
+        },
+        {
+          "caller": "fetch_eastmoney_stock_news",
+          "callee": "isinstance",
+          "lineNumber": 49
+        },
+        {
+          "caller": "fetch_eastmoney_stock_news",
+          "callee": "rows.extend",
+          "lineNumber": 51
+        },
+        {
+          "caller": "fetch_eastmoney_stock_news",
+          "callee": "_normalize_article",
+          "lineNumber": 51
+        },
+        {
+          "caller": "fetch_eastmoney_stock_news",
+          "callee": "isinstance",
+          "lineNumber": 51
+        },
+        {
+          "caller": "fetch_eastmoney_stock_news",
+          "callee": "len",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_request_news_page",
+          "callee": "urlencode",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_request_news_page",
+          "callee": "json.dumps",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_request_news_page",
+          "callee": "_search_param",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_request_news_page",
+          "callee": "Request",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_request_news_page",
+          "callee": "urlopen",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_request_news_page",
+          "callee": "_parse_jsonp",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_request_news_page",
+          "callee": "response.read().decode",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_request_news_page",
+          "callee": "response.read",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_parse_jsonp",
+          "callee": "text.find",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_parse_jsonp",
+          "callee": "text.rfind",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_parse_jsonp",
+          "callee": "json.loads",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_parse_jsonp",
+          "callee": "isinstance",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_normalize_article",
+          "callee": "str(item.get(\"code\") or \"\").strip",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_normalize_article",
+          "callee": "str",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_normalize_article",
+          "callee": "item.get",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_normalize_article",
+          "callee": "str(item.get(\"title\") or \"\").strip",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_normalize_article",
+          "callee": "str",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_normalize_article",
+          "callee": "item.get",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_normalize_article",
+          "callee": "str(item.get(\"content\") or \"\").strip",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_normalize_article",
+          "callee": "str",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_normalize_article",
+          "callee": "item.get",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_normalize_article",
+          "callee": "str",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_normalize_article",
+          "callee": "item.get",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_normalize_article",
+          "callee": "str",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_normalize_article",
+          "callee": "item.get",
+          "lineNumber": 111
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/core/test_news_chart_events.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "test_classify_keeps_shareholding_deal_and_drops_limit_up_noise",
+          "startLine": 4,
+          "endLine": 12,
+          "params": []
+        },
+        {
+          "name": "test_select_news_chart_events_snaps_weekend_and_keeps_one_per_day",
+          "startLine": 15,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "test_snap_to_session_uses_next_bar",
+          "startLine": 42,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "test_select_requires_symbol_or_name_mention",
+          "startLine": 46,
+          "endLine": 66,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_classify_keeps_shareholding_deal_and_drops_limit_up_noise",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "test_select_news_chart_events_snaps_weekend_and_keeps_one_per_day",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "test_snap_to_session_uses_next_bar",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "test_select_requires_symbol_or_name_mention",
+          "line": 46,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_classify_keeps_shareholding_deal_and_drops_limit_up_noise",
+          "callee": "classify_headline",
+          "lineNumber": 5
+        },
+        {
+          "caller": "test_classify_keeps_shareholding_deal_and_drops_limit_up_noise",
+          "callee": "classify_headline",
+          "lineNumber": 9
+        },
+        {
+          "caller": "test_classify_keeps_shareholding_deal_and_drops_limit_up_noise",
+          "callee": "classify_headline",
+          "lineNumber": 10
+        },
+        {
+          "caller": "test_classify_keeps_shareholding_deal_and_drops_limit_up_noise",
+          "callee": "classify_headline",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_classify_keeps_shareholding_deal_and_drops_limit_up_noise",
+          "callee": "classify_headline",
+          "lineNumber": 12
+        },
+        {
+          "caller": "test_select_news_chart_events_snaps_weekend_and_keeps_one_per_day",
+          "callee": "select_news_chart_events",
+          "lineNumber": 16
+        },
+        {
+          "caller": "test_snap_to_session_uses_next_bar",
+          "callee": "snap_to_session",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_select_requires_symbol_or_name_mention",
+          "callee": "select_news_chart_events",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_stock_news_events.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 28,
+      "functions": [
+        {
+          "name": "test_parse_jsonp_and_normalize_article",
+          "startLine": 4,
+          "endLine": 10,
+          "params": []
+        },
+        {
+          "name": "test_load_news_chart_events_skips_non_ashare_codes",
+          "startLine": 13,
+          "endLine": 15,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_load_news_chart_events_filters_with_local_classifier",
+          "startLine": 18,
+          "endLine": 26,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "_article",
+          "startLine": 29,
+          "endLine": 36,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_parse_jsonp_and_normalize_article",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "test_load_news_chart_events_skips_non_ashare_codes",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "test_load_news_chart_events_filters_with_local_classifier",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "_article",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_parse_jsonp_and_normalize_article",
+          "callee": "_parse_jsonp",
+          "lineNumber": 5
+        },
+        {
+          "caller": "test_parse_jsonp_and_normalize_article",
+          "callee": "_normalize_article",
+          "lineNumber": 8
+        },
+        {
+          "caller": "test_parse_jsonp_and_normalize_article",
+          "callee": "article[\"url\"].endswith",
+          "lineNumber": 10
+        },
+        {
+          "caller": "test_load_news_chart_events_skips_non_ashare_codes",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_load_news_chart_events_skips_non_ashare_codes",
+          "callee": "_article",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_load_news_chart_events_skips_non_ashare_codes",
+          "callee": "load_news_chart_events",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_load_news_chart_events_filters_with_local_classifier",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_load_news_chart_events_filters_with_local_classifier",
+          "callee": "_article",
+          "lineNumber": 21
+        },
+        {
+          "caller": "test_load_news_chart_events_filters_with_local_classifier",
+          "callee": "load_news_chart_events",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_load_news_chart_events_filters_with_local_classifier",
+          "callee": "len",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    }
+  ]
+}

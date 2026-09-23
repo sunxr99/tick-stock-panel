@@ -1,0 +1,174 @@
+{
+  "nodes": [
+    {
+      "id": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/errors.rs",
+      "type": "file",
+      "name": "errors.rs",
+      "filePath": "reference/czsc-master/czsc-master/crates/czsc-core/src/utils/errors.rs",
+      "summary": "源代码模块，负责承载 errors.rs 所定义的功能与协作关系。",
+      "tags": [
+        "模块",
+        "业务逻辑",
+        "依赖",
+        "导出"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/errors.rs:CoreUtilsErorr",
+      "type": "class",
+      "name": "CoreUtilsErorr",
+      "filePath": "reference/czsc-master/czsc-master/crates/czsc-core/src/utils/errors.rs",
+      "lineRange": [
+        7,
+        13
+      ],
+      "summary": "定义 CoreUtilsErorr，封装该模块中的状态与协作行为。",
+      "tags": [
+        "类型",
+        "封装",
+        "业务逻辑"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/mod.rs",
+      "type": "file",
+      "name": "mod.rs",
+      "filePath": "reference/czsc-master/czsc-master/crates/czsc-core/src/utils/mod.rs",
+      "summary": "源代码模块，负责承载 mod.rs 所定义的功能与协作关系。",
+      "tags": [
+        "模块",
+        "业务逻辑",
+        "依赖"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/rounded.rs",
+      "type": "file",
+      "name": "rounded.rs",
+      "filePath": "reference/czsc-master/czsc-master/crates/czsc-core/src/utils/rounded.rs",
+      "summary": "源代码模块，负责承载 rounded.rs 所定义的功能与协作关系。",
+      "tags": [
+        "模块",
+        "业务逻辑",
+        "导出"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/rounded.rs:min_max",
+      "type": "function",
+      "name": "min_max",
+      "filePath": "reference/czsc-master/czsc-master/crates/czsc-core/src/utils/rounded.rs",
+      "lineRange": [
+        28,
+        36
+      ],
+      "summary": "实现 min_max，承担该模块中的具体处理逻辑。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/rounded.rs:RoundToNthDigit",
+      "type": "class",
+      "name": "RoundToNthDigit",
+      "filePath": "reference/czsc-master/czsc-master/crates/czsc-core/src/utils/rounded.rs",
+      "lineRange": [
+        1,
+        6
+      ],
+      "summary": "定义 RoundToNthDigit，封装该模块中的状态与协作行为。",
+      "tags": [
+        "类型",
+        "封装",
+        "业务逻辑"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/errors.rs",
+      "target": "class:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/errors.rs:CoreUtilsErorr",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/errors.rs",
+      "target": "class:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/errors.rs:CoreUtilsErorr",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/errors.rs",
+      "target": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/error_chain.rs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/mod.rs",
+      "target": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/common.rs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/mod.rs",
+      "target": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/corr.rs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/mod.rs",
+      "target": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/errors.rs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/mod.rs",
+      "target": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/rounded.rs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/rounded.rs",
+      "target": "function:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/rounded.rs:min_max",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/rounded.rs",
+      "target": "function:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/rounded.rs:min_max",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/rounded.rs",
+      "target": "class:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/rounded.rs:RoundToNthDigit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/rounded.rs",
+      "target": "class:reference/czsc-master/czsc-master/crates/czsc-core/src/utils/rounded.rs:RoundToNthDigit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

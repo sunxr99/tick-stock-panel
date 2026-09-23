@@ -1,0 +1,386 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 3,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "results": [
+    {
+      "path": "reference/czsc-master/czsc-master/docs/examples.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 230,
+      "nonEmptyLines": 176,
+      "sections": [
+        {
+          "heading": "CZSC 核心功能案例库",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "0. 系统全貌",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "1. 案例索引",
+          "level": 2,
+          "line": 57
+        },
+        {
+          "heading": "第一组：缠论核心（必读）",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "第二组：多级别与信号",
+          "level": 3,
+          "line": 66
+        },
+        {
+          "heading": "第三组：事件驱动策略",
+          "level": 3,
+          "line": 73
+        },
+        {
+          "heading": "第四组：回测与离线可视化",
+          "level": 3,
+          "line": 80
+        },
+        {
+          "heading": "第五组：lightweight-charts HTML（自包含交互看图）",
+          "level": 3,
+          "line": 87
+        },
+        {
+          "heading": "第六组：真实数据研究（需 `TUSHARE_TOKEN`）",
+          "level": 3,
+          "line": 94
+        },
+        {
+          "heading": "第七组：性能基准",
+          "level": 3,
+          "line": 103
+        },
+        {
+          "heading": "2. 模块关联速查",
+          "level": 2,
+          "line": 111
+        },
+        {
+          "heading": "3. 典型工作流",
+          "level": 2,
+          "line": 136
+        },
+        {
+          "heading": "3.1 \"策略研究 → 回测 → 可视化\" 完整流水线",
+          "level": 3,
+          "line": 138
+        },
+        {
+          "heading": "3.2 \"看盘 / Demo\" 工作流",
+          "level": 3,
+          "line": 160
+        },
+        {
+          "heading": "4. 必须知道的几件事",
+          "level": 2,
+          "line": 172
+        },
+        {
+          "heading": "4.1 数据格式约定",
+          "level": 3,
+          "line": 174
+        },
+        {
+          "heading": "4.2 信号函数命名",
+          "level": 3,
+          "line": 184
+        },
+        {
+          "heading": "4.3 RawBar → DataFrame",
+          "level": 3,
+          "line": 192
+        },
+        {
+          "heading": "4.4 Position.operates 的时间字段",
+          "level": 3,
+          "line": 197
+        },
+        {
+          "heading": "4.5 环境变量（`czsc.envs`）",
+          "level": 3,
+          "line": 202
+        },
+        {
+          "heading": "4.6 缓存",
+          "level": 3,
+          "line": 210
+        },
+        {
+          "heading": "5. 可视化兼容性提示",
+          "level": 2,
+          "line": 218
+        },
+        {
+          "heading": "6. 进一步阅读",
+          "level": 2,
+          "line": 224
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 23
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/docs/public_api.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 413,
+      "nonEmptyLines": 310,
+      "sections": [
+        {
+          "heading": "CZSC 公开 API 参考手册",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "目录",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "1. 缠论核心类型（Rust 实现）",
+          "level": 2,
+          "line": 36
+        },
+        {
+          "heading": "2. 缠论核心算法函数（Rust 实现）",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "3. 交易器与信号管理",
+          "level": 2,
+          "line": 76
+        },
+        {
+          "heading": "4. 策略门面",
+          "level": 2,
+          "line": 93
+        },
+        {
+          "heading": "CzscStrategyBase 关键方法/属性",
+          "level": 3,
+          "line": 100
+        },
+        {
+          "heading": "5. 研究 / 回测 / 优化入口",
+          "level": 2,
+          "line": 116
+        },
+        {
+          "heading": "优化框架辅助类（`czsc.utils.optimize`）",
+          "level": 3,
+          "line": 128
+        },
+        {
+          "heading": "6. 数据格式转换",
+          "level": 2,
+          "line": 141
+        },
+        {
+          "heading": "7. 技术指标（TA）算子",
+          "level": 2,
+          "line": 150
+        },
+        {
+          "heading": "8. 探索性数据分析（EDA）",
+          "level": 2,
+          "line": 164
+        },
+        {
+          "heading": "9. 回测与绩效（来自 wbt）",
+          "level": 2,
+          "line": 174
+        },
+        {
+          "heading": "10. 缓存与数据管理",
+          "level": 2,
+          "line": 186
+        },
+        {
+          "heading": "11. IO 工具",
+          "level": 2,
+          "line": 205
+        },
+        {
+          "heading": "12. 交易工具",
+          "level": 2,
+          "line": 218
+        },
+        {
+          "heading": "13. 通用工具函数",
+          "level": 2,
+          "line": 233
+        },
+        {
+          "heading": "14. K 线质量检查",
+          "level": 2,
+          "line": 248
+        },
+        {
+          "heading": "15. 日志与告警工具",
+          "level": 2,
+          "line": 256
+        },
+        {
+          "heading": "16. 可视化",
+          "level": 2,
+          "line": 266
+        },
+        {
+          "heading": "lightweight-charts HTML 输出",
+          "level": 3,
+          "line": 268
+        },
+        {
+          "heading": "17. 飞书集成（fsa）",
+          "level": 2,
+          "line": 285
+        },
+        {
+          "heading": "18. 数据连接器（connectors）",
+          "level": 2,
+          "line": 307
+        },
+        {
+          "heading": "19. 模拟数据（mock）",
+          "level": 2,
+          "line": 327
+        },
+        {
+          "heading": "20. 环境变量（envs）",
+          "level": 2,
+          "line": 344
+        },
+        {
+          "heading": "21. 包元信息",
+          "level": 2,
+          "line": 356
+        },
+        {
+          "heading": "附录 A：预加载子包一览",
+          "level": 2,
+          "line": 368
+        },
+        {
+          "heading": "附录 B：信号函数（`czsc._native.signals`）",
+          "level": 2,
+          "line": 384
+        },
+        {
+          "heading": "附录 C：数据模型（`czsc.models`）",
+          "level": 2,
+          "line": 404
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 29
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/docs/release_checklist.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 236,
+      "nonEmptyLines": 185,
+      "sections": [
+        {
+          "heading": "版本发布前的检查清单",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. 代码冻结前（提交期）",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "代码 vs Markdown 文档一致性（硬性检查）",
+          "level": 3,
+          "line": 15
+        },
+        {
+          "heading": "2. 版本号（单一版本源 = `Cargo.toml [workspace.package].version`）",
+          "level": 2,
+          "line": 64
+        },
+        {
+          "heading": "语义化版本（SemVer）规则",
+          "level": 3,
+          "line": 70
+        },
+        {
+          "heading": "3. 本地 Rust 验证（CI 覆盖盲点）",
+          "level": 2,
+          "line": 96
+        },
+        {
+          "heading": "4. 本地 Python 验证",
+          "level": 2,
+          "line": 113
+        },
+        {
+          "heading": "5. 本地 Wheel 验证（覆盖 CI smoke 盲区）",
+          "level": 2,
+          "line": 133
+        },
+        {
+          "heading": "6. 发布动作（按顺序）",
+          "level": 2,
+          "line": 143
+        },
+        {
+          "heading": "7. 发布后验证",
+          "level": 2,
+          "line": 165
+        },
+        {
+          "heading": "8. 隐藏缺陷雷达（按历史踩坑频度排序）",
+          "level": 2,
+          "line": 189
+        },
+        {
+          "heading": "9. 一键自检脚本（可选）",
+          "level": 2,
+          "line": 208
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    }
+  ]
+}

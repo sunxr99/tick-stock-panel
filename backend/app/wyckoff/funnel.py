@@ -20,7 +20,7 @@ from app.wyckoff.layer2_strength import (
 )
 from app.wyckoff.layer3_resonance import evaluate_layer3_sector_resonance
 from app.wyckoff.limit_move import is_st_risk_warning
-from app.wyckoff.wyckoff_structure import detect_structure_triggers
+from app.wyckoff.wyckoff_structure import detect_sos, detect_structure_triggers
 
 
 @dataclass(frozen=True)
@@ -95,7 +95,7 @@ def run_funnel(
             config,
             benchmark=benchmark_context,
             rps=rps_context,
-            detect_sos=lambda _frame, _cfg: None,
+            detect_sos=detect_sos,
         )
         if result.passed:
             l2.append(symbol)
@@ -275,7 +275,7 @@ def _amount_series(frame: pd.DataFrame) -> pd.Series:
 def _liquid_enough(frame: pd.DataFrame, cfg: FunnelConfig, *, threshold_wan: float | None = None) -> bool:
     amount = _amount_series(frame).tail(max(cfg.amount_avg_window, 1))
     if amount.empty:
-        return True
+        return False
     threshold = (threshold_wan if threshold_wan is not None else cfg.min_avg_amount_wan) * 10_000
     if amount.mean() < threshold:
         return False

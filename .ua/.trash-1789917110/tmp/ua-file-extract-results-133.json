@@ -1,0 +1,3158 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 19,
+  "filesSkipped": [
+    "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/.dev.vars.example",
+    "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/public/_headers",
+    "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/public/_redirects",
+    "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/public/manifest.webmanifest",
+    "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/app.css",
+    "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/__snapshots__/chat-tools.test.ts.snap"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 19,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 19,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/workflows/test_sector_continuity_report.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "test_resolve_trade_date_skips_non_trading_day",
+          "startLine": 6,
+          "endLine": 12,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_update_history_uses_resolved_trade_date",
+          "startLine": 15,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "test_notify_report_sends_feishu",
+          "startLine": 27,
+          "endLine": 50,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_resolve_trade_date_skips_non_trading_day",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "test_update_history_uses_resolved_trade_date",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "test_notify_report_sends_feishu",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_resolve_trade_date_skips_non_trading_day",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 9
+        },
+        {
+          "caller": "test_resolve_trade_date_skips_non_trading_day",
+          "callee": "date",
+          "lineNumber": 9
+        },
+        {
+          "caller": "test_resolve_trade_date_skips_non_trading_day",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 10
+        },
+        {
+          "caller": "test_resolve_trade_date_skips_non_trading_day",
+          "callee": "runtime.resolve_sector_trade_date",
+          "lineNumber": 12
+        },
+        {
+          "caller": "test_update_history_uses_resolved_trade_date",
+          "callee": "update_history_with_trade_date",
+          "lineNumber": 18
+        },
+        {
+          "caller": "test_update_history_uses_resolved_trade_date",
+          "callee": "date",
+          "lineNumber": 21
+        },
+        {
+          "caller": "test_notify_report_sends_feishu",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test_notify_report_sends_feishu",
+          "callee": "captured.update",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_notify_report_sends_feishu",
+          "callee": "runtime.notify_sector_continuity_report",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_notify_report_sends_feishu",
+          "callee": "date",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/workflows/test_step3_empty_report.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "test_step3_run_empty_input_sends_empty_report",
+          "startLine": 6,
+          "endLine": 29,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_step3_preview_empty_input_does_not_notify",
+          "startLine": 32,
+          "endLine": 64,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_step3_run_empty_input_sends_empty_report",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "test_step3_preview_empty_input_does_not_notify",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fake_send_empty_step3_report",
+          "callee": "captured.update",
+          "lineNumber": 12
+        },
+        {
+          "caller": "test_step3_run_empty_input_sends_empty_report",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_step3_run_empty_input_sends_empty_report",
+          "callee": "step3.run",
+          "lineNumber": 17
+        },
+        {
+          "caller": "test_step3_preview_empty_input_does_not_notify",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 37
+        },
+        {
+          "caller": "test_step3_preview_empty_input_does_not_notify",
+          "callee": "(_ for _ in ()).throw",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_step3_preview_empty_input_does_not_notify",
+          "callee": "AssertionError",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_step3_preview_empty_input_does_not_notify",
+          "callee": "Step3RunOptions",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_step3_preview_empty_input_does_not_notify",
+          "callee": "Step3RuntimeConfig",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_step3_preview_empty_input_does_not_notify",
+          "callee": "reporting.send_empty_step3_report",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_step3_preview_empty_input_does_not_notify",
+          "callee": "pd.DataFrame",
+          "lineNumber": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/workflows/test_step3_llm_fallback.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 215,
+      "nonEmptyLines": 165,
+      "functions": [
+        {
+          "name": "test_call_track_report_falls_back_to_efficiency_after_gemini_failure",
+          "startLine": 7,
+          "endLine": 44,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_call_track_report_falls_back_to_gemini_after_efficiency_failure",
+          "startLine": 47,
+          "endLine": 83,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_step3_llm_routes_include_gemini_when_efficiency_primary",
+          "startLine": 86,
+          "endLine": 100,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_step3_llm_routes_allow_efficiency_when_gemini_key_missing",
+          "startLine": 103,
+          "endLine": 124,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_step3_runtime_config_from_env_normalizes_values",
+          "startLine": 127,
+          "endLine": 152,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_step3_runtime_config_rejects_legacy_report_style",
+          "startLine": 155,
+          "endLine": 161,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TestModelFooter",
+          "startLine": 164,
+          "endLine": 215,
+          "methods": [
+            "_result",
+            "test_footer_lists_model_per_track",
+            "test_footer_flags_track_level_fallback",
+            "test_footer_falls_back_to_options_model",
+            "test_footer_empty_without_tracks"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_call_track_report_falls_back_to_efficiency_after_gemini_failure",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "test_call_track_report_falls_back_to_gemini_after_efficiency_failure",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "test_step3_llm_routes_include_gemini_when_efficiency_primary",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "test_step3_llm_routes_allow_efficiency_when_gemini_key_missing",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "test_step3_runtime_config_from_env_normalizes_values",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "test_step3_runtime_config_rejects_legacy_report_style",
+          "line": 155,
+          "isDefault": false
+        },
+        {
+          "name": "TestModelFooter",
+          "line": 164,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_call_track_report_falls_back_to_efficiency_after_gemini_failure",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 13
+        },
+        {
+          "caller": "test_call_track_report_falls_back_to_efficiency_after_gemini_failure",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_call_track_report_falls_back_to_efficiency_after_gemini_failure",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 15
+        },
+        {
+          "caller": "fake_call_llm",
+          "callee": "calls.append",
+          "lineNumber": 18
+        },
+        {
+          "caller": "fake_call_llm",
+          "callee": "kwargs.get",
+          "lineNumber": 18
+        },
+        {
+          "caller": "fake_call_llm",
+          "callee": "RuntimeError",
+          "lineNumber": 20
+        },
+        {
+          "caller": "test_call_track_report_falls_back_to_efficiency_after_gemini_failure",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_call_track_report_falls_back_to_efficiency_after_gemini_failure",
+          "callee": "call_track_report",
+          "lineNumber": 25
+        },
+        {
+          "caller": "test_call_track_report_falls_back_to_efficiency_after_gemini_failure",
+          "callee": "pd.DataFrame",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_call_track_report_falls_back_to_efficiency_after_gemini_failure",
+          "callee": "Step3RuntimeConfig",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_call_track_report_falls_back_to_gemini_after_efficiency_failure",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_call_track_report_falls_back_to_gemini_after_efficiency_failure",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 54
+        },
+        {
+          "caller": "fake_call_llm",
+          "callee": "calls.append",
+          "lineNumber": 57
+        },
+        {
+          "caller": "fake_call_llm",
+          "callee": "kwargs.get",
+          "lineNumber": 57
+        },
+        {
+          "caller": "fake_call_llm",
+          "callee": "RuntimeError",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_call_track_report_falls_back_to_gemini_after_efficiency_failure",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 62
+        },
+        {
+          "caller": "test_call_track_report_falls_back_to_gemini_after_efficiency_failure",
+          "callee": "call_track_report",
+          "lineNumber": 64
+        },
+        {
+          "caller": "test_call_track_report_falls_back_to_gemini_after_efficiency_failure",
+          "callee": "pd.DataFrame",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_call_track_report_falls_back_to_gemini_after_efficiency_failure",
+          "callee": "Step3RuntimeConfig",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_step3_llm_routes_include_gemini_when_efficiency_primary",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_step3_llm_routes_include_gemini_when_efficiency_primary",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_step3_llm_routes_include_gemini_when_efficiency_primary",
+          "callee": "build_step3_llm_routes",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_step3_llm_routes_allow_efficiency_when_gemini_key_missing",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 106
+        },
+        {
+          "caller": "test_step3_llm_routes_allow_efficiency_when_gemini_key_missing",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_step3_llm_routes_allow_efficiency_when_gemini_key_missing",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 108
+        },
+        {
+          "caller": "test_step3_llm_routes_allow_efficiency_when_gemini_key_missing",
+          "callee": "build_step3_llm_routes",
+          "lineNumber": 110
+        },
+        {
+          "caller": "test_step3_runtime_config_from_env_normalizes_values",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_step3_runtime_config_from_env_normalizes_values",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 131
+        },
+        {
+          "caller": "test_step3_runtime_config_from_env_normalizes_values",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 132
+        },
+        {
+          "caller": "test_step3_runtime_config_from_env_normalizes_values",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 133
+        },
+        {
+          "caller": "test_step3_runtime_config_from_env_normalizes_values",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 134
+        },
+        {
+          "caller": "test_step3_runtime_config_from_env_normalizes_values",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 135
+        },
+        {
+          "caller": "test_step3_runtime_config_from_env_normalizes_values",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_step3_runtime_config_from_env_normalizes_values",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 137
+        },
+        {
+          "caller": "test_step3_runtime_config_from_env_normalizes_values",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 138
+        },
+        {
+          "caller": "test_step3_runtime_config_from_env_normalizes_values",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 139
+        },
+        {
+          "caller": "test_step3_runtime_config_from_env_normalizes_values",
+          "callee": "step3_runtime_config_from_env",
+          "lineNumber": 141
+        },
+        {
+          "caller": "test_step3_runtime_config_rejects_legacy_report_style",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 158
+        },
+        {
+          "caller": "test_step3_runtime_config_rejects_legacy_report_style",
+          "callee": "pytest.raises",
+          "lineNumber": 160
+        },
+        {
+          "caller": "test_step3_runtime_config_rejects_legacy_report_style",
+          "callee": "step3_runtime_config_from_env",
+          "lineNumber": 161
+        },
+        {
+          "caller": "_result",
+          "callee": "Step3LlmResult",
+          "lineNumber": 176
+        },
+        {
+          "caller": "test_footer_lists_model_per_track",
+          "callee": "build_model_footer",
+          "lineNumber": 181
+        },
+        {
+          "caller": "test_footer_lists_model_per_track",
+          "callee": "self._result",
+          "lineNumber": 182
+        },
+        {
+          "caller": "test_footer_flags_track_level_fallback",
+          "callee": "build_model_footer",
+          "lineNumber": 196
+        },
+        {
+          "caller": "test_footer_flags_track_level_fallback",
+          "callee": "self._result",
+          "lineNumber": 197
+        },
+        {
+          "caller": "test_footer_falls_back_to_options_model",
+          "callee": "build_model_footer",
+          "lineNumber": 208
+        },
+        {
+          "caller": "test_footer_falls_back_to_options_model",
+          "callee": "self._result",
+          "lineNumber": 208
+        },
+        {
+          "caller": "test_footer_empty_without_tracks",
+          "callee": "build_model_footer",
+          "lineNumber": 215
+        },
+        {
+          "caller": "test_footer_empty_without_tracks",
+          "callee": "self._result",
+          "lineNumber": 215
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/workflows/test_strategy_attribution_report.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1006,
+      "nonEmptyLines": 888,
+      "functions": [
+        {
+          "name": "test_attribution_report_no_write_prefers_user_client",
+          "startLine": 6,
+          "endLine": 17,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_attribution_report_no_write_falls_back_to_read_client",
+          "startLine": 20,
+          "endLine": 27,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_attribution_report_write_requires_server_context",
+          "startLine": 30,
+          "endLine": 35,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_strategy_attribution_cli_loads_backtest_confirmation",
+          "startLine": 38,
+          "endLine": 44,
+          "params": [
+            "tmp_path"
+          ]
+        },
+        {
+          "name": "test_attribution_report_groups_candidate_shadow_grade",
+          "startLine": 47,
+          "endLine": 105,
+          "params": []
+        },
+        {
+          "name": "test_attribution_shadow_latest_uses_compact_summary",
+          "startLine": 108,
+          "endLine": 143,
+          "params": []
+        },
+        {
+          "name": "test_attribution_shadow_latest_uses_newest_trade_date",
+          "startLine": 146,
+          "endLine": 157,
+          "params": []
+        },
+        {
+          "name": "test_attribution_policy_governor_promotes_shadow_review_and_signal_actions",
+          "startLine": 160,
+          "endLine": 227,
+          "params": []
+        },
+        {
+          "name": "test_attribution_policy_governor_accepts_structured_backtest_confirmation",
+          "startLine": 230,
+          "endLine": 288,
+          "params": []
+        },
+        {
+          "name": "test_attribution_policy_governor_rejects_stale_backtest_confirmation",
+          "startLine": 291,
+          "endLine": 325,
+          "params": []
+        },
+        {
+          "name": "test_attribution_policy_governor_allows_formal_dynamic_with_manual_approval",
+          "startLine": 328,
+          "endLine": 379,
+          "params": []
+        },
+        {
+          "name": "test_attribution_policy_governor_emits_scoped_context_weight",
+          "startLine": 382,
+          "endLine": 438,
+          "params": []
+        },
+        {
+          "name": "test_attribution_policy_governor_emits_selection_source_actions",
+          "startLine": 441,
+          "endLine": 495,
+          "params": []
+        },
+        {
+          "name": "test_attribution_policy_governor_blocks_formal_dynamic_on_selection_actions",
+          "startLine": 498,
+          "endLine": 552,
+          "params": []
+        },
+        {
+          "name": "test_attribution_console_summary_surfaces_policy_governor",
+          "startLine": 555,
+          "endLine": 641,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_attribution_markdown_surfaces_execution_state",
+          "startLine": 644,
+          "endLine": 704,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_attribution_execution_state_counts_focus_horizon_only",
+          "startLine": 707,
+          "endLine": 744,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_attribution_execution_state_blocks_formal_on_without_governor_approval",
+          "startLine": 747,
+          "endLine": 770,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_attribution_execution_state_blocks_explicit_formal_on_without_checklist",
+          "startLine": 773,
+          "endLine": 794,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_attribution_execution_state_allows_formal_on_with_explicit_approval_and_passed_checklist",
+          "startLine": 797,
+          "endLine": 824,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_attribution_policy_governor_keeps_shadow_reject_when_signal_actions_exist",
+          "startLine": 827,
+          "endLine": 883,
+          "params": []
+        },
+        {
+          "name": "test_signal_weight_multipliers_ignore_governor_and_wrong_horizon",
+          "startLine": 886,
+          "endLine": 939,
+          "params": []
+        },
+        {
+          "name": "test_attribution_observation_coverage_marks_current_and_legacy",
+          "startLine": 942,
+          "endLine": 974,
+          "params": []
+        },
+        {
+          "name": "test_attribution_stats_ignore_nonfinite_scores_and_returns",
+          "startLine": 977,
+          "endLine": 1006,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_attribution_report_no_write_prefers_user_client",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_report_no_write_falls_back_to_read_client",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_report_write_requires_server_context",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "test_strategy_attribution_cli_loads_backtest_confirmation",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_report_groups_candidate_shadow_grade",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_shadow_latest_uses_compact_summary",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_shadow_latest_uses_newest_trade_date",
+          "line": 146,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_policy_governor_promotes_shadow_review_and_signal_actions",
+          "line": 160,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_policy_governor_accepts_structured_backtest_confirmation",
+          "line": 230,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_policy_governor_rejects_stale_backtest_confirmation",
+          "line": 291,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_policy_governor_allows_formal_dynamic_with_manual_approval",
+          "line": 328,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_policy_governor_emits_scoped_context_weight",
+          "line": 382,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_policy_governor_emits_selection_source_actions",
+          "line": 441,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_policy_governor_blocks_formal_dynamic_on_selection_actions",
+          "line": 498,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_console_summary_surfaces_policy_governor",
+          "line": 555,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_markdown_surfaces_execution_state",
+          "line": 644,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_execution_state_counts_focus_horizon_only",
+          "line": 707,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_execution_state_blocks_formal_on_without_governor_approval",
+          "line": 747,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_execution_state_blocks_explicit_formal_on_without_checklist",
+          "line": 773,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_execution_state_allows_formal_on_with_explicit_approval_and_passed_checklist",
+          "line": 797,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_policy_governor_keeps_shadow_reject_when_signal_actions_exist",
+          "line": 827,
+          "isDefault": false
+        },
+        {
+          "name": "test_signal_weight_multipliers_ignore_governor_and_wrong_horizon",
+          "line": 886,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_observation_coverage_marks_current_and_legacy",
+          "line": 942,
+          "isDefault": false
+        },
+        {
+          "name": "test_attribution_stats_ignore_nonfinite_scores_and_returns",
+          "line": 977,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_attribution_report_no_write_prefers_user_client",
+          "callee": "object",
+          "lineNumber": 9
+        },
+        {
+          "caller": "test_attribution_report_no_write_prefers_user_client",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 10
+        },
+        {
+          "caller": "fail_admin",
+          "callee": "AssertionError",
+          "lineNumber": 13
+        },
+        {
+          "caller": "test_attribution_report_no_write_prefers_user_client",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_attribution_report_no_write_prefers_user_client",
+          "callee": "report.create_report_client",
+          "lineNumber": 17
+        },
+        {
+          "caller": "test_attribution_report_no_write_falls_back_to_read_client",
+          "callee": "object",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_attribution_report_no_write_falls_back_to_read_client",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_attribution_report_no_write_falls_back_to_read_client",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 25
+        },
+        {
+          "caller": "test_attribution_report_no_write_falls_back_to_read_client",
+          "callee": "report.create_report_client",
+          "lineNumber": 27
+        },
+        {
+          "caller": "test_attribution_report_write_requires_server_context",
+          "callee": "monkeypatch.delenv",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_attribution_report_write_requires_server_context",
+          "callee": "pytest.raises",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_attribution_report_write_requires_server_context",
+          "callee": "report.create_report_client",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_strategy_attribution_cli_loads_backtest_confirmation",
+          "callee": "path.write_text",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_strategy_attribution_cli_loads_backtest_confirmation",
+          "callee": "cli.load_backtest_confirmation",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_strategy_attribution_cli_loads_backtest_confirmation",
+          "callee": "str",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_attribution_report_groups_candidate_shadow_grade",
+          "callee": "stats_mod.join_outcomes",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_attribution_report_groups_candidate_shadow_grade",
+          "callee": "stats_mod.score_stats_json",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_attribution_shadow_latest_uses_compact_summary",
+          "callee": "stats_mod.shadow_stats",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_attribution_shadow_latest_uses_newest_trade_date",
+          "callee": "stats_mod.shadow_stats",
+          "lineNumber": 154
+        },
+        {
+          "caller": "test_attribution_policy_governor_promotes_shadow_review_and_signal_actions",
+          "callee": "range",
+          "lineNumber": 176
+        },
+        {
+          "caller": "test_attribution_policy_governor_promotes_shadow_review_and_signal_actions",
+          "callee": "outcomes.extend",
+          "lineNumber": 178
+        },
+        {
+          "caller": "test_attribution_policy_governor_promotes_shadow_review_and_signal_actions",
+          "callee": "range",
+          "lineNumber": 187
+        },
+        {
+          "caller": "test_attribution_policy_governor_promotes_shadow_review_and_signal_actions",
+          "callee": "range",
+          "lineNumber": 195
+        },
+        {
+          "caller": "test_attribution_policy_governor_promotes_shadow_review_and_signal_actions",
+          "callee": "stats_mod.build_strategy_attribution_payload",
+          "lineNumber": 198
+        },
+        {
+          "caller": "test_attribution_policy_governor_promotes_shadow_review_and_signal_actions",
+          "callee": "stats_mod.date",
+          "lineNumber": 199
+        },
+        {
+          "caller": "test_attribution_policy_governor_promotes_shadow_review_and_signal_actions",
+          "callee": "stats_mod.date",
+          "lineNumber": 201
+        },
+        {
+          "caller": "test_attribution_policy_governor_promotes_shadow_review_and_signal_actions",
+          "callee": "stats_mod.date",
+          "lineNumber": 202
+        },
+        {
+          "caller": "test_attribution_policy_governor_accepts_structured_backtest_confirmation",
+          "callee": "range",
+          "lineNumber": 246
+        },
+        {
+          "caller": "test_attribution_policy_governor_accepts_structured_backtest_confirmation",
+          "callee": "outcomes.extend",
+          "lineNumber": 248
+        },
+        {
+          "caller": "test_attribution_policy_governor_accepts_structured_backtest_confirmation",
+          "callee": "range",
+          "lineNumber": 257
+        },
+        {
+          "caller": "test_attribution_policy_governor_accepts_structured_backtest_confirmation",
+          "callee": "range",
+          "lineNumber": 260
+        },
+        {
+          "caller": "test_attribution_policy_governor_accepts_structured_backtest_confirmation",
+          "callee": "stats_mod.build_strategy_attribution_payload",
+          "lineNumber": 263
+        },
+        {
+          "caller": "test_attribution_policy_governor_accepts_structured_backtest_confirmation",
+          "callee": "stats_mod.date",
+          "lineNumber": 264
+        },
+        {
+          "caller": "test_attribution_policy_governor_accepts_structured_backtest_confirmation",
+          "callee": "stats_mod.date",
+          "lineNumber": 266
+        },
+        {
+          "caller": "test_attribution_policy_governor_accepts_structured_backtest_confirmation",
+          "callee": "stats_mod.date",
+          "lineNumber": 267
+        },
+        {
+          "caller": "test_attribution_policy_governor_rejects_stale_backtest_confirmation",
+          "callee": "build_strategy_policy_governor",
+          "lineNumber": 294
+        },
+        {
+          "caller": "test_attribution_policy_governor_allows_formal_dynamic_with_manual_approval",
+          "callee": "build_strategy_policy_governor",
+          "lineNumber": 361
+        },
+        {
+          "caller": "test_attribution_policy_governor_allows_formal_dynamic_with_manual_approval",
+          "callee": "build_strategy_policy_governor",
+          "lineNumber": 362
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_scoped_context_weight",
+          "callee": "range",
+          "lineNumber": 396
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_scoped_context_weight",
+          "callee": "range",
+          "lineNumber": 407
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_scoped_context_weight",
+          "callee": "stats_mod.build_strategy_attribution_payload",
+          "lineNumber": 410
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_scoped_context_weight",
+          "callee": "stats_mod.date",
+          "lineNumber": 411
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_scoped_context_weight",
+          "callee": "stats_mod.date",
+          "lineNumber": 413
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_scoped_context_weight",
+          "callee": "stats_mod.date",
+          "lineNumber": 414
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_scoped_context_weight",
+          "callee": "signal_weight_multipliers_from_rows",
+          "lineNumber": 422
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_scoped_context_weight",
+          "callee": "len",
+          "lineNumber": 424
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_scoped_context_weight",
+          "callee": "expected_context.items",
+          "lineNumber": 436
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_selection_source_actions",
+          "callee": "range",
+          "lineNumber": 457
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_selection_source_actions",
+          "callee": "range",
+          "lineNumber": 468
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_selection_source_actions",
+          "callee": "stats_mod.build_strategy_attribution_payload",
+          "lineNumber": 471
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_selection_source_actions",
+          "callee": "stats_mod.date",
+          "lineNumber": 472
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_selection_source_actions",
+          "callee": "stats_mod.date",
+          "lineNumber": 474
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_selection_source_actions",
+          "callee": "stats_mod.date",
+          "lineNumber": 475
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_selection_source_actions",
+          "callee": "any",
+          "lineNumber": 485
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_selection_source_actions",
+          "callee": "any",
+          "lineNumber": 486
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_selection_source_actions",
+          "callee": "signal_weight_multipliers_from_rows",
+          "lineNumber": 489
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_selection_source_actions",
+          "callee": "attribution_execution_state",
+          "lineNumber": 490
+        },
+        {
+          "caller": "test_attribution_policy_governor_emits_selection_source_actions",
+          "callee": "attribution_operations_brief",
+          "lineNumber": 491
+        },
+        {
+          "caller": "test_attribution_policy_governor_blocks_formal_dynamic_on_selection_actions",
+          "callee": "build_strategy_policy_governor",
+          "lineNumber": 501
+        },
+        {
+          "caller": "test_attribution_console_summary_surfaces_policy_governor",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 558
+        },
+        {
+          "caller": "test_attribution_console_summary_surfaces_policy_governor",
+          "callee": "report_mod.attach_policy_execution_state",
+          "lineNumber": 586
+        },
+        {
+          "caller": "test_attribution_console_summary_surfaces_policy_governor",
+          "callee": "report_mod.build_console_summary",
+          "lineNumber": 588
+        },
+        {
+          "caller": "test_attribution_markdown_surfaces_execution_state",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 647
+        },
+        {
+          "caller": "test_attribution_markdown_surfaces_execution_state",
+          "callee": "report_mod.attach_policy_execution_state",
+          "lineNumber": 684
+        },
+        {
+          "caller": "test_attribution_markdown_surfaces_execution_state",
+          "callee": "report_mod.build_report_markdown",
+          "lineNumber": 686
+        },
+        {
+          "caller": "test_attribution_execution_state_counts_focus_horizon_only",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 710
+        },
+        {
+          "caller": "test_attribution_execution_state_counts_focus_horizon_only",
+          "callee": "report_mod.attach_policy_execution_state",
+          "lineNumber": 730
+        },
+        {
+          "caller": "test_attribution_execution_state_counts_focus_horizon_only",
+          "callee": "operations[\"operator_summary\"].startswith",
+          "lineNumber": 742
+        },
+        {
+          "caller": "test_attribution_execution_state_blocks_formal_on_without_governor_approval",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 750
+        },
+        {
+          "caller": "test_attribution_execution_state_blocks_formal_on_without_governor_approval",
+          "callee": "attribution_execution_state",
+          "lineNumber": 758
+        },
+        {
+          "caller": "test_attribution_execution_state_blocks_explicit_formal_on_without_checklist",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 776
+        },
+        {
+          "caller": "test_attribution_execution_state_blocks_explicit_formal_on_without_checklist",
+          "callee": "attribution_execution_state",
+          "lineNumber": 785
+        },
+        {
+          "caller": "test_attribution_execution_state_allows_formal_on_with_explicit_approval_and_passed_checklist",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 800
+        },
+        {
+          "caller": "test_attribution_execution_state_allows_formal_on_with_explicit_approval_and_passed_checklist",
+          "callee": "attribution_execution_state",
+          "lineNumber": 815
+        },
+        {
+          "caller": "test_attribution_policy_governor_keeps_shadow_reject_when_signal_actions_exist",
+          "callee": "range",
+          "lineNumber": 843
+        },
+        {
+          "caller": "test_attribution_policy_governor_keeps_shadow_reject_when_signal_actions_exist",
+          "callee": "outcomes.extend",
+          "lineNumber": 845
+        },
+        {
+          "caller": "test_attribution_policy_governor_keeps_shadow_reject_when_signal_actions_exist",
+          "callee": "range",
+          "lineNumber": 854
+        },
+        {
+          "caller": "test_attribution_policy_governor_keeps_shadow_reject_when_signal_actions_exist",
+          "callee": "range",
+          "lineNumber": 862
+        },
+        {
+          "caller": "test_attribution_policy_governor_keeps_shadow_reject_when_signal_actions_exist",
+          "callee": "stats_mod.build_strategy_attribution_payload",
+          "lineNumber": 865
+        },
+        {
+          "caller": "test_attribution_policy_governor_keeps_shadow_reject_when_signal_actions_exist",
+          "callee": "stats_mod.date",
+          "lineNumber": 866
+        },
+        {
+          "caller": "test_attribution_policy_governor_keeps_shadow_reject_when_signal_actions_exist",
+          "callee": "stats_mod.date",
+          "lineNumber": 868
+        },
+        {
+          "caller": "test_attribution_policy_governor_keeps_shadow_reject_when_signal_actions_exist",
+          "callee": "stats_mod.date",
+          "lineNumber": 869
+        },
+        {
+          "caller": "test_signal_weight_multipliers_ignore_governor_and_wrong_horizon",
+          "callee": "signal_weight_multipliers_from_rows",
+          "lineNumber": 935
+        },
+        {
+          "caller": "test_attribution_observation_coverage_marks_current_and_legacy",
+          "callee": "stats_mod.observation_coverage_stats",
+          "lineNumber": 965
+        },
+        {
+          "caller": "test_attribution_stats_ignore_nonfinite_scores_and_returns",
+          "callee": "float",
+          "lineNumber": 981
+        },
+        {
+          "caller": "test_attribution_stats_ignore_nonfinite_scores_and_returns",
+          "callee": "float",
+          "lineNumber": 981
+        },
+        {
+          "caller": "test_attribution_stats_ignore_nonfinite_scores_and_returns",
+          "callee": "float",
+          "lineNumber": 994
+        },
+        {
+          "caller": "test_attribution_stats_ignore_nonfinite_scores_and_returns",
+          "callee": "stats_mod.join_outcomes",
+          "lineNumber": 997
+        },
+        {
+          "caller": "test_attribution_stats_ignore_nonfinite_scores_and_returns",
+          "callee": "stats_mod.score_stats_json",
+          "lineNumber": 998
+        },
+        {
+          "caller": "test_attribution_stats_ignore_nonfinite_scores_and_returns",
+          "callee": "stats_mod.ranked_outcomes",
+          "lineNumber": 999
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 24,
+        "functionCount": 24,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/workflows/test_theme_radar_job.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 135,
+      "nonEmptyLines": 111,
+      "functions": [
+        {
+          "name": "test_run_theme_radar_uses_full_concept_heat",
+          "startLine": 4,
+          "endLine": 21,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_render_theme_radar_report_groups_candidates_by_theme",
+          "startLine": 24,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "test_render_theme_radar_html_outputs_grouped_cards",
+          "startLine": 41,
+          "endLine": 53,
+          "params": []
+        },
+        {
+          "name": "test_notify_report_sends_feishu",
+          "startLine": 56,
+          "endLine": 75,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "_snapshot",
+          "startLine": 78,
+          "endLine": 99,
+          "params": []
+        },
+        {
+          "name": "_theme",
+          "startLine": 102,
+          "endLine": 117,
+          "params": [
+            "theme",
+            "state",
+            "score"
+          ]
+        },
+        {
+          "name": "_candidate",
+          "startLine": 120,
+          "endLine": 135,
+          "params": [
+            "code",
+            "name",
+            "theme",
+            "rank",
+            "score"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_run_theme_radar_uses_full_concept_heat",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "test_render_theme_radar_report_groups_candidates_by_theme",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "test_render_theme_radar_html_outputs_grouped_cards",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "test_notify_report_sends_feishu",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "_snapshot",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "_theme",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "_candidate",
+          "line": 120,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_run_theme_radar_uses_full_concept_heat",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_run_theme_radar_uses_full_concept_heat",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 16
+        },
+        {
+          "caller": "test_run_theme_radar_uses_full_concept_heat",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 17
+        },
+        {
+          "caller": "test_run_theme_radar_uses_full_concept_heat",
+          "callee": "captured.update",
+          "lineNumber": 17
+        },
+        {
+          "caller": "test_run_theme_radar_uses_full_concept_heat",
+          "callee": "mod.run_theme_radar",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_render_theme_radar_report_groups_candidates_by_theme",
+          "callee": "render_theme_radar_report",
+          "lineNumber": 27
+        },
+        {
+          "caller": "test_render_theme_radar_report_groups_candidates_by_theme",
+          "callee": "_snapshot",
+          "lineNumber": 27
+        },
+        {
+          "caller": "test_render_theme_radar_report_groups_candidates_by_theme",
+          "callee": "report.index",
+          "lineNumber": 37
+        },
+        {
+          "caller": "test_render_theme_radar_report_groups_candidates_by_theme",
+          "callee": "report.index",
+          "lineNumber": 37
+        },
+        {
+          "caller": "test_render_theme_radar_html_outputs_grouped_cards",
+          "callee": "render_theme_radar_html",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_render_theme_radar_html_outputs_grouped_cards",
+          "callee": "_snapshot",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_notify_report_sends_feishu",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_notify_report_sends_feishu",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_notify_report_sends_feishu",
+          "callee": "captured.update",
+          "lineNumber": 65
+        },
+        {
+          "caller": "test_notify_report_sends_feishu",
+          "callee": "mod.notify_theme_radar_report",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_snapshot",
+          "callee": "_theme",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_snapshot",
+          "callee": "_theme",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_snapshot",
+          "callee": "_candidate",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_snapshot",
+          "callee": "_candidate",
+          "lineNumber": 97
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/workflows/test_track_prompt_builder.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "test_build_track_user_message_includes_regime_scope_gate_and_payloads",
+          "startLine": 4,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "test_build_track_user_message_defaults_unknown_track_to_trend_scope",
+          "startLine": 27,
+          "endLine": 43,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_build_track_user_message_includes_regime_scope_gate_and_payloads",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "test_build_track_user_message_defaults_unknown_track_to_trend_scope",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_build_track_user_message_includes_regime_scope_gate_and_payloads",
+          "callee": "build_track_user_message",
+          "lineNumber": 7
+        },
+        {
+          "caller": "test_build_track_user_message_defaults_unknown_track_to_trend_scope",
+          "callee": "build_track_user_message",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/workflows/test_us_recommendation_performance_job.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 37,
+      "functions": [
+        {
+          "name": "test_us_recommendation_performance_job_passes_refresh_options",
+          "startLine": 4,
+          "endLine": 19,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_us_recommendation_performance_job_reports_failure",
+          "startLine": 22,
+          "endLine": 35,
+          "params": [
+            "monkeypatch",
+            "tmp_path"
+          ]
+        },
+        {
+          "name": "_summary",
+          "startLine": 38,
+          "endLine": 51,
+          "params": [
+            "**overrides"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_us_recommendation_performance_job_passes_refresh_options",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "test_us_recommendation_performance_job_reports_failure",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "_summary",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_us_recommendation_performance_job_passes_refresh_options",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 8
+        },
+        {
+          "caller": "test_us_recommendation_performance_job_passes_refresh_options",
+          "callee": "captured.update",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_us_recommendation_performance_job_passes_refresh_options",
+          "callee": "_summary",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_us_recommendation_performance_job_passes_refresh_options",
+          "callee": "job.run_us_recommendation_performance_job",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_us_recommendation_performance_job_passes_refresh_options",
+          "callee": "job.UsRecommendationPerformanceRequest",
+          "lineNumber": 15
+        },
+        {
+          "caller": "fail_refresh",
+          "callee": "RuntimeError",
+          "lineNumber": 28
+        },
+        {
+          "caller": "test_us_recommendation_performance_job_reports_failure",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_us_recommendation_performance_job_reports_failure",
+          "callee": "job.run_us_recommendation_performance_job",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_us_recommendation_performance_job_reports_failure",
+          "callee": "job.UsRecommendationPerformanceRequest",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_us_recommendation_performance_job_reports_failure",
+          "callee": "str",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_us_recommendation_performance_job_reports_failure",
+          "callee": "logs_path.read_text",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_summary",
+          "callee": "summary.update",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tools/write_guard.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "is_write_tool",
+          "startLine": 32,
+          "endLine": 33,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "writes_allowed",
+          "startLine": 36,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "check_write_allowed",
+          "startLine": 41,
+          "endLine": 45,
+          "params": [
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "is_write_tool",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "writes_allowed",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "check_write_allowed",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "writes_allowed",
+          "callee": "os.getenv(ALLOW_ENV, \"\").strip().lower",
+          "lineNumber": 38
+        },
+        {
+          "caller": "writes_allowed",
+          "callee": "os.getenv(ALLOW_ENV, \"\").strip",
+          "lineNumber": 38
+        },
+        {
+          "caller": "writes_allowed",
+          "callee": "os.getenv",
+          "lineNumber": 38
+        },
+        {
+          "caller": "check_write_allowed",
+          "callee": "is_write_tool",
+          "lineNumber": 43
+        },
+        {
+          "caller": "check_write_allowed",
+          "callee": "writes_allowed",
+          "lineNumber": 43
+        },
+        {
+          "caller": "check_write_allowed",
+          "callee": "_DENY_MESSAGE.format",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/durable/agent-run-notifier.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 44,
+      "functions": [
+        {
+          "name": "createNotifier",
+          "startLine": 6,
+          "endLine": 13,
+          "params": [
+            "sockets"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createNotifier",
+          "callee": "accepted.push",
+          "lineNumber": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/durable/agent-run-notifier.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "acceptedProtocol",
+          "startLine": 42,
+          "endLine": 45,
+          "params": [
+            "request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AgentRunNotifier",
+          "startLine": 6,
+          "endLine": 39,
+          "methods": [
+            "constructor",
+            "fetch",
+            "upgrade",
+            "notify"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AgentRunNotifier",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fetch",
+          "callee": "this.upgrade",
+          "lineNumber": 11
+        },
+        {
+          "caller": "fetch",
+          "callee": "this.notify",
+          "lineNumber": 12
+        },
+        {
+          "caller": "fetch",
+          "callee": "request.text",
+          "lineNumber": 12
+        },
+        {
+          "caller": "upgrade",
+          "callee": "request.headers.get('Upgrade')?.toLowerCase",
+          "lineNumber": 17
+        },
+        {
+          "caller": "upgrade",
+          "callee": "request.headers.get",
+          "lineNumber": 17
+        },
+        {
+          "caller": "upgrade",
+          "callee": "this.ctx.acceptWebSocket",
+          "lineNumber": 23
+        },
+        {
+          "caller": "upgrade",
+          "callee": "acceptedProtocol",
+          "lineNumber": 24
+        },
+        {
+          "caller": "notify",
+          "callee": "this.ctx.getWebSockets",
+          "lineNumber": 29
+        },
+        {
+          "caller": "notify",
+          "callee": "socket.send",
+          "lineNumber": 31
+        },
+        {
+          "caller": "notify",
+          "callee": "Response.json",
+          "lineNumber": 37
+        },
+        {
+          "caller": "acceptedProtocol",
+          "callee": "request.headers.get('Sec-WebSocket-Protocol')?.split(',')[0]?.trim",
+          "lineNumber": 43
+        },
+        {
+          "caller": "acceptedProtocol",
+          "callee": "request.headers.get('Sec-WebSocket-Protocol')?.split",
+          "lineNumber": 43
+        },
+        {
+          "caller": "acceptedProtocol",
+          "callee": "request.headers.get",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/durable/remote-relay.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 253,
+      "nonEmptyLines": 223,
+      "functions": [
+        {
+          "name": "socket",
+          "startLine": 16,
+          "endLine": 25,
+          "params": [
+            "meta"
+          ]
+        },
+        {
+          "name": "createRelay",
+          "startLine": 27,
+          "endLine": 40,
+          "params": [
+            "sockets"
+          ]
+        },
+        {
+          "name": "upgrade",
+          "startLine": 42,
+          "endLine": 45,
+          "params": [
+            "query"
+          ]
+        },
+        {
+          "name": "host",
+          "startLine": 47,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "remote",
+          "startLine": 48,
+          "endLine": 48,
+          "params": [
+            "connId"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "socket",
+          "callee": "vi.fn",
+          "lineNumber": 18
+        },
+        {
+          "caller": "socket",
+          "callee": "vi.fn",
+          "lineNumber": 19
+        },
+        {
+          "caller": "createRelay",
+          "callee": "live.push",
+          "lineNumber": 31
+        },
+        {
+          "caller": "createRelay",
+          "callee": "store.get",
+          "lineNumber": 34
+        },
+        {
+          "caller": "createRelay",
+          "callee": "store.set",
+          "lineNumber": 35
+        },
+        {
+          "caller": "createRelay",
+          "callee": "store.delete",
+          "lineNumber": 36
+        },
+        {
+          "caller": "host",
+          "callee": "socket",
+          "lineNumber": 47
+        },
+        {
+          "caller": "remote",
+          "callee": "socket",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/durable/remote-relay.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 250,
+      "nonEmptyLines": 223,
+      "functions": [
+        {
+          "name": "acceptedProtocol",
+          "startLine": 247,
+          "endLine": 250,
+          "params": [
+            "request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RemoteRelay",
+          "startLine": 52,
+          "endLine": 244,
+          "methods": [
+            "constructor",
+            "fetch",
+            "issuePair",
+            "devices",
+            "revoke",
+            "upgrade",
+            "consumePair",
+            "webSocketMessage",
+            "webSocketClose",
+            "webSocketError",
+            "broadcastPresence",
+            "metaOf",
+            "withField",
+            "readField",
+            "sendQuietly",
+            "closeQuietly"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RemoteRelay",
+          "line": 52,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fetch",
+          "callee": "this.issuePair",
+          "lineNumber": 57
+        },
+        {
+          "caller": "fetch",
+          "callee": "this.devices",
+          "lineNumber": 58
+        },
+        {
+          "caller": "fetch",
+          "callee": "this.revoke",
+          "lineNumber": 59
+        },
+        {
+          "caller": "fetch",
+          "callee": "request.text",
+          "lineNumber": 59
+        },
+        {
+          "caller": "fetch",
+          "callee": "this.upgrade",
+          "lineNumber": 60
+        },
+        {
+          "caller": "issuePair",
+          "callee": "crypto.randomUUID().replace(/-/g, '').slice",
+          "lineNumber": 66
+        },
+        {
+          "caller": "issuePair",
+          "callee": "crypto.randomUUID().replace",
+          "lineNumber": 66
+        },
+        {
+          "caller": "issuePair",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 66
+        },
+        {
+          "caller": "issuePair",
+          "callee": "Date.now",
+          "lineNumber": 67
+        },
+        {
+          "caller": "issuePair",
+          "callee": "this.ctx.storage.put",
+          "lineNumber": 68
+        },
+        {
+          "caller": "issuePair",
+          "callee": "Response.json",
+          "lineNumber": 69
+        },
+        {
+          "caller": "devices",
+          "callee": "this.ctx.getWebSockets().map",
+          "lineNumber": 74
+        },
+        {
+          "caller": "devices",
+          "callee": "this.ctx.getWebSockets",
+          "lineNumber": 74
+        },
+        {
+          "caller": "devices",
+          "callee": "this.metaOf",
+          "lineNumber": 75
+        },
+        {
+          "caller": "devices",
+          "callee": "Response.json",
+          "lineNumber": 78
+        },
+        {
+          "caller": "devices",
+          "callee": "list.filter",
+          "lineNumber": 78
+        },
+        {
+          "caller": "revoke",
+          "callee": "String",
+          "lineNumber": 85
+        },
+        {
+          "caller": "revoke",
+          "callee": "JSON.parse",
+          "lineNumber": 85
+        },
+        {
+          "caller": "revoke",
+          "callee": "Response.json",
+          "lineNumber": 87
+        },
+        {
+          "caller": "revoke",
+          "callee": "this.ctx.storage.delete",
+          "lineNumber": 91
+        },
+        {
+          "caller": "revoke",
+          "callee": "this.ctx.getWebSockets",
+          "lineNumber": 93
+        },
+        {
+          "caller": "revoke",
+          "callee": "this.metaOf",
+          "lineNumber": 94
+        },
+        {
+          "caller": "revoke",
+          "callee": "this.closeQuietly",
+          "lineNumber": 95
+        },
+        {
+          "caller": "revoke",
+          "callee": "Response.json",
+          "lineNumber": 99
+        },
+        {
+          "caller": "revoke",
+          "callee": "this.ctx.getWebSockets",
+          "lineNumber": 101
+        },
+        {
+          "caller": "revoke",
+          "callee": "this.metaOf",
+          "lineNumber": 102
+        },
+        {
+          "caller": "revoke",
+          "callee": "this.closeQuietly",
+          "lineNumber": 103
+        },
+        {
+          "caller": "revoke",
+          "callee": "Response.json",
+          "lineNumber": 104
+        },
+        {
+          "caller": "revoke",
+          "callee": "Response.json",
+          "lineNumber": 107
+        },
+        {
+          "caller": "upgrade",
+          "callee": "request.headers.get('Upgrade')?.toLowerCase",
+          "lineNumber": 111
+        },
+        {
+          "caller": "upgrade",
+          "callee": "request.headers.get",
+          "lineNumber": 111
+        },
+        {
+          "caller": "upgrade",
+          "callee": "url.searchParams.get",
+          "lineNumber": 114
+        },
+        {
+          "caller": "upgrade",
+          "callee": "(url.searchParams.get('label') || '').slice",
+          "lineNumber": 115
+        },
+        {
+          "caller": "upgrade",
+          "callee": "url.searchParams.get",
+          "lineNumber": 115
+        },
+        {
+          "caller": "upgrade",
+          "callee": "url.searchParams.get",
+          "lineNumber": 120
+        },
+        {
+          "caller": "upgrade",
+          "callee": "this.consumePair",
+          "lineNumber": 121
+        },
+        {
+          "caller": "upgrade",
+          "callee": "this.ctx.getWebSockets().filter",
+          "lineNumber": 123
+        },
+        {
+          "caller": "upgrade",
+          "callee": "this.ctx.getWebSockets",
+          "lineNumber": 123
+        },
+        {
+          "caller": "upgrade",
+          "callee": "this.metaOf",
+          "lineNumber": 123
+        },
+        {
+          "caller": "upgrade",
+          "callee": "this.ctx.getWebSockets",
+          "lineNumber": 128
+        },
+        {
+          "caller": "upgrade",
+          "callee": "this.metaOf",
+          "lineNumber": 129
+        },
+        {
+          "caller": "upgrade",
+          "callee": "this.closeQuietly",
+          "lineNumber": 129
+        },
+        {
+          "caller": "upgrade",
+          "callee": "crypto.randomUUID().slice",
+          "lineNumber": 134
+        },
+        {
+          "caller": "upgrade",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 134
+        },
+        {
+          "caller": "upgrade",
+          "callee": "Date.now",
+          "lineNumber": 134
+        },
+        {
+          "caller": "upgrade",
+          "callee": "this.ctx.acceptWebSocket",
+          "lineNumber": 137
+        },
+        {
+          "caller": "upgrade",
+          "callee": "pair[1].serializeAttachment",
+          "lineNumber": 138
+        },
+        {
+          "caller": "upgrade",
+          "callee": "this.broadcastPresence",
+          "lineNumber": 139
+        },
+        {
+          "caller": "upgrade",
+          "callee": "acceptedProtocol",
+          "lineNumber": 140
+        },
+        {
+          "caller": "consumePair",
+          "callee": "await this.ctx.storage.get",
+          "lineNumber": 145
+        },
+        {
+          "caller": "consumePair",
+          "callee": "Date.now",
+          "lineNumber": 146
+        },
+        {
+          "caller": "consumePair",
+          "callee": "this.ctx.storage.delete",
+          "lineNumber": 150
+        },
+        {
+          "caller": "webSocketMessage",
+          "callee": "this.metaOf",
+          "lineNumber": 162
+        },
+        {
+          "caller": "webSocketMessage",
+          "callee": "this.ctx.getWebSockets().find",
+          "lineNumber": 166
+        },
+        {
+          "caller": "webSocketMessage",
+          "callee": "this.ctx.getWebSockets",
+          "lineNumber": 166
+        },
+        {
+          "caller": "webSocketMessage",
+          "callee": "this.metaOf",
+          "lineNumber": 166
+        },
+        {
+          "caller": "webSocketMessage",
+          "callee": "this.sendQuietly",
+          "lineNumber": 169
+        },
+        {
+          "caller": "webSocketMessage",
+          "callee": "JSON.stringify",
+          "lineNumber": 169
+        },
+        {
+          "caller": "webSocketMessage",
+          "callee": "this.sendQuietly",
+          "lineNumber": 172
+        },
+        {
+          "caller": "webSocketMessage",
+          "callee": "this.withField",
+          "lineNumber": 172
+        },
+        {
+          "caller": "webSocketMessage",
+          "callee": "this.readField",
+          "lineNumber": 177
+        },
+        {
+          "caller": "webSocketMessage",
+          "callee": "this.ctx.getWebSockets",
+          "lineNumber": 178
+        },
+        {
+          "caller": "webSocketMessage",
+          "callee": "this.metaOf",
+          "lineNumber": 179
+        },
+        {
+          "caller": "webSocketMessage",
+          "callee": "this.sendQuietly",
+          "lineNumber": 180
+        },
+        {
+          "caller": "webSocketClose",
+          "callee": "this.broadcastPresence",
+          "lineNumber": 187
+        },
+        {
+          "caller": "webSocketError",
+          "callee": "this.broadcastPresence",
+          "lineNumber": 191
+        },
+        {
+          "caller": "broadcastPresence",
+          "callee": "this.ctx.getWebSockets().filter",
+          "lineNumber": 195
+        },
+        {
+          "caller": "broadcastPresence",
+          "callee": "this.ctx.getWebSockets",
+          "lineNumber": 195
+        },
+        {
+          "caller": "broadcastPresence",
+          "callee": "sockets.some",
+          "lineNumber": 196
+        },
+        {
+          "caller": "broadcastPresence",
+          "callee": "this.metaOf",
+          "lineNumber": 196
+        },
+        {
+          "caller": "broadcastPresence",
+          "callee": "sockets.filter",
+          "lineNumber": 197
+        },
+        {
+          "caller": "broadcastPresence",
+          "callee": "this.metaOf",
+          "lineNumber": 197
+        },
+        {
+          "caller": "broadcastPresence",
+          "callee": "JSON.stringify",
+          "lineNumber": 198
+        },
+        {
+          "caller": "broadcastPresence",
+          "callee": "this.sendQuietly",
+          "lineNumber": 199
+        },
+        {
+          "caller": "metaOf",
+          "callee": "socket.deserializeAttachment",
+          "lineNumber": 204
+        },
+        {
+          "caller": "withField",
+          "callee": "JSON.parse",
+          "lineNumber": 213
+        },
+        {
+          "caller": "withField",
+          "callee": "JSON.stringify",
+          "lineNumber": 215
+        },
+        {
+          "caller": "readField",
+          "callee": "String",
+          "lineNumber": 223
+        },
+        {
+          "caller": "readField",
+          "callee": "JSON.parse",
+          "lineNumber": 223
+        },
+        {
+          "caller": "sendQuietly",
+          "callee": "socket.send",
+          "lineNumber": 231
+        },
+        {
+          "caller": "closeQuietly",
+          "callee": "socket.close",
+          "lineNumber": 239
+        },
+        {
+          "caller": "acceptedProtocol",
+          "callee": "request.headers.get('Sec-WebSocket-Protocol')?.split(',')[0]?.trim",
+          "lineNumber": 248
+        },
+        {
+          "caller": "acceptedProtocol",
+          "callee": "request.headers.get('Sec-WebSocket-Protocol')?.split",
+          "lineNumber": 248
+        },
+        {
+          "caller": "acceptedProtocol",
+          "callee": "request.headers.get",
+          "lineNumber": 248
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/vitest.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 25,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/eslint.config.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 33,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/public/sw.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 11,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/scripts/bench-stream-render.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 187,
+      "nonEmptyLines": 166,
+      "functions": [
+        {
+          "name": "buildReport",
+          "startLine": 17,
+          "endLine": 41,
+          "params": []
+        },
+        {
+          "name": "chunkText",
+          "startLine": 43,
+          "endLine": 47,
+          "params": [
+            "text",
+            "size"
+          ]
+        },
+        {
+          "name": "renderMarkdown",
+          "startLine": 49,
+          "endLine": 53,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "renderPlain",
+          "startLine": 55,
+          "endLine": 63,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "simulateFlushes",
+          "startLine": 65,
+          "endLine": 81,
+          "params": [
+            "chunks",
+            "throttleMs",
+            "arrivalMs"
+          ]
+        },
+        {
+          "name": "benchPath",
+          "startLine": 83,
+          "endLine": 115,
+          "params": [
+            "name",
+            "fullText",
+            "flushLengths",
+            "mode"
+          ]
+        },
+        {
+          "name": "pct",
+          "startLine": 117,
+          "endLine": 119,
+          "params": [
+            "n"
+          ]
+        },
+        {
+          "name": "fmt",
+          "startLine": 121,
+          "endLine": 123,
+          "params": [
+            "n"
+          ]
+        },
+        {
+          "name": "printRow",
+          "startLine": 125,
+          "endLine": 137,
+          "params": [
+            "row"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 139,
+          "endLine": 185,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "buildReport",
+          "callee": "sections.join",
+          "lineNumber": 20
+        },
+        {
+          "caller": "buildReport",
+          "callee": "sections.push",
+          "lineNumber": 22
+        },
+        {
+          "caller": "buildReport",
+          "callee": "(1.1 + (i % 7) * 0.15).toFixed",
+          "lineNumber": 28
+        },
+        {
+          "caller": "buildReport",
+          "callee": "(8 + (i % 5)).toFixed",
+          "lineNumber": 29
+        },
+        {
+          "caller": "buildReport",
+          "callee": "sections.join",
+          "lineNumber": 40
+        },
+        {
+          "caller": "chunkText",
+          "callee": "out.push",
+          "lineNumber": 45
+        },
+        {
+          "caller": "chunkText",
+          "callee": "text.slice",
+          "lineNumber": 45
+        },
+        {
+          "caller": "renderMarkdown",
+          "callee": "renderToString",
+          "lineNumber": 50
+        },
+        {
+          "caller": "renderMarkdown",
+          "callee": "createElement",
+          "lineNumber": 51
+        },
+        {
+          "caller": "renderPlain",
+          "callee": "renderToString",
+          "lineNumber": 56
+        },
+        {
+          "caller": "renderPlain",
+          "callee": "createElement",
+          "lineNumber": 57
+        },
+        {
+          "caller": "renderPlain",
+          "callee": "createElement",
+          "lineNumber": 60
+        },
+        {
+          "caller": "simulateFlushes",
+          "callee": "flushAt.push",
+          "lineNumber": 75
+        },
+        {
+          "caller": "simulateFlushes",
+          "callee": "flushAt.push",
+          "lineNumber": 79
+        },
+        {
+          "caller": "benchPath",
+          "callee": "performance.now",
+          "lineNumber": 87
+        },
+        {
+          "caller": "benchPath",
+          "callee": "fullText.slice",
+          "lineNumber": 89
+        },
+        {
+          "caller": "benchPath",
+          "callee": "performance.now",
+          "lineNumber": 90
+        },
+        {
+          "caller": "benchPath",
+          "callee": "renderMarkdown",
+          "lineNumber": 91
+        },
+        {
+          "caller": "benchPath",
+          "callee": "renderPlain",
+          "lineNumber": 91
+        },
+        {
+          "caller": "benchPath",
+          "callee": "samples.push",
+          "lineNumber": 92
+        },
+        {
+          "caller": "benchPath",
+          "callee": "performance.now",
+          "lineNumber": 92
+        },
+        {
+          "caller": "benchPath",
+          "callee": "performance.now",
+          "lineNumber": 96
+        },
+        {
+          "caller": "benchPath",
+          "callee": "renderMarkdown",
+          "lineNumber": 97
+        },
+        {
+          "caller": "benchPath",
+          "callee": "performance.now",
+          "lineNumber": 98
+        },
+        {
+          "caller": "benchPath",
+          "callee": "samples.push",
+          "lineNumber": 99
+        },
+        {
+          "caller": "benchPath",
+          "callee": "performance.now",
+          "lineNumber": 101
+        },
+        {
+          "caller": "benchPath",
+          "callee": "[...samples].sort",
+          "lineNumber": 102
+        },
+        {
+          "caller": "benchPath",
+          "callee": "sorted.reduce",
+          "lineNumber": 103
+        },
+        {
+          "caller": "benchPath",
+          "callee": "Math.min",
+          "lineNumber": 104
+        },
+        {
+          "caller": "benchPath",
+          "callee": "Math.floor",
+          "lineNumber": 104
+        },
+        {
+          "caller": "pct",
+          "callee": "(n * 100).toFixed",
+          "lineNumber": 118
+        },
+        {
+          "caller": "fmt",
+          "callee": "n.toFixed",
+          "lineNumber": 122
+        },
+        {
+          "caller": "printRow",
+          "callee": "console.log",
+          "lineNumber": 126
+        },
+        {
+          "caller": "printRow",
+          "callee": "[\n      row.name.padEnd(28),\n      String(row.renders).padStart(7),\n      fmt(row.totalMs).padStart(10),\n      fmt(row.meanMs).padStart(9),\n      fmt(row.p95Ms).padStart(8),\n      fmt(row.maxMs).padStart(8),\n      String(row.htmlBytes).padStart(10),\n    ].join",
+          "lineNumber": 127
+        },
+        {
+          "caller": "printRow",
+          "callee": "row.name.padEnd",
+          "lineNumber": 128
+        },
+        {
+          "caller": "printRow",
+          "callee": "String(row.renders).padStart",
+          "lineNumber": 129
+        },
+        {
+          "caller": "printRow",
+          "callee": "String",
+          "lineNumber": 129
+        },
+        {
+          "caller": "printRow",
+          "callee": "fmt(row.totalMs).padStart",
+          "lineNumber": 130
+        },
+        {
+          "caller": "printRow",
+          "callee": "fmt",
+          "lineNumber": 130
+        },
+        {
+          "caller": "printRow",
+          "callee": "fmt(row.meanMs).padStart",
+          "lineNumber": 131
+        },
+        {
+          "caller": "printRow",
+          "callee": "fmt",
+          "lineNumber": 131
+        },
+        {
+          "caller": "printRow",
+          "callee": "fmt(row.p95Ms).padStart",
+          "lineNumber": 132
+        },
+        {
+          "caller": "printRow",
+          "callee": "fmt",
+          "lineNumber": 132
+        },
+        {
+          "caller": "printRow",
+          "callee": "fmt(row.maxMs).padStart",
+          "lineNumber": 133
+        },
+        {
+          "caller": "printRow",
+          "callee": "fmt",
+          "lineNumber": 133
+        },
+        {
+          "caller": "printRow",
+          "callee": "String(row.htmlBytes).padStart",
+          "lineNumber": 134
+        },
+        {
+          "caller": "printRow",
+          "callee": "String",
+          "lineNumber": 134
+        },
+        {
+          "caller": "main",
+          "callee": "buildReport",
+          "lineNumber": 140
+        },
+        {
+          "caller": "main",
+          "callee": "chunkText",
+          "lineNumber": 141
+        },
+        {
+          "caller": "main",
+          "callee": "simulateFlushes",
+          "lineNumber": 142
+        },
+        {
+          "caller": "main",
+          "callee": "simulateFlushes",
+          "lineNumber": 143
+        },
+        {
+          "caller": "main",
+          "callee": "renderMarkdown",
+          "lineNumber": 146
+        },
+        {
+          "caller": "main",
+          "callee": "report.slice",
+          "lineNumber": 146
+        },
+        {
+          "caller": "main",
+          "callee": "renderPlain",
+          "lineNumber": 147
+        },
+        {
+          "caller": "main",
+          "callee": "report.slice",
+          "lineNumber": 147
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 149
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 150
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 151
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 152
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 153
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 154
+        },
+        {
+          "caller": "main",
+          "callee": "[\n      'path'.padEnd(28),\n      'renders'.padStart(7),\n      'total_ms'.padStart(10),\n      'mean_ms'.padStart(9),\n      'p95_ms'.padStart(8),\n      'max_ms'.padStart(8),\n      'html_len'.padStart(10),\n    ].join",
+          "lineNumber": 155
+        },
+        {
+          "caller": "main",
+          "callee": "'path'.padEnd",
+          "lineNumber": 156
+        },
+        {
+          "caller": "main",
+          "callee": "'renders'.padStart",
+          "lineNumber": 157
+        },
+        {
+          "caller": "main",
+          "callee": "'total_ms'.padStart",
+          "lineNumber": 158
+        },
+        {
+          "caller": "main",
+          "callee": "'mean_ms'.padStart",
+          "lineNumber": 159
+        },
+        {
+          "caller": "main",
+          "callee": "'p95_ms'.padStart",
+          "lineNumber": 160
+        },
+        {
+          "caller": "main",
+          "callee": "'max_ms'.padStart",
+          "lineNumber": 161
+        },
+        {
+          "caller": "main",
+          "callee": "'html_len'.padStart",
+          "lineNumber": 162
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 165
+        },
+        {
+          "caller": "main",
+          "callee": "'-'.repeat",
+          "lineNumber": 165
+        },
+        {
+          "caller": "main",
+          "callee": "benchPath",
+          "lineNumber": 167
+        },
+        {
+          "caller": "main",
+          "callee": "benchPath",
+          "lineNumber": 168
+        },
+        {
+          "caller": "main",
+          "callee": "benchPath",
+          "lineNumber": 169
+        },
+        {
+          "caller": "main",
+          "callee": "benchPath",
+          "lineNumber": 170
+        },
+        {
+          "caller": "main",
+          "callee": "printRow",
+          "lineNumber": 172
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 174
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 175
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 176
+        },
+        {
+          "caller": "main",
+          "callee": "fmt",
+          "lineNumber": 176
+        },
+        {
+          "caller": "main",
+          "callee": "pct",
+          "lineNumber": 176
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 177
+        },
+        {
+          "caller": "main",
+          "callee": "pct",
+          "lineNumber": 177
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 178
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 179
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 180
+        },
+        {
+          "caller": "main",
+          "callee": "fmt",
+          "lineNumber": 180
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 181
+        },
+        {
+          "caller": "main",
+          "callee": "fmt",
+          "lineNumber": 181
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 182
+        },
+        {
+          "caller": "main",
+          "callee": "fmt",
+          "lineNumber": 182
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 183
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 184
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 10,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/agent-market.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/analysis-context.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 35,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/attribution-summary.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 205,
+      "nonEmptyLines": 190,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,1406 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/app/api/kline.py",
+      "type": "file",
+      "name": "kline.py",
+      "filePath": "backend/app/api/kline.py",
+      "summary": "实现 kline.py 中的 API 接口编排，连接请求处理与领域服务。",
+      "tags": [
+        "接口层",
+        "后端",
+        "源码"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:_gzip_payload",
+      "type": "function",
+      "name": "_gzip_payload",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        27,
+        59
+      ],
+      "summary": "定义 _gzip_payload，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:_minute_allowed",
+      "type": "function",
+      "name": "_minute_allowed",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        62,
+        72
+      ],
+      "summary": "定义 _minute_allowed，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:_name_pinyin_keys",
+      "type": "function",
+      "name": "_name_pinyin_keys",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        76,
+        89
+      ],
+      "summary": "定义 _name_pinyin_keys，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:_init_pinyin_dict",
+      "type": "function",
+      "name": "_init_pinyin_dict",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        92,
+        111
+      ],
+      "summary": "定义 _init_pinyin_dict，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:_match_pinyin",
+      "type": "function",
+      "name": "_match_pinyin",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        117,
+        119
+      ],
+      "summary": "定义 _match_pinyin，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:search_instruments",
+      "type": "function",
+      "name": "search_instruments",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        123,
+        204
+      ],
+      "summary": "定义 search_instruments，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:instruments_names",
+      "type": "function",
+      "name": "instruments_names",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        208,
+        213
+      ],
+      "summary": "定义 instruments_names，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:_get_stock_info",
+      "type": "function",
+      "name": "_get_stock_info",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        216,
+        238
+      ],
+      "summary": "定义 _get_stock_info，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:_get_asset_info",
+      "type": "function",
+      "name": "_get_asset_info",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        241,
+        253
+      ],
+      "summary": "定义 _get_asset_info，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:_get_price_limit_info",
+      "type": "function",
+      "name": "_get_price_limit_info",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        256,
+        314
+      ],
+      "summary": "定义 _get_price_limit_info，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:_get_previous_closes",
+      "type": "function",
+      "name": "_get_previous_closes",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        317,
+        355
+      ],
+      "summary": "定义 _get_previous_closes，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:get_daily",
+      "type": "function",
+      "name": "get_daily",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        359,
+        419
+      ],
+      "summary": "定义 get_daily，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "数据读取",
+        "业务逻辑",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:_attach_ext",
+      "type": "function",
+      "name": "_attach_ext",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        422,
+        459
+      ],
+      "summary": "定义 _attach_ext，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:_maybe_inject_live_candle",
+      "type": "function",
+      "name": "_maybe_inject_live_candle",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        462,
+        538
+      ],
+      "summary": "定义 _maybe_inject_live_candle，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:get_daily_batch",
+      "type": "function",
+      "name": "get_daily_batch",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        548,
+        608
+      ],
+      "summary": "定义 get_daily_batch，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "数据读取",
+        "业务逻辑",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:get_minute_batch",
+      "type": "function",
+      "name": "get_minute_batch",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        612,
+        839
+      ],
+      "summary": "定义 get_minute_batch，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "数据读取",
+        "业务逻辑",
+        "函数"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:get_minute_range",
+      "type": "function",
+      "name": "get_minute_range",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        843,
+        902
+      ],
+      "summary": "定义 get_minute_range，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "数据读取",
+        "业务逻辑",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:get_minute",
+      "type": "function",
+      "name": "get_minute",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        906,
+        1020
+      ],
+      "summary": "定义 get_minute，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "数据读取",
+        "业务逻辑",
+        "函数"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:sync_symbol",
+      "type": "function",
+      "name": "sync_symbol",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        1024,
+        1033
+      ],
+      "summary": "定义 sync_symbol，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:sync_batch",
+      "type": "function",
+      "name": "sync_batch",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        1037,
+        1045
+      ],
+      "summary": "定义 sync_batch，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:refresh_views",
+      "type": "function",
+      "name": "refresh_views",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        1049,
+        1054
+      ],
+      "summary": "定义 refresh_views，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:sync_minute",
+      "type": "function",
+      "name": "sync_minute",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        1058,
+        1163
+      ],
+      "summary": "定义 sync_minute，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:sync_minute_single",
+      "type": "function",
+      "name": "sync_minute_single",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        1167,
+        1210
+      ],
+      "summary": "定义 sync_minute_single，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:_czsc_daily_analysis_window",
+      "type": "function",
+      "name": "_czsc_daily_analysis_window",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        1213,
+        1237
+      ],
+      "summary": "定义 _czsc_daily_analysis_window，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:sync_czsc_minutes",
+      "type": "function",
+      "name": "sync_czsc_minutes",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        1241,
+        1333
+      ],
+      "summary": "定义 sync_czsc_minutes，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:clear_minute",
+      "type": "function",
+      "name": "clear_minute",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        1337,
+        1373
+      ],
+      "summary": "定义 clear_minute，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:extend_history",
+      "type": "function",
+      "name": "extend_history",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        1377,
+        1447
+      ],
+      "summary": "定义 extend_history，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:repair_daily",
+      "type": "function",
+      "name": "repair_daily",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        1451,
+        1534
+      ],
+      "summary": "定义 repair_daily，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/app/api/kline.py:rebuild_enriched",
+      "type": "function",
+      "name": "rebuild_enriched",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        1538,
+        1618
+      ],
+      "summary": "定义 rebuild_enriched，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/app/api/kline.py:DailyBatchRequest",
+      "type": "class",
+      "name": "DailyBatchRequest",
+      "filePath": "backend/app/api/kline.py",
+      "lineRange": [
+        541,
+        544
+      ],
+      "summary": "定义 DailyBatchRequest 类型，封装相关状态与协作行为。",
+      "tags": [
+        "类型",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/app/api/market_recap.py",
+      "type": "file",
+      "name": "market_recap.py",
+      "filePath": "backend/app/api/market_recap.py",
+      "summary": "实现 market_recap.py 中的 API 接口编排，连接请求处理与领域服务。",
+      "tags": [
+        "接口层",
+        "后端",
+        "源码"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/market_recap.py:get_dragon_tiger",
+      "type": "function",
+      "name": "get_dragon_tiger",
+      "filePath": "backend/app/api/market_recap.py",
+      "lineRange": [
+        37,
+        53
+      ],
+      "summary": "定义 get_dragon_tiger，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "数据读取",
+        "业务逻辑",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/market_recap.py:get_auction_benchmark",
+      "type": "function",
+      "name": "get_auction_benchmark",
+      "filePath": "backend/app/api/market_recap.py",
+      "lineRange": [
+        57,
+        73
+      ],
+      "summary": "定义 get_auction_benchmark，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "数据读取",
+        "业务逻辑",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/market_recap.py:analyze_market",
+      "type": "function",
+      "name": "analyze_market",
+      "filePath": "backend/app/api/market_recap.py",
+      "lineRange": [
+        77,
+        110
+      ],
+      "summary": "定义 analyze_market，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/app/api/market_recap.py:list_reports",
+      "type": "function",
+      "name": "list_reports",
+      "filePath": "backend/app/api/market_recap.py",
+      "lineRange": [
+        128,
+        130
+      ],
+      "summary": "定义 list_reports，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "数据读取",
+        "业务逻辑",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/market_recap.py:save_report",
+      "type": "function",
+      "name": "save_report",
+      "filePath": "backend/app/api/market_recap.py",
+      "lineRange": [
+        134,
+        151
+      ],
+      "summary": "定义 save_report，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "数据写入",
+        "业务逻辑",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/app/api/market_recap.py:delete_report",
+      "type": "function",
+      "name": "delete_report",
+      "filePath": "backend/app/api/market_recap.py",
+      "lineRange": [
+        155,
+        158
+      ],
+      "summary": "定义 delete_report，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/api/market_recap.py:AnalyzeRequest",
+      "type": "class",
+      "name": "AnalyzeRequest",
+      "filePath": "backend/app/api/market_recap.py",
+      "lineRange": [
+        30,
+        33
+      ],
+      "summary": "定义 AnalyzeRequest 类型，封装相关状态与协作行为。",
+      "tags": [
+        "类型",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/app/api/market_recap.py:SaveReportRequest",
+      "type": "class",
+      "name": "SaveReportRequest",
+      "filePath": "backend/app/api/market_recap.py",
+      "lineRange": [
+        117,
+        124
+      ],
+      "summary": "定义 SaveReportRequest 类型，封装相关状态与协作行为。",
+      "tags": [
+        "数据写入",
+        "业务逻辑",
+        "类型"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_gzip_payload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_gzip_payload",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_minute_allowed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_minute_allowed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_name_pinyin_keys",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_name_pinyin_keys",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_init_pinyin_dict",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_init_pinyin_dict",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_match_pinyin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_match_pinyin",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:search_instruments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:search_instruments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:instruments_names",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:instruments_names",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_get_stock_info",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_get_stock_info",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_get_asset_info",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_get_asset_info",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_get_price_limit_info",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_get_price_limit_info",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_get_previous_closes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_get_previous_closes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:get_daily",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:get_daily",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_attach_ext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_attach_ext",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_maybe_inject_live_candle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_maybe_inject_live_candle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:get_daily_batch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:get_daily_batch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:get_minute_batch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:get_minute_batch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:get_minute_range",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:get_minute_range",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:get_minute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:get_minute",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:sync_symbol",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:sync_symbol",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:sync_batch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:sync_batch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:refresh_views",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:refresh_views",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:sync_minute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:sync_minute",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:sync_minute_single",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:sync_minute_single",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_czsc_daily_analysis_window",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:_czsc_daily_analysis_window",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:sync_czsc_minutes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:sync_czsc_minutes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:clear_minute",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:clear_minute",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:extend_history",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:extend_history",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:repair_daily",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:repair_daily",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:rebuild_enriched",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "function:backend/app/api/kline.py:rebuild_enriched",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "class:backend/app/api/kline.py:DailyBatchRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "class:backend/app/api/kline.py:DailyBatchRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/app/db_safe.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/app/indicators/pipeline.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/app/market_time.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/app/price_limits.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/app/services/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/app/services/kline_sync.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/app/db_safe.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/app/indicators/pipeline.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/app/market_time.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/app/price_limits.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/app/services/__init__.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/app/services/kline_sync.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/app/main.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/tests/test_instrument_search.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/tests/test_kline_hot_path_memory.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/tests/test_kline_minute_live.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/api/kline.py",
+      "target": "file:backend/tests/test_price_limits.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "function:backend/app/api/market_recap.py:get_dragon_tiger",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "function:backend/app/api/market_recap.py:get_dragon_tiger",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "function:backend/app/api/market_recap.py:get_auction_benchmark",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "function:backend/app/api/market_recap.py:get_auction_benchmark",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "function:backend/app/api/market_recap.py:analyze_market",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "function:backend/app/api/market_recap.py:analyze_market",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "function:backend/app/api/market_recap.py:list_reports",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "function:backend/app/api/market_recap.py:list_reports",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "function:backend/app/api/market_recap.py:save_report",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "function:backend/app/api/market_recap.py:save_report",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "function:backend/app/api/market_recap.py:delete_report",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "function:backend/app/api/market_recap.py:delete_report",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "class:backend/app/api/market_recap.py:AnalyzeRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "class:backend/app/api/market_recap.py:AnalyzeRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "class:backend/app/api/market_recap.py:SaveReportRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "class:backend/app/api/market_recap.py:SaveReportRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "file:backend/app/services/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "file:backend/app/services/auction_benchmark.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "file:backend/app/services/dragon_tiger.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "file:backend/app/services/market_recap.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "file:backend/app/services/market_recap_reports.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "file:backend/app/services/__init__.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "file:backend/app/services/auction_benchmark.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "file:backend/app/services/dragon_tiger.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "file:backend/app/services/market_recap.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "file:backend/app/services/market_recap_reports.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/app/api/market_recap.py",
+      "target": "file:backend/app/main.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

@@ -1,0 +1,6770 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 15,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 15,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 15,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "backend/app/wyckoff/v2/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 14,
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/app/wyckoff/v2/backtest.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 407,
+      "nonEmptyLines": 378,
+      "functions": [
+        {
+          "name": "_round",
+          "startLine": 44,
+          "endLine": 45,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "_outcome",
+          "startLine": 48,
+          "endLine": 78,
+          "params": [
+            "frame",
+            "signal_index",
+            "horizon",
+            "invalidation"
+          ]
+        },
+        {
+          "name": "_percentile",
+          "startLine": 81,
+          "endLine": 87,
+          "params": [
+            "values",
+            "fraction"
+          ]
+        },
+        {
+          "name": "_summarize_outcomes",
+          "startLine": 90,
+          "endLine": 146,
+          "params": [
+            "outcomes"
+          ]
+        },
+        {
+          "name": "_feature_profile",
+          "startLine": 149,
+          "endLine": 162,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "run_event_backtest_frames",
+          "startLine": 165,
+          "endLine": 366,
+          "params": [
+            "sources",
+            "cfg",
+            "horizons",
+            "entries",
+            "benchmark_return",
+            "market_regime",
+            "event_sink",
+            "entry_start",
+            "entry_end",
+            "experiment_variants"
+          ]
+        },
+        {
+          "name": "run_event_backtest",
+          "startLine": 369,
+          "endLine": 381,
+          "params": [
+            "df_map",
+            "cfg",
+            "horizons",
+            "entries"
+          ]
+        },
+        {
+          "name": "run_parameter_grid",
+          "startLine": 384,
+          "endLine": 407,
+          "params": [
+            "df_map",
+            "parameter_values",
+            "base_cfg",
+            "horizons"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_round",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "_outcome",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "_percentile",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "_summarize_outcomes",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "_feature_profile",
+          "line": 149,
+          "isDefault": false
+        },
+        {
+          "name": "run_event_backtest_frames",
+          "line": 165,
+          "isDefault": false
+        },
+        {
+          "name": "run_event_backtest",
+          "line": 369,
+          "isDefault": false
+        },
+        {
+          "name": "run_parameter_grid",
+          "line": 384,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_round",
+          "callee": "round",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_round",
+          "callee": "float",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_outcome",
+          "callee": "int",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_outcome",
+          "callee": "len",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_outcome",
+          "callee": "len",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_outcome",
+          "callee": "float",
+          "lineNumber": 64
+        },
+        {
+          "caller": "_outcome",
+          "callee": "pd.notna",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_outcome",
+          "callee": "bool",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_outcome",
+          "callee": "(future[\"low\"] <= float(invalidation)).any",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_outcome",
+          "callee": "float",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_outcome",
+          "callee": "pd.notna",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_outcome",
+          "callee": "float",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_outcome",
+          "callee": "float",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_outcome",
+          "callee": "float",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_outcome",
+          "callee": "future[\"high\"].max",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_outcome",
+          "callee": "float",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_outcome",
+          "callee": "future[\"low\"].min",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_percentile",
+          "callee": "ValueError",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_percentile",
+          "callee": "sorted",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_percentile",
+          "callee": "len",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_percentile",
+          "callee": "int",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_percentile",
+          "callee": "min",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_percentile",
+          "callee": "int",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_percentile",
+          "callee": "len",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "float",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "float",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "float",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "float",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "item.get",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "len",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "mean",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "median",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "len",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "len",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "len",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "len",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "mean",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "mean",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_percentile",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_percentile",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "pstdev",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 134
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "sum",
+          "lineNumber": 134
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "abs",
+          "lineNumber": 134
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "sum",
+          "lineNumber": 134
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 135
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "median",
+          "lineNumber": 135
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 136
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "median",
+          "lineNumber": 136
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_percentile",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 138
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_percentile",
+          "lineNumber": 138
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "max",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "min",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "len",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "str",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "len",
+          "lineNumber": 142
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "str",
+          "lineNumber": 142
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "sum",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "bool",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "len",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "mean",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "_round",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_summarize_outcomes",
+          "callee": "median",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "row.items",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "isinstance",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "isinstance",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "pd.notna",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "values.setdefault(key, []).append",
+          "lineNumber": 155
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "values.setdefault",
+          "lineNumber": 155
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "float",
+          "lineNumber": 155
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "len",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "_round",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "mean",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "_round",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "median",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "_round",
+          "lineNumber": 159
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "_percentile",
+          "lineNumber": 159
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "_round",
+          "lineNumber": 159
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "_percentile",
+          "lineNumber": 159
+        },
+        {
+          "caller": "_feature_profile",
+          "callee": "values.items",
+          "lineNumber": 161
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "WyckoffV2Config",
+          "lineNumber": 184
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "tuple",
+          "lineNumber": 185
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "sorted",
+          "lineNumber": 185
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "int",
+          "lineNumber": 185
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "int",
+          "lineNumber": 185
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "set",
+          "lineNumber": 189
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "set",
+          "lineNumber": 190
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "sorted",
+          "lineNumber": 202
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "set",
+          "lineNumber": 202
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "set",
+          "lineNumber": 202
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "ValueError",
+          "lineNumber": 204
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "', '.join",
+          "lineNumber": 204
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "tuple",
+          "lineNumber": 208
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "sorted",
+          "lineNumber": 208
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "set",
+          "lineNumber": 208
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "prepare_ohlcv",
+          "lineNumber": 213
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "analyze_wyckoff_v2",
+          "lineNumber": 214
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "str",
+          "lineNumber": 216
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "str",
+          "lineNumber": 216
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "event_symbols.add",
+          "lineNumber": 219
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "event_ranges.add",
+          "lineNumber": 220
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "events_per_range.get",
+          "lineNumber": 221
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "event.event_type.startswith",
+          "lineNumber": 222
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "spring_profiles.setdefault(taxonomy_key, []).append",
+          "lineNumber": 226
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "spring_profiles.setdefault",
+          "lineNumber": 226
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "analysis.diagnostics.get(\"funnel\", {}).items",
+          "lineNumber": 227
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "analysis.diagnostics.get",
+          "lineNumber": 227
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "funnel.get",
+          "lineNumber": 228
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "int",
+          "lineNumber": 228
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "analysis.diagnostics.get(\"rejection_reasons\", {}).items",
+          "lineNumber": 229
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "analysis.diagnostics.get",
+          "lineNumber": 229
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "rejection_reasons.get",
+          "lineNumber": 230
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "int",
+          "lineNumber": 230
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "events_per_symbol.append",
+          "lineNumber": 231
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "len",
+          "lineNumber": 231
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "sorted",
+          "lineNumber": 233
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "pd.Timestamp",
+          "lineNumber": 233
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "pairwise",
+          "lineNumber": 234
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "int",
+          "lineNumber": 237
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "str",
+          "lineNumber": 238
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "pd.Timestamp(value).date",
+          "lineNumber": 238
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "pd.Timestamp",
+          "lineNumber": 238
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "enumerate",
+          "lineNumber": 238
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "date.fromisoformat",
+          "lineNumber": 242
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "total_entries.get",
+          "lineNumber": 247
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "indexes.get",
+          "lineNumber": 248
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "_outcome",
+          "lineNumber": 253
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "benchmark_return",
+          "lineNumber": 255
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "float",
+          "lineNumber": 258
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "outcome.update",
+          "lineNumber": 259
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "market_regime",
+          "lineNumber": 261
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "grouped.setdefault(entry.entry_type, {}).setdefault(horizon, []).append",
+          "lineNumber": 263
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "grouped.setdefault(entry.entry_type, {}).setdefault",
+          "lineNumber": 263
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "grouped.setdefault",
+          "lineNumber": 263
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "regime_grouped.setdefault(entry.entry_type, {}).setdefault(regime, {}).setdefault(horizon, []).append",
+          "lineNumber": 264
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "regime_grouped.setdefault(entry.entry_type, {}).setdefault(regime, {}).setdefault",
+          "lineNumber": 264
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "regime_grouped.setdefault(entry.entry_type, {}).setdefault",
+          "lineNumber": 264
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "regime_grouped.setdefault",
+          "lineNumber": 264
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "str",
+          "lineNumber": 265
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "next",
+          "lineNumber": 267
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "event_sink",
+          "lineNumber": 269
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "sorted",
+          "lineNumber": 284
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "set",
+          "lineNumber": 284
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "set",
+          "lineNumber": 284
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "total_entries.get",
+          "lineNumber": 287
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "str",
+          "lineNumber": 289
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "_summarize_outcomes",
+          "lineNumber": 289
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "grouped.get(entry_type, {}).get",
+          "lineNumber": 289
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "grouped.get",
+          "lineNumber": 289
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "timedelta",
+          "lineNumber": 297
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "int",
+          "lineNumber": 297
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "str",
+          "lineNumber": 300
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "str",
+          "lineNumber": 301
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "timedelta",
+          "lineNumber": 301
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "str",
+          "lineNumber": 303
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "_summarize_outcomes",
+          "lineNumber": 303
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "str",
+          "lineNumber": 303
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "str",
+          "lineNumber": 303
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "horizons_map.items",
+          "lineNumber": 303
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "grouped.items",
+          "lineNumber": 304
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "str",
+          "lineNumber": 307
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "_summarize_outcomes",
+          "lineNumber": 307
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "str",
+          "lineNumber": 307
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "str",
+          "lineNumber": 307
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "horizons_map.items",
+          "lineNumber": 307
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "grouped.items",
+          "lineNumber": 308
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "list",
+          "lineNumber": 321
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "sum",
+          "lineNumber": 325
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "spring_outcomes.values",
+          "lineNumber": 325
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "_round",
+          "lineNumber": 327
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "sum",
+          "lineNumber": 327
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "spring_outcomes.values",
+          "lineNumber": 327
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "sum",
+          "lineNumber": 327
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "spring_outcomes.values",
+          "lineNumber": 327
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "spring_outcomes.items",
+          "lineNumber": 328
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "_feature_profile",
+          "lineNumber": 332
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "sorted",
+          "lineNumber": 332
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "spring_profiles.items",
+          "lineNumber": 332
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "_round",
+          "lineNumber": 337
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "max",
+          "lineNumber": 337
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "funnel.get",
+          "lineNumber": 337
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "funnel.items",
+          "lineNumber": 339
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "_round",
+          "lineNumber": 342
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "max",
+          "lineNumber": 342
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "sum",
+          "lineNumber": 342
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "rejection_reasons.values",
+          "lineNumber": 342
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "sorted",
+          "lineNumber": 343
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "rejection_reasons.items",
+          "lineNumber": 343
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "list",
+          "lineNumber": 345
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "str",
+          "lineNumber": 349
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "_summarize_outcomes",
+          "lineNumber": 349
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "horizons_map.items",
+          "lineNumber": 349
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "regimes.items",
+          "lineNumber": 350
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "regime_grouped.items",
+          "lineNumber": 352
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "sum",
+          "lineNumber": 355
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "len",
+          "lineNumber": 356
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "len",
+          "lineNumber": 357
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "_round",
+          "lineNumber": 358
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "median",
+          "lineNumber": 358
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "max",
+          "lineNumber": 359
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "_round",
+          "lineNumber": 360
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "mean",
+          "lineNumber": 360
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "events_per_range.values",
+          "lineNumber": 360
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "_round",
+          "lineNumber": 363
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "sum",
+          "lineNumber": 363
+        },
+        {
+          "caller": "run_event_backtest_frames",
+          "callee": "asdict",
+          "lineNumber": 365
+        },
+        {
+          "caller": "run_event_backtest",
+          "callee": "run_event_backtest_frames",
+          "lineNumber": 381
+        },
+        {
+          "caller": "run_event_backtest",
+          "callee": "df_map.items",
+          "lineNumber": 381
+        },
+        {
+          "caller": "run_parameter_grid",
+          "callee": "isinstance",
+          "lineNumber": 392
+        },
+        {
+          "caller": "run_parameter_grid",
+          "callee": "TypeError",
+          "lineNumber": 393
+        },
+        {
+          "caller": "run_parameter_grid",
+          "callee": "WyckoffV2Config",
+          "lineNumber": 394
+        },
+        {
+          "caller": "run_parameter_grid",
+          "callee": "sorted",
+          "lineNumber": 395
+        },
+        {
+          "caller": "run_parameter_grid",
+          "callee": "hasattr",
+          "lineNumber": 396
+        },
+        {
+          "caller": "run_parameter_grid",
+          "callee": "ValueError",
+          "lineNumber": 398
+        },
+        {
+          "caller": "run_parameter_grid",
+          "callee": "', '.join",
+          "lineNumber": 398
+        },
+        {
+          "caller": "run_parameter_grid",
+          "callee": "tuple",
+          "lineNumber": 399
+        },
+        {
+          "caller": "run_parameter_grid",
+          "callee": "any",
+          "lineNumber": 400
+        },
+        {
+          "caller": "run_parameter_grid",
+          "callee": "ValueError",
+          "lineNumber": 401
+        },
+        {
+          "caller": "run_parameter_grid",
+          "callee": "product",
+          "lineNumber": 403
+        },
+        {
+          "caller": "run_parameter_grid",
+          "callee": "dict",
+          "lineNumber": 404
+        },
+        {
+          "caller": "run_parameter_grid",
+          "callee": "zip",
+          "lineNumber": 404
+        },
+        {
+          "caller": "run_parameter_grid",
+          "callee": "replace",
+          "lineNumber": 405
+        },
+        {
+          "caller": "run_parameter_grid",
+          "callee": "reports.append",
+          "lineNumber": 406
+        },
+        {
+          "caller": "run_parameter_grid",
+          "callee": "run_event_backtest",
+          "lineNumber": 406
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/app/wyckoff/v2/config.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 67,
+      "classes": [
+        {
+          "name": "WyckoffV2Config",
+          "startLine": 15,
+          "endLine": 79,
+          "methods": [],
+          "properties": [
+            "range_lookback",
+            "range_min_bars",
+            "atr_window",
+            "swing_window",
+            "range_width_atr_min",
+            "range_width_atr_max",
+            "range_width_pct_ceiling",
+            "range_max_drift_pct",
+            "range_min_tests",
+            "tolerance_atr_factor",
+            "tolerance_pct_floor",
+            "spring_penetration_atr_max",
+            "spring_min_clv",
+            "spring_high_effort_ratio",
+            "spring_low_supply_ratio",
+            "spring_test_max_bars",
+            "spring_test_normal_volume_window",
+            "spring_test_normal_volume_ratio",
+            "spring_test_max_distance_atr",
+            "spring_test_spread_ratio_max",
+            "spring_test_min_clv",
+            "sos_breakout_atr_min",
+            "sos_spread_atr_min",
+            "sos_min_clv",
+            "sos_volume_lookback",
+            "sos_volume_percentile_min",
+            "sos_follow_through_max_bars",
+            "lps_max_bars_after_sos",
+            "lps_pullback_distance_atr",
+            "lps_close_below_creek_atr",
+            "lps_pullback_depth_atr_max",
+            "lps_volume_to_sos_max",
+            "lps_normal_volume_window",
+            "lps_volume_to_normal_max",
+            "lps_turning_lookback",
+            "demand_confirm_atr_buffer",
+            "demand_confirm_min_clv",
+            "demand_confirm_volume_window",
+            "demand_confirm_swing_window",
+            "sos_held_retention_thresholds",
+            "lps_shallow_retracement_min",
+            "lps_shallow_retracement_max",
+            "lps_shallow_min_impulse_atr",
+            "lps_shallow_volume_to_sos_max",
+            "lps_shallow_volume_to_normal_max",
+            "market_regime_return_window",
+            "market_regime_bull_return_pct",
+            "market_regime_bear_return_pct",
+            "evr_volume_lookback",
+            "evr_effort_min",
+            "evr_result_atr_max",
+            "evr_near_boundary_atr",
+            "evr_bullish_min_clv",
+            "evr_bearish_max_clv"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WyckoffV2Config",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/app/wyckoff/v2/diagnostics.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "summarize_events",
+          "startLine": 8,
+          "endLine": 28,
+          "params": [
+            "events",
+            "bars",
+            "range_evaluations",
+            "funnel",
+            "rejection_reasons"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "summarize_events",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "summarize_events",
+          "callee": "event_counts.get",
+          "lineNumber": 19
+        },
+        {
+          "caller": "summarize_events",
+          "callee": "state_counts.get",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/app/wyckoff/v2/engine.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 642,
+      "nonEmptyLines": 609,
+      "functions": [
+        {
+          "name": "_date",
+          "startLine": 22,
+          "endLine": 23,
+          "params": [
+            "frame",
+            "index"
+          ]
+        },
+        {
+          "name": "_event_id",
+          "startLine": 26,
+          "endLine": 27,
+          "params": [
+            "symbol",
+            "event_type",
+            "occurred_at"
+          ]
+        },
+        {
+          "name": "_event",
+          "startLine": 30,
+          "endLine": 56,
+          "params": [
+            "symbol",
+            "event_type",
+            "state",
+            "occurred_at",
+            "trading_range",
+            "parent_event_id",
+            "invalidation",
+            "reason",
+            "metrics",
+            "research"
+          ]
+        },
+        {
+          "name": "_replace_event",
+          "startLine": 59,
+          "endLine": 65,
+          "params": [
+            "events",
+            "event_id"
+          ]
+        },
+        {
+          "name": "_bar",
+          "startLine": 68,
+          "endLine": 70,
+          "params": [
+            "frame",
+            "index"
+          ]
+        },
+        {
+          "name": "_expired",
+          "startLine": 73,
+          "endLine": 74,
+          "params": [
+            "index",
+            "start_index",
+            "bars"
+          ]
+        },
+        {
+          "name": "_ranges_match",
+          "startLine": 77,
+          "endLine": 88,
+          "params": [
+            "current",
+            "previous"
+          ]
+        },
+        {
+          "name": "_identify_range_id",
+          "startLine": 91,
+          "endLine": 102,
+          "params": [
+            "symbol",
+            "current",
+            "known_ranges"
+          ]
+        },
+        {
+          "name": "analyze_wyckoff_v2",
+          "startLine": 105,
+          "endLine": 642,
+          "params": [
+            "symbol",
+            "source",
+            "cfg",
+            "full_replay"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_date",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "_event_id",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "_event",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "_replace_event",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "_bar",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "_expired",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "_ranges_match",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "_identify_range_id",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "analyze_wyckoff_v2",
+          "line": 105,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_date",
+          "callee": "str",
+          "lineNumber": 23
+        },
+        {
+          "caller": "_date",
+          "callee": "pd.Timestamp(frame[\"date\"].iloc[index]).date",
+          "lineNumber": 23
+        },
+        {
+          "caller": "_date",
+          "callee": "pd.Timestamp",
+          "lineNumber": 23
+        },
+        {
+          "caller": "_event",
+          "callee": "WyckoffEvent",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_event",
+          "callee": "_event_id",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_event",
+          "callee": "finite_research",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_replace_event",
+          "callee": "enumerate",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_replace_event",
+          "callee": "replace",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_replace_event",
+          "callee": "KeyError",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_bar",
+          "callee": "tuple",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_bar",
+          "callee": "float",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_expired",
+          "callee": "max",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_expired",
+          "callee": "int",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_ranges_match",
+          "callee": "max",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_ranges_match",
+          "callee": "abs",
+          "lineNumber": 80
+        },
+        {
+          "caller": "_ranges_match",
+          "callee": "abs",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_ranges_match",
+          "callee": "pd.Timestamp",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_ranges_match",
+          "callee": "pd.Timestamp",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_ranges_match",
+          "callee": "pd.Timestamp",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_ranges_match",
+          "callee": "pd.Timestamp",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_ranges_match",
+          "callee": "max",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_ranges_match",
+          "callee": "min",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_ranges_match",
+          "callee": "max",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_ranges_match",
+          "callee": "max",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_ranges_match",
+          "callee": "min",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_identify_range_id",
+          "callee": "reversed",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_identify_range_id",
+          "callee": "_ranges_match",
+          "lineNumber": 97
+        },
+        {
+          "caller": "_identify_range_id",
+          "callee": "replace",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_identify_range_id",
+          "callee": "len",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_identify_range_id",
+          "callee": "replace",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_identify_range_id",
+          "callee": "known_ranges.append",
+          "lineNumber": 101
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "WyckoffV2Config",
+          "lineNumber": 117
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "prepare_ohlcv",
+          "lineNumber": 118
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "max",
+          "lineNumber": 122
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "len",
+          "lineNumber": 126
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "frame.tail(replay_tail).reset_index",
+          "lineNumber": 127
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "frame.tail",
+          "lineNumber": 127
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "prepare_range_inputs",
+          "lineNumber": 128
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "max",
+          "lineNumber": 129
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "max",
+          "lineNumber": 130
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "len",
+          "lineNumber": 130
+        },
+        {
+          "caller": "reject",
+          "callee": "rejection_reasons.get",
+          "lineNumber": 147
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "range",
+          "lineNumber": 149
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "len",
+          "lineNumber": 149
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "identify_range_before",
+          "lineNumber": 150
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_identify_range_id",
+          "lineNumber": 154
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_date",
+          "lineNumber": 155
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 156
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_bar",
+          "lineNumber": 159
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "list",
+          "lineNumber": 164
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "spring_trackers.items",
+          "lineNumber": 164
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "is_terminal",
+          "lineNumber": 166
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 170
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_expired",
+          "lineNumber": 173
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 174
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_expired",
+          "lineNumber": 176
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "tracker.get",
+          "lineNumber": 177
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 178
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "median_volume_before",
+          "lineNumber": 180
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "abs",
+          "lineNumber": 185
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "clv",
+          "lineNumber": 192
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 198
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "test_snapshot",
+          "lineNumber": 203
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "test_snapshot",
+          "lineNumber": 214
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 222
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 229
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "tracker.update",
+          "lineNumber": 235
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entries.append",
+          "lineNumber": 236
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entry_from_event",
+          "lineNumber": 237
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 246
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "median_volume_before",
+          "lineNumber": 247
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "clv",
+          "lineNumber": 248
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "numeric",
+          "lineNumber": 249
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 250
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "structure_highs.max",
+          "lineNumber": 250
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 250
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 253
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 263
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entries.append",
+          "lineNumber": 265
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entry_from_event",
+          "lineNumber": 266
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 277
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "variants.items",
+          "lineNumber": 279
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "variants.items",
+          "lineNumber": 283
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entries.append",
+          "lineNumber": 286
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entry_from_event",
+          "lineNumber": 287
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "variant.lower",
+          "lineNumber": 289
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 298
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "list",
+          "lineNumber": 302
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "sos_trackers.items",
+          "lineNumber": 302
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "max",
+          "lineNumber": 309
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 309
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "tracker.setdefault(\"retentions\", []).append",
+          "lineNumber": 311
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "tracker.setdefault",
+          "lineNumber": 311
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "tracker.setdefault(\"closes\", []).append",
+          "lineNumber": 312
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "tracker.setdefault",
+          "lineNumber": 312
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "min",
+          "lineNumber": 315
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "sum",
+          "lineNumber": 316
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "len",
+          "lineNumber": 316
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "min",
+          "lineNumber": 317
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "tracker.get",
+          "lineNumber": 317
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "any",
+          "lineNumber": 318
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "tracker.get",
+          "lineNumber": 318
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 320
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 323
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "reject",
+          "lineNumber": 324
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "max",
+          "lineNumber": 328
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 328
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 329
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_expired",
+          "lineNumber": 337
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 338
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "reject",
+          "lineNumber": 339
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "list",
+          "lineNumber": 344
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "sos_trackers.items",
+          "lineNumber": 344
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "sos_tracker.get",
+          "lineNumber": 346
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_expired",
+          "lineNumber": 348
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "reject",
+          "lineNumber": 350
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "is_terminal",
+          "lineNumber": 352
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "reject",
+          "lineNumber": 353
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 354
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "lps_trackers.get",
+          "lineNumber": 362
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_event",
+          "lineNumber": 365
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "events.append",
+          "lineNumber": 375
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "is_terminal",
+          "lineNumber": 381
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 383
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 384
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "reject",
+          "lineNumber": 385
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "numeric",
+          "lineNumber": 388
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "numeric",
+          "lineNumber": 389
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 390
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "pullback_lows.min",
+          "lineNumber": 390
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 391
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "pullback_volumes.median",
+          "lineNumber": 391
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 391
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "median_volume_before",
+          "lineNumber": 392
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 393
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "pullback_volumes.median",
+          "lineNumber": 393
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 393
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 395
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "reject",
+          "lineNumber": 396
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 404
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "reject",
+          "lineNumber": 417
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "reject",
+          "lineNumber": 419
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "numeric",
+          "lineNumber": 420
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "max",
+          "lineNumber": 420
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 421
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "previous_highs.max",
+          "lineNumber": 421
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 422
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entries.append",
+          "lineNumber": 424
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entry_from_event",
+          "lineNumber": 425
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 430
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entries.append",
+          "lineNumber": 435
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entry_from_event",
+          "lineNumber": 436
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 441
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "numeric",
+          "lineNumber": 445
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 446
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "pullback_swing_highs.max",
+          "lineNumber": 446
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entries.append",
+          "lineNumber": 447
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entry_from_event",
+          "lineNumber": 448
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 453
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 457
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "parent.research.get",
+          "lineNumber": 457
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "parent.research.get",
+          "lineNumber": 457
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entries.append",
+          "lineNumber": 460
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entry_from_event",
+          "lineNumber": 461
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "int",
+          "lineNumber": 463
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 466
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "list",
+          "lineNumber": 477
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "sos_trackers.items",
+          "lineNumber": 477
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "sos_tracker.get",
+          "lineNumber": 479
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_expired",
+          "lineNumber": 481
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "shallow_lps_trackers.setdefault",
+          "lineNumber": 484
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 486
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "tracker.get",
+          "lineNumber": 488
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "reject",
+          "lineNumber": 492
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "max",
+          "lineNumber": 494
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 494
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 495
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 498
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "tracker.get",
+          "lineNumber": 499
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_event",
+          "lineNumber": 502
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "events.append",
+          "lineNumber": 513
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "tracker.update",
+          "lineNumber": 514
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "reject",
+          "lineNumber": 518
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "int",
+          "lineNumber": 522
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "numeric",
+          "lineNumber": 523
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 524
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "pullback_volumes.median",
+          "lineNumber": 524
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 524
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "median_volume_before",
+          "lineNumber": 525
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 526
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "pullback_volumes.median",
+          "lineNumber": 526
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 526
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "reject",
+          "lineNumber": 528
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "reject",
+          "lineNumber": 531
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "numeric",
+          "lineNumber": 533
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "max",
+          "lineNumber": 533
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "float",
+          "lineNumber": 534
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "previous_highs.max",
+          "lineNumber": 534
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_replace_event",
+          "lineNumber": 535
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entries.append",
+          "lineNumber": 543
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entry_from_event",
+          "lineNumber": 544
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "spring_candidate",
+          "lineNumber": 559
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "any",
+          "lineNumber": 560
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "tracker_event.event_type.startswith",
+          "lineNumber": 561
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "is_terminal",
+          "lineNumber": 563
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "spring_trackers.values",
+          "lineNumber": 564
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_event",
+          "lineNumber": 569
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "spring_snapshot",
+          "lineNumber": 578
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "events.append",
+          "lineNumber": 580
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entries.append",
+          "lineNumber": 589
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "entry_from_event",
+          "lineNumber": 590
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "sos_candidate",
+          "lineNumber": 600
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_event",
+          "lineNumber": 602
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "events.append",
+          "lineNumber": 612
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "evr_candidate",
+          "lineNumber": 616
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "events.append",
+          "lineNumber": 619
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "_event",
+          "lineNumber": 620
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "WyckoffV2Analysis",
+          "lineNumber": 631
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "tuple",
+          "lineNumber": 633
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "tuple",
+          "lineNumber": 634
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "summarize_events",
+          "lineNumber": 635
+        },
+        {
+          "caller": "analyze_wyckoff_v2",
+          "callee": "len",
+          "lineNumber": 637
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 9,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/app/wyckoff/v2/entry_policy.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "entry_from_event",
+          "startLine": 8,
+          "endLine": 30,
+          "params": [
+            "event",
+            "entry_type",
+            "occurred_at",
+            "price",
+            "invalidation",
+            "reason",
+            "research"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "entry_from_event",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "entry_from_event",
+          "callee": "EntrySignal",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/app/wyckoff/v2/event_detector.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 71,
+      "functions": [
+        {
+          "name": "_bar",
+          "startLine": 12,
+          "endLine": 14,
+          "params": [
+            "frame",
+            "index"
+          ]
+        },
+        {
+          "name": "spring_candidate",
+          "startLine": 17,
+          "endLine": 34,
+          "params": [
+            "frame",
+            "index",
+            "trading_range",
+            "atr",
+            "cfg"
+          ]
+        },
+        {
+          "name": "sos_candidate",
+          "startLine": 37,
+          "endLine": 61,
+          "params": [
+            "frame",
+            "index",
+            "trading_range",
+            "atr",
+            "cfg"
+          ]
+        },
+        {
+          "name": "evr_candidate",
+          "startLine": 64,
+          "endLine": 82,
+          "params": [
+            "frame",
+            "index",
+            "trading_range",
+            "atr",
+            "cfg"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_bar",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "spring_candidate",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "sos_candidate",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "evr_candidate",
+          "line": 64,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_bar",
+          "callee": "tuple",
+          "lineNumber": 14
+        },
+        {
+          "caller": "_bar",
+          "callee": "float",
+          "lineNumber": 14
+        },
+        {
+          "caller": "spring_candidate",
+          "callee": "_bar",
+          "lineNumber": 20
+        },
+        {
+          "caller": "spring_candidate",
+          "callee": "clv",
+          "lineNumber": 22
+        },
+        {
+          "caller": "spring_candidate",
+          "callee": "volume_ratio",
+          "lineNumber": 25
+        },
+        {
+          "caller": "sos_candidate",
+          "callee": "_bar",
+          "lineNumber": 42
+        },
+        {
+          "caller": "sos_candidate",
+          "callee": "float",
+          "lineNumber": 43
+        },
+        {
+          "caller": "sos_candidate",
+          "callee": "numeric",
+          "lineNumber": 43
+        },
+        {
+          "caller": "sos_candidate",
+          "callee": "clv",
+          "lineNumber": 46
+        },
+        {
+          "caller": "sos_candidate",
+          "callee": "volume_percentile",
+          "lineNumber": 47
+        },
+        {
+          "caller": "evr_candidate",
+          "callee": "_bar",
+          "lineNumber": 69
+        },
+        {
+          "caller": "evr_candidate",
+          "callee": "volume_ratio",
+          "lineNumber": 70
+        },
+        {
+          "caller": "evr_candidate",
+          "callee": "abs",
+          "lineNumber": 73
+        },
+        {
+          "caller": "evr_candidate",
+          "callee": "float",
+          "lineNumber": 73
+        },
+        {
+          "caller": "evr_candidate",
+          "callee": "numeric",
+          "lineNumber": 73
+        },
+        {
+          "caller": "evr_candidate",
+          "callee": "clv",
+          "lineNumber": 76
+        },
+        {
+          "caller": "evr_candidate",
+          "callee": "max",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/app/wyckoff/v2/features.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 64,
+      "functions": [
+        {
+          "name": "numeric",
+          "startLine": 8,
+          "endLine": 9,
+          "params": [
+            "frame",
+            "column"
+          ]
+        },
+        {
+          "name": "prepare_ohlcv",
+          "startLine": 12,
+          "endLine": 22,
+          "params": [
+            "frame"
+          ]
+        },
+        {
+          "name": "true_range",
+          "startLine": 25,
+          "endLine": 27,
+          "params": [
+            "frame"
+          ]
+        },
+        {
+          "name": "atr_at",
+          "startLine": 30,
+          "endLine": 37,
+          "params": [
+            "frame",
+            "index",
+            "window"
+          ]
+        },
+        {
+          "name": "clv",
+          "startLine": 40,
+          "endLine": 43,
+          "params": [
+            "open_",
+            "high",
+            "low",
+            "close"
+          ]
+        },
+        {
+          "name": "volume_ratio",
+          "startLine": 46,
+          "endLine": 52,
+          "params": [
+            "frame",
+            "index",
+            "window",
+            "median"
+          ]
+        },
+        {
+          "name": "volume_percentile",
+          "startLine": 55,
+          "endLine": 60,
+          "params": [
+            "frame",
+            "index",
+            "window"
+          ]
+        },
+        {
+          "name": "median_volume_before",
+          "startLine": 63,
+          "endLine": 69,
+          "params": [
+            "frame",
+            "index",
+            "window"
+          ]
+        },
+        {
+          "name": "swing_values",
+          "startLine": 72,
+          "endLine": 84,
+          "params": [
+            "series",
+            "kind",
+            "window"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "numeric",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "prepare_ohlcv",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "true_range",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "atr_at",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "clv",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "volume_ratio",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "volume_percentile",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "median_volume_before",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "swing_values",
+          "line": 72,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "numeric",
+          "callee": "pd.to_numeric",
+          "lineNumber": 9
+        },
+        {
+          "caller": "prepare_ohlcv",
+          "callee": "ValueError",
+          "lineNumber": 16
+        },
+        {
+          "caller": "prepare_ohlcv",
+          "callee": "', '.join",
+          "lineNumber": 16
+        },
+        {
+          "caller": "prepare_ohlcv",
+          "callee": "frame.loc[:, required].copy",
+          "lineNumber": 17
+        },
+        {
+          "caller": "prepare_ohlcv",
+          "callee": "pd.to_datetime",
+          "lineNumber": 18
+        },
+        {
+          "caller": "prepare_ohlcv",
+          "callee": "numeric",
+          "lineNumber": 20
+        },
+        {
+          "caller": "prepare_ohlcv",
+          "callee": "result.dropna().sort_values(\"date\", kind=\"stable\").drop_duplicates",
+          "lineNumber": 21
+        },
+        {
+          "caller": "prepare_ohlcv",
+          "callee": "result.dropna().sort_values",
+          "lineNumber": 21
+        },
+        {
+          "caller": "prepare_ohlcv",
+          "callee": "result.dropna",
+          "lineNumber": 21
+        },
+        {
+          "caller": "prepare_ohlcv",
+          "callee": "result.reset_index",
+          "lineNumber": 22
+        },
+        {
+          "caller": "true_range",
+          "callee": "numeric",
+          "lineNumber": 26
+        },
+        {
+          "caller": "true_range",
+          "callee": "pd.concat((high - low, (high - close.shift()).abs(), (low - close.shift()).abs()), axis=1).max",
+          "lineNumber": 27
+        },
+        {
+          "caller": "true_range",
+          "callee": "pd.concat",
+          "lineNumber": 27
+        },
+        {
+          "caller": "true_range",
+          "callee": "(high - close.shift()).abs",
+          "lineNumber": 27
+        },
+        {
+          "caller": "true_range",
+          "callee": "close.shift",
+          "lineNumber": 27
+        },
+        {
+          "caller": "true_range",
+          "callee": "(low - close.shift()).abs",
+          "lineNumber": 27
+        },
+        {
+          "caller": "true_range",
+          "callee": "close.shift",
+          "lineNumber": 27
+        },
+        {
+          "caller": "atr_at",
+          "callee": "true_range(frame.iloc[: index + 1]).tail(max(int(window), 1)).dropna",
+          "lineNumber": 33
+        },
+        {
+          "caller": "atr_at",
+          "callee": "true_range(frame.iloc[: index + 1]).tail",
+          "lineNumber": 33
+        },
+        {
+          "caller": "atr_at",
+          "callee": "true_range",
+          "lineNumber": 33
+        },
+        {
+          "caller": "atr_at",
+          "callee": "max",
+          "lineNumber": 33
+        },
+        {
+          "caller": "atr_at",
+          "callee": "int",
+          "lineNumber": 33
+        },
+        {
+          "caller": "atr_at",
+          "callee": "float",
+          "lineNumber": 36
+        },
+        {
+          "caller": "atr_at",
+          "callee": "values.mean",
+          "lineNumber": 36
+        },
+        {
+          "caller": "clv",
+          "callee": "max",
+          "lineNumber": 43
+        },
+        {
+          "caller": "clv",
+          "callee": "min",
+          "lineNumber": 43
+        },
+        {
+          "caller": "volume_ratio",
+          "callee": "numeric(frame.iloc[max(0, index - max(int(window), 1)) : index], \"volume\").dropna",
+          "lineNumber": 47
+        },
+        {
+          "caller": "volume_ratio",
+          "callee": "numeric",
+          "lineNumber": 47
+        },
+        {
+          "caller": "volume_ratio",
+          "callee": "max",
+          "lineNumber": 47
+        },
+        {
+          "caller": "volume_ratio",
+          "callee": "max",
+          "lineNumber": 47
+        },
+        {
+          "caller": "volume_ratio",
+          "callee": "int",
+          "lineNumber": 47
+        },
+        {
+          "caller": "volume_ratio",
+          "callee": "float",
+          "lineNumber": 50
+        },
+        {
+          "caller": "volume_ratio",
+          "callee": "ref.median",
+          "lineNumber": 50
+        },
+        {
+          "caller": "volume_ratio",
+          "callee": "ref.mean",
+          "lineNumber": 50
+        },
+        {
+          "caller": "volume_ratio",
+          "callee": "float",
+          "lineNumber": 51
+        },
+        {
+          "caller": "volume_ratio",
+          "callee": "numeric",
+          "lineNumber": 51
+        },
+        {
+          "caller": "volume_percentile",
+          "callee": "numeric(frame.iloc[max(0, index - max(int(window), 1)) : index], \"volume\").dropna",
+          "lineNumber": 56
+        },
+        {
+          "caller": "volume_percentile",
+          "callee": "numeric",
+          "lineNumber": 56
+        },
+        {
+          "caller": "volume_percentile",
+          "callee": "max",
+          "lineNumber": 56
+        },
+        {
+          "caller": "volume_percentile",
+          "callee": "max",
+          "lineNumber": 56
+        },
+        {
+          "caller": "volume_percentile",
+          "callee": "int",
+          "lineNumber": 56
+        },
+        {
+          "caller": "volume_percentile",
+          "callee": "float",
+          "lineNumber": 59
+        },
+        {
+          "caller": "volume_percentile",
+          "callee": "numeric",
+          "lineNumber": 59
+        },
+        {
+          "caller": "volume_percentile",
+          "callee": "float",
+          "lineNumber": 60
+        },
+        {
+          "caller": "volume_percentile",
+          "callee": "(ref <= current).mean",
+          "lineNumber": 60
+        },
+        {
+          "caller": "median_volume_before",
+          "callee": "numeric(frame.iloc[max(0, index - max(int(window), 1)) : index], \"volume\").dropna",
+          "lineNumber": 65
+        },
+        {
+          "caller": "median_volume_before",
+          "callee": "numeric",
+          "lineNumber": 65
+        },
+        {
+          "caller": "median_volume_before",
+          "callee": "max",
+          "lineNumber": 65
+        },
+        {
+          "caller": "median_volume_before",
+          "callee": "max",
+          "lineNumber": 65
+        },
+        {
+          "caller": "median_volume_before",
+          "callee": "int",
+          "lineNumber": 65
+        },
+        {
+          "caller": "median_volume_before",
+          "callee": "float",
+          "lineNumber": 68
+        },
+        {
+          "caller": "median_volume_before",
+          "callee": "ref.median",
+          "lineNumber": 68
+        },
+        {
+          "caller": "swing_values",
+          "callee": "pd.to_numeric(series, errors=\"coerce\").reset_index",
+          "lineNumber": 73
+        },
+        {
+          "caller": "swing_values",
+          "callee": "pd.to_numeric",
+          "lineNumber": 73
+        },
+        {
+          "caller": "swing_values",
+          "callee": "max",
+          "lineNumber": 74
+        },
+        {
+          "caller": "swing_values",
+          "callee": "int",
+          "lineNumber": 74
+        },
+        {
+          "caller": "swing_values",
+          "callee": "range",
+          "lineNumber": 76
+        },
+        {
+          "caller": "swing_values",
+          "callee": "len",
+          "lineNumber": 76
+        },
+        {
+          "caller": "swing_values",
+          "callee": "values.iloc[index - width : index + width + 1].dropna",
+          "lineNumber": 78
+        },
+        {
+          "caller": "swing_values",
+          "callee": "pd.isna",
+          "lineNumber": 79
+        },
+        {
+          "caller": "swing_values",
+          "callee": "around.min",
+          "lineNumber": 81
+        },
+        {
+          "caller": "swing_values",
+          "callee": "around.max",
+          "lineNumber": 81
+        },
+        {
+          "caller": "swing_values",
+          "callee": "float",
+          "lineNumber": 82
+        },
+        {
+          "caller": "swing_values",
+          "callee": "float",
+          "lineNumber": 82
+        },
+        {
+          "caller": "swing_values",
+          "callee": "result.append",
+          "lineNumber": 83
+        },
+        {
+          "caller": "swing_values",
+          "callee": "float",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/app/wyckoff/v2/models.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 84,
+      "classes": [
+        {
+          "name": "TradingRangeSnapshot",
+          "startLine": 10,
+          "endLine": 28,
+          "methods": [],
+          "properties": [
+            "range_id",
+            "support",
+            "resistance",
+            "creek",
+            "window_start",
+            "window_end",
+            "established_at",
+            "atr",
+            "width_atr",
+            "width_pct",
+            "tolerance",
+            "support_tests",
+            "resistance_tests",
+            "quality",
+            "age_bars",
+            "drift_pct",
+            "support_stability",
+            "resistance_stability"
+          ]
+        },
+        {
+          "name": "WyckoffEvent",
+          "startLine": 32,
+          "endLine": 46,
+          "methods": [],
+          "properties": [
+            "event_id",
+            "symbol",
+            "event_type",
+            "range_id",
+            "state",
+            "detected_at",
+            "range_snapshot",
+            "parent_event_id",
+            "confirmed_at",
+            "invalidated_at",
+            "invalidation",
+            "reason",
+            "metrics",
+            "research"
+          ]
+        },
+        {
+          "name": "EntrySignal",
+          "startLine": 50,
+          "endLine": 61,
+          "methods": [],
+          "properties": [
+            "event_id",
+            "symbol",
+            "range_id",
+            "entry_type",
+            "occurred_at",
+            "state",
+            "price",
+            "invalidation",
+            "parent_event_id",
+            "reason",
+            "research"
+          ]
+        },
+        {
+          "name": "WyckoffV2Analysis",
+          "startLine": 65,
+          "endLine": 95,
+          "methods": [
+            "latest_payload"
+          ],
+          "properties": [
+            "symbol",
+            "events",
+            "entries",
+            "diagnostics"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TradingRangeSnapshot",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "WyckoffEvent",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "EntrySignal",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "WyckoffV2Analysis",
+          "line": 64,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "latest_payload",
+          "callee": "next",
+          "lineNumber": 75
+        },
+        {
+          "caller": "latest_payload",
+          "callee": "reversed",
+          "lineNumber": 78
+        },
+        {
+          "caller": "latest_payload",
+          "callee": "asdict",
+          "lineNumber": 92
+        },
+        {
+          "caller": "latest_payload",
+          "callee": "asdict",
+          "lineNumber": 93
+        },
+        {
+          "caller": "latest_payload",
+          "callee": "asdict",
+          "lineNumber": 94
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "backend/app/wyckoff/v2/range_engine.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 125,
+      "nonEmptyLines": 112,
+      "functions": [
+        {
+          "name": "_swing_positions",
+          "startLine": 30,
+          "endLine": 41,
+          "params": [
+            "values",
+            "kind",
+            "window"
+          ]
+        },
+        {
+          "name": "prepare_range_inputs",
+          "startLine": 44,
+          "endLine": 59,
+          "params": [
+            "frame",
+            "cfg"
+          ]
+        },
+        {
+          "name": "identify_range_before",
+          "startLine": 62,
+          "endLine": 125,
+          "params": [
+            "inputs",
+            "index",
+            "cfg"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RangeInputs",
+          "startLine": 20,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "dates",
+            "high",
+            "low",
+            "close",
+            "atr",
+            "swing_low_positions",
+            "swing_high_positions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RangeInputs",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "_swing_positions",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "prepare_range_inputs",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "identify_range_before",
+          "line": 62,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_swing_positions",
+          "callee": "max",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_swing_positions",
+          "callee": "int",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_swing_positions",
+          "callee": "range",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_swing_positions",
+          "callee": "len",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_swing_positions",
+          "callee": "np.isnan",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_swing_positions",
+          "callee": "np.isnan(around).all",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_swing_positions",
+          "callee": "np.isnan",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_swing_positions",
+          "callee": "np.nanmin",
+          "lineNumber": 38
+        },
+        {
+          "caller": "_swing_positions",
+          "callee": "np.nanmax",
+          "lineNumber": 38
+        },
+        {
+          "caller": "_swing_positions",
+          "callee": "positions.append",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_swing_positions",
+          "callee": "np.asarray",
+          "lineNumber": 41
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "frame[\"high\"].to_numpy",
+          "lineNumber": 45
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "frame[\"low\"].to_numpy",
+          "lineNumber": 46
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "frame[\"close\"].to_numpy",
+          "lineNumber": 47
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "np.concatenate",
+          "lineNumber": 48
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "np.maximum.reduce",
+          "lineNumber": 49
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "np.abs",
+          "lineNumber": 49
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "np.abs",
+          "lineNumber": 49
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "pd.Series(true_range).rolling(max(int(cfg.atr_window), 1), min_periods=1).mean().to_numpy",
+          "lineNumber": 50
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "pd.Series(true_range).rolling(max(int(cfg.atr_window), 1), min_periods=1).mean",
+          "lineNumber": 50
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "pd.Series(true_range).rolling",
+          "lineNumber": 50
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "pd.Series",
+          "lineNumber": 50
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "max",
+          "lineNumber": 50
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "int",
+          "lineNumber": 50
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "RangeInputs",
+          "lineNumber": 51
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "frame[\"date\"].to_numpy",
+          "lineNumber": 52
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "_swing_positions",
+          "lineNumber": 57
+        },
+        {
+          "caller": "prepare_range_inputs",
+          "callee": "_swing_positions",
+          "lineNumber": 58
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "max",
+          "lineNumber": 64
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "max",
+          "lineNumber": 70
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "int",
+          "lineNumber": 70
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "float",
+          "lineNumber": 79
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "np.median",
+          "lineNumber": 79
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "len",
+          "lineNumber": 79
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "float",
+          "lineNumber": 79
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "np.nanquantile",
+          "lineNumber": 79
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "float",
+          "lineNumber": 80
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "np.median",
+          "lineNumber": 80
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "len",
+          "lineNumber": 80
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "float",
+          "lineNumber": 80
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "np.nanquantile",
+          "lineNumber": 80
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "float",
+          "lineNumber": 83
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "np.isfinite",
+          "lineNumber": 84
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "abs",
+          "lineNumber": 89
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "float",
+          "lineNumber": 89
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "float",
+          "lineNumber": 89
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "float",
+          "lineNumber": 89
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "float",
+          "lineNumber": 89
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "max",
+          "lineNumber": 90
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "float",
+          "lineNumber": 90
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "int",
+          "lineNumber": 91
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "np.sum",
+          "lineNumber": 91
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "np.abs",
+          "lineNumber": 91
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "int",
+          "lineNumber": 92
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "np.sum",
+          "lineNumber": 92
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "np.abs",
+          "lineNumber": 92
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "min",
+          "lineNumber": 101
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "abs",
+          "lineNumber": 102
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "TradingRangeSnapshot",
+          "lineNumber": 104
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "str",
+          "lineNumber": 109
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "pd.Timestamp(inputs.dates[start]).date",
+          "lineNumber": 109
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "pd.Timestamp",
+          "lineNumber": 109
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "str",
+          "lineNumber": 110
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "pd.Timestamp(inputs.dates[index - 1]).date",
+          "lineNumber": 110
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "pd.Timestamp",
+          "lineNumber": 110
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "str",
+          "lineNumber": 111
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "pd.Timestamp(inputs.dates[index - 1]).date",
+          "lineNumber": 111
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "pd.Timestamp",
+          "lineNumber": 111
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "max",
+          "lineNumber": 118
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "min",
+          "lineNumber": 118
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "len",
+          "lineNumber": 119
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "max",
+          "lineNumber": 123
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "min",
+          "lineNumber": 123
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "max",
+          "lineNumber": 124
+        },
+        {
+          "caller": "identify_range_before",
+          "callee": "min",
+          "lineNumber": 124
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/app/wyckoff/v2/research_features.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 120,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "background_context",
+          "startLine": 17,
+          "endLine": 59,
+          "params": [
+            "frame",
+            "index"
+          ]
+        },
+        {
+          "name": "spring_snapshot",
+          "startLine": 62,
+          "endLine": 95,
+          "params": [
+            "frame",
+            "index",
+            "trading_range",
+            "atr"
+          ]
+        },
+        {
+          "name": "test_snapshot",
+          "startLine": 98,
+          "endLine": 115,
+          "params": [
+            "frame",
+            "index",
+            "spring_index",
+            "spring_low",
+            "trading_range",
+            "atr"
+          ]
+        },
+        {
+          "name": "finite_research",
+          "startLine": 118,
+          "endLine": 120,
+          "params": [
+            "values"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "background_context",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "spring_snapshot",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "test_snapshot",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "finite_research",
+          "line": 118,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "background_context",
+          "callee": "numeric",
+          "lineNumber": 19
+        },
+        {
+          "caller": "background_context",
+          "callee": "float",
+          "lineNumber": 20
+        },
+        {
+          "caller": "ret",
+          "callee": "float",
+          "lineNumber": 23
+        },
+        {
+          "caller": "ret",
+          "callee": "float",
+          "lineNumber": 25
+        },
+        {
+          "caller": "slope",
+          "callee": "float",
+          "lineNumber": 31
+        },
+        {
+          "caller": "slope",
+          "callee": "values.mean",
+          "lineNumber": 31
+        },
+        {
+          "caller": "slope",
+          "callee": "float",
+          "lineNumber": 34
+        },
+        {
+          "caller": "slope",
+          "callee": "float",
+          "lineNumber": 34
+        },
+        {
+          "caller": "distance_ma",
+          "callee": "float",
+          "lineNumber": 39
+        },
+        {
+          "caller": "distance_ma",
+          "callee": "close.iloc[index - window + 1 : index + 1].mean",
+          "lineNumber": 39
+        },
+        {
+          "caller": "background_context",
+          "callee": "max",
+          "lineNumber": 42
+        },
+        {
+          "caller": "background_context",
+          "callee": "float",
+          "lineNumber": 44
+        },
+        {
+          "caller": "background_context",
+          "callee": "lookback.max",
+          "lineNumber": 44
+        },
+        {
+          "caller": "background_context",
+          "callee": "float",
+          "lineNumber": 44
+        },
+        {
+          "caller": "background_context",
+          "callee": "lookback.min",
+          "lineNumber": 44
+        },
+        {
+          "caller": "background_context",
+          "callee": "float",
+          "lineNumber": 45
+        },
+        {
+          "caller": "background_context",
+          "callee": "lookback.min",
+          "lineNumber": 45
+        },
+        {
+          "caller": "background_context",
+          "callee": "float",
+          "lineNumber": 45
+        },
+        {
+          "caller": "background_context",
+          "callee": "lookback.max",
+          "lineNumber": 45
+        },
+        {
+          "caller": "background_context",
+          "callee": "float",
+          "lineNumber": 45
+        },
+        {
+          "caller": "background_context",
+          "callee": "lookback.min",
+          "lineNumber": 45
+        },
+        {
+          "caller": "background_context",
+          "callee": "ret",
+          "lineNumber": 46
+        },
+        {
+          "caller": "background_context",
+          "callee": "slope",
+          "lineNumber": 46
+        },
+        {
+          "caller": "background_context",
+          "callee": "ret",
+          "lineNumber": 55
+        },
+        {
+          "caller": "background_context",
+          "callee": "ret",
+          "lineNumber": 55
+        },
+        {
+          "caller": "background_context",
+          "callee": "slope",
+          "lineNumber": 56
+        },
+        {
+          "caller": "background_context",
+          "callee": "slope",
+          "lineNumber": 56
+        },
+        {
+          "caller": "background_context",
+          "callee": "distance_ma",
+          "lineNumber": 57
+        },
+        {
+          "caller": "background_context",
+          "callee": "distance_ma",
+          "lineNumber": 57
+        },
+        {
+          "caller": "spring_snapshot",
+          "callee": "float",
+          "lineNumber": 64
+        },
+        {
+          "caller": "spring_snapshot",
+          "callee": "max",
+          "lineNumber": 65
+        },
+        {
+          "caller": "spring_snapshot",
+          "callee": "abs",
+          "lineNumber": 66
+        },
+        {
+          "caller": "spring_snapshot",
+          "callee": "min",
+          "lineNumber": 67
+        },
+        {
+          "caller": "spring_snapshot",
+          "callee": "max",
+          "lineNumber": 68
+        },
+        {
+          "caller": "spring_snapshot",
+          "callee": "median_volume_before",
+          "lineNumber": 69
+        },
+        {
+          "caller": "spring_snapshot",
+          "callee": "clv",
+          "lineNumber": 84
+        },
+        {
+          "caller": "spring_snapshot",
+          "callee": "max",
+          "lineNumber": 90
+        },
+        {
+          "caller": "spring_snapshot",
+          "callee": "volume_percentile",
+          "lineNumber": 92
+        },
+        {
+          "caller": "spring_snapshot",
+          "callee": "values.update",
+          "lineNumber": 94
+        },
+        {
+          "caller": "spring_snapshot",
+          "callee": "background_context",
+          "lineNumber": 94
+        },
+        {
+          "caller": "test_snapshot",
+          "callee": "float",
+          "lineNumber": 101
+        },
+        {
+          "caller": "test_snapshot",
+          "callee": "median_volume_before",
+          "lineNumber": 102
+        },
+        {
+          "caller": "test_snapshot",
+          "callee": "float",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_snapshot",
+          "callee": "abs",
+          "lineNumber": 106
+        },
+        {
+          "caller": "test_snapshot",
+          "callee": "clv",
+          "lineNumber": 111
+        },
+        {
+          "caller": "finite_research",
+          "callee": "isinstance",
+          "lineNumber": 120
+        },
+        {
+          "caller": "finite_research",
+          "callee": "math.isfinite",
+          "lineNumber": 120
+        },
+        {
+          "caller": "finite_research",
+          "callee": "values.items",
+          "lineNumber": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/app/wyckoff/v2/research_service.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 300,
+      "nonEmptyLines": 266,
+      "functions": [
+        {
+          "name": "_now",
+          "startLine": 31,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "_write_json",
+          "startLine": 35,
+          "endLine": 38,
+          "params": [
+            "path",
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "WyckoffV2ResearchService",
+          "startLine": 41,
+          "endLine": 300,
+          "methods": [
+            "__init__",
+            "recover_interrupted",
+            "shutdown",
+            "start",
+            "get",
+            "summary",
+            "events",
+            "export_path",
+            "report_path",
+            "_run",
+            "_benchmark",
+            "_market_regime",
+            "_frames",
+            "_write_csv",
+            "_write_report",
+            "_update",
+            "_find",
+            "_run_dir",
+            "_canonical_request",
+            "_config_hash"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_now",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "_write_json",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "WyckoffV2ResearchService",
+          "line": 41,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_now",
+          "callee": "datetime.now(UTC).isoformat",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_now",
+          "callee": "datetime.now",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_write_json",
+          "callee": "path.with_suffix",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_write_json",
+          "callee": "uuid.uuid4",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_write_json",
+          "callee": "temporary.write_text",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_write_json",
+          "callee": "json.dumps",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_write_json",
+          "callee": "os.replace",
+          "lineNumber": 38
+        },
+        {
+          "caller": "__init__",
+          "callee": "Path(data_dir).resolve",
+          "lineNumber": 45
+        },
+        {
+          "caller": "__init__",
+          "callee": "Path",
+          "lineNumber": 45
+        },
+        {
+          "caller": "__init__",
+          "callee": "self._root.mkdir",
+          "lineNumber": 47
+        },
+        {
+          "caller": "__init__",
+          "callee": "threading.RLock",
+          "lineNumber": 48
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.recover_interrupted",
+          "lineNumber": 50
+        },
+        {
+          "caller": "recover_interrupted",
+          "callee": "self._root.glob",
+          "lineNumber": 54
+        },
+        {
+          "caller": "recover_interrupted",
+          "callee": "self.get",
+          "lineNumber": 55
+        },
+        {
+          "caller": "recover_interrupted",
+          "callee": "manifest.get",
+          "lineNumber": 56
+        },
+        {
+          "caller": "recover_interrupted",
+          "callee": "self._update",
+          "lineNumber": 57
+        },
+        {
+          "caller": "recover_interrupted",
+          "callee": "_now",
+          "lineNumber": 57
+        },
+        {
+          "caller": "start",
+          "callee": "self._canonical_request",
+          "lineNumber": 65
+        },
+        {
+          "caller": "start",
+          "callee": "self._config_hash",
+          "lineNumber": 66
+        },
+        {
+          "caller": "start",
+          "callee": "self._find",
+          "lineNumber": 69
+        },
+        {
+          "caller": "start",
+          "callee": "self._find",
+          "lineNumber": 69
+        },
+        {
+          "caller": "start",
+          "callee": "uuid.uuid4",
+          "lineNumber": 72
+        },
+        {
+          "caller": "start",
+          "callee": "_now",
+          "lineNumber": 73
+        },
+        {
+          "caller": "start",
+          "callee": "self._run_dir",
+          "lineNumber": 74
+        },
+        {
+          "caller": "start",
+          "callee": "run_dir.mkdir",
+          "lineNumber": 75
+        },
+        {
+          "caller": "start",
+          "callee": "_write_json",
+          "lineNumber": 76
+        },
+        {
+          "caller": "start",
+          "callee": "_write_json",
+          "lineNumber": 77
+        },
+        {
+          "caller": "start",
+          "callee": "threading.Thread",
+          "lineNumber": 78
+        },
+        {
+          "caller": "start",
+          "callee": "thread.start",
+          "lineNumber": 80
+        },
+        {
+          "caller": "get",
+          "callee": "self._run_dir",
+          "lineNumber": 84
+        },
+        {
+          "caller": "get",
+          "callee": "path.exists",
+          "lineNumber": 85
+        },
+        {
+          "caller": "get",
+          "callee": "json.loads",
+          "lineNumber": 87
+        },
+        {
+          "caller": "get",
+          "callee": "path.read_text",
+          "lineNumber": 87
+        },
+        {
+          "caller": "get",
+          "callee": "manifest.get",
+          "lineNumber": 88
+        },
+        {
+          "caller": "get",
+          "callee": "(datetime.now(UTC) - datetime.fromisoformat(started)).total_seconds",
+          "lineNumber": 89
+        },
+        {
+          "caller": "get",
+          "callee": "datetime.now",
+          "lineNumber": 89
+        },
+        {
+          "caller": "get",
+          "callee": "datetime.fromisoformat",
+          "lineNumber": 89
+        },
+        {
+          "caller": "get",
+          "callee": "round",
+          "lineNumber": 90
+        },
+        {
+          "caller": "summary",
+          "callee": "self.get",
+          "lineNumber": 93
+        },
+        {
+          "caller": "summary",
+          "callee": "json.loads",
+          "lineNumber": 96
+        },
+        {
+          "caller": "summary",
+          "callee": "(self._run_dir(run_id) / \"summary.json\").read_text",
+          "lineNumber": 96
+        },
+        {
+          "caller": "summary",
+          "callee": "self._run_dir",
+          "lineNumber": 96
+        },
+        {
+          "caller": "events",
+          "callee": "self._run_dir",
+          "lineNumber": 99
+        },
+        {
+          "caller": "events",
+          "callee": "json.loads",
+          "lineNumber": 100
+        },
+        {
+          "caller": "events",
+          "callee": "path.read_text",
+          "lineNumber": 100
+        },
+        {
+          "caller": "events",
+          "callee": "path.exists",
+          "lineNumber": 100
+        },
+        {
+          "caller": "events",
+          "callee": "len",
+          "lineNumber": 101
+        },
+        {
+          "caller": "export_path",
+          "callee": "self._run_dir",
+          "lineNumber": 104
+        },
+        {
+          "caller": "export_path",
+          "callee": "path.exists",
+          "lineNumber": 105
+        },
+        {
+          "caller": "report_path",
+          "callee": "self._run_dir",
+          "lineNumber": 108
+        },
+        {
+          "caller": "report_path",
+          "callee": "path.exists",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_run",
+          "callee": "self.get",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_run",
+          "callee": "self._update",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_run",
+          "callee": "_now",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_run",
+          "callee": "date.fromisoformat",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_run",
+          "callee": "date.fromisoformat",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_run",
+          "callee": "scan_enriched_parquet(str(self._data_dir / \"kline_daily_enriched\" / \"**\" / \"*.parquet\")).filter(pl.col(\"date\").is_between(start - timedelta(days=220), end + timedelta(days=max(request[\"horizons\"]) + 14))).select",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_run",
+          "callee": "scan_enriched_parquet(str(self._data_dir / \"kline_daily_enriched\" / \"**\" / \"*.parquet\")).filter",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_run",
+          "callee": "scan_enriched_parquet",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_run",
+          "callee": "str",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_run",
+          "callee": "pl.col(\"date\").is_between",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_run",
+          "callee": "pl.col",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_run",
+          "callee": "timedelta",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_run",
+          "callee": "timedelta",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_run",
+          "callee": "max",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_run",
+          "callee": "source.filter(pl.col(\"date\").is_between(start, end)).select(pl.col(\"symbol\").unique().sort()).collect().get_column(\"symbol\").to_list",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_run",
+          "callee": "source.filter(pl.col(\"date\").is_between(start, end)).select(pl.col(\"symbol\").unique().sort()).collect().get_column",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_run",
+          "callee": "source.filter(pl.col(\"date\").is_between(start, end)).select(pl.col(\"symbol\").unique().sort()).collect",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_run",
+          "callee": "source.filter(pl.col(\"date\").is_between(start, end)).select",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_run",
+          "callee": "source.filter",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_run",
+          "callee": "pl.col(\"date\").is_between",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_run",
+          "callee": "pl.col",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_run",
+          "callee": "pl.col(\"symbol\").unique().sort",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_run",
+          "callee": "pl.col(\"symbol\").unique",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_run",
+          "callee": "pl.col",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_run",
+          "callee": "self._update",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_run",
+          "callee": "len",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_run",
+          "callee": "WyckoffV2Config",
+          "lineNumber": 123
+        },
+        {
+          "caller": "_run",
+          "callee": "run_event_backtest_frames",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_run",
+          "callee": "self._frames",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_run",
+          "callee": "self._benchmark",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_run",
+          "callee": "self._market_regime",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_run",
+          "callee": "report.update",
+          "lineNumber": 136
+        },
+        {
+          "caller": "_run",
+          "callee": "_write_json",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_run",
+          "callee": "self._run_dir",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_run",
+          "callee": "_write_json",
+          "lineNumber": 138
+        },
+        {
+          "caller": "_run",
+          "callee": "self._run_dir",
+          "lineNumber": 138
+        },
+        {
+          "caller": "_run",
+          "callee": "self._write_csv",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_run",
+          "callee": "self._write_report",
+          "lineNumber": 140
+        },
+        {
+          "caller": "_run",
+          "callee": "self._update",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_run",
+          "callee": "_now",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_run",
+          "callee": "len",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_run",
+          "callee": "len",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_run",
+          "callee": "self._update",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_run",
+          "callee": "_now",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_run",
+          "callee": "str",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_run",
+          "callee": "self._threads.pop",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "max",
+          "lineNumber": 151
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "scan_enriched_parquet(str(self._data_dir / \"kline_daily_enriched\" / \"**\" / \"*.parquet\")).filter(pl.col(\"date\").is_between(start, end + timedelta(days=max_horizon + 14))).select",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "scan_enriched_parquet(str(self._data_dir / \"kline_daily_enriched\" / \"**\" / \"*.parquet\")).filter",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "scan_enriched_parquet",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "str",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col(\"date\").is_between",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "timedelta",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "source.sort([\"symbol\", \"date\"]).with_columns(pl.col(\"open\").shift(-1).over(\"symbol\").alias(\"entry_open\"), pl.col(\"close\").shift(-days).over(\"symbol\").alias(\"exit_close\")).filter(pl.col(\"date\").is_between(start, end) & (pl.col(\"entry_open\") > 0)).with_columns(((pl.col(\"exit_close\") / pl.col(\"entry_open\") - 1.0) * 100).alias(\"return_pct\")).group_by(\"date\").agg(pl.col(\"return_pct\").mean()).collect().to_dicts",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "source.sort([\"symbol\", \"date\"]).with_columns(pl.col(\"open\").shift(-1).over(\"symbol\").alias(\"entry_open\"), pl.col(\"close\").shift(-days).over(\"symbol\").alias(\"exit_close\")).filter(pl.col(\"date\").is_between(start, end) & (pl.col(\"entry_open\") > 0)).with_columns(((pl.col(\"exit_close\") / pl.col(\"entry_open\") - 1.0) * 100).alias(\"return_pct\")).group_by(\"date\").agg(pl.col(\"return_pct\").mean()).collect",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "source.sort([\"symbol\", \"date\"]).with_columns(pl.col(\"open\").shift(-1).over(\"symbol\").alias(\"entry_open\"), pl.col(\"close\").shift(-days).over(\"symbol\").alias(\"exit_close\")).filter(pl.col(\"date\").is_between(start, end) & (pl.col(\"entry_open\") > 0)).with_columns(((pl.col(\"exit_close\") / pl.col(\"entry_open\") - 1.0) * 100).alias(\"return_pct\")).group_by(\"date\").agg",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "source.sort([\"symbol\", \"date\"]).with_columns(pl.col(\"open\").shift(-1).over(\"symbol\").alias(\"entry_open\"), pl.col(\"close\").shift(-days).over(\"symbol\").alias(\"exit_close\")).filter(pl.col(\"date\").is_between(start, end) & (pl.col(\"entry_open\") > 0)).with_columns(((pl.col(\"exit_close\") / pl.col(\"entry_open\") - 1.0) * 100).alias(\"return_pct\")).group_by",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "source.sort([\"symbol\", \"date\"]).with_columns(pl.col(\"open\").shift(-1).over(\"symbol\").alias(\"entry_open\"), pl.col(\"close\").shift(-days).over(\"symbol\").alias(\"exit_close\")).filter(pl.col(\"date\").is_between(start, end) & (pl.col(\"entry_open\") > 0)).with_columns",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "source.sort([\"symbol\", \"date\"]).with_columns(pl.col(\"open\").shift(-1).over(\"symbol\").alias(\"entry_open\"), pl.col(\"close\").shift(-days).over(\"symbol\").alias(\"exit_close\")).filter",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "source.sort([\"symbol\", \"date\"]).with_columns",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "source.sort",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col(\"open\").shift(-1).over(\"symbol\").alias",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col(\"open\").shift(-1).over",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col(\"open\").shift",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col(\"close\").shift(-days).over(\"symbol\").alias",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col(\"close\").shift(-days).over",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col(\"close\").shift",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col(\"date\").is_between",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "((pl.col(\"exit_close\") / pl.col(\"entry_open\") - 1.0) * 100).alias",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col(\"return_pct\").mean",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "str",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "float",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "values.get(days, {}).get",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "values.get",
+          "lineNumber": 162
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "scan_enriched_parquet(str(self._data_dir / \"kline_index_enriched\" / \"**\" / \"*.parquet\")).filter((pl.col(\"symbol\") == symbol) & pl.col(\"date\").is_between(start, end + timedelta(days=max_horizon + 14))).select([\"date\", \"open\", \"close\"]).sort(\"date\").collect().to_dicts",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "scan_enriched_parquet(str(self._data_dir / \"kline_index_enriched\" / \"**\" / \"*.parquet\")).filter((pl.col(\"symbol\") == symbol) & pl.col(\"date\").is_between(start, end + timedelta(days=max_horizon + 14))).select([\"date\", \"open\", \"close\"]).sort(\"date\").collect",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "scan_enriched_parquet(str(self._data_dir / \"kline_index_enriched\" / \"**\" / \"*.parquet\")).filter((pl.col(\"symbol\") == symbol) & pl.col(\"date\").is_between(start, end + timedelta(days=max_horizon + 14))).select([\"date\", \"open\", \"close\"]).sort",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "scan_enriched_parquet(str(self._data_dir / \"kline_index_enriched\" / \"**\" / \"*.parquet\")).filter((pl.col(\"symbol\") == symbol) & pl.col(\"date\").is_between(start, end + timedelta(days=max_horizon + 14))).select",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "scan_enriched_parquet(str(self._data_dir / \"kline_index_enriched\" / \"**\" / \"*.parquet\")).filter",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "scan_enriched_parquet",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "str",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col(\"date\").is_between",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "pl.col",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "timedelta",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "str",
+          "lineNumber": 168
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "float",
+          "lineNumber": 169
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "float",
+          "lineNumber": 169
+        },
+        {
+          "caller": "_benchmark",
+          "callee": "enumerate",
+          "lineNumber": 170
+        },
+        {
+          "caller": "evaluate",
+          "callee": "indexes.get",
+          "lineNumber": 173
+        },
+        {
+          "caller": "evaluate",
+          "callee": "len",
+          "lineNumber": 174
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "scan_enriched_parquet(str(self._data_dir / \"kline_index_enriched\" / \"**\" / \"*.parquet\"))\n                .filter((pl.col(\"symbol\") == \"000300.SH\") & pl.col(\"date\").is_between(start - timedelta(days=220), end))\n                .select([\"date\", \"close\"])\n                .sort(\"date\")\n                .collect()\n                .to_dicts",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "scan_enriched_parquet(str(self._data_dir / \"kline_index_enriched\" / \"**\" / \"*.parquet\"))\n                .filter((pl.col(\"symbol\") == \"000300.SH\") & pl.col(\"date\").is_between(start - timedelta(days=220), end))\n                .select([\"date\", \"close\"])\n                .sort(\"date\")\n                .collect",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "scan_enriched_parquet(str(self._data_dir / \"kline_index_enriched\" / \"**\" / \"*.parquet\"))\n                .filter((pl.col(\"symbol\") == \"000300.SH\") & pl.col(\"date\").is_between(start - timedelta(days=220), end))\n                .select([\"date\", \"close\"])\n                .sort",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "scan_enriched_parquet(str(self._data_dir / \"kline_index_enriched\" / \"**\" / \"*.parquet\"))\n                .filter((pl.col(\"symbol\") == \"000300.SH\") & pl.col(\"date\").is_between(start - timedelta(days=220), end))\n                .select",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "scan_enriched_parquet(str(self._data_dir / \"kline_index_enriched\" / \"**\" / \"*.parquet\"))\n                .filter",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "scan_enriched_parquet",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "str",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "pl.col",
+          "lineNumber": 185
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "pl.col(\"date\").is_between",
+          "lineNumber": 185
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "pl.col",
+          "lineNumber": 185
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "timedelta",
+          "lineNumber": 185
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "str",
+          "lineNumber": 193
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "float",
+          "lineNumber": 193
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "row.get",
+          "lineNumber": 193
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "float",
+          "lineNumber": 193
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "enumerate",
+          "lineNumber": 196
+        },
+        {
+          "caller": "_market_regime",
+          "callee": "labels.get",
+          "lineNumber": 207
+        },
+        {
+          "caller": "_frames",
+          "callee": "len",
+          "lineNumber": 210
+        },
+        {
+          "caller": "_frames",
+          "callee": "iter",
+          "lineNumber": 210
+        },
+        {
+          "caller": "_frames",
+          "callee": "list",
+          "lineNumber": 211
+        },
+        {
+          "caller": "_frames",
+          "callee": "islice",
+          "lineNumber": 211
+        },
+        {
+          "caller": "_frames",
+          "callee": "max",
+          "lineNumber": 211
+        },
+        {
+          "caller": "_frames",
+          "callee": "source.filter(pl.col(\"symbol\").is_in(batch)).sort([\"symbol\", \"date\"]).collect",
+          "lineNumber": 212
+        },
+        {
+          "caller": "_frames",
+          "callee": "source.filter(pl.col(\"symbol\").is_in(batch)).sort",
+          "lineNumber": 212
+        },
+        {
+          "caller": "_frames",
+          "callee": "source.filter",
+          "lineNumber": 212
+        },
+        {
+          "caller": "_frames",
+          "callee": "pl.col(\"symbol\").is_in",
+          "lineNumber": 212
+        },
+        {
+          "caller": "_frames",
+          "callee": "pl.col",
+          "lineNumber": 212
+        },
+        {
+          "caller": "_frames",
+          "callee": "frame.partition_by(\"symbol\", as_dict=True, maintain_order=True).items",
+          "lineNumber": 213
+        },
+        {
+          "caller": "_frames",
+          "callee": "frame.partition_by",
+          "lineNumber": 213
+        },
+        {
+          "caller": "_frames",
+          "callee": "str",
+          "lineNumber": 214
+        },
+        {
+          "caller": "_frames",
+          "callee": "isinstance",
+          "lineNumber": 214
+        },
+        {
+          "caller": "_frames",
+          "callee": "partition.drop(\"symbol\").to_pandas",
+          "lineNumber": 215
+        },
+        {
+          "caller": "_frames",
+          "callee": "partition.drop",
+          "lineNumber": 215
+        },
+        {
+          "caller": "_frames",
+          "callee": "self._update",
+          "lineNumber": 217
+        },
+        {
+          "caller": "_frames",
+          "callee": "int",
+          "lineNumber": 217
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "(self._run_dir(run_id) / \"events.csv\").open",
+          "lineNumber": 220
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "self._run_dir",
+          "lineNumber": 220
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "csv.DictWriter",
+          "lineNumber": 222
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "writer.writeheader",
+          "lineNumber": 223
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "record.get",
+          "lineNumber": 225
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "record.get(\"outcomes\", {}).items",
+          "lineNumber": 226
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "record.get",
+          "lineNumber": 226
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "outcome.get",
+          "lineNumber": 228
+        },
+        {
+          "caller": "_write_csv",
+          "callee": "writer.writerow",
+          "lineNumber": 229
+        },
+        {
+          "caller": "_write_report",
+          "callee": "report.get(\"spring_outcomes\", {}).items",
+          "lineNumber": 237
+        },
+        {
+          "caller": "_write_report",
+          "callee": "report.get",
+          "lineNumber": 237
+        },
+        {
+          "caller": "_write_report",
+          "callee": "lines.append",
+          "lineNumber": 239
+        },
+        {
+          "caller": "_write_report",
+          "callee": "lines.extend",
+          "lineNumber": 240
+        },
+        {
+          "caller": "_write_report",
+          "callee": "report.get(\"lps_funnel\", {}).items",
+          "lineNumber": 241
+        },
+        {
+          "caller": "_write_report",
+          "callee": "report.get",
+          "lineNumber": 241
+        },
+        {
+          "caller": "_write_report",
+          "callee": "lines.append",
+          "lineNumber": 242
+        },
+        {
+          "caller": "_write_report",
+          "callee": "lines.extend",
+          "lineNumber": 243
+        },
+        {
+          "caller": "_write_report",
+          "callee": "report.get(\"lps_rejection_reasons\", {}).items",
+          "lineNumber": 244
+        },
+        {
+          "caller": "_write_report",
+          "callee": "report.get",
+          "lineNumber": 244
+        },
+        {
+          "caller": "_write_report",
+          "callee": "lines.append",
+          "lineNumber": 245
+        },
+        {
+          "caller": "_write_report",
+          "callee": "lines.extend",
+          "lineNumber": 246
+        },
+        {
+          "caller": "_write_report",
+          "callee": "report.get(\"entries\", {}).items",
+          "lineNumber": 247
+        },
+        {
+          "caller": "_write_report",
+          "callee": "report.get",
+          "lineNumber": 247
+        },
+        {
+          "caller": "_write_report",
+          "callee": "lines.append",
+          "lineNumber": 248
+        },
+        {
+          "caller": "_write_report",
+          "callee": "(self._run_dir(run_id) / \"report.md\").write_text",
+          "lineNumber": 249
+        },
+        {
+          "caller": "_write_report",
+          "callee": "self._run_dir",
+          "lineNumber": 249
+        },
+        {
+          "caller": "_write_report",
+          "callee": "\"\\n\".join",
+          "lineNumber": 249
+        },
+        {
+          "caller": "_update",
+          "callee": "self.get",
+          "lineNumber": 253
+        },
+        {
+          "caller": "_update",
+          "callee": "manifest.update",
+          "lineNumber": 255
+        },
+        {
+          "caller": "_update",
+          "callee": "_write_json",
+          "lineNumber": 256
+        },
+        {
+          "caller": "_update",
+          "callee": "self._run_dir",
+          "lineNumber": 256
+        },
+        {
+          "caller": "_find",
+          "callee": "self._root.glob",
+          "lineNumber": 260
+        },
+        {
+          "caller": "_find",
+          "callee": "self.get",
+          "lineNumber": 261
+        },
+        {
+          "caller": "_find",
+          "callee": "item.get",
+          "lineNumber": 262
+        },
+        {
+          "caller": "_find",
+          "callee": "item.get",
+          "lineNumber": 262
+        },
+        {
+          "caller": "_find",
+          "callee": "matches.append",
+          "lineNumber": 263
+        },
+        {
+          "caller": "_find",
+          "callee": "max",
+          "lineNumber": 264
+        },
+        {
+          "caller": "_find",
+          "callee": "str",
+          "lineNumber": 264
+        },
+        {
+          "caller": "_find",
+          "callee": "item.get",
+          "lineNumber": 264
+        },
+        {
+          "caller": "_run_dir",
+          "callee": "run_id.isalnum",
+          "lineNumber": 267
+        },
+        {
+          "caller": "_run_dir",
+          "callee": "ValueError",
+          "lineNumber": 268
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "sorted",
+          "lineNumber": 280
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "set",
+          "lineNumber": 280
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "request.get",
+          "lineNumber": 280
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "set",
+          "lineNumber": 281
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "ValueError",
+          "lineNumber": 282
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "sorted",
+          "lineNumber": 283
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "set",
+          "lineNumber": 283
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "request.get",
+          "lineNumber": 283
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "set",
+          "lineNumber": 284
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "set",
+          "lineNumber": 284
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "ValueError",
+          "lineNumber": 285
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "str",
+          "lineNumber": 286
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "str",
+          "lineNumber": 286
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "date.fromisoformat",
+          "lineNumber": 287
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "date.fromisoformat",
+          "lineNumber": 287
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "ValueError",
+          "lineNumber": 288
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "sorted",
+          "lineNumber": 289
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "int",
+          "lineNumber": 289
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "request.get",
+          "lineNumber": 289
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "int",
+          "lineNumber": 289
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "ValueError",
+          "lineNumber": 291
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "str",
+          "lineNumber": 292
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "request.get",
+          "lineNumber": 292
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "ValueError",
+          "lineNumber": 294
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "asdict",
+          "lineNumber": 295
+        },
+        {
+          "caller": "_canonical_request",
+          "callee": "WyckoffV2Config",
+          "lineNumber": 295
+        },
+        {
+          "caller": "_config_hash",
+          "callee": "json.dumps",
+          "lineNumber": 299
+        },
+        {
+          "caller": "_config_hash",
+          "callee": "hashlib.sha256(payload.encode(\"utf-8\")).hexdigest",
+          "lineNumber": 300
+        },
+        {
+          "caller": "_config_hash",
+          "callee": "hashlib.sha256",
+          "lineNumber": 300
+        },
+        {
+          "caller": "_config_hash",
+          "callee": "payload.encode",
+          "lineNumber": 300
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/app/wyckoff/v2/state_machine.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "is_terminal",
+          "startLine": 16,
+          "endLine": 17,
+          "params": [
+            "state"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "is_terminal",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/test_wyckoff_v2.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 180,
+      "nonEmptyLines": 128,
+      "functions": [
+        {
+          "name": "_range_frame",
+          "startLine": 9,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "_append",
+          "startLine": 24,
+          "endLine": 32,
+          "params": [
+            "frame",
+            "open_",
+            "high",
+            "low",
+            "close",
+            "volume"
+          ]
+        },
+        {
+          "name": "_config",
+          "startLine": 35,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "test_spring_test_valid_emits_separate_aggressive_and_standard_entries",
+          "startLine": 39,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "test_spring_failure_is_recorded_when_the_spring_low_breaks",
+          "startLine": 52,
+          "endLine": 59,
+          "params": []
+        },
+        {
+          "name": "test_low_supply_spring_test_uses_normal_volume_not_a_forced_ratio_to_spring_volume",
+          "startLine": 62,
+          "endLine": 73,
+          "params": []
+        },
+        {
+          "name": "test_middle_volume_spring_is_neutral_not_low_supply",
+          "startLine": 76,
+          "endLine": 83,
+          "params": []
+        },
+        {
+          "name": "test_spring_test_must_return_to_the_frozen_support_area",
+          "startLine": 86,
+          "endLine": 96,
+          "params": []
+        },
+        {
+          "name": "test_lps_requires_confirmed_sos_and_frozen_creek",
+          "startLine": 99,
+          "endLine": 116,
+          "params": []
+        },
+        {
+          "name": "test_range_bottom_shrinkage_without_sos_never_becomes_lps",
+          "startLine": 119,
+          "endLine": 126,
+          "params": []
+        },
+        {
+          "name": "test_lps_requires_contraction_against_normal_volume_as_well_as_sos_volume",
+          "startLine": 129,
+          "endLine": 142,
+          "params": []
+        },
+        {
+          "name": "test_replay_does_not_change_an_already_detected_event_when_future_bars_are_added",
+          "startLine": 145,
+          "endLine": 154,
+          "params": []
+        },
+        {
+          "name": "test_spring_freezes_research_features_without_turning_them_into_filters",
+          "startLine": 157,
+          "endLine": 166,
+          "params": []
+        },
+        {
+          "name": "test_lps_diagnostics_expose_the_classic_funnel",
+          "startLine": 169,
+          "endLine": 180,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_range_frame",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "_append",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "_config",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "test_spring_test_valid_emits_separate_aggressive_and_standard_entries",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "test_spring_failure_is_recorded_when_the_spring_low_breaks",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "test_low_supply_spring_test_uses_normal_volume_not_a_forced_ratio_to_spring_volume",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "test_middle_volume_spring_is_neutral_not_low_supply",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "test_spring_test_must_return_to_the_frozen_support_area",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "test_lps_requires_confirmed_sos_and_frozen_creek",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "test_range_bottom_shrinkage_without_sos_never_becomes_lps",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "test_lps_requires_contraction_against_normal_volume_as_well_as_sos_volume",
+          "line": 129,
+          "isDefault": false
+        },
+        {
+          "name": "test_replay_does_not_change_an_already_detected_event_when_future_bars_are_added",
+          "line": 145,
+          "isDefault": false
+        },
+        {
+          "name": "test_spring_freezes_research_features_without_turning_them_into_filters",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "test_lps_diagnostics_expose_the_classic_funnel",
+          "line": 169,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_range_frame",
+          "callee": "np.sin",
+          "lineNumber": 11
+        },
+        {
+          "caller": "_range_frame",
+          "callee": "np.linspace",
+          "lineNumber": 11
+        },
+        {
+          "caller": "_range_frame",
+          "callee": "pd.DataFrame",
+          "lineNumber": 12
+        },
+        {
+          "caller": "_range_frame",
+          "callee": "pd.bdate_range",
+          "lineNumber": 14
+        },
+        {
+          "caller": "_range_frame",
+          "callee": "np.full",
+          "lineNumber": 19
+        },
+        {
+          "caller": "_append",
+          "callee": "pd.Timestamp",
+          "lineNumber": 25
+        },
+        {
+          "caller": "_append",
+          "callee": "pd.offsets.BusinessDay",
+          "lineNumber": 25
+        },
+        {
+          "caller": "_append",
+          "callee": "pd.concat",
+          "lineNumber": 26
+        },
+        {
+          "caller": "_append",
+          "callee": "pd.DataFrame",
+          "lineNumber": 29
+        },
+        {
+          "caller": "_config",
+          "callee": "WyckoffV2Config",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_spring_test_valid_emits_separate_aggressive_and_standard_entries",
+          "callee": "_range_frame",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_spring_test_valid_emits_separate_aggressive_and_standard_entries",
+          "callee": "_append",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_spring_test_valid_emits_separate_aggressive_and_standard_entries",
+          "callee": "_append",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_spring_test_valid_emits_separate_aggressive_and_standard_entries",
+          "callee": "analyze_wyckoff_v2",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_spring_test_valid_emits_separate_aggressive_and_standard_entries",
+          "callee": "_config",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_spring_test_valid_emits_separate_aggressive_and_standard_entries",
+          "callee": "any",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_spring_test_valid_emits_separate_aggressive_and_standard_entries",
+          "callee": "event.event_type.startswith",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_spring_failure_is_recorded_when_the_spring_low_breaks",
+          "callee": "_range_frame",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_spring_failure_is_recorded_when_the_spring_low_breaks",
+          "callee": "_append",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_spring_failure_is_recorded_when_the_spring_low_breaks",
+          "callee": "_append",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_spring_failure_is_recorded_when_the_spring_low_breaks",
+          "callee": "analyze_wyckoff_v2",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_spring_failure_is_recorded_when_the_spring_low_breaks",
+          "callee": "_config",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_spring_failure_is_recorded_when_the_spring_low_breaks",
+          "callee": "any",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_spring_failure_is_recorded_when_the_spring_low_breaks",
+          "callee": "event.event_type.startswith",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_low_supply_spring_test_uses_normal_volume_not_a_forced_ratio_to_spring_volume",
+          "callee": "_range_frame",
+          "lineNumber": 63
+        },
+        {
+          "caller": "test_low_supply_spring_test_uses_normal_volume_not_a_forced_ratio_to_spring_volume",
+          "callee": "_append",
+          "lineNumber": 66
+        },
+        {
+          "caller": "test_low_supply_spring_test_uses_normal_volume_not_a_forced_ratio_to_spring_volume",
+          "callee": "_append",
+          "lineNumber": 67
+        },
+        {
+          "caller": "test_low_supply_spring_test_uses_normal_volume_not_a_forced_ratio_to_spring_volume",
+          "callee": "analyze_wyckoff_v2",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_low_supply_spring_test_uses_normal_volume_not_a_forced_ratio_to_spring_volume",
+          "callee": "_config",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_low_supply_spring_test_uses_normal_volume_not_a_forced_ratio_to_spring_volume",
+          "callee": "next",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_low_supply_spring_test_uses_normal_volume_not_a_forced_ratio_to_spring_volume",
+          "callee": "any",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_middle_volume_spring_is_neutral_not_low_supply",
+          "callee": "_range_frame",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_middle_volume_spring_is_neutral_not_low_supply",
+          "callee": "_append",
+          "lineNumber": 78
+        },
+        {
+          "caller": "test_middle_volume_spring_is_neutral_not_low_supply",
+          "callee": "analyze_wyckoff_v2",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_middle_volume_spring_is_neutral_not_low_supply",
+          "callee": "_config",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_middle_volume_spring_is_neutral_not_low_supply",
+          "callee": "any",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_middle_volume_spring_is_neutral_not_low_supply",
+          "callee": "any",
+          "lineNumber": 83
+        },
+        {
+          "caller": "test_spring_test_must_return_to_the_frozen_support_area",
+          "callee": "_range_frame",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_spring_test_must_return_to_the_frozen_support_area",
+          "callee": "_append",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_spring_test_must_return_to_the_frozen_support_area",
+          "callee": "_append",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_spring_test_must_return_to_the_frozen_support_area",
+          "callee": "analyze_wyckoff_v2",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_spring_test_must_return_to_the_frozen_support_area",
+          "callee": "_config",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_spring_test_must_return_to_the_frozen_support_area",
+          "callee": "next",
+          "lineNumber": 94
+        },
+        {
+          "caller": "test_spring_test_must_return_to_the_frozen_support_area",
+          "callee": "any",
+          "lineNumber": 96
+        },
+        {
+          "caller": "test_lps_requires_confirmed_sos_and_frozen_creek",
+          "callee": "_range_frame",
+          "lineNumber": 100
+        },
+        {
+          "caller": "test_lps_requires_confirmed_sos_and_frozen_creek",
+          "callee": "_append",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_lps_requires_confirmed_sos_and_frozen_creek",
+          "callee": "_append",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_lps_requires_confirmed_sos_and_frozen_creek",
+          "callee": "_append",
+          "lineNumber": 105
+        },
+        {
+          "caller": "test_lps_requires_confirmed_sos_and_frozen_creek",
+          "callee": "_append",
+          "lineNumber": 106
+        },
+        {
+          "caller": "test_lps_requires_confirmed_sos_and_frozen_creek",
+          "callee": "_append",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_lps_requires_confirmed_sos_and_frozen_creek",
+          "callee": "analyze_wyckoff_v2",
+          "lineNumber": 109
+        },
+        {
+          "caller": "test_lps_requires_confirmed_sos_and_frozen_creek",
+          "callee": "_config",
+          "lineNumber": 109
+        },
+        {
+          "caller": "test_lps_requires_confirmed_sos_and_frozen_creek",
+          "callee": "any",
+          "lineNumber": 115
+        },
+        {
+          "caller": "test_lps_requires_confirmed_sos_and_frozen_creek",
+          "callee": "any",
+          "lineNumber": 116
+        },
+        {
+          "caller": "test_range_bottom_shrinkage_without_sos_never_becomes_lps",
+          "callee": "_range_frame",
+          "lineNumber": 120
+        },
+        {
+          "caller": "test_range_bottom_shrinkage_without_sos_never_becomes_lps",
+          "callee": "_append",
+          "lineNumber": 121
+        },
+        {
+          "caller": "test_range_bottom_shrinkage_without_sos_never_becomes_lps",
+          "callee": "_append",
+          "lineNumber": 122
+        },
+        {
+          "caller": "test_range_bottom_shrinkage_without_sos_never_becomes_lps",
+          "callee": "analyze_wyckoff_v2",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_range_bottom_shrinkage_without_sos_never_becomes_lps",
+          "callee": "_config",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_lps_requires_contraction_against_normal_volume_as_well_as_sos_volume",
+          "callee": "_range_frame",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_lps_requires_contraction_against_normal_volume_as_well_as_sos_volume",
+          "callee": "_append",
+          "lineNumber": 131
+        },
+        {
+          "caller": "test_lps_requires_contraction_against_normal_volume_as_well_as_sos_volume",
+          "callee": "_append",
+          "lineNumber": 132
+        },
+        {
+          "caller": "test_lps_requires_contraction_against_normal_volume_as_well_as_sos_volume",
+          "callee": "_append",
+          "lineNumber": 134
+        },
+        {
+          "caller": "test_lps_requires_contraction_against_normal_volume_as_well_as_sos_volume",
+          "callee": "_append",
+          "lineNumber": 135
+        },
+        {
+          "caller": "test_lps_requires_contraction_against_normal_volume_as_well_as_sos_volume",
+          "callee": "_append",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_lps_requires_contraction_against_normal_volume_as_well_as_sos_volume",
+          "callee": "analyze_wyckoff_v2",
+          "lineNumber": 138
+        },
+        {
+          "caller": "test_lps_requires_contraction_against_normal_volume_as_well_as_sos_volume",
+          "callee": "_config",
+          "lineNumber": 138
+        },
+        {
+          "caller": "test_lps_requires_contraction_against_normal_volume_as_well_as_sos_volume",
+          "callee": "any",
+          "lineNumber": 142
+        },
+        {
+          "caller": "test_replay_does_not_change_an_already_detected_event_when_future_bars_are_added",
+          "callee": "_range_frame",
+          "lineNumber": 146
+        },
+        {
+          "caller": "test_replay_does_not_change_an_already_detected_event_when_future_bars_are_added",
+          "callee": "_append",
+          "lineNumber": 147
+        },
+        {
+          "caller": "test_replay_does_not_change_an_already_detected_event_when_future_bars_are_added",
+          "callee": "_append",
+          "lineNumber": 148
+        },
+        {
+          "caller": "test_replay_does_not_change_an_already_detected_event_when_future_bars_are_added",
+          "callee": "analyze_wyckoff_v2",
+          "lineNumber": 150
+        },
+        {
+          "caller": "test_replay_does_not_change_an_already_detected_event_when_future_bars_are_added",
+          "callee": "_config",
+          "lineNumber": 150
+        },
+        {
+          "caller": "test_replay_does_not_change_an_already_detected_event_when_future_bars_are_added",
+          "callee": "analyze_wyckoff_v2",
+          "lineNumber": 151
+        },
+        {
+          "caller": "test_replay_does_not_change_an_already_detected_event_when_future_bars_are_added",
+          "callee": "_config",
+          "lineNumber": 151
+        },
+        {
+          "caller": "test_replay_does_not_change_an_already_detected_event_when_future_bars_are_added",
+          "callee": "event.event_type.startswith",
+          "lineNumber": 153
+        },
+        {
+          "caller": "test_spring_freezes_research_features_without_turning_them_into_filters",
+          "callee": "_range_frame",
+          "lineNumber": 158
+        },
+        {
+          "caller": "test_spring_freezes_research_features_without_turning_them_into_filters",
+          "callee": "_append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "test_spring_freezes_research_features_without_turning_them_into_filters",
+          "callee": "analyze_wyckoff_v2",
+          "lineNumber": 161
+        },
+        {
+          "caller": "test_spring_freezes_research_features_without_turning_them_into_filters",
+          "callee": "_config",
+          "lineNumber": 161
+        },
+        {
+          "caller": "test_spring_freezes_research_features_without_turning_them_into_filters",
+          "callee": "next",
+          "lineNumber": 163
+        },
+        {
+          "caller": "test_spring_freezes_research_features_without_turning_them_into_filters",
+          "callee": "event.event_type.startswith",
+          "lineNumber": 163
+        },
+        {
+          "caller": "test_lps_diagnostics_expose_the_classic_funnel",
+          "callee": "_range_frame",
+          "lineNumber": 170
+        },
+        {
+          "caller": "test_lps_diagnostics_expose_the_classic_funnel",
+          "callee": "_append",
+          "lineNumber": 171
+        },
+        {
+          "caller": "test_lps_diagnostics_expose_the_classic_funnel",
+          "callee": "_append",
+          "lineNumber": 172
+        },
+        {
+          "caller": "test_lps_diagnostics_expose_the_classic_funnel",
+          "callee": "_append",
+          "lineNumber": 173
+        },
+        {
+          "caller": "test_lps_diagnostics_expose_the_classic_funnel",
+          "callee": "_append",
+          "lineNumber": 174
+        },
+        {
+          "caller": "test_lps_diagnostics_expose_the_classic_funnel",
+          "callee": "_append",
+          "lineNumber": 175
+        },
+        {
+          "caller": "test_lps_diagnostics_expose_the_classic_funnel",
+          "callee": "analyze_wyckoff_v2",
+          "lineNumber": 177
+        },
+        {
+          "caller": "test_lps_diagnostics_expose_the_classic_funnel",
+          "callee": "_config",
+          "lineNumber": 177
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 14,
+        "functionCount": 14,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/test_wyckoff_v2_backtest.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 158,
+      "nonEmptyLines": 126,
+      "functions": [
+        {
+          "name": "_range_frame",
+          "startLine": 16,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "_append",
+          "startLine": 31,
+          "endLine": 39,
+          "params": [
+            "frame",
+            "open_",
+            "high",
+            "low",
+            "close",
+            "volume"
+          ]
+        },
+        {
+          "name": "_frame_with_mature_spring_entry",
+          "startLine": 42,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "_config",
+          "startLine": 52,
+          "endLine": 53,
+          "params": []
+        },
+        {
+          "name": "test_event_backtest_reports_forward_return_mfe_and_mae_without_touching_selection",
+          "startLine": 56,
+          "endLine": 70,
+          "params": []
+        },
+        {
+          "name": "test_event_backtest_enters_at_the_next_trading_day_open_not_the_signal_close",
+          "startLine": 73,
+          "endLine": 92,
+          "params": []
+        },
+        {
+          "name": "test_streaming_backtest_matches_the_mapping_api_and_reports_invalidation_hits",
+          "startLine": 95,
+          "endLine": 101,
+          "params": []
+        },
+        {
+          "name": "test_backtest_emits_range_identity_event_details_and_excess_return",
+          "startLine": 104,
+          "endLine": 119,
+          "params": []
+        },
+        {
+          "name": "test_parameter_grid_only_accepts_explicit_v2_research_parameters",
+          "startLine": 122,
+          "endLine": 131,
+          "params": []
+        },
+        {
+          "name": "test_experiment_matrix_returns_funnel_and_failure_profiles",
+          "startLine": 134,
+          "endLine": 146,
+          "params": []
+        },
+        {
+          "name": "test_market_regime_is_reported_as_a_research_stratification",
+          "startLine": 149,
+          "endLine": 158,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_range_frame",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "_append",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "_frame_with_mature_spring_entry",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "_config",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "test_event_backtest_reports_forward_return_mfe_and_mae_without_touching_selection",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "test_event_backtest_enters_at_the_next_trading_day_open_not_the_signal_close",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "test_streaming_backtest_matches_the_mapping_api_and_reports_invalidation_hits",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "test_backtest_emits_range_identity_event_details_and_excess_return",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "test_parameter_grid_only_accepts_explicit_v2_research_parameters",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "test_experiment_matrix_returns_funnel_and_failure_profiles",
+          "line": 134,
+          "isDefault": false
+        },
+        {
+          "name": "test_market_regime_is_reported_as_a_research_stratification",
+          "line": 149,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_range_frame",
+          "callee": "np.sin",
+          "lineNumber": 18
+        },
+        {
+          "caller": "_range_frame",
+          "callee": "np.linspace",
+          "lineNumber": 18
+        },
+        {
+          "caller": "_range_frame",
+          "callee": "pd.DataFrame",
+          "lineNumber": 19
+        },
+        {
+          "caller": "_range_frame",
+          "callee": "pd.bdate_range",
+          "lineNumber": 21
+        },
+        {
+          "caller": "_range_frame",
+          "callee": "np.full",
+          "lineNumber": 26
+        },
+        {
+          "caller": "_append",
+          "callee": "pd.Timestamp",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_append",
+          "callee": "pd.offsets.BusinessDay",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_append",
+          "callee": "pd.concat",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_append",
+          "callee": "pd.DataFrame",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_frame_with_mature_spring_entry",
+          "callee": "_range_frame",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_frame_with_mature_spring_entry",
+          "callee": "_append",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_frame_with_mature_spring_entry",
+          "callee": "_append",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_frame_with_mature_spring_entry",
+          "callee": "_append",
+          "lineNumber": 46
+        },
+        {
+          "caller": "_frame_with_mature_spring_entry",
+          "callee": "_append",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_frame_with_mature_spring_entry",
+          "callee": "_append",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_config",
+          "callee": "WyckoffV2Config",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_event_backtest_reports_forward_return_mfe_and_mae_without_touching_selection",
+          "callee": "run_event_backtest",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_event_backtest_reports_forward_return_mfe_and_mae_without_touching_selection",
+          "callee": "_frame_with_mature_spring_entry",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_event_backtest_reports_forward_return_mfe_and_mae_without_touching_selection",
+          "callee": "_config",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_event_backtest_enters_at_the_next_trading_day_open_not_the_signal_close",
+          "callee": "pd.DataFrame",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_event_backtest_enters_at_the_next_trading_day_open_not_the_signal_close",
+          "callee": "pd.bdate_range",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_event_backtest_enters_at_the_next_trading_day_open_not_the_signal_close",
+          "callee": "_outcome",
+          "lineNumber": 85
+        },
+        {
+          "caller": "test_event_backtest_enters_at_the_next_trading_day_open_not_the_signal_close",
+          "callee": "pytest.approx",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_event_backtest_enters_at_the_next_trading_day_open_not_the_signal_close",
+          "callee": "pytest.approx",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_event_backtest_enters_at_the_next_trading_day_open_not_the_signal_close",
+          "callee": "pytest.approx",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_streaming_backtest_matches_the_mapping_api_and_reports_invalidation_hits",
+          "callee": "_frame_with_mature_spring_entry",
+          "lineNumber": 96
+        },
+        {
+          "caller": "test_streaming_backtest_matches_the_mapping_api_and_reports_invalidation_hits",
+          "callee": "run_event_backtest",
+          "lineNumber": 97
+        },
+        {
+          "caller": "test_streaming_backtest_matches_the_mapping_api_and_reports_invalidation_hits",
+          "callee": "_config",
+          "lineNumber": 97
+        },
+        {
+          "caller": "test_streaming_backtest_matches_the_mapping_api_and_reports_invalidation_hits",
+          "callee": "run_event_backtest_frames",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_streaming_backtest_matches_the_mapping_api_and_reports_invalidation_hits",
+          "callee": "iter",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_streaming_backtest_matches_the_mapping_api_and_reports_invalidation_hits",
+          "callee": "_config",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_backtest_emits_range_identity_event_details_and_excess_return",
+          "callee": "run_event_backtest_frames",
+          "lineNumber": 106
+        },
+        {
+          "caller": "test_backtest_emits_range_identity_event_details_and_excess_return",
+          "callee": "_frame_with_mature_spring_entry",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_backtest_emits_range_identity_event_details_and_excess_return",
+          "callee": "_config",
+          "lineNumber": 108
+        },
+        {
+          "caller": "test_parameter_grid_only_accepts_explicit_v2_research_parameters",
+          "callee": "run_parameter_grid",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_parameter_grid_only_accepts_explicit_v2_research_parameters",
+          "callee": "_frame_with_mature_spring_entry",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_parameter_grid_only_accepts_explicit_v2_research_parameters",
+          "callee": "_config",
+          "lineNumber": 126
+        },
+        {
+          "caller": "test_parameter_grid_only_accepts_explicit_v2_research_parameters",
+          "callee": "all",
+          "lineNumber": 131
+        },
+        {
+          "caller": "test_experiment_matrix_returns_funnel_and_failure_profiles",
+          "callee": "run_event_backtest_frames",
+          "lineNumber": 135
+        },
+        {
+          "caller": "test_experiment_matrix_returns_funnel_and_failure_profiles",
+          "callee": "_frame_with_mature_spring_entry",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_experiment_matrix_returns_funnel_and_failure_profiles",
+          "callee": "_config",
+          "lineNumber": 137
+        },
+        {
+          "caller": "test_market_regime_is_reported_as_a_research_stratification",
+          "callee": "run_event_backtest_frames",
+          "lineNumber": 150
+        },
+        {
+          "caller": "test_market_regime_is_reported_as_a_research_stratification",
+          "callee": "_frame_with_mature_spring_entry",
+          "lineNumber": 151
+        },
+        {
+          "caller": "test_market_regime_is_reported_as_a_research_stratification",
+          "callee": "_config",
+          "lineNumber": 152
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 11,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    }
+  ]
+}

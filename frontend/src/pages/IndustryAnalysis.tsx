@@ -17,6 +17,8 @@ import { EmptyState } from '@/components/EmptyState'
 import { AnalysisConfigDialog, DimensionHeatmap, PresetFetchState, type AnalysisFieldConfig } from '@/components/analysis-shared'
 import { StockPreviewDialog, toNavItems, type NavItem } from '@/components/StockPreviewDialog'
 import { RpsRotationDialog } from '@/components/RpsRotationDialog'
+import { SectorRotationBoard } from '@/components/sector-rotation/SectorRotationBoard'
+import { HotRotationBoard } from '@/components/sector-rotation/HotRotationBoard'
 import { api, type MarketSnapshotRow } from '@/lib/api'
 import { QK } from '@/lib/queryKeys'
 import { storage } from '@/lib/storage'
@@ -32,6 +34,7 @@ const MAX_RENDERED_STOCKS = 160
 
 type SortMode = 'heat' | 'avgPct' | 'leader' | 'amount' | 'down'
 type IndustryLevel = 1 | 2 | 3
+type AnalysisView = 'industry_rotation' | 'concept_rotation' | 'instant'
 
 interface EnrichedStock extends MarketSnapshotRow {
   leaderScore: number
@@ -269,6 +272,7 @@ function groupByIndustryLevel(groups: DimensionGroup[], level: IndustryLevel): D
 // ===== 主页面 =====
 
 export function IndustryAnalysis() {
+  const [view, setView] = useState<AnalysisView>('industry_rotation')
   const [fieldConfig, setFieldConfig] = useState<AnalysisFieldConfig>(loadConfig)
   const [showConfig, setShowConfig] = useState(false)
   const [search, setSearch] = useState('')
@@ -384,7 +388,7 @@ export function IndustryAnalysis() {
   }
 
   if (!activeConfig) {
-    // 极端情况: 无任何行业配置。仍提供一键获取内置行业数据入口
+    // 轮动看板不依赖旧的同花顺行业即时配置；只有即时行业视图需要它。
     return (
       <>
         <div className="flex h-full flex-col">
@@ -396,13 +400,18 @@ export function IndustryAnalysis() {
               </button>
             }
           />
-          <PresetFetchState
-            title="暂无行业数据"
-            hint="从同花顺获取行业分类数据后即可使用行业分析"
-            isLoading={fetchMutation.isPending}
-            error={fetchMutation.error}
-            onFetch={() => fetchMutation.mutate()}
-          />
+          <div className="min-h-full bg-[radial-gradient(circle_at_12%_0%,rgba(245,158,11,0.12),transparent_28%),radial-gradient(circle_at_85%_8%,rgba(244,63,94,0.08),transparent_28%)] px-6 py-5">
+            <div className="mx-auto max-w-[1440px] space-y-5">
+              <AnalysisViewTabs value={view} onChange={setView} />
+              {view === 'instant' ? <PresetFetchState
+                title="暂无即时行业数据"
+                hint="从同花顺获取行业分类数据后即可使用即时行业视图"
+                isLoading={fetchMutation.isPending}
+                error={fetchMutation.error}
+                onFetch={() => fetchMutation.mutate()}
+              /> : view === 'concept_rotation' ? <HotRotationBoard /> : <SectorRotationBoard kind="industry" />}
+            </div>
+          </div>
         </div>
         <AnimatePresence>
           {showConfig && <AnalysisConfigDialog currentConfig={fieldConfig} onSave={handleSaveConfig} onClose={() => setShowConfig(false)} showHierarchyLevel />}
@@ -417,25 +426,26 @@ export function IndustryAnalysis() {
     <>
       <PageHeader
         title="行业分析"
-        subtitle={`${industryLevelLabel} · ${marketQuery.data?.as_of ?? rowsQuery.data?.date ?? '最新'} · ${stats.length} 个行业 · ${totalSymbols} 只标的`}
+        subtitle={view === 'instant'
+          ? `${industryLevelLabel} · ${marketQuery.data?.as_of ?? rowsQuery.data?.date ?? '最新'} · ${stats.length} 个行业 · ${totalSymbols} 只标的`
+          : '板块轮动 · 行业与热点分维度比较'}
         right={
           <div className="flex items-center gap-1">
-            {/* RPS 轮动: 打开行业涨幅轮动矩阵对话框 */}
-            <button
+            {view === 'instant' && <button
               onClick={() => setShowRps(true)}
               className="inline-flex items-center gap-1 rounded-btn border border-amber-400/40 bg-amber-400/15 px-2.5 py-1.5 text-[11px] text-amber-400 font-medium transition-colors hover:bg-amber-400/25 hover:border-amber-400/60"
               title="行业涨幅轮动矩阵"
             >
               <Repeat className="h-3.5 w-3.5" />涨幅RPS轮动分析
-            </button>
-            <button
+            </button>}
+            {view === 'instant' && <button
               onClick={() => { rowsQuery.refetch(); marketQuery.refetch() }}
               disabled={rowsQuery.isFetching || marketQuery.isFetching}
               className="p-1.5 text-muted hover:bg-surface disabled:opacity-50"
               title="刷新"
             >
               <RefreshCw className={cn('h-4 w-4', (rowsQuery.isFetching || marketQuery.isFetching) && 'animate-spin')} />
-            </button>
+            </button>}
             <button onClick={() => setShowConfig(true)} className="p-1.5 text-muted hover:bg-surface hover:text-accent" title="配置数据源">
               <Settings2 className="h-4 w-4" />
             </button>
@@ -445,6 +455,9 @@ export function IndustryAnalysis() {
 
       <div className="min-h-full bg-[radial-gradient(circle_at_12%_0%,rgba(245,158,11,0.12),transparent_28%),radial-gradient(circle_at_85%_8%,rgba(244,63,94,0.08),transparent_28%)] px-6 py-5">
         <div className="mx-auto max-w-[1440px] space-y-5">
+          <AnalysisViewTabs value={view} onChange={setView} />
+
+          {view === 'instant' ? <>
           <HeroPanel leading={leading[0]} falling={falling[0]} activeIndustry={activeIndustry} industryBreadth={industryBreadth} />
 
           <MarketPulse
@@ -493,6 +506,7 @@ export function IndustryAnalysis() {
           ) : (
             <EmptyState icon={Layers3} title="未匹配到行业数据" hint={resolved.hint || '请检查扩展数据是否包含行业/板块相关字段'} />
           )}
+          </> : view === 'concept_rotation' ? <HotRotationBoard /> : <SectorRotationBoard kind="industry" />}
         </div>
       </div>
 
@@ -511,6 +525,32 @@ export function IndustryAnalysis() {
       )}
       {showRps && <RpsRotationDialog onClose={() => setShowRps(false)} kind="industry" />}
     </>
+  )
+}
+
+function AnalysisViewTabs({ value, onChange }: { value: AnalysisView; onChange: (value: AnalysisView) => void }) {
+  const tabs: Array<{ value: AnalysisView; label: string; hint: string }> = [
+    { value: 'industry_rotation', label: '行业轮动', hint: '申万三级' },
+    { value: 'concept_rotation', label: '热点轮动', hint: '东方财富概念' },
+    { value: 'instant', label: '即时行业', hint: '当前快照' },
+  ]
+  return (
+    <div className="inline-flex rounded-xl border border-border bg-surface p-1" role="tablist" aria-label="板块分析视图">
+      {tabs.map(tab => <button
+        key={tab.value}
+        type="button"
+        role="tab"
+        aria-selected={value === tab.value}
+        onClick={() => onChange(tab.value)}
+        className={cn(
+          'rounded-lg px-3 py-1.5 text-left transition-colors',
+          value === tab.value ? 'bg-accent text-white shadow-sm' : 'text-secondary hover:bg-elevated hover:text-foreground',
+        )}
+      >
+        <span className="block text-xs font-medium">{tab.label}</span>
+        <span className={cn('block text-[10px]', value === tab.value ? 'text-white/75' : 'text-muted')}>{tab.hint}</span>
+      </button>)}
+    </div>
   )
 }
 

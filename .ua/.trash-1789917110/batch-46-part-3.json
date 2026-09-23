@@ -1,0 +1,1692 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/tests/test_mining_manager.py",
+      "type": "file",
+      "name": "test_mining_manager.py",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "summary": "为 test_mining_manager.py 所覆盖的功能提供自动化测试，验证预期行为与回归场景。",
+      "tags": [
+        "测试",
+        "质量保障",
+        "源码"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:_task_factory",
+      "type": "function",
+      "name": "_task_factory",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        16,
+        21
+      ],
+      "summary": "定义 _task_factory，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:_wait_for_status",
+      "type": "function",
+      "name": "_wait_for_status",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        24,
+        38
+      ],
+      "summary": "定义 _wait_for_status，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:isolated_limiter",
+      "type": "function",
+      "name": "isolated_limiter",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        42,
+        45
+      ],
+      "summary": "定义 isolated_limiter，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:make_manager",
+      "type": "function",
+      "name": "make_manager",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        49,
+        73
+      ],
+      "summary": "定义 make_manager，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_start_records_states_events_progress_and_worker_payload",
+      "type": "function",
+      "name": "test_start_records_states_events_progress_and_worker_payload",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        76,
+        130
+      ],
+      "summary": "定义 test_start_records_states_events_progress_and_worker_payload，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_start_accepts_valid_persistent_run_id",
+      "type": "function",
+      "name": "test_start_accepts_valid_persistent_run_id",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        133,
+        146
+      ],
+      "summary": "定义 test_start_accepts_valid_persistent_run_id，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_duplicate_persistent_run_id_reuses_existing_without_starting_runner",
+      "type": "function",
+      "name": "test_duplicate_persistent_run_id_reuses_existing_without_starting_runner",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        149,
+        172
+      ],
+      "summary": "定义 test_duplicate_persistent_run_id_reuses_existing_without_starting_runner，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_start_reuses_active_and_success_but_force_creates_new_run",
+      "type": "function",
+      "name": "test_start_reuses_active_and_success_but_force_creates_new_run",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        175,
+        205
+      ],
+      "summary": "定义 test_start_reuses_active_and_success_but_force_creates_new_run，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_cancel_while_waiting_for_capacity_never_calls_runner",
+      "type": "function",
+      "name": "test_cancel_while_waiting_for_capacity_never_calls_runner",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        208,
+        235
+      ],
+      "summary": "定义 test_cancel_while_waiting_for_capacity_never_calls_runner，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_cancel_running_job_wins_over_worker_success",
+      "type": "function",
+      "name": "test_cancel_running_job_wins_over_worker_success",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        238,
+        256
+      ],
+      "summary": "定义 test_cancel_running_job_wins_over_worker_success，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_runner_exception_marks_failed_and_appends_error_event",
+      "type": "function",
+      "name": "test_runner_exception_marks_failed_and_appends_error_event",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        259,
+        274
+      ],
+      "summary": "定义 test_runner_exception_marks_failed_and_appends_error_event，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_non_dict_worker_result_is_rejected",
+      "type": "function",
+      "name": "test_non_dict_worker_result_is_rejected",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        277,
+        285
+      ],
+      "summary": "定义 test_non_dict_worker_result_is_rejected，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_budget_exhausted_result_uses_distinct_success_status",
+      "type": "function",
+      "name": "test_budget_exhausted_result_uses_distinct_success_status",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        288,
+        304
+      ],
+      "summary": "定义 test_budget_exhausted_result_uses_distinct_success_status，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_recover_interrupted_delegates_to_store",
+      "type": "function",
+      "name": "test_recover_interrupted_delegates_to_store",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        307,
+        321
+      ],
+      "summary": "定义 test_recover_interrupted_delegates_to_store，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_mining_manager.py:test_shutdown_sets_cancel_uses_bounded_join_and_keeps_history",
+      "type": "function",
+      "name": "test_shutdown_sets_cancel_uses_bounded_join_and_keeps_history",
+      "filePath": "backend/tests/test_mining_manager.py",
+      "lineRange": [
+        324,
+        352
+      ],
+      "summary": "定义 test_shutdown_sets_cancel_uses_bounded_join_and_keeps_history，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/test_minute_strategy.py",
+      "type": "file",
+      "name": "test_minute_strategy.py",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "summary": "为 test_minute_strategy.py 所覆盖的功能提供自动化测试，验证预期行为与回归场景。",
+      "tags": [
+        "测试",
+        "质量保障",
+        "源码"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:_bars",
+      "type": "function",
+      "name": "_bars",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        34,
+        47
+      ],
+      "summary": "定义 _bars，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_hits_five_red_of_seven_with_red_top_two",
+      "type": "function",
+      "name": "test_pattern_hits_five_red_of_seven_with_red_top_two",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        53,
+        69
+      ],
+      "summary": "定义 test_pattern_hits_five_red_of_seven_with_red_top_two，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_insufficient_bars_never_triggers",
+      "type": "function",
+      "name": "test_pattern_insufficient_bars_never_triggers",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        72,
+        74
+      ],
+      "summary": "定义 test_pattern_insufficient_bars_never_triggers，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_green_at_top_blocks_hit",
+      "type": "function",
+      "name": "test_pattern_green_at_top_blocks_hit",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        77,
+        89
+      ],
+      "summary": "定义 test_pattern_green_at_top_blocks_hit，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_rank_by_close_uses_close_not_high",
+      "type": "function",
+      "name": "test_pattern_rank_by_close_uses_close_not_high",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        92,
+        108
+      ],
+      "summary": "定义 test_pattern_rank_by_close_uses_close_not_high，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_sorts_unordered_input_by_datetime",
+      "type": "function",
+      "name": "test_pattern_sorts_unordered_input_by_datetime",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        111,
+        121
+      ],
+      "summary": "定义 test_pattern_sorts_unordered_input_by_datetime，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_three_way_high_tie_prefers_later_bars",
+      "type": "function",
+      "name": "test_pattern_three_way_high_tie_prefers_later_bars",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        124,
+        138
+      ],
+      "summary": "定义 test_pattern_three_way_high_tie_prefers_later_bars，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_min_red_threshold_respected",
+      "type": "function",
+      "name": "test_pattern_min_red_threshold_respected",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        141,
+        154
+      ],
+      "summary": "定义 test_pattern_min_red_threshold_respected，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_uses_opening_bars_even_if_day_turns_green",
+      "type": "function",
+      "name": "test_pattern_uses_opening_bars_even_if_day_turns_green",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        157,
+        176
+      ],
+      "summary": "定义 test_pattern_uses_opening_bars_even_if_day_turns_green，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_opening_window_miss_not_rescued_by_late_reds",
+      "type": "function",
+      "name": "test_pattern_opening_window_miss_not_rescued_by_late_reds",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        179,
+        193
+      ],
+      "summary": "定义 test_pattern_opening_window_miss_not_rescued_by_late_reds，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:_daily",
+      "type": "function",
+      "name": "_daily",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        210,
+        225
+      ],
+      "summary": "定义 _daily，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_condition_filters_by_daily_signals",
+      "type": "function",
+      "name": "test_pattern_limit_up_condition_filters_by_daily_signals",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        228,
+        241
+      ],
+      "summary": "定义 test_pattern_limit_up_condition_filters_by_daily_signals，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_lookback_window_boundary",
+      "type": "function",
+      "name": "test_pattern_limit_up_lookback_window_boundary",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        244,
+        253
+      ],
+      "summary": "定义 test_pattern_limit_up_lookback_window_boundary，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_fails_closed_without_daily",
+      "type": "function",
+      "name": "test_pattern_limit_up_fails_closed_without_daily",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        256,
+        259
+      ],
+      "summary": "定义 test_pattern_limit_up_fails_closed_without_daily，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_disabled_ignores_daily",
+      "type": "function",
+      "name": "test_pattern_limit_up_disabled_ignores_daily",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        262,
+        267
+      ],
+      "summary": "定义 test_pattern_limit_up_disabled_ignores_daily，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_custom_minute_strategy_loads_with_minute_filter_backend",
+      "type": "function",
+      "name": "test_custom_minute_strategy_loads_with_minute_filter_backend",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        273,
+        281
+      ],
+      "summary": "定义 test_custom_minute_strategy_loads_with_minute_filter_backend，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:_minute_code",
+      "type": "function",
+      "name": "_minute_code",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        284,
+        293
+      ],
+      "summary": "定义 _minute_code，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_filter_backend_validation",
+      "type": "function",
+      "name": "test_minute_filter_backend_validation",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        296,
+        308
+      ],
+      "summary": "定义 test_minute_filter_backend_validation，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_filter_daily_history_validation",
+      "type": "function",
+      "name": "test_minute_filter_daily_history_validation",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        311,
+        343
+      ],
+      "summary": "定义 test_minute_filter_daily_history_validation，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_run_injects_daily_history",
+      "type": "function",
+      "name": "test_minute_run_injects_daily_history",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        346,
+        377
+      ],
+      "summary": "定义 test_minute_run_injects_daily_history，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_context_run_applies_enriched_basic_filter",
+      "type": "function",
+      "name": "test_minute_context_run_applies_enriched_basic_filter",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        380,
+        411
+      ],
+      "summary": "定义 test_minute_context_run_applies_enriched_basic_filter，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_strategy_rejects_daily_context",
+      "type": "function",
+      "name": "test_minute_strategy_rejects_daily_context",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        414,
+        427
+      ],
+      "summary": "定义 test_minute_strategy_rejects_daily_context，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:_svc",
+      "type": "function",
+      "name": "_svc",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        447,
+        448
+      ],
+      "summary": "定义 _svc，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_context_prefers_as_of_partition",
+      "type": "function",
+      "name": "test_minute_context_prefers_as_of_partition",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        451,
+        462
+      ],
+      "summary": "定义 test_minute_context_prefers_as_of_partition，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_context_falls_back_to_latest_partition",
+      "type": "function",
+      "name": "test_minute_context_falls_back_to_latest_partition",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        465,
+        475
+      ],
+      "summary": "定义 test_minute_context_falls_back_to_latest_partition，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_context_empty_store_raises_with_guidance",
+      "type": "function",
+      "name": "test_minute_context_empty_store_raises_with_guidance",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        478,
+        487
+      ],
+      "summary": "定义 test_minute_context_empty_store_raises_with_guidance，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_context_rejects_non_stock_asset",
+      "type": "function",
+      "name": "test_minute_context_rejects_non_stock_asset",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        490,
+        499
+      ],
+      "summary": "定义 test_minute_context_rejects_non_stock_asset，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_context_loads_daily_history_for_declared_strategies",
+      "type": "function",
+      "name": "test_minute_context_loads_daily_history_for_declared_strategies",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        502,
+        517
+      ],
+      "summary": "定义 test_minute_context_loads_daily_history_for_declared_strategies，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_minute_strategy.py:test_minute_context_without_engine_skips_daily_history",
+      "type": "function",
+      "name": "test_minute_context_without_engine_skips_daily_history",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        520,
+        526
+      ],
+      "summary": "定义 test_minute_context_without_engine_skips_daily_history，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/test_minute_strategy.py:_FakeMinuteRepo",
+      "type": "class",
+      "name": "_FakeMinuteRepo",
+      "filePath": "backend/tests/test_minute_strategy.py",
+      "lineRange": [
+        433,
+        444
+      ],
+      "summary": "定义 _FakeMinuteRepo 类型，封装相关状态与协作行为。",
+      "tags": [
+        "类型",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/tests/test_parquet_schema_compat.py",
+      "type": "file",
+      "name": "test_parquet_schema_compat.py",
+      "filePath": "backend/tests/test_parquet_schema_compat.py",
+      "summary": "为 test_parquet_schema_compat.py 所覆盖的功能提供自动化测试，验证预期行为与回归场景。",
+      "tags": [
+        "测试",
+        "质量保障",
+        "源码"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_parquet_schema_compat.py:test_partitioned_daily_scan_tolerates_added_quote_ts",
+      "type": "function",
+      "name": "test_partitioned_daily_scan_tolerates_added_quote_ts",
+      "filePath": "backend/tests/test_parquet_schema_compat.py",
+      "lineRange": [
+        8,
+        42
+      ],
+      "summary": "定义 test_partitioned_daily_scan_tolerates_added_quote_ts，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_parquet_schema_compat.py:test_partitioned_enriched_scan_tolerates_added_quote_ts",
+      "type": "function",
+      "name": "test_partitioned_enriched_scan_tolerates_added_quote_ts",
+      "filePath": "backend/tests/test_parquet_schema_compat.py",
+      "lineRange": [
+        45,
+        81
+      ],
+      "summary": "定义 test_partitioned_enriched_scan_tolerates_added_quote_ts，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:backend/tests/test_quote_index_merge.py",
+      "type": "file",
+      "name": "test_quote_index_merge.py",
+      "filePath": "backend/tests/test_quote_index_merge.py",
+      "summary": "为 test_quote_index_merge.py 所覆盖的功能提供自动化测试，验证预期行为与回归场景。",
+      "tags": [
+        "测试",
+        "质量保障",
+        "源码"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_quote_index_merge.py:_enriched_row",
+      "type": "function",
+      "name": "_enriched_row",
+      "filePath": "backend/tests/test_quote_index_merge.py",
+      "lineRange": [
+        9,
+        15
+      ],
+      "summary": "定义 _enriched_row，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_quote_index_merge.py:test_merge_live_enriched_preserves_full_index_partition",
+      "type": "function",
+      "name": "test_merge_live_enriched_preserves_full_index_partition",
+      "filePath": "backend/tests/test_quote_index_merge.py",
+      "lineRange": [
+        18,
+        49
+      ],
+      "summary": "定义 test_merge_live_enriched_preserves_full_index_partition，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/test_quote_index_merge.py:test_merge_live_daily_preserves_full_index_partition",
+      "type": "function",
+      "name": "test_merge_live_daily_preserves_full_index_partition",
+      "filePath": "backend/tests/test_quote_index_merge.py",
+      "lineRange": [
+        52,
+        78
+      ],
+      "summary": "定义 test_merge_live_daily_preserves_full_index_partition，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:_task_factory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:_task_factory",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:_wait_for_status",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:_wait_for_status",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:isolated_limiter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:isolated_limiter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:make_manager",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:make_manager",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_start_records_states_events_progress_and_worker_payload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_start_records_states_events_progress_and_worker_payload",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_start_accepts_valid_persistent_run_id",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_start_accepts_valid_persistent_run_id",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_duplicate_persistent_run_id_reuses_existing_without_starting_runner",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_duplicate_persistent_run_id_reuses_existing_without_starting_runner",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_start_reuses_active_and_success_but_force_creates_new_run",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_start_reuses_active_and_success_but_force_creates_new_run",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_cancel_while_waiting_for_capacity_never_calls_runner",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_cancel_while_waiting_for_capacity_never_calls_runner",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_cancel_running_job_wins_over_worker_success",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_cancel_running_job_wins_over_worker_success",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_runner_exception_marks_failed_and_appends_error_event",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_runner_exception_marks_failed_and_appends_error_event",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_non_dict_worker_result_is_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_non_dict_worker_result_is_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_budget_exhausted_result_uses_distinct_success_status",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_budget_exhausted_result_uses_distinct_success_status",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_recover_interrupted_delegates_to_store",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_recover_interrupted_delegates_to_store",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_shutdown_sets_cancel_uses_bounded_join_and_keeps_history",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "function:backend/tests/test_mining_manager.py:test_shutdown_sets_cancel_uses_bounded_join_and_keeps_history",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "file:backend/app/services/heavy_job_limiter.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "file:backend/app/services/mining_manager.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "file:backend/app/services/heavy_job_limiter.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/tests/test_mining_manager.py",
+      "target": "file:backend/app/services/mining_manager.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:_bars",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:_bars",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_hits_five_red_of_seven_with_red_top_two",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_hits_five_red_of_seven_with_red_top_two",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_insufficient_bars_never_triggers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_insufficient_bars_never_triggers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_green_at_top_blocks_hit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_green_at_top_blocks_hit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_rank_by_close_uses_close_not_high",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_rank_by_close_uses_close_not_high",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_sorts_unordered_input_by_datetime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_sorts_unordered_input_by_datetime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_three_way_high_tie_prefers_later_bars",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_three_way_high_tie_prefers_later_bars",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_min_red_threshold_respected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_min_red_threshold_respected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_uses_opening_bars_even_if_day_turns_green",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_uses_opening_bars_even_if_day_turns_green",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_opening_window_miss_not_rescued_by_late_reds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_opening_window_miss_not_rescued_by_late_reds",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:_daily",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:_daily",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_condition_filters_by_daily_signals",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_condition_filters_by_daily_signals",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_lookback_window_boundary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_lookback_window_boundary",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_fails_closed_without_daily",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_fails_closed_without_daily",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_disabled_ignores_daily",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_pattern_limit_up_disabled_ignores_daily",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_custom_minute_strategy_loads_with_minute_filter_backend",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_custom_minute_strategy_loads_with_minute_filter_backend",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:_minute_code",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:_minute_code",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_filter_backend_validation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_filter_backend_validation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_filter_daily_history_validation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_filter_daily_history_validation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_run_injects_daily_history",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_run_injects_daily_history",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_run_applies_enriched_basic_filter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_run_applies_enriched_basic_filter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_strategy_rejects_daily_context",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_strategy_rejects_daily_context",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:_svc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:_svc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_prefers_as_of_partition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_prefers_as_of_partition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_falls_back_to_latest_partition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_falls_back_to_latest_partition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_empty_store_raises_with_guidance",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_empty_store_raises_with_guidance",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_rejects_non_stock_asset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_rejects_non_stock_asset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_loads_daily_history_for_declared_strategies",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_loads_daily_history_for_declared_strategies",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_without_engine_skips_daily_history",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "function:backend/tests/test_minute_strategy.py:test_minute_context_without_engine_skips_daily_history",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "class:backend/tests/test_minute_strategy.py:_FakeMinuteRepo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "class:backend/tests/test_minute_strategy.py:_FakeMinuteRepo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "file:backend/app/services/screener.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "file:backend/app/strategy/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "file:backend/app/services/screener.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/tests/test_minute_strategy.py",
+      "target": "file:backend/app/strategy/engine.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/tests/test_parquet_schema_compat.py",
+      "target": "function:backend/tests/test_parquet_schema_compat.py:test_partitioned_daily_scan_tolerates_added_quote_ts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_parquet_schema_compat.py",
+      "target": "function:backend/tests/test_parquet_schema_compat.py:test_partitioned_daily_scan_tolerates_added_quote_ts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_parquet_schema_compat.py",
+      "target": "function:backend/tests/test_parquet_schema_compat.py:test_partitioned_enriched_scan_tolerates_added_quote_ts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_parquet_schema_compat.py",
+      "target": "function:backend/tests/test_parquet_schema_compat.py:test_partitioned_enriched_scan_tolerates_added_quote_ts",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_parquet_schema_compat.py",
+      "target": "file:backend/app/parquet.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_parquet_schema_compat.py",
+      "target": "file:backend/app/parquet.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/tests/test_quote_index_merge.py",
+      "target": "function:backend/tests/test_quote_index_merge.py:_enriched_row",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_index_merge.py",
+      "target": "function:backend/tests/test_quote_index_merge.py:_enriched_row",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_index_merge.py",
+      "target": "function:backend/tests/test_quote_index_merge.py:test_merge_live_enriched_preserves_full_index_partition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_index_merge.py",
+      "target": "function:backend/tests/test_quote_index_merge.py:test_merge_live_enriched_preserves_full_index_partition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_index_merge.py",
+      "target": "function:backend/tests/test_quote_index_merge.py:test_merge_live_daily_preserves_full_index_partition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_quote_index_merge.py",
+      "target": "function:backend/tests/test_quote_index_merge.py:test_merge_live_daily_preserves_full_index_partition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_quote_index_merge.py",
+      "target": "file:backend/app/tickflow/repository.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_quote_index_merge.py",
+      "target": "file:backend/app/tickflow/repository.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

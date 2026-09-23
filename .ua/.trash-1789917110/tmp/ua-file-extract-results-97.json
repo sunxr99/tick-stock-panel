@@ -1,0 +1,517 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 4,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 4
+    }
+  },
+  "results": [
+    {
+      "path": "docs/audits/candidate-pool-chain-audit-review-2026-09-13.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 82,
+      "nonEmptyLines": 55,
+      "sections": [
+        {
+          "heading": "候选池链路审阅复核（2026-09-13）",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "范围",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "已确认的结论",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "实现与时序",
+          "level": 3,
+          "line": 15
+        },
+        {
+          "heading": "职责边界",
+          "level": 3,
+          "line": 23
+        },
+        {
+          "heading": "外部审阅中已过时的两项描述",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "`final_rank_score` 已不再写入通用 Strategy score",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "RangeVP 预载现在已 as-of 过滤",
+          "level": 3,
+          "line": 46
+        },
+        {
+          "heading": "证据层：应维持研究级别",
+          "level": 2,
+          "line": 55
+        },
+        {
+          "heading": "当前决策",
+          "level": 2,
+          "line": 68
+        },
+        {
+          "heading": "相关证据",
+          "level": 2,
+          "line": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "docs/audits/current-sector-strength-audit.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 443,
+      "nonEmptyLines": 347,
+      "sections": [
+        {
+          "heading": "当前行业 / 板块强度能力审计",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "实现前结论摘要",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "审计范围与口径",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "现有能力总表",
+          "level": 2,
+          "line": 47
+        },
+        {
+          "heading": "各模块输入、公式与硬软边界",
+          "level": 2,
+          "line": 61
+        },
+        {
+          "heading": "1. Sector Monitor：实时板块监控",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "2. Dashboard 的行业/概念强弱：单日等权涨幅榜",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "3. Sector Rotation / RPS Rotation：名称是 RPS，计算不是传统多周期 RPS",
+          "level": 3,
+          "line": 111
+        },
+        {
+          "heading": "4. Theme 与 Mainline：不是同一概念",
+          "level": 3,
+          "line": 137
+        },
+        {
+          "heading": "5. Market Regime、Breadth、流动性",
+          "level": 3,
+          "line": 172
+        },
+        {
+          "heading": "6. 个股 Momentum、相对大盘与流动性",
+          "level": 3,
+          "line": 202
+        },
+        {
+          "heading": "7. Wyckoff L2 / L3 的实际边界（保持冻结）",
+          "level": 3,
+          "line": 224
+        },
+        {
+          "heading": "对十个问题的直接回答",
+          "level": 2,
+          "line": 256
+        },
+        {
+          "heading": "A. 可以直接复用",
+          "level": 2,
+          "line": 287
+        },
+        {
+          "heading": "B. 可以重构后复用",
+          "level": 2,
+          "line": 303
+        },
+        {
+          "heading": "C. 真正缺失",
+          "level": 2,
+          "line": 317
+        },
+        {
+          "heading": "D. 不建议继续保留在核心链路",
+          "level": 2,
+          "line": 332
+        },
+        {
+          "heading": "最小改造方案（建议，尚未实施）",
+          "level": 2,
+          "line": 345
+        },
+        {
+          "heading": "原则",
+          "level": 3,
+          "line": 347
+        },
+        {
+          "heading": "推荐保留、重构、新增和降级",
+          "level": 3,
+          "line": 353
+        },
+        {
+          "heading": "推荐数据流",
+          "level": 3,
+          "line": 362
+        },
+        {
+          "heading": "建议的最小 DTO",
+          "level": 3,
+          "line": 378
+        },
+        {
+          "heading": "后续实现顺序",
+          "level": 3,
+          "line": 417
+        },
+        {
+          "heading": "最终判断",
+          "level": 2,
+          "line": 431
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 24
+      }
+    },
+    {
+      "path": "docs/audits/independent-strategy-correctness-review.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 226,
+      "nonEmptyLines": 168,
+      "sections": [
+        {
+          "heading": "独立策略正确性评审（CZSC / 旧 Wyckoff Funnel / Wyckoff V2 及其市场环境链路）",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. 总结结论",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "2. 策略评分表",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "CZSC",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "旧 Wyckoff Funnel（L1–L4）",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "Wyckoff V2",
+          "level": 3,
+          "line": 53
+        },
+        {
+          "heading": "Market Regime / Phase",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "Market Mainline（涨停梯队主线）",
+          "level": 3,
+          "line": 75
+        },
+        {
+          "heading": "Sector Rotation / Theme",
+          "level": 3,
+          "line": 86
+        },
+        {
+          "heading": "3. CZSC 评价",
+          "level": 2,
+          "line": 99
+        },
+        {
+          "heading": "理论",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "实现",
+          "level": 3,
+          "line": 104
+        },
+        {
+          "heading": "时序与数据口径",
+          "level": 3,
+          "line": 110
+        },
+        {
+          "heading": "回测证据与风险",
+          "level": 3,
+          "line": 115
+        },
+        {
+          "heading": "4. Wyckoff 评价",
+          "level": 2,
+          "line": 120
+        },
+        {
+          "heading": "旧 Funnel（L1–L4）",
+          "level": 3,
+          "line": 122
+        },
+        {
+          "heading": "L2 / L3（与 Funnel 的关系）",
+          "level": 3,
+          "line": 129
+        },
+        {
+          "heading": "Wyckoff V2（冻结规则 vs 实际生产调用）",
+          "level": 3,
+          "line": 132
+        },
+        {
+          "heading": "旧 Funnel 与 V2 的隔离",
+          "level": 3,
+          "line": 137
+        },
+        {
+          "heading": "5. 当前策略组合评价",
+          "level": 2,
+          "line": 142
+        },
+        {
+          "heading": "重复因子 / 重复职责",
+          "level": 3,
+          "line": 144
+        },
+        {
+          "heading": "错误职责 / 展示指标误用风险",
+          "level": 3,
+          "line": 149
+        },
+        {
+          "heading": "展示指标被误用成硬过滤（已发生）",
+          "level": 3,
+          "line": 154
+        },
+        {
+          "heading": "缺失环节（相对目标链路）",
+          "level": 3,
+          "line": 157
+        },
+        {
+          "heading": "6. 统计证据缺口（必须补齐的验证，而非调参）",
+          "level": 2,
+          "line": 166
+        },
+        {
+          "heading": "7. 最小验证实验设计（只设计，不实现）",
+          "level": 2,
+          "line": 181
+        },
+        {
+          "heading": "7.1 时间滚动样本外",
+          "level": 3,
+          "line": 183
+        },
+        {
+          "heading": "7.2 Regime 分组",
+          "level": 3,
+          "line": 186
+        },
+        {
+          "heading": "7.3 行业/概念成员历史漂移处理",
+          "level": 3,
+          "line": 189
+        },
+        {
+          "heading": "7.4 基准、成本、滑点、涨跌停不可成交",
+          "level": 3,
+          "line": 192
+        },
+        {
+          "heading": "7.5 与简单基线比较",
+          "level": 3,
+          "line": 196
+        },
+        {
+          "heading": "7.6 消融实验",
+          "level": 3,
+          "line": 199
+        },
+        {
+          "heading": "7.7 候选池每层增益评估",
+          "level": 3,
+          "line": 202
+        },
+        {
+          "heading": "8. 最终判定（五类结论严格区分）",
+          "level": 2,
+          "line": 207
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 34
+      }
+    },
+    {
+      "path": "docs/audits/sector-rs-data-and-implementation-audit.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 169,
+      "nonEmptyLines": 120,
+      "sections": [
+        {
+          "heading": "Sector Strength / RS 数据与实现审计",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "审计结论",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "数据补充（2026-09-12）",
+          "level": 3,
+          "line": 16
+        },
+        {
+          "heading": "A. 已确认实现正确",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "收益、相对收益与排名",
+          "level": 3,
+          "line": 27
+        },
+        {
+          "heading": "十个固定真实样本日 sanity check",
+          "level": 3,
+          "line": 45
+        },
+        {
+          "heading": "交易日与未来标签对齐",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "B. 已发现代码 Bug",
+          "level": 2,
+          "line": 74
+        },
+        {
+          "heading": "C. 已发现数据问题",
+          "level": 2,
+          "line": 82
+        },
+        {
+          "heading": "成员关系与 survivorship（阻断性）",
+          "level": 3,
+          "line": 84
+        },
+        {
+          "heading": "复权与 `change_pct`",
+          "level": 3,
+          "line": 93
+        },
+        {
+          "heading": "股票池与可交易性",
+          "level": 3,
+          "line": 100
+        },
+        {
+          "heading": "D. 因子的统计表现",
+          "level": 2,
+          "line": 107
+        },
+        {
+          "heading": "2024 单因子诊断",
+          "level": 3,
+          "line": 109
+        },
+        {
+          "heading": "Sector 的构成现象",
+          "level": 3,
+          "line": 127
+        },
+        {
+          "heading": "第二独立年份：2023 冻结复跑",
+          "level": 3,
+          "line": 133
+        },
+        {
+          "heading": "对问题的直接回答",
+          "level": 2,
+          "line": 149
+        },
+        {
+          "heading": "可复现命令",
+          "level": 2,
+          "line": 159
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    }
+  ]
+}

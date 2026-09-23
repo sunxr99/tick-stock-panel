@@ -1,0 +1,355 @@
+{
+  "projectRoot": "D:\\stock\\myStockPanel\\tick-stock-panel",
+  "batchFiles": [
+    {
+      "path": "backend/tests/test_intraday_burst_fault_isolation.py",
+      "language": "python",
+      "sizeLines": 91,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_intraday_monitor_signals.py",
+      "language": "python",
+      "sizeLines": 192,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_job_record_persistence.py",
+      "language": "python",
+      "sizeLines": 125,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_job_stall_and_cancel.py",
+      "language": "python",
+      "sizeLines": 208,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_kline_hot_path_memory.py",
+      "language": "python",
+      "sizeLines": 155,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_kline_minute_live.py",
+      "language": "python",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_kline_sync_timezone.py",
+      "language": "python",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_last_fetch_throttle.py",
+      "language": "python",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_limit_ladder_one_word.py",
+      "language": "python",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_live_enriched_metadata.py",
+      "language": "python",
+      "sizeLines": 104,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_main_mining_lifespan.py",
+      "language": "python",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_market_mainline.py",
+      "language": "python",
+      "sizeLines": 251,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_mining_process_lock.py",
+      "language": "python",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_mining_schedule.py",
+      "language": "python",
+      "sizeLines": 427,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_minute_history_days.py",
+      "language": "python",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_minute_range_api.py",
+      "language": "python",
+      "sizeLines": 225,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_minute_refresh.py",
+      "language": "python",
+      "sizeLines": 446,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_minute_routing.py",
+      "language": "python",
+      "sizeLines": 1161,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_minute_timezone_contract.py",
+      "language": "python",
+      "sizeLines": 185,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_monitor_etf.py",
+      "language": "python",
+      "sizeLines": 86,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_monitor_group_scope.py",
+      "language": "python",
+      "sizeLines": 183,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_monitor_index.py",
+      "language": "python",
+      "sizeLines": 202,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_override_signature_cache.py",
+      "language": "python",
+      "sizeLines": 97,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_pipeline_and_monitor_fixes.py",
+      "language": "python",
+      "sizeLines": 156,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_pipeline_pull_types.py",
+      "language": "python",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_preferences_cache.py",
+      "language": "python",
+      "sizeLines": 123,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_price_limits.py",
+      "language": "python",
+      "sizeLines": 256,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_pull_sw_membership_history.py",
+      "language": "python",
+      "sizeLines": 184,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_quote_interval_min.py",
+      "language": "python",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_quote_name_map_reuse.py",
+      "language": "python",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_rate_limit_safety_budget.py",
+      "language": "python",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "backend/tests/test_intraday_burst_fault_isolation.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py",
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/tests/test_intraday_monitor_signals.py": [
+      "backend/app/market_time.py",
+      "backend/app/services/kline_sync.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/intraday_signals.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py",
+      "backend/app/tickflow/capabilities.py"
+    ],
+    "backend/tests/test_job_record_persistence.py": [
+      "backend/app/services/pipeline_jobs.py"
+    ],
+    "backend/tests/test_job_stall_and_cancel.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/pipeline_jobs.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_kline_hot_path_memory.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/api/kline.py",
+      "backend/app/api/screener.py",
+      "backend/app/services/ext_data.py"
+    ],
+    "backend/tests/test_kline_minute_live.py": [
+      "backend/app/api/kline.py",
+      "backend/app/market_time.py"
+    ],
+    "backend/tests/test_kline_sync_timezone.py": [
+      "backend/app/market_time.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py"
+    ],
+    "backend/tests/test_last_fetch_throttle.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/preferences.py",
+      "backend/app/services/quote_service.py"
+    ],
+    "backend/tests/test_limit_ladder_one_word.py": [
+      "backend/app/api/screener.py"
+    ],
+    "backend/tests/test_live_enriched_metadata.py": [
+      "backend/app/market_time.py",
+      "backend/app/strategy/engine.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_main_mining_lifespan.py": [
+      "backend/app/main.py"
+    ],
+    "backend/tests/test_market_mainline.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/market_mainline.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_mining_process_lock.py": [
+      "backend/app/services/mining_process_lock.py"
+    ],
+    "backend/tests/test_mining_schedule.py": [
+      "backend/app/jobs/__init__.py",
+      "backend/app/jobs/daily_pipeline.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/mining_jobs.py",
+      "backend/app/services/mining_schedule.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_minute_history_days.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/api/settings.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_minute_range_api.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py"
+    ],
+    "backend/tests/test_minute_refresh.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/minute_refresh.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_minute_routing.py": [
+      "backend/app/data_providers/custom/config.py",
+      "backend/app/data_providers/custom/provider.py",
+      "backend/app/plugins/stocksdk/__init__.py",
+      "backend/app/plugins/stocksdk/provider.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py"
+    ],
+    "backend/tests/test_minute_timezone_contract.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/kline_sync.py"
+    ],
+    "backend/tests/test_monitor_etf.py": [
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_monitor_group_scope.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/config.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/watchlist.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_monitor_index.py": [
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_override_signature_cache.py": [
+      "backend/app/strategy/__init__.py"
+    ],
+    "backend/tests/test_pipeline_and_monitor_fixes.py": [
+      "backend/app/jobs/__init__.py",
+      "backend/app/jobs/daily_pipeline.py",
+      "backend/app/services/__init__.py",
+      "backend/app/services/pipeline_jobs.py",
+      "backend/app/services/preferences.py",
+      "backend/app/services/quote_service.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/monitor.py",
+      "backend/app/strategy/monitor_rules.py"
+    ],
+    "backend/tests/test_pipeline_pull_types.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_preferences_cache.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/preferences.py"
+    ],
+    "backend/tests/test_price_limits.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/api/kline.py",
+      "backend/app/backtest/matrix.py",
+      "backend/app/indicators/__init__.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/price_limits.py"
+    ],
+    "backend/tests/test_pull_sw_membership_history.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/rps_rotation.py",
+      "backend/app/services/sector_membership.py",
+      "backend/scripts/pull_sw_membership_history.py"
+    ],
+    "backend/tests/test_quote_interval_min.py": [
+      "backend/app/services/quote_service.py"
+    ],
+    "backend/tests/test_quote_name_map_reuse.py": [
+      "backend/app/services/quote_service.py"
+    ],
+    "backend/tests/test_rate_limit_safety_budget.py": [
+      "backend/app/tickflow/capabilities.py",
+      "backend/app/tickflow/rate_limits.py"
+    ]
+  }
+}

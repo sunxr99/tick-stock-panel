@@ -1,0 +1,4139 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 34,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 34,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 34,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/features/reading-room/transcript.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 321,
+      "nonEmptyLines": 308,
+      "functions": [
+        {
+          "name": "ChatMessages",
+          "startLine": 53,
+          "endLine": 89,
+          "params": [
+            "props"
+          ]
+        },
+        {
+          "name": "ChatConversationSidebar",
+          "startLine": 91,
+          "endLine": 105,
+          "params": [
+            "{ props }"
+          ]
+        },
+        {
+          "name": "ChatComposerSlot",
+          "startLine": 107,
+          "endLine": 120,
+          "params": [
+            "{ props }"
+          ]
+        },
+        {
+          "name": "ReadingRoomMainContent",
+          "startLine": 122,
+          "endLine": 184,
+          "params": [
+            "{\n  activeTab,\n  activeAssistantId,\n  chat,\n  loading,\n  queuedMessages,\n  runRecords,\n  watchlist,\n  marketWatch,\n  onOpenRecord,\n  onPinStock,\n  onRemoveWatchItem,\n  onStart,\n  modelStatus,\n  llmUsage,\n  runCheckpoint,\n  onResumeRun,\n  onClearRunCheckpoint,\n  agentRunRecords,\n  onCancelAgentRun,\n  onInterpretAgentRun,\n}"
+          ]
+        },
+        {
+          "name": "ChatTranscript",
+          "startLine": 186,
+          "endLine": 246,
+          "params": [
+            "{\n  activeAssistantId,\n  chat,\n  loading,\n  queuedMessages,\n  onPinStock,\n  modelStatus,\n  llmUsage,\n  runCheckpoint,\n  onResumeRun,\n  onClearRunCheckpoint,\n  agentRunRecords,\n  onCancelAgentRun,\n  onInterpretAgentRun,\n}"
+          ]
+        },
+        {
+          "name": "RunRecoveryBanner",
+          "startLine": 248,
+          "endLine": 262,
+          "params": [
+            "{ checkpoint, onResume, onClear }"
+          ]
+        },
+        {
+          "name": "ModelStatusBanner",
+          "startLine": 264,
+          "endLine": 286,
+          "params": [
+            "{ status }"
+          ]
+        },
+        {
+          "name": "LlmUsageBanner",
+          "startLine": 288,
+          "endLine": 296,
+          "params": [
+            "{ usage }"
+          ]
+        },
+        {
+          "name": "lastAssistantId",
+          "startLine": 298,
+          "endLine": 304,
+          "params": [
+            "messages"
+          ]
+        },
+        {
+          "name": "EmptyChatPanel",
+          "startLine": 306,
+          "endLine": 316,
+          "params": []
+        },
+        {
+          "name": "ErrorBanner",
+          "startLine": 318,
+          "endLine": 321,
+          "params": [
+            "{ message }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChatMessages",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ErrorBanner",
+          "line": 318,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ChatMessages",
+          "callee": "lastAssistantId",
+          "lineNumber": 54
+        },
+        {
+          "caller": "ChatTranscript",
+          "callee": "chat.messages.map",
+          "lineNumber": 216
+        },
+        {
+          "caller": "ChatTranscript",
+          "callee": "messageText(message).includes",
+          "lineNumber": 217
+        },
+        {
+          "caller": "ChatTranscript",
+          "callee": "messageText",
+          "lineNumber": 217
+        },
+        {
+          "caller": "ChatTranscript",
+          "callee": "messageText(message).includes",
+          "lineNumber": 217
+        },
+        {
+          "caller": "ChatTranscript",
+          "callee": "messageText",
+          "lineNumber": 217
+        },
+        {
+          "caller": "ChatTranscript",
+          "callee": "chat.addToolApprovalResponse",
+          "lineNumber": 233
+        },
+        {
+          "caller": "ChatTranscript",
+          "callee": "chat.addToolApprovalResponse",
+          "lineNumber": 234
+        },
+        {
+          "caller": "ChatTranscript",
+          "callee": "queuedMessages.map",
+          "lineNumber": 242
+        },
+        {
+          "caller": "RunRecoveryBanner",
+          "callee": "checkpoint.events.at",
+          "lineNumber": 249
+        },
+        {
+          "caller": "LlmUsageBanner",
+          "callee": "formatLlmUsageLine",
+          "lineNumber": 289
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 2,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/features/reading-room/types.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 82,
+      "exports": [
+        {
+          "name": "LlmUsageMetrics",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "MarketWatchQuote",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "MarketWatchSnapshot",
+          "line": 66,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/features/reading-room/utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 31,
+      "functions": [
+        {
+          "name": "asRecord",
+          "startLine": 1,
+          "endLine": 3,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "sanitizeText",
+          "startLine": 5,
+          "endLine": 7,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "normalizeStockCode",
+          "startLine": 9,
+          "endLine": 11,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "nullableNumber",
+          "startLine": 13,
+          "endLine": 15,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "readBooleanStorage",
+          "startLine": 17,
+          "endLine": 27,
+          "params": [
+            "key",
+            "fallback"
+          ]
+        },
+        {
+          "name": "writeBooleanStorage",
+          "startLine": 29,
+          "endLine": 36,
+          "params": [
+            "key",
+            "value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "asRecord",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "sanitizeText",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeStockCode",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "nullableNumber",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "readBooleanStorage",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "writeBooleanStorage",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "asRecord",
+          "callee": "Array.isArray",
+          "lineNumber": 2
+        },
+        {
+          "caller": "sanitizeText",
+          "callee": "value.trim",
+          "lineNumber": 6
+        },
+        {
+          "caller": "normalizeStockCode",
+          "callee": "sanitizeText(value).toUpperCase",
+          "lineNumber": 10
+        },
+        {
+          "caller": "normalizeStockCode",
+          "callee": "sanitizeText",
+          "lineNumber": 10
+        },
+        {
+          "caller": "nullableNumber",
+          "callee": "Number.isFinite",
+          "lineNumber": 14
+        },
+        {
+          "caller": "readBooleanStorage",
+          "callee": "window.localStorage.getItem",
+          "lineNumber": 20
+        },
+        {
+          "caller": "writeBooleanStorage",
+          "callee": "window.localStorage.setItem",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/features/reading-room/watchlist-state.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 105,
+      "nonEmptyLines": 93,
+      "functions": [
+        {
+          "name": "useReadingRoomWatchlist",
+          "startLine": 14,
+          "endLine": 60,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "watchlistStorageKey",
+          "startLine": 62,
+          "endLine": 64,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "readWatchlist",
+          "startLine": 66,
+          "endLine": 75,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "writeWatchlist",
+          "startLine": 77,
+          "endLine": 84,
+          "params": [
+            "key",
+            "items"
+          ]
+        },
+        {
+          "name": "normalizeWatchItem",
+          "startLine": 86,
+          "endLine": 105,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "useReadingRoomWatchlist",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "useMemo",
+          "lineNumber": 15
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "watchlistStorageKey",
+          "lineNumber": 15
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "useState",
+          "lineNumber": 16
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "useState",
+          "lineNumber": 17
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "useEffect",
+          "lineNumber": 19
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "setItems",
+          "lineNumber": 20
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "readWatchlist",
+          "lineNumber": 20
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "setLoadedKey",
+          "lineNumber": 21
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "useEffect",
+          "lineNumber": 24
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "writeWatchlist",
+          "lineNumber": 26
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "useCallback",
+          "lineNumber": 29
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "normalizeStockCode",
+          "lineNumber": 30
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "new Date().toISOString",
+          "lineNumber": 32
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "setItems",
+          "lineNumber": 33
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "current.find",
+          "lineNumber": 34
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "sanitizeText",
+          "lineNumber": 38
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "sanitizeText",
+          "lineNumber": 41
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "sanitizeText",
+          "lineNumber": 42
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "sanitizeText",
+          "lineNumber": 47
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "sanitizeText",
+          "lineNumber": 48
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "[nextItem, ...current.filter((entry) => entry.code !== code)].slice",
+          "lineNumber": 50
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "current.filter",
+          "lineNumber": 50
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "useCallback",
+          "lineNumber": 54
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "normalizeStockCode",
+          "lineNumber": 55
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "setItems",
+          "lineNumber": 56
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "current.filter",
+          "lineNumber": 56
+        },
+        {
+          "caller": "useReadingRoomWatchlist",
+          "callee": "useMemo",
+          "lineNumber": 59
+        },
+        {
+          "caller": "readWatchlist",
+          "callee": "JSON.parse",
+          "lineNumber": 69
+        },
+        {
+          "caller": "readWatchlist",
+          "callee": "window.localStorage.getItem",
+          "lineNumber": 69
+        },
+        {
+          "caller": "readWatchlist",
+          "callee": "Array.isArray",
+          "lineNumber": 70
+        },
+        {
+          "caller": "readWatchlist",
+          "callee": "parsed.map(normalizeWatchItem).filter(Boolean).slice",
+          "lineNumber": 71
+        },
+        {
+          "caller": "readWatchlist",
+          "callee": "parsed.map(normalizeWatchItem).filter",
+          "lineNumber": 71
+        },
+        {
+          "caller": "readWatchlist",
+          "callee": "parsed.map",
+          "lineNumber": 71
+        },
+        {
+          "caller": "writeWatchlist",
+          "callee": "window.localStorage.setItem",
+          "lineNumber": 80
+        },
+        {
+          "caller": "writeWatchlist",
+          "callee": "JSON.stringify",
+          "lineNumber": 80
+        },
+        {
+          "caller": "writeWatchlist",
+          "callee": "items.slice",
+          "lineNumber": 80
+        },
+        {
+          "caller": "normalizeWatchItem",
+          "callee": "asRecord",
+          "lineNumber": 87
+        },
+        {
+          "caller": "normalizeWatchItem",
+          "callee": "normalizeStockCode",
+          "lineNumber": 88
+        },
+        {
+          "caller": "normalizeWatchItem",
+          "callee": "sanitizeText",
+          "lineNumber": 91
+        },
+        {
+          "caller": "normalizeWatchItem",
+          "callee": "sanitizeText",
+          "lineNumber": 93
+        },
+        {
+          "caller": "normalizeWatchItem",
+          "callee": "sanitizeText",
+          "lineNumber": 94
+        },
+        {
+          "caller": "normalizeWatchItem",
+          "callee": "sanitizeText",
+          "lineNumber": 95
+        },
+        {
+          "caller": "normalizeWatchItem",
+          "callee": "sanitizeText",
+          "lineNumber": 96
+        },
+        {
+          "caller": "normalizeWatchItem",
+          "callee": "sanitizeText",
+          "lineNumber": 97
+        },
+        {
+          "caller": "normalizeWatchItem",
+          "callee": "sanitizeText",
+          "lineNumber": 98
+        },
+        {
+          "caller": "normalizeWatchItem",
+          "callee": "new Date().toISOString",
+          "lineNumber": 98
+        },
+        {
+          "caller": "normalizeWatchItem",
+          "callee": "sanitizeText",
+          "lineNumber": 99
+        },
+        {
+          "caller": "normalizeWatchItem",
+          "callee": "new Date().toISOString",
+          "lineNumber": 99
+        },
+        {
+          "caller": "normalizeWatchItem",
+          "callee": "nullableNumber",
+          "lineNumber": 100
+        },
+        {
+          "caller": "normalizeWatchItem",
+          "callee": "nullableNumber",
+          "lineNumber": 101
+        },
+        {
+          "caller": "normalizeWatchItem",
+          "callee": "sanitizeText",
+          "lineNumber": 102
+        },
+        {
+          "caller": "normalizeWatchItem",
+          "callee": "sanitizeText",
+          "lineNumber": 103
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/features/reading-room/watchlist.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 233,
+      "nonEmptyLines": 216,
+      "functions": [
+        {
+          "name": "WatchlistPanelView",
+          "startLine": 7,
+          "endLine": 29,
+          "params": [
+            "{\n  watchlist,\n  marketWatch,\n  onRemove,\n  onStart,\n}"
+          ]
+        },
+        {
+          "name": "WatchlistPanel",
+          "startLine": 31,
+          "endLine": 64,
+          "params": [
+            "{\n  watchlist,\n  marketWatch,\n  watchlistPrompt,\n  onRemove,\n  onStart,\n}"
+          ]
+        },
+        {
+          "name": "WatchlistBody",
+          "startLine": 66,
+          "endLine": 88,
+          "params": [
+            "{\n  watchlist,\n  marketWatch,\n  onRemove,\n  onStart,\n}"
+          ]
+        },
+        {
+          "name": "EmptyWatchlist",
+          "startLine": 90,
+          "endLine": 100,
+          "params": []
+        },
+        {
+          "name": "WatchItemCard",
+          "startLine": 102,
+          "endLine": 137,
+          "params": [
+            "{\n  item,\n  quote,\n  onRemove,\n  onStart,\n}"
+          ]
+        },
+        {
+          "name": "MarketWatchSummary",
+          "startLine": 139,
+          "endLine": 153,
+          "params": [
+            "{ snapshot }"
+          ]
+        },
+        {
+          "name": "LiveQuote",
+          "startLine": 155,
+          "endLine": 169,
+          "params": [
+            "{ quote, code }"
+          ]
+        },
+        {
+          "name": "findQuote",
+          "startLine": 171,
+          "endLine": 173,
+          "params": [
+            "code",
+            "snapshot"
+          ]
+        },
+        {
+          "name": "isCnCode",
+          "startLine": 175,
+          "endLine": 177,
+          "params": [
+            "code"
+          ]
+        },
+        {
+          "name": "formatWatchTime",
+          "startLine": 179,
+          "endLine": 184,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "WatchItemBadges",
+          "startLine": 186,
+          "endLine": 200,
+          "params": [
+            "{ item }"
+          ]
+        },
+        {
+          "name": "WatchItemRules",
+          "startLine": 202,
+          "endLine": 215,
+          "params": [
+            "{ item }"
+          ]
+        },
+        {
+          "name": "buildWatchlistReviewPrompt",
+          "startLine": 217,
+          "endLine": 223,
+          "params": [
+            "items"
+          ]
+        },
+        {
+          "name": "buildStockReviewPrompt",
+          "startLine": 225,
+          "endLine": 227,
+          "params": [
+            "item"
+          ]
+        },
+        {
+          "name": "formatWatchDate",
+          "startLine": 229,
+          "endLine": 233,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WatchlistPanelView",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WatchlistPanelView",
+          "callee": "buildWatchlistReviewPrompt",
+          "lineNumber": 23
+        },
+        {
+          "caller": "WatchlistPanel",
+          "callee": "onStart",
+          "lineNumber": 53
+        },
+        {
+          "caller": "WatchlistBody",
+          "callee": "watchlist.map",
+          "lineNumber": 82
+        },
+        {
+          "caller": "WatchlistBody",
+          "callee": "findQuote",
+          "lineNumber": 83
+        },
+        {
+          "caller": "WatchItemCard",
+          "callee": "onStart",
+          "lineNumber": 116
+        },
+        {
+          "caller": "WatchItemCard",
+          "callee": "buildStockReviewPrompt",
+          "lineNumber": 116
+        },
+        {
+          "caller": "WatchItemCard",
+          "callee": "onRemove",
+          "lineNumber": 125
+        },
+        {
+          "caller": "MarketWatchSummary",
+          "callee": "snapshot.quotes.filter",
+          "lineNumber": 140
+        },
+        {
+          "caller": "MarketWatchSummary",
+          "callee": "formatWatchTime",
+          "lineNumber": 148
+        },
+        {
+          "caller": "LiveQuote",
+          "callee": "isCnCode",
+          "lineNumber": 163
+        },
+        {
+          "caller": "LiveQuote",
+          "callee": "quote.price!.toFixed",
+          "lineNumber": 163
+        },
+        {
+          "caller": "LiveQuote",
+          "callee": "formatSignedPercent",
+          "lineNumber": 164
+        },
+        {
+          "caller": "LiveQuote",
+          "callee": "formatWatchTime",
+          "lineNumber": 165
+        },
+        {
+          "caller": "findQuote",
+          "callee": "snapshot?.quotes.find",
+          "lineNumber": 172
+        },
+        {
+          "caller": "isCnCode",
+          "callee": "/^\\d{6}(?:\\.(?:SH|SZ|BJ))?$/.test",
+          "lineNumber": 176
+        },
+        {
+          "caller": "formatWatchTime",
+          "callee": "Number.isNaN",
+          "lineNumber": 182
+        },
+        {
+          "caller": "formatWatchTime",
+          "callee": "date.getTime",
+          "lineNumber": 182
+        },
+        {
+          "caller": "formatWatchTime",
+          "callee": "date.getHours",
+          "lineNumber": 183
+        },
+        {
+          "caller": "formatWatchTime",
+          "callee": "String(date.getMinutes()).padStart",
+          "lineNumber": 183
+        },
+        {
+          "caller": "formatWatchTime",
+          "callee": "String",
+          "lineNumber": 183
+        },
+        {
+          "caller": "formatWatchTime",
+          "callee": "date.getMinutes",
+          "lineNumber": 183
+        },
+        {
+          "caller": "WatchItemBadges",
+          "callee": "item.score.toFixed",
+          "lineNumber": 191
+        },
+        {
+          "caller": "WatchItemBadges",
+          "callee": "formatSignedPercent",
+          "lineNumber": 194
+        },
+        {
+          "caller": "WatchItemBadges",
+          "callee": "formatWatchDate",
+          "lineNumber": 197
+        },
+        {
+          "caller": "buildWatchlistReviewPrompt",
+          "callee": "items\n    .slice(0, 10)\n    .map",
+          "lineNumber": 219
+        },
+        {
+          "caller": "buildWatchlistReviewPrompt",
+          "callee": "items\n    .slice",
+          "lineNumber": 219
+        },
+        {
+          "caller": "buildWatchlistReviewPrompt",
+          "callee": "lines.join",
+          "lineNumber": 222
+        },
+        {
+          "caller": "formatWatchDate",
+          "callee": "Number.isNaN",
+          "lineNumber": 231
+        },
+        {
+          "caller": "formatWatchDate",
+          "callee": "date.getTime",
+          "lineNumber": 231
+        },
+        {
+          "caller": "formatWatchDate",
+          "callee": "date.getMonth",
+          "lineNumber": 232
+        },
+        {
+          "caller": "formatWatchDate",
+          "callee": "date.getDate",
+          "lineNumber": 232
+        },
+        {
+          "caller": "formatWatchDate",
+          "callee": "String(date.getHours()).padStart",
+          "lineNumber": 232
+        },
+        {
+          "caller": "formatWatchDate",
+          "callee": "String",
+          "lineNumber": 232
+        },
+        {
+          "caller": "formatWatchDate",
+          "callee": "date.getHours",
+          "lineNumber": 232
+        },
+        {
+          "caller": "formatWatchDate",
+          "callee": "String(date.getMinutes()).padStart",
+          "lineNumber": 232
+        },
+        {
+          "caller": "formatWatchDate",
+          "callee": "String",
+          "lineNumber": 232
+        },
+        {
+          "caller": "formatWatchDate",
+          "callee": "date.getMinutes",
+          "lineNumber": 232
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 15,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/features/reading-room/wyckoff-chart-panel.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "WyckoffChartPanel",
+          "startLine": 23,
+          "endLine": 67,
+          "params": [
+            "{ code, plan }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "WyckoffChartPanel",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "WyckoffChartPanel",
+          "callee": "useState",
+          "lineNumber": 24
+        },
+        {
+          "caller": "WyckoffChartPanel",
+          "callee": "useState",
+          "lineNumber": 25
+        },
+        {
+          "caller": "WyckoffChartPanel",
+          "callee": "useAuthStore",
+          "lineNumber": 26
+        },
+        {
+          "caller": "WyckoffChartPanel",
+          "callee": "useEffect",
+          "lineNumber": 28
+        },
+        {
+          "caller": "WyckoffChartPanel",
+          "callee": "setState",
+          "lineNumber": 31
+        },
+        {
+          "caller": "WyckoffChartPanel",
+          "callee": "(async () => {\n      try {\n        const keys = await getUserDataKeys(userId)\n        const result = await fetchKlineWithQuality(code, keys, userId)\n        if (!cancelled) setState({ status: 'ready', rows: result.data })\n      } catch (error) {\n        if (!cancelled) setState({ status: 'error', message: error instanceof Error ? error.message : String(error) })\n      }\n    })",
+          "lineNumber": 32
+        },
+        {
+          "caller": "WyckoffChartPanel",
+          "callee": "getUserDataKeys",
+          "lineNumber": 34
+        },
+        {
+          "caller": "WyckoffChartPanel",
+          "callee": "fetchKlineWithQuality",
+          "lineNumber": 35
+        },
+        {
+          "caller": "WyckoffChartPanel",
+          "callee": "setState",
+          "lineNumber": 36
+        },
+        {
+          "caller": "WyckoffChartPanel",
+          "callee": "setState",
+          "lineNumber": 38
+        },
+        {
+          "caller": "WyckoffChartPanel",
+          "callee": "String",
+          "lineNumber": 38
+        },
+        {
+          "caller": "WyckoffChartPanel",
+          "callee": "setOpen",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/features/remote/use-remote.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 23,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/features/remote/use-remote.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 173,
+      "nonEmptyLines": 155,
+      "functions": [
+        {
+          "name": "pairingCodeFromHash",
+          "startLine": 29,
+          "endLine": 33,
+          "params": [
+            "hash"
+          ]
+        },
+        {
+          "name": "handleMessage",
+          "startLine": 51,
+          "endLine": 72,
+          "params": [
+            "raw",
+            "deps"
+          ]
+        },
+        {
+          "name": "handleClose",
+          "startLine": 75,
+          "endLine": 87,
+          "params": [
+            "evt",
+            "deps"
+          ]
+        },
+        {
+          "name": "resolveSocketUrl",
+          "startLine": 90,
+          "endLine": 106,
+          "params": [
+            "setState"
+          ]
+        },
+        {
+          "name": "useRemote",
+          "startLine": 108,
+          "endLine": 173,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "pairingCodeFromHash",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "useRemote",
+          "line": 108,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "pairingCodeFromHash",
+          "callee": "/(?:^|[#&])code=([0-9a-z]+)/i.exec",
+          "lineNumber": 30
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "JSON.parse",
+          "lineNumber": 54
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "deps.setState",
+          "lineNumber": 59
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "deps.setState",
+          "lineNumber": 62
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "deps.waiters.current.get",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "Number",
+          "lineNumber": 64
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "deps.waiters.current.delete",
+          "lineNumber": 67
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "Number",
+          "lineNumber": 67
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "waiter.resolve",
+          "lineNumber": 68
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "waiter.onEvent",
+          "lineNumber": 71
+        },
+        {
+          "caller": "handleClose",
+          "callee": "deps.setState",
+          "lineNumber": 78
+        },
+        {
+          "caller": "handleClose",
+          "callee": "deps.waiters.current.values",
+          "lineNumber": 81
+        },
+        {
+          "caller": "handleClose",
+          "callee": "waiter.reject",
+          "lineNumber": 81
+        },
+        {
+          "caller": "handleClose",
+          "callee": "deps.waiters.current.clear",
+          "lineNumber": 82
+        },
+        {
+          "caller": "handleClose",
+          "callee": "deps.setState",
+          "lineNumber": 83
+        },
+        {
+          "caller": "handleClose",
+          "callee": "Math.min",
+          "lineNumber": 84
+        },
+        {
+          "caller": "handleClose",
+          "callee": "setTimeout",
+          "lineNumber": 86
+        },
+        {
+          "caller": "resolveSocketUrl",
+          "callee": "supabase.auth.getSession",
+          "lineNumber": 91
+        },
+        {
+          "caller": "resolveSocketUrl",
+          "callee": "setState",
+          "lineNumber": 93
+        },
+        {
+          "caller": "resolveSocketUrl",
+          "callee": "pairingCodeFromHash",
+          "lineNumber": 97
+        },
+        {
+          "caller": "resolveSocketUrl",
+          "callee": "sessionStorage.setItem",
+          "lineNumber": 98
+        },
+        {
+          "caller": "resolveSocketUrl",
+          "callee": "sessionStorage.getItem",
+          "lineNumber": 99
+        },
+        {
+          "caller": "resolveSocketUrl",
+          "callee": "setState",
+          "lineNumber": 100
+        },
+        {
+          "caller": "resolveSocketUrl",
+          "callee": "encodeURIComponent",
+          "lineNumber": 103
+        },
+        {
+          "caller": "resolveSocketUrl",
+          "callee": "navigator.userAgent.includes",
+          "lineNumber": 103
+        },
+        {
+          "caller": "resolveSocketUrl",
+          "callee": "apiUrl",
+          "lineNumber": 104
+        },
+        {
+          "caller": "resolveSocketUrl",
+          "callee": "http.replace",
+          "lineNumber": 105
+        },
+        {
+          "caller": "useRemote",
+          "callee": "useState",
+          "lineNumber": 109
+        },
+        {
+          "caller": "useRemote",
+          "callee": "useRef",
+          "lineNumber": 110
+        },
+        {
+          "caller": "useRemote",
+          "callee": "useRef",
+          "lineNumber": 111
+        },
+        {
+          "caller": "useRemote",
+          "callee": "useRef",
+          "lineNumber": 112
+        },
+        {
+          "caller": "useRemote",
+          "callee": "useRef",
+          "lineNumber": 114
+        },
+        {
+          "caller": "useRemote",
+          "callee": "useRef",
+          "lineNumber": 115
+        },
+        {
+          "caller": "useRemote",
+          "callee": "useCallback",
+          "lineNumber": 117
+        },
+        {
+          "caller": "useRemote",
+          "callee": "resolveSocketUrl",
+          "lineNumber": 119
+        },
+        {
+          "caller": "useRemote",
+          "callee": "connect",
+          "lineNumber": 127
+        },
+        {
+          "caller": "useRemote",
+          "callee": "setState",
+          "lineNumber": 132
+        },
+        {
+          "caller": "useRemote",
+          "callee": "history.replaceState",
+          "lineNumber": 134
+        },
+        {
+          "caller": "useRemote",
+          "callee": "handleMessage",
+          "lineNumber": 136
+        },
+        {
+          "caller": "useRemote",
+          "callee": "String",
+          "lineNumber": 136
+        },
+        {
+          "caller": "useRemote",
+          "callee": "handleClose",
+          "lineNumber": 137
+        },
+        {
+          "caller": "useRemote",
+          "callee": "setState",
+          "lineNumber": 139
+        },
+        {
+          "caller": "useRemote",
+          "callee": "useEffect",
+          "lineNumber": 143
+        },
+        {
+          "caller": "useRemote",
+          "callee": "connect",
+          "lineNumber": 145
+        },
+        {
+          "caller": "useRemote",
+          "callee": "socket.current?.close",
+          "lineNumber": 148
+        },
+        {
+          "caller": "useRemote",
+          "callee": "useCallback",
+          "lineNumber": 157
+        },
+        {
+          "caller": "useRemote",
+          "callee": "reject",
+          "lineNumber": 162
+        },
+        {
+          "caller": "useRemote",
+          "callee": "waiters.current.set",
+          "lineNumber": 166
+        },
+        {
+          "caller": "useRemote",
+          "callee": "ws.send",
+          "lineNumber": 167
+        },
+        {
+          "caller": "useRemote",
+          "callee": "JSON.stringify",
+          "lineNumber": 167
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/activity.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 94,
+      "functions": [
+        {
+          "name": "createMockSupabase",
+          "startLine": 11,
+          "endLine": 33,
+          "params": [
+            "results"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createMockSupabase",
+          "callee": "vi.fn",
+          "lineNumber": 14
+        },
+        {
+          "caller": "terminal",
+          "callee": "Promise.resolve",
+          "lineNumber": 17
+        },
+        {
+          "caller": "createMockSupabase",
+          "callee": "vi.fn().mockReturnValue",
+          "lineNumber": 19
+        },
+        {
+          "caller": "createMockSupabase",
+          "callee": "vi.fn",
+          "lineNumber": 19
+        },
+        {
+          "caller": "createMockSupabase",
+          "callee": "vi.fn",
+          "lineNumber": 21
+        },
+        {
+          "caller": "createMockSupabase",
+          "callee": "terminal",
+          "lineNumber": 23
+        },
+        {
+          "caller": "createMockSupabase",
+          "callee": "vi.fn",
+          "lineNumber": 25
+        },
+        {
+          "caller": "createMockSupabase",
+          "callee": "terminal",
+          "lineNumber": 27
+        },
+        {
+          "caller": "createMockSupabase",
+          "callee": "resolve",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/api-url.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/chat-agent-context.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "makeHistory",
+          "startLine": 8,
+          "endLine": 15,
+          "params": [
+            "turns"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "makeHistory",
+          "callee": "messages.push",
+          "lineNumber": 11
+        },
+        {
+          "caller": "makeHistory",
+          "callee": "String(i % 10).padStart",
+          "lineNumber": 11
+        },
+        {
+          "caller": "makeHistory",
+          "callee": "String",
+          "lineNumber": 11
+        },
+        {
+          "caller": "makeHistory",
+          "callee": "'量价关系 '.repeat",
+          "lineNumber": 11
+        },
+        {
+          "caller": "makeHistory",
+          "callee": "messages.push",
+          "lineNumber": 12
+        },
+        {
+          "caller": "makeHistory",
+          "callee": "'等待确认 '.repeat",
+          "lineNumber": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/chat-message-queue.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 25,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/export-data.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 61,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/financial-colors.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/kline.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 27,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/llm-stream.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 220,
+      "nonEmptyLines": 195,
+      "functions": [
+        {
+          "name": "sseResponse",
+          "startLine": 5,
+          "endLine": 14,
+          "params": [
+            "lines"
+          ]
+        },
+        {
+          "name": "fetchCall",
+          "startLine": 16,
+          "endLine": 19,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "start",
+          "callee": "controller.enqueue",
+          "lineNumber": 9
+        },
+        {
+          "caller": "start",
+          "callee": "encoder.encode",
+          "lineNumber": 9
+        },
+        {
+          "caller": "start",
+          "callee": "lines.join",
+          "lineNumber": 9
+        },
+        {
+          "caller": "start",
+          "callee": "controller.close",
+          "lineNumber": 10
+        },
+        {
+          "caller": "fetchCall",
+          "callee": "vi.mocked",
+          "lineNumber": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/local-history.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/market-search.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 54,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/planet-membership.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 23,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/portfolio-api.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "response",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "body",
+            "init"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "response",
+          "callee": "JSON.stringify",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/product-analytics.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "fakeDocument",
+          "startLine": 45,
+          "endLine": 62,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "FakeScript",
+          "startLine": 64,
+          "endLine": 78,
+          "methods": [
+            "setAttribute",
+            "getAttribute"
+          ],
+          "properties": [
+            "id",
+            "src",
+            "defer",
+            "async",
+            "attrs"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fakeDocument",
+          "callee": "nodes.get",
+          "lineNumber": 50
+        },
+        {
+          "caller": "fakeDocument",
+          "callee": "nodes.set",
+          "lineNumber": 57
+        },
+        {
+          "caller": "fakeDocument",
+          "callee": "scripts.push",
+          "lineNumber": 58
+        },
+        {
+          "caller": "setAttribute",
+          "callee": "this.attrs.set",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getAttribute",
+          "callee": "this.attrs.get",
+          "lineNumber": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/prompt-contracts.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 41,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/run-ledger.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "installStorage",
+          "startLine": 6,
+          "endLine": 15,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "installStorage",
+          "callee": "vi.stubGlobal",
+          "lineNumber": 8
+        },
+        {
+          "caller": "installStorage",
+          "callee": "values.get",
+          "lineNumber": 10
+        },
+        {
+          "caller": "installStorage",
+          "callee": "values.set",
+          "lineNumber": 11
+        },
+        {
+          "caller": "installStorage",
+          "callee": "values.delete",
+          "lineNumber": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/settings-capabilities.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 140,
+      "nonEmptyLines": 127,
+      "functions": [
+        {
+          "name": "findRow",
+          "startLine": 9,
+          "endLine": 13,
+          "params": [
+            "rows",
+            "id"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "findRow",
+          "callee": "rows.find",
+          "lineNumber": 10
+        },
+        {
+          "caller": "findRow",
+          "callee": "expect(row).toBeDefined",
+          "lineNumber": 11
+        },
+        {
+          "caller": "findRow",
+          "callee": "expect",
+          "lineNumber": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/stream-render.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/tool-rendering-web-search.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 23,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/value-analysis.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 248,
+      "nonEmptyLines": 221,
+      "functions": [
+        {
+          "name": "t",
+          "startLine": 41,
+          "endLine": 41,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "snapshot",
+          "startLine": 43,
+          "endLine": 45,
+          "params": [
+            "metrics",
+            "source"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/activity.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 198,
+      "nonEmptyLines": 177,
+      "functions": [
+        {
+          "name": "trackRouteActivity",
+          "startLine": 42,
+          "endLine": 49,
+          "params": [
+            "userId",
+            "route"
+          ]
+        },
+        {
+          "name": "recordActivity",
+          "startLine": 51,
+          "endLine": 86,
+          "params": [
+            "input",
+            "deps"
+          ]
+        },
+        {
+          "name": "featureForRoute",
+          "startLine": 88,
+          "endLine": 93,
+          "params": [
+            "route"
+          ]
+        },
+        {
+          "name": "isAnalyticsExcluded",
+          "startLine": 95,
+          "endLine": 103,
+          "params": [
+            "client",
+            "userId"
+          ]
+        },
+        {
+          "name": "upsertDailyActivity",
+          "startLine": 105,
+          "endLine": 131,
+          "params": [
+            "client",
+            "userId",
+            "activityDate",
+            "source",
+            "feature",
+            "nowIso",
+            "countSession"
+          ]
+        },
+        {
+          "name": "loadDailyActivity",
+          "startLine": 133,
+          "endLine": 146,
+          "params": [
+            "client",
+            "userId",
+            "activityDate"
+          ]
+        },
+        {
+          "name": "normalizedFeatureCounts",
+          "startLine": 148,
+          "endLine": 154,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "sortedUnion",
+          "startLine": 156,
+          "endLine": 158,
+          "params": [
+            "values",
+            "value"
+          ]
+        },
+        {
+          "name": "numeric",
+          "startLine": 160,
+          "endLine": 162,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "localDateKey",
+          "startLine": 164,
+          "endLine": 167,
+          "params": [
+            "now"
+          ]
+        },
+        {
+          "name": "browserSessionId",
+          "startLine": 169,
+          "endLine": 181,
+          "params": []
+        },
+        {
+          "name": "markSessionSeen",
+          "startLine": 183,
+          "endLine": 193,
+          "params": [
+            "activityDate",
+            "sessionId"
+          ]
+        },
+        {
+          "name": "randomId",
+          "startLine": 195,
+          "endLine": 198,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "trackRouteActivity",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "recordActivity",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "featureForRoute",
+          "line": 88,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "trackRouteActivity",
+          "callee": "Date.now",
+          "lineNumber": 44
+        },
+        {
+          "caller": "trackRouteActivity",
+          "callee": "recordActivity",
+          "lineNumber": 48
+        },
+        {
+          "caller": "trackRouteActivity",
+          "callee": "featureForRoute",
+          "lineNumber": 48
+        },
+        {
+          "caller": "recordActivity",
+          "callee": "input.userId.trim",
+          "lineNumber": 52
+        },
+        {
+          "caller": "recordActivity",
+          "callee": "isAnalyticsExcluded",
+          "lineNumber": 55
+        },
+        {
+          "caller": "recordActivity",
+          "callee": "deps.now",
+          "lineNumber": 59
+        },
+        {
+          "caller": "recordActivity",
+          "callee": "browserSessionId",
+          "lineNumber": 60
+        },
+        {
+          "caller": "recordActivity",
+          "callee": "randomId",
+          "lineNumber": 61
+        },
+        {
+          "caller": "recordActivity",
+          "callee": "input.source?.trim",
+          "lineNumber": 62
+        },
+        {
+          "caller": "recordActivity",
+          "callee": "input.feature?.trim",
+          "lineNumber": 63
+        },
+        {
+          "caller": "recordActivity",
+          "callee": "featureForRoute",
+          "lineNumber": 63
+        },
+        {
+          "caller": "recordActivity",
+          "callee": "localDateKey",
+          "lineNumber": 64
+        },
+        {
+          "caller": "recordActivity",
+          "callee": "now.toISOString",
+          "lineNumber": 65
+        },
+        {
+          "caller": "recordActivity",
+          "callee": "input.eventName?.trim",
+          "lineNumber": 71
+        },
+        {
+          "caller": "recordActivity",
+          "callee": "client.from('user_activity_events').insert",
+          "lineNumber": 80
+        },
+        {
+          "caller": "recordActivity",
+          "callee": "client.from",
+          "lineNumber": 80
+        },
+        {
+          "caller": "recordActivity",
+          "callee": "markSessionSeen",
+          "lineNumber": 83
+        },
+        {
+          "caller": "recordActivity",
+          "callee": "upsertDailyActivity",
+          "lineNumber": 84
+        },
+        {
+          "caller": "featureForRoute",
+          "callee": "route.split('#')[0]?.split",
+          "lineNumber": 89
+        },
+        {
+          "caller": "featureForRoute",
+          "callee": "route.split",
+          "lineNumber": 89
+        },
+        {
+          "caller": "featureForRoute",
+          "callee": "path.split('/').find",
+          "lineNumber": 91
+        },
+        {
+          "caller": "featureForRoute",
+          "callee": "path.split",
+          "lineNumber": 91
+        },
+        {
+          "caller": "featureForRoute",
+          "callee": "segment.replaceAll",
+          "lineNumber": 92
+        },
+        {
+          "caller": "isAnalyticsExcluded",
+          "callee": "client\n    .from('analytics_excluded_users')\n    .select('user_id')\n    .eq('user_id', userId)\n    .limit",
+          "lineNumber": 96
+        },
+        {
+          "caller": "isAnalyticsExcluded",
+          "callee": "client\n    .from('analytics_excluded_users')\n    .select('user_id')\n    .eq",
+          "lineNumber": 96
+        },
+        {
+          "caller": "isAnalyticsExcluded",
+          "callee": "client\n    .from('analytics_excluded_users')\n    .select",
+          "lineNumber": 96
+        },
+        {
+          "caller": "isAnalyticsExcluded",
+          "callee": "client\n    .from",
+          "lineNumber": 96
+        },
+        {
+          "caller": "isAnalyticsExcluded",
+          "callee": "Array.isArray",
+          "lineNumber": 102
+        },
+        {
+          "caller": "upsertDailyActivity",
+          "callee": "loadDailyActivity",
+          "lineNumber": 114
+        },
+        {
+          "caller": "upsertDailyActivity",
+          "callee": "normalizedFeatureCounts",
+          "lineNumber": 116
+        },
+        {
+          "caller": "upsertDailyActivity",
+          "callee": "sortedUnion",
+          "lineNumber": 121
+        },
+        {
+          "caller": "upsertDailyActivity",
+          "callee": "numeric",
+          "lineNumber": 122
+        },
+        {
+          "caller": "upsertDailyActivity",
+          "callee": "numeric",
+          "lineNumber": 123
+        },
+        {
+          "caller": "upsertDailyActivity",
+          "callee": "client.from('user_daily_activity').upsert",
+          "lineNumber": 129
+        },
+        {
+          "caller": "upsertDailyActivity",
+          "callee": "client.from",
+          "lineNumber": 129
+        },
+        {
+          "caller": "loadDailyActivity",
+          "callee": "client\n    .from('user_daily_activity')\n    .select('event_count,session_count,sources,feature_counts,first_seen_at')\n    .eq('user_id', userId)\n    .eq('activity_date', activityDate)\n    .limit",
+          "lineNumber": 138
+        },
+        {
+          "caller": "loadDailyActivity",
+          "callee": "client\n    .from('user_daily_activity')\n    .select('event_count,session_count,sources,feature_counts,first_seen_at')\n    .eq('user_id', userId)\n    .eq",
+          "lineNumber": 138
+        },
+        {
+          "caller": "loadDailyActivity",
+          "callee": "client\n    .from('user_daily_activity')\n    .select('event_count,session_count,sources,feature_counts,first_seen_at')\n    .eq",
+          "lineNumber": 138
+        },
+        {
+          "caller": "loadDailyActivity",
+          "callee": "client\n    .from('user_daily_activity')\n    .select",
+          "lineNumber": 138
+        },
+        {
+          "caller": "loadDailyActivity",
+          "callee": "client\n    .from",
+          "lineNumber": 138
+        },
+        {
+          "caller": "loadDailyActivity",
+          "callee": "Array.isArray",
+          "lineNumber": 145
+        },
+        {
+          "caller": "normalizedFeatureCounts",
+          "callee": "Object.entries",
+          "lineNumber": 150
+        },
+        {
+          "caller": "normalizedFeatureCounts",
+          "callee": "Number.isFinite",
+          "lineNumber": 151
+        },
+        {
+          "caller": "sortedUnion",
+          "callee": "Array.from(new Set([...(values ?? []), value].filter(Boolean))).sort",
+          "lineNumber": 157
+        },
+        {
+          "caller": "sortedUnion",
+          "callee": "Array.from",
+          "lineNumber": 157
+        },
+        {
+          "caller": "sortedUnion",
+          "callee": "[...(values ?? []), value].filter",
+          "lineNumber": 157
+        },
+        {
+          "caller": "numeric",
+          "callee": "Number.isFinite",
+          "lineNumber": 161
+        },
+        {
+          "caller": "localDateKey",
+          "callee": "now.getTime",
+          "lineNumber": 165
+        },
+        {
+          "caller": "localDateKey",
+          "callee": "now.getTimezoneOffset",
+          "lineNumber": 165
+        },
+        {
+          "caller": "localDateKey",
+          "callee": "local.toISOString().slice",
+          "lineNumber": 166
+        },
+        {
+          "caller": "localDateKey",
+          "callee": "local.toISOString",
+          "lineNumber": 166
+        },
+        {
+          "caller": "browserSessionId",
+          "callee": "randomId",
+          "lineNumber": 170
+        },
+        {
+          "caller": "browserSessionId",
+          "callee": "window.sessionStorage.getItem",
+          "lineNumber": 173
+        },
+        {
+          "caller": "browserSessionId",
+          "callee": "randomId",
+          "lineNumber": 175
+        },
+        {
+          "caller": "browserSessionId",
+          "callee": "window.sessionStorage.setItem",
+          "lineNumber": 176
+        },
+        {
+          "caller": "browserSessionId",
+          "callee": "randomId",
+          "lineNumber": 179
+        },
+        {
+          "caller": "markSessionSeen",
+          "callee": "window.sessionStorage.getItem",
+          "lineNumber": 187
+        },
+        {
+          "caller": "markSessionSeen",
+          "callee": "window.sessionStorage.setItem",
+          "lineNumber": 188
+        },
+        {
+          "caller": "randomId",
+          "callee": "globalThis.crypto.randomUUID",
+          "lineNumber": 196
+        },
+        {
+          "caller": "randomId",
+          "callee": "Date.now().toString",
+          "lineNumber": 197
+        },
+        {
+          "caller": "randomId",
+          "callee": "Date.now",
+          "lineNumber": 197
+        },
+        {
+          "caller": "randomId",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 197
+        },
+        {
+          "caller": "randomId",
+          "callee": "Math.random().toString",
+          "lineNumber": 197
+        },
+        {
+          "caller": "randomId",
+          "callee": "Math.random",
+          "lineNumber": 197
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 13,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/api-url.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 7,
+      "functions": [
+        {
+          "name": "apiUrl",
+          "startLine": 4,
+          "endLine": 8,
+          "params": [
+            "path"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "apiUrl",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "apiUrl",
+          "callee": "import.meta.env.VITE_API_URL?.trim",
+          "lineNumber": 5
+        },
+        {
+          "caller": "apiUrl",
+          "callee": "base.replace",
+          "lineNumber": 7
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/app-version.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "exports": [
+        {
+          "name": "APP_VERSION",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/chart-resize.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "watchChartResize",
+          "startLine": 4,
+          "endLine": 11,
+          "params": [
+            "container",
+            "chart"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "watchChartResize",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resize",
+          "callee": "chart.applyOptions",
+          "lineNumber": 6
+        },
+        {
+          "caller": "watchChartResize",
+          "callee": "window.addEventListener",
+          "lineNumber": 8
+        },
+        {
+          "caller": "watchChartResize",
+          "callee": "resize",
+          "lineNumber": 9
+        },
+        {
+          "caller": "watchChartResize",
+          "callee": "window.removeEventListener",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/chat-agent.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 294,
+      "nonEmptyLines": 262,
+      "functions": [
+        {
+          "name": "getChatContextWindow",
+          "startLine": 78,
+          "endLine": 81,
+          "params": [
+            "modelName"
+          ]
+        },
+        {
+          "name": "getChatCompactReserveTokens",
+          "startLine": 83,
+          "endLine": 88,
+          "params": [
+            "contextWindow"
+          ]
+        },
+        {
+          "name": "getChatCompactThreshold",
+          "startLine": 90,
+          "endLine": 93,
+          "params": [
+            "modelName"
+          ]
+        },
+        {
+          "name": "getChatRecentKeepTokens",
+          "startLine": 95,
+          "endLine": 99,
+          "params": [
+            "modelName"
+          ]
+        },
+        {
+          "name": "estimateChatMessageTokens",
+          "startLine": 101,
+          "endLine": 105,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "estimateChatTokens",
+          "startLine": 107,
+          "endLine": 109,
+          "params": [
+            "messages"
+          ]
+        },
+        {
+          "name": "findChatTailStartByTokenBudget",
+          "startLine": 111,
+          "endLine": 128,
+          "params": [
+            "messages",
+            "keepRecentTokens"
+          ]
+        },
+        {
+          "name": "buildLocalChatSummary",
+          "startLine": 130,
+          "endLine": 156,
+          "params": [
+            "messages",
+            "maxChars"
+          ]
+        },
+        {
+          "name": "prepareChatMessagesForModel",
+          "startLine": 158,
+          "endLine": 206,
+          "params": [
+            "messages",
+            "modelName"
+          ]
+        },
+        {
+          "name": "parseCustomProviders",
+          "startLine": 208,
+          "endLine": 224,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "loadLLMConfig",
+          "startLine": 226,
+          "endLine": 229,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "loadLLMConfigCandidates",
+          "startLine": 231,
+          "endLine": 255,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "buildProviderConfig",
+          "startLine": 262,
+          "endLine": 285,
+          "params": [
+            "provider",
+            "data"
+          ]
+        },
+        {
+          "name": "normalizeDeepSeekConfig",
+          "startLine": 287,
+          "endLine": 294,
+          "params": [
+            "config"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getChatContextWindow",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "getChatCompactThreshold",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "getChatRecentKeepTokens",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "prepareChatMessagesForModel",
+          "line": 158,
+          "isDefault": false
+        },
+        {
+          "name": "loadLLMConfig",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "loadLLMConfigCandidates",
+          "line": 231,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getChatContextWindow",
+          "callee": "modelName.toLowerCase",
+          "lineNumber": 79
+        },
+        {
+          "caller": "getChatContextWindow",
+          "callee": "MODEL_CONTEXT_WINDOWS.find",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getChatContextWindow",
+          "callee": "lower.includes",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getChatCompactReserveTokens",
+          "callee": "Math.max",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getChatCompactReserveTokens",
+          "callee": "Math.floor",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getChatCompactReserveTokens",
+          "callee": "Math.max",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getChatCompactReserveTokens",
+          "callee": "Math.min",
+          "lineNumber": 86
+        },
+        {
+          "caller": "getChatCompactReserveTokens",
+          "callee": "Math.min",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getChatCompactReserveTokens",
+          "callee": "Math.floor",
+          "lineNumber": 87
+        },
+        {
+          "caller": "getChatCompactThreshold",
+          "callee": "getChatContextWindow",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getChatCompactThreshold",
+          "callee": "Math.max",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getChatCompactThreshold",
+          "callee": "getChatCompactReserveTokens",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getChatRecentKeepTokens",
+          "callee": "getChatCompactThreshold",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getChatRecentKeepTokens",
+          "callee": "Math.max",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getChatRecentKeepTokens",
+          "callee": "Math.floor",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getChatRecentKeepTokens",
+          "callee": "Math.min",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getChatRecentKeepTokens",
+          "callee": "Math.max",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getChatRecentKeepTokens",
+          "callee": "Math.floor",
+          "lineNumber": 98
+        },
+        {
+          "caller": "estimateChatMessageTokens",
+          "callee": "new TextEncoder().encode",
+          "lineNumber": 103
+        },
+        {
+          "caller": "estimateChatMessageTokens",
+          "callee": "Math.max",
+          "lineNumber": 104
+        },
+        {
+          "caller": "estimateChatMessageTokens",
+          "callee": "Math.floor",
+          "lineNumber": 104
+        },
+        {
+          "caller": "estimateChatMessageTokens",
+          "callee": "Math.floor",
+          "lineNumber": 104
+        },
+        {
+          "caller": "estimateChatTokens",
+          "callee": "messages.reduce",
+          "lineNumber": 108
+        },
+        {
+          "caller": "estimateChatTokens",
+          "callee": "estimateChatMessageTokens",
+          "lineNumber": 108
+        },
+        {
+          "caller": "findChatTailStartByTokenBudget",
+          "callee": "Math.max",
+          "lineNumber": 113
+        },
+        {
+          "caller": "findChatTailStartByTokenBudget",
+          "callee": "estimateChatMessageTokens",
+          "lineNumber": 120
+        },
+        {
+          "caller": "findChatTailStartByTokenBudget",
+          "callee": "Math.min",
+          "lineNumber": 127
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "message.content.match",
+          "lineNumber": 136
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "codes.includes",
+          "lineNumber": 137
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "codes.push",
+          "lineNumber": 137
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "userGoals.push",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "message.content.slice",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "assistantNotes.push",
+          "lineNumber": 140
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "message.content.slice",
+          "lineNumber": 140
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "lines.push",
+          "lineNumber": 144
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "codes.slice(0, 12).join",
+          "lineNumber": 144
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "codes.slice",
+          "lineNumber": 144
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "lines.push",
+          "lineNumber": 146
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "userGoals.slice",
+          "lineNumber": 147
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "lines.push",
+          "lineNumber": 147
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "lines.push",
+          "lineNumber": 150
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "assistantNotes.slice",
+          "lineNumber": 151
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "lines.push",
+          "lineNumber": 151
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "lines.join",
+          "lineNumber": 154
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "summary.slice(0, maxChars - 1).trimEnd",
+          "lineNumber": 155
+        },
+        {
+          "caller": "buildLocalChatSummary",
+          "callee": "summary.slice",
+          "lineNumber": 155
+        },
+        {
+          "caller": "prepareChatMessagesForModel",
+          "callee": "messages\n    .filter((message) => message.content.trim())\n    .map",
+          "lineNumber": 159
+        },
+        {
+          "caller": "prepareChatMessagesForModel",
+          "callee": "messages\n    .filter",
+          "lineNumber": 159
+        },
+        {
+          "caller": "prepareChatMessagesForModel",
+          "callee": "message.content.trim",
+          "lineNumber": 160
+        },
+        {
+          "caller": "prepareChatMessagesForModel",
+          "callee": "estimateChatTokens",
+          "lineNumber": 162
+        },
+        {
+          "caller": "prepareChatMessagesForModel",
+          "callee": "getChatCompactThreshold",
+          "lineNumber": 165
+        },
+        {
+          "caller": "prepareChatMessagesForModel",
+          "callee": "findChatTailStartByTokenBudget",
+          "lineNumber": 176
+        },
+        {
+          "caller": "prepareChatMessagesForModel",
+          "callee": "getChatRecentKeepTokens",
+          "lineNumber": 176
+        },
+        {
+          "caller": "prepareChatMessagesForModel",
+          "callee": "buildLocalChatSummary",
+          "lineNumber": 188
+        },
+        {
+          "caller": "prepareChatMessagesForModel",
+          "callee": "normalized.slice",
+          "lineNumber": 188
+        },
+        {
+          "caller": "prepareChatMessagesForModel",
+          "callee": "normalized.slice",
+          "lineNumber": 195
+        },
+        {
+          "caller": "prepareChatMessagesForModel",
+          "callee": "estimateChatTokens",
+          "lineNumber": 202
+        },
+        {
+          "caller": "parseCustomProviders",
+          "callee": "JSON.parse",
+          "lineNumber": 210
+        },
+        {
+          "caller": "parseCustomProviders",
+          "callee": "Array.isArray",
+          "lineNumber": 211
+        },
+        {
+          "caller": "parseCustomProviders",
+          "callee": "Object.entries",
+          "lineNumber": 213
+        },
+        {
+          "caller": "parseCustomProviders",
+          "callee": "Array.isArray",
+          "lineNumber": 214
+        },
+        {
+          "caller": "parseCustomProviders",
+          "callee": "String",
+          "lineNumber": 216
+        },
+        {
+          "caller": "parseCustomProviders",
+          "callee": "ALLOWED_URL_RE.test",
+          "lineNumber": 217
+        },
+        {
+          "caller": "parseCustomProviders",
+          "callee": "Object.fromEntries",
+          "lineNumber": 218
+        },
+        {
+          "caller": "parseCustomProviders",
+          "callee": "Object.entries(entry).map",
+          "lineNumber": 218
+        },
+        {
+          "caller": "parseCustomProviders",
+          "callee": "Object.entries",
+          "lineNumber": 218
+        },
+        {
+          "caller": "parseCustomProviders",
+          "callee": "String",
+          "lineNumber": 218
+        },
+        {
+          "caller": "loadLLMConfig",
+          "callee": "loadLLMConfigCandidates",
+          "lineNumber": 227
+        },
+        {
+          "caller": "loadLLMConfigCandidates",
+          "callee": "supabase\n    .from('user_settings')\n    .select('chat_provider, gemini_api_key, gemini_model, gemini_base_url, openai_api_key, openai_model, openai_base_url, deepseek_api_key, deepseek_model, deepseek_base_url, anthropic_api_key, anthropic_model, anthropic_base_url, custom_providers')\n    .eq('user_id', userId)\n    .single",
+          "lineNumber": 232
+        },
+        {
+          "caller": "loadLLMConfigCandidates",
+          "callee": "supabase\n    .from('user_settings')\n    .select('chat_provider, gemini_api_key, gemini_model, gemini_base_url, openai_api_key, openai_model, openai_base_url, deepseek_api_key, deepseek_model, deepseek_base_url, anthropic_api_key, anthropic_model, anthropic_base_url, custom_providers')\n    .eq",
+          "lineNumber": 232
+        },
+        {
+          "caller": "loadLLMConfigCandidates",
+          "callee": "supabase\n    .from('user_settings')\n    .select",
+          "lineNumber": 232
+        },
+        {
+          "caller": "loadLLMConfigCandidates",
+          "callee": "supabase\n    .from",
+          "lineNumber": 232
+        },
+        {
+          "caller": "loadLLMConfigCandidates",
+          "callee": "parseCustomProviders",
+          "lineNumber": 242
+        },
+        {
+          "caller": "loadLLMConfigCandidates",
+          "callee": "Array.from",
+          "lineNumber": 243
+        },
+        {
+          "caller": "loadLLMConfigCandidates",
+          "callee": "Object.keys",
+          "lineNumber": 249
+        },
+        {
+          "caller": "loadLLMConfigCandidates",
+          "callee": "providers\n    .filter((provider) => !RETIRED_PROVIDERS.has(provider))\n    .map((provider) => buildProviderConfig(provider, settings))\n    .filter",
+          "lineNumber": 251
+        },
+        {
+          "caller": "loadLLMConfigCandidates",
+          "callee": "providers\n    .filter((provider) => !RETIRED_PROVIDERS.has(provider))\n    .map",
+          "lineNumber": 251
+        },
+        {
+          "caller": "loadLLMConfigCandidates",
+          "callee": "providers\n    .filter",
+          "lineNumber": 251
+        },
+        {
+          "caller": "loadLLMConfigCandidates",
+          "callee": "RETIRED_PROVIDERS.has",
+          "lineNumber": 252
+        },
+        {
+          "caller": "loadLLMConfigCandidates",
+          "callee": "buildProviderConfig",
+          "lineNumber": 253
+        },
+        {
+          "caller": "loadLLMConfigCandidates",
+          "callee": "Boolean",
+          "lineNumber": 254
+        },
+        {
+          "caller": "buildProviderConfig",
+          "callee": "normalizeDeepSeekConfig",
+          "lineNumber": 268
+        },
+        {
+          "caller": "buildProviderConfig",
+          "callee": "parseCustomProviders",
+          "lineNumber": 276
+        },
+        {
+          "caller": "buildProviderConfig",
+          "callee": "normalizeDeepSeekConfig",
+          "lineNumber": 278
+        },
+        {
+          "caller": "normalizeDeepSeekConfig",
+          "callee": "resolveOfficialDeepSeekModel",
+          "lineNumber": 288
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 14,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/export-data.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 254,
+      "nonEmptyLines": 223,
+      "functions": [
+        {
+          "name": "normalizeExportSymbol",
+          "startLine": 18,
+          "endLine": 27,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "exportSymbolFromStock",
+          "startLine": 30,
+          "endLine": 33,
+          "params": [
+            "stock"
+          ]
+        },
+        {
+          "name": "parseExportSymbols",
+          "startLine": 35,
+          "endLine": 48,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "buildKlineParams",
+          "startLine": 50,
+          "endLine": 63,
+          "params": [
+            "symbol",
+            "days",
+            "endOffset",
+            "adjust"
+          ]
+        },
+        {
+          "name": "parseTickFlowToRows",
+          "startLine": 65,
+          "endLine": 74,
+          "params": [
+            "json"
+          ]
+        },
+        {
+          "name": "buildEnhancedRows",
+          "startLine": 76,
+          "endLine": 94,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "arrayToCSV",
+          "startLine": 96,
+          "endLine": 102,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "createZipBlob",
+          "startLine": 104,
+          "endLine": 119,
+          "params": [
+            "files"
+          ]
+        },
+        {
+          "name": "downloadBlob",
+          "startLine": 121,
+          "endLine": 130,
+          "params": [
+            "blob",
+            "fileName"
+          ]
+        },
+        {
+          "name": "normalizeRowArray",
+          "startLine": 132,
+          "endLine": 136,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "findTickFlowTable",
+          "startLine": 138,
+          "endLine": 149,
+          "params": [
+            "data"
+          ]
+        },
+        {
+          "name": "tableRowToExportRow",
+          "startLine": 151,
+          "endLine": 155,
+          "params": [
+            "ts",
+            "keys",
+            "table",
+            "index"
+          ]
+        },
+        {
+          "name": "normalizeCell",
+          "startLine": 157,
+          "endLine": 162,
+          "params": [
+            "key",
+            "value"
+          ]
+        },
+        {
+          "name": "numberValue",
+          "startLine": 164,
+          "endLine": 168,
+          "params": [
+            "row",
+            "aliases"
+          ]
+        },
+        {
+          "name": "stringValue",
+          "startLine": 170,
+          "endLine": 172,
+          "params": [
+            "row",
+            "aliases"
+          ]
+        },
+        {
+          "name": "pickValue",
+          "startLine": 174,
+          "endLine": 179,
+          "params": [
+            "row",
+            "aliases"
+          ]
+        },
+        {
+          "name": "csvCell",
+          "startLine": 181,
+          "endLine": 185,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "formatCompactDate",
+          "startLine": 187,
+          "endLine": 189,
+          "params": [
+            "d"
+          ]
+        },
+        {
+          "name": "toMs",
+          "startLine": 191,
+          "endLine": 193,
+          "params": [
+            "date"
+          ]
+        },
+        {
+          "name": "buildCrcTable",
+          "startLine": 195,
+          "endLine": 203,
+          "params": []
+        },
+        {
+          "name": "crc32",
+          "startLine": 205,
+          "endLine": 209,
+          "params": [
+            "bytes"
+          ]
+        },
+        {
+          "name": "zipLocalHeader",
+          "startLine": 211,
+          "endLine": 213,
+          "params": [
+            "name",
+            "size",
+            "crc"
+          ]
+        },
+        {
+          "name": "zipCentralHeader",
+          "startLine": 215,
+          "endLine": 221,
+          "params": [
+            "name",
+            "size",
+            "crc",
+            "offset"
+          ]
+        },
+        {
+          "name": "zipEndRecord",
+          "startLine": 223,
+          "endLine": 225,
+          "params": [
+            "fileCount",
+            "centralSize",
+            "centralOffset"
+          ]
+        },
+        {
+          "name": "bytes",
+          "startLine": 227,
+          "endLine": 240,
+          "params": [
+            "values",
+            "sizes",
+            "tail"
+          ]
+        },
+        {
+          "name": "concatBytes",
+          "startLine": 242,
+          "endLine": 250,
+          "params": [
+            "parts"
+          ]
+        },
+        {
+          "name": "arrayBuffer",
+          "startLine": 252,
+          "endLine": 254,
+          "params": [
+            "bytesValue"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "normalizeExportSymbol",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "exportSymbolFromStock",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "parseExportSymbols",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "buildKlineParams",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "parseTickFlowToRows",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "buildEnhancedRows",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "arrayToCSV",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "createZipBlob",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "downloadBlob",
+          "line": 121,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizeExportSymbol",
+          "callee": "raw.trim().toUpperCase",
+          "lineNumber": 19
+        },
+        {
+          "caller": "normalizeExportSymbol",
+          "callee": "raw.trim",
+          "lineNumber": 19
+        },
+        {
+          "caller": "normalizeExportSymbol",
+          "callee": "/^\\d{6}\\.(SH|SZ|BJ)$/.test",
+          "lineNumber": 20
+        },
+        {
+          "caller": "normalizeExportSymbol",
+          "callee": "/^\\d{6}(SH|SZ|BJ)$/.test",
+          "lineNumber": 21
+        },
+        {
+          "caller": "normalizeExportSymbol",
+          "callee": "input.slice",
+          "lineNumber": 21
+        },
+        {
+          "caller": "normalizeExportSymbol",
+          "callee": "input.slice",
+          "lineNumber": 21
+        },
+        {
+          "caller": "normalizeExportSymbol",
+          "callee": "/^\\d{5}\\.HK$/.test",
+          "lineNumber": 22
+        },
+        {
+          "caller": "normalizeExportSymbol",
+          "callee": "/^[A-Z][A-Z0-9.-]{0,15}\\.US$/.test",
+          "lineNumber": 22
+        },
+        {
+          "caller": "normalizeExportSymbol",
+          "callee": "/^\\d{6}$/.test",
+          "lineNumber": 23
+        },
+        {
+          "caller": "normalizeExportSymbol",
+          "callee": "input.startsWith",
+          "lineNumber": 24
+        },
+        {
+          "caller": "normalizeExportSymbol",
+          "callee": "input.startsWith",
+          "lineNumber": 24
+        },
+        {
+          "caller": "normalizeExportSymbol",
+          "callee": "input.startsWith",
+          "lineNumber": 24
+        },
+        {
+          "caller": "normalizeExportSymbol",
+          "callee": "input.startsWith",
+          "lineNumber": 24
+        },
+        {
+          "caller": "normalizeExportSymbol",
+          "callee": "input.startsWith",
+          "lineNumber": 25
+        },
+        {
+          "caller": "normalizeExportSymbol",
+          "callee": "input.startsWith",
+          "lineNumber": 25
+        },
+        {
+          "caller": "normalizeExportSymbol",
+          "callee": "input.startsWith",
+          "lineNumber": 25
+        },
+        {
+          "caller": "exportSymbolFromStock",
+          "callee": "normalizeExportSymbol",
+          "lineNumber": 32
+        },
+        {
+          "caller": "parseExportSymbols",
+          "callee": "text\n    .toUpperCase()\n    .match",
+          "lineNumber": 36
+        },
+        {
+          "caller": "parseExportSymbols",
+          "callee": "text\n    .toUpperCase",
+          "lineNumber": 36
+        },
+        {
+          "caller": "parseExportSymbols",
+          "callee": "matches.reduce",
+          "lineNumber": 40
+        },
+        {
+          "caller": "parseExportSymbols",
+          "callee": "normalizeExportSymbol",
+          "lineNumber": 41
+        },
+        {
+          "caller": "parseExportSymbols",
+          "callee": "seen.has",
+          "lineNumber": 42
+        },
+        {
+          "caller": "parseExportSymbols",
+          "callee": "seen.add",
+          "lineNumber": 43
+        },
+        {
+          "caller": "parseExportSymbols",
+          "callee": "out.push",
+          "lineNumber": 44
+        },
+        {
+          "caller": "buildKlineParams",
+          "callee": "endDate.setDate",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildKlineParams",
+          "callee": "endDate.getDate",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildKlineParams",
+          "callee": "startDate.setDate",
+          "lineNumber": 54
+        },
+        {
+          "caller": "buildKlineParams",
+          "callee": "endDate.getDate",
+          "lineNumber": 54
+        },
+        {
+          "caller": "buildKlineParams",
+          "callee": "Math.ceil",
+          "lineNumber": 54
+        },
+        {
+          "caller": "buildKlineParams",
+          "callee": "String",
+          "lineNumber": 58
+        },
+        {
+          "caller": "buildKlineParams",
+          "callee": "String",
+          "lineNumber": 60
+        },
+        {
+          "caller": "buildKlineParams",
+          "callee": "toMs",
+          "lineNumber": 60
+        },
+        {
+          "caller": "buildKlineParams",
+          "callee": "formatCompactDate",
+          "lineNumber": 60
+        },
+        {
+          "caller": "buildKlineParams",
+          "callee": "String",
+          "lineNumber": 61
+        },
+        {
+          "caller": "buildKlineParams",
+          "callee": "toMs",
+          "lineNumber": 61
+        },
+        {
+          "caller": "buildKlineParams",
+          "callee": "formatCompactDate",
+          "lineNumber": 61
+        },
+        {
+          "caller": "parseTickFlowToRows",
+          "callee": "Array.isArray",
+          "lineNumber": 67
+        },
+        {
+          "caller": "parseTickFlowToRows",
+          "callee": "normalizeRowArray",
+          "lineNumber": 67
+        },
+        {
+          "caller": "parseTickFlowToRows",
+          "callee": "Array.isArray",
+          "lineNumber": 68
+        },
+        {
+          "caller": "parseTickFlowToRows",
+          "callee": "normalizeRowArray",
+          "lineNumber": 68
+        },
+        {
+          "caller": "parseTickFlowToRows",
+          "callee": "findTickFlowTable",
+          "lineNumber": 69
+        },
+        {
+          "caller": "parseTickFlowToRows",
+          "callee": "Array.isArray",
+          "lineNumber": 71
+        },
+        {
+          "caller": "parseTickFlowToRows",
+          "callee": "Object.keys(table).filter",
+          "lineNumber": 72
+        },
+        {
+          "caller": "parseTickFlowToRows",
+          "callee": "Object.keys",
+          "lineNumber": 72
+        },
+        {
+          "caller": "parseTickFlowToRows",
+          "callee": "Array.isArray",
+          "lineNumber": 72
+        },
+        {
+          "caller": "parseTickFlowToRows",
+          "callee": "timestamps.map",
+          "lineNumber": 73
+        },
+        {
+          "caller": "parseTickFlowToRows",
+          "callee": "tableRowToExportRow",
+          "lineNumber": 73
+        },
+        {
+          "caller": "buildEnhancedRows",
+          "callee": "rows.map",
+          "lineNumber": 77
+        },
+        {
+          "caller": "buildEnhancedRows",
+          "callee": "numberValue",
+          "lineNumber": 78
+        },
+        {
+          "caller": "buildEnhancedRows",
+          "callee": "numberValue",
+          "lineNumber": 79
+        },
+        {
+          "caller": "buildEnhancedRows",
+          "callee": "stringValue",
+          "lineNumber": 81
+        },
+        {
+          "caller": "buildEnhancedRows",
+          "callee": "numberValue",
+          "lineNumber": 82
+        },
+        {
+          "caller": "buildEnhancedRows",
+          "callee": "numberValue",
+          "lineNumber": 83
+        },
+        {
+          "caller": "buildEnhancedRows",
+          "callee": "numberValue",
+          "lineNumber": 84
+        },
+        {
+          "caller": "buildEnhancedRows",
+          "callee": "numberValue",
+          "lineNumber": 85
+        },
+        {
+          "caller": "buildEnhancedRows",
+          "callee": "numberValue",
+          "lineNumber": 88
+        },
+        {
+          "caller": "buildEnhancedRows",
+          "callee": "numberValue",
+          "lineNumber": 89
+        },
+        {
+          "caller": "buildEnhancedRows",
+          "callee": "stringValue",
+          "lineNumber": 91
+        },
+        {
+          "caller": "arrayToCSV",
+          "callee": "Object.keys",
+          "lineNumber": 98
+        },
+        {
+          "caller": "arrayToCSV",
+          "callee": "headers.join",
+          "lineNumber": 99
+        },
+        {
+          "caller": "arrayToCSV",
+          "callee": "lines.push",
+          "lineNumber": 100
+        },
+        {
+          "caller": "arrayToCSV",
+          "callee": "headers.map((header) => csvCell(row[header])).join",
+          "lineNumber": 100
+        },
+        {
+          "caller": "arrayToCSV",
+          "callee": "headers.map",
+          "lineNumber": 100
+        },
+        {
+          "caller": "arrayToCSV",
+          "callee": "csvCell",
+          "lineNumber": 100
+        },
+        {
+          "caller": "arrayToCSV",
+          "callee": "lines.join",
+          "lineNumber": 101
+        },
+        {
+          "caller": "createZipBlob",
+          "callee": "TEXT_ENCODER.encode",
+          "lineNumber": 109
+        },
+        {
+          "caller": "createZipBlob",
+          "callee": "TEXT_ENCODER.encode",
+          "lineNumber": 110
+        },
+        {
+          "caller": "createZipBlob",
+          "callee": "crc32",
+          "lineNumber": 111
+        },
+        {
+          "caller": "createZipBlob",
+          "callee": "localParts.push",
+          "lineNumber": 112
+        },
+        {
+          "caller": "createZipBlob",
+          "callee": "zipLocalHeader",
+          "lineNumber": 112
+        },
+        {
+          "caller": "createZipBlob",
+          "callee": "centralParts.push",
+          "lineNumber": 113
+        },
+        {
+          "caller": "createZipBlob",
+          "callee": "zipCentralHeader",
+          "lineNumber": 113
+        },
+        {
+          "caller": "createZipBlob",
+          "callee": "localParts.at",
+          "lineNumber": 114
+        },
+        {
+          "caller": "createZipBlob",
+          "callee": "concatBytes",
+          "lineNumber": 116
+        },
+        {
+          "caller": "createZipBlob",
+          "callee": "concatBytes",
+          "lineNumber": 117
+        },
+        {
+          "caller": "createZipBlob",
+          "callee": "arrayBuffer",
+          "lineNumber": 118
+        },
+        {
+          "caller": "createZipBlob",
+          "callee": "arrayBuffer",
+          "lineNumber": 118
+        },
+        {
+          "caller": "createZipBlob",
+          "callee": "arrayBuffer",
+          "lineNumber": 118
+        },
+        {
+          "caller": "createZipBlob",
+          "callee": "zipEndRecord",
+          "lineNumber": 118
+        },
+        {
+          "caller": "downloadBlob",
+          "callee": "URL.createObjectURL",
+          "lineNumber": 122
+        },
+        {
+          "caller": "downloadBlob",
+          "callee": "document.createElement",
+          "lineNumber": 123
+        },
+        {
+          "caller": "downloadBlob",
+          "callee": "document.body.appendChild",
+          "lineNumber": 126
+        },
+        {
+          "caller": "downloadBlob",
+          "callee": "a.click",
+          "lineNumber": 127
+        },
+        {
+          "caller": "downloadBlob",
+          "callee": "document.body.removeChild",
+          "lineNumber": 128
+        },
+        {
+          "caller": "downloadBlob",
+          "callee": "URL.revokeObjectURL",
+          "lineNumber": 129
+        },
+        {
+          "caller": "normalizeRowArray",
+          "callee": "rows\n    .filter((row): row is Record<string, unknown> => Boolean(row) && typeof row === 'object' && !Array.isArray(row))\n    .map",
+          "lineNumber": 133
+        },
+        {
+          "caller": "normalizeRowArray",
+          "callee": "rows\n    .filter",
+          "lineNumber": 133
+        },
+        {
+          "caller": "normalizeRowArray",
+          "callee": "Boolean",
+          "lineNumber": 134
+        },
+        {
+          "caller": "normalizeRowArray",
+          "callee": "Array.isArray",
+          "lineNumber": 134
+        },
+        {
+          "caller": "normalizeRowArray",
+          "callee": "Object.fromEntries",
+          "lineNumber": 135
+        },
+        {
+          "caller": "normalizeRowArray",
+          "callee": "Object.entries(row).map",
+          "lineNumber": 135
+        },
+        {
+          "caller": "normalizeRowArray",
+          "callee": "Object.entries",
+          "lineNumber": 135
+        },
+        {
+          "caller": "normalizeRowArray",
+          "callee": "normalizeCell",
+          "lineNumber": 135
+        },
+        {
+          "caller": "findTickFlowTable",
+          "callee": "Array.isArray",
+          "lineNumber": 139
+        },
+        {
+          "caller": "findTickFlowTable",
+          "callee": "Array.isArray",
+          "lineNumber": 141
+        },
+        {
+          "caller": "findTickFlowTable",
+          "callee": "Object.values",
+          "lineNumber": 142
+        },
+        {
+          "caller": "findTickFlowTable",
+          "callee": "Array.isArray",
+          "lineNumber": 143
+        },
+        {
+          "caller": "findTickFlowTable",
+          "callee": "Array.isArray",
+          "lineNumber": 145
+        },
+        {
+          "caller": "tableRowToExportRow",
+          "callee": "formatTimestampDate",
+          "lineNumber": 152
+        },
+        {
+          "caller": "tableRowToExportRow",
+          "callee": "normalizeCell",
+          "lineNumber": 153
+        },
+        {
+          "caller": "normalizeCell",
+          "callee": "String(value || '').replace",
+          "lineNumber": 158
+        },
+        {
+          "caller": "normalizeCell",
+          "callee": "String",
+          "lineNumber": 158
+        },
+        {
+          "caller": "normalizeCell",
+          "callee": "formatTimestampDate",
+          "lineNumber": 159
+        },
+        {
+          "caller": "normalizeCell",
+          "callee": "Number",
+          "lineNumber": 160
+        },
+        {
+          "caller": "normalizeCell",
+          "callee": "Number.isFinite",
+          "lineNumber": 161
+        },
+        {
+          "caller": "normalizeCell",
+          "callee": "String",
+          "lineNumber": 161
+        },
+        {
+          "caller": "numberValue",
+          "callee": "pickValue",
+          "lineNumber": 165
+        },
+        {
+          "caller": "numberValue",
+          "callee": "Number",
+          "lineNumber": 166
+        },
+        {
+          "caller": "numberValue",
+          "callee": "Number.isFinite",
+          "lineNumber": 167
+        },
+        {
+          "caller": "stringValue",
+          "callee": "String",
+          "lineNumber": 171
+        },
+        {
+          "caller": "stringValue",
+          "callee": "pickValue",
+          "lineNumber": 171
+        },
+        {
+          "caller": "pickValue",
+          "callee": "Object.prototype.hasOwnProperty.call",
+          "lineNumber": 176
+        },
+        {
+          "caller": "csvCell",
+          "callee": "String",
+          "lineNumber": 183
+        },
+        {
+          "caller": "csvCell",
+          "callee": "/[\",\\n]/.test",
+          "lineNumber": 184
+        },
+        {
+          "caller": "csvCell",
+          "callee": "text.replace",
+          "lineNumber": 184
+        },
+        {
+          "caller": "formatCompactDate",
+          "callee": "d.toISOString().slice(0, 10).replace",
+          "lineNumber": 188
+        },
+        {
+          "caller": "formatCompactDate",
+          "callee": "d.toISOString().slice",
+          "lineNumber": 188
+        },
+        {
+          "caller": "formatCompactDate",
+          "callee": "d.toISOString",
+          "lineNumber": 188
+        },
+        {
+          "caller": "toMs",
+          "callee": "new Date(date.replace(/(\\d{4})(\\d{2})(\\d{2})/, '$1-$2-$3')).getTime",
+          "lineNumber": 192
+        },
+        {
+          "caller": "toMs",
+          "callee": "date.replace",
+          "lineNumber": 192
+        },
+        {
+          "caller": "zipLocalHeader",
+          "callee": "bytes",
+          "lineNumber": 212
+        },
+        {
+          "caller": "zipCentralHeader",
+          "callee": "bytes",
+          "lineNumber": 216
+        },
+        {
+          "caller": "zipEndRecord",
+          "callee": "bytes",
+          "lineNumber": 224
+        },
+        {
+          "caller": "bytes",
+          "callee": "sizes.reduce",
+          "lineNumber": 228
+        },
+        {
+          "caller": "bytes",
+          "callee": "values.forEach",
+          "lineNumber": 232
+        },
+        {
+          "caller": "bytes",
+          "callee": "view.setUint16",
+          "lineNumber": 234
+        },
+        {
+          "caller": "bytes",
+          "callee": "view.setUint32",
+          "lineNumber": 235
+        },
+        {
+          "caller": "bytes",
+          "callee": "out.set",
+          "lineNumber": 238
+        },
+        {
+          "caller": "concatBytes",
+          "callee": "parts.reduce",
+          "lineNumber": 243
+        },
+        {
+          "caller": "concatBytes",
+          "callee": "out.set",
+          "lineNumber": 246
+        },
+        {
+          "caller": "arrayBuffer",
+          "callee": "bytesValue.buffer.slice",
+          "lineNumber": 253
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 9,
+        "functionCount": 27,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/financial-colors.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 8,
+      "functions": [
+        {
+          "name": "financialValueClass",
+          "startLine": 4,
+          "endLine": 9,
+          "params": [
+            "value",
+            "neutralClass"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FINANCIAL_UP_CLASS",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "FINANCIAL_DOWN_CLASS",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "financialValueClass",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "financialValueClass",
+          "callee": "Number.isFinite",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

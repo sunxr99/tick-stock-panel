@@ -1,0 +1,110 @@
+[
+  {
+    "order": 1,
+    "title": "产品入口：A 股量化工作台",
+    "description": "从 README 开始建立产品视角：TSP 是自托管的 A 股数据、选股、监控、分析与回测面板。先了解使用和部署入口，再沿着一次用户操作从界面走到数据与量化计算。",
+    "nodeIds": [
+      "document:README.md"
+    ]
+  },
+  {
+    "order": 2,
+    "title": "阅读架构边界",
+    "description": "架构上下文把系统分为前端、薄 API、应用服务、数据 Provider／仓库、指标、策略和回测。它说明为何市场数据必须先标准化并经仓库访问，避免把供应商细节带入策略或页面。",
+    "nodeIds": [
+      "document:docs/ai-context/architecture.md"
+    ]
+  },
+  {
+    "order": 3,
+    "title": "用户从前端进入功能页",
+    "description": "前端从 main.tsx 启动，router.tsx 将认证、引导和各业务页面组织到统一导航中。这里是用户选择数据管理、选股、监控或回测功能的起点，并接入布局与扩展边界。",
+    "nodeIds": [
+      "file:frontend/src/main.tsx",
+      "file:frontend/src/router.tsx"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "浏览器请求与缓存契约",
+    "description": "api.ts 集中定义浏览器如何调用后端，queryKeys.ts 让 TanStack Query 对行情、策略和设置使用稳定缓存键。页面更新后应通过这对边界触发精准失效，而不是自行拼接请求或缓存键。",
+    "nodeIds": [
+      "file:frontend/src/lib/api.ts",
+      "file:frontend/src/lib/queryKeys.ts"
+    ]
+  },
+  {
+    "order": 5,
+    "title": "后端生命周期与 HTTP 边界",
+    "description": "main.py 是 FastAPI 的汇聚入口，装配路由、生命周期任务、仓库和扩展加载；routes.py 保持为路由聚合与接口边界。沿着它们阅读可以把 HTTP 参数和响应适配，与后续服务中的业务计算区分开。",
+    "nodeIds": [
+      "file:backend/app/main.py",
+      "file:backend/app/api/routes.py",
+      "file:backend/app/extensions/loader.py"
+    ]
+  },
+  {
+    "order": 6,
+    "title": "数据能力路由与持久化仓库",
+    "description": "capabilities.py 声明数据能力，repository.py 为上层提供统一的 K 线与市场数据访问。这个边界把 Provider 选择、数据口径和底层 Parquet 细节隔离开，令选股、监控和回测共享同一份可替换的数据基础。",
+    "nodeIds": [
+      "file:backend/app/data_providers/__init__.py",
+      "file:backend/app/tickflow/capabilities.py",
+      "file:backend/app/tickflow/repository.py"
+    ]
+  },
+  {
+    "order": 7,
+    "title": "同步原始行情并生成增强数据",
+    "description": "kline_sync.py 负责将市场数据同步、校验并写入标准存储；enriched_generation.py 以仓库数据为输入管理增强数据的生成与版本衔接。这里是原始行情进入可计算数据集的关键转换点。",
+    "nodeIds": [
+      "file:backend/app/services/kline_sync.py",
+      "file:backend/app/enriched_generation.py"
+    ]
+  },
+  {
+    "order": 8,
+    "title": "指标流水线",
+    "description": "pipeline.py 在增强数据上计算技术指标、价格限制和相关衍生字段，形成供界面展示与量化模块复用的统一输入。阅读它时应特别关注前复权价格、原始价格、交易日与比例单位等数据契约。",
+    "nodeIds": [
+      "file:backend/app/indicators/pipeline.py"
+    ]
+  },
+  {
+    "order": 9,
+    "title": "策略执行与评分",
+    "description": "engine.py 将策略定义组织为可执行选股和信号逻辑，scoring.py 负责结果评分。它们把指标输入转成候选标的与可解释的结果，是策略页面、研究工具和回测共享的领域核心。",
+    "nodeIds": [
+      "file:backend/app/strategy/engine.py",
+      "file:backend/app/strategy/scoring.py"
+    ]
+  },
+  {
+    "order": 10,
+    "title": "盘中监控与事件触发",
+    "description": "monitor.py 复用标准化实时行情和策略信号，在交易时段内评估监控规则并产出事件。它体现了选股结果如何从一次性计算延展为持续运行的预警能力，同时保持与数据口径和时间边界一致。",
+    "nodeIds": [
+      "file:backend/app/strategy/monitor.py"
+    ]
+  },
+  {
+    "order": 11,
+    "title": "历史回测与成交模拟",
+    "description": "回测 engine 负责协调历史数据、策略信号与交易执行，matrix 则构建可复用的市场矩阵和计算基础。应从这里核对信号时间、成交时间、T+1、费用、滑点以及涨跌停约束，避免未来函数。",
+    "nodeIds": [
+      "file:backend/app/backtest/engine.py",
+      "file:backend/app/backtest/matrix.py"
+    ]
+  },
+  {
+    "order": 12,
+    "title": "配置与可重复交付",
+    "description": ".env.example 集中呈现运行时需要提供的配置；Dockerfile 与 docker-compose.yml 则把前端构建、后端运行、端口、环境变量和数据卷组合为可重复部署的自托管服务。",
+    "nodeIds": [
+      "config:.env.example",
+      "service:Dockerfile",
+      "service:docker-compose.yml"
+    ],
+    "languageLesson": "Docker 多阶段构建将前端编译依赖与最终运行镜像分离；Compose 通过环境变量和卷挂载让配置与持久化数据保持在镜像之外。"
+  }
+]

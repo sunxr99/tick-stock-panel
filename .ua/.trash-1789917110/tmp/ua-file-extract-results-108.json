@@ -1,0 +1,1368 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 20,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 20,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 20
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/defensive_amount_threshold_ablation.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 22,
+      "nonEmptyLines": 22,
+      "sections": [
+        {
+          "heading": "window",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "trading_days",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "note",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "threshold_8000",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "threshold_12000_10000",
+          "level": 1,
+          "line": 13
+        },
+        {
+          "heading": "conclusion",
+          "level": 1,
+          "line": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/gate_alpha_h5.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 112,
+      "nonEmptyLines": 112,
+      "sections": [
+        {
+          "heading": "theme_resonance",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "stop_loss_staleness",
+          "level": 1,
+          "line": 59
+        },
+        {
+          "heading": "production",
+          "level": 1,
+          "line": 105
+        },
+        {
+          "heading": "reading",
+          "level": 1,
+          "line": 110
+        },
+        {
+          "heading": "horizon_days",
+          "level": 1,
+          "line": 111
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/momentum_regime_h10.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 1058,
+      "nonEmptyLines": 1058,
+      "sections": [
+        {
+          "heading": "thresholds",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "mid_band",
+          "level": 1,
+          "line": 165
+        },
+        {
+          "heading": "domain",
+          "level": 1,
+          "line": 188
+        },
+        {
+          "heading": "controls",
+          "level": 1,
+          "line": 211
+        },
+        {
+          "heading": "control_gap",
+          "level": 1,
+          "line": 328
+        },
+        {
+          "heading": "switches",
+          "level": 1,
+          "line": 338
+        },
+        {
+          "heading": "top_screen",
+          "level": 1,
+          "line": 396
+        },
+        {
+          "heading": "screen_switches",
+          "level": 1,
+          "line": 419
+        },
+        {
+          "heading": "ic_persistence",
+          "level": 1,
+          "line": 1035
+        },
+        {
+          "heading": "production",
+          "level": 1,
+          "line": 1042
+        },
+        {
+          "heading": "reading",
+          "level": 1,
+          "line": 1048
+        },
+        {
+          "heading": "horizon_days",
+          "level": 1,
+          "line": 1049
+        },
+        {
+          "heading": "start",
+          "level": 1,
+          "line": 1050
+        },
+        {
+          "heading": "eval_window",
+          "level": 1,
+          "line": 1051
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/momentum_regime_h10.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 100,
+      "nonEmptyLines": 75,
+      "sections": [
+        {
+          "heading": "动量体检第四轮｜T+10｜20240704..20260813（513 个评估日）",
+          "level": 2,
+          "line": 1
+        },
+        {
+          "heading": "一、闸门是净负贡献，且梯度会整体反号",
+          "level": 3,
+          "line": 13
+        },
+        {
+          "heading": "二、顶部负筛方向为真，但达不到上线标准",
+          "level": 3,
+          "line": 38
+        },
+        {
+          "heading": "三、动态开关：六格全部被环移负控制吃掉",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "四、bias-200 是动量的代理，不是独立旋钮",
+          "level": 3,
+          "line": 76
+        },
+        {
+          "heading": "结论",
+          "level": 3,
+          "line": 92
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/momentum_regime_h5.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 1058,
+      "nonEmptyLines": 1058,
+      "sections": [
+        {
+          "heading": "thresholds",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "mid_band",
+          "level": 1,
+          "line": 165
+        },
+        {
+          "heading": "domain",
+          "level": 1,
+          "line": 188
+        },
+        {
+          "heading": "controls",
+          "level": 1,
+          "line": 211
+        },
+        {
+          "heading": "control_gap",
+          "level": 1,
+          "line": 328
+        },
+        {
+          "heading": "switches",
+          "level": 1,
+          "line": 338
+        },
+        {
+          "heading": "top_screen",
+          "level": 1,
+          "line": 396
+        },
+        {
+          "heading": "screen_switches",
+          "level": 1,
+          "line": 419
+        },
+        {
+          "heading": "ic_persistence",
+          "level": 1,
+          "line": 1035
+        },
+        {
+          "heading": "production",
+          "level": 1,
+          "line": 1042
+        },
+        {
+          "heading": "reading",
+          "level": 1,
+          "line": 1048
+        },
+        {
+          "heading": "horizon_days",
+          "level": 1,
+          "line": 1049
+        },
+        {
+          "heading": "start",
+          "level": 1,
+          "line": 1050
+        },
+        {
+          "heading": "eval_window",
+          "level": 1,
+          "line": 1051
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/momentum_regime_h5.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 57,
+      "nonEmptyLines": 41,
+      "sections": [
+        {
+          "heading": "动量体检第四轮｜T+5｜20240704..20260820（518 个评估日）",
+          "level": 2,
+          "line": 1
+        },
+        {
+          "heading": "一、闸门",
+          "level": 3,
+          "line": 8
+        },
+        {
+          "heading": "二、静态顶部负筛",
+          "level": 3,
+          "line": 22
+        },
+        {
+          "heading": "三、动态开关：三格全部被环移负控制吃掉",
+          "level": 3,
+          "line": 32
+        },
+        {
+          "heading": "四、中动量档：再次落在随机负控制区间内",
+          "level": 3,
+          "line": 44
+        },
+        {
+          "heading": "结论",
+          "level": 3,
+          "line": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/production_backtest_20260506_20260815.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 104,
+      "nonEmptyLines": 88,
+      "sections": [
+        {
+          "heading": "Wyckoff Funnel Daily Backtest",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "收益统计",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "组合风险指标（单利口径 · 基于每日净值曲线）",
+          "level": 2,
+          "line": 36
+        },
+        {
+          "heading": "逐笔风险统计",
+          "level": 2,
+          "line": 44
+        },
+        {
+          "heading": "分层统计：Trend vs Accum",
+          "level": 2,
+          "line": 49
+        },
+        {
+          "heading": "分层统计：按大盘水温",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "分层诊断：按触发信号",
+          "level": 2,
+          "line": 71
+        },
+        {
+          "heading": "分层诊断：按退出原因",
+          "level": 2,
+          "line": 80
+        },
+        {
+          "heading": "分层诊断：按入场价格来源",
+          "level": 2,
+          "line": 86
+        },
+        {
+          "heading": "策略调整建议",
+          "level": 2,
+          "line": 92
+        },
+        {
+          "heading": "说明",
+          "level": 2,
+          "line": 99
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/production_backtest_attribution.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 74,
+      "nonEmptyLines": 74,
+      "sections": [
+        {
+          "heading": "window",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "trading_days",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "trades",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "engine",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "friction",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "exit",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "overall",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "by_trigger",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "by_track",
+          "level": 1,
+          "line": 45
+        },
+        {
+          "heading": "by_regime",
+          "level": 1,
+          "line": 59
+        },
+        {
+          "heading": "note",
+          "level": 1,
+          "line": 73
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/ranker_weight_h10.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 285,
+      "nonEmptyLines": 285,
+      "sections": [
+        {
+          "heading": "dry_bands",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "ablation",
+          "level": 1,
+          "line": 54
+        },
+        {
+          "heading": "weight_grid",
+          "level": 1,
+          "line": 106
+        },
+        {
+          "heading": "walk_forward",
+          "level": 1,
+          "line": 238
+        },
+        {
+          "heading": "momentum_matched_spread",
+          "level": 1,
+          "line": 256
+        },
+        {
+          "heading": "production",
+          "level": 1,
+          "line": 271
+        },
+        {
+          "heading": "cost_threshold_pct",
+          "level": 1,
+          "line": 277
+        },
+        {
+          "heading": "reading",
+          "level": 1,
+          "line": 278
+        },
+        {
+          "heading": "horizon_days",
+          "level": 1,
+          "line": 279
+        },
+        {
+          "heading": "window",
+          "level": 1,
+          "line": 280
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/ranker_weight_h10.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 75,
+      "nonEmptyLines": 57,
+      "sections": [
+        {
+          "heading": "排序权重体检：dry_q",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "dry_q 无条件分档（域内超额）",
+          "level": 3,
+          "line": 8
+        },
+        {
+          "heading": "留 vs 去 dry_q（逐日配对）",
+          "level": 3,
+          "line": 18
+        },
+        {
+          "heading": "权重网格（域内超额）",
+          "level": 3,
+          "line": 25
+        },
+        {
+          "heading": "走前动态选权重 vs 固定 0.20",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "固定动量档后的干-湿差",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "读法",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "接下来做什么",
+          "level": 2,
+          "line": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/ranker_weight_h5.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 283,
+      "nonEmptyLines": 283,
+      "sections": [
+        {
+          "heading": "dry_bands",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "ablation",
+          "level": 1,
+          "line": 54
+        },
+        {
+          "heading": "weight_grid",
+          "level": 1,
+          "line": 106
+        },
+        {
+          "heading": "walk_forward",
+          "level": 1,
+          "line": 238
+        },
+        {
+          "heading": "momentum_matched_spread",
+          "level": 1,
+          "line": 254
+        },
+        {
+          "heading": "production",
+          "level": 1,
+          "line": 269
+        },
+        {
+          "heading": "cost_threshold_pct",
+          "level": 1,
+          "line": 275
+        },
+        {
+          "heading": "reading",
+          "level": 1,
+          "line": 276
+        },
+        {
+          "heading": "horizon_days",
+          "level": 1,
+          "line": 277
+        },
+        {
+          "heading": "window",
+          "level": 1,
+          "line": 278
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/ranker_weight_h5.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 75,
+      "nonEmptyLines": 57,
+      "sections": [
+        {
+          "heading": "排序权重体检：dry_q",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "dry_q 无条件分档（域内超额）",
+          "level": 3,
+          "line": 8
+        },
+        {
+          "heading": "留 vs 去 dry_q（逐日配对）",
+          "level": 3,
+          "line": 18
+        },
+        {
+          "heading": "权重网格（域内超额）",
+          "level": 3,
+          "line": 25
+        },
+        {
+          "heading": "走前动态选权重 vs 固定 0.20",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "固定动量档后的干-湿差",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "读法",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "接下来做什么",
+          "level": 2,
+          "line": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/stop_loss_and_signal_block_ablation.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 103,
+      "nonEmptyLines": 103,
+      "sections": [
+        {
+          "heading": "window",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "trading_days",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "engine",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "friction",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "results",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "conclusion",
+          "level": 1,
+          "line": 102
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/trigger_points_h10.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 336,
+      "nonEmptyLines": 336,
+      "sections": [
+        {
+          "heading": "arms",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "permutation",
+          "level": 1,
+          "line": 84
+        },
+        {
+          "heading": "kinds",
+          "level": 1,
+          "line": 108
+        },
+        {
+          "heading": "rank_corr",
+          "level": 1,
+          "line": 164
+        },
+        {
+          "heading": "sos_resonance",
+          "level": 1,
+          "line": 170
+        },
+        {
+          "heading": "walk_forward",
+          "level": 1,
+          "line": 186
+        },
+        {
+          "heading": "walk_forward_narrow",
+          "level": 1,
+          "line": 222
+        },
+        {
+          "heading": "quarters",
+          "level": 1,
+          "line": 258
+        },
+        {
+          "heading": "tie_break",
+          "level": 1,
+          "line": 308
+        },
+        {
+          "heading": "production",
+          "level": 1,
+          "line": 314
+        },
+        {
+          "heading": "cost_threshold_pct",
+          "level": 1,
+          "line": 327
+        },
+        {
+          "heading": "reading",
+          "level": 1,
+          "line": 328
+        },
+        {
+          "heading": "horizon_days",
+          "level": 1,
+          "line": 329
+        },
+        {
+          "heading": "window",
+          "level": 1,
+          "line": 330
+        },
+        {
+          "heading": "triggered_rows",
+          "level": 1,
+          "line": 335
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 15
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/trigger_points_h10.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 112,
+      "nonEmptyLines": 79,
+      "sections": [
+        {
+          "heading": "触发分值体检（`_trigger_score` 路径 B）｜T+10｜20241118..20260813",
+          "level": 2,
+          "line": 1
+        },
+        {
+          "heading": "同一个触发信号被记了两次",
+          "level": 3,
+          "line": 5
+        },
+        {
+          "heading": "排序臂对照（只在已触发票之间比）",
+          "level": 3,
+          "line": 16
+        },
+        {
+          "heading": "置换检验：生产分值 vs 随机重排同一组数字",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "并列打破方式会改变结论强度",
+          "level": 3,
+          "line": 40
+        },
+        {
+          "heading": "生产分值 vs 实测超额（单类型命中）",
+          "level": 3,
+          "line": 46
+        },
+        {
+          "heading": "sos 共振加成（15 → 50）单独验",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "走前挑分值表（上线依据，消融不能替）",
+          "level": 3,
+          "line": 68
+        },
+        {
+          "heading": "走前收窄到两方：留这张表 vs 删这张表",
+          "level": 3,
+          "line": 77
+        },
+        {
+          "heading": "按季度切（拍平 - 生产）",
+          "level": 3,
+          "line": 88
+        },
+        {
+          "heading": "结论",
+          "level": 3,
+          "line": 103
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/trigger_points_h5.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 337,
+      "nonEmptyLines": 337,
+      "sections": [
+        {
+          "heading": "arms",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "permutation",
+          "level": 1,
+          "line": 84
+        },
+        {
+          "heading": "kinds",
+          "level": 1,
+          "line": 108
+        },
+        {
+          "heading": "rank_corr",
+          "level": 1,
+          "line": 164
+        },
+        {
+          "heading": "sos_resonance",
+          "level": 1,
+          "line": 170
+        },
+        {
+          "heading": "walk_forward",
+          "level": 1,
+          "line": 186
+        },
+        {
+          "heading": "walk_forward_narrow",
+          "level": 1,
+          "line": 222
+        },
+        {
+          "heading": "quarters",
+          "level": 1,
+          "line": 259
+        },
+        {
+          "heading": "tie_break",
+          "level": 1,
+          "line": 309
+        },
+        {
+          "heading": "production",
+          "level": 1,
+          "line": 315
+        },
+        {
+          "heading": "cost_threshold_pct",
+          "level": 1,
+          "line": 328
+        },
+        {
+          "heading": "reading",
+          "level": 1,
+          "line": 329
+        },
+        {
+          "heading": "horizon_days",
+          "level": 1,
+          "line": 330
+        },
+        {
+          "heading": "window",
+          "level": 1,
+          "line": 331
+        },
+        {
+          "heading": "triggered_rows",
+          "level": 1,
+          "line": 336
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 15
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/trigger_points_h5.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 112,
+      "nonEmptyLines": 79,
+      "sections": [
+        {
+          "heading": "触发分值体检（`_trigger_score` 路径 B）｜T+5｜20241118..20260820",
+          "level": 2,
+          "line": 1
+        },
+        {
+          "heading": "同一个触发信号被记了两次",
+          "level": 3,
+          "line": 5
+        },
+        {
+          "heading": "排序臂对照（只在已触发票之间比）",
+          "level": 3,
+          "line": 16
+        },
+        {
+          "heading": "置换检验：生产分值 vs 随机重排同一组数字",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "并列打破方式会改变结论强度",
+          "level": 3,
+          "line": 40
+        },
+        {
+          "heading": "生产分值 vs 实测超额（单类型命中）",
+          "level": 3,
+          "line": 46
+        },
+        {
+          "heading": "sos 共振加成（15 → 50）单独验",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "走前挑分值表（上线依据，消融不能替）",
+          "level": 3,
+          "line": 68
+        },
+        {
+          "heading": "走前收窄到两方：留这张表 vs 删这张表",
+          "level": 3,
+          "line": 77
+        },
+        {
+          "heading": "按季度切（拍平 - 生产）",
+          "level": 3,
+          "line": 88
+        },
+        {
+          "heading": "结论",
+          "level": 3,
+          "line": 103
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/trigger_weight_h10.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 352,
+      "nonEmptyLines": 352,
+      "sections": [
+        {
+          "heading": "q1_binary",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "q2_magnitude",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "q3_kinds",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "ablation",
+          "level": 1,
+          "line": 69
+        },
+        {
+          "heading": "weight_grid",
+          "level": 1,
+          "line": 133
+        },
+        {
+          "heading": "l3_proxy_pools",
+          "level": 1,
+          "line": 247
+        },
+        {
+          "heading": "walk_forward",
+          "level": 1,
+          "line": 285
+        },
+        {
+          "heading": "scale_check",
+          "level": 1,
+          "line": 320
+        },
+        {
+          "heading": "production",
+          "level": 1,
+          "line": 336
+        },
+        {
+          "heading": "cost_threshold_pct",
+          "level": 1,
+          "line": 343
+        },
+        {
+          "heading": "reading",
+          "level": 1,
+          "line": 344
+        },
+        {
+          "heading": "horizon_days",
+          "level": 1,
+          "line": 345
+        },
+        {
+          "heading": "window",
+          "level": 1,
+          "line": 346
+        },
+        {
+          "heading": "domain_trigger_rate",
+          "level": 1,
+          "line": 351
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/trigger_weight_h10.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 130,
+      "nonEmptyLines": 98,
+      "sections": [
+        {
+          "heading": "排序权重体检：trigger_q",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "量纲体检（先于统计）",
+          "level": 3,
+          "line": 10
+        },
+        {
+          "heading": "Q1 二元：有触发 vs 同日流动性域",
+          "level": 3,
+          "line": 25
+        },
+        {
+          "heading": "Q2 幅度：触发内部高低半区之差",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "Q3 类型：六种触发各自的域内超额",
+          "level": 3,
+          "line": 39
+        },
+        {
+          "heading": "四臂消融（逐日配对，只差 trigger_q 一项）",
+          "level": 3,
+          "line": 52
+        },
+        {
+          "heading": "权重网格（域内超额）",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "L3 代理：域内按动量基分预筛后重测",
+          "level": 3,
+          "line": 95
+        },
+        {
+          "heading": "走前挑权重 vs 固定生产权重",
+          "level": 3,
+          "line": 106
+        },
+        {
+          "heading": "读法",
+          "level": 2,
+          "line": 115
+        },
+        {
+          "heading": "接下来做什么",
+          "level": 2,
+          "line": 124
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/docs/evidence/trigger_weight_h5.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 354,
+      "nonEmptyLines": 354,
+      "sections": [
+        {
+          "heading": "q1_binary",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "q2_magnitude",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "q3_kinds",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "ablation",
+          "level": 1,
+          "line": 69
+        },
+        {
+          "heading": "weight_grid",
+          "level": 1,
+          "line": 133
+        },
+        {
+          "heading": "l3_proxy_pools",
+          "level": 1,
+          "line": 247
+        },
+        {
+          "heading": "walk_forward",
+          "level": 1,
+          "line": 285
+        },
+        {
+          "heading": "scale_check",
+          "level": 1,
+          "line": 322
+        },
+        {
+          "heading": "production",
+          "level": 1,
+          "line": 338
+        },
+        {
+          "heading": "cost_threshold_pct",
+          "level": 1,
+          "line": 345
+        },
+        {
+          "heading": "reading",
+          "level": 1,
+          "line": 346
+        },
+        {
+          "heading": "horizon_days",
+          "level": 1,
+          "line": 347
+        },
+        {
+          "heading": "window",
+          "level": 1,
+          "line": 348
+        },
+        {
+          "heading": "domain_trigger_rate",
+          "level": 1,
+          "line": 353
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    }
+  ]
+}

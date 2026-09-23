@@ -36,9 +36,9 @@ Wyckoff 候选 -> Sector / RS 研究上下文 -> 候选展示 -> Volume Profile 
 final_rank_score -> research_context_score
 rank             -> research_context_rank
 priority_level   -> research_context_level
+strength_score   -> research_candidate_score（未验证研究排序）
 StrategyResult.scores = {}
-ranking_mode = research_context_only
-candidate_order 保持 Wyckoff 原候选顺序
+ranking_mode = formal_l3_with_unverified_research_order
 ```
 
 证据：`backend/app/strategy/engine.py` 的 `_run_wyckoff_funnel()`。因此“不要让未验证的 Sector/RS 分主导 Wyckoff 默认顺序”这项建议已经落实为当前行为；研究字段仍会展示，不能被误解为正式交易评分。
@@ -67,7 +67,7 @@ candidate_order 保持 Wyckoff 原候选顺序
 
 ## 当前决策
 
-1. 保持 `research_context_score/rank/level` 为只读研究字段，不写入通用 `StrategyResult.scores`，不改变 `candidate_order`。
+1. 正式候选集合只由 L3 与可选基础过滤决定；保留全部正式行。`strength_score` 仅写入命名的 `research_candidate_score/rank`，不写入通用 `StrategyResult.scores`，也不作为 Top-N 截断依据。
 2. 保持 VP 为独立 Position/Risk Context；不创建 VPScore，不接入 `final_rank_score`。
 3. 不基于现有短样本调 Sector/RS/VP 的权重、阈值或方向。
 4. 后续优先补充独立、分钟 FULL、可交易性明确的样本，并以 Wyckoff 结构事件的首次确认日降低连续重复候选对统计的影响。

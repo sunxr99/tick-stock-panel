@@ -1,0 +1,4287 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 25,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 18,
+      "failed": 0,
+      "skipped": 7
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/packages/shared/src/chat-message-history.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "toolPartName",
+          "startLine": 5,
+          "endLine": 8,
+          "params": [
+            "part"
+          ]
+        },
+        {
+          "name": "summarizeProviderWebSearch",
+          "startLine": 10,
+          "endLine": 25,
+          "params": [
+            "output"
+          ]
+        },
+        {
+          "name": "sanitizeMessagesForChatTransport",
+          "startLine": 32,
+          "endLine": 60,
+          "params": [
+            "messages"
+          ]
+        },
+        {
+          "name": "removeSupersededToolApprovals",
+          "startLine": 62,
+          "endLine": 91,
+          "params": [
+            "messages"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "sanitizeMessagesForChatTransport",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "removeSupersededToolApprovals",
+          "line": 62,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toolPartName",
+          "callee": "String",
+          "lineNumber": 6
+        },
+        {
+          "caller": "toolPartName",
+          "callee": "part.type.startsWith",
+          "lineNumber": 7
+        },
+        {
+          "caller": "toolPartName",
+          "callee": "part.type.slice",
+          "lineNumber": 7
+        },
+        {
+          "caller": "summarizeProviderWebSearch",
+          "callee": "action.query.trim",
+          "lineNumber": 17
+        },
+        {
+          "caller": "summarizeProviderWebSearch",
+          "callee": "Array.isArray",
+          "lineNumber": 18
+        },
+        {
+          "caller": "summarizeProviderWebSearch",
+          "callee": "String(action.queries[0] || '').trim",
+          "lineNumber": 19
+        },
+        {
+          "caller": "summarizeProviderWebSearch",
+          "callee": "String",
+          "lineNumber": 19
+        },
+        {
+          "caller": "summarizeProviderWebSearch",
+          "callee": "Array.isArray",
+          "lineNumber": 21
+        },
+        {
+          "caller": "sanitizeMessagesForChatTransport",
+          "callee": "messages.flatMap",
+          "lineNumber": 34
+        },
+        {
+          "caller": "sanitizeMessagesForChatTransport",
+          "callee": "isToolUIPart",
+          "lineNumber": 39
+        },
+        {
+          "caller": "sanitizeMessagesForChatTransport",
+          "callee": "toolPartName",
+          "lineNumber": 42
+        },
+        {
+          "caller": "sanitizeMessagesForChatTransport",
+          "callee": "parts.push",
+          "lineNumber": 44
+        },
+        {
+          "caller": "sanitizeMessagesForChatTransport",
+          "callee": "parts.push",
+          "lineNumber": 50
+        },
+        {
+          "caller": "sanitizeMessagesForChatTransport",
+          "callee": "summarizeProviderWebSearch",
+          "lineNumber": 50
+        },
+        {
+          "caller": "removeSupersededToolApprovals",
+          "callee": "messages.forEach",
+          "lineNumber": 64
+        },
+        {
+          "caller": "removeSupersededToolApprovals",
+          "callee": "message.parts.forEach",
+          "lineNumber": 65
+        },
+        {
+          "caller": "removeSupersededToolApprovals",
+          "callee": "isToolUIPart",
+          "lineNumber": 66
+        },
+        {
+          "caller": "removeSupersededToolApprovals",
+          "callee": "outputs.set",
+          "lineNumber": 67
+        },
+        {
+          "caller": "removeSupersededToolApprovals",
+          "callee": "messages.flatMap",
+          "lineNumber": 74
+        },
+        {
+          "caller": "removeSupersededToolApprovals",
+          "callee": "message.parts.filter",
+          "lineNumber": 75
+        },
+        {
+          "caller": "removeSupersededToolApprovals",
+          "callee": "isToolUIPart",
+          "lineNumber": 76
+        },
+        {
+          "caller": "removeSupersededToolApprovals",
+          "callee": "outputs.get",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/packages/shared/src/deepseek.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "isDeepSeekV4Model",
+          "startLine": 13,
+          "endLine": 16,
+          "params": [
+            "model"
+          ]
+        },
+        {
+          "name": "isOfficialDeepSeekBaseUrl",
+          "startLine": 18,
+          "endLine": 24,
+          "params": [
+            "baseUrl"
+          ]
+        },
+        {
+          "name": "resolveOfficialDeepSeekModel",
+          "startLine": 26,
+          "endLine": 36,
+          "params": [
+            "provider",
+            "model",
+            "baseUrl"
+          ]
+        },
+        {
+          "name": "isOfficialDeepSeek",
+          "startLine": 38,
+          "endLine": 41,
+          "params": [
+            "provider",
+            "model",
+            "baseUrl"
+          ]
+        },
+        {
+          "name": "deepSeekThinkingBody",
+          "startLine": 43,
+          "endLine": 46,
+          "params": [
+            "level"
+          ]
+        },
+        {
+          "name": "deepSeekResponsesReasoningBody",
+          "startLine": 48,
+          "endLine": 50,
+          "params": [
+            "level"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DEEPSEEK_OFFICIAL_ORIGIN",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "DEEPSEEK_CONTEXT_WINDOW",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "DEEPSEEK_REPORT_MAX_OUTPUT_TOKENS",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "DEEPSEEK_AGENT_MAX_OUTPUT_TOKENS",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "isDeepSeekV4Model",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "isOfficialDeepSeekBaseUrl",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "resolveOfficialDeepSeekModel",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "isOfficialDeepSeek",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "deepSeekThinkingBody",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "deepSeekResponsesReasoningBody",
+          "line": 48,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isDeepSeekV4Model",
+          "callee": "String(model || '').trim().toLowerCase",
+          "lineNumber": 14
+        },
+        {
+          "caller": "isDeepSeekV4Model",
+          "callee": "String(model || '').trim",
+          "lineNumber": 14
+        },
+        {
+          "caller": "isDeepSeekV4Model",
+          "callee": "String",
+          "lineNumber": 14
+        },
+        {
+          "caller": "isDeepSeekV4Model",
+          "callee": "id.startsWith",
+          "lineNumber": 15
+        },
+        {
+          "caller": "isDeepSeekV4Model",
+          "callee": "id.startsWith",
+          "lineNumber": 15
+        },
+        {
+          "caller": "resolveOfficialDeepSeekModel",
+          "callee": "isOfficialDeepSeekBaseUrl",
+          "lineNumber": 31
+        },
+        {
+          "caller": "resolveOfficialDeepSeekModel",
+          "callee": "String(model || '').trim().toLowerCase",
+          "lineNumber": 34
+        },
+        {
+          "caller": "resolveOfficialDeepSeekModel",
+          "callee": "String(model || '').trim",
+          "lineNumber": 34
+        },
+        {
+          "caller": "resolveOfficialDeepSeekModel",
+          "callee": "String",
+          "lineNumber": 34
+        },
+        {
+          "caller": "isOfficialDeepSeek",
+          "callee": "resolveOfficialDeepSeekModel",
+          "lineNumber": 39
+        },
+        {
+          "caller": "isOfficialDeepSeek",
+          "callee": "isOfficialDeepSeekBaseUrl",
+          "lineNumber": 40
+        },
+        {
+          "caller": "isOfficialDeepSeek",
+          "callee": "isDeepSeekV4Model",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/packages/shared/src/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 180,
+      "nonEmptyLines": 180,
+      "exports": [
+        {
+          "name": "UserSettings",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "PortfolioState",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "Position",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "TradeOrder",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "ALLOWED_MODEL_BASE_URLS",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "ALLOWED_PROXY_TARGET_ORIGINS",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "PROVIDERS",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "PROVIDER_LABELS",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "PROVIDER_BASE_URLS",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "PROVIDER_DEFAULT_MODELS",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "TABLE_NAMES",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "isAllowedModelBaseUrl",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "isSafeProviderBaseUrl",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "Provider",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "PLANET_MEMBERSHIP_TIME_ZONE",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "isPlanetMembershipActive",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "planetMembershipToday",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "DEEPSEEK_AGENT_MAX_OUTPUT_TOKENS",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "DEEPSEEK_CONTEXT_WINDOW",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "DEEPSEEK_OFFICIAL_ORIGIN",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "DEEPSEEK_REPORT_MAX_OUTPUT_TOKENS",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "deepSeekResponsesReasoningBody",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "deepSeekThinkingBody",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "isDeepSeekV4Model",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "isOfficialDeepSeek",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "isOfficialDeepSeekBaseUrl",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "resolveOfficialDeepSeekModel",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "DeepSeekReasoningLevel",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeGeminiChunk",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeGeminiSseLine",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeGeminiStream",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeGeminiToolCalls",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "TICKFLOW_PURCHASE",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "detectMarket",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "fetchValueSnapshotWithFetch",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "isCnSymbol",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "isSupportedKlineCode",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "isSupportedPortfolioCode",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "isTickFlowMarketSymbol",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeCode",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "normalizePortfolioCode",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeTickFlowSymbol",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeTushareCode",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeReportDate",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "finiteNumber",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "pickMetricValue",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "firstFinancialObject",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "looksLikeFinancialRecord",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "findFinancialRecord",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "refreshPortfolioTotalEquity",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "PortfolioEquityRefresh",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "FundamentalMetric",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "ValueSnapshot",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "ValueSnapshotReason",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "formatMarketWatchContext",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "marketWatchSymbol",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeMarketWatchCode",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "readFreshMarketWatchSnapshot",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "selectMarketWatchCodes",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "MARKET_WATCH_CACHE_TTL_MS",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "MarketWatchQuote",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "MarketWatchSnapshot",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "MarketWatchState",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "BENCHMARK_BUY_BLOCK_REGIMES",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "KNOWN_MARKET_REGIMES",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "mergePremarketRegime",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeRegime",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "PREMARKET_ESCALATION_REGIMES",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "PROBE_ONLY_REGIMES",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "resolveExecutionGate",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "ExecutionGate",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "ExecutionGateLevel",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "assessTradingDay",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "formatSessionClockContext",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "resolveSessionClock",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "sessionPhaseLabel",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "toBeijingParts",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "SessionClock",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "SessionPhase",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "TradingDayEvidence",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "checkPriceBasis",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "formatPriceBasisNote",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "PriceBasisCheck",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "PriceBasisStatus",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "WYCKOFF_CHART_PLAN_SCHEMA",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "deriveForecastSeries",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "deriveWyckoffZones",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "formatChartPlanNotes",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "structureLabel",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "validateChartPlan",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "WyckoffChartPlan",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "WyckoffEvent",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "WyckoffForecast",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "WyckoffForecastPoint",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "WyckoffPhase",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "WyckoffZone",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "buildValuePrompt",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "buildValueScore",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "evaluateValueRules",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "formatPromptNumber",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "formatPromptPercent",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "sourceLabel",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "valueDataQuality",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "valueDataQualityLabel",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "valueDataQualityPrompt",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "valueTraceMeta",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "VALUE_RULESET_VERSION",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "VALUE_RULES",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "ValueDataQuality",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "ValueDataQualityLevel",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "ValueRule",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "ValueScore",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "ValueSignal",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "ValueTone",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "ValueTraceMeta",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "countTrackingOccurrences",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "dedupeTrackingRows",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "formatPatternReviewDigest",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "formatPatternReviewLine",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "hasCompleteTrackingWindow",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "labelCandidateTerm",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "latestTrackingDates",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "patternReviewRole",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "preferTrackingRow",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "PATTERN_REVIEW_EMPTY_MESSAGE",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "PATTERN_REVIEW_SCOPE_NOTE",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "DedupeTrackingRow",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "PatternReviewRow",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "attributionExecutionImpactText",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "attributionFormalDynamicLabel",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "attributionFormalDynamicReasonLabel",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "attributionGovernorStatusLabel",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "attributionModeRecommendationLabel",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "attributionNextActionLabel",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "attributionOperatorSummary",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "attributionPromotionStatusLabel",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "checklistKeyLabel",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "checklistStatusLabel",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "AttributionExecutionImpactInput",
+          "line": 145,
+          "isDefault": false
+        },
+        {
+          "name": "AttributionOperatorAction",
+          "line": 145,
+          "isDefault": false
+        },
+        {
+          "name": "AttributionOperatorSummaryInput",
+          "line": 145,
+          "isDefault": false
+        },
+        {
+          "name": "formatPolicyWeightMetaText",
+          "line": 146,
+          "isDefault": false
+        },
+        {
+          "name": "formatStrategyPolicyText",
+          "line": 146,
+          "isDefault": false
+        },
+        {
+          "name": "policyExecutionModeLabel",
+          "line": 146,
+          "isDefault": false
+        },
+        {
+          "name": "PolicyWeightMetaInput",
+          "line": 147,
+          "isDefault": false
+        },
+        {
+          "name": "ANALYSIS_CONTEXT_PACK_SCHEMA",
+          "line": 150,
+          "isDefault": false
+        },
+        {
+          "name": "CONTEXT_EVIDENCE_SCHEMA",
+          "line": 150,
+          "isDefault": false
+        },
+        {
+          "name": "buildStockAnalysisContextPack",
+          "line": 150,
+          "isDefault": false
+        },
+        {
+          "name": "formatAnalysisContextPack",
+          "line": 150,
+          "isDefault": false
+        },
+        {
+          "name": "AnalysisContextPack",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "ContextEvidence",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "buildLlmUsageMetrics",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "cacheHitRatePct",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "formatLlmUsageLine",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "mergeLlmUsageMetrics",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "outputTokPerS",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "LlmUsageMetrics",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "createModelGenerationClock",
+          "line": 165,
+          "isDefault": false
+        },
+        {
+          "name": "isModelContentChunkType",
+          "line": 165,
+          "isDefault": false
+        },
+        {
+          "name": "isToolBoundaryChunkType",
+          "line": 165,
+          "isDefault": false
+        },
+        {
+          "name": "classifyHeadline",
+          "line": 170,
+          "isDefault": false
+        },
+        {
+          "name": "fetchEastMoneyStockNews",
+          "line": 170,
+          "isDefault": false
+        },
+        {
+          "name": "handleNewsEventsRequest",
+          "line": 170,
+          "isDefault": false
+        },
+        {
+          "name": "headlineSentiment",
+          "line": 170,
+          "isDefault": false
+        },
+        {
+          "name": "isNoiseHeadline",
+          "line": 170,
+          "isDefault": false
+        },
+        {
+          "name": "selectNewsChartEvents",
+          "line": 170,
+          "isDefault": false
+        },
+        {
+          "name": "selectStockNewsHeadlines",
+          "line": 170,
+          "isDefault": false
+        },
+        {
+          "name": "snapToSession",
+          "line": 170,
+          "isDefault": false
+        },
+        {
+          "name": "NewsChartEvent",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "NewsEventKind",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "NewsSentiment",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "RawNewsItem",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "StockNewsHeadline",
+          "line": 180,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 173,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/packages/shared/src/llm-usage.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 88,
+      "nonEmptyLines": 83,
+      "functions": [
+        {
+          "name": "outputTokPerS",
+          "startLine": 13,
+          "endLine": 16,
+          "params": [
+            "outputTokens",
+            "generationMs"
+          ]
+        },
+        {
+          "name": "cacheHitRatePct",
+          "startLine": 23,
+          "endLine": 29,
+          "params": [
+            "cacheReadTokens",
+            "inputTokens"
+          ]
+        },
+        {
+          "name": "buildLlmUsageMetrics",
+          "startLine": 31,
+          "endLine": 57,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "mergeLlmUsageMetrics",
+          "startLine": 60,
+          "endLine": 70,
+          "params": [
+            "parts"
+          ]
+        },
+        {
+          "name": "formatLlmUsageLine",
+          "startLine": 72,
+          "endLine": 88,
+          "params": [
+            "usage"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "outputTokPerS",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "cacheHitRatePct",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "buildLlmUsageMetrics",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "mergeLlmUsageMetrics",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "formatLlmUsageLine",
+          "line": 72,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "outputTokPerS",
+          "callee": "Math.round",
+          "lineNumber": 15
+        },
+        {
+          "caller": "cacheHitRatePct",
+          "callee": "Math.max",
+          "lineNumber": 24
+        },
+        {
+          "caller": "cacheHitRatePct",
+          "callee": "Math.max",
+          "lineNumber": 25
+        },
+        {
+          "caller": "cacheHitRatePct",
+          "callee": "Math.min",
+          "lineNumber": 28
+        },
+        {
+          "caller": "cacheHitRatePct",
+          "callee": "Math.round",
+          "lineNumber": 28
+        },
+        {
+          "caller": "buildLlmUsageMetrics",
+          "callee": "Math.max",
+          "lineNumber": 40
+        },
+        {
+          "caller": "buildLlmUsageMetrics",
+          "callee": "Math.trunc",
+          "lineNumber": 40
+        },
+        {
+          "caller": "buildLlmUsageMetrics",
+          "callee": "Math.max",
+          "lineNumber": 41
+        },
+        {
+          "caller": "buildLlmUsageMetrics",
+          "callee": "Math.trunc",
+          "lineNumber": 41
+        },
+        {
+          "caller": "buildLlmUsageMetrics",
+          "callee": "Math.max",
+          "lineNumber": 42
+        },
+        {
+          "caller": "buildLlmUsageMetrics",
+          "callee": "Math.trunc",
+          "lineNumber": 42
+        },
+        {
+          "caller": "buildLlmUsageMetrics",
+          "callee": "Math.max",
+          "lineNumber": 43
+        },
+        {
+          "caller": "buildLlmUsageMetrics",
+          "callee": "Math.trunc",
+          "lineNumber": 43
+        },
+        {
+          "caller": "buildLlmUsageMetrics",
+          "callee": "Math.max",
+          "lineNumber": 44
+        },
+        {
+          "caller": "buildLlmUsageMetrics",
+          "callee": "Math.trunc",
+          "lineNumber": 44
+        },
+        {
+          "caller": "buildLlmUsageMetrics",
+          "callee": "Boolean",
+          "lineNumber": 45
+        },
+        {
+          "caller": "buildLlmUsageMetrics",
+          "callee": "outputTokPerS",
+          "lineNumber": 52
+        },
+        {
+          "caller": "buildLlmUsageMetrics",
+          "callee": "cacheHitRatePct",
+          "lineNumber": 53
+        },
+        {
+          "caller": "mergeLlmUsageMetrics",
+          "callee": "buildLlmUsageMetrics",
+          "lineNumber": 62
+        },
+        {
+          "caller": "mergeLlmUsageMetrics",
+          "callee": "parts.reduce",
+          "lineNumber": 63
+        },
+        {
+          "caller": "mergeLlmUsageMetrics",
+          "callee": "parts.reduce",
+          "lineNumber": 64
+        },
+        {
+          "caller": "mergeLlmUsageMetrics",
+          "callee": "parts.reduce",
+          "lineNumber": 65
+        },
+        {
+          "caller": "mergeLlmUsageMetrics",
+          "callee": "parts.reduce",
+          "lineNumber": 66
+        },
+        {
+          "caller": "mergeLlmUsageMetrics",
+          "callee": "parts.reduce",
+          "lineNumber": 67
+        },
+        {
+          "caller": "mergeLlmUsageMetrics",
+          "callee": "parts.some",
+          "lineNumber": 68
+        },
+        {
+          "caller": "formatLlmUsageLine",
+          "callee": "parts.push",
+          "lineNumber": 75
+        },
+        {
+          "caller": "formatLlmUsageLine",
+          "callee": "usage.inputTokens.toLocaleString",
+          "lineNumber": 75
+        },
+        {
+          "caller": "formatLlmUsageLine",
+          "callee": "usage.outputTokens.toLocaleString",
+          "lineNumber": 75
+        },
+        {
+          "caller": "formatLlmUsageLine",
+          "callee": "parts.push",
+          "lineNumber": 78
+        },
+        {
+          "caller": "formatLlmUsageLine",
+          "callee": "parts.push",
+          "lineNumber": 81
+        },
+        {
+          "caller": "formatLlmUsageLine",
+          "callee": "parts.push",
+          "lineNumber": 85
+        },
+        {
+          "caller": "formatLlmUsageLine",
+          "callee": "(usage.generationMs / 1000).toFixed",
+          "lineNumber": 85
+        },
+        {
+          "caller": "formatLlmUsageLine",
+          "callee": "parts.join",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/packages/shared/src/model-generation-clock.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "isModelContentChunkType",
+          "startLine": 18,
+          "endLine": 20,
+          "params": [
+            "type"
+          ]
+        },
+        {
+          "name": "isToolBoundaryChunkType",
+          "startLine": 22,
+          "endLine": 24,
+          "params": [
+            "type"
+          ]
+        },
+        {
+          "name": "createModelGenerationClock",
+          "startLine": 31,
+          "endLine": 59,
+          "params": [
+            "streamStartedAt",
+            "now"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isModelContentChunkType",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "isToolBoundaryChunkType",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "createModelGenerationClock",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isModelContentChunkType",
+          "callee": "MODEL_CONTENT_TYPES.has",
+          "lineNumber": 19
+        },
+        {
+          "caller": "isToolBoundaryChunkType",
+          "callee": "TOOL_BOUNDARY_TYPES.has",
+          "lineNumber": 23
+        },
+        {
+          "caller": "closeWindow",
+          "callee": "now",
+          "lineNumber": 38
+        },
+        {
+          "caller": "closeWindow",
+          "callee": "Math.max",
+          "lineNumber": 40
+        },
+        {
+          "caller": "onChunkType",
+          "callee": "isModelContentChunkType",
+          "lineNumber": 46
+        },
+        {
+          "caller": "onChunkType",
+          "callee": "now",
+          "lineNumber": 47
+        },
+        {
+          "caller": "onChunkType",
+          "callee": "isToolBoundaryChunkType",
+          "lineNumber": 50
+        },
+        {
+          "caller": "onChunkType",
+          "callee": "closeWindow",
+          "lineNumber": 50
+        },
+        {
+          "caller": "finalize",
+          "callee": "now",
+          "lineNumber": 53
+        },
+        {
+          "caller": "finalize",
+          "callee": "closeWindow",
+          "lineNumber": 54
+        },
+        {
+          "caller": "finalize",
+          "callee": "Math.max",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/packages/shared/src/planet-membership.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "planetMembershipToday",
+          "startLine": 3,
+          "endLine": 12,
+          "params": [
+            "now"
+          ]
+        },
+        {
+          "name": "isPlanetMembershipActive",
+          "startLine": 14,
+          "endLine": 18,
+          "params": [
+            "expiresOn",
+            "today"
+          ]
+        },
+        {
+          "name": "isIsoDate",
+          "startLine": 20,
+          "endLine": 24,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PLANET_MEMBERSHIP_TIME_ZONE",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "planetMembershipToday",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "isPlanetMembershipActive",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "planetMembershipToday",
+          "callee": "new Intl.DateTimeFormat('en-US', {\n    timeZone: PLANET_MEMBERSHIP_TIME_ZONE,\n    year: 'numeric',\n    month: '2-digit',\n    day: '2-digit',\n  }).formatToParts",
+          "lineNumber": 4
+        },
+        {
+          "caller": "planetMembershipToday",
+          "callee": "Object.fromEntries",
+          "lineNumber": 10
+        },
+        {
+          "caller": "planetMembershipToday",
+          "callee": "parts.map",
+          "lineNumber": 10
+        },
+        {
+          "caller": "isPlanetMembershipActive",
+          "callee": "planetMembershipToday",
+          "lineNumber": 14
+        },
+        {
+          "caller": "isPlanetMembershipActive",
+          "callee": "String(expiresOn).trim",
+          "lineNumber": 15
+        },
+        {
+          "caller": "isPlanetMembershipActive",
+          "callee": "String",
+          "lineNumber": 15
+        },
+        {
+          "caller": "isPlanetMembershipActive",
+          "callee": "String(expiresOn).trim",
+          "lineNumber": 16
+        },
+        {
+          "caller": "isPlanetMembershipActive",
+          "callee": "String",
+          "lineNumber": 16
+        },
+        {
+          "caller": "isPlanetMembershipActive",
+          "callee": "isIsoDate",
+          "lineNumber": 17
+        },
+        {
+          "caller": "isIsoDate",
+          "callee": "/^\\d{4}-\\d{2}-\\d{2}$/.test",
+          "lineNumber": 21
+        },
+        {
+          "caller": "isIsoDate",
+          "callee": "Number.isNaN",
+          "lineNumber": 23
+        },
+        {
+          "caller": "isIsoDate",
+          "callee": "date.valueOf",
+          "lineNumber": 23
+        },
+        {
+          "caller": "isIsoDate",
+          "callee": "date.toISOString().slice",
+          "lineNumber": 23
+        },
+        {
+          "caller": "isIsoDate",
+          "callee": "date.toISOString",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/packages/shared/src/session-clock.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 153,
+      "nonEmptyLines": 136,
+      "functions": [
+        {
+          "name": "toBeijingParts",
+          "startLine": 42,
+          "endLine": 51,
+          "params": [
+            "now"
+          ]
+        },
+        {
+          "name": "inRange",
+          "startLine": 53,
+          "endLine": 55,
+          "params": [
+            "minutes",
+            "range"
+          ]
+        },
+        {
+          "name": "resolvePhase",
+          "startLine": 57,
+          "endLine": 67,
+          "params": [
+            "weekday",
+            "minutes"
+          ]
+        },
+        {
+          "name": "resolveSessionClock",
+          "startLine": 69,
+          "endLine": 82,
+          "params": [
+            "now"
+          ]
+        },
+        {
+          "name": "sessionPhaseLabel",
+          "startLine": 93,
+          "endLine": 95,
+          "params": [
+            "phase"
+          ]
+        },
+        {
+          "name": "assessTradingDay",
+          "startLine": 106,
+          "endLine": 116,
+          "params": [
+            "clock",
+            "quoteTimestamps"
+          ]
+        },
+        {
+          "name": "formatSessionClockContext",
+          "startLine": 122,
+          "endLine": 153,
+          "params": [
+            "clock",
+            "evidence"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "toBeijingParts",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "resolveSessionClock",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "sessionPhaseLabel",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "assessTradingDay",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "formatSessionClockContext",
+          "line": 122,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toBeijingParts",
+          "callee": "now.getTime",
+          "lineNumber": 43
+        },
+        {
+          "caller": "toBeijingParts",
+          "callee": "shifted.toISOString().slice",
+          "lineNumber": 44
+        },
+        {
+          "caller": "toBeijingParts",
+          "callee": "shifted.toISOString",
+          "lineNumber": 44
+        },
+        {
+          "caller": "toBeijingParts",
+          "callee": "shifted.getUTCHours",
+          "lineNumber": 45
+        },
+        {
+          "caller": "toBeijingParts",
+          "callee": "shifted.getUTCMinutes",
+          "lineNumber": 46
+        },
+        {
+          "caller": "toBeijingParts",
+          "callee": "String(hour).padStart",
+          "lineNumber": 47
+        },
+        {
+          "caller": "toBeijingParts",
+          "callee": "String",
+          "lineNumber": 47
+        },
+        {
+          "caller": "toBeijingParts",
+          "callee": "String(minute).padStart",
+          "lineNumber": 47
+        },
+        {
+          "caller": "toBeijingParts",
+          "callee": "String",
+          "lineNumber": 47
+        },
+        {
+          "caller": "toBeijingParts",
+          "callee": "shifted.getUTCDay",
+          "lineNumber": 49
+        },
+        {
+          "caller": "toBeijingParts",
+          "callee": "shifted.getUTCDay",
+          "lineNumber": 49
+        },
+        {
+          "caller": "resolvePhase",
+          "callee": "inRange",
+          "lineNumber": 59
+        },
+        {
+          "caller": "resolvePhase",
+          "callee": "inRange",
+          "lineNumber": 60
+        },
+        {
+          "caller": "resolvePhase",
+          "callee": "inRange",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resolvePhase",
+          "callee": "inRange",
+          "lineNumber": 62
+        },
+        {
+          "caller": "resolveSessionClock",
+          "callee": "toBeijingParts",
+          "lineNumber": 70
+        },
+        {
+          "caller": "resolveSessionClock",
+          "callee": "resolvePhase",
+          "lineNumber": 71
+        },
+        {
+          "caller": "assessTradingDay",
+          "callee": "quoteTimestamps\n    .filter((value): value is string => typeof value === 'string' && value.trim().length > 0)\n    .map((value) => toBeijingParts(new Date(value)))\n    .filter",
+          "lineNumber": 109
+        },
+        {
+          "caller": "assessTradingDay",
+          "callee": "quoteTimestamps\n    .filter((value): value is string => typeof value === 'string' && value.trim().length > 0)\n    .map",
+          "lineNumber": 109
+        },
+        {
+          "caller": "assessTradingDay",
+          "callee": "quoteTimestamps\n    .filter",
+          "lineNumber": 109
+        },
+        {
+          "caller": "assessTradingDay",
+          "callee": "value.trim",
+          "lineNumber": 110
+        },
+        {
+          "caller": "assessTradingDay",
+          "callee": "toBeijingParts",
+          "lineNumber": 111
+        },
+        {
+          "caller": "assessTradingDay",
+          "callee": "Number.isNaN",
+          "lineNumber": 112
+        },
+        {
+          "caller": "assessTradingDay",
+          "callee": "Date.parse",
+          "lineNumber": 112
+        },
+        {
+          "caller": "assessTradingDay",
+          "callee": "dates.some",
+          "lineNumber": 114
+        },
+        {
+          "caller": "formatSessionClockContext",
+          "callee": "sessionPhaseLabel",
+          "lineNumber": 126
+        },
+        {
+          "caller": "formatSessionClockContext",
+          "callee": "lines.push",
+          "lineNumber": 131
+        },
+        {
+          "caller": "formatSessionClockContext",
+          "callee": "lines.join",
+          "lineNumber": 132
+        },
+        {
+          "caller": "formatSessionClockContext",
+          "callee": "lines.push",
+          "lineNumber": 136
+        },
+        {
+          "caller": "formatSessionClockContext",
+          "callee": "sessionPhaseLabel",
+          "lineNumber": 136
+        },
+        {
+          "caller": "formatSessionClockContext",
+          "callee": "lines.push",
+          "lineNumber": 137
+        },
+        {
+          "caller": "formatSessionClockContext",
+          "callee": "lines.join",
+          "lineNumber": 138
+        },
+        {
+          "caller": "formatSessionClockContext",
+          "callee": "lines.push",
+          "lineNumber": 142
+        },
+        {
+          "caller": "formatSessionClockContext",
+          "callee": "lines.join",
+          "lineNumber": 143
+        },
+        {
+          "caller": "formatSessionClockContext",
+          "callee": "lines.push",
+          "lineNumber": 147
+        },
+        {
+          "caller": "formatSessionClockContext",
+          "callee": "lines.join",
+          "lineNumber": 148
+        },
+        {
+          "caller": "formatSessionClockContext",
+          "callee": "lines.push",
+          "lineNumber": 151
+        },
+        {
+          "caller": "formatSessionClockContext",
+          "callee": "lines.join",
+          "lineNumber": 152
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/packages/shared/src/types.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 51,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/packages/shared/tsconfig.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 13,
+      "nonEmptyLines": 13,
+      "sections": [
+        {
+          "heading": "compilerOptions",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "include",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "exclude",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/pnpm-workspace.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 17,
+      "nonEmptyLines": 17,
+      "sections": [
+        {
+          "heading": "packages",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "overrides",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "allowBuilds",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "minimumReleaseAgeExclude",
+          "level": 1,
+          "line": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/workflows/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/.cargo/config.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "sections": [
+        {
+          "heading": "build",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/.claude/settings.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 16,
+      "nonEmptyLines": 16,
+      "sections": [
+        {
+          "heading": "$schema",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "permissions",
+          "level": 1,
+          "line": 3
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/.serena/project.yml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 185,
+      "nonEmptyLines": 161,
+      "sections": [
+        {
+          "heading": "project_name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "language_servers",
+          "level": 1,
+          "line": 40
+        },
+        {
+          "heading": "encoding",
+          "level": 1,
+          "line": 45
+        },
+        {
+          "heading": "activation_command",
+          "level": 1,
+          "line": 54
+        },
+        {
+          "heading": "activation_command_timeout",
+          "level": 1,
+          "line": 58
+        },
+        {
+          "heading": "line_ending",
+          "level": 1,
+          "line": 63
+        },
+        {
+          "heading": "language_backend",
+          "level": 1,
+          "line": 70
+        },
+        {
+          "heading": "ignore_all_files_in_gitignore",
+          "level": 1,
+          "line": 73
+        },
+        {
+          "heading": "ls_specific_settings",
+          "level": 1,
+          "line": 79
+        },
+        {
+          "heading": "ls_workspace_folders",
+          "level": 1,
+          "line": 90
+        },
+        {
+          "heading": "ls_additional_workspace_folders",
+          "level": 1,
+          "line": 102
+        },
+        {
+          "heading": "ignored_paths",
+          "level": 1,
+          "line": 114
+        },
+        {
+          "heading": "read_only",
+          "level": 1,
+          "line": 119
+        },
+        {
+          "heading": "excluded_tools",
+          "level": 1,
+          "line": 124
+        },
+        {
+          "heading": "included_optional_tools",
+          "level": 1,
+          "line": 129
+        },
+        {
+          "heading": "fixed_tools",
+          "level": 1,
+          "line": 134
+        },
+        {
+          "heading": "default_modes",
+          "level": 1,
+          "line": 144
+        },
+        {
+          "heading": "added_modes",
+          "level": 1,
+          "line": 149
+        },
+        {
+          "heading": "initial_prompt",
+          "level": 1,
+          "line": 153
+        },
+        {
+          "heading": "symbol_info_budget",
+          "level": 1,
+          "line": 159
+        },
+        {
+          "heading": "read_only_memory_patterns",
+          "level": 1,
+          "line": 163
+        },
+        {
+          "heading": "ignored_memory_patterns",
+          "level": 1,
+          "line": 171
+        },
+        {
+          "heading": "included_apis",
+          "level": 1,
+          "line": 176
+        },
+        {
+          "heading": "excluded_apis",
+          "level": 1,
+          "line": 180
+        },
+        {
+          "heading": "agent_interface",
+          "level": 1,
+          "line": 185
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 25
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/Cargo.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 50,
+      "nonEmptyLines": 45,
+      "sections": [
+        {
+          "heading": "package",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "lib",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "dependencies",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "features",
+          "level": 1,
+          "line": 38
+        },
+        {
+          "heading": "dev-dependencies",
+          "level": 1,
+          "line": 41
+        },
+        {
+          "heading": "[[bench]]",
+          "level": 1,
+          "line": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 36,
+      "nonEmptyLines": 25,
+      "sections": [
+        {
+          "heading": "czsc-core",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "用法",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "特性",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "项目主页",
+          "level": 2,
+          "line": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/benches/czsc_analyze_bench.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 74,
+      "functions": [
+        {
+          "name": "generate_bars",
+          "startLine": 23,
+          "endLine": 55,
+          "params": [
+            "count"
+          ]
+        },
+        {
+          "name": "bench_czsc_analyze",
+          "startLine": 57,
+          "endLine": 77,
+          "params": [
+            "c"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generate_bars",
+          "callee": "Arc::from",
+          "lineNumber": 24
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "(0..count)\n        .map(|i| {\n            // 基础价格围绕 100，慢周期正弦 + 快周期高频抖动 + 渐进漂移\n            let slow = (i as f64 * 0.001).sin() * 30.0;\n            let fast = (i as f64 * 0.07).sin() * 4.0;\n            let drift = i as f64 * 0.0002;\n            let close = 100.0 + slow + fast + drift;\n            let open = close - fast * 0.5;\n            let high = close.max(open) + 0.6;\n            let low = close.min(open) - 0.6;\n            // 30 分钟一根：每根递增 1800 秒\n            let dt = Utc.timestamp_opt(base_ts + i as i64 * 1800, 0).unwrap();\n\n            RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30)\n                .open(open)\n                .close(close)\n                .high(high)\n                .low(low)\n                .vol(1_000_000.0)\n                .amount(close * 1_000_000.0)\n                .build()\n                .expect(\"RawBar 构造失败\")\n        }).collect",
+          "lineNumber": 27
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "(0..count).map",
+          "lineNumber": 27
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "(i as f64 * 0.001).sin",
+          "lineNumber": 30
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "(i as f64 * 0.07).sin",
+          "lineNumber": 31
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "close.max",
+          "lineNumber": 35
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "close.min",
+          "lineNumber": 36
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "Utc.timestamp_opt(base_ts + i as i64 * 1800, 0).unwrap",
+          "lineNumber": 38
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "Utc.timestamp_opt",
+          "lineNumber": 38
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30)\n                .open(open)\n                .close(close)\n                .high(high)\n                .low(low)\n                .vol(1_000_000.0)\n                .amount(close * 1_000_000.0)\n                .build().expect",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30)\n                .open(open)\n                .close(close)\n                .high(high)\n                .low(low)\n                .vol(1_000_000.0)\n                .amount(close * 1_000_000.0).build",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30)\n                .open(open)\n                .close(close)\n                .high(high)\n                .low(low)\n                .vol(1_000_000.0).amount",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30)\n                .open(open)\n                .close(close)\n                .high(high)\n                .low(low).vol",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30)\n                .open(open)\n                .close(close)\n                .high(high).low",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30)\n                .open(open)\n                .close(close).high",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30)\n                .open(open).close",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30).open",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt).freq",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32).dt",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone()).id",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "symbol.clone",
+          "lineNumber": 41
+        },
+        {
+          "caller": "bench_czsc_analyze",
+          "callee": "generate_bars",
+          "lineNumber": 60
+        },
+        {
+          "caller": "bench_czsc_analyze",
+          "callee": "c.benchmark_group",
+          "lineNumber": 62
+        },
+        {
+          "caller": "bench_czsc_analyze",
+          "callee": "group.sample_size",
+          "lineNumber": 63
+        },
+        {
+          "caller": "bench_czsc_analyze",
+          "callee": "group.bench_function",
+          "lineNumber": 65
+        },
+        {
+          "caller": "bench_czsc_analyze",
+          "callee": "b.iter_batched",
+          "lineNumber": 66
+        },
+        {
+          "caller": "bench_czsc_analyze",
+          "callee": "bars.clone",
+          "lineNumber": 67
+        },
+        {
+          "caller": "bench_czsc_analyze",
+          "callee": "CZSC::new",
+          "lineNumber": 69
+        },
+        {
+          "caller": "bench_czsc_analyze",
+          "callee": "black_box",
+          "lineNumber": 69
+        },
+        {
+          "caller": "bench_czsc_analyze",
+          "callee": "black_box",
+          "lineNumber": 70
+        },
+        {
+          "caller": "bench_czsc_analyze",
+          "callee": "group.finish",
+          "lineNumber": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_analyze_error.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "from_polars_routes_to_polars_variant",
+          "startLine": 8,
+          "endLine": 14,
+          "params": []
+        },
+        {
+          "name": "from_anyhow_routes_to_unexpected",
+          "startLine": 17,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "serialize_emits_string_payload",
+          "startLine": 24,
+          "endLine": 29,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "from_polars_routes_to_polars_variant",
+          "callee": "PolarsError::ComputeError",
+          "lineNumber": 10
+        },
+        {
+          "caller": "from_polars_routes_to_polars_variant",
+          "callee": "\"compute boom\".into",
+          "lineNumber": 10
+        },
+        {
+          "caller": "from_polars_routes_to_polars_variant",
+          "callee": "pe.into",
+          "lineNumber": 11
+        },
+        {
+          "caller": "from_anyhow_routes_to_unexpected",
+          "callee": "any.into",
+          "lineNumber": 19
+        },
+        {
+          "caller": "serialize_emits_string_payload",
+          "callee": "polars::error::PolarsError::ComputeError",
+          "lineNumber": 25
+        },
+        {
+          "caller": "serialize_emits_string_payload",
+          "callee": "\"x\".into",
+          "lineNumber": 25
+        },
+        {
+          "caller": "serialize_emits_string_payload",
+          "callee": "pe.into",
+          "lineNumber": 26
+        },
+        {
+          "caller": "serialize_emits_string_payload",
+          "callee": "serde_json::to_string(&err).unwrap",
+          "lineNumber": 27
+        },
+        {
+          "caller": "serialize_emits_string_payload",
+          "callee": "serde_json::to_string",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_analyze_utils.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 157,
+      "nonEmptyLines": 140,
+      "functions": [
+        {
+          "name": "nb",
+          "startLine": 16,
+          "endLine": 31,
+          "params": [
+            "ts",
+            "high",
+            "low"
+          ]
+        },
+        {
+          "name": "check_fx_detects_top_pattern",
+          "startLine": 34,
+          "endLine": 42,
+          "params": []
+        },
+        {
+          "name": "check_fx_detects_bottom_pattern",
+          "startLine": 45,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "check_fx_returns_none_when_no_pattern",
+          "startLine": 55,
+          "endLine": 61,
+          "params": []
+        },
+        {
+          "name": "check_fxs_extracts_fx_from_sequence",
+          "startLine": 64,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "check_fxs_keeps_first_of_adjacent_tops",
+          "startLine": 78,
+          "endLine": 94,
+          "params": []
+        },
+        {
+          "name": "check_fxs_keeps_first_of_adjacent_bottoms",
+          "startLine": 97,
+          "endLine": 113,
+          "params": []
+        },
+        {
+          "name": "check_bi_returns_none_for_monotone_sequence",
+          "startLine": 116,
+          "endLine": 127,
+          "params": []
+        },
+        {
+          "name": "format_standard_kline_builds_raw_bars_from_dataframe",
+          "startLine": 130,
+          "endLine": 157,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(100.0)\n        .amount(100.0 * (high + low) / 2.0)\n        .elements(Vec::new())\n        .build().unwrap",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(100.0)\n        .amount(100.0 * (high + low) / 2.0)\n        .elements(Vec::new()).build",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(100.0)\n        .amount(100.0 * (high + low) / 2.0).elements",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(100.0).amount",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low).vol",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high).low",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0).high",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0).close",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0).open",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30).id",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap()).freq",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\")).dt",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default().symbol",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "Arc::<str>::from",
+          "lineNumber": 18
+        },
+        {
+          "caller": "nb",
+          "callee": "Utc.timestamp_opt(ts, 0).unwrap",
+          "lineNumber": 19
+        },
+        {
+          "caller": "nb",
+          "callee": "Utc.timestamp_opt",
+          "lineNumber": 19
+        },
+        {
+          "caller": "nb",
+          "callee": "Vec::new",
+          "lineNumber": 28
+        },
+        {
+          "caller": "check_fx_detects_top_pattern",
+          "callee": "nb",
+          "lineNumber": 36
+        },
+        {
+          "caller": "check_fx_detects_top_pattern",
+          "callee": "nb",
+          "lineNumber": 37
+        },
+        {
+          "caller": "check_fx_detects_top_pattern",
+          "callee": "nb",
+          "lineNumber": 38
+        },
+        {
+          "caller": "check_fx_detects_top_pattern",
+          "callee": "check_fx(&k1, &k2, &k3).expect",
+          "lineNumber": 39
+        },
+        {
+          "caller": "check_fx_detects_top_pattern",
+          "callee": "check_fx",
+          "lineNumber": 39
+        },
+        {
+          "caller": "check_fx_detects_bottom_pattern",
+          "callee": "nb",
+          "lineNumber": 46
+        },
+        {
+          "caller": "check_fx_detects_bottom_pattern",
+          "callee": "nb",
+          "lineNumber": 47
+        },
+        {
+          "caller": "check_fx_detects_bottom_pattern",
+          "callee": "nb",
+          "lineNumber": 48
+        },
+        {
+          "caller": "check_fx_detects_bottom_pattern",
+          "callee": "check_fx(&k1, &k2, &k3).expect",
+          "lineNumber": 49
+        },
+        {
+          "caller": "check_fx_detects_bottom_pattern",
+          "callee": "check_fx",
+          "lineNumber": 49
+        },
+        {
+          "caller": "check_fx_returns_none_when_no_pattern",
+          "callee": "nb",
+          "lineNumber": 57
+        },
+        {
+          "caller": "check_fx_returns_none_when_no_pattern",
+          "callee": "nb",
+          "lineNumber": 58
+        },
+        {
+          "caller": "check_fx_returns_none_when_no_pattern",
+          "callee": "nb",
+          "lineNumber": 59
+        },
+        {
+          "caller": "check_fxs_extracts_fx_from_sequence",
+          "callee": "check_fxs",
+          "lineNumber": 73
+        },
+        {
+          "caller": "check_fxs_keeps_first_of_adjacent_tops",
+          "callee": "check_fxs",
+          "lineNumber": 88
+        },
+        {
+          "caller": "check_fxs_keeps_first_of_adjacent_bottoms",
+          "callee": "check_fxs",
+          "lineNumber": 107
+        },
+        {
+          "caller": "check_bi_returns_none_for_monotone_sequence",
+          "callee": "(0..6)\n        .map(|i| nb(i + 1, 10.0 + i as f64, 9.0 + i as f64)).collect",
+          "lineNumber": 118
+        },
+        {
+          "caller": "check_bi_returns_none_for_monotone_sequence",
+          "callee": "(0..6).map",
+          "lineNumber": 118
+        },
+        {
+          "caller": "check_bi_returns_none_for_monotone_sequence",
+          "callee": "nb",
+          "lineNumber": 119
+        },
+        {
+          "caller": "check_bi_returns_none_for_monotone_sequence",
+          "callee": "check_bi",
+          "lineNumber": 121
+        },
+        {
+          "caller": "format_standard_kline_builds_raw_bars_from_dataframe",
+          "callee": "df! {\n        \"symbol\" => [\"000001\", \"000001\", \"000001\"],\n        \"dt\"     => [1_700_000_000_000i64, 1_700_001_800_000, 1_700_003_600_000],\n        \"open\"   => [10.0_f64, 10.5, 11.0],\n        \"close\"  => [10.5_f64, 11.0, 10.8],\n        \"high\"   => [11.0_f64, 11.5, 11.2],\n        \"low\"    => [9.5_f64, 10.0, 10.5],\n        \"vol\"    => [100.0_f64, 200.0, 150.0],\n        \"amount\" => [1000.0_f64, 2000.0, 1500.0],\n    }\n    .unwrap()\n    .lazy()\n    .with_column(\n        col(\"dt\")\n            .cast(DataType::Datetime(TimeUnit::Milliseconds, None))\n            .alias(\"dt\"),\n    )\n    .collect().unwrap",
+          "lineNumber": 133
+        },
+        {
+          "caller": "format_standard_kline_builds_raw_bars_from_dataframe",
+          "callee": "df! {\n        \"symbol\" => [\"000001\", \"000001\", \"000001\"],\n        \"dt\"     => [1_700_000_000_000i64, 1_700_001_800_000, 1_700_003_600_000],\n        \"open\"   => [10.0_f64, 10.5, 11.0],\n        \"close\"  => [10.5_f64, 11.0, 10.8],\n        \"high\"   => [11.0_f64, 11.5, 11.2],\n        \"low\"    => [9.5_f64, 10.0, 10.5],\n        \"vol\"    => [100.0_f64, 200.0, 150.0],\n        \"amount\" => [1000.0_f64, 2000.0, 1500.0],\n    }\n    .unwrap()\n    .lazy()\n    .with_column(\n        col(\"dt\")\n            .cast(DataType::Datetime(TimeUnit::Milliseconds, None))\n            .alias(\"dt\"),\n    ).collect",
+          "lineNumber": 133
+        },
+        {
+          "caller": "format_standard_kline_builds_raw_bars_from_dataframe",
+          "callee": "df! {\n        \"symbol\" => [\"000001\", \"000001\", \"000001\"],\n        \"dt\"     => [1_700_000_000_000i64, 1_700_001_800_000, 1_700_003_600_000],\n        \"open\"   => [10.0_f64, 10.5, 11.0],\n        \"close\"  => [10.5_f64, 11.0, 10.8],\n        \"high\"   => [11.0_f64, 11.5, 11.2],\n        \"low\"    => [9.5_f64, 10.0, 10.5],\n        \"vol\"    => [100.0_f64, 200.0, 150.0],\n        \"amount\" => [1000.0_f64, 2000.0, 1500.0],\n    }\n    .unwrap()\n    .lazy().with_column",
+          "lineNumber": 133
+        },
+        {
+          "caller": "format_standard_kline_builds_raw_bars_from_dataframe",
+          "callee": "df! {\n        \"symbol\" => [\"000001\", \"000001\", \"000001\"],\n        \"dt\"     => [1_700_000_000_000i64, 1_700_001_800_000, 1_700_003_600_000],\n        \"open\"   => [10.0_f64, 10.5, 11.0],\n        \"close\"  => [10.5_f64, 11.0, 10.8],\n        \"high\"   => [11.0_f64, 11.5, 11.2],\n        \"low\"    => [9.5_f64, 10.0, 10.5],\n        \"vol\"    => [100.0_f64, 200.0, 150.0],\n        \"amount\" => [1000.0_f64, 2000.0, 1500.0],\n    }\n    .unwrap().lazy",
+          "lineNumber": 133
+        },
+        {
+          "caller": "format_standard_kline_builds_raw_bars_from_dataframe",
+          "callee": "df! {\n        \"symbol\" => [\"000001\", \"000001\", \"000001\"],\n        \"dt\"     => [1_700_000_000_000i64, 1_700_001_800_000, 1_700_003_600_000],\n        \"open\"   => [10.0_f64, 10.5, 11.0],\n        \"close\"  => [10.5_f64, 11.0, 10.8],\n        \"high\"   => [11.0_f64, 11.5, 11.2],\n        \"low\"    => [9.5_f64, 10.0, 10.5],\n        \"vol\"    => [100.0_f64, 200.0, 150.0],\n        \"amount\" => [1000.0_f64, 2000.0, 1500.0],\n    }.unwrap",
+          "lineNumber": 133
+        },
+        {
+          "caller": "format_standard_kline_builds_raw_bars_from_dataframe",
+          "callee": "col(\"dt\")\n            .cast(DataType::Datetime(TimeUnit::Milliseconds, None)).alias",
+          "lineNumber": 146
+        },
+        {
+          "caller": "format_standard_kline_builds_raw_bars_from_dataframe",
+          "callee": "col(\"dt\").cast",
+          "lineNumber": 146
+        },
+        {
+          "caller": "format_standard_kline_builds_raw_bars_from_dataframe",
+          "callee": "col",
+          "lineNumber": 146
+        },
+        {
+          "caller": "format_standard_kline_builds_raw_bars_from_dataframe",
+          "callee": "DataType::Datetime",
+          "lineNumber": 147
+        },
+        {
+          "caller": "format_standard_kline_builds_raw_bars_from_dataframe",
+          "callee": "format_standard_kline(df, Freq::F30).unwrap",
+          "lineNumber": 153
+        },
+        {
+          "caller": "format_standard_kline_builds_raw_bars_from_dataframe",
+          "callee": "format_standard_kline",
+          "lineNumber": 153
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_bi.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 106,
+      "nonEmptyLines": 96,
+      "functions": [
+        {
+          "name": "nb",
+          "startLine": 14,
+          "endLine": 29,
+          "params": [
+            "ts",
+            "high",
+            "low",
+            "vol"
+          ]
+        },
+        {
+          "name": "fx",
+          "startLine": 31,
+          "endLine": 49,
+          "params": [
+            "ts",
+            "mark",
+            "level"
+          ]
+        },
+        {
+          "name": "sample_bi_up",
+          "startLine": 51,
+          "endLine": 74,
+          "params": []
+        },
+        {
+          "name": "builder_populates_fields",
+          "startLine": 77,
+          "endLine": 81,
+          "params": []
+        },
+        {
+          "name": "length_is_bars_count",
+          "startLine": 84,
+          "endLine": 87,
+          "params": []
+        },
+        {
+          "name": "high_low_endpoints_match_fxs",
+          "startLine": 90,
+          "endLine": 93,
+          "params": []
+        },
+        {
+          "name": "power_price_is_finite",
+          "startLine": 96,
+          "endLine": 99,
+          "params": []
+        },
+        {
+          "name": "equality_matches_rs_czsc_baseline",
+          "startLine": 102,
+          "endLine": 106,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(vol)\n        .amount(vol * (high + low) / 2.0)\n        .elements(Vec::new())\n        .build().unwrap",
+          "lineNumber": 15
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(vol)\n        .amount(vol * (high + low) / 2.0)\n        .elements(Vec::new()).build",
+          "lineNumber": 15
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(vol)\n        .amount(vol * (high + low) / 2.0).elements",
+          "lineNumber": 15
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(vol).amount",
+          "lineNumber": 15
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low).vol",
+          "lineNumber": 15
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high).low",
+          "lineNumber": 15
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0).high",
+          "lineNumber": 15
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0).close",
+          "lineNumber": 15
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0).open",
+          "lineNumber": 15
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30).id",
+          "lineNumber": 15
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap()).freq",
+          "lineNumber": 15
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\")).dt",
+          "lineNumber": 15
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default().symbol",
+          "lineNumber": 15
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default",
+          "lineNumber": 15
+        },
+        {
+          "caller": "nb",
+          "callee": "Arc::<str>::from",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "Utc.timestamp_opt(ts, 0).unwrap",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "Utc.timestamp_opt",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "Vec::new",
+          "lineNumber": 26
+        },
+        {
+          "caller": "fx",
+          "callee": "nb",
+          "lineNumber": 32
+        },
+        {
+          "caller": "fx",
+          "callee": "nb",
+          "lineNumber": 33
+        },
+        {
+          "caller": "fx",
+          "callee": "nb",
+          "lineNumber": 34
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark)\n        .high(k2.high)\n        .low(k2.low)\n        .fx(if matches!(level, l if l > 5.0) {\n            k2.high\n        } else {\n            k2.low\n        })\n        .elements(vec![k1, k2, k3])\n        .build().unwrap",
+          "lineNumber": 35
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark)\n        .high(k2.high)\n        .low(k2.low)\n        .fx(if matches!(level, l if l > 5.0) {\n            k2.high\n        } else {\n            k2.low\n        })\n        .elements(vec![k1, k2, k3]).build",
+          "lineNumber": 35
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark)\n        .high(k2.high)\n        .low(k2.low)\n        .fx(if matches!(level, l if l > 5.0) {\n            k2.high\n        } else {\n            k2.low\n        }).elements",
+          "lineNumber": 35
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark)\n        .high(k2.high)\n        .low(k2.low).fx",
+          "lineNumber": 35
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark)\n        .high(k2.high).low",
+          "lineNumber": 35
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark).high",
+          "lineNumber": 35
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap()).mark",
+          "lineNumber": 35
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\")).dt",
+          "lineNumber": 35
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default().symbol",
+          "lineNumber": 35
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default",
+          "lineNumber": 35
+        },
+        {
+          "caller": "fx",
+          "callee": "Arc::<str>::from",
+          "lineNumber": 36
+        },
+        {
+          "caller": "fx",
+          "callee": "Utc.timestamp_opt(ts, 0).unwrap",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "Utc.timestamp_opt",
+          "lineNumber": 37
+        },
+        {
+          "caller": "sample_bi_up",
+          "callee": "fx",
+          "lineNumber": 53
+        },
+        {
+          "caller": "sample_bi_up",
+          "callee": "fx",
+          "lineNumber": 54
+        },
+        {
+          "caller": "sample_bi_up",
+          "callee": "(0..5)\n        .map(|i| {\n            nb(\n                1_700_000_000 + i * 1800,\n                11.0 + i as f64 * 0.2,\n                9.5 + i as f64 * 0.2,\n                100.0,\n            )\n        }).collect",
+          "lineNumber": 55
+        },
+        {
+          "caller": "sample_bi_up",
+          "callee": "(0..5).map",
+          "lineNumber": 55
+        },
+        {
+          "caller": "sample_bi_up",
+          "callee": "nb",
+          "lineNumber": 57
+        },
+        {
+          "caller": "sample_bi_up",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a)\n        .fx_b(fx_b.clone())\n        .fxs(vec![fx_b])\n        .direction(Direction::Up)\n        .bars(bars)\n        .build().unwrap",
+          "lineNumber": 65
+        },
+        {
+          "caller": "sample_bi_up",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a)\n        .fx_b(fx_b.clone())\n        .fxs(vec![fx_b])\n        .direction(Direction::Up)\n        .bars(bars).build",
+          "lineNumber": 65
+        },
+        {
+          "caller": "sample_bi_up",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a)\n        .fx_b(fx_b.clone())\n        .fxs(vec![fx_b])\n        .direction(Direction::Up).bars",
+          "lineNumber": 65
+        },
+        {
+          "caller": "sample_bi_up",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a)\n        .fx_b(fx_b.clone())\n        .fxs(vec![fx_b]).direction",
+          "lineNumber": 65
+        },
+        {
+          "caller": "sample_bi_up",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a)\n        .fx_b(fx_b.clone()).fxs",
+          "lineNumber": 65
+        },
+        {
+          "caller": "sample_bi_up",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a).fx_b",
+          "lineNumber": 65
+        },
+        {
+          "caller": "sample_bi_up",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\")).fx_a",
+          "lineNumber": 65
+        },
+        {
+          "caller": "sample_bi_up",
+          "callee": "BIBuilder::default().symbol",
+          "lineNumber": 65
+        },
+        {
+          "caller": "sample_bi_up",
+          "callee": "BIBuilder::default",
+          "lineNumber": 65
+        },
+        {
+          "caller": "sample_bi_up",
+          "callee": "Arc::<str>::from",
+          "lineNumber": 66
+        },
+        {
+          "caller": "sample_bi_up",
+          "callee": "fx_b.clone",
+          "lineNumber": 68
+        },
+        {
+          "caller": "builder_populates_fields",
+          "callee": "sample_bi_up",
+          "lineNumber": 78
+        },
+        {
+          "caller": "length_is_bars_count",
+          "callee": "sample_bi_up",
+          "lineNumber": 85
+        },
+        {
+          "caller": "high_low_endpoints_match_fxs",
+          "callee": "sample_bi_up",
+          "lineNumber": 91
+        },
+        {
+          "caller": "power_price_is_finite",
+          "callee": "sample_bi_up",
+          "lineNumber": 97
+        },
+        {
+          "caller": "equality_matches_rs_czsc_baseline",
+          "callee": "sample_bi_up",
+          "lineNumber": 103
+        },
+        {
+          "caller": "equality_matches_rs_czsc_baseline",
+          "callee": "sample_bi_up",
+          "lineNumber": 104
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_czsc_analyzer.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 188,
+      "nonEmptyLines": 172,
+      "functions": [
+        {
+          "name": "rb",
+          "startLine": 12,
+          "endLine": 26,
+          "params": [
+            "ts",
+            "open",
+            "close",
+            "high",
+            "low"
+          ]
+        },
+        {
+          "name": "synthetic_zigzag",
+          "startLine": 28,
+          "endLine": 44,
+          "params": [
+            "n"
+          ]
+        },
+        {
+          "name": "seeded_bars",
+          "startLine": 46,
+          "endLine": 64,
+          "params": [
+            "seed",
+            "n"
+          ]
+        },
+        {
+          "name": "new_populates_symbol_and_freq",
+          "startLine": 67,
+          "endLine": 73,
+          "params": []
+        },
+        {
+          "name": "new_consumes_all_bars_and_builds_ubi",
+          "startLine": 76,
+          "endLine": 82,
+          "params": []
+        },
+        {
+          "name": "fx_and_bi_lists_are_consistent_with_zigzag",
+          "startLine": 85,
+          "endLine": 103,
+          "params": []
+        },
+        {
+          "name": "update_bar_appends_incrementally",
+          "startLine": 106,
+          "endLine": 118,
+          "params": []
+        },
+        {
+          "name": "analyzer_clones_independently",
+          "startLine": 121,
+          "endLine": 127,
+          "params": []
+        },
+        {
+          "name": "fx_list_deduplicates_shared_endpoint_between_finished_bis",
+          "startLine": 130,
+          "endLine": 142,
+          "params": []
+        },
+        {
+          "name": "fx_list_deduplicates_bi_to_ubi_boundary_and_keeps_later_ubi_fx",
+          "startLine": 145,
+          "endLine": 157,
+          "params": []
+        },
+        {
+          "name": "min_bi_len_affects_bi_count",
+          "startLine": 163,
+          "endLine": 188,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "rb",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open(open)\n        .close(close)\n        .high(high)\n        .low(low)\n        .vol(1000.0_f64)\n        .amount(1_000_000.0_f64)\n        .build().unwrap",
+          "lineNumber": 13
+        },
+        {
+          "caller": "rb",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open(open)\n        .close(close)\n        .high(high)\n        .low(low)\n        .vol(1000.0_f64)\n        .amount(1_000_000.0_f64).build",
+          "lineNumber": 13
+        },
+        {
+          "caller": "rb",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open(open)\n        .close(close)\n        .high(high)\n        .low(low)\n        .vol(1000.0_f64).amount",
+          "lineNumber": 13
+        },
+        {
+          "caller": "rb",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open(open)\n        .close(close)\n        .high(high)\n        .low(low).vol",
+          "lineNumber": 13
+        },
+        {
+          "caller": "rb",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open(open)\n        .close(close)\n        .high(high).low",
+          "lineNumber": 13
+        },
+        {
+          "caller": "rb",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open(open)\n        .close(close).high",
+          "lineNumber": 13
+        },
+        {
+          "caller": "rb",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open(open).close",
+          "lineNumber": 13
+        },
+        {
+          "caller": "rb",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0).open",
+          "lineNumber": 13
+        },
+        {
+          "caller": "rb",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30).id",
+          "lineNumber": 13
+        },
+        {
+          "caller": "rb",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap()).freq",
+          "lineNumber": 13
+        },
+        {
+          "caller": "rb",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\")).dt",
+          "lineNumber": 13
+        },
+        {
+          "caller": "rb",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 13
+        },
+        {
+          "caller": "rb",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 13
+        },
+        {
+          "caller": "rb",
+          "callee": "Arc::<str>::from",
+          "lineNumber": 14
+        },
+        {
+          "caller": "rb",
+          "callee": "Utc.timestamp_opt(ts, 0).unwrap",
+          "lineNumber": 15
+        },
+        {
+          "caller": "rb",
+          "callee": "Utc.timestamp_opt",
+          "lineNumber": 15
+        },
+        {
+          "caller": "synthetic_zigzag",
+          "callee": "(0..n)\n        .map(|i| {\n            let phase = (i as f64) * 0.7;\n            let mid = 100.0 + 5.0 * phase.sin();\n            let half = 1.0 + 0.5 * phase.cos().abs();\n            rb(\n                1_700_000_000 + (i as i64) * 1800,\n                mid - 0.2,\n                mid + 0.2,\n                mid + half,\n                mid - half,\n            )\n        }).collect",
+          "lineNumber": 30
+        },
+        {
+          "caller": "synthetic_zigzag",
+          "callee": "(0..n).map",
+          "lineNumber": 30
+        },
+        {
+          "caller": "synthetic_zigzag",
+          "callee": "phase.sin",
+          "lineNumber": 33
+        },
+        {
+          "caller": "synthetic_zigzag",
+          "callee": "phase.cos().abs",
+          "lineNumber": 34
+        },
+        {
+          "caller": "synthetic_zigzag",
+          "callee": "phase.cos",
+          "lineNumber": 34
+        },
+        {
+          "caller": "synthetic_zigzag",
+          "callee": "rb",
+          "lineNumber": 35
+        },
+        {
+          "caller": "seeded_bars",
+          "callee": "(0..n)\n        .map(|i| {\n            state = state.wrapping_mul(6364136223846793005).wrapping_add(1);\n            let delta = ((state >> 32) as i32 % 200) as f64 / 100.0;\n            price += delta;\n            let spread = 0.5 + ((state >> 48) % 100) as f64 / 100.0;\n            rb(\n                1_700_000_000 + (i as i64) * 1800,\n                price - 0.1,\n                price + 0.1,\n                price + spread,\n                price - spread,\n            )\n        }).collect",
+          "lineNumber": 49
+        },
+        {
+          "caller": "seeded_bars",
+          "callee": "(0..n).map",
+          "lineNumber": 49
+        },
+        {
+          "caller": "seeded_bars",
+          "callee": "state.wrapping_mul(6364136223846793005).wrapping_add",
+          "lineNumber": 51
+        },
+        {
+          "caller": "seeded_bars",
+          "callee": "state.wrapping_mul",
+          "lineNumber": 51
+        },
+        {
+          "caller": "seeded_bars",
+          "callee": "rb",
+          "lineNumber": 55
+        },
+        {
+          "caller": "new_populates_symbol_and_freq",
+          "callee": "synthetic_zigzag",
+          "lineNumber": 68
+        },
+        {
+          "caller": "new_populates_symbol_and_freq",
+          "callee": "CZSC::new",
+          "lineNumber": 69
+        },
+        {
+          "caller": "new_consumes_all_bars_and_builds_ubi",
+          "callee": "synthetic_zigzag",
+          "lineNumber": 77
+        },
+        {
+          "caller": "new_consumes_all_bars_and_builds_ubi",
+          "callee": "CZSC::new",
+          "lineNumber": 78
+        },
+        {
+          "caller": "fx_and_bi_lists_are_consistent_with_zigzag",
+          "callee": "synthetic_zigzag",
+          "lineNumber": 86
+        },
+        {
+          "caller": "fx_and_bi_lists_are_consistent_with_zigzag",
+          "callee": "CZSC::new",
+          "lineNumber": 87
+        },
+        {
+          "caller": "fx_and_bi_lists_are_consistent_with_zigzag",
+          "callee": "c.get_fx_list",
+          "lineNumber": 88
+        },
+        {
+          "caller": "update_bar_appends_incrementally",
+          "callee": "synthetic_zigzag",
+          "lineNumber": 107
+        },
+        {
+          "caller": "update_bar_appends_incrementally",
+          "callee": "CZSC::new",
+          "lineNumber": 108
+        },
+        {
+          "caller": "update_bar_appends_incrementally",
+          "callee": "rb",
+          "lineNumber": 109
+        },
+        {
+          "caller": "update_bar_appends_incrementally",
+          "callee": "c.update_bar",
+          "lineNumber": 110
+        },
+        {
+          "caller": "analyzer_clones_independently",
+          "callee": "synthetic_zigzag",
+          "lineNumber": 122
+        },
+        {
+          "caller": "analyzer_clones_independently",
+          "callee": "CZSC::new",
+          "lineNumber": 123
+        },
+        {
+          "caller": "analyzer_clones_independently",
+          "callee": "c.clone",
+          "lineNumber": 124
+        },
+        {
+          "caller": "fx_list_deduplicates_shared_endpoint_between_finished_bis",
+          "callee": "CZSC::new",
+          "lineNumber": 131
+        },
+        {
+          "caller": "fx_list_deduplicates_shared_endpoint_between_finished_bis",
+          "callee": "seeded_bars",
+          "lineNumber": 131
+        },
+        {
+          "caller": "fx_list_deduplicates_shared_endpoint_between_finished_bis",
+          "callee": "c.bi_list[0].fxs.last().unwrap",
+          "lineNumber": 134
+        },
+        {
+          "caller": "fx_list_deduplicates_shared_endpoint_between_finished_bis",
+          "callee": "c.bi_list[0].fxs.last",
+          "lineNumber": 134
+        },
+        {
+          "caller": "fx_list_deduplicates_shared_endpoint_between_finished_bis",
+          "callee": "c.get_fx_list",
+          "lineNumber": 137
+        },
+        {
+          "caller": "fx_list_deduplicates_bi_to_ubi_boundary_and_keeps_later_ubi_fx",
+          "callee": "CZSC::new",
+          "lineNumber": 146
+        },
+        {
+          "caller": "fx_list_deduplicates_bi_to_ubi_boundary_and_keeps_later_ubi_fx",
+          "callee": "seeded_bars",
+          "lineNumber": 146
+        },
+        {
+          "caller": "fx_list_deduplicates_bi_to_ubi_boundary_and_keeps_later_ubi_fx",
+          "callee": "c.bi_list.last().unwrap().fxs.last().unwrap",
+          "lineNumber": 147
+        },
+        {
+          "caller": "fx_list_deduplicates_bi_to_ubi_boundary_and_keeps_later_ubi_fx",
+          "callee": "c.bi_list.last().unwrap().fxs.last",
+          "lineNumber": 147
+        },
+        {
+          "caller": "fx_list_deduplicates_bi_to_ubi_boundary_and_keeps_later_ubi_fx",
+          "callee": "c.bi_list.last().unwrap",
+          "lineNumber": 147
+        },
+        {
+          "caller": "fx_list_deduplicates_bi_to_ubi_boundary_and_keeps_later_ubi_fx",
+          "callee": "c.bi_list.last",
+          "lineNumber": 147
+        },
+        {
+          "caller": "fx_list_deduplicates_bi_to_ubi_boundary_and_keeps_later_ubi_fx",
+          "callee": "c.get_ubi_fxs().unwrap",
+          "lineNumber": 148
+        },
+        {
+          "caller": "fx_list_deduplicates_bi_to_ubi_boundary_and_keeps_later_ubi_fx",
+          "callee": "c.get_ubi_fxs",
+          "lineNumber": 148
+        },
+        {
+          "caller": "fx_list_deduplicates_bi_to_ubi_boundary_and_keeps_later_ubi_fx",
+          "callee": "ubi_fxs.iter().find(|fx| fx.dt > last_bi_fx.dt).unwrap",
+          "lineNumber": 150
+        },
+        {
+          "caller": "fx_list_deduplicates_bi_to_ubi_boundary_and_keeps_later_ubi_fx",
+          "callee": "ubi_fxs.iter().find",
+          "lineNumber": 150
+        },
+        {
+          "caller": "fx_list_deduplicates_bi_to_ubi_boundary_and_keeps_later_ubi_fx",
+          "callee": "ubi_fxs.iter",
+          "lineNumber": 150
+        },
+        {
+          "caller": "fx_list_deduplicates_bi_to_ubi_boundary_and_keeps_later_ubi_fx",
+          "callee": "c.get_fx_list",
+          "lineNumber": 152
+        },
+        {
+          "caller": "min_bi_len_affects_bi_count",
+          "callee": "synthetic_zigzag",
+          "lineNumber": 164
+        },
+        {
+          "caller": "min_bi_len_affects_bi_count",
+          "callee": "CZSC::new",
+          "lineNumber": 165
+        },
+        {
+          "caller": "min_bi_len_affects_bi_count",
+          "callee": "bars.clone",
+          "lineNumber": 165
+        },
+        {
+          "caller": "min_bi_len_affects_bi_count",
+          "callee": "CZSC::new",
+          "lineNumber": 166
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_error_chain.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "expand_error_chain_walks_sources",
+          "startLine": 9,
+          "endLine": 20,
+          "params": []
+        },
+        {
+          "name": "callee",
+          "startLine": 22,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "czsc_bail_returns_err",
+          "startLine": 27,
+          "endLine": 30,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "expand_error_chain_walks_sources",
+          "callee": "std::io::Error::other",
+          "lineNumber": 10
+        },
+        {
+          "caller": "expand_error_chain_walks_sources",
+          "callee": "anyhow::Error::new(inner).context",
+          "lineNumber": 11
+        },
+        {
+          "caller": "expand_error_chain_walks_sources",
+          "callee": "anyhow::Error::new",
+          "lineNumber": 11
+        },
+        {
+          "caller": "expand_error_chain_walks_sources",
+          "callee": "mid.context",
+          "lineNumber": 12
+        },
+        {
+          "caller": "expand_error_chain_walks_sources",
+          "callee": "expand_error_chain",
+          "lineNumber": 13
+        },
+        {
+          "caller": "czsc_bail_returns_err",
+          "callee": "callee().unwrap_err",
+          "lineNumber": 28
+        },
+        {
+          "caller": "czsc_bail_returns_err",
+          "callee": "callee",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_event.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "sample_event",
+          "startLine": 11,
+          "endLine": 23,
+          "params": []
+        },
+        {
+          "name": "struct_holds_signals",
+          "startLine": 26,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "compute_sha8_returns_4_hex_chars",
+          "startLine": 35,
+          "endLine": 44,
+          "params": []
+        },
+        {
+          "name": "compute_sha8_is_deterministic",
+          "startLine": 47,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "refresh_hash_name_updates_sha256_field",
+          "startLine": 55,
+          "endLine": 60,
+          "params": []
+        },
+        {
+          "name": "all_signals_iterates_union",
+          "startLine": 63,
+          "endLine": 68,
+          "params": []
+        },
+        {
+          "name": "dump_load_roundtrip_via_json",
+          "startLine": 71,
+          "endLine": 79,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sample_event",
+          "callee": "String::new",
+          "lineNumber": 20
+        },
+        {
+          "caller": "sample_event",
+          "callee": "String::new",
+          "lineNumber": 21
+        },
+        {
+          "caller": "struct_holds_signals",
+          "callee": "sample_event",
+          "lineNumber": 27
+        },
+        {
+          "caller": "compute_sha8_returns_4_hex_chars",
+          "callee": "sample_event",
+          "lineNumber": 36
+        },
+        {
+          "caller": "compute_sha8_returns_4_hex_chars",
+          "callee": "e.compute_sha8",
+          "lineNumber": 37
+        },
+        {
+          "caller": "compute_sha8_is_deterministic",
+          "callee": "sample_event",
+          "lineNumber": 48
+        },
+        {
+          "caller": "compute_sha8_is_deterministic",
+          "callee": "e.compute_sha8",
+          "lineNumber": 49
+        },
+        {
+          "caller": "compute_sha8_is_deterministic",
+          "callee": "e.compute_sha8",
+          "lineNumber": 50
+        },
+        {
+          "caller": "refresh_hash_name_updates_sha256_field",
+          "callee": "sample_event",
+          "lineNumber": 56
+        },
+        {
+          "caller": "refresh_hash_name_updates_sha256_field",
+          "callee": "e.refresh_hash_name",
+          "lineNumber": 58
+        },
+        {
+          "caller": "all_signals_iterates_union",
+          "callee": "sample_event",
+          "lineNumber": 64
+        },
+        {
+          "caller": "all_signals_iterates_union",
+          "callee": "e.all_signals().collect",
+          "lineNumber": 65
+        },
+        {
+          "caller": "all_signals_iterates_union",
+          "callee": "e.all_signals",
+          "lineNumber": 65
+        },
+        {
+          "caller": "dump_load_roundtrip_via_json",
+          "callee": "sample_event",
+          "lineNumber": 72
+        },
+        {
+          "caller": "dump_load_roundtrip_via_json",
+          "callee": "e.refresh_hash_name",
+          "lineNumber": 73
+        },
+        {
+          "caller": "dump_load_roundtrip_via_json",
+          "callee": "e.dump",
+          "lineNumber": 74
+        },
+        {
+          "caller": "dump_load_roundtrip_via_json",
+          "callee": "Event::load(&dumped).unwrap",
+          "lineNumber": 75
+        },
+        {
+          "caller": "dump_load_roundtrip_via_json",
+          "callee": "Event::load",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_freq.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "parses_minute_freqs",
+          "startLine": 8,
+          "endLine": 12,
+          "params": []
+        },
+        {
+          "name": "parses_higher_timeframes",
+          "startLine": 15,
+          "endLine": 19,
+          "params": []
+        },
+        {
+          "name": "rejects_unknown_strings",
+          "startLine": 22,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "display_round_trips",
+          "startLine": 27,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "minutes_for_minute_freqs",
+          "startLine": 33,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "minutes_none_for_higher_timeframes",
+          "startLine": 40,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "is_minute_freq_classifies",
+          "startLine": 46,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "ordering_is_total_and_consistent",
+          "startLine": 54,
+          "endLine": 59,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_fx.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 73,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "nb",
+          "startLine": 13,
+          "endLine": 28,
+          "params": [
+            "ts",
+            "high",
+            "low",
+            "vol"
+          ]
+        },
+        {
+          "name": "sample_top_fx",
+          "startLine": 30,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "builder_populates_fields",
+          "startLine": 48,
+          "endLine": 53,
+          "params": []
+        },
+        {
+          "name": "power_str_returns_one_of_strong_medium_weak",
+          "startLine": 56,
+          "endLine": 60,
+          "params": []
+        },
+        {
+          "name": "power_volume_is_finite",
+          "startLine": 63,
+          "endLine": 66,
+          "params": []
+        },
+        {
+          "name": "equality_matches_rs_czsc_baseline",
+          "startLine": 69,
+          "endLine": 73,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(vol)\n        .amount(vol * (high + low) / 2.0)\n        .elements(Vec::new())\n        .build().unwrap",
+          "lineNumber": 14
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(vol)\n        .amount(vol * (high + low) / 2.0)\n        .elements(Vec::new()).build",
+          "lineNumber": 14
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(vol)\n        .amount(vol * (high + low) / 2.0).elements",
+          "lineNumber": 14
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(vol).amount",
+          "lineNumber": 14
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low).vol",
+          "lineNumber": 14
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high).low",
+          "lineNumber": 14
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0).high",
+          "lineNumber": 14
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0).close",
+          "lineNumber": 14
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0).open",
+          "lineNumber": 14
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30).id",
+          "lineNumber": 14
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap()).freq",
+          "lineNumber": 14
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\")).dt",
+          "lineNumber": 14
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default().symbol",
+          "lineNumber": 14
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default",
+          "lineNumber": 14
+        },
+        {
+          "caller": "nb",
+          "callee": "Arc::<str>::from",
+          "lineNumber": 15
+        },
+        {
+          "caller": "nb",
+          "callee": "Utc.timestamp_opt(ts, 0).unwrap",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "Utc.timestamp_opt",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "Vec::new",
+          "lineNumber": 25
+        },
+        {
+          "caller": "sample_top_fx",
+          "callee": "nb",
+          "lineNumber": 32
+        },
+        {
+          "caller": "sample_top_fx",
+          "callee": "nb",
+          "lineNumber": 33
+        },
+        {
+          "caller": "sample_top_fx",
+          "callee": "nb",
+          "lineNumber": 34
+        },
+        {
+          "caller": "sample_top_fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(k2.dt)\n        .mark(Mark::G)\n        .high(k2.high)\n        .low(k2.low)\n        .fx(k2.high)\n        .elements(vec![k1, k2, k3])\n        .build().unwrap",
+          "lineNumber": 35
+        },
+        {
+          "caller": "sample_top_fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(k2.dt)\n        .mark(Mark::G)\n        .high(k2.high)\n        .low(k2.low)\n        .fx(k2.high)\n        .elements(vec![k1, k2, k3]).build",
+          "lineNumber": 35
+        },
+        {
+          "caller": "sample_top_fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(k2.dt)\n        .mark(Mark::G)\n        .high(k2.high)\n        .low(k2.low)\n        .fx(k2.high).elements",
+          "lineNumber": 35
+        },
+        {
+          "caller": "sample_top_fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(k2.dt)\n        .mark(Mark::G)\n        .high(k2.high)\n        .low(k2.low).fx",
+          "lineNumber": 35
+        },
+        {
+          "caller": "sample_top_fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(k2.dt)\n        .mark(Mark::G)\n        .high(k2.high).low",
+          "lineNumber": 35
+        },
+        {
+          "caller": "sample_top_fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(k2.dt)\n        .mark(Mark::G).high",
+          "lineNumber": 35
+        },
+        {
+          "caller": "sample_top_fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(k2.dt).mark",
+          "lineNumber": 35
+        },
+        {
+          "caller": "sample_top_fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\")).dt",
+          "lineNumber": 35
+        },
+        {
+          "caller": "sample_top_fx",
+          "callee": "FXBuilder::default().symbol",
+          "lineNumber": 35
+        },
+        {
+          "caller": "sample_top_fx",
+          "callee": "FXBuilder::default",
+          "lineNumber": 35
+        },
+        {
+          "caller": "sample_top_fx",
+          "callee": "Arc::<str>::from",
+          "lineNumber": 36
+        },
+        {
+          "caller": "builder_populates_fields",
+          "callee": "sample_top_fx",
+          "lineNumber": 49
+        },
+        {
+          "caller": "power_str_returns_one_of_strong_medium_weak",
+          "callee": "sample_top_fx",
+          "lineNumber": 57
+        },
+        {
+          "caller": "power_str_returns_one_of_strong_medium_weak",
+          "callee": "fx.power_str",
+          "lineNumber": 58
+        },
+        {
+          "caller": "power_volume_is_finite",
+          "callee": "sample_top_fx",
+          "lineNumber": 64
+        },
+        {
+          "caller": "equality_matches_rs_czsc_baseline",
+          "callee": "sample_top_fx",
+          "lineNumber": 70
+        },
+        {
+          "caller": "equality_matches_rs_czsc_baseline",
+          "callee": "sample_top_fx",
+          "lineNumber": 71
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    }
+  ]
+}

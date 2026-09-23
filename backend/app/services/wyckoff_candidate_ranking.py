@@ -352,8 +352,8 @@ def rank_wyckoff_candidates(
             "sw2_available": sw2_available,
             "sw3_available": sw3_available,
             **hierarchy,
-            # V2 is fully calculated and exposed above, but must not alter
-            # the live Top150 until its frozen ablation supports promotion.
+            # V2 is fully calculated and exposed above, but remains a
+            # research-only field until its frozen ablation supports promotion.
             "sector_score": legacy_sector_score,
             "sector_phase": sector_phase,
             "sector_phase_adjustment": sector_adjustment,

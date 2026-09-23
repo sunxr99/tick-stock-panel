@@ -1,0 +1,71 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 1,
+  "filesSkipped": [
+    "reference/py-market-profile-master/.dockerignore"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 1,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 1
+    }
+  },
+  "results": [
+    {
+      "path": "reference/py-market-profile-master/Dockerfile",
+      "language": "dockerfile",
+      "fileCategory": "infra",
+      "totalLines": 8,
+      "nonEmptyLines": 5,
+      "services": [
+        {
+          "name": "python",
+          "image": "python:3",
+          "ports": [],
+          "startLine": 1,
+          "endLine": 9
+        }
+      ],
+      "steps": [
+        {
+          "name": "FROM python:3",
+          "startLine": 1,
+          "endLine": 1
+        },
+        {
+          "name": "WORKDIR /workspace",
+          "startLine": 3,
+          "endLine": 3
+        },
+        {
+          "name": "COPY requirements.txt ./",
+          "startLine": 5,
+          "endLine": 5
+        },
+        {
+          "name": "RUN pip install -r requirements.txt",
+          "startLine": 6,
+          "endLine": 6
+        },
+        {
+          "name": "COPY . ./",
+          "startLine": 8,
+          "endLine": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "serviceCount": 1,
+        "stepCount": 5
+      }
+    }
+  ]
+}

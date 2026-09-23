@@ -1,0 +1,1363 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 7,
+  "filesSkipped": [
+    "dev.ps1"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 7,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 7
+    }
+  },
+  "results": [
+    {
+      "path": ".env.example",
+      "language": "config",
+      "fileCategory": "config",
+      "totalLines": 35,
+      "nonEmptyLines": 29,
+      "definitions": [
+        {
+          "name": "TICKFLOW_API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 3,
+          "endLine": 3
+        },
+        {
+          "name": "TUSHARE_TOKEN",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 7,
+          "endLine": 7
+        },
+        {
+          "name": "TUSHARE_API_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 9,
+          "endLine": 9
+        },
+        {
+          "name": "AI_PROVIDER",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 12,
+          "endLine": 12
+        },
+        {
+          "name": "AI_BASE_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 13,
+          "endLine": 13
+        },
+        {
+          "name": "AI_API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 14,
+          "endLine": 14
+        },
+        {
+          "name": "AI_MODEL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 15,
+          "endLine": 15
+        },
+        {
+          "name": "AI_DAILY_TOKEN_BUDGET",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 16,
+          "endLine": 16
+        },
+        {
+          "name": "HOST",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 19,
+          "endLine": 19
+        },
+        {
+          "name": "PORT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 20,
+          "endLine": 20
+        },
+        {
+          "name": "LOG_LEVEL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 21,
+          "endLine": 21
+        },
+        {
+          "name": "AUTH_PASSWORD",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 27,
+          "endLine": 27
+        },
+        {
+          "name": "BACKEND_EXTRAS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 32,
+          "endLine": 32
+        },
+        {
+          "name": "DATA_DIR",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 35,
+          "endLine": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 14
+      }
+    },
+    {
+      "path": "AGENTS.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 82,
+      "nonEmptyLines": 60,
+      "sections": [
+        {
+          "heading": "AI 开发入口",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "项目简介",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "必读与任务导航",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "项目地图",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "AI 上下文与检索规则",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "CZSC 开发规则",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "默认工作顺序",
+          "level": 3,
+          "line": 38
+        },
+        {
+          "heading": "图谱与长期知识",
+          "level": 3,
+          "line": 52
+        },
+        {
+          "heading": "构建、启动与验证",
+          "level": 2,
+          "line": 57
+        },
+        {
+          "heading": "必须遵守的约定",
+          "level": 2,
+          "line": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 371,
+      "nonEmptyLines": 280,
+      "sections": [
+        {
+          "heading": "Tick Stock Panel 贡献、AI 开发与复审指南",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. 基本原则",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "1.1 修改前先理解",
+          "level": 3,
+          "line": 11
+        },
+        {
+          "heading": "1.2 保持简单",
+          "level": 3,
+          "line": 18
+        },
+        {
+          "heading": "1.3 最小范围修改",
+          "level": 3,
+          "line": 25
+        },
+        {
+          "heading": "1.4 以验证结果作为完成标准",
+          "level": 3,
+          "line": 32
+        },
+        {
+          "heading": "2. 项目架构",
+          "level": 2,
+          "line": 39
+        },
+        {
+          "heading": "2.1 技术栈",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "2.2 主数据流",
+          "level": 3,
+          "line": 48
+        },
+        {
+          "heading": "2.3 模块边界",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "3. 不可混用的数据契约",
+          "level": 2,
+          "line": 82
+        },
+        {
+          "heading": "3.1 比例和百分比",
+          "level": 3,
+          "line": 86
+        },
+        {
+          "heading": "3.2 价格与复权",
+          "level": 3,
+          "line": 98
+        },
+        {
+          "heading": "3.3 日期、交易日和时区",
+          "level": 3,
+          "line": 105
+        },
+        {
+          "heading": "3.4 历史股本与换手率",
+          "level": 3,
+          "line": 113
+        },
+        {
+          "heading": "4. 数据源插件化要求",
+          "level": 2,
+          "line": 120
+        },
+        {
+          "heading": "能力路由矩阵契约",
+          "level": 3,
+          "line": 133
+        },
+        {
+          "heading": "5. 领域专项要求",
+          "level": 2,
+          "line": 145
+        },
+        {
+          "heading": "5.1 策略",
+          "level": 3,
+          "line": 147
+        },
+        {
+          "heading": "5.2 监控与通知",
+          "level": 3,
+          "line": 157
+        },
+        {
+          "heading": "5.3 回测、优化与步进优化",
+          "level": 3,
+          "line": 166
+        },
+        {
+          "heading": "6. 缓存、并发与性能",
+          "level": 2,
+          "line": 176
+        },
+        {
+          "heading": "6.1 缓存一致性",
+          "level": 3,
+          "line": 180
+        },
+        {
+          "heading": "6.2 并发安全",
+          "level": 3,
+          "line": 188
+        },
+        {
+          "heading": "6.3 性能约束",
+          "level": 3,
+          "line": 194
+        },
+        {
+          "heading": "7. 前端改动要求",
+          "level": 2,
+          "line": 202
+        },
+        {
+          "heading": "8. 安全、兼容与用户数据",
+          "level": 2,
+          "line": 214
+        },
+        {
+          "heading": "9. 验证矩阵",
+          "level": 2,
+          "line": 224
+        },
+        {
+          "heading": "10. PR 提交要求",
+          "level": 2,
+          "line": 259
+        },
+        {
+          "heading": "11. PR 复审流程",
+          "level": 2,
+          "line": 287
+        },
+        {
+          "heading": "11.1 追加提交后的复审",
+          "level": 3,
+          "line": 314
+        },
+        {
+          "heading": "11.2 推荐的复审输出格式",
+          "level": 3,
+          "line": 322
+        },
+        {
+          "heading": "12. 不得合并的情况",
+          "level": 2,
+          "line": 343
+        },
+        {
+          "heading": "13. AI 编码代理额外规则",
+          "level": 2,
+          "line": 359
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 34
+      }
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 402,
+      "nonEmptyLines": 301,
+      "sections": [
+        {
+          "heading": "TSP--A股智能量化工作台",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "✨ 核心功能",
+          "level": 2,
+          "line": 41
+        },
+        {
+          "heading": "📸 界面预览",
+          "level": 2,
+          "line": 99
+        },
+        {
+          "heading": "📸 [查看更多界面截图 »](./screenshots/README.md)",
+          "level": 3,
+          "line": 138
+        },
+        {
+          "heading": "🏗️ 技术架构",
+          "level": 2,
+          "line": 144
+        },
+        {
+          "heading": "分层总览",
+          "level": 3,
+          "line": 146
+        },
+        {
+          "heading": "关键机制",
+          "level": 3,
+          "line": 228
+        },
+        {
+          "heading": "技术栈",
+          "level": 3,
+          "line": 239
+        },
+        {
+          "heading": "🚀 快速开始",
+          "level": 2,
+          "line": 253
+        },
+        {
+          "heading": "方式 A:Dev 模式(二次开发推荐)",
+          "level": 3,
+          "line": 257
+        },
+        {
+          "heading": "方式 B:Docker(部署最省心)",
+          "level": 3,
+          "line": 266
+        },
+        {
+          "heading": "跑起来后的第一次使用",
+          "level": 3,
+          "line": 292
+        },
+        {
+          "heading": "⚙️ 配置",
+          "level": 2,
+          "line": 302
+        },
+        {
+          "heading": "🗺️ 路线图",
+          "level": 2,
+          "line": 316
+        },
+        {
+          "heading": "📚 完整文档",
+          "level": 2,
+          "line": 330
+        },
+        {
+          "heading": "💬 交流群",
+          "level": 2,
+          "line": 349
+        },
+        {
+          "heading": "❤️ 支持项目",
+          "level": 2,
+          "line": 357
+        },
+        {
+          "heading": "⚠️ 免责声明",
+          "level": 2,
+          "line": 384
+        },
+        {
+          "heading": "📄 License",
+          "level": 2,
+          "line": 388
+        },
+        {
+          "heading": "社区",
+          "level": 2,
+          "line": 398
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 20
+      }
+    },
+    {
+      "path": "dev.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 203,
+      "nonEmptyLines": 184,
+      "functions": [
+        {
+          "name": "read_dotenv_value",
+          "startLine": 20,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "info",
+          "startLine": 75,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "ok",
+          "startLine": 76,
+          "endLine": 76,
+          "params": []
+        },
+        {
+          "name": "warn",
+          "startLine": 77,
+          "endLine": 77,
+          "params": []
+        },
+        {
+          "name": "err",
+          "startLine": 78,
+          "endLine": 78,
+          "params": []
+        },
+        {
+          "name": "require_cmd",
+          "startLine": 81,
+          "endLine": 88,
+          "params": []
+        },
+        {
+          "name": "free_port",
+          "startLine": 94,
+          "endLine": 119,
+          "params": []
+        },
+        {
+          "name": "cleanup",
+          "startLine": 145,
+          "endLine": 157,
+          "params": []
+        },
+        {
+          "name": "prefix_awk",
+          "startLine": 161,
+          "endLine": 163,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tiers.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 74,
+      "nonEmptyLines": 69,
+      "sections": [
+        {
+          "heading": "none",
+          "level": 1,
+          "line": 27
+        },
+        {
+          "heading": "free",
+          "level": 1,
+          "line": 32
+        },
+        {
+          "heading": "starter",
+          "level": 1,
+          "line": 38
+        },
+        {
+          "heading": "pro",
+          "level": 1,
+          "line": 46
+        },
+        {
+          "heading": "expert",
+          "level": 1,
+          "line": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "操作说明书.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 1311,
+      "nonEmptyLines": 852,
+      "sections": [
+        {
+          "heading": "TickFlow A 股智能量化工作台操作说明书",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "目录",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "1. 项目概览",
+          "level": 2,
+          "line": 38
+        },
+        {
+          "heading": "1.1 使用前须知",
+          "level": 3,
+          "line": 53
+        },
+        {
+          "heading": "2. 安装与启动",
+          "level": 2,
+          "line": 61
+        },
+        {
+          "heading": "2.1 环境要求",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "2.2 准备环境配置",
+          "level": 3,
+          "line": 75
+        },
+        {
+          "heading": "2.3 macOS/Linux 开发模式",
+          "level": 3,
+          "line": 85
+        },
+        {
+          "heading": "2.4 Windows 开发模式",
+          "level": 3,
+          "line": 100
+        },
+        {
+          "heading": "2.5 Docker 部署",
+          "level": 3,
+          "line": 110
+        },
+        {
+          "heading": "2.6 停止系统",
+          "level": 3,
+          "line": 139
+        },
+        {
+          "heading": "3. 首次进入系统",
+          "level": 2,
+          "line": 151
+        },
+        {
+          "heading": "3.1 首次配置向导",
+          "level": 3,
+          "line": 153
+        },
+        {
+          "heading": "3.2 访问密码",
+          "level": 3,
+          "line": 165
+        },
+        {
+          "heading": "3.3 首次同步数据",
+          "level": 3,
+          "line": 169
+        },
+        {
+          "heading": "4. 推荐使用流程",
+          "level": 2,
+          "line": 182
+        },
+        {
+          "heading": "5. 通用界面与操作",
+          "level": 2,
+          "line": 196
+        },
+        {
+          "heading": "5.1 左侧菜单",
+          "level": 3,
+          "line": 198
+        },
+        {
+          "heading": "5.2 日期口径",
+          "level": 3,
+          "line": 204
+        },
+        {
+          "heading": "5.3 股票详情对话框",
+          "level": 3,
+          "line": 212
+        },
+        {
+          "heading": "5.4 概念与行业标签",
+          "level": 3,
+          "line": 218
+        },
+        {
+          "heading": "5.5 搜索、筛选和排序",
+          "level": 3,
+          "line": 222
+        },
+        {
+          "heading": "6. 看板",
+          "level": 2,
+          "line": 229
+        },
+        {
+          "heading": "6.1 主要内容",
+          "level": 3,
+          "line": 233
+        },
+        {
+          "heading": "6.2 监控通知操作",
+          "level": 3,
+          "line": 240
+        },
+        {
+          "heading": "6.3 数据刷新",
+          "level": 3,
+          "line": 244
+        },
+        {
+          "heading": "7. 自选",
+          "level": 2,
+          "line": 253
+        },
+        {
+          "heading": "7.1 添加标的",
+          "level": 3,
+          "line": 257
+        },
+        {
+          "heading": "7.2 查看方式",
+          "level": 3,
+          "line": 265
+        },
+        {
+          "heading": "7.3 筛选与排序",
+          "level": 3,
+          "line": 273
+        },
+        {
+          "heading": "7.4 列表管理",
+          "level": 3,
+          "line": 277
+        },
+        {
+          "heading": "7.5 实时与分时限制",
+          "level": 3,
+          "line": 287
+        },
+        {
+          "heading": "8. 策略",
+          "level": 2,
+          "line": 293
+        },
+        {
+          "heading": "8.1 股票与 ETF 策略",
+          "level": 3,
+          "line": 297
+        },
+        {
+          "heading": "8.2 策略卡片",
+          "level": 3,
+          "line": 305
+        },
+        {
+          "heading": "8.3 “全部”结果",
+          "level": 3,
+          "line": 319
+        },
+        {
+          "heading": "8.4 结果表格",
+          "level": 3,
+          "line": 323
+        },
+        {
+          "heading": "8.5 参数调整",
+          "level": 3,
+          "line": 335
+        },
+        {
+          "heading": "8.6 创建策略",
+          "level": 3,
+          "line": 344
+        },
+        {
+          "heading": "8.7 自定义策略目录",
+          "level": 3,
+          "line": 361
+        },
+        {
+          "heading": "8.8 自动运行",
+          "level": 3,
+          "line": 374
+        },
+        {
+          "heading": "9. 回测",
+          "level": 2,
+          "line": 378
+        },
+        {
+          "heading": "9.1 因子回测",
+          "level": 3,
+          "line": 382
+        },
+        {
+          "heading": "9.2 策略回测",
+          "level": 3,
+          "line": 405
+        },
+        {
+          "heading": "基础配置",
+          "level": 4,
+          "line": 409
+        },
+        {
+          "heading": "成交时序",
+          "level": 4,
+          "line": 417
+        },
+        {
+          "heading": "交易约束",
+          "level": 4,
+          "line": 431
+        },
+        {
+          "heading": "结果解读",
+          "level": 4,
+          "line": 443
+        },
+        {
+          "heading": "9.3 参数优化 Beta",
+          "level": 3,
+          "line": 456
+        },
+        {
+          "heading": "9.4 步进优化 Beta",
+          "level": 3,
+          "line": 472
+        },
+        {
+          "heading": "10. 个股分析",
+          "level": 2,
+          "line": 491
+        },
+        {
+          "heading": "10.1 基础分析",
+          "level": 3,
+          "line": 495
+        },
+        {
+          "heading": "10.2 AI 四维分析",
+          "level": 3,
+          "line": 504
+        },
+        {
+          "heading": "10.3 历史报告",
+          "level": 3,
+          "line": 510
+        },
+        {
+          "heading": "11. 连板梯队",
+          "level": 2,
+          "line": 514
+        },
+        {
+          "heading": "11.1 模式切换",
+          "level": 3,
+          "line": 518
+        },
+        {
+          "heading": "11.2 卡片信息",
+          "level": 3,
+          "line": 525
+        },
+        {
+          "heading": "11.3 五档盘口修正",
+          "level": 3,
+          "line": 537
+        },
+        {
+          "heading": "11.4 板块与成分股",
+          "level": 3,
+          "line": 543
+        },
+        {
+          "heading": "12. 概念分析",
+          "level": 2,
+          "line": 547
+        },
+        {
+          "heading": "12.1 数据准备",
+          "level": 3,
+          "line": 551
+        },
+        {
+          "heading": "12.2 主要功能",
+          "level": 3,
+          "line": 555
+        },
+        {
+          "heading": "13. 行业分析",
+          "level": 2,
+          "line": 565
+        },
+        {
+          "heading": "13.1 主要功能",
+          "level": 3,
+          "line": 569
+        },
+        {
+          "heading": "14. 财务分析",
+          "level": 2,
+          "line": 579
+        },
+        {
+          "heading": "14.1 数据内容",
+          "level": 3,
+          "line": 583
+        },
+        {
+          "heading": "14.2 同步与更新",
+          "level": 3,
+          "line": 593
+        },
+        {
+          "heading": "14.3 个股财务查看",
+          "level": 3,
+          "line": 599
+        },
+        {
+          "heading": "14.4 AI 财务分析",
+          "level": 3,
+          "line": 603
+        },
+        {
+          "heading": "15. 监控中心",
+          "level": 2,
+          "line": 614
+        },
+        {
+          "heading": "15.1 监控类型",
+          "level": 3,
+          "line": 618
+        },
+        {
+          "heading": "15.2 创建规则",
+          "level": 3,
+          "line": 626
+        },
+        {
+          "heading": "15.3 内置信号示例",
+          "level": 3,
+          "line": 640
+        },
+        {
+          "heading": "15.4 规则管理",
+          "level": 3,
+          "line": 650
+        },
+        {
+          "heading": "15.5 触发记录",
+          "level": 3,
+          "line": 656
+        },
+        {
+          "heading": "15.6 通知方式",
+          "level": 3,
+          "line": 662
+        },
+        {
+          "heading": "16. AI 复盘",
+          "level": 2,
+          "line": 677
+        },
+        {
+          "heading": "16.1 使用前准备",
+          "level": 3,
+          "line": 681
+        },
+        {
+          "heading": "16.2 生成复盘",
+          "level": 3,
+          "line": 687
+        },
+        {
+          "heading": "16.3 定时复盘与推送",
+          "level": 3,
+          "line": 697
+        },
+        {
+          "heading": "17. 指数",
+          "level": 2,
+          "line": 703
+        },
+        {
+          "heading": "17.1 数据同步",
+          "level": 3,
+          "line": 707
+        },
+        {
+          "heading": "17.2 查看指数",
+          "level": 3,
+          "line": 716
+        },
+        {
+          "heading": "18. 数据",
+          "level": 2,
+          "line": 725
+        },
+        {
+          "heading": "18.1 数据画像卡片",
+          "level": 3,
+          "line": 729
+        },
+        {
+          "heading": "18.2 立即同步",
+          "level": 3,
+          "line": 745
+        },
+        {
+          "heading": "18.3 修正数据",
+          "level": 3,
+          "line": 755
+        },
+        {
+          "heading": "18.4 扩展历史",
+          "level": 3,
+          "line": 761
+        },
+        {
+          "heading": "18.5 Enriched 重算",
+          "level": 3,
+          "line": 765
+        },
+        {
+          "heading": "18.6 财务换手率重算",
+          "level": 3,
+          "line": 776
+        },
+        {
+          "heading": "18.7 分钟 K 设置",
+          "level": 3,
+          "line": 788
+        },
+        {
+          "heading": "18.8 扩展数据",
+          "level": 3,
+          "line": 799
+        },
+        {
+          "heading": "18.9 测试端点",
+          "level": 3,
+          "line": 803
+        },
+        {
+          "heading": "18.10 页面设置与任务时间",
+          "level": 3,
+          "line": 807
+        },
+        {
+          "heading": "18.11 切换数据源",
+          "level": 3,
+          "line": 819
+        },
+        {
+          "heading": "18.12 清除数据",
+          "level": 3,
+          "line": 823
+        },
+        {
+          "heading": "19. 设置",
+          "level": 2,
+          "line": 836
+        },
+        {
+          "heading": "19.1 TickFlow",
+          "level": 3,
+          "line": 840
+        },
+        {
+          "heading": "19.2 AI 设置",
+          "level": 3,
+          "line": 851
+        },
+        {
+          "heading": "19.3 实时监控",
+          "level": 3,
+          "line": 866
+        },
+        {
+          "heading": "19.4 数据源 Beta",
+          "level": 3,
+          "line": 884
+        },
+        {
+          "heading": "19.5 扩展页面",
+          "level": 3,
+          "line": 896
+        },
+        {
+          "heading": "19.6 信号库",
+          "level": 3,
+          "line": 902
+        },
+        {
+          "heading": "19.7 菜单设置",
+          "level": 3,
+          "line": 911
+        },
+        {
+          "heading": "19.8 系统设置",
+          "level": 3,
+          "line": 917
+        },
+        {
+          "heading": "20. 数据源、扩展数据与插件",
+          "level": 2,
+          "line": 931
+        },
+        {
+          "heading": "20.1 插件化原则",
+          "level": 3,
+          "line": 933
+        },
+        {
+          "heading": "20.2 自定义数据源",
+          "level": 3,
+          "line": 939
+        },
+        {
+          "heading": "20.3 数据源插件",
+          "level": 3,
+          "line": 955
+        },
+        {
+          "heading": "20.4 扩展数据接入",
+          "level": 3,
+          "line": 966
+        },
+        {
+          "heading": "20.5 扩展分析页面",
+          "level": 3,
+          "line": 983
+        },
+        {
+          "heading": "21. 权限与能力说明",
+          "level": 2,
+          "line": 989
+        },
+        {
+          "heading": "22. 数据目录、备份与迁移",
+          "level": 2,
+          "line": 1008
+        },
+        {
+          "heading": "22.1 主要目录",
+          "level": 3,
+          "line": 1010
+        },
+        {
+          "heading": "22.2 备份内容",
+          "level": 3,
+          "line": 1031
+        },
+        {
+          "heading": "22.3 备份时机",
+          "level": 3,
+          "line": 1041
+        },
+        {
+          "heading": "22.4 迁移",
+          "level": 3,
+          "line": 1053
+        },
+        {
+          "heading": "23. 更新与维护",
+          "level": 2,
+          "line": 1067
+        },
+        {
+          "heading": "23.1 Docker 更新",
+          "level": 3,
+          "line": 1069
+        },
+        {
+          "heading": "23.2 开发模式更新",
+          "level": 3,
+          "line": 1084
+        },
+        {
+          "heading": "23.3 更新后检查",
+          "level": 3,
+          "line": 1088
+        },
+        {
+          "heading": "23.4 禁止使用的清理命令",
+          "level": 3,
+          "line": 1097
+        },
+        {
+          "heading": "24. 常见问题与排错",
+          "level": 2,
+          "line": 1107
+        },
+        {
+          "heading": "24.1 页面卡片没有数据",
+          "level": 3,
+          "line": 1109
+        },
+        {
+          "heading": "24.2 策略显示 0 个结果",
+          "level": 3,
+          "line": 1116
+        },
+        {
+          "heading": "24.3 策略卡片加载很慢",
+          "level": 3,
+          "line": 1129
+        },
+        {
+          "heading": "24.4 创建策略提示 ID 已存在",
+          "level": 3,
+          "line": 1137
+        },
+        {
+          "heading": "24.5 分时或分钟回测不可用",
+          "level": 3,
+          "line": 1146
+        },
+        {
+          "heading": "24.6 AI 功能不可用",
+          "level": 3,
+          "line": 1154
+        },
+        {
+          "heading": "24.7 “规范化 META 失败：找不到 META 字典”",
+          "level": 3,
+          "line": 1162
+        },
+        {
+          "heading": "24.8 财务数据不可用",
+          "level": 3,
+          "line": 1171
+        },
+        {
+          "heading": "24.9 实时行情不刷新",
+          "level": 3,
+          "line": 1178
+        },
+        {
+          "heading": "24.10 跌停或涨停信号不准确",
+          "level": 3,
+          "line": 1187
+        },
+        {
+          "heading": "24.11 主线排行或情绪周期里没有 ST 板块",
+          "level": 3,
+          "line": 1194
+        },
+        {
+          "heading": "24.12 飞书或企业微信没有收到通知",
+          "level": 3,
+          "line": 1201
+        },
+        {
+          "heading": "24.13 前端仍是旧界面",
+          "level": 3,
+          "line": 1209
+        },
+        {
+          "heading": "24.14 删除策略失败或返回 500",
+          "level": 3,
+          "line": 1216
+        },
+        {
+          "heading": "24.15 数据删除提示回收站不可用",
+          "level": 3,
+          "line": 1225
+        },
+        {
+          "heading": "24.16 查看日志",
+          "level": 3,
+          "line": 1229
+        },
+        {
+          "heading": "25. 安全建议",
+          "level": 2,
+          "line": 1241
+        },
+        {
+          "heading": "25.1 敏感信息",
+          "level": 3,
+          "line": 1243
+        },
+        {
+          "heading": "25.2 公网部署",
+          "level": 3,
+          "line": 1254
+        },
+        {
+          "heading": "25.3 忘记访问密码",
+          "level": 3,
+          "line": 1263
+        },
+        {
+          "heading": "25.4 第三方代码与插件",
+          "level": 3,
+          "line": 1273
+        },
+        {
+          "heading": "25.5 AI 数据边界",
+          "level": 3,
+          "line": 1277
+        },
+        {
+          "heading": "26. 常用术语",
+          "level": 2,
+          "line": 1281
+        },
+        {
+          "heading": "相关文档",
+          "level": 2,
+          "line": 1303
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 147
+      }
+    }
+  ]
+}

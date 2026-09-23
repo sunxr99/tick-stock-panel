@@ -1,0 +1,928 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 3,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 3,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "backend/scripts/probe_tickflow_pro.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 238,
+      "nonEmptyLines": 197,
+      "functions": [
+        {
+          "name": "evaluate_gate",
+          "startLine": 49,
+          "endLine": 58,
+          "params": [
+            "dry_run",
+            "force",
+            "has_key",
+            "now"
+          ]
+        },
+        {
+          "name": "_repo_root",
+          "startLine": 61,
+          "endLine": 62,
+          "params": []
+        },
+        {
+          "name": "_sanitize_sample",
+          "startLine": 65,
+          "endLine": 82,
+          "params": [
+            "obj"
+          ]
+        },
+        {
+          "name": "_to_sample",
+          "startLine": 85,
+          "endLine": 91,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "run_dry_run",
+          "startLine": 94,
+          "endLine": 128,
+          "params": [
+            "out_dir"
+          ]
+        },
+        {
+          "name": "run_live",
+          "startLine": 131,
+          "endLine": 202,
+          "params": [
+            "out_dir",
+            "client",
+            "endpoint"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 205,
+          "endLine": 234,
+          "params": [
+            "argv"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProbeGate",
+          "startLine": 27,
+          "endLine": 33,
+          "methods": [],
+          "properties": [
+            "dry_run",
+            "force",
+            "now_hour",
+            "has_key",
+            "allowed",
+            "reason"
+          ]
+        },
+        {
+          "name": "_KlinesNS",
+          "startLine": 36,
+          "endLine": 37,
+          "methods": [
+            "batch"
+          ],
+          "properties": []
+        },
+        {
+          "name": "_QuotesNS",
+          "startLine": 40,
+          "endLine": 41,
+          "methods": [
+            "get"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TickFlowLike",
+          "startLine": 44,
+          "endLine": 46,
+          "methods": [],
+          "properties": [
+            "klines",
+            "quotes"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProbeGate",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "_KlinesNS",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "_QuotesNS",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "TickFlowLike",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "evaluate_gate",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "_repo_root",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "_sanitize_sample",
+          "line": 65,
+          "isDefault": false
+        },
+        {
+          "name": "_to_sample",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "run_dry_run",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "run_live",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 205,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "evaluate_gate",
+          "callee": "datetime.now",
+          "lineNumber": 50
+        },
+        {
+          "caller": "evaluate_gate",
+          "callee": "ProbeGate",
+          "lineNumber": 53
+        },
+        {
+          "caller": "evaluate_gate",
+          "callee": "ProbeGate",
+          "lineNumber": 55
+        },
+        {
+          "caller": "evaluate_gate",
+          "callee": "ProbeGate",
+          "lineNumber": 57
+        },
+        {
+          "caller": "evaluate_gate",
+          "callee": "ProbeGate",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_repo_root",
+          "callee": "Path(__file__).resolve",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_repo_root",
+          "callee": "Path",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_sanitize_sample",
+          "callee": "isinstance",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_sanitize_sample",
+          "callee": "obj.items",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_sanitize_sample",
+          "callee": "str(k).lower",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_sanitize_sample",
+          "callee": "str",
+          "lineNumber": 70
+        },
+        {
+          "caller": "_sanitize_sample",
+          "callee": "any",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_sanitize_sample",
+          "callee": "_sanitize_sample",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_sanitize_sample",
+          "callee": "isinstance",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_sanitize_sample",
+          "callee": "len",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_sanitize_sample",
+          "callee": "_sanitize_sample",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_sanitize_sample",
+          "callee": "len",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_sanitize_sample",
+          "callee": "_sanitize_sample",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_sanitize_sample",
+          "callee": "isinstance",
+          "lineNumber": 80
+        },
+        {
+          "caller": "_sanitize_sample",
+          "callee": "len",
+          "lineNumber": 80
+        },
+        {
+          "caller": "_to_sample",
+          "callee": "hasattr",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_to_sample",
+          "callee": "_sanitize_sample",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_to_sample",
+          "callee": "raw.to_dict",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_to_sample",
+          "callee": "_sanitize_sample",
+          "lineNumber": 91
+        },
+        {
+          "caller": "run_dry_run",
+          "callee": "out_dir.mkdir",
+          "lineNumber": 95
+        },
+        {
+          "caller": "run_dry_run",
+          "callee": "datetime.now(SHANGHAI).isoformat",
+          "lineNumber": 98
+        },
+        {
+          "caller": "run_dry_run",
+          "callee": "datetime.now",
+          "lineNumber": 98
+        },
+        {
+          "caller": "run_dry_run",
+          "callee": "list",
+          "lineNumber": 99
+        },
+        {
+          "caller": "run_dry_run",
+          "callee": "(out_dir / \"probe_summary.json\").write_text",
+          "lineNumber": 119
+        },
+        {
+          "caller": "run_dry_run",
+          "callee": "json.dumps",
+          "lineNumber": 119
+        },
+        {
+          "caller": "run_dry_run",
+          "callee": "(out_dir / \"probe_summary.md\").write_text",
+          "lineNumber": 120
+        },
+        {
+          "caller": "run_dry_run",
+          "callee": "', '.join",
+          "lineNumber": 123
+        },
+        {
+          "caller": "run_live",
+          "callee": "out_dir.mkdir",
+          "lineNumber": 141
+        },
+        {
+          "caller": "run_live",
+          "callee": "os.environ.get(\"TICKFLOW_API_KEY\", \"\").strip",
+          "lineNumber": 150
+        },
+        {
+          "caller": "run_live",
+          "callee": "os.environ.get",
+          "lineNumber": 150
+        },
+        {
+          "caller": "run_live",
+          "callee": "(get_tickflow_key() or \"\").strip",
+          "lineNumber": 155
+        },
+        {
+          "caller": "run_live",
+          "callee": "get_tickflow_key",
+          "lineNumber": 155
+        },
+        {
+          "caller": "run_live",
+          "callee": "SystemExit",
+          "lineNumber": 159
+        },
+        {
+          "caller": "run_live",
+          "callee": "_base_url",
+          "lineNumber": 165
+        },
+        {
+          "caller": "run_live",
+          "callee": "TickFlow",
+          "lineNumber": 166
+        },
+        {
+          "caller": "run_live",
+          "callee": "tf.klines.batch",
+          "lineNumber": 172
+        },
+        {
+          "caller": "run_live",
+          "callee": "list",
+          "lineNumber": 172
+        },
+        {
+          "caller": "run_live",
+          "callee": "_to_sample",
+          "lineNumber": 173
+        },
+        {
+          "caller": "run_live",
+          "callee": "errors.append",
+          "lineNumber": 175
+        },
+        {
+          "caller": "run_live",
+          "callee": "type",
+          "lineNumber": 175
+        },
+        {
+          "caller": "run_live",
+          "callee": "tf.quotes.get",
+          "lineNumber": 178
+        },
+        {
+          "caller": "run_live",
+          "callee": "list",
+          "lineNumber": 178
+        },
+        {
+          "caller": "run_live",
+          "callee": "_to_sample",
+          "lineNumber": 179
+        },
+        {
+          "caller": "run_live",
+          "callee": "errors.append",
+          "lineNumber": 181
+        },
+        {
+          "caller": "run_live",
+          "callee": "type",
+          "lineNumber": 181
+        },
+        {
+          "caller": "run_live",
+          "callee": "datetime.now(SHANGHAI).isoformat",
+          "lineNumber": 185
+        },
+        {
+          "caller": "run_live",
+          "callee": "datetime.now",
+          "lineNumber": 185
+        },
+        {
+          "caller": "run_live",
+          "callee": "list",
+          "lineNumber": 187
+        },
+        {
+          "caller": "run_live",
+          "callee": "apply_safety_rpm",
+          "lineNumber": 189
+        },
+        {
+          "caller": "run_live",
+          "callee": "(out_dir / \"probe_summary.json\").write_text",
+          "lineNumber": 194
+        },
+        {
+          "caller": "run_live",
+          "callee": "json.dumps",
+          "lineNumber": 194
+        },
+        {
+          "caller": "run_live",
+          "callee": "(out_dir / \"probe_summary.md\").write_text",
+          "lineNumber": 195
+        },
+        {
+          "caller": "run_live",
+          "callee": "len",
+          "lineNumber": 199
+        },
+        {
+          "caller": "main",
+          "callee": "argparse.ArgumentParser",
+          "lineNumber": 206
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 207
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 208
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 209
+        },
+        {
+          "caller": "main",
+          "callee": "parser.parse_args",
+          "lineNumber": 215
+        },
+        {
+          "caller": "main",
+          "callee": "bool",
+          "lineNumber": 218
+        },
+        {
+          "caller": "main",
+          "callee": "os.environ.get(\"TICKFLOW_API_KEY\", \"\").strip",
+          "lineNumber": 218
+        },
+        {
+          "caller": "main",
+          "callee": "os.environ.get",
+          "lineNumber": 218
+        },
+        {
+          "caller": "main",
+          "callee": "evaluate_gate",
+          "lineNumber": 219
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 220
+        },
+        {
+          "caller": "main",
+          "callee": "json.dumps",
+          "lineNumber": 220
+        },
+        {
+          "caller": "main",
+          "callee": "asdict",
+          "lineNumber": 220
+        },
+        {
+          "caller": "main",
+          "callee": "datetime.now(SHANGHAI).strftime",
+          "lineNumber": 224
+        },
+        {
+          "caller": "main",
+          "callee": "datetime.now",
+          "lineNumber": 224
+        },
+        {
+          "caller": "main",
+          "callee": "_repo_root",
+          "lineNumber": 225
+        },
+        {
+          "caller": "main",
+          "callee": "run_dry_run",
+          "lineNumber": 227
+        },
+        {
+          "caller": "main",
+          "callee": "_repo_root",
+          "lineNumber": 229
+        },
+        {
+          "caller": "main",
+          "callee": "str",
+          "lineNumber": 230
+        },
+        {
+          "caller": "main",
+          "callee": "sys.path.insert",
+          "lineNumber": 231
+        },
+        {
+          "caller": "main",
+          "callee": "str",
+          "lineNumber": 231
+        },
+        {
+          "caller": "main",
+          "callee": "run_live",
+          "lineNumber": 232
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 233
+        },
+        {
+          "caller": "main",
+          "callee": "json.dumps",
+          "lineNumber": 233
+        },
+        {
+          "caller": "main",
+          "callee": "str",
+          "lineNumber": 233
+        },
+        {
+          "caller": "main",
+          "callee": "report.get",
+          "lineNumber": 233
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 7,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "backend/tests/test_probe_tickflow_pro_gate.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "test_dry_run_always_allowed_without_key",
+          "startLine": 13,
+          "endLine": 16,
+          "params": []
+        },
+        {
+          "name": "test_live_blocked_without_key",
+          "startLine": 19,
+          "endLine": 22,
+          "params": []
+        },
+        {
+          "name": "test_live_blocked_before_offpeak_without_force",
+          "startLine": 25,
+          "endLine": 29,
+          "params": []
+        },
+        {
+          "name": "test_live_allowed_after_offpeak",
+          "startLine": 32,
+          "endLine": 35,
+          "params": []
+        },
+        {
+          "name": "test_live_allowed_before_offpeak_with_force",
+          "startLine": 38,
+          "endLine": 41,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_dry_run_always_allowed_without_key",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "test_live_blocked_without_key",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "test_live_blocked_before_offpeak_without_force",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "test_live_allowed_after_offpeak",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "test_live_allowed_before_offpeak_with_force",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_dry_run_always_allowed_without_key",
+          "callee": "evaluate_gate",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_live_blocked_without_key",
+          "callee": "evaluate_gate",
+          "lineNumber": 20
+        },
+        {
+          "caller": "test_live_blocked_before_offpeak_without_force",
+          "callee": "datetime",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_live_blocked_before_offpeak_without_force",
+          "callee": "evaluate_gate",
+          "lineNumber": 27
+        },
+        {
+          "caller": "test_live_allowed_after_offpeak",
+          "callee": "datetime",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_live_allowed_after_offpeak",
+          "callee": "evaluate_gate",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_live_allowed_before_offpeak_with_force",
+          "callee": "datetime",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_live_allowed_before_offpeak_with_force",
+          "callee": "evaluate_gate",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/test_probe_tickflow_pro_live.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 50,
+      "functions": [
+        {
+          "name": "test_dry_run_status_is_dry_run_ok",
+          "startLine": 35,
+          "endLine": 38,
+          "params": [
+            "tmp_path"
+          ]
+        },
+        {
+          "name": "test_run_live_uses_klines_batch_and_quotes_get",
+          "startLine": 41,
+          "endLine": 54,
+          "params": [
+            "tmp_path"
+          ]
+        },
+        {
+          "name": "test_run_live_records_partial_on_sdk_errors",
+          "startLine": 57,
+          "endLine": 69,
+          "params": [
+            "tmp_path"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "_FakeKlines",
+          "startLine": 11,
+          "endLine": 17,
+          "methods": [
+            "__init__",
+            "batch"
+          ],
+          "properties": []
+        },
+        {
+          "name": "_FakeQuotes",
+          "startLine": 20,
+          "endLine": 26,
+          "methods": [
+            "__init__",
+            "get"
+          ],
+          "properties": []
+        },
+        {
+          "name": "_FakeTickFlow",
+          "startLine": 29,
+          "endLine": 32,
+          "methods": [
+            "__init__"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_FakeKlines",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "_FakeQuotes",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "_FakeTickFlow",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "test_dry_run_status_is_dry_run_ok",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "test_run_live_uses_klines_batch_and_quotes_get",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "test_run_live_records_partial_on_sdk_errors",
+          "line": 57,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "batch",
+          "callee": "self.calls.append",
+          "lineNumber": 16
+        },
+        {
+          "caller": "batch",
+          "callee": "list",
+          "lineNumber": 16
+        },
+        {
+          "caller": "get",
+          "callee": "self.calls.append",
+          "lineNumber": 25
+        },
+        {
+          "caller": "get",
+          "callee": "list",
+          "lineNumber": 25
+        },
+        {
+          "caller": "__init__",
+          "callee": "_FakeKlines",
+          "lineNumber": 31
+        },
+        {
+          "caller": "__init__",
+          "callee": "_FakeQuotes",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_dry_run_status_is_dry_run_ok",
+          "callee": "run_dry_run",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_run_live_uses_klines_batch_and_quotes_get",
+          "callee": "_FakeTickFlow",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_run_live_uses_klines_batch_and_quotes_get",
+          "callee": "run_live",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_run_live_uses_klines_batch_and_quotes_get",
+          "callee": "set",
+          "lineNumber": 50
+        },
+        {
+          "caller": "batch",
+          "callee": "AttributeError",
+          "lineNumber": 60
+        },
+        {
+          "caller": "get",
+          "callee": "AttributeError",
+          "lineNumber": 63
+        },
+        {
+          "caller": "test_run_live_records_partial_on_sdk_errors",
+          "callee": "SimpleNamespace",
+          "lineNumber": 65
+        },
+        {
+          "caller": "test_run_live_records_partial_on_sdk_errors",
+          "callee": "_Bad",
+          "lineNumber": 65
+        },
+        {
+          "caller": "test_run_live_records_partial_on_sdk_errors",
+          "callee": "_Bad",
+          "lineNumber": 65
+        },
+        {
+          "caller": "test_run_live_records_partial_on_sdk_errors",
+          "callee": "run_live",
+          "lineNumber": 66
+        },
+        {
+          "caller": "test_run_live_records_partial_on_sdk_errors",
+          "callee": "any",
+          "lineNumber": 68
+        },
+        {
+          "caller": "test_run_live_records_partial_on_sdk_errors",
+          "callee": "e.startswith",
+          "lineNumber": 68
+        },
+        {
+          "caller": "test_run_live_records_partial_on_sdk_errors",
+          "callee": "any",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_run_live_records_partial_on_sdk_errors",
+          "callee": "e.startswith",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 3,
+        "classCount": 3
+      }
+    }
+  ]
+}

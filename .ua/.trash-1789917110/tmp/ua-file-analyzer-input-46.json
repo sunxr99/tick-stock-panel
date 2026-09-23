@@ -1,0 +1,287 @@
+{
+  "projectRoot": "D:\\stock\\myStockPanel\\tick-stock-panel",
+  "batchFiles": [
+    {
+      "path": "backend/tests/test_mining_api.py",
+      "language": "python",
+      "sizeLines": 637,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_mining_candidates.py",
+      "language": "python",
+      "sizeLines": 679,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_mining_jobs.py",
+      "language": "python",
+      "sizeLines": 263,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_mining_manager.py",
+      "language": "python",
+      "sizeLines": 352,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_minute_strategy.py",
+      "language": "python",
+      "sizeLines": 526,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_parquet_schema_compat.py",
+      "language": "python",
+      "sizeLines": 81,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_quote_index_merge.py",
+      "language": "python",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_realtime_enriched_resume.py",
+      "language": "python",
+      "sizeLines": 251,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_regime_builder.py",
+      "language": "python",
+      "sizeLines": 407,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_repository_index.py",
+      "language": "python",
+      "sizeLines": 185,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_right_side_candidates.py",
+      "language": "python",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_right_side_top150_vp_d1_open_d2_close_research.py",
+      "language": "python",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_right_side_top150_vp_next_day_intraday_research.py",
+      "language": "python",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_right_side_top150_vp_two_day_oracle_research.py",
+      "language": "python",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_screener_builtin_params.py",
+      "language": "python",
+      "sizeLines": 160,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_screener_etf.py",
+      "language": "python",
+      "sizeLines": 190,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_sector_narrowing_research.py",
+      "language": "python",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_st_limit_and_sharpe.py",
+      "language": "python",
+      "sizeLines": 146,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_strategy_build_stream.py",
+      "language": "python",
+      "sizeLines": 102,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_strategy_code_save.py",
+      "language": "python",
+      "sizeLines": 194,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_strategy_detail_signals.py",
+      "language": "python",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_strategy_market_data.py",
+      "language": "python",
+      "sizeLines": 101,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_strategy_param_normalize.py",
+      "language": "python",
+      "sizeLines": 147,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_strategy_registry.py",
+      "language": "python",
+      "sizeLines": 134,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_strategy_required_history.py",
+      "language": "python",
+      "sizeLines": 170,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_strategy_scoring.py",
+      "language": "python",
+      "sizeLines": 112,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_volume_profile.py",
+      "language": "python",
+      "sizeLines": 390,
+      "fileCategory": "code"
+    },
+    {
+      "path": "backend/tests/test_wyckoff_top20_backtest.py",
+      "language": "python",
+      "sizeLines": 111,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "backend/tests/test_mining_api.py": [
+      "backend/app/api/mining.py",
+      "backend/app/backtest/mining.py",
+      "backend/app/enriched_generation.py",
+      "backend/app/services/mining_jobs.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_mining_candidates.py": [
+      "backend/app/backtest/candidates.py",
+      "backend/app/backtest/mining.py",
+      "backend/app/services/mining_candidates.py",
+      "backend/app/services/mining_jobs.py",
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_mining_jobs.py": [
+      "backend/app/services/mining_jobs.py"
+    ],
+    "backend/tests/test_mining_manager.py": [
+      "backend/app/services/heavy_job_limiter.py",
+      "backend/app/services/mining_manager.py"
+    ],
+    "backend/tests/test_minute_strategy.py": [
+      "backend/app/services/screener.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_parquet_schema_compat.py": [
+      "backend/app/parquet.py"
+    ],
+    "backend/tests/test_quote_index_merge.py": [
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_realtime_enriched_resume.py": [
+      "backend/app/indicators/pipeline.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_regime_builder.py": [
+      "backend/app/services/__init__.py",
+      "backend/app/services/regime_builder.py"
+    ],
+    "backend/tests/test_repository_index.py": [
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_right_side_candidates.py": [
+      "backend/app/services/right_side_candidates.py"
+    ],
+    "backend/tests/test_right_side_top150_vp_d1_open_d2_close_research.py": [
+      "backend/scripts/run_right_side_top150_vp_d1_open_d2_close_research.py"
+    ],
+    "backend/tests/test_right_side_top150_vp_next_day_intraday_research.py": [
+      "backend/scripts/run_right_side_top150_vp_next_day_intraday_research.py"
+    ],
+    "backend/tests/test_right_side_top150_vp_two_day_oracle_research.py": [
+      "backend/scripts/run_right_side_top150_vp_two_day_oracle_research.py"
+    ],
+    "backend/tests/test_screener_builtin_params.py": [
+      "backend/app/api/__init__.py",
+      "backend/app/services/screener.py"
+    ],
+    "backend/tests/test_screener_etf.py": [
+      "backend/app/services/screener.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_sector_narrowing_research.py": [
+      "backend/scripts/run_sector_narrowing_research.py"
+    ],
+    "backend/tests/test_st_limit_and_sharpe.py": [
+      "backend/app/backtest/factor.py",
+      "backend/app/backtest/matrix.py",
+      "backend/app/indicators/pipeline.py",
+      "backend/app/strategy/builtin/near_limit_up.py"
+    ],
+    "backend/tests/test_strategy_build_stream.py": [
+      "backend/app/api/strategy.py",
+      "backend/app/strategy/ai_generator.py"
+    ],
+    "backend/tests/test_strategy_code_save.py": [
+      "backend/app/api/strategy.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_strategy_detail_signals.py": [
+      "backend/app/api/strategy.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_strategy_market_data.py": [
+      "backend/app/strategy/__init__.py",
+      "backend/app/strategy/ai_generator.py",
+      "backend/app/strategy/market_data.py"
+    ],
+    "backend/tests/test_strategy_param_normalize.py": [
+      "backend/app/api/strategy.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_strategy_registry.py": [
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_strategy_required_history.py": [
+      "backend/app/services/screener.py",
+      "backend/app/strategy/engine.py"
+    ],
+    "backend/tests/test_strategy_scoring.py": [
+      "backend/app/backtest/strategy.py",
+      "backend/app/strategy/engine.py",
+      "backend/app/strategy/scoring.py"
+    ],
+    "backend/tests/test_volume_profile.py": [
+      "backend/app/services/volume_profile.py",
+      "backend/app/tickflow/repository.py"
+    ],
+    "backend/tests/test_wyckoff_top20_backtest.py": [
+      "backend/scripts/run_wyckoff_top20_backtest.py"
+    ]
+  }
+}

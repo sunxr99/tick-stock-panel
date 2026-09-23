@@ -1,0 +1,3103 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 19,
+  "filesSkipped": [
+    "reference/py-market-profile-master/MANIFEST.in",
+    "reference/py-market-profile-master/VERSION",
+    "reference/py-market-profile-master/examples/example.ipynb",
+    "reference/py-market-profile-master/tests/fixtures/google.csv"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 19,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 13,
+      "failed": 0,
+      "skipped": 6
+    }
+  },
+  "results": [
+    {
+      "path": "reference/czsc-master/czsc-master/tests/unit/snapshots/core_parity_seed42.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 277,
+      "nonEmptyLines": 277,
+      "sections": [
+        {
+          "heading": "seed",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "symbol",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "freq",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "sdt",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "edt",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "bars_count",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "fx_list_count",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "bi_list_count",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "fx_marks",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "bi_directions",
+          "level": 1,
+          "line": 187
+        },
+        {
+          "heading": "bi_lengths",
+          "level": 1,
+          "line": 232
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/tests/unit/test_core_parity.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 133,
+      "nonEmptyLines": 105,
+      "functions": [
+        {
+          "name": "_load_snapshot",
+          "startLine": 33,
+          "endLine": 35,
+          "params": []
+        },
+        {
+          "name": "_build_czsc",
+          "startLine": 38,
+          "endLine": 57,
+          "params": []
+        },
+        {
+          "name": "test_czsc_source_is_in_repo_native",
+          "startLine": 60,
+          "endLine": 75,
+          "params": []
+        },
+        {
+          "name": "test_fx_list_count_matches_baseline",
+          "startLine": 78,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "test_bi_list_count_matches_baseline",
+          "startLine": 88,
+          "endLine": 95,
+          "params": []
+        },
+        {
+          "name": "test_fx_marks_sequence_matches_baseline",
+          "startLine": 98,
+          "endLine": 112,
+          "params": []
+        },
+        {
+          "name": "test_bi_directions_sequence_matches_baseline",
+          "startLine": 115,
+          "endLine": 124,
+          "params": []
+        },
+        {
+          "name": "test_bi_lengths_sequence_matches_baseline",
+          "startLine": 127,
+          "endLine": 133,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_load_snapshot",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "_build_czsc",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "test_czsc_source_is_in_repo_native",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "test_fx_list_count_matches_baseline",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "test_bi_list_count_matches_baseline",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "test_fx_marks_sequence_matches_baseline",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "test_bi_directions_sequence_matches_baseline",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "test_bi_lengths_sequence_matches_baseline",
+          "line": 127,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_load_snapshot",
+          "callee": "json.loads",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_load_snapshot",
+          "callee": "SNAPSHOT_PATH.read_text",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_build_czsc",
+          "callee": "generate_symbol_kines",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_build_czsc",
+          "callee": "czsc.format_standard_kline",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_build_czsc",
+          "callee": "czsc.CZSC",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_build_czsc",
+          "callee": "type",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_czsc_source_is_in_repo_native",
+          "callee": "_build_czsc",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_czsc_source_is_in_repo_native",
+          "callee": "type",
+          "lineNumber": 72
+        },
+        {
+          "caller": "test_czsc_source_is_in_repo_native",
+          "callee": "module.startswith",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_fx_list_count_matches_baseline",
+          "callee": "_build_czsc",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_fx_list_count_matches_baseline",
+          "callee": "_load_snapshot",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_fx_list_count_matches_baseline",
+          "callee": "len",
+          "lineNumber": 83
+        },
+        {
+          "caller": "test_fx_list_count_matches_baseline",
+          "callee": "len",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_bi_list_count_matches_baseline",
+          "callee": "_build_czsc",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_bi_list_count_matches_baseline",
+          "callee": "_load_snapshot",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_bi_list_count_matches_baseline",
+          "callee": "len",
+          "lineNumber": 93
+        },
+        {
+          "caller": "test_bi_list_count_matches_baseline",
+          "callee": "len",
+          "lineNumber": 94
+        },
+        {
+          "caller": "test_fx_marks_sequence_matches_baseline",
+          "callee": "_build_czsc",
+          "lineNumber": 105
+        },
+        {
+          "caller": "test_fx_marks_sequence_matches_baseline",
+          "callee": "_load_snapshot",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_fx_marks_sequence_matches_baseline",
+          "callee": "str",
+          "lineNumber": 108
+        },
+        {
+          "caller": "test_fx_marks_sequence_matches_baseline",
+          "callee": "next",
+          "lineNumber": 111
+        },
+        {
+          "caller": "test_fx_marks_sequence_matches_baseline",
+          "callee": "enumerate",
+          "lineNumber": 111
+        },
+        {
+          "caller": "test_fx_marks_sequence_matches_baseline",
+          "callee": "zip",
+          "lineNumber": 111
+        },
+        {
+          "caller": "test_bi_directions_sequence_matches_baseline",
+          "callee": "_build_czsc",
+          "lineNumber": 117
+        },
+        {
+          "caller": "test_bi_directions_sequence_matches_baseline",
+          "callee": "_load_snapshot",
+          "lineNumber": 119
+        },
+        {
+          "caller": "test_bi_directions_sequence_matches_baseline",
+          "callee": "str",
+          "lineNumber": 120
+        },
+        {
+          "caller": "test_bi_directions_sequence_matches_baseline",
+          "callee": "next",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_bi_directions_sequence_matches_baseline",
+          "callee": "enumerate",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_bi_directions_sequence_matches_baseline",
+          "callee": "zip",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_bi_lengths_sequence_matches_baseline",
+          "callee": "_build_czsc",
+          "lineNumber": 129
+        },
+        {
+          "caller": "test_bi_lengths_sequence_matches_baseline",
+          "callee": "_load_snapshot",
+          "lineNumber": 131
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/tests/unit/test_hot_start_snapshot.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 392,
+      "nonEmptyLines": 320,
+      "functions": [
+        {
+          "name": "_build_bars",
+          "startLine": 54,
+          "endLine": 60,
+          "params": []
+        },
+        {
+          "name": "_new_trader",
+          "startLine": 92,
+          "endLine": 106,
+          "params": [
+            "position_dicts",
+            "extra_signals"
+          ]
+        },
+        {
+          "name": "_split_parity_check",
+          "startLine": 109,
+          "endLine": 130,
+          "params": [
+            "bars",
+            "position_dicts",
+            "k",
+            "extra_signals"
+          ]
+        },
+        {
+          "name": "_first_in_position_split",
+          "startLine": 133,
+          "endLine": 140,
+          "params": [
+            "bars",
+            "position_dicts",
+            "extra_signals"
+          ]
+        },
+        {
+          "name": "_snapshot_kas",
+          "startLine": 143,
+          "endLine": 161,
+          "params": [
+            "trader"
+          ]
+        },
+        {
+          "name": "_pos_state",
+          "startLine": 164,
+          "endLine": 175,
+          "params": [
+            "trader"
+          ]
+        },
+        {
+          "name": "test_dump_restore_zero_replay_parity",
+          "startLine": 178,
+          "endLine": 218,
+          "params": []
+        },
+        {
+          "name": "test_dump_restore_immediate_parity",
+          "startLine": 221,
+          "endLine": 235,
+          "params": []
+        },
+        {
+          "name": "_scan_position_phases",
+          "startLine": 238,
+          "endLine": 247,
+          "params": [
+            "bars"
+          ]
+        },
+        {
+          "name": "test_dump_restore_parity_at_many_split_points",
+          "startLine": 250,
+          "endLine": 277,
+          "params": []
+        },
+        {
+          "name": "test_multi_position_zero_replay_parity",
+          "startLine": 280,
+          "endLine": 297,
+          "params": []
+        },
+        {
+          "name": "test_trader_level_signal_zero_replay_parity",
+          "startLine": 305,
+          "endLine": 326,
+          "params": []
+        },
+        {
+          "name": "test_interval_and_t0_constraints_parity",
+          "startLine": 329,
+          "endLine": 360,
+          "params": []
+        },
+        {
+          "name": "test_restore_state_rejects_garbage",
+          "startLine": 363,
+          "endLine": 369,
+          "params": []
+        },
+        {
+          "name": "test_restore_state_rejects_version_mismatch",
+          "startLine": 372,
+          "endLine": 392,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_build_bars",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "_new_trader",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "_split_parity_check",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "_first_in_position_split",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "_snapshot_kas",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "_pos_state",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "test_dump_restore_zero_replay_parity",
+          "line": 178,
+          "isDefault": false
+        },
+        {
+          "name": "test_dump_restore_immediate_parity",
+          "line": 221,
+          "isDefault": false
+        },
+        {
+          "name": "_scan_position_phases",
+          "line": 238,
+          "isDefault": false
+        },
+        {
+          "name": "test_dump_restore_parity_at_many_split_points",
+          "line": 250,
+          "isDefault": false
+        },
+        {
+          "name": "test_multi_position_zero_replay_parity",
+          "line": 280,
+          "isDefault": false
+        },
+        {
+          "name": "test_trader_level_signal_zero_replay_parity",
+          "line": 305,
+          "isDefault": false
+        },
+        {
+          "name": "test_interval_and_t0_constraints_parity",
+          "line": 329,
+          "isDefault": false
+        },
+        {
+          "name": "test_restore_state_rejects_garbage",
+          "line": 363,
+          "isDefault": false
+        },
+        {
+          "name": "test_restore_state_rejects_version_mismatch",
+          "line": 372,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_build_bars",
+          "callee": "generate_symbol_kines",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_build_bars",
+          "callee": "format_standard_kline",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_new_trader",
+          "callee": "czsc.BarGenerator",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_new_trader",
+          "callee": "czsc.Position.load",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_new_trader",
+          "callee": "get_signals_config",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_new_trader",
+          "callee": "list",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_new_trader",
+          "callee": "czsc.CzscTrader",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_split_parity_check",
+          "callee": "_new_trader",
+          "lineNumber": 112
+        },
+        {
+          "caller": "_split_parity_check",
+          "callee": "full.on_bar",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_split_parity_check",
+          "callee": "_new_trader",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_split_parity_check",
+          "callee": "warm.on_bar",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_split_parity_check",
+          "callee": "warm.dump_state",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_split_parity_check",
+          "callee": "type(warm).restore_state",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_split_parity_check",
+          "callee": "type",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_split_parity_check",
+          "callee": "hot.on_bar",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_split_parity_check",
+          "callee": "_pos_state",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_split_parity_check",
+          "callee": "_pos_state",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_split_parity_check",
+          "callee": "_snapshot_kas",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_split_parity_check",
+          "callee": "_snapshot_kas",
+          "lineNumber": 127
+        },
+        {
+          "caller": "_split_parity_check",
+          "callee": "hot.get_ensemble_pos",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_split_parity_check",
+          "callee": "full.get_ensemble_pos",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_first_in_position_split",
+          "callee": "_new_trader",
+          "lineNumber": 135
+        },
+        {
+          "caller": "_first_in_position_split",
+          "callee": "enumerate",
+          "lineNumber": 136
+        },
+        {
+          "caller": "_first_in_position_split",
+          "callee": "trader.on_bar",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_first_in_position_split",
+          "callee": "any",
+          "lineNumber": 138
+        },
+        {
+          "caller": "_snapshot_kas",
+          "callee": "trader.kas.items",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_snapshot_kas",
+          "callee": "len",
+          "lineNumber": 152
+        },
+        {
+          "caller": "_snapshot_kas",
+          "callee": "len",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_snapshot_kas",
+          "callee": "len",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_snapshot_kas",
+          "callee": "str",
+          "lineNumber": 155
+        },
+        {
+          "caller": "_snapshot_kas",
+          "callee": "round",
+          "lineNumber": 156
+        },
+        {
+          "caller": "_snapshot_kas",
+          "callee": "str",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_snapshot_kas",
+          "callee": "round",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_snapshot_kas",
+          "callee": "round",
+          "lineNumber": 159
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "_build_bars",
+          "lineNumber": 180
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "len",
+          "lineNumber": 181
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "len",
+          "lineNumber": 182
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "_new_trader",
+          "lineNumber": 185
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "trader_full.on_bar",
+          "lineNumber": 187
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "_new_trader",
+          "lineNumber": 190
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "time.perf_counter",
+          "lineNumber": 191
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "trader_warm.on_bar",
+          "lineNumber": 193
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "time.perf_counter",
+          "lineNumber": 194
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "trader_warm.dump_state",
+          "lineNumber": 196
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "isinstance",
+          "lineNumber": 197
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "len",
+          "lineNumber": 197
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "time.perf_counter",
+          "lineNumber": 199
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "type(trader_warm).restore_state",
+          "lineNumber": 200
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "type",
+          "lineNumber": 200
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "time.perf_counter",
+          "lineNumber": 201
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "trader_hot.on_bar",
+          "lineNumber": 204
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "_pos_state",
+          "lineNumber": 207
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "_pos_state",
+          "lineNumber": 207
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "_snapshot_kas",
+          "lineNumber": 208
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "_snapshot_kas",
+          "lineNumber": 208
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "trader_hot.get_ensemble_pos",
+          "lineNumber": 210
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "trader_full.get_ensemble_pos",
+          "lineNumber": 210
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "print",
+          "lineNumber": 213
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "max",
+          "lineNumber": 215
+        },
+        {
+          "caller": "test_dump_restore_zero_replay_parity",
+          "callee": "len",
+          "lineNumber": 216
+        },
+        {
+          "caller": "test_dump_restore_immediate_parity",
+          "callee": "_build_bars",
+          "lineNumber": 223
+        },
+        {
+          "caller": "test_dump_restore_immediate_parity",
+          "callee": "_new_trader",
+          "lineNumber": 224
+        },
+        {
+          "caller": "test_dump_restore_immediate_parity",
+          "callee": "trader.on_bar",
+          "lineNumber": 226
+        },
+        {
+          "caller": "test_dump_restore_immediate_parity",
+          "callee": "trader.dump_state",
+          "lineNumber": 228
+        },
+        {
+          "caller": "test_dump_restore_immediate_parity",
+          "callee": "type(trader).restore_state",
+          "lineNumber": 229
+        },
+        {
+          "caller": "test_dump_restore_immediate_parity",
+          "callee": "type",
+          "lineNumber": 229
+        },
+        {
+          "caller": "test_dump_restore_immediate_parity",
+          "callee": "_pos_state",
+          "lineNumber": 231
+        },
+        {
+          "caller": "test_dump_restore_immediate_parity",
+          "callee": "_pos_state",
+          "lineNumber": 231
+        },
+        {
+          "caller": "test_dump_restore_immediate_parity",
+          "callee": "_snapshot_kas",
+          "lineNumber": 232
+        },
+        {
+          "caller": "test_dump_restore_immediate_parity",
+          "callee": "_snapshot_kas",
+          "lineNumber": 232
+        },
+        {
+          "caller": "_scan_position_phases",
+          "callee": "_new_trader",
+          "lineNumber": 242
+        },
+        {
+          "caller": "_scan_position_phases",
+          "callee": "enumerate",
+          "lineNumber": 244
+        },
+        {
+          "caller": "_scan_position_phases",
+          "callee": "trader.on_bar",
+          "lineNumber": 245
+        },
+        {
+          "caller": "_scan_position_phases",
+          "callee": "(in_pos if trader.positions[0].pos != 0 else flat).append",
+          "lineNumber": 246
+        },
+        {
+          "caller": "test_dump_restore_parity_at_many_split_points",
+          "callee": "_build_bars",
+          "lineNumber": 256
+        },
+        {
+          "caller": "test_dump_restore_parity_at_many_split_points",
+          "callee": "_scan_position_phases",
+          "lineNumber": 257
+        },
+        {
+          "caller": "test_dump_restore_parity_at_many_split_points",
+          "callee": "sorted",
+          "lineNumber": 261
+        },
+        {
+          "caller": "test_dump_restore_parity_at_many_split_points",
+          "callee": "len",
+          "lineNumber": 263
+        },
+        {
+          "caller": "test_dump_restore_parity_at_many_split_points",
+          "callee": "len",
+          "lineNumber": 264
+        },
+        {
+          "caller": "test_dump_restore_parity_at_many_split_points",
+          "callee": "len",
+          "lineNumber": 266
+        },
+        {
+          "caller": "test_dump_restore_parity_at_many_split_points",
+          "callee": "_split_parity_check",
+          "lineNumber": 272
+        },
+        {
+          "caller": "test_dump_restore_parity_at_many_split_points",
+          "callee": "any",
+          "lineNumber": 273
+        },
+        {
+          "caller": "test_dump_restore_parity_at_many_split_points",
+          "callee": "print",
+          "lineNumber": 277
+        },
+        {
+          "caller": "test_multi_position_zero_replay_parity",
+          "callee": "_build_bars",
+          "lineNumber": 282
+        },
+        {
+          "caller": "test_multi_position_zero_replay_parity",
+          "callee": "_new_trader",
+          "lineNumber": 286
+        },
+        {
+          "caller": "test_multi_position_zero_replay_parity",
+          "callee": "enumerate",
+          "lineNumber": 288
+        },
+        {
+          "caller": "test_multi_position_zero_replay_parity",
+          "callee": "trader.on_bar",
+          "lineNumber": 289
+        },
+        {
+          "caller": "test_multi_position_zero_replay_parity",
+          "callee": "any",
+          "lineNumber": 290
+        },
+        {
+          "caller": "test_multi_position_zero_replay_parity",
+          "callee": "_split_parity_check",
+          "lineNumber": 295
+        },
+        {
+          "caller": "test_multi_position_zero_replay_parity",
+          "callee": "any",
+          "lineNumber": 296
+        },
+        {
+          "caller": "test_multi_position_zero_replay_parity",
+          "callee": "print",
+          "lineNumber": 297
+        },
+        {
+          "caller": "test_trader_level_signal_zero_replay_parity",
+          "callee": "_build_bars",
+          "lineNumber": 312
+        },
+        {
+          "caller": "test_trader_level_signal_zero_replay_parity",
+          "callee": "_first_in_position_split",
+          "lineNumber": 316
+        },
+        {
+          "caller": "test_trader_level_signal_zero_replay_parity",
+          "callee": "_split_parity_check",
+          "lineNumber": 318
+        },
+        {
+          "caller": "test_trader_level_signal_zero_replay_parity",
+          "callee": "any",
+          "lineNumber": 319
+        },
+        {
+          "caller": "test_trader_level_signal_zero_replay_parity",
+          "callee": "_new_trader",
+          "lineNumber": 322
+        },
+        {
+          "caller": "test_trader_level_signal_zero_replay_parity",
+          "callee": "full.on_bar",
+          "lineNumber": 324
+        },
+        {
+          "caller": "test_trader_level_signal_zero_replay_parity",
+          "callee": "any",
+          "lineNumber": 325
+        },
+        {
+          "caller": "test_trader_level_signal_zero_replay_parity",
+          "callee": "print",
+          "lineNumber": 326
+        },
+        {
+          "caller": "test_interval_and_t0_constraints_parity",
+          "callee": "_build_bars",
+          "lineNumber": 336
+        },
+        {
+          "caller": "test_interval_and_t0_constraints_parity",
+          "callee": "_new_trader",
+          "lineNumber": 347
+        },
+        {
+          "caller": "test_interval_and_t0_constraints_parity",
+          "callee": "_new_trader",
+          "lineNumber": 348
+        },
+        {
+          "caller": "test_interval_and_t0_constraints_parity",
+          "callee": "base.on_bar",
+          "lineNumber": 350
+        },
+        {
+          "caller": "test_interval_and_t0_constraints_parity",
+          "callee": "constrained.on_bar",
+          "lineNumber": 351
+        },
+        {
+          "caller": "test_interval_and_t0_constraints_parity",
+          "callee": "len",
+          "lineNumber": 352
+        },
+        {
+          "caller": "test_interval_and_t0_constraints_parity",
+          "callee": "len",
+          "lineNumber": 352
+        },
+        {
+          "caller": "test_interval_and_t0_constraints_parity",
+          "callee": "_first_in_position_split",
+          "lineNumber": 356
+        },
+        {
+          "caller": "test_interval_and_t0_constraints_parity",
+          "callee": "_split_parity_check",
+          "lineNumber": 358
+        },
+        {
+          "caller": "test_interval_and_t0_constraints_parity",
+          "callee": "any",
+          "lineNumber": 359
+        },
+        {
+          "caller": "test_interval_and_t0_constraints_parity",
+          "callee": "print",
+          "lineNumber": 360
+        },
+        {
+          "caller": "test_restore_state_rejects_garbage",
+          "callee": "pytest.raises",
+          "lineNumber": 368
+        },
+        {
+          "caller": "test_restore_state_rejects_garbage",
+          "callee": "czsc.CzscTrader.restore_state",
+          "lineNumber": 369
+        },
+        {
+          "caller": "test_restore_state_rejects_version_mismatch",
+          "callee": "_new_trader",
+          "lineNumber": 379
+        },
+        {
+          "caller": "test_restore_state_rejects_version_mismatch",
+          "callee": "_build_bars",
+          "lineNumber": 380
+        },
+        {
+          "caller": "test_restore_state_rejects_version_mismatch",
+          "callee": "trader.on_bar",
+          "lineNumber": 381
+        },
+        {
+          "caller": "test_restore_state_rejects_version_mismatch",
+          "callee": "bytearray",
+          "lineNumber": 382
+        },
+        {
+          "caller": "test_restore_state_rejects_version_mismatch",
+          "callee": "trader.dump_state",
+          "lineNumber": 382
+        },
+        {
+          "caller": "test_restore_state_rejects_version_mismatch",
+          "callee": "blob.find",
+          "lineNumber": 385
+        },
+        {
+          "caller": "test_restore_state_rejects_version_mismatch",
+          "callee": "len",
+          "lineNumber": 387
+        },
+        {
+          "caller": "test_restore_state_rejects_version_mismatch",
+          "callee": "pytest.raises",
+          "lineNumber": 391
+        },
+        {
+          "caller": "test_restore_state_rejects_version_mismatch",
+          "callee": "czsc.CzscTrader.restore_state",
+          "lineNumber": 392
+        },
+        {
+          "caller": "test_restore_state_rejects_version_mismatch",
+          "callee": "bytes",
+          "lineNumber": 392
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 15,
+        "functionCount": 15,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/tests/unit/test_pickle.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 130,
+      "nonEmptyLines": 105,
+      "functions": [
+        {
+          "name": "_try_build_bars",
+          "startLine": 32,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "_build_obj",
+          "startLine": 58,
+          "endLine": 92,
+          "params": [
+            "name",
+            "bars"
+          ]
+        },
+        {
+          "name": "test_pickle_roundtrip",
+          "startLine": 100,
+          "endLine": 130,
+          "params": [
+            "target"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_try_build_bars",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "_build_obj",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "test_pickle_roundtrip",
+          "line": 96,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_try_build_bars",
+          "callee": "type",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_try_build_bars",
+          "callee": "generate_symbol_kines",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_try_build_bars",
+          "callee": "format_standard_kline",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_try_build_bars",
+          "callee": "type",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_build_obj",
+          "callee": "czsc.CZSC",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_build_obj",
+          "callee": "czsc.BarGenerator",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_build_obj",
+          "callee": "czsc.Position",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_build_obj",
+          "callee": "czsc.BarGenerator",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_build_obj",
+          "callee": "bg.update",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_build_obj",
+          "callee": "czsc.CzscSignals",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_build_obj",
+          "callee": "czsc.CzscTrader",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_build_obj",
+          "callee": "type",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_pickle_roundtrip",
+          "callee": "_try_build_bars",
+          "lineNumber": 113
+        },
+        {
+          "caller": "test_pickle_roundtrip",
+          "callee": "pytest.fail",
+          "lineNumber": 115
+        },
+        {
+          "caller": "test_pickle_roundtrip",
+          "callee": "_build_obj",
+          "lineNumber": 117
+        },
+        {
+          "caller": "test_pickle_roundtrip",
+          "callee": "pytest.fail",
+          "lineNumber": 119
+        },
+        {
+          "caller": "test_pickle_roundtrip",
+          "callee": "pickle.dumps",
+          "lineNumber": 122
+        },
+        {
+          "caller": "test_pickle_roundtrip",
+          "callee": "pickle.loads",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_pickle_roundtrip",
+          "callee": "pytest.fail",
+          "lineNumber": 125
+        },
+        {
+          "caller": "test_pickle_roundtrip",
+          "callee": "type",
+          "lineNumber": 125
+        },
+        {
+          "caller": "test_pickle_roundtrip",
+          "callee": "type",
+          "lineNumber": 127
+        },
+        {
+          "caller": "test_pickle_roundtrip",
+          "callee": "type",
+          "lineNumber": 127
+        },
+        {
+          "caller": "test_pickle_roundtrip",
+          "callee": "type",
+          "lineNumber": 127
+        },
+        {
+          "caller": "test_pickle_roundtrip",
+          "callee": "type",
+          "lineNumber": 127
+        },
+        {
+          "caller": "test_pickle_roundtrip",
+          "callee": "hasattr",
+          "lineNumber": 129
+        },
+        {
+          "caller": "test_pickle_roundtrip",
+          "callee": "hasattr",
+          "lineNumber": 129
+        },
+        {
+          "caller": "test_pickle_roundtrip",
+          "callee": "restored.__getstate__",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_pickle_roundtrip",
+          "callee": "obj.__getstate__",
+          "lineNumber": 130
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/tests/unit/test_trading_time.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 99,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "_safe_import_czsc",
+          "startLine": 31,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "test_is_trading_time",
+          "startLine": 63,
+          "endLine": 80,
+          "params": [
+            "market",
+            "dt",
+            "expected"
+          ]
+        },
+        {
+          "name": "test_is_trading_time_module_origin",
+          "startLine": 83,
+          "endLine": 99,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_safe_import_czsc",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "test_is_trading_time",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "test_is_trading_time_module_origin",
+          "line": 83,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_safe_import_czsc",
+          "callee": "type",
+          "lineNumber": 38
+        },
+        {
+          "caller": "test_is_trading_time",
+          "callee": "_safe_import_czsc",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_is_trading_time",
+          "callee": "pytest.fail",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_is_trading_time",
+          "callee": "hasattr",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_is_trading_time",
+          "callee": "pytest.fail",
+          "lineNumber": 78
+        },
+        {
+          "caller": "test_is_trading_time",
+          "callee": "czsc.is_trading_time",
+          "lineNumber": 79
+        },
+        {
+          "caller": "test_is_trading_time",
+          "callee": "dt.isoformat",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_is_trading_time_module_origin",
+          "callee": "_safe_import_czsc",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_is_trading_time_module_origin",
+          "callee": "pytest.fail",
+          "lineNumber": 94
+        },
+        {
+          "caller": "test_is_trading_time_module_origin",
+          "callee": "getattr",
+          "lineNumber": 95
+        },
+        {
+          "caller": "test_is_trading_time_module_origin",
+          "callee": "pytest.fail",
+          "lineNumber": 97
+        },
+        {
+          "caller": "test_is_trading_time_module_origin",
+          "callee": "getattr",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_is_trading_time_module_origin",
+          "callee": "module.startswith",
+          "lineNumber": 99
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/py-market-profile-master/.github/FUNDING.yml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "sections": [
+        {
+          "heading": "github",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "reference/py-market-profile-master/docs/conf.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 69,
+      "nonEmptyLines": 51,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/py-market-profile-master/examples/google_finance.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "round_float",
+          "startLine": 8,
+          "endLine": 11,
+          "params": [
+            "digits"
+          ]
+        },
+        {
+          "name": "get_google_data",
+          "startLine": 13,
+          "endLine": 18,
+          "params": [
+            "file_path",
+            "symbol",
+            "interval",
+            "days"
+          ]
+        },
+        {
+          "name": "read_google_data",
+          "startLine": 20,
+          "endLine": 60,
+          "params": [
+            "file_path"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "round_float",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "get_google_data",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "read_google_data",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "f",
+          "callee": "round",
+          "lineNumber": 10
+        },
+        {
+          "caller": "f",
+          "callee": "np.float32",
+          "lineNumber": 10
+        },
+        {
+          "caller": "get_google_data",
+          "callee": "requests.get",
+          "lineNumber": 15
+        },
+        {
+          "caller": "get_google_data",
+          "callee": "open",
+          "lineNumber": 17
+        },
+        {
+          "caller": "get_google_data",
+          "callee": "out.write",
+          "lineNumber": 18
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "open",
+          "lineNumber": 21
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "enumerate",
+          "lineNumber": 23
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "line.startswith",
+          "lineNumber": 24
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "int",
+          "lineNumber": 25
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "f.seek",
+          "lineNumber": 30
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "pd.read_csv",
+          "lineNumber": 33
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "round_float",
+          "lineNumber": 36
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "round_float",
+          "lineNumber": 37
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "round_float",
+          "lineNumber": 38
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "round_float",
+          "lineNumber": 39
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "data.iterrows",
+          "lineNumber": 43
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "int",
+          "lineNumber": 47
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "row.a.replace",
+          "lineNumber": 47
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "datetime.datetime.fromtimestamp",
+          "lineNumber": 48
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "int",
+          "lineNumber": 53
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "pd.to_timedelta",
+          "lineNumber": 54
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "data.set_index",
+          "lineNumber": 57
+        },
+        {
+          "caller": "read_google_data",
+          "callee": "data.drop",
+          "lineNumber": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/py-market-profile-master/setup.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 50,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/py-market-profile-master/src/market_profile/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 140,
+      "nonEmptyLines": 114,
+      "classes": [
+        {
+          "name": "MarketProfile",
+          "startLine": 8,
+          "endLine": 30,
+          "methods": [
+            "__init__",
+            "__getitem__",
+            "round_to_row"
+          ],
+          "properties": []
+        },
+        {
+          "name": "MarketProfileSlice",
+          "startLine": 33,
+          "endLine": 140,
+          "methods": [
+            "__init__",
+            "open_range",
+            "initial_balance",
+            "calculate_value_area",
+            "calculate_balanced_target",
+            "find_extrema",
+            "build_profile",
+            "as_dict"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MarketProfile",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "MarketProfileSlice",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "kwargs.pop",
+          "lineNumber": 11
+        },
+        {
+          "caller": "__init__",
+          "callee": "kwargs.pop",
+          "lineNumber": 12
+        },
+        {
+          "caller": "__init__",
+          "callee": "kwargs.pop",
+          "lineNumber": 13
+        },
+        {
+          "caller": "__init__",
+          "callee": "kwargs.pop",
+          "lineNumber": 14
+        },
+        {
+          "caller": "__init__",
+          "callee": "pd.to_timedelta",
+          "lineNumber": 14
+        },
+        {
+          "caller": "__init__",
+          "callee": "kwargs.pop",
+          "lineNumber": 15
+        },
+        {
+          "caller": "__init__",
+          "callee": "pd.to_timedelta",
+          "lineNumber": 15
+        },
+        {
+          "caller": "__init__",
+          "callee": "kwargs.pop",
+          "lineNumber": 16
+        },
+        {
+          "caller": "__init__",
+          "callee": "kwargs.pop",
+          "lineNumber": 17
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "isinstance",
+          "lineNumber": 20
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "MarketProfileSlice",
+          "lineNumber": 21
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "slice",
+          "lineNumber": 21
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "TypeError",
+          "lineNumber": 23
+        },
+        {
+          "caller": "round_to_row",
+          "callee": "np.isnan",
+          "lineNumber": 26
+        },
+        {
+          "caller": "round_to_row",
+          "callee": "np.float64",
+          "lineNumber": 26
+        },
+        {
+          "caller": "round_to_row",
+          "callee": "float",
+          "lineNumber": 29
+        },
+        {
+          "caller": "round_to_row",
+          "callee": "math.ceil",
+          "lineNumber": 30
+        },
+        {
+          "caller": "round_to_row",
+          "callee": "float",
+          "lineNumber": 30
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.build_profile",
+          "lineNumber": 37
+        },
+        {
+          "caller": "open_range",
+          "callee": "np.min",
+          "lineNumber": 42
+        },
+        {
+          "caller": "open_range",
+          "callee": "np.max",
+          "lineNumber": 42
+        },
+        {
+          "caller": "initial_balance",
+          "callee": "np.min",
+          "lineNumber": 47
+        },
+        {
+          "caller": "initial_balance",
+          "callee": "np.max",
+          "lineNumber": 47
+        },
+        {
+          "caller": "calculate_value_area",
+          "callee": "np.clip",
+          "lineNumber": 60
+        },
+        {
+          "caller": "calculate_value_area",
+          "callee": "len",
+          "lineNumber": 60
+        },
+        {
+          "caller": "calculate_value_area",
+          "callee": "np.clip",
+          "lineNumber": 61
+        },
+        {
+          "caller": "calculate_value_area",
+          "callee": "len",
+          "lineNumber": 61
+        },
+        {
+          "caller": "calculate_balanced_target",
+          "callee": "self.profile.index.max",
+          "lineNumber": 78
+        },
+        {
+          "caller": "calculate_balanced_target",
+          "callee": "self.profile.index.min",
+          "lineNumber": 79
+        },
+        {
+          "caller": "find_extrema",
+          "callee": "argrelextrema",
+          "lineNumber": 89
+        },
+        {
+          "caller": "find_extrema",
+          "callee": "extrema_idx.tolist",
+          "lineNumber": 90
+        },
+        {
+          "caller": "build_profile",
+          "callee": "self.ds['Close'].apply",
+          "lineNumber": 95
+        },
+        {
+          "caller": "build_profile",
+          "callee": "self.mp.round_to_row",
+          "lineNumber": 95
+        },
+        {
+          "caller": "build_profile",
+          "callee": "self.ds.groupby(rounded_set)['Close'].count",
+          "lineNumber": 98
+        },
+        {
+          "caller": "build_profile",
+          "callee": "self.ds.groupby",
+          "lineNumber": 98
+        },
+        {
+          "caller": "build_profile",
+          "callee": "self.ds.groupby(rounded_set)['Volume'].sum",
+          "lineNumber": 100
+        },
+        {
+          "caller": "build_profile",
+          "callee": "self.ds.groupby",
+          "lineNumber": 100
+        },
+        {
+          "caller": "build_profile",
+          "callee": "ValueError",
+          "lineNumber": 102
+        },
+        {
+          "caller": "build_profile",
+          "callee": "self.profile.sum",
+          "lineNumber": 104
+        },
+        {
+          "caller": "build_profile",
+          "callee": "self.profile.index.min",
+          "lineNumber": 105
+        },
+        {
+          "caller": "build_profile",
+          "callee": "self.profile.index.max",
+          "lineNumber": 105
+        },
+        {
+          "caller": "build_profile",
+          "callee": "midmax_idx",
+          "lineNumber": 106
+        },
+        {
+          "caller": "build_profile",
+          "callee": "self.profile.values.tolist",
+          "lineNumber": 106
+        },
+        {
+          "caller": "build_profile",
+          "callee": "self.calculate_value_area",
+          "lineNumber": 110
+        },
+        {
+          "caller": "build_profile",
+          "callee": "self.calculate_balanced_target",
+          "lineNumber": 111
+        },
+        {
+          "caller": "build_profile",
+          "callee": "self.find_extrema",
+          "lineNumber": 118
+        },
+        {
+          "caller": "build_profile",
+          "callee": "self.find_extrema",
+          "lineNumber": 119
+        },
+        {
+          "caller": "as_dict",
+          "callee": "self.initial_balance",
+          "lineNumber": 122
+        },
+        {
+          "caller": "as_dict",
+          "callee": "self.open_range",
+          "lineNumber": 123
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "reference/py-market-profile-master/src/market_profile/utils.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 17,
+      "functions": [
+        {
+          "name": "midmax_idx",
+          "startLine": 5,
+          "endLine": 22,
+          "params": [
+            "array"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "midmax_idx",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "midmax_idx",
+          "callee": "len",
+          "lineNumber": 6
+        },
+        {
+          "caller": "midmax_idx",
+          "callee": "np.argwhere",
+          "lineNumber": 10
+        },
+        {
+          "caller": "midmax_idx",
+          "callee": "np.amax",
+          "lineNumber": 10
+        },
+        {
+          "caller": "midmax_idx",
+          "callee": "len",
+          "lineNumber": 11
+        },
+        {
+          "caller": "midmax_idx",
+          "callee": "len",
+          "lineNumber": 13
+        },
+        {
+          "caller": "midmax_idx",
+          "callee": "len",
+          "lineNumber": 18
+        },
+        {
+          "caller": "midmax_idx",
+          "callee": "np.vectorize",
+          "lineNumber": 19
+        },
+        {
+          "caller": "midmax_idx",
+          "callee": "np.argmin",
+          "lineNumber": 20
+        },
+        {
+          "caller": "midmax_idx",
+          "callee": "v_norm",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/py-market-profile-master/tests/market_profile_test.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 49,
+      "classes": [
+        {
+          "name": "MarketProfileTest",
+          "startLine": 6,
+          "endLine": 61,
+          "methods": [
+            "market_profile",
+            "market_profile_slice",
+            "test_round_to_row",
+            "test_create_slice",
+            "test_initial_balance",
+            "test_open_range",
+            "test_profile_attributes",
+            "test_as_dict"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MarketProfileTest",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "market_profile",
+          "callee": "pd.read_csv",
+          "lineNumber": 9
+        },
+        {
+          "caller": "market_profile",
+          "callee": "MarketProfile",
+          "lineNumber": 15
+        },
+        {
+          "caller": "market_profile_slice",
+          "callee": "market_profile.df.index.min",
+          "lineNumber": 19
+        },
+        {
+          "caller": "market_profile_slice",
+          "callee": "market_profile.df.index.max",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_round_to_row",
+          "callee": "market_profile.round_to_row",
+          "lineNumber": 22
+        },
+        {
+          "caller": "test_round_to_row",
+          "callee": "market_profile.round_to_row",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_round_to_row",
+          "callee": "market_profile.round_to_row",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_create_slice",
+          "callee": "isinstance",
+          "lineNumber": 27
+        },
+        {
+          "caller": "test_initial_balance",
+          "callee": "round",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_initial_balance",
+          "callee": "market_profile_slice.initial_balance",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_open_range",
+          "callee": "round",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_open_range",
+          "callee": "market_profile_slice.open_range",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_profile_attributes",
+          "callee": "round",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_profile_attributes",
+          "callee": "round",
+          "lineNumber": 37
+        },
+        {
+          "caller": "test_profile_attributes",
+          "callee": "round",
+          "lineNumber": 38
+        },
+        {
+          "caller": "test_profile_attributes",
+          "callee": "round",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_as_dict",
+          "callee": "market_profile_slice.as_dict",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_as_dict",
+          "callee": "computed['lvn'].isin([13627, 30366]).any().any",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_as_dict",
+          "callee": "computed['lvn'].isin([13627, 30366]).any",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_as_dict",
+          "callee": "computed['lvn'].isin",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_as_dict",
+          "callee": "computed['hvn'].isin([186489, 238489]).any().any",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_as_dict",
+          "callee": "computed['hvn'].isin([186489, 238489]).any",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_as_dict",
+          "callee": "computed['hvn'].isin",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/py-market-profile-master/tests/utils_test.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 8,
+      "classes": [
+        {
+          "name": "UtilsTest",
+          "startLine": 5,
+          "endLine": 10,
+          "methods": [
+            "test_midmax_idx"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "UtilsTest",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_midmax_idx",
+          "callee": "midmax_idx",
+          "lineNumber": 7
+        },
+        {
+          "caller": "test_midmax_idx",
+          "callee": "midmax_idx",
+          "lineNumber": 8
+        },
+        {
+          "caller": "test_midmax_idx",
+          "callee": "midmax_idx",
+          "lineNumber": 9
+        },
+        {
+          "caller": "test_midmax_idx",
+          "callee": "midmax_idx",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/smart-money-concepts-master/smart-money-concepts-master/.github/FUNDING.yml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 13,
+      "nonEmptyLines": 12,
+      "sections": [
+        {
+          "heading": "github",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "patreon",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "open_collective",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "ko_fi",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "tidelift",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "community_bridge",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "liberapay",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "issuehunt",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "otechie",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "lfx_crowdfunding",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "reference/smart-money-concepts-master/smart-money-concepts-master/.github/workflows/unittest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 20,
+      "nonEmptyLines": 18,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "on",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "jobs",
+          "level": 1,
+          "line": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "reference/smart-money-concepts-master/smart-money-concepts-master/.serena/project.yml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 185,
+      "nonEmptyLines": 161,
+      "sections": [
+        {
+          "heading": "project_name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "language_servers",
+          "level": 1,
+          "line": 40
+        },
+        {
+          "heading": "encoding",
+          "level": 1,
+          "line": 45
+        },
+        {
+          "heading": "activation_command",
+          "level": 1,
+          "line": 54
+        },
+        {
+          "heading": "activation_command_timeout",
+          "level": 1,
+          "line": 58
+        },
+        {
+          "heading": "line_ending",
+          "level": 1,
+          "line": 63
+        },
+        {
+          "heading": "language_backend",
+          "level": 1,
+          "line": 70
+        },
+        {
+          "heading": "ignore_all_files_in_gitignore",
+          "level": 1,
+          "line": 73
+        },
+        {
+          "heading": "ls_specific_settings",
+          "level": 1,
+          "line": 79
+        },
+        {
+          "heading": "ls_workspace_folders",
+          "level": 1,
+          "line": 90
+        },
+        {
+          "heading": "ls_additional_workspace_folders",
+          "level": 1,
+          "line": 102
+        },
+        {
+          "heading": "ignored_paths",
+          "level": 1,
+          "line": 114
+        },
+        {
+          "heading": "read_only",
+          "level": 1,
+          "line": 119
+        },
+        {
+          "heading": "excluded_tools",
+          "level": 1,
+          "line": 124
+        },
+        {
+          "heading": "included_optional_tools",
+          "level": 1,
+          "line": 129
+        },
+        {
+          "heading": "fixed_tools",
+          "level": 1,
+          "line": 134
+        },
+        {
+          "heading": "default_modes",
+          "level": 1,
+          "line": 144
+        },
+        {
+          "heading": "added_modes",
+          "level": 1,
+          "line": 149
+        },
+        {
+          "heading": "initial_prompt",
+          "level": 1,
+          "line": 153
+        },
+        {
+          "heading": "symbol_info_budget",
+          "level": 1,
+          "line": 159
+        },
+        {
+          "heading": "read_only_memory_patterns",
+          "level": 1,
+          "line": 163
+        },
+        {
+          "heading": "ignored_memory_patterns",
+          "level": 1,
+          "line": 171
+        },
+        {
+          "heading": "included_apis",
+          "level": 1,
+          "line": 176
+        },
+        {
+          "heading": "excluded_apis",
+          "level": 1,
+          "line": 180
+        },
+        {
+          "heading": "agent_interface",
+          "level": 1,
+          "line": 185
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 25
+      }
+    },
+    {
+      "path": "reference/smart-money-concepts-master/smart-money-concepts-master/setup.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 42,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "screenshots/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 69,
+      "nonEmptyLines": 35,
+      "sections": [
+        {
+          "heading": "项目截图",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "看板 Dashboard",
+          "level": 3,
+          "line": 3
+        },
+        {
+          "heading": "自选 Watchlist",
+          "level": 3,
+          "line": 7
+        },
+        {
+          "heading": "策略 Screener",
+          "level": 3,
+          "line": 11
+        },
+        {
+          "heading": "回测 Backtest",
+          "level": 3,
+          "line": 15
+        },
+        {
+          "heading": "挖掘 Mining",
+          "level": 3,
+          "line": 19
+        },
+        {
+          "heading": "市场环境 Regime",
+          "level": 3,
+          "line": 23
+        },
+        {
+          "heading": "异动监控 Abnormal Moves",
+          "level": 3,
+          "line": 27
+        },
+        {
+          "heading": "监控中心 Monitor",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "连板梯队 Limit Ladder",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "概念分析 Concept",
+          "level": 3,
+          "line": 39
+        },
+        {
+          "heading": "财务分析",
+          "level": 3,
+          "line": 43
+        },
+        {
+          "heading": "财务分析报告",
+          "level": 3,
+          "line": 47
+        },
+        {
+          "heading": "个股分析",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "个股分析报告",
+          "level": 3,
+          "line": 55
+        },
+        {
+          "heading": "复盘 Review",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "飞书推送-自动复盘",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "飞书推送-个股监控",
+          "level": 3,
+          "line": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    },
+    {
+      "path": "scripts/upgrade_check.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 121,
+      "nonEmptyLines": 100,
+      "functions": [
+        {
+          "name": "_git",
+          "startLine": 11,
+          "endLine": 22,
+          "params": [
+            "root",
+            "check"
+          ]
+        },
+        {
+          "name": "_lines",
+          "startLine": 25,
+          "endLine": 26,
+          "params": [
+            "result"
+          ]
+        },
+        {
+          "name": "_resolve_repo",
+          "startLine": 29,
+          "endLine": 31,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "_resolve_commit",
+          "startLine": 34,
+          "endLine": 35,
+          "params": [
+            "root",
+            "ref"
+          ]
+        },
+        {
+          "name": "_merge_tree_conflicts",
+          "startLine": 38,
+          "endLine": 58,
+          "params": [
+            "root",
+            "base",
+            "current",
+            "target"
+          ]
+        },
+        {
+          "name": "_print_paths",
+          "startLine": 61,
+          "endLine": 64,
+          "params": [
+            "title",
+            "paths"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 67,
+          "endLine": 117,
+          "params": [
+            "argv"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_git",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "_lines",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "_resolve_repo",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "_resolve_commit",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "_merge_tree_conflicts",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "_print_paths",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 67,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_git",
+          "callee": "subprocess.run",
+          "lineNumber": 12
+        },
+        {
+          "caller": "_git",
+          "callee": "(result.stderr or result.stdout).strip",
+          "lineNumber": 20
+        },
+        {
+          "caller": "_git",
+          "callee": "RuntimeError",
+          "lineNumber": 21
+        },
+        {
+          "caller": "_git",
+          "callee": "' '.join",
+          "lineNumber": 21
+        },
+        {
+          "caller": "_lines",
+          "callee": "line.strip",
+          "lineNumber": 26
+        },
+        {
+          "caller": "_lines",
+          "callee": "result.stdout.splitlines",
+          "lineNumber": 26
+        },
+        {
+          "caller": "_lines",
+          "callee": "line.strip",
+          "lineNumber": 26
+        },
+        {
+          "caller": "_resolve_repo",
+          "callee": "_git",
+          "lineNumber": 30
+        },
+        {
+          "caller": "_resolve_repo",
+          "callee": "Path(result.stdout.strip()).resolve",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_resolve_repo",
+          "callee": "Path",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_resolve_repo",
+          "callee": "result.stdout.strip",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_resolve_commit",
+          "callee": "_git(root, \"rev-parse\", \"--verify\", f\"{ref}^{{commit}}\").stdout.strip",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_resolve_commit",
+          "callee": "_git",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "_git",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "result.stdout.splitlines",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "conflicts.append",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "line.strip().split",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "line.strip",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "len",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "line.startswith",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "line.startswith",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "line.startswith",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "conflicts.append",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "sorted",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_merge_tree_conflicts",
+          "callee": "set",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_print_paths",
+          "callee": "print",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_print_paths",
+          "callee": "len",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_print_paths",
+          "callee": "print",
+          "lineNumber": 64
+        },
+        {
+          "caller": "main",
+          "callee": "argparse.ArgumentParser",
+          "lineNumber": 68
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 71
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 72
+        },
+        {
+          "caller": "main",
+          "callee": "Path.cwd",
+          "lineNumber": 75
+        },
+        {
+          "caller": "main",
+          "callee": "parser.parse_args",
+          "lineNumber": 78
+        },
+        {
+          "caller": "main",
+          "callee": "_resolve_repo",
+          "lineNumber": 81
+        },
+        {
+          "caller": "main",
+          "callee": "args.repo.resolve",
+          "lineNumber": 81
+        },
+        {
+          "caller": "main",
+          "callee": "_resolve_commit",
+          "lineNumber": 82
+        },
+        {
+          "caller": "main",
+          "callee": "_resolve_commit",
+          "lineNumber": 83
+        },
+        {
+          "caller": "main",
+          "callee": "_git(root, \"merge-base\", current, target).stdout.strip",
+          "lineNumber": 84
+        },
+        {
+          "caller": "main",
+          "callee": "_git",
+          "lineNumber": 84
+        },
+        {
+          "caller": "main",
+          "callee": "RuntimeError",
+          "lineNumber": 86
+        },
+        {
+          "caller": "main",
+          "callee": "_lines",
+          "lineNumber": 88
+        },
+        {
+          "caller": "main",
+          "callee": "_git",
+          "lineNumber": 88
+        },
+        {
+          "caller": "main",
+          "callee": "_lines",
+          "lineNumber": 89
+        },
+        {
+          "caller": "main",
+          "callee": "_git",
+          "lineNumber": 89
+        },
+        {
+          "caller": "main",
+          "callee": "sorted",
+          "lineNumber": 90
+        },
+        {
+          "caller": "main",
+          "callee": "_merge_tree_conflicts",
+          "lineNumber": 91
+        },
+        {
+          "caller": "main",
+          "callee": "sorted",
+          "lineNumber": 92
+        },
+        {
+          "caller": "main",
+          "callee": "_lines",
+          "lineNumber": 92
+        },
+        {
+          "caller": "main",
+          "callee": "_git",
+          "lineNumber": 92
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 94
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 95
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 96
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 97
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 98
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 99
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 99
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 100
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 100
+        },
+        {
+          "caller": "main",
+          "callee": "_print_paths",
+          "lineNumber": 101
+        },
+        {
+          "caller": "main",
+          "callee": "_print_paths",
+          "lineNumber": 102
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 105
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 105
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 106
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 108
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 111
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 113
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 116
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    }
+  ]
+}

@@ -87,7 +87,11 @@ def _load_concept_map_df(
     now = time.time()
     cached = _map_cache.get(kind)
     if cached is not None and (now - _map_ts.get(kind, 0)) < 600:
-        return cached
+        # Keep the return contract identical to the cold path.  Returning the
+        # DataFrame by itself makes callers unpack its columns as Series,
+        # which breaks the daily concept-membership snapshot on cache hits.
+        member_count = cached.get_column(kind).n_unique() if kind in cached.columns else 0
+        return cached, member_count
 
     data_dir = repo.store.data_dir
     store = ExtConfigStore(data_dir)

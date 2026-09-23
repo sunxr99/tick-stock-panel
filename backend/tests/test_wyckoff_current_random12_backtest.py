@@ -100,7 +100,8 @@ def test_signal_row_excludes_nested_ui_evidence() -> None:
         as_of=date(2025, 1, 2),
         row={
             "symbol": "000001.SZ",
-            "candidate_order": 1,
+            "research_candidate_rank": 1,
+            "research_candidate_score": 73.5,
             "wyckoff_v2_events": [],
             "sector_context": {},
         },
@@ -109,8 +110,8 @@ def test_signal_row_excludes_nested_ui_evidence() -> None:
     assert row == {
         "signal_date": date(2025, 1, 2),
         "symbol": "000001.SZ",
-        "candidate_order": 1,
-        "opportunity_score": None,
+        "research_candidate_rank": 1,
+        "research_candidate_score": 73.5,
         "wyckoff_channel": None,
         "wyckoff_stage": None,
         "wyckoff_source": None,

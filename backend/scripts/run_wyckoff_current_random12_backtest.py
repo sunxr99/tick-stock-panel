@@ -1,9 +1,12 @@
+# ruff: noqa: I001  # Conditional direct-script import is intentionally adjacent to imports.
+
 """Replay the current formal Wyckoff strategy on a random 12-day sample.
 
 Unlike the older Sector/RS and VP research runners, this script calls the
 strategy engine with the saved ``wyckoff_funnel`` override.  It therefore
-uses the same L1--L3 funnel, post-L3 basic filter and Top-150 presentation
-limit as a manual strategy run.  Legacy L4 and V2 remain research evidence;
+uses the same L1--L3 funnel and post-L3 basic filter as a manual strategy
+run.  It records every formal candidate; the separate VP research coverage
+limit never changes membership. Legacy L4 and V2 remain research evidence;
 neither changes membership here.
 
 Signals are known after the signal-day close.  Gross returns enter at the next
@@ -25,13 +28,22 @@ from pathlib import Path
 from typing import Any
 
 import polars as pl
-from run_wyckoff_top20_backtest import (
-    HORIZONS,
-    _attach_forward_returns,
-    _load_prices,
-    _load_trading_dates,
-    _strategy_dirs,
-)
+try:  # Package import for tests and module execution.
+    from scripts.run_wyckoff_top20_backtest import (
+        HORIZONS,
+        _attach_forward_returns,
+        _load_prices,
+        _load_trading_dates,
+        _strategy_dirs,
+    )
+except ModuleNotFoundError:  # Direct ``python scripts/...`` execution.
+    from run_wyckoff_top20_backtest import (  # type: ignore[no-redef]
+        HORIZONS,
+        _attach_forward_returns,
+        _load_prices,
+        _load_trading_dates,
+        _strategy_dirs,
+    )
 
 from app.services.screener import ScreenerService
 from app.strategy import config as strategy_config
@@ -149,8 +161,8 @@ def _signal_row(*, as_of: date, row: dict[str, Any]) -> dict[str, Any]:
     return {
         "signal_date": as_of,
         "symbol": str(row["symbol"]),
-        "candidate_order": row.get("candidate_order"),
-        "opportunity_score": row.get("opportunity_score"),
+        "research_candidate_rank": row.get("research_candidate_rank"),
+        "research_candidate_score": row.get("research_candidate_score"),
         "wyckoff_channel": row.get("wyckoff_channel"),
         "wyckoff_stage": row.get("wyckoff_stage"),
         "wyckoff_source": row.get("wyckoff_source"),
@@ -188,7 +200,8 @@ def _report(*, signals: pl.DataFrame, state: dict[str, Any], rows_path: Path) ->
             "legacy_l4": "research trigger only; does not alter membership",
             "wyckoff_v2": "parallel diagnostics only; does not alter membership",
             "post_l3_basic_filter": True,
-            "presentation_limit": 150,
+            "formal_candidate_limit": None,
+            "vp_research_coverage_limit": 150,
         },
         "execution": {
             "signal_time": "signal-day close",
@@ -295,7 +308,7 @@ def main() -> None:
         state["date_runs"][as_of.isoformat()] = {
             "all_l3_candidates": evidence.get("all_wyckoff_candidate_count"),
             "after_basic_filter": evidence.get("basic_filter_candidate_count"),
-            "displayed_candidates": result.total,
+            "formal_candidates": result.total,
             "research_triggers": evidence.get("wyckoff_research_trigger_count"),
         }
         records.extend(_signal_row(as_of=as_of, row=row) for row in result.rows)

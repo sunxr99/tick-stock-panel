@@ -47,8 +47,8 @@ function hasCurrentCzscEventIdentity(row: Record<string, unknown>): boolean {
 }
 
 const RIGHT_SIDE_RISK_BUCKETS = [
-  { key: 'EXTREME', label: 'EXTREME', hint: '高动量 / 高扩张 / 高追涨风险', className: 'border-rose-500/30 bg-rose-500/10 text-rose-300' },
-  { key: 'HIGH', label: 'HIGH', hint: '强趋势 / 较高路径风险', className: 'border-orange-400/30 bg-orange-400/10 text-orange-300' },
+  { key: 'EXTREME', label: 'EXTREME', hint: '高扩张或叠加下破风险', className: 'border-rose-500/30 bg-rose-500/10 text-rose-300' },
+  { key: 'HIGH', label: 'HIGH', hint: '较高延展或跌破 VAL', className: 'border-orange-400/30 bg-orange-400/10 text-orange-300' },
   { key: 'MEDIUM', label: 'MEDIUM', hint: '中等扩张', className: 'border-sky-400/30 bg-sky-400/10 text-sky-300' },
   { key: 'LOW', label: 'LOW', hint: '位置相对温和', className: 'border-emerald-400/30 bg-emerald-400/10 text-emerald-300' },
   { key: 'UNKNOWN', label: 'UNKNOWN', hint: 'VP 数据质量不足，暂不路由', className: 'border-slate-400/30 bg-slate-400/10 text-slate-300' },
@@ -61,7 +61,8 @@ function numericEvidence(value: unknown): number | null {
 
 function RightSideCandidateSummary({ result }: { result: ScreenerResult }) {
   const evidence = result.evidence ?? {}
-  const limit = numericEvidence(evidence.right_side_candidate_limit)
+  const vpCoverageLimit = numericEvidence(evidence.vp_research_coverage_limit)
+  const vpCoverageCount = numericEvidence(evidence.vp_research_coverage_count)
   const sourceCount = numericEvidence(evidence.all_wyckoff_candidate_count)
   const researchTriggerCount = numericEvidence(evidence.wyckoff_research_trigger_count)
   const distribution = evidence.risk_distribution
@@ -74,14 +75,14 @@ function RightSideCandidateSummary({ result }: { result: ScreenerResult }) {
       <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
         <div>
           <div className="flex items-center gap-2 text-sm font-medium text-foreground">
-            <span>Right-Side Candidates</span>
-            {limit != null && <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs text-accent">Top{limit}</span>}
+            <span>Wyckoff 正式候选池</span>
+            {vpCoverageLimit != null && <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs text-accent">VP 研究覆盖 {vpCoverageCount ?? 0}/{vpCoverageLimit}</span>}
           </div>
           <p className="mt-1 text-xs text-muted">
             {sourceCount != null ? `L3 正式候选 ${sourceCount} 只` : ''}
             {researchTriggerCount != null ? `；L4 研究触发 ${researchTriggerCount} 只（不构成交易信号）` : ''}
             {(sourceCount != null || researchTriggerCount != null) ? ' → ' : ''}
-            当前正式候选集合仍使用 Legacy OpportunityScore；SW2+SW3 V2（Sector：SW2 70% + SW3 30%；RS：市场 40% + SW2 40% + SW3 20%）仅供展示与消融研究，VP 仅作风险路由。
+            正式入选仅由 L3 与基础过滤决定。Legacy StrengthScore 仅作未验证的研究排序；SW2+SW3 V2 仅供展示与消融研究；VP 仅作研究风险路由。
           </p>
         </div>
         <span className="text-xs text-muted">候选：{result.total}</span>
@@ -97,7 +98,7 @@ function RightSideCandidateSummary({ result }: { result: ScreenerResult }) {
           </div>
         ))}
       </div>
-      <p className="text-[11px] text-muted">风险分组描述位置与潜在回撤路径，不构成买入、卖出或优劣判断；每组内仍按 OpportunityScore 降序。</p>
+      <p className="text-[11px] text-muted">风险分组描述 VP 位置与潜在回撤路径，不构成买入、卖出或优劣判断；跌破 VAL 至少标为 HIGH。组内仅按未验证研究排序展示。</p>
     </div>
   )
 }
@@ -1062,7 +1063,7 @@ export function Screener() {
                 />
               ) : (
                 <>
-                  {!showAll && activeStrategy === WYCKOFF_FUNNEL_ID && result?.evidence?.right_side_candidate_limit != null && (
+                  {!showAll && activeStrategy === WYCKOFF_FUNNEL_ID && result?.evidence?.vp_research_coverage_limit != null && (
                     <RightSideCandidateSummary result={result} />
                   )}
                   <ScreenerTable

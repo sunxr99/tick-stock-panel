@@ -1,0 +1,5363 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 28,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 28,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 28,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/components/SessionList.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 98,
+      "functions": [
+        {
+          "name": "SessionList",
+          "startLine": 24,
+          "endLine": 109,
+          "params": [
+            "{ activeId, onSwitch, onNeedNew, reloadKey, t }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SessionList",
+          "line": 24,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SessionList",
+          "callee": "useState",
+          "lineNumber": 25
+        },
+        {
+          "caller": "SessionList",
+          "callee": "useState",
+          "lineNumber": 26
+        },
+        {
+          "caller": "SessionList",
+          "callee": "useState",
+          "lineNumber": 27
+        },
+        {
+          "caller": "SessionList",
+          "callee": "useCallback",
+          "lineNumber": 29
+        },
+        {
+          "caller": "SessionList",
+          "callee": "collect",
+          "lineNumber": 30
+        },
+        {
+          "caller": "SessionList",
+          "callee": "setLoading",
+          "lineNumber": 31
+        },
+        {
+          "caller": "SessionList",
+          "callee": "setRows",
+          "lineNumber": 33
+        },
+        {
+          "caller": "SessionList",
+          "callee": "useEffect",
+          "lineNumber": 38
+        },
+        {
+          "caller": "SessionList",
+          "callee": "load",
+          "lineNumber": 38
+        },
+        {
+          "caller": "SessionList",
+          "callee": "useEffect",
+          "lineNumber": 40
+        },
+        {
+          "caller": "SessionList",
+          "callee": "window.WyckoffIcons?.render",
+          "lineNumber": 40
+        },
+        {
+          "caller": "SessionList",
+          "callee": "useMemo",
+          "lineNumber": 43
+        },
+        {
+          "caller": "SessionList",
+          "callee": "sortSessions",
+          "lineNumber": 43
+        },
+        {
+          "caller": "SessionList",
+          "callee": "filterSessions",
+          "lineNumber": 43
+        },
+        {
+          "caller": "rename",
+          "callee": "setRows",
+          "lineNumber": 47
+        },
+        {
+          "caller": "rename",
+          "callee": "prev.map",
+          "lineNumber": 47
+        },
+        {
+          "caller": "rename",
+          "callee": "collect",
+          "lineNumber": 48
+        },
+        {
+          "caller": "rename",
+          "callee": "load",
+          "lineNumber": 49
+        },
+        {
+          "caller": "pin",
+          "callee": "setRows",
+          "lineNumber": 53
+        },
+        {
+          "caller": "pin",
+          "callee": "prev.map",
+          "lineNumber": 53
+        },
+        {
+          "caller": "pin",
+          "callee": "collect",
+          "lineNumber": 54
+        },
+        {
+          "caller": "pin",
+          "callee": "load",
+          "lineNumber": 55
+        },
+        {
+          "caller": "archive",
+          "callee": "nextAfterRemoval",
+          "lineNumber": 62
+        },
+        {
+          "caller": "archive",
+          "callee": "collect",
+          "lineNumber": 63
+        },
+        {
+          "caller": "archive",
+          "callee": "setRows",
+          "lineNumber": 64
+        },
+        {
+          "caller": "archive",
+          "callee": "prev.filter",
+          "lineNumber": 64
+        },
+        {
+          "caller": "archive",
+          "callee": "onSwitch",
+          "lineNumber": 66
+        },
+        {
+          "caller": "archive",
+          "callee": "onNeedNew",
+          "lineNumber": 67
+        },
+        {
+          "caller": "archive",
+          "callee": "load",
+          "lineNumber": 69
+        },
+        {
+          "caller": "SessionList",
+          "callee": "t",
+          "lineNumber": 75
+        },
+        {
+          "caller": "SessionList",
+          "callee": "t",
+          "lineNumber": 82
+        },
+        {
+          "caller": "SessionList",
+          "callee": "t",
+          "lineNumber": 83
+        },
+        {
+          "caller": "SessionList",
+          "callee": "setQuery",
+          "lineNumber": 84
+        },
+        {
+          "caller": "SessionList",
+          "callee": "t",
+          "lineNumber": 90
+        },
+        {
+          "caller": "SessionList",
+          "callee": "t",
+          "lineNumber": 92
+        },
+        {
+          "caller": "SessionList",
+          "callee": "t",
+          "lineNumber": 92
+        },
+        {
+          "caller": "SessionList",
+          "callee": "visible.map",
+          "lineNumber": 94
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/components/SessionRow.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 157,
+      "nonEmptyLines": 147,
+      "functions": [
+        {
+          "name": "SessionRow",
+          "startLine": 25,
+          "endLine": 157,
+          "params": [
+            "{ session, active, onOpen, onRename, onPin, onArchive, t }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SessionRow",
+          "line": 25,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SessionRow",
+          "callee": "useState",
+          "lineNumber": 26
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "useState",
+          "lineNumber": 27
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "useState",
+          "lineNumber": 28
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "useRef",
+          "lineNumber": 29
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "useEffect",
+          "lineNumber": 31
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "input.current?.select",
+          "lineNumber": 32
+        },
+        {
+          "caller": "startRename",
+          "callee": "setDraft",
+          "lineNumber": 36
+        },
+        {
+          "caller": "startRename",
+          "callee": "displayTitle",
+          "lineNumber": 36
+        },
+        {
+          "caller": "startRename",
+          "callee": "setEditing",
+          "lineNumber": 37
+        },
+        {
+          "caller": "commit",
+          "callee": "draft.trim",
+          "lineNumber": 41
+        },
+        {
+          "caller": "commit",
+          "callee": "setEditing",
+          "lineNumber": 42
+        },
+        {
+          "caller": "commit",
+          "callee": "displayTitle",
+          "lineNumber": 44
+        },
+        {
+          "caller": "commit",
+          "callee": "onRename",
+          "lineNumber": 44
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "t",
+          "lineNumber": 52
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "t",
+          "lineNumber": 58
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "t",
+          "lineNumber": 58
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "onPin",
+          "lineNumber": 59
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "t",
+          "lineNumber": 64
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "onArchive",
+          "lineNumber": 66
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "t",
+          "lineNumber": 78
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "setDraft",
+          "lineNumber": 79
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "commit",
+          "lineNumber": 82
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "setEditing",
+          "lineNumber": 84
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "e.preventDefault",
+          "lineNumber": 101
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "setMenuAt",
+          "lineNumber": 102
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "onOpen",
+          "lineNumber": 109
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "displayTitle",
+          "lineNumber": 113
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "t",
+          "lineNumber": 113
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "relativeTime",
+          "lineNumber": 116
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "t",
+          "lineNumber": 117
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "String",
+          "lineNumber": 117
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "t",
+          "lineNumber": 125
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "t",
+          "lineNumber": 125
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "t",
+          "lineNumber": 126
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "t",
+          "lineNumber": 126
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "e.stopPropagation",
+          "lineNumber": 128
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "onPin",
+          "lineNumber": 128
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "t",
+          "lineNumber": 135
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "t",
+          "lineNumber": 136
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "e.stopPropagation",
+          "lineNumber": 137
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "startRename",
+          "lineNumber": 137
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "t",
+          "lineNumber": 146
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "t",
+          "lineNumber": 147
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "e.stopPropagation",
+          "lineNumber": 148
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "onArchive",
+          "lineNumber": 148
+        },
+        {
+          "caller": "SessionRow",
+          "callee": "setMenuAt",
+          "lineNumber": 154
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/components/SettingsModal.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 144,
+      "nonEmptyLines": 134,
+      "functions": [
+        {
+          "name": "t",
+          "startLine": 10,
+          "endLine": 10,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "SettingsModal",
+          "startLine": 32,
+          "endLine": 144,
+          "params": [
+            "{\n    open, section, anchor, onSection, onClose, onMessage, onSignOut,\n    onConfigChanged, onSessionsChanged\n  }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SettingsModal",
+          "line": 32,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "t",
+          "callee": "window.WyckoffI18n.t",
+          "lineNumber": 10
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "useRef",
+          "lineNumber": 38
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "useRef",
+          "lineNumber": 39
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "useEffect",
+          "lineNumber": 41
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "window.WyckoffIcons?.render",
+          "lineNumber": 41
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "useEffect",
+          "lineNumber": 44
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "document.querySelectorAll",
+          "lineNumber": 45
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "requestAnimationFrame",
+          "lineNumber": 49
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "nav.current?.querySelector<HTMLElement>('.dlg-n.on')?.focus",
+          "lineNumber": 49
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "nav.current?.querySelector",
+          "lineNumber": 49
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "useEffect",
+          "lineNumber": 60
+        },
+        {
+          "caller": "onKey",
+          "callee": "onClose",
+          "lineNumber": 63
+        },
+        {
+          "caller": "onKey",
+          "callee": "nav.current?.closest",
+          "lineNumber": 65
+        },
+        {
+          "caller": "onKey",
+          "callee": "[...dlg.querySelectorAll<HTMLElement>(\n        'button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [href], [tabindex]:not([tabindex=\"-1\"])'\n      )].filter",
+          "lineNumber": 67
+        },
+        {
+          "caller": "onKey",
+          "callee": "dlg.querySelectorAll",
+          "lineNumber": 67
+        },
+        {
+          "caller": "onKey",
+          "callee": "n.getClientRects",
+          "lineNumber": 69
+        },
+        {
+          "caller": "onKey",
+          "callee": "e.preventDefault",
+          "lineNumber": 73
+        },
+        {
+          "caller": "onKey",
+          "callee": "first.focus",
+          "lineNumber": 73
+        },
+        {
+          "caller": "onKey",
+          "callee": "e.preventDefault",
+          "lineNumber": 74
+        },
+        {
+          "caller": "onKey",
+          "callee": "last.focus",
+          "lineNumber": 74
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "document.addEventListener",
+          "lineNumber": 76
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "document.removeEventListener",
+          "lineNumber": 77
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "useEffect",
+          "lineNumber": 86
+        },
+        {
+          "caller": "seek",
+          "callee": "box.querySelector",
+          "lineNumber": 94
+        },
+        {
+          "caller": "seek",
+          "callee": "requestAnimationFrame",
+          "lineNumber": 96
+        },
+        {
+          "caller": "seek",
+          "callee": "head.getBoundingClientRect",
+          "lineNumber": 101
+        },
+        {
+          "caller": "seek",
+          "callee": "box.getBoundingClientRect",
+          "lineNumber": 101
+        },
+        {
+          "caller": "seek",
+          "callee": "parseFloat",
+          "lineNumber": 102
+        },
+        {
+          "caller": "seek",
+          "callee": "getComputedStyle",
+          "lineNumber": 102
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "seek",
+          "lineNumber": 105
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "cancelAnimationFrame",
+          "lineNumber": 106
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "onClose",
+          "lineNumber": 112
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "t",
+          "lineNumber": 113
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "SECTIONS.map",
+          "lineNumber": 115
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "onSection",
+          "lineNumber": 121
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "t",
+          "lineNumber": 123
+        },
+        {
+          "caller": "SettingsModal",
+          "callee": "t",
+          "lineNumber": 128
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/components/SettingsPanel.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "t",
+          "startLine": 8,
+          "endLine": 8,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "SettingsPanel",
+          "startLine": 21,
+          "endLine": 59,
+          "params": [
+            "{ section, onMessage, onSignOut, onConfigChanged, onSessionsChanged }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SettingsPanel",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "t",
+          "callee": "window.WyckoffI18n.t",
+          "lineNumber": 8
+        },
+        {
+          "caller": "SettingsPanel",
+          "callee": "useSettings",
+          "lineNumber": 24
+        },
+        {
+          "caller": "reloadAll",
+          "callee": "reload",
+          "lineNumber": 28
+        },
+        {
+          "caller": "reloadAll",
+          "callee": "onConfigChanged",
+          "lineNumber": 29
+        },
+        {
+          "caller": "SettingsPanel",
+          "callee": "t",
+          "lineNumber": 42
+        },
+        {
+          "caller": "SettingsPanel",
+          "callee": "t",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/components/Sidebar.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 137,
+      "nonEmptyLines": 126,
+      "functions": [
+        {
+          "name": "t",
+          "startLine": 9,
+          "endLine": 9,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "Sidebar",
+          "startLine": 67,
+          "endLine": 137,
+          "params": [
+            "{\n    active, onNavigate, onNewAnalysis, counts, accountLabel, accountInitial,\n    onAccountClick, toggleSlot, sessionSlot\n  }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Sidebar",
+          "line": 67,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "t",
+          "callee": "window.WyckoffI18n.t",
+          "lineNumber": 9
+        },
+        {
+          "caller": "Sidebar",
+          "callee": "useRef",
+          "lineNumber": 73
+        },
+        {
+          "caller": "Sidebar",
+          "callee": "useEffect",
+          "lineNumber": 75
+        },
+        {
+          "caller": "Sidebar",
+          "callee": "window.WyckoffIcons?.render",
+          "lineNumber": 75
+        },
+        {
+          "caller": "badgeFor",
+          "callee": "String",
+          "lineNumber": 78
+        },
+        {
+          "caller": "Sidebar",
+          "callee": "t",
+          "lineNumber": 92
+        },
+        {
+          "caller": "Sidebar",
+          "callee": "t",
+          "lineNumber": 95
+        },
+        {
+          "caller": "Sidebar",
+          "callee": "GROUPS.map",
+          "lineNumber": 96
+        },
+        {
+          "caller": "Sidebar",
+          "callee": "t",
+          "lineNumber": 98
+        },
+        {
+          "caller": "Sidebar",
+          "callee": "g.items.map",
+          "lineNumber": 99
+        },
+        {
+          "caller": "Sidebar",
+          "callee": "badgeFor",
+          "lineNumber": 100
+        },
+        {
+          "caller": "Sidebar",
+          "callee": "onNavigate",
+          "lineNumber": 108
+        },
+        {
+          "caller": "Sidebar",
+          "callee": "t",
+          "lineNumber": 111
+        },
+        {
+          "caller": "Sidebar",
+          "callee": "onAccountClick",
+          "lineNumber": 128
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/components/Toast.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "Toast",
+          "startLine": 29,
+          "endLine": 38,
+          "params": [
+            "{ items, onExpire }"
+          ]
+        },
+        {
+          "name": "ToastItem",
+          "startLine": 40,
+          "endLine": 65,
+          "params": [
+            "{ item, onExpire }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Toast",
+          "line": 29,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Toast",
+          "callee": "items.map",
+          "lineNumber": 33
+        },
+        {
+          "caller": "ToastItem",
+          "callee": "useState",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ToastItem",
+          "callee": "useEffect",
+          "lineNumber": 43
+        },
+        {
+          "caller": "ToastItem",
+          "callee": "setTimeout",
+          "lineNumber": 46
+        },
+        {
+          "caller": "ToastItem",
+          "callee": "setLeaving",
+          "lineNumber": 46
+        },
+        {
+          "caller": "ToastItem",
+          "callee": "setTimeout",
+          "lineNumber": 47
+        },
+        {
+          "caller": "ToastItem",
+          "callee": "onExpire",
+          "lineNumber": 47
+        },
+        {
+          "caller": "ToastItem",
+          "callee": "clearTimeout",
+          "lineNumber": 48
+        },
+        {
+          "caller": "ToastItem",
+          "callee": "clearTimeout",
+          "lineNumber": 48
+        },
+        {
+          "caller": "ToastItem",
+          "callee": "[\n        'toast',\n        item.error ? 'toast-err' : '',\n        leaving ? 'toast-out' : ''\n      ].filter(Boolean).join",
+          "lineNumber": 53
+        },
+        {
+          "caller": "ToastItem",
+          "callee": "[\n        'toast',\n        item.error ? 'toast-err' : '',\n        leaving ? 'toast-out' : ''\n      ].filter",
+          "lineNumber": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/components/TonePanel.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "t",
+          "startLine": 6,
+          "endLine": 6,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "TonePanel",
+          "startLine": 26,
+          "endLine": 75,
+          "params": [
+            "{ data, notes, save }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TonePanel",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "t",
+          "callee": "window.WyckoffI18n.t",
+          "lineNumber": 6
+        },
+        {
+          "caller": "TonePanel",
+          "callee": "useState",
+          "lineNumber": 28
+        },
+        {
+          "caller": "TonePanel",
+          "callee": "t",
+          "lineNumber": 35
+        },
+        {
+          "caller": "TonePanel",
+          "callee": "TONES.map",
+          "lineNumber": 38
+        },
+        {
+          "caller": "TonePanel",
+          "callee": "save",
+          "lineNumber": 43
+        },
+        {
+          "caller": "TonePanel",
+          "callee": "t",
+          "lineNumber": 45
+        },
+        {
+          "caller": "TonePanel",
+          "callee": "t",
+          "lineNumber": 46
+        },
+        {
+          "caller": "TonePanel",
+          "callee": "t",
+          "lineNumber": 61
+        },
+        {
+          "caller": "TonePanel",
+          "callee": "setDraft",
+          "lineNumber": 63
+        },
+        {
+          "caller": "TonePanel",
+          "callee": "save",
+          "lineNumber": 65
+        },
+        {
+          "caller": "TonePanel",
+          "callee": "t",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/components/TopBar.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 53,
+      "functions": [
+        {
+          "name": "t",
+          "startLine": 12,
+          "endLine": 12,
+          "params": [
+            "key",
+            "params"
+          ]
+        },
+        {
+          "name": "TopBar",
+          "startLine": 22,
+          "endLine": 58,
+          "params": [
+            "{ titleKey, backendState, onRestart, onOpenMenu, toggleSlot }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TopBar",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "t",
+          "callee": "window.WyckoffI18n.t",
+          "lineNumber": 12
+        },
+        {
+          "caller": "TopBar",
+          "callee": "useRef",
+          "lineNumber": 25
+        },
+        {
+          "caller": "TopBar",
+          "callee": "useEffect",
+          "lineNumber": 26
+        },
+        {
+          "caller": "TopBar",
+          "callee": "window.WyckoffIcons?.render",
+          "lineNumber": 26
+        },
+        {
+          "caller": "TopBar",
+          "callee": "t",
+          "lineNumber": 33
+        },
+        {
+          "caller": "TopBar",
+          "callee": "t",
+          "lineNumber": 39
+        },
+        {
+          "caller": "TopBar",
+          "callee": "onOpenMenu",
+          "lineNumber": 49
+        },
+        {
+          "caller": "TopBar",
+          "callee": "t",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/components/TrackingPage.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 212,
+      "nonEmptyLines": 194,
+      "functions": [
+        {
+          "name": "t",
+          "startLine": 16,
+          "endLine": 16,
+          "params": [
+            "key",
+            "params"
+          ]
+        },
+        {
+          "name": "isNum",
+          "startLine": 22,
+          "endLine": 22,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "price",
+          "startLine": 23,
+          "endLine": 23,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "pct",
+          "startLine": 24,
+          "endLine": 24,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "moveClass",
+          "startLine": 27,
+          "endLine": 30,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "formatDay",
+          "startLine": 32,
+          "endLine": 35,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "TrackingPage",
+          "startLine": 37,
+          "endLine": 185,
+          "params": []
+        },
+        {
+          "name": "Metric",
+          "startLine": 187,
+          "endLine": 194,
+          "params": [
+            "{ value, label }"
+          ]
+        },
+        {
+          "name": "Th",
+          "startLine": 197,
+          "endLine": 212,
+          "params": [
+            "{ sortKey, active, dir, onSort, right, children }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TrackingPage",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "t",
+          "callee": "window.WyckoffI18n.t",
+          "lineNumber": 16
+        },
+        {
+          "caller": "isNum",
+          "callee": "Number.isFinite",
+          "lineNumber": 22
+        },
+        {
+          "caller": "price",
+          "callee": "isNum",
+          "lineNumber": 23
+        },
+        {
+          "caller": "price",
+          "callee": "v.toFixed",
+          "lineNumber": 23
+        },
+        {
+          "caller": "pct",
+          "callee": "isNum",
+          "lineNumber": 24
+        },
+        {
+          "caller": "pct",
+          "callee": "v.toFixed",
+          "lineNumber": 24
+        },
+        {
+          "caller": "moveClass",
+          "callee": "isNum",
+          "lineNumber": 28
+        },
+        {
+          "caller": "formatDay",
+          "callee": "String(raw || '').replace",
+          "lineNumber": 33
+        },
+        {
+          "caller": "formatDay",
+          "callee": "String",
+          "lineNumber": 33
+        },
+        {
+          "caller": "formatDay",
+          "callee": "d.slice",
+          "lineNumber": 34
+        },
+        {
+          "caller": "formatDay",
+          "callee": "d.slice",
+          "lineNumber": 34
+        },
+        {
+          "caller": "formatDay",
+          "callee": "d.slice",
+          "lineNumber": 34
+        },
+        {
+          "caller": "formatDay",
+          "callee": "String",
+          "lineNumber": 34
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "useState",
+          "lineNumber": 38
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "useState",
+          "lineNumber": 39
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "useState",
+          "lineNumber": 40
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "useState",
+          "lineNumber": 41
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "useState",
+          "lineNumber": 42
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "useState",
+          "lineNumber": 43
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "useIpc",
+          "lineNumber": 46
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "useMemo",
+          "lineNumber": 51
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "dedupeByCode",
+          "lineNumber": 51
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "useMemo",
+          "lineNumber": 52
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "sortRows",
+          "lineNumber": 53
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "filterRows",
+          "lineNumber": 53
+        },
+        {
+          "caller": "onSort",
+          "callee": "setSortDir",
+          "lineNumber": 59
+        },
+        {
+          "caller": "onSort",
+          "callee": "setSortKey",
+          "lineNumber": 61
+        },
+        {
+          "caller": "onSort",
+          "callee": "setSortDir",
+          "lineNumber": 62
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "rows.filter",
+          "lineNumber": 66
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "isNum",
+          "lineNumber": 66
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "rated.reduce",
+          "lineNumber": 67
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "rated.filter",
+          "lineNumber": 68
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "rows.some",
+          "lineNumber": 70
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "isNum",
+          "lineNumber": 70
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "isNum",
+          "lineNumber": 70
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "MARKETS.map",
+          "lineNumber": 75
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "setMarket",
+          "lineNumber": 80
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 82
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 90
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "setQuery",
+          "lineNumber": 92
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "setAiOnly",
+          "lineNumber": 95
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 96
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "setDays",
+          "lineNumber": 98
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "Number",
+          "lineNumber": 98
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "DAY_WINDOWS.map",
+          "lineNumber": 99
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 101
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 101
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 106
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 106
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 110
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 112
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 113
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 115
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "String",
+          "lineNumber": 121
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 121
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "pct",
+          "lineNumber": 122
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 122
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "Math.round",
+          "lineNumber": 124
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 125
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "String",
+          "lineNumber": 127
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "rows.filter",
+          "lineNumber": 127
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 127
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 131
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 138
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 139
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 140
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 141
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 142
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 144
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 149
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 152
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 156
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "rows.map",
+          "lineNumber": 158
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "displayCode",
+          "lineNumber": 160
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "t",
+          "lineNumber": 163
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "formatDay",
+          "lineNumber": 165
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "price",
+          "lineNumber": 166
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "price",
+          "lineNumber": 167
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "moveClass",
+          "lineNumber": 168
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "pct",
+          "lineNumber": 168
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "moveClass",
+          "lineNumber": 171
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "pct",
+          "lineNumber": 171
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "moveClass",
+          "lineNumber": 172
+        },
+        {
+          "caller": "TrackingPage",
+          "callee": "pct",
+          "lineNumber": 172
+        },
+        {
+          "caller": "Th",
+          "callee": "onSort",
+          "lineNumber": 207
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/components/Welcome.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 181,
+      "nonEmptyLines": 162,
+      "functions": [
+        {
+          "name": "t",
+          "startLine": 11,
+          "endLine": 11,
+          "params": [
+            "key",
+            "params"
+          ]
+        },
+        {
+          "name": "greeting",
+          "startLine": 21,
+          "endLine": 27,
+          "params": []
+        },
+        {
+          "name": "Welcome",
+          "startLine": 59,
+          "endLine": 171,
+          "params": [
+            "{ draft, onDraft, onSend, busy, ready, sendOnEnter }"
+          ]
+        },
+        {
+          "name": "Metric",
+          "startLine": 173,
+          "endLine": 181,
+          "params": [
+            "{ label, value, view }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Welcome",
+          "line": 59,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "t",
+          "callee": "window.WyckoffI18n.t",
+          "lineNumber": 11
+        },
+        {
+          "caller": "greeting",
+          "callee": "new Date().getHours",
+          "lineNumber": 22
+        },
+        {
+          "caller": "greeting",
+          "callee": "t",
+          "lineNumber": 23
+        },
+        {
+          "caller": "greeting",
+          "callee": "t",
+          "lineNumber": 24
+        },
+        {
+          "caller": "greeting",
+          "callee": "t",
+          "lineNumber": 25
+        },
+        {
+          "caller": "greeting",
+          "callee": "t",
+          "lineNumber": 26
+        },
+        {
+          "caller": "Welcome",
+          "callee": "useState",
+          "lineNumber": 60
+        },
+        {
+          "caller": "Welcome",
+          "callee": "usePortfolio",
+          "lineNumber": 65
+        },
+        {
+          "caller": "Welcome",
+          "callee": "useEffect",
+          "lineNumber": 67
+        },
+        {
+          "caller": "Welcome",
+          "callee": "(async () => {\n      const schedules = await collect('schedules').catch(() => null)\n      if (!alive) return\n      const sch = (schedules as { schedules?: Array<{ enabled?: boolean }>; daemon_running?: boolean } | null)\n      setSide({\n        enabled: (sch?.schedules || []).filter((s) => s.enabled).length,\n        daemonRunning: Boolean(sch?.daemon_running)\n      })\n    })",
+          "lineNumber": 69
+        },
+        {
+          "caller": "Welcome",
+          "callee": "collect('schedules').catch",
+          "lineNumber": 70
+        },
+        {
+          "caller": "Welcome",
+          "callee": "collect",
+          "lineNumber": 70
+        },
+        {
+          "caller": "Welcome",
+          "callee": "setSide",
+          "lineNumber": 73
+        },
+        {
+          "caller": "Welcome",
+          "callee": "(sch?.schedules || []).filter",
+          "lineNumber": 74
+        },
+        {
+          "caller": "Welcome",
+          "callee": "Boolean",
+          "lineNumber": 75
+        },
+        {
+          "caller": "Welcome",
+          "callee": "positions.filter",
+          "lineNumber": 84
+        },
+        {
+          "caller": "Welcome",
+          "callee": "summaryParts.push",
+          "lineNumber": 91
+        },
+        {
+          "caller": "Welcome",
+          "callee": "t",
+          "lineNumber": 91
+        },
+        {
+          "caller": "Welcome",
+          "callee": "t",
+          "lineNumber": 91
+        },
+        {
+          "caller": "Welcome",
+          "callee": "summaryParts.push",
+          "lineNumber": 93
+        },
+        {
+          "caller": "Welcome",
+          "callee": "t",
+          "lineNumber": 93
+        },
+        {
+          "caller": "Welcome",
+          "callee": "Boolean",
+          "lineNumber": 102
+        },
+        {
+          "caller": "Welcome",
+          "callee": "summaryParts.join",
+          "lineNumber": 103
+        },
+        {
+          "caller": "fill",
+          "callee": "onDraft",
+          "lineNumber": 108
+        },
+        {
+          "caller": "fill",
+          "callee": "t",
+          "lineNumber": 108
+        },
+        {
+          "caller": "fill",
+          "callee": "document.getElementById('input')?.focus",
+          "lineNumber": 109
+        },
+        {
+          "caller": "fill",
+          "callee": "document.getElementById",
+          "lineNumber": 109
+        },
+        {
+          "caller": "Welcome",
+          "callee": "attention.push",
+          "lineNumber": 114
+        },
+        {
+          "caller": "Welcome",
+          "callee": "fill",
+          "lineNumber": 115
+        },
+        {
+          "caller": "Welcome",
+          "callee": "t",
+          "lineNumber": 116
+        },
+        {
+          "caller": "Welcome",
+          "callee": "attention.push",
+          "lineNumber": 121
+        },
+        {
+          "caller": "Welcome",
+          "callee": "window.WyckoffApp?.navigate",
+          "lineNumber": 122
+        },
+        {
+          "caller": "Welcome",
+          "callee": "t",
+          "lineNumber": 123
+        },
+        {
+          "caller": "Welcome",
+          "callee": "greeting",
+          "lineNumber": 131
+        },
+        {
+          "caller": "Welcome",
+          "callee": "t",
+          "lineNumber": 144
+        },
+        {
+          "caller": "Welcome",
+          "callee": "t",
+          "lineNumber": 145
+        },
+        {
+          "caller": "Welcome",
+          "callee": "t",
+          "lineNumber": 146
+        },
+        {
+          "caller": "Welcome",
+          "callee": "t",
+          "lineNumber": 150
+        },
+        {
+          "caller": "Welcome",
+          "callee": "t",
+          "lineNumber": 154
+        },
+        {
+          "caller": "Welcome",
+          "callee": "PROMPTS.map",
+          "lineNumber": 156
+        },
+        {
+          "caller": "Welcome",
+          "callee": "t",
+          "lineNumber": 161
+        },
+        {
+          "caller": "Welcome",
+          "callee": "fill",
+          "lineNumber": 162
+        },
+        {
+          "caller": "Welcome",
+          "callee": "t",
+          "lineNumber": 164
+        },
+        {
+          "caller": "Metric",
+          "callee": "window.WyckoffApp?.navigate",
+          "lineNumber": 175
+        },
+        {
+          "caller": "Metric",
+          "callee": "String",
+          "lineNumber": 177
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/lib/appearance.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "applyAppearance",
+          "startLine": 11,
+          "endLine": 21,
+          "params": [
+            "cfg"
+          ]
+        },
+        {
+          "name": "previewFontScale",
+          "startLine": 24,
+          "endLine": 26,
+          "params": [
+            "scale"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "applyAppearance",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "previewFontScale",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "applyAppearance",
+          "callee": "root.classList.toggle",
+          "lineNumber": 15
+        },
+        {
+          "caller": "applyAppearance",
+          "callee": "root.classList.toggle",
+          "lineNumber": 16
+        },
+        {
+          "caller": "applyAppearance",
+          "callee": "root.classList.toggle",
+          "lineNumber": 17
+        },
+        {
+          "caller": "applyAppearance",
+          "callee": "root.classList.toggle",
+          "lineNumber": 18
+        },
+        {
+          "caller": "applyAppearance",
+          "callee": "Boolean",
+          "lineNumber": 18
+        },
+        {
+          "caller": "applyAppearance",
+          "callee": "Number",
+          "lineNumber": 19
+        },
+        {
+          "caller": "applyAppearance",
+          "callee": "root.style.setProperty",
+          "lineNumber": 20
+        },
+        {
+          "caller": "previewFontScale",
+          "callee": "root.style.setProperty",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/lib/artifacts.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "artifactId",
+          "startLine": 46,
+          "endLine": 50,
+          "params": [
+            "turnId",
+            "callId"
+          ]
+        },
+        {
+          "name": "parseArtifactEvent",
+          "startLine": 58,
+          "endLine": 75,
+          "params": [
+            "event"
+          ]
+        },
+        {
+          "name": "mergeArtifact",
+          "startLine": 84,
+          "endLine": 90,
+          "params": [
+            "list",
+            "next"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ARTIFACT_KINDS",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "artifactId",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "parseArtifactEvent",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "mergeArtifact",
+          "line": 84,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseArtifactEvent",
+          "callee": "String",
+          "lineNumber": 59
+        },
+        {
+          "caller": "parseArtifactEvent",
+          "callee": "String",
+          "lineNumber": 62
+        },
+        {
+          "caller": "parseArtifactEvent",
+          "callee": "String",
+          "lineNumber": 63
+        },
+        {
+          "caller": "parseArtifactEvent",
+          "callee": "(ARTIFACT_KINDS as readonly string[]).includes",
+          "lineNumber": 64
+        },
+        {
+          "caller": "parseArtifactEvent",
+          "callee": "artifactId",
+          "lineNumber": 65
+        },
+        {
+          "caller": "parseArtifactEvent",
+          "callee": "String",
+          "lineNumber": 65
+        },
+        {
+          "caller": "parseArtifactEvent",
+          "callee": "String",
+          "lineNumber": 66
+        },
+        {
+          "caller": "parseArtifactEvent",
+          "callee": "String",
+          "lineNumber": 71
+        },
+        {
+          "caller": "mergeArtifact",
+          "callee": "list.findIndex",
+          "lineNumber": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/lib/autoOpen.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "decideAutoOpen",
+          "startLine": 38,
+          "endLine": 59,
+          "params": [
+            "artifact",
+            "state"
+          ]
+        },
+        {
+          "name": "resetForTurn",
+          "startLine": 72,
+          "endLine": 74,
+          "params": [
+            "state"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MIN_SPLIT_WIDTH",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "decideAutoOpen",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "resetForTurn",
+          "line": 72,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/lib/chat.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 154,
+      "nonEmptyLines": 144,
+      "functions": [
+        {
+          "name": "markToolDone",
+          "startLine": 60,
+          "endLine": 70,
+          "params": [
+            "blocks",
+            "name"
+          ]
+        },
+        {
+          "name": "pushBlock",
+          "startLine": 72,
+          "endLine": 84,
+          "params": [
+            "blocks",
+            "next"
+          ]
+        },
+        {
+          "name": "isPortfolioWriteTool",
+          "startLine": 90,
+          "endLine": 91,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "applyEvent",
+          "startLine": 98,
+          "endLine": 153,
+          "params": [
+            "turn",
+            "event"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "markToolDone",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "pushBlock",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "isPortfolioWriteTool",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "applyEvent",
+          "line": 98,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "markToolDone",
+          "callee": "blocks.slice",
+          "lineNumber": 64
+        },
+        {
+          "caller": "pushBlock",
+          "callee": "blocks.slice",
+          "lineNumber": 81
+        },
+        {
+          "caller": "isPortfolioWriteTool",
+          "callee": "PORTFOLIO_WRITE_TOOLS.has",
+          "lineNumber": 91
+        },
+        {
+          "caller": "isPortfolioWriteTool",
+          "callee": "String",
+          "lineNumber": 91
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "String",
+          "lineNumber": 99
+        },
+        {
+          "caller": "str",
+          "callee": "String",
+          "lineNumber": 100
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "pushBlock",
+          "lineNumber": 107
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "str",
+          "lineNumber": 107
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "pushBlock",
+          "lineNumber": 111
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "str",
+          "lineNumber": 113
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "str",
+          "lineNumber": 114
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "str",
+          "lineNumber": 120
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "Number",
+          "lineNumber": 120
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "markToolDone",
+          "lineNumber": 131
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "str",
+          "lineNumber": 131
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "pushBlock",
+          "lineNumber": 135
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "str",
+          "lineNumber": 137
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "str",
+          "lineNumber": 138
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "pushBlock",
+          "lineNumber": 142
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "pushBlock",
+          "lineNumber": 144
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "pushBlock",
+          "lineNumber": 149
+        },
+        {
+          "caller": "applyEvent",
+          "callee": "str",
+          "lineNumber": 149
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/lib/ipc.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 72,
+      "functions": [
+        {
+          "name": "collect",
+          "startLine": 14,
+          "endLine": 16,
+          "params": [
+            "method",
+            "params"
+          ]
+        },
+        {
+          "name": "callWithError",
+          "startLine": 25,
+          "endLine": 30,
+          "params": [
+            "method",
+            "params"
+          ]
+        },
+        {
+          "name": "streamCall",
+          "startLine": 36,
+          "endLine": 78,
+          "params": [
+            "method",
+            "params",
+            "rejectBackendError"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "collect",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "callWithError",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "collect",
+          "callee": "streamCall",
+          "lineNumber": 15
+        },
+        {
+          "caller": "callWithError",
+          "callee": "streamCall",
+          "lineNumber": 29
+        },
+        {
+          "caller": "finish",
+          "callee": "String",
+          "lineNumber": 48
+        },
+        {
+          "caller": "finish",
+          "callee": "String",
+          "lineNumber": 48
+        },
+        {
+          "caller": "finish",
+          "callee": "String",
+          "lineNumber": 51
+        },
+        {
+          "caller": "finish",
+          "callee": "off",
+          "lineNumber": 54
+        },
+        {
+          "caller": "finish",
+          "callee": "reject",
+          "lineNumber": 55
+        },
+        {
+          "caller": "finish",
+          "callee": "resolve",
+          "lineNumber": 56
+        },
+        {
+          "caller": "streamCall",
+          "callee": "window.wyckoff.onEvent",
+          "lineNumber": 59
+        },
+        {
+          "caller": "streamCall",
+          "callee": "early.push",
+          "lineNumber": 60
+        },
+        {
+          "caller": "streamCall",
+          "callee": "finish",
+          "lineNumber": 61
+        },
+        {
+          "caller": "streamCall",
+          "callee": "window.wyckoff.call(method, params).then",
+          "lineNumber": 64
+        },
+        {
+          "caller": "streamCall",
+          "callee": "window.wyckoff.call",
+          "lineNumber": 64
+        },
+        {
+          "caller": "streamCall",
+          "callee": "off",
+          "lineNumber": 66
+        },
+        {
+          "caller": "streamCall",
+          "callee": "reject",
+          "lineNumber": 67
+        },
+        {
+          "caller": "streamCall",
+          "callee": "String",
+          "lineNumber": 67
+        },
+        {
+          "caller": "streamCall",
+          "callee": "resolve",
+          "lineNumber": 68
+        },
+        {
+          "caller": "streamCall",
+          "callee": "finish",
+          "lineNumber": 72
+        },
+        {
+          "caller": "streamCall",
+          "callee": "off",
+          "lineNumber": 74
+        },
+        {
+          "caller": "streamCall",
+          "callee": "reject",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/lib/ipcCache.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 50,
+      "functions": [
+        {
+          "name": "cacheKey",
+          "startLine": 31,
+          "endLine": 33,
+          "params": [
+            "method",
+            "params"
+          ]
+        },
+        {
+          "name": "readIpcCache",
+          "startLine": 35,
+          "endLine": 39,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "writeIpcCache",
+          "startLine": 41,
+          "endLine": 43,
+          "params": [
+            "key",
+            "value"
+          ]
+        },
+        {
+          "name": "invalidateIpcCache",
+          "startLine": 46,
+          "endLine": 51,
+          "params": [
+            "method"
+          ]
+        },
+        {
+          "name": "clearIpcCache",
+          "startLine": 54,
+          "endLine": 56,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "cacheKey",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "readIpcCache",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "writeIpcCache",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "invalidateIpcCache",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "clearIpcCache",
+          "line": 54,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cacheKey",
+          "callee": "JSON.stringify",
+          "lineNumber": 32
+        },
+        {
+          "caller": "readIpcCache",
+          "callee": "store.has",
+          "lineNumber": 38
+        },
+        {
+          "caller": "readIpcCache",
+          "callee": "store.get",
+          "lineNumber": 38
+        },
+        {
+          "caller": "writeIpcCache",
+          "callee": "store.set",
+          "lineNumber": 42
+        },
+        {
+          "caller": "invalidateIpcCache",
+          "callee": "store.keys",
+          "lineNumber": 48
+        },
+        {
+          "caller": "invalidateIpcCache",
+          "callee": "k.startsWith",
+          "lineNumber": 49
+        },
+        {
+          "caller": "invalidateIpcCache",
+          "callee": "store.delete",
+          "lineNumber": 49
+        },
+        {
+          "caller": "clearIpcCache",
+          "callee": "store.clear",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/lib/portfolioCache.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 137,
+      "nonEmptyLines": 127,
+      "functions": [
+        {
+          "name": "keyFor",
+          "startLine": 24,
+          "endLine": 27,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "readCache",
+          "startLine": 37,
+          "endLine": 53,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "writeCache",
+          "startLine": 55,
+          "endLine": 67,
+          "params": [
+            "userId",
+            "portfolio"
+          ]
+        },
+        {
+          "name": "clearCache",
+          "startLine": 70,
+          "endLine": 76,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "clearAllCaches",
+          "startLine": 84,
+          "endLine": 96,
+          "params": []
+        },
+        {
+          "name": "readSoleCache",
+          "startLine": 108,
+          "endLine": 123,
+          "params": []
+        },
+        {
+          "name": "isPortfolioWriteTool",
+          "startLine": 135,
+          "endLine": 137,
+          "params": [
+            "name"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "readCache",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "writeCache",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "clearCache",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "clearAllCaches",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "readSoleCache",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "isPortfolioWriteTool",
+          "line": 135,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "keyFor",
+          "callee": "String(userId || '').trim",
+          "lineNumber": 25
+        },
+        {
+          "caller": "keyFor",
+          "callee": "String",
+          "lineNumber": 25
+        },
+        {
+          "caller": "readCache",
+          "callee": "localStorage.getItem",
+          "lineNumber": 39
+        },
+        {
+          "caller": "readCache",
+          "callee": "keyFor",
+          "lineNumber": 39
+        },
+        {
+          "caller": "readCache",
+          "callee": "JSON.parse",
+          "lineNumber": 41
+        },
+        {
+          "caller": "readCache",
+          "callee": "Array.isArray",
+          "lineNumber": 44
+        },
+        {
+          "caller": "readCache",
+          "callee": "String(userId || '').trim",
+          "lineNumber": 47
+        },
+        {
+          "caller": "readCache",
+          "callee": "String",
+          "lineNumber": 47
+        },
+        {
+          "caller": "writeCache",
+          "callee": "Date.now",
+          "lineNumber": 57
+        },
+        {
+          "caller": "writeCache",
+          "callee": "String(userId || '').trim",
+          "lineNumber": 59
+        },
+        {
+          "caller": "writeCache",
+          "callee": "String",
+          "lineNumber": 59
+        },
+        {
+          "caller": "writeCache",
+          "callee": "localStorage.setItem",
+          "lineNumber": 62
+        },
+        {
+          "caller": "writeCache",
+          "callee": "keyFor",
+          "lineNumber": 62
+        },
+        {
+          "caller": "writeCache",
+          "callee": "JSON.stringify",
+          "lineNumber": 62
+        },
+        {
+          "caller": "clearCache",
+          "callee": "localStorage.removeItem",
+          "lineNumber": 72
+        },
+        {
+          "caller": "clearCache",
+          "callee": "keyFor",
+          "lineNumber": 72
+        },
+        {
+          "caller": "clearAllCaches",
+          "callee": "localStorage.key",
+          "lineNumber": 88
+        },
+        {
+          "caller": "clearAllCaches",
+          "callee": "k.startsWith",
+          "lineNumber": 89
+        },
+        {
+          "caller": "clearAllCaches",
+          "callee": "doomed.push",
+          "lineNumber": 89
+        },
+        {
+          "caller": "clearAllCaches",
+          "callee": "doomed.forEach",
+          "lineNumber": 92
+        },
+        {
+          "caller": "clearAllCaches",
+          "callee": "localStorage.removeItem",
+          "lineNumber": 92
+        },
+        {
+          "caller": "readSoleCache",
+          "callee": "localStorage.key",
+          "lineNumber": 112
+        },
+        {
+          "caller": "readSoleCache",
+          "callee": "k.startsWith",
+          "lineNumber": 113
+        },
+        {
+          "caller": "readSoleCache",
+          "callee": "keys.push",
+          "lineNumber": 113
+        },
+        {
+          "caller": "readSoleCache",
+          "callee": "JSON.parse",
+          "lineNumber": 116
+        },
+        {
+          "caller": "readSoleCache",
+          "callee": "String",
+          "lineNumber": 116
+        },
+        {
+          "caller": "readSoleCache",
+          "callee": "localStorage.getItem",
+          "lineNumber": 116
+        },
+        {
+          "caller": "readSoleCache",
+          "callee": "Array.isArray",
+          "lineNumber": 118
+        },
+        {
+          "caller": "isPortfolioWriteTool",
+          "callee": "PORTFOLIO_WRITE_TOOLS.has",
+          "lineNumber": 136
+        },
+        {
+          "caller": "isPortfolioWriteTool",
+          "callee": "String",
+          "lineNumber": 136
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/lib/portfolioStore.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 276,
+      "nonEmptyLines": 253,
+      "functions": [
+        {
+          "name": "t",
+          "startLine": 113,
+          "endLine": 113,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "emit",
+          "startLine": 115,
+          "endLine": 118,
+          "params": [
+            "next"
+          ]
+        },
+        {
+          "name": "subscribe",
+          "startLine": 120,
+          "endLine": 123,
+          "params": [
+            "fn"
+          ]
+        },
+        {
+          "name": "getSnapshot",
+          "startLine": 125,
+          "endLine": 127,
+          "params": []
+        },
+        {
+          "name": "currentUser",
+          "startLine": 129,
+          "endLine": 134,
+          "params": []
+        },
+        {
+          "name": "refresh",
+          "startLine": 139,
+          "endLine": 212,
+          "params": []
+        },
+        {
+          "name": "ensureLoaded",
+          "startLine": 219,
+          "endLine": 246,
+          "params": []
+        },
+        {
+          "name": "invalidate",
+          "startLine": 253,
+          "endLine": 265,
+          "params": [
+            "nextUser"
+          ]
+        },
+        {
+          "name": "__reset",
+          "startLine": 268,
+          "endLine": 276,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "subscribe",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "getSnapshot",
+          "line": 125,
+          "isDefault": false
+        },
+        {
+          "name": "refresh",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "ensureLoaded",
+          "line": 219,
+          "isDefault": false
+        },
+        {
+          "name": "invalidate",
+          "line": 253,
+          "isDefault": false
+        },
+        {
+          "name": "__reset",
+          "line": 268,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "t",
+          "callee": "window.WyckoffI18n.t",
+          "lineNumber": 113
+        },
+        {
+          "caller": "emit",
+          "callee": "fn",
+          "lineNumber": 117
+        },
+        {
+          "caller": "subscribe",
+          "callee": "listeners.add",
+          "lineNumber": 121
+        },
+        {
+          "caller": "subscribe",
+          "callee": "listeners.delete",
+          "lineNumber": 122
+        },
+        {
+          "caller": "currentUser",
+          "callee": "collect('account').catch",
+          "lineNumber": 131
+        },
+        {
+          "caller": "currentUser",
+          "callee": "collect",
+          "lineNumber": 131
+        },
+        {
+          "caller": "currentUser",
+          "callee": "String",
+          "lineNumber": 132
+        },
+        {
+          "caller": "refresh",
+          "callee": "emit",
+          "lineNumber": 145
+        },
+        {
+          "caller": "refresh",
+          "callee": "collect('portfolio').catch",
+          "lineNumber": 146
+        },
+        {
+          "caller": "refresh",
+          "callee": "collect",
+          "lineNumber": 146
+        },
+        {
+          "caller": "refresh",
+          "callee": "stale",
+          "lineNumber": 147
+        },
+        {
+          "caller": "refresh",
+          "callee": "emit",
+          "lineNumber": 152
+        },
+        {
+          "caller": "refresh",
+          "callee": "String",
+          "lineNumber": 164
+        },
+        {
+          "caller": "refresh",
+          "callee": "emit",
+          "lineNumber": 166
+        },
+        {
+          "caller": "refresh",
+          "callee": "String",
+          "lineNumber": 170
+        },
+        {
+          "caller": "refresh",
+          "callee": "writeCache",
+          "lineNumber": 191
+        },
+        {
+          "caller": "refresh",
+          "callee": "refresh",
+          "lineNumber": 196
+        },
+        {
+          "caller": "refresh",
+          "callee": "emit",
+          "lineNumber": 200
+        },
+        {
+          "caller": "refresh",
+          "callee": "t",
+          "lineNumber": 200
+        },
+        {
+          "caller": "refresh",
+          "callee": "writeCache",
+          "lineNumber": 210
+        },
+        {
+          "caller": "refresh",
+          "callee": "emit",
+          "lineNumber": 211
+        },
+        {
+          "caller": "ensureLoaded",
+          "callee": "readSoleCache",
+          "lineNumber": 226
+        },
+        {
+          "caller": "ensureLoaded",
+          "callee": "emit",
+          "lineNumber": 228
+        },
+        {
+          "caller": "ensureLoaded",
+          "callee": "(async () => {\n      const uid = await currentUser()\n      const mine = readCache(uid)\n      if (!mine) await refresh()\n    })",
+          "lineNumber": 230
+        },
+        {
+          "caller": "ensureLoaded",
+          "callee": "currentUser",
+          "lineNumber": 231
+        },
+        {
+          "caller": "ensureLoaded",
+          "callee": "readCache",
+          "lineNumber": 232
+        },
+        {
+          "caller": "ensureLoaded",
+          "callee": "refresh",
+          "lineNumber": 233
+        },
+        {
+          "caller": "ensureLoaded",
+          "callee": "emit",
+          "lineNumber": 238
+        },
+        {
+          "caller": "ensureLoaded",
+          "callee": "currentUser",
+          "lineNumber": 239
+        },
+        {
+          "caller": "ensureLoaded",
+          "callee": "readCache",
+          "lineNumber": 240
+        },
+        {
+          "caller": "ensureLoaded",
+          "callee": "emit",
+          "lineNumber": 242
+        },
+        {
+          "caller": "ensureLoaded",
+          "callee": "refresh",
+          "lineNumber": 245
+        },
+        {
+          "caller": "invalidate",
+          "callee": "emit",
+          "lineNumber": 263
+        },
+        {
+          "caller": "invalidate",
+          "callee": "refresh",
+          "lineNumber": 264
+        },
+        {
+          "caller": "__reset",
+          "callee": "listeners.clear",
+          "lineNumber": 270
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 6,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/lib/schedules.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 197,
+      "nonEmptyLines": 177,
+      "functions": [
+        {
+          "name": "t",
+          "startLine": 8,
+          "endLine": 8,
+          "params": [
+            "key",
+            "params"
+          ]
+        },
+        {
+          "name": "failedStatus",
+          "startLine": 45,
+          "endLine": 45,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "successStatus",
+          "startLine": 46,
+          "endLine": 46,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "scheduleState",
+          "startLine": 54,
+          "endLine": 59,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "hasIssue",
+          "startLine": 62,
+          "endLine": 62,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "describeCron",
+          "startLine": 67,
+          "endLine": 88,
+          "params": [
+            "cron"
+          ]
+        },
+        {
+          "name": "weekdayName",
+          "startLine": 91,
+          "endLine": 93,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "clamp",
+          "startLine": 118,
+          "endLine": 119,
+          "params": [
+            "value",
+            "lo",
+            "hi"
+          ]
+        },
+        {
+          "name": "buildCron",
+          "startLine": 122,
+          "endLine": 134,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "parseCron",
+          "startLine": 143,
+          "endLine": 166,
+          "params": [
+            "cron"
+          ]
+        },
+        {
+          "name": "riskReasonText",
+          "startLine": 179,
+          "endLine": 190,
+          "params": [
+            "item"
+          ]
+        },
+        {
+          "name": "displayTime",
+          "startLine": 193,
+          "endLine": 197,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "failedStatus",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "successStatus",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "scheduleState",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "hasIssue",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "describeCron",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "weekdayName",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_CADENCE",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "buildCron",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "parseCron",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "riskReasonText",
+          "line": 179,
+          "isDefault": false
+        },
+        {
+          "name": "displayTime",
+          "line": 193,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "t",
+          "callee": "window.WyckoffI18n.t",
+          "lineNumber": 8
+        },
+        {
+          "caller": "failedStatus",
+          "callee": "/fail|error|失败|异常/i.test",
+          "lineNumber": 45
+        },
+        {
+          "caller": "failedStatus",
+          "callee": "String",
+          "lineNumber": 45
+        },
+        {
+          "caller": "successStatus",
+          "callee": "/success|complete|done|ok|成功|完成/i.test",
+          "lineNumber": 46
+        },
+        {
+          "caller": "successStatus",
+          "callee": "String",
+          "lineNumber": 46
+        },
+        {
+          "caller": "scheduleState",
+          "callee": "t",
+          "lineNumber": 55
+        },
+        {
+          "caller": "scheduleState",
+          "callee": "failedStatus",
+          "lineNumber": 56
+        },
+        {
+          "caller": "scheduleState",
+          "callee": "t",
+          "lineNumber": 56
+        },
+        {
+          "caller": "scheduleState",
+          "callee": "successStatus",
+          "lineNumber": 57
+        },
+        {
+          "caller": "scheduleState",
+          "callee": "t",
+          "lineNumber": 57
+        },
+        {
+          "caller": "scheduleState",
+          "callee": "t",
+          "lineNumber": 58
+        },
+        {
+          "caller": "hasIssue",
+          "callee": "Boolean",
+          "lineNumber": 62
+        },
+        {
+          "caller": "hasIssue",
+          "callee": "failedStatus",
+          "lineNumber": 62
+        },
+        {
+          "caller": "describeCron",
+          "callee": "String(cron || '').trim().split",
+          "lineNumber": 68
+        },
+        {
+          "caller": "describeCron",
+          "callee": "String(cron || '').trim",
+          "lineNumber": 68
+        },
+        {
+          "caller": "describeCron",
+          "callee": "String",
+          "lineNumber": 68
+        },
+        {
+          "caller": "describeCron",
+          "callee": "t",
+          "lineNumber": 69
+        },
+        {
+          "caller": "describeCron",
+          "callee": "String",
+          "lineNumber": 69
+        },
+        {
+          "caller": "describeCron",
+          "callee": "/^\\*\\/\\d+$/.test",
+          "lineNumber": 71
+        },
+        {
+          "caller": "describeCron",
+          "callee": "t",
+          "lineNumber": 72
+        },
+        {
+          "caller": "describeCron",
+          "callee": "minute.slice",
+          "lineNumber": 72
+        },
+        {
+          "caller": "describeCron",
+          "callee": "/^\\d+$/.test",
+          "lineNumber": 74
+        },
+        {
+          "caller": "describeCron",
+          "callee": "/^\\d+$/.test",
+          "lineNumber": 74
+        },
+        {
+          "caller": "describeCron",
+          "callee": "hour.padStart",
+          "lineNumber": 75
+        },
+        {
+          "caller": "describeCron",
+          "callee": "minute.padStart",
+          "lineNumber": 75
+        },
+        {
+          "caller": "describeCron",
+          "callee": "t",
+          "lineNumber": 76
+        },
+        {
+          "caller": "describeCron",
+          "callee": "/^\\d+$/.test",
+          "lineNumber": 79
+        },
+        {
+          "caller": "describeCron",
+          "callee": "t",
+          "lineNumber": 80
+        },
+        {
+          "caller": "describeCron",
+          "callee": "String",
+          "lineNumber": 80
+        },
+        {
+          "caller": "describeCron",
+          "callee": "Number",
+          "lineNumber": 80
+        },
+        {
+          "caller": "describeCron",
+          "callee": "/^[0-6]$/.test",
+          "lineNumber": 82
+        },
+        {
+          "caller": "describeCron",
+          "callee": "t",
+          "lineNumber": 83
+        },
+        {
+          "caller": "describeCron",
+          "callee": "weekdayName",
+          "lineNumber": 83
+        },
+        {
+          "caller": "describeCron",
+          "callee": "Number",
+          "lineNumber": 83
+        },
+        {
+          "caller": "describeCron",
+          "callee": "t",
+          "lineNumber": 85
+        },
+        {
+          "caller": "describeCron",
+          "callee": "t",
+          "lineNumber": 87
+        },
+        {
+          "caller": "describeCron",
+          "callee": "String",
+          "lineNumber": 87
+        },
+        {
+          "caller": "weekdayName",
+          "callee": "t",
+          "lineNumber": 92
+        },
+        {
+          "caller": "clamp",
+          "callee": "Math.min",
+          "lineNumber": 119
+        },
+        {
+          "caller": "clamp",
+          "callee": "Math.max",
+          "lineNumber": 119
+        },
+        {
+          "caller": "clamp",
+          "callee": "Math.trunc",
+          "lineNumber": 119
+        },
+        {
+          "caller": "clamp",
+          "callee": "Number",
+          "lineNumber": 119
+        },
+        {
+          "caller": "buildCron",
+          "callee": "clamp",
+          "lineNumber": 123
+        },
+        {
+          "caller": "buildCron",
+          "callee": "clamp",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildCron",
+          "callee": "clamp",
+          "lineNumber": 128
+        },
+        {
+          "caller": "buildCron",
+          "callee": "clamp",
+          "lineNumber": 131
+        },
+        {
+          "caller": "parseCron",
+          "callee": "String(cron || '').trim().split",
+          "lineNumber": 144
+        },
+        {
+          "caller": "parseCron",
+          "callee": "String(cron || '').trim",
+          "lineNumber": 144
+        },
+        {
+          "caller": "parseCron",
+          "callee": "String",
+          "lineNumber": 144
+        },
+        {
+          "caller": "parseCron",
+          "callee": "/^\\d{1,2}$/.test",
+          "lineNumber": 148
+        },
+        {
+          "caller": "parseCron",
+          "callee": "/^\\d{1,2}$/.test",
+          "lineNumber": 148
+        },
+        {
+          "caller": "parseCron",
+          "callee": "Number",
+          "lineNumber": 149
+        },
+        {
+          "caller": "parseCron",
+          "callee": "Number",
+          "lineNumber": 150
+        },
+        {
+          "caller": "parseCron",
+          "callee": "/^[0-6]$/.test",
+          "lineNumber": 157
+        },
+        {
+          "caller": "parseCron",
+          "callee": "Number",
+          "lineNumber": 158
+        },
+        {
+          "caller": "parseCron",
+          "callee": "/^\\d{1,2}$/.test",
+          "lineNumber": 160
+        },
+        {
+          "caller": "parseCron",
+          "callee": "Number",
+          "lineNumber": 161
+        },
+        {
+          "caller": "riskReasonText",
+          "callee": "String",
+          "lineNumber": 180
+        },
+        {
+          "caller": "riskReasonText",
+          "callee": "key.startsWith",
+          "lineNumber": 181
+        },
+        {
+          "caller": "riskReasonText",
+          "callee": "key.slice",
+          "lineNumber": 182
+        },
+        {
+          "caller": "riskReasonText",
+          "callee": "KNOWN_REASONS.has",
+          "lineNumber": 183
+        },
+        {
+          "caller": "riskReasonText",
+          "callee": "Number",
+          "lineNumber": 184
+        },
+        {
+          "caller": "riskReasonText",
+          "callee": "t",
+          "lineNumber": 187
+        },
+        {
+          "caller": "riskReasonText",
+          "callee": "(ratio * 100).toFixed",
+          "lineNumber": 187
+        },
+        {
+          "caller": "riskReasonText",
+          "callee": "t",
+          "lineNumber": 189
+        },
+        {
+          "caller": "displayTime",
+          "callee": "Number.isNaN",
+          "lineNumber": 196
+        },
+        {
+          "caller": "displayTime",
+          "callee": "date.getTime",
+          "lineNumber": 196
+        },
+        {
+          "caller": "displayTime",
+          "callee": "String",
+          "lineNumber": 196
+        },
+        {
+          "caller": "displayTime",
+          "callee": "date.toLocaleString",
+          "lineNumber": 196
+        },
+        {
+          "caller": "displayTime",
+          "callee": "window.WyckoffI18n.getLang",
+          "lineNumber": 196
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 12,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/lib/sessions.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 86,
+      "functions": [
+        {
+          "name": "displayTitle",
+          "startLine": 25,
+          "endLine": 31,
+          "params": [
+            "s",
+            "fallback"
+          ]
+        },
+        {
+          "name": "sortSessions",
+          "startLine": 39,
+          "endLine": 45,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "filterSessions",
+          "startLine": 53,
+          "endLine": 60,
+          "params": [
+            "rows",
+            "query"
+          ]
+        },
+        {
+          "name": "relativeTime",
+          "startLine": 63,
+          "endLine": 79,
+          "params": [
+            "iso",
+            "now"
+          ]
+        },
+        {
+          "name": "nextAfterRemoval",
+          "startLine": 88,
+          "endLine": 92,
+          "params": [
+            "rows",
+            "removedId",
+            "activeId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "displayTitle",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "sortSessions",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "filterSessions",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "relativeTime",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "nextAfterRemoval",
+          "line": 88,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "displayTitle",
+          "callee": "(s.title || '').trim",
+          "lineNumber": 26
+        },
+        {
+          "caller": "displayTitle",
+          "callee": "(s.first_user_msg || '').split('\\n')[0].trim",
+          "lineNumber": 29
+        },
+        {
+          "caller": "displayTitle",
+          "callee": "(s.first_user_msg || '').split",
+          "lineNumber": 29
+        },
+        {
+          "caller": "sortSessions",
+          "callee": "[...rows].sort",
+          "lineNumber": 40
+        },
+        {
+          "caller": "sortSessions",
+          "callee": "(b.ended_at || '').localeCompare",
+          "lineNumber": 43
+        },
+        {
+          "caller": "filterSessions",
+          "callee": "query.trim().toLowerCase",
+          "lineNumber": 54
+        },
+        {
+          "caller": "filterSessions",
+          "callee": "query.trim",
+          "lineNumber": 54
+        },
+        {
+          "caller": "filterSessions",
+          "callee": "rows.filter",
+          "lineNumber": 56
+        },
+        {
+          "caller": "filterSessions",
+          "callee": "`${s.title || ''} ${s.first_user_msg || ''}`.toLowerCase",
+          "lineNumber": 57
+        },
+        {
+          "caller": "filterSessions",
+          "callee": "haystack.includes",
+          "lineNumber": 58
+        },
+        {
+          "caller": "relativeTime",
+          "callee": "Date.now",
+          "lineNumber": 63
+        },
+        {
+          "caller": "relativeTime",
+          "callee": "iso.includes",
+          "lineNumber": 67
+        },
+        {
+          "caller": "relativeTime",
+          "callee": "iso.replace",
+          "lineNumber": 67
+        },
+        {
+          "caller": "relativeTime",
+          "callee": "new Date(stamp).getTime",
+          "lineNumber": 68
+        },
+        {
+          "caller": "relativeTime",
+          "callee": "Number.isFinite",
+          "lineNumber": 69
+        },
+        {
+          "caller": "relativeTime",
+          "callee": "Math.floor",
+          "lineNumber": 70
+        },
+        {
+          "caller": "relativeTime",
+          "callee": "Math.floor",
+          "lineNumber": 73
+        },
+        {
+          "caller": "relativeTime",
+          "callee": "Math.floor",
+          "lineNumber": 75
+        },
+        {
+          "caller": "relativeTime",
+          "callee": "Math.floor",
+          "lineNumber": 77
+        },
+        {
+          "caller": "relativeTime",
+          "callee": "Math.floor",
+          "lineNumber": 78
+        },
+        {
+          "caller": "nextAfterRemoval",
+          "callee": "sortSessions(rows).filter",
+          "lineNumber": 90
+        },
+        {
+          "caller": "nextAfterRemoval",
+          "callee": "sortSessions",
+          "lineNumber": 90
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/lib/tracking.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 157,
+      "nonEmptyLines": 142,
+      "functions": [
+        {
+          "name": "isNum",
+          "startLine": 27,
+          "endLine": 27,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "dedupeByCode",
+          "startLine": 38,
+          "endLine": 59,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "withBasePrice",
+          "startLine": 72,
+          "endLine": 86,
+          "params": [
+            "record",
+            "basePrice"
+          ]
+        },
+        {
+          "name": "compareNullable",
+          "startLine": 94,
+          "endLine": 99,
+          "params": [
+            "a",
+            "b",
+            "dir"
+          ]
+        },
+        {
+          "name": "sortRows",
+          "startLine": 101,
+          "endLine": 117,
+          "params": [
+            "rows",
+            "key",
+            "dir"
+          ]
+        },
+        {
+          "name": "filterRows",
+          "startLine": 126,
+          "endLine": 150,
+          "params": [
+            "rows",
+            "filters"
+          ]
+        },
+        {
+          "name": "displayCode",
+          "startLine": 153,
+          "endLine": 157,
+          "params": [
+            "code",
+            "market"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "dedupeByCode",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "sortRows",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "filterRows",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "displayCode",
+          "line": 153,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isNum",
+          "callee": "Number.isFinite",
+          "lineNumber": 27
+        },
+        {
+          "caller": "dedupeByCode",
+          "callee": "String",
+          "lineNumber": 41
+        },
+        {
+          "caller": "dedupeByCode",
+          "callee": "byCode.get",
+          "lineNumber": 43
+        },
+        {
+          "caller": "dedupeByCode",
+          "callee": "byCode.set",
+          "lineNumber": 45
+        },
+        {
+          "caller": "dedupeByCode",
+          "callee": "String",
+          "lineNumber": 51
+        },
+        {
+          "caller": "dedupeByCode",
+          "callee": "String",
+          "lineNumber": 52
+        },
+        {
+          "caller": "dedupeByCode",
+          "callee": "byCode.set",
+          "lineNumber": 56
+        },
+        {
+          "caller": "dedupeByCode",
+          "callee": "withBasePrice",
+          "lineNumber": 56
+        },
+        {
+          "caller": "dedupeByCode",
+          "callee": "byCode.values",
+          "lineNumber": 58
+        },
+        {
+          "caller": "withBasePrice",
+          "callee": "isNum",
+          "lineNumber": 78
+        },
+        {
+          "caller": "withBasePrice",
+          "callee": "isNum",
+          "lineNumber": 78
+        },
+        {
+          "caller": "compareNullable",
+          "callee": "isNum",
+          "lineNumber": 95
+        },
+        {
+          "caller": "compareNullable",
+          "callee": "isNum",
+          "lineNumber": 95
+        },
+        {
+          "caller": "compareNullable",
+          "callee": "isNum",
+          "lineNumber": 96
+        },
+        {
+          "caller": "compareNullable",
+          "callee": "isNum",
+          "lineNumber": 97
+        },
+        {
+          "caller": "sortRows",
+          "callee": "[...rows].sort",
+          "lineNumber": 104
+        },
+        {
+          "caller": "sortRows",
+          "callee": "compareNullable",
+          "lineNumber": 106
+        },
+        {
+          "caller": "sortRows",
+          "callee": "compareNullable",
+          "lineNumber": 107
+        },
+        {
+          "caller": "sortRows",
+          "callee": "compareNullable",
+          "lineNumber": 108
+        },
+        {
+          "caller": "sortRows",
+          "callee": "String(a.code).localeCompare",
+          "lineNumber": 109
+        },
+        {
+          "caller": "sortRows",
+          "callee": "String",
+          "lineNumber": 109
+        },
+        {
+          "caller": "sortRows",
+          "callee": "String",
+          "lineNumber": 109
+        },
+        {
+          "caller": "sortRows",
+          "callee": "String(b.recommend_date || '').localeCompare",
+          "lineNumber": 111
+        },
+        {
+          "caller": "sortRows",
+          "callee": "String",
+          "lineNumber": 111
+        },
+        {
+          "caller": "sortRows",
+          "callee": "String",
+          "lineNumber": 111
+        },
+        {
+          "caller": "sortRows",
+          "callee": "String(a.code).localeCompare",
+          "lineNumber": 113
+        },
+        {
+          "caller": "sortRows",
+          "callee": "String",
+          "lineNumber": 113
+        },
+        {
+          "caller": "sortRows",
+          "callee": "String",
+          "lineNumber": 113
+        },
+        {
+          "caller": "filterRows",
+          "callee": "[...new Set(out.map((r) => String(r.recommend_date || '')))]\n      .sort((a, b) => b.localeCompare(a))\n      .slice",
+          "lineNumber": 131
+        },
+        {
+          "caller": "filterRows",
+          "callee": "[...new Set(out.map((r) => String(r.recommend_date || '')))]\n      .sort",
+          "lineNumber": 131
+        },
+        {
+          "caller": "filterRows",
+          "callee": "out.map",
+          "lineNumber": 131
+        },
+        {
+          "caller": "filterRows",
+          "callee": "String",
+          "lineNumber": 131
+        },
+        {
+          "caller": "filterRows",
+          "callee": "b.localeCompare",
+          "lineNumber": 132
+        },
+        {
+          "caller": "filterRows",
+          "callee": "out.filter",
+          "lineNumber": 135
+        },
+        {
+          "caller": "filterRows",
+          "callee": "keep.has",
+          "lineNumber": 135
+        },
+        {
+          "caller": "filterRows",
+          "callee": "String",
+          "lineNumber": 135
+        },
+        {
+          "caller": "filterRows",
+          "callee": "out.filter",
+          "lineNumber": 138
+        },
+        {
+          "caller": "filterRows",
+          "callee": "filters.query.trim().toLowerCase",
+          "lineNumber": 140
+        },
+        {
+          "caller": "filterRows",
+          "callee": "filters.query.trim",
+          "lineNumber": 140
+        },
+        {
+          "caller": "filterRows",
+          "callee": "out.filter",
+          "lineNumber": 143
+        },
+        {
+          "caller": "filterRows",
+          "callee": "String(r.code || '').toLowerCase().includes",
+          "lineNumber": 144
+        },
+        {
+          "caller": "filterRows",
+          "callee": "String(r.code || '').toLowerCase",
+          "lineNumber": 144
+        },
+        {
+          "caller": "filterRows",
+          "callee": "String",
+          "lineNumber": 144
+        },
+        {
+          "caller": "filterRows",
+          "callee": "String(r.name || '').toLowerCase().includes",
+          "lineNumber": 145
+        },
+        {
+          "caller": "filterRows",
+          "callee": "String(r.name || '').toLowerCase",
+          "lineNumber": 145
+        },
+        {
+          "caller": "filterRows",
+          "callee": "String",
+          "lineNumber": 145
+        },
+        {
+          "caller": "displayCode",
+          "callee": "String",
+          "lineNumber": 154
+        },
+        {
+          "caller": "displayCode",
+          "callee": "/^\\d{1,6}$/.test",
+          "lineNumber": 156
+        },
+        {
+          "caller": "displayCode",
+          "callee": "raw.padStart",
+          "lineNumber": 156
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/lib/useArtifacts.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 105,
+      "functions": [
+        {
+          "name": "useArtifacts",
+          "startLine": 34,
+          "endLine": 116,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "useArtifacts",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useArtifacts",
+          "callee": "useState",
+          "lineNumber": 35
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "useRef",
+          "lineNumber": 37
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "useCallback",
+          "lineNumber": 45
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "document.getElementById",
+          "lineNumber": 46
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "window.WyckoffI18n.t",
+          "lineNumber": 47
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "useCallback",
+          "lineNumber": 50
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "window.WyckoffShell?.openArtifact",
+          "lineNumber": 52
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "useCallback",
+          "lineNumber": 55
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "openNow",
+          "lineNumber": 58
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "useCallback",
+          "lineNumber": 61
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "setArtifacts",
+          "lineNumber": 62
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "mergeArtifact",
+          "lineNumber": 62
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "decideAutoOpen",
+          "lineNumber": 64
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "openNow",
+          "lineNumber": 67
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "announce",
+          "lineNumber": 68
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "useCallback",
+          "lineNumber": 71
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "resetForTurn",
+          "lineNumber": 72
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "useEffect",
+          "lineNumber": 76
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "window.wyckoff.onEvent",
+          "lineNumber": 77
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "parseArtifactEvent",
+          "lineNumber": 78
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "add",
+          "lineNumber": 79
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "useEffect",
+          "lineNumber": 88
+        },
+        {
+          "caller": "onCount",
+          "callee": "Number",
+          "lineNumber": 90
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "window.addEventListener",
+          "lineNumber": 96
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "window.removeEventListener",
+          "lineNumber": 97
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "useCallback",
+          "lineNumber": 104
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "setArtifacts",
+          "lineNumber": 105
+        },
+        {
+          "caller": "useArtifacts",
+          "callee": "window.dispatchEvent",
+          "lineNumber": 112
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/lib/useChat.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 286,
+      "nonEmptyLines": 270,
+      "functions": [
+        {
+          "name": "t",
+          "startLine": 16,
+          "endLine": 16,
+          "params": [
+            "key",
+            "params"
+          ]
+        },
+        {
+          "name": "useChat",
+          "startLine": 39,
+          "endLine": 286,
+          "params": [
+            "ready"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "useChat",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "t",
+          "callee": "window.WyckoffI18n.t",
+          "lineNumber": 16
+        },
+        {
+          "caller": "useChat",
+          "callee": "useArtifacts",
+          "lineNumber": 40
+        },
+        {
+          "caller": "useChat",
+          "callee": "useState",
+          "lineNumber": 41
+        },
+        {
+          "caller": "useChat",
+          "callee": "useState",
+          "lineNumber": 42
+        },
+        {
+          "caller": "useChat",
+          "callee": "useState",
+          "lineNumber": 45
+        },
+        {
+          "caller": "useChat",
+          "callee": "useRef",
+          "lineNumber": 48
+        },
+        {
+          "caller": "useChat",
+          "callee": "useRef",
+          "lineNumber": 57
+        },
+        {
+          "caller": "useChat",
+          "callee": "useRef",
+          "lineNumber": 59
+        },
+        {
+          "caller": "useChat",
+          "callee": "useCallback",
+          "lineNumber": 61
+        },
+        {
+          "caller": "useChat",
+          "callee": "isPortfolioWriteTool",
+          "lineNumber": 62
+        },
+        {
+          "caller": "useChat",
+          "callee": "window.WyckoffReact?.clearPortfolioCaches",
+          "lineNumber": 63
+        },
+        {
+          "caller": "useChat",
+          "callee": "useCallback",
+          "lineNumber": 66
+        },
+        {
+          "caller": "useChat",
+          "callee": "String",
+          "lineNumber": 67
+        },
+        {
+          "caller": "useChat",
+          "callee": "String",
+          "lineNumber": 68
+        },
+        {
+          "caller": "useChat",
+          "callee": "invalidateOnTool",
+          "lineNumber": 72
+        },
+        {
+          "caller": "useChat",
+          "callee": "String",
+          "lineNumber": 72
+        },
+        {
+          "caller": "useChat",
+          "callee": "String",
+          "lineNumber": 81
+        },
+        {
+          "caller": "useChat",
+          "callee": "setTurns",
+          "lineNumber": 82
+        },
+        {
+          "caller": "useChat",
+          "callee": "prev.map",
+          "lineNumber": 82
+        },
+        {
+          "caller": "useChat",
+          "callee": "String",
+          "lineNumber": 84
+        },
+        {
+          "caller": "useChat",
+          "callee": "setTurns",
+          "lineNumber": 91
+        },
+        {
+          "caller": "useChat",
+          "callee": "prev.map",
+          "lineNumber": 91
+        },
+        {
+          "caller": "useChat",
+          "callee": "x.blocks.some",
+          "lineNumber": 109
+        },
+        {
+          "caller": "useChat",
+          "callee": "String",
+          "lineNumber": 110
+        },
+        {
+          "caller": "useChat",
+          "callee": "liveIds.current.delete",
+          "lineNumber": 118
+        },
+        {
+          "caller": "useChat",
+          "callee": "setBusy",
+          "lineNumber": 119
+        },
+        {
+          "caller": "useChat",
+          "callee": "setTurns",
+          "lineNumber": 120
+        },
+        {
+          "caller": "useChat",
+          "callee": "prev.map",
+          "lineNumber": 120
+        },
+        {
+          "caller": "useChat",
+          "callee": "window.WyckoffApp?.refreshCharts",
+          "lineNumber": 123
+        },
+        {
+          "caller": "useChat",
+          "callee": "setTurns",
+          "lineNumber": 129
+        },
+        {
+          "caller": "useChat",
+          "callee": "prev.map",
+          "lineNumber": 129
+        },
+        {
+          "caller": "useChat",
+          "callee": "applyEvent",
+          "lineNumber": 129
+        },
+        {
+          "caller": "useChat",
+          "callee": "useEffect",
+          "lineNumber": 132
+        },
+        {
+          "caller": "useChat",
+          "callee": "window.wyckoff.onEvent",
+          "lineNumber": 133
+        },
+        {
+          "caller": "useChat",
+          "callee": "String",
+          "lineNumber": 134
+        },
+        {
+          "caller": "useChat",
+          "callee": "liveIds.current.has",
+          "lineNumber": 136
+        },
+        {
+          "caller": "useChat",
+          "callee": "pendingEvents.current.get",
+          "lineNumber": 141
+        },
+        {
+          "caller": "useChat",
+          "callee": "list.push",
+          "lineNumber": 142
+        },
+        {
+          "caller": "useChat",
+          "callee": "pendingEvents.current.set",
+          "lineNumber": 143
+        },
+        {
+          "caller": "useChat",
+          "callee": "handleLiveEvent",
+          "lineNumber": 146
+        },
+        {
+          "caller": "useChat",
+          "callee": "useCallback",
+          "lineNumber": 151
+        },
+        {
+          "caller": "useChat",
+          "callee": "setTurns",
+          "lineNumber": 152
+        },
+        {
+          "caller": "useChat",
+          "callee": "Date.now",
+          "lineNumber": 153
+        },
+        {
+          "caller": "useChat",
+          "callee": "useCallback",
+          "lineNumber": 159
+        },
+        {
+          "caller": "useChat",
+          "callee": "text.trim",
+          "lineNumber": 160
+        },
+        {
+          "caller": "useChat",
+          "callee": "setBusy",
+          "lineNumber": 162
+        },
+        {
+          "caller": "useChat",
+          "callee": "window.wyckoff.call('chat', params).finally",
+          "lineNumber": 168
+        },
+        {
+          "caller": "useChat",
+          "callee": "window.wyckoff.call",
+          "lineNumber": 168
+        },
+        {
+          "caller": "useChat",
+          "callee": "setTurns",
+          "lineNumber": 173
+        },
+        {
+          "caller": "useChat",
+          "callee": "Date.now",
+          "lineNumber": 174
+        },
+        {
+          "caller": "useChat",
+          "callee": "String",
+          "lineNumber": 176
+        },
+        {
+          "caller": "useChat",
+          "callee": "t",
+          "lineNumber": 176
+        },
+        {
+          "caller": "useChat",
+          "callee": "setBusy",
+          "lineNumber": 179
+        },
+        {
+          "caller": "useChat",
+          "callee": "String",
+          "lineNumber": 185
+        },
+        {
+          "caller": "useChat",
+          "callee": "artifactsApi.beginTurn",
+          "lineNumber": 187
+        },
+        {
+          "caller": "useChat",
+          "callee": "liveIds.current.add",
+          "lineNumber": 188
+        },
+        {
+          "caller": "useChat",
+          "callee": "setTurns",
+          "lineNumber": 189
+        },
+        {
+          "caller": "useChat",
+          "callee": "Date.now",
+          "lineNumber": 189
+        },
+        {
+          "caller": "useChat",
+          "callee": "pendingEvents.current.get",
+          "lineNumber": 192
+        },
+        {
+          "caller": "useChat",
+          "callee": "pendingEvents.current.clear",
+          "lineNumber": 193
+        },
+        {
+          "caller": "useChat",
+          "callee": "handleLiveEvent",
+          "lineNumber": 195
+        },
+        {
+          "caller": "useChat",
+          "callee": "useCallback",
+          "lineNumber": 213
+        },
+        {
+          "caller": "useChat",
+          "callee": "liveIds.current.clear",
+          "lineNumber": 214
+        },
+        {
+          "caller": "useChat",
+          "callee": "pendingEvents.current.clear",
+          "lineNumber": 215
+        },
+        {
+          "caller": "useChat",
+          "callee": "setTurns",
+          "lineNumber": 217
+        },
+        {
+          "caller": "useChat",
+          "callee": "setBusy",
+          "lineNumber": 218
+        },
+        {
+          "caller": "useChat",
+          "callee": "setSessionId",
+          "lineNumber": 219
+        },
+        {
+          "caller": "useChat",
+          "callee": "artifactsApi.reset",
+          "lineNumber": 220
+        },
+        {
+          "caller": "useChat",
+          "callee": "useEffect",
+          "lineNumber": 223
+        },
+        {
+          "caller": "useChat",
+          "callee": "window.addEventListener",
+          "lineNumber": 224
+        },
+        {
+          "caller": "useChat",
+          "callee": "window.removeEventListener",
+          "lineNumber": 225
+        },
+        {
+          "caller": "useChat",
+          "callee": "useCallback",
+          "lineNumber": 228
+        },
+        {
+          "caller": "useChat",
+          "callee": "collect('chat_reset').catch",
+          "lineNumber": 230
+        },
+        {
+          "caller": "useChat",
+          "callee": "collect",
+          "lineNumber": 230
+        },
+        {
+          "caller": "useChat",
+          "callee": "sysLine",
+          "lineNumber": 232
+        },
+        {
+          "caller": "useChat",
+          "callee": "t",
+          "lineNumber": 232
+        },
+        {
+          "caller": "useChat",
+          "callee": "liveIds.current.clear",
+          "lineNumber": 235
+        },
+        {
+          "caller": "useChat",
+          "callee": "pendingEvents.current.clear",
+          "lineNumber": 236
+        },
+        {
+          "caller": "useChat",
+          "callee": "setTurns",
+          "lineNumber": 237
+        },
+        {
+          "caller": "useChat",
+          "callee": "setBusy",
+          "lineNumber": 238
+        },
+        {
+          "caller": "useChat",
+          "callee": "setSessionId",
+          "lineNumber": 239
+        },
+        {
+          "caller": "useChat",
+          "callee": "String",
+          "lineNumber": 239
+        },
+        {
+          "caller": "useChat",
+          "callee": "useCallback",
+          "lineNumber": 243
+        },
+        {
+          "caller": "useChat",
+          "callee": "collect('chat_load', { session_id: id }).catch",
+          "lineNumber": 247
+        },
+        {
+          "caller": "useChat",
+          "callee": "collect",
+          "lineNumber": 247
+        },
+        {
+          "caller": "useChat",
+          "callee": "sysLine",
+          "lineNumber": 249
+        },
+        {
+          "caller": "useChat",
+          "callee": "t",
+          "lineNumber": 249
+        },
+        {
+          "caller": "useChat",
+          "callee": "restored.push",
+          "lineNumber": 258
+        },
+        {
+          "caller": "useChat",
+          "callee": "last.blocks.push",
+          "lineNumber": 261
+        },
+        {
+          "caller": "useChat",
+          "callee": "restored.push",
+          "lineNumber": 262
+        },
+        {
+          "caller": "useChat",
+          "callee": "liveIds.current.clear",
+          "lineNumber": 265
+        },
+        {
+          "caller": "useChat",
+          "callee": "pendingEvents.current.clear",
+          "lineNumber": 266
+        },
+        {
+          "caller": "useChat",
+          "callee": "setTurns",
+          "lineNumber": 267
+        },
+        {
+          "caller": "useChat",
+          "callee": "setBusy",
+          "lineNumber": 268
+        },
+        {
+          "caller": "useChat",
+          "callee": "setSessionId",
+          "lineNumber": 269
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/lib/useIpc.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "useIpc",
+          "startLine": 24,
+          "endLine": 72,
+          "params": [
+            "method",
+            "params"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "useIpc",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useIpc",
+          "callee": "JSON.stringify",
+          "lineNumber": 26
+        },
+        {
+          "caller": "useIpc",
+          "callee": "cacheKey",
+          "lineNumber": 27
+        },
+        {
+          "caller": "useIpc",
+          "callee": "useState",
+          "lineNumber": 32
+        },
+        {
+          "caller": "useIpc",
+          "callee": "readIpcCache",
+          "lineNumber": 33
+        },
+        {
+          "caller": "useIpc",
+          "callee": "useState",
+          "lineNumber": 40
+        },
+        {
+          "caller": "useIpc",
+          "callee": "useCallback",
+          "lineNumber": 41
+        },
+        {
+          "caller": "useIpc",
+          "callee": "setNonce",
+          "lineNumber": 41
+        },
+        {
+          "caller": "useIpc",
+          "callee": "useEffect",
+          "lineNumber": 43
+        },
+        {
+          "caller": "useIpc",
+          "callee": "readIpcCache",
+          "lineNumber": 47
+        },
+        {
+          "caller": "useIpc",
+          "callee": "setState",
+          "lineNumber": 49
+        },
+        {
+          "caller": "useIpc",
+          "callee": "setState",
+          "lineNumber": 53
+        },
+        {
+          "caller": "useIpc",
+          "callee": "collect(method, params)\n      .then((res) => {\n        // 缓存写在 alive 判断**之前**：请求已经完成了,结果是有效的。\n        // 放在后面的话,「切走→请求返回→切回」会丢掉这次结果又重拉一遍。\n        if (res !== null) writeIpcCache(ck, res)\n        if (!alive) return\n        setState({ data: res as T | null, loading: false, failed: res === null })\n      })\n      .catch",
+          "lineNumber": 54
+        },
+        {
+          "caller": "useIpc",
+          "callee": "collect(method, params)\n      .then",
+          "lineNumber": 54
+        },
+        {
+          "caller": "useIpc",
+          "callee": "collect",
+          "lineNumber": 54
+        },
+        {
+          "caller": "useIpc",
+          "callee": "writeIpcCache",
+          "lineNumber": 58
+        },
+        {
+          "caller": "useIpc",
+          "callee": "setState",
+          "lineNumber": 60
+        },
+        {
+          "caller": "useIpc",
+          "callee": "setState",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/lib/usePortfolio.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "usePortfolio",
+          "startLine": 27,
+          "endLine": 57,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "usePortfolio",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "usePortfolio",
+          "callee": "useSyncExternalStore",
+          "lineNumber": 28
+        },
+        {
+          "caller": "usePortfolio",
+          "callee": "useEffect",
+          "lineNumber": 31
+        },
+        {
+          "caller": "usePortfolio",
+          "callee": "ensureLoaded",
+          "lineNumber": 31
+        },
+        {
+          "caller": "usePortfolio",
+          "callee": "useEffect",
+          "lineNumber": 35
+        },
+        {
+          "caller": "onIdentityChange",
+          "callee": "invalidate",
+          "lineNumber": 43
+        },
+        {
+          "caller": "usePortfolio",
+          "callee": "window.addEventListener",
+          "lineNumber": 45
+        },
+        {
+          "caller": "usePortfolio",
+          "callee": "window.removeEventListener",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/lib/useSettings.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 48,
+      "functions": [
+        {
+          "name": "t",
+          "startLine": 12,
+          "endLine": 12,
+          "params": [
+            "key",
+            "params"
+          ]
+        },
+        {
+          "name": "useSettings",
+          "startLine": 14,
+          "endLine": 55,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "useSettings",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "t",
+          "callee": "window.WyckoffI18n.t",
+          "lineNumber": 12
+        },
+        {
+          "caller": "useSettings",
+          "callee": "useState",
+          "lineNumber": 15
+        },
+        {
+          "caller": "useSettings",
+          "callee": "useState",
+          "lineNumber": 16
+        },
+        {
+          "caller": "useSettings",
+          "callee": "useState",
+          "lineNumber": 18
+        },
+        {
+          "caller": "useSettings",
+          "callee": "useCallback",
+          "lineNumber": 20
+        },
+        {
+          "caller": "useSettings",
+          "callee": "collect",
+          "lineNumber": 21
+        },
+        {
+          "caller": "useSettings",
+          "callee": "setData",
+          "lineNumber": 22
+        },
+        {
+          "caller": "useSettings",
+          "callee": "setLoading",
+          "lineNumber": 23
+        },
+        {
+          "caller": "useSettings",
+          "callee": "useEffect",
+          "lineNumber": 26
+        },
+        {
+          "caller": "useSettings",
+          "callee": "reload",
+          "lineNumber": 26
+        },
+        {
+          "caller": "useSettings",
+          "callee": "useCallback",
+          "lineNumber": 28
+        },
+        {
+          "caller": "useSettings",
+          "callee": "setNotes",
+          "lineNumber": 29
+        },
+        {
+          "caller": "useSettings",
+          "callee": "setTimeout",
+          "lineNumber": 30
+        },
+        {
+          "caller": "useSettings",
+          "callee": "setNotes",
+          "lineNumber": 31
+        },
+        {
+          "caller": "useSettings",
+          "callee": "useCallback",
+          "lineNumber": 39
+        },
+        {
+          "caller": "useSettings",
+          "callee": "setData",
+          "lineNumber": 41
+        },
+        {
+          "caller": "useSettings",
+          "callee": "collect",
+          "lineNumber": 42
+        },
+        {
+          "caller": "useSettings",
+          "callee": "String",
+          "lineNumber": 42
+        },
+        {
+          "caller": "useSettings",
+          "callee": "flash",
+          "lineNumber": 44
+        },
+        {
+          "caller": "useSettings",
+          "callee": "String",
+          "lineNumber": 44
+        },
+        {
+          "caller": "useSettings",
+          "callee": "t",
+          "lineNumber": 44
+        },
+        {
+          "caller": "useSettings",
+          "callee": "setData",
+          "lineNumber": 48
+        },
+        {
+          "caller": "useSettings",
+          "callee": "flash",
+          "lineNumber": 49
+        },
+        {
+          "caller": "useSettings",
+          "callee": "String",
+          "lineNumber": 49
+        },
+        {
+          "caller": "useSettings",
+          "callee": "t",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/main.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 147,
+      "nonEmptyLines": 142,
+      "functions": [
+        {
+          "name": "refreshIcons",
+          "startLine": 59,
+          "endLine": 59,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "refreshIcons",
+          "callee": "createIcons",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/renderer/types.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 179,
+      "nonEmptyLines": 169,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

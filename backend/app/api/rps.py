@@ -9,16 +9,24 @@ from dataclasses import asdict
 from datetime import date
 from typing import Annotated
 
+import polars as pl
 from fastapi import APIRouter, HTTPException, Query, Request
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
-from app.services import rps_rotation
+from app.services import eastmoney_board_rotation, rps_rotation, sector_rotation, tdx_board_rotation
 from app.services.concept_rotation_analyzer import analyze_rotation_stream
 from app.services.relative_strength import build_relative_strength
 
 router = APIRouter(prefix="/api/rps", tags=["rps"])
+
+
+def _rotation_records(frame) -> list[dict]:
+    """Serialize the persisted rotation facts without turning the API into a calculator."""
+    if frame is None or frame.is_empty():
+        return []
+    return jsonable_encoder(frame.to_dicts())
 
 
 @router.get("/rotation")
@@ -57,6 +65,144 @@ def get_sector_strength(
         "rows": jsonable_encoder([asdict(row) for row in rows]),
         "total": len(rows),
         "requested_as_of": as_of.isoformat() if as_of else None,
+    }
+
+
+@router.get("/sector-rotation/latest")
+def get_sector_rotation_latest(
+    request: Request,
+    kind: str = Query("industry", pattern="concept|industry"),
+    level: Annotated[int | None, Query(ge=1, le=3)] = 3,
+) -> dict:
+    """Return the latest persisted dashboard facts; never recomputes on read."""
+    frame = sector_rotation.load_rotation_history(request.app.state.repo.store.data_dir, kind=kind)
+    if frame.is_empty():
+        return {"row_date": None, "rows": [], "total": 0}
+    if kind == "concept":
+        frame = frame.filter(pl.col("level").is_null())
+    else:
+        frame = frame.filter(pl.col("level") == (level or 3))
+    if frame.is_empty():
+        return {"row_date": None, "rows": [], "total": 0}
+    latest = frame.get_column("date").max()
+    rows = frame.filter(pl.col("date") == latest).sort("sector_score", descending=True)
+    return {"row_date": latest.isoformat(), "rows": _rotation_records(rows), "total": rows.height}
+
+
+@router.get("/sector-rotation/history")
+def get_sector_rotation_history(
+    request: Request,
+    kind: str = Query("industry", pattern="concept|industry"),
+    level: Annotated[int | None, Query(ge=1, le=3)] = 3,
+    sector_id: str | None = Query(None),
+    start: Annotated[date | None, Query()] = None,
+    end: Annotated[date | None, Query()] = None,
+    limit: int = Query(180, ge=1, le=1000),
+) -> dict:
+    """Return one persisted sector series or the recent fact rows for a dimension."""
+    frame = sector_rotation.load_rotation_history(request.app.state.repo.store.data_dir, kind=kind)
+    if frame.is_empty():
+        return {"rows": [], "total": 0}
+    frame = frame.filter(pl.col("level").is_null()) if kind == "concept" else frame.filter(pl.col("level") == (level or 3))
+    if sector_id:
+        frame = frame.filter(pl.col("sector_id") == sector_id)
+    if start:
+        frame = frame.filter(pl.col("date") >= start)
+    if end:
+        frame = frame.filter(pl.col("date") <= end)
+    if start is None and end is None:
+        frame = frame.sort("date", descending=True).head(limit)
+    frame = frame.sort(["date", "sector_score"], descending=[False, True])
+    return {"rows": _rotation_records(frame), "total": frame.height}
+
+
+@router.get("/eastmoney-hot-rotation/latest")
+def get_eastmoney_hot_rotation_latest(
+    request: Request,
+    category: str = Query("theme", pattern="theme|sentiment|style|all"),
+) -> dict:
+    """东方财富概念板块最新行情, 不与 SW/同花顺评分口径混用。"""
+    frame = eastmoney_board_rotation.latest_hot_rotation(
+        request.app.state.repo.store.data_dir, category=category
+    )
+    if frame.is_empty():
+        return {"row_date": None, "rows": [], "total": 0}
+    latest = frame.get_column("date").max()
+    return {"row_date": latest.isoformat(), "rows": _rotation_records(frame), "total": frame.height}
+
+
+@router.get("/eastmoney-hot-rotation/history")
+def get_eastmoney_hot_rotation_history(
+    request: Request,
+    ts_code: str = Query(..., min_length=1),
+    limit: int = Query(60, ge=1, le=180),
+) -> dict:
+    """东方财富单一概念板块的近期期序列。"""
+    frame = eastmoney_board_rotation.hot_rotation_history(
+        request.app.state.repo.store.data_dir, ts_code=ts_code, limit=limit
+    )
+    return {"rows": _rotation_records(frame), "total": frame.height}
+
+
+@router.get("/eastmoney-hot-rotation/members")
+def get_eastmoney_hot_rotation_members(
+    request: Request,
+    ts_code: Annotated[str, Query(min_length=1)],
+    trade_date: Annotated[date, Query()],
+) -> dict:
+    """Point-in-time Eastmoney constituent relation for one concept board."""
+    frame = eastmoney_board_rotation.load_hot_rotation_members(
+        request.app.state.repo.store.data_dir, ts_code=ts_code, trade_date=trade_date
+    )
+    return {
+        "trade_date": trade_date.isoformat(),
+        "ts_code": ts_code.upper(),
+        "rows": _rotation_records(frame),
+        "total": frame.height,
+    }
+
+
+@router.get("/tdx-hot-rotation/latest")
+def get_tdx_hot_rotation_latest(
+    request: Request,
+    category: str = Query("concept", pattern="concept|industry|style|all"),
+) -> dict:
+    """Latest TDX 88-board facts with the supplier's flat categories."""
+    frame = tdx_board_rotation.latest_hot_rotation(
+        request.app.state.repo.store.data_dir, category=category
+    )
+    if frame.is_empty():
+        return {"row_date": None, "rows": [], "total": 0}
+    latest = frame.get_column("date").max()
+    return {"row_date": latest.isoformat(), "rows": _rotation_records(frame), "total": frame.height}
+
+
+@router.get("/tdx-hot-rotation/history")
+def get_tdx_hot_rotation_history(
+    request: Request,
+    ts_code: str = Query(..., min_length=1),
+    limit: int = Query(60, ge=1, le=180),
+) -> dict:
+    frame = tdx_board_rotation.hot_rotation_history(
+        request.app.state.repo.store.data_dir, ts_code=ts_code, limit=limit
+    )
+    return {"rows": _rotation_records(frame), "total": frame.height}
+
+
+@router.get("/tdx-hot-rotation/members")
+def get_tdx_hot_rotation_members(
+    request: Request,
+    ts_code: Annotated[str, Query(min_length=1)],
+    trade_date: Annotated[date, Query()],
+) -> dict:
+    frame = tdx_board_rotation.load_hot_rotation_members(
+        request.app.state.repo.store.data_dir, ts_code=ts_code, trade_date=trade_date
+    )
+    return {
+        "trade_date": trade_date.isoformat(),
+        "ts_code": ts_code.upper(),
+        "rows": _rotation_records(frame),
+        "total": frame.height,
     }
 
 

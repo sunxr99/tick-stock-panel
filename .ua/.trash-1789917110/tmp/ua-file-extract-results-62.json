@@ -1,0 +1,2728 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 15,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 15,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 15,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/artifact-host.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 209,
+      "nonEmptyLines": 190,
+      "classes": [
+        {
+          "name": "ArtifactHost",
+          "startLine": 67,
+          "endLine": 207,
+          "methods": [
+            "constructor",
+            "ensureView",
+            "load",
+            "setBounds",
+            "show",
+            "hide",
+            "destroy"
+          ],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ensureView",
+          "callee": "wc.setWebRTCIPHandlingPolicy",
+          "lineNumber": 104
+        },
+        {
+          "caller": "ensureView",
+          "callee": "wc.session.setPermissionRequestHandler",
+          "lineNumber": 115
+        },
+        {
+          "caller": "ensureView",
+          "callee": "this.onLog",
+          "lineNumber": 116
+        },
+        {
+          "caller": "ensureView",
+          "callee": "callback",
+          "lineNumber": 117
+        },
+        {
+          "caller": "ensureView",
+          "callee": "wc.session.setPermissionCheckHandler",
+          "lineNumber": 119
+        },
+        {
+          "caller": "ensureView",
+          "callee": "this.onLog",
+          "lineNumber": 120
+        },
+        {
+          "caller": "ensureView",
+          "callee": "wc.session.webRequest.onBeforeRequest",
+          "lineNumber": 128
+        },
+        {
+          "caller": "ensureView",
+          "callee": "/^devtools:/i.test",
+          "lineNumber": 130
+        },
+        {
+          "caller": "ensureView",
+          "callee": "callback",
+          "lineNumber": 130
+        },
+        {
+          "caller": "ensureView",
+          "callee": "/^data:/i.test",
+          "lineNumber": 132
+        },
+        {
+          "caller": "ensureView",
+          "callee": "callback",
+          "lineNumber": 132
+        },
+        {
+          "caller": "ensureView",
+          "callee": "this.onLog",
+          "lineNumber": 133
+        },
+        {
+          "caller": "ensureView",
+          "callee": "details.url.slice",
+          "lineNumber": 133
+        },
+        {
+          "caller": "ensureView",
+          "callee": "callback",
+          "lineNumber": 134
+        },
+        {
+          "caller": "ensureView",
+          "callee": "wc.on",
+          "lineNumber": 138
+        },
+        {
+          "caller": "ensureView",
+          "callee": "/^data:/i.test",
+          "lineNumber": 139
+        },
+        {
+          "caller": "ensureView",
+          "callee": "event.preventDefault",
+          "lineNumber": 140
+        },
+        {
+          "caller": "ensureView",
+          "callee": "this.onLog",
+          "lineNumber": 141
+        },
+        {
+          "caller": "ensureView",
+          "callee": "String(url).slice",
+          "lineNumber": 141
+        },
+        {
+          "caller": "ensureView",
+          "callee": "String",
+          "lineNumber": 141
+        },
+        {
+          "caller": "ensureView",
+          "callee": "wc.setWindowOpenHandler",
+          "lineNumber": 145
+        },
+        {
+          "caller": "ensureView",
+          "callee": "this.onLog",
+          "lineNumber": 146
+        },
+        {
+          "caller": "ensureView",
+          "callee": "wc.on",
+          "lineNumber": 150
+        },
+        {
+          "caller": "ensureView",
+          "callee": "this.onLog",
+          "lineNumber": 151
+        },
+        {
+          "caller": "load",
+          "callee": "this.ensureView",
+          "lineNumber": 164
+        },
+        {
+          "caller": "load",
+          "callee": "[\n      '<!doctype html><html><head>',\n      `<meta http-equiv=\"Content-Security-Policy\" content=\"${ARTIFACT_CSP}\">`,\n      '<meta name=\"referrer\" content=\"no-referrer\">',\n      '</head><body>',\n      String(html || ''),\n      '</body></html>'\n    ].join",
+          "lineNumber": 165
+        },
+        {
+          "caller": "load",
+          "callee": "String",
+          "lineNumber": 170
+        },
+        {
+          "caller": "load",
+          "callee": "view.webContents.loadURL",
+          "lineNumber": 173
+        },
+        {
+          "caller": "load",
+          "callee": "encodeURIComponent",
+          "lineNumber": 173
+        },
+        {
+          "caller": "setBounds",
+          "callee": "this.view.setBounds",
+          "lineNumber": 178
+        },
+        {
+          "caller": "show",
+          "callee": "this.ensureView",
+          "lineNumber": 182
+        },
+        {
+          "caller": "show",
+          "callee": "this.window.contentView.addChildView",
+          "lineNumber": 184
+        },
+        {
+          "caller": "show",
+          "callee": "view.setBounds",
+          "lineNumber": 187
+        },
+        {
+          "caller": "hide",
+          "callee": "this.window.contentView.removeChildView",
+          "lineNumber": 192
+        },
+        {
+          "caller": "destroy",
+          "callee": "this.hide",
+          "lineNumber": 199
+        },
+        {
+          "caller": "destroy",
+          "callee": "this.view.webContents.close",
+          "lineNumber": 201
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/browser-host.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 258,
+      "nonEmptyLines": 232,
+      "classes": [
+        {
+          "name": "BrowserHost",
+          "startLine": 22,
+          "endLine": 256,
+          "methods": [
+            "constructor",
+            "ensureView",
+            "setBounds",
+            "show",
+            "hide",
+            "run",
+            "eval",
+            "withTimeout",
+            "start",
+            "handle",
+            "stop"
+          ],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "crypto.randomBytes(24).toString",
+          "lineNumber": 28
+        },
+        {
+          "caller": "constructor",
+          "callee": "crypto.randomBytes",
+          "lineNumber": 28
+        },
+        {
+          "caller": "ensureView",
+          "callee": "wc.session.webRequest.onBeforeRequest",
+          "lineNumber": 55
+        },
+        {
+          "caller": "ensureView",
+          "callee": "/^(devtools|chrome-extension):/i.test",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ensureView",
+          "callee": "callback",
+          "lineNumber": 60
+        },
+        {
+          "caller": "ensureView",
+          "callee": "/^https?:/i.test",
+          "lineNumber": 61
+        },
+        {
+          "caller": "ensureView",
+          "callee": "this.onLog",
+          "lineNumber": 62
+        },
+        {
+          "caller": "ensureView",
+          "callee": "details.url.slice",
+          "lineNumber": 62
+        },
+        {
+          "caller": "ensureView",
+          "callee": "callback",
+          "lineNumber": 63
+        },
+        {
+          "caller": "ensureView",
+          "callee": "validatePublicHttpUrl(details.url, this.session)\n        .then(() => callback({}))\n        .catch",
+          "lineNumber": 65
+        },
+        {
+          "caller": "ensureView",
+          "callee": "validatePublicHttpUrl(details.url, this.session)\n        .then",
+          "lineNumber": 65
+        },
+        {
+          "caller": "ensureView",
+          "callee": "validatePublicHttpUrl",
+          "lineNumber": 65
+        },
+        {
+          "caller": "ensureView",
+          "callee": "callback",
+          "lineNumber": 66
+        },
+        {
+          "caller": "ensureView",
+          "callee": "this.onLog",
+          "lineNumber": 68
+        },
+        {
+          "caller": "ensureView",
+          "callee": "callback",
+          "lineNumber": 69
+        },
+        {
+          "caller": "ensureView",
+          "callee": "wc.on",
+          "lineNumber": 74
+        },
+        {
+          "caller": "ensureView",
+          "callee": "/^https?:/i.test",
+          "lineNumber": 75
+        },
+        {
+          "caller": "ensureView",
+          "callee": "event.preventDefault",
+          "lineNumber": 76
+        },
+        {
+          "caller": "ensureView",
+          "callee": "this.onLog",
+          "lineNumber": 77
+        },
+        {
+          "caller": "ensureView",
+          "callee": "String(url).slice",
+          "lineNumber": 77
+        },
+        {
+          "caller": "ensureView",
+          "callee": "String",
+          "lineNumber": 77
+        },
+        {
+          "caller": "ensureView",
+          "callee": "wc.setWindowOpenHandler",
+          "lineNumber": 81
+        },
+        {
+          "caller": "ensureView",
+          "callee": "validatePublicHttpUrl(url, this.session)\n        .then((safeUrl) => wc.loadURL(safeUrl))\n        .catch",
+          "lineNumber": 82
+        },
+        {
+          "caller": "ensureView",
+          "callee": "validatePublicHttpUrl(url, this.session)\n        .then",
+          "lineNumber": 82
+        },
+        {
+          "caller": "ensureView",
+          "callee": "validatePublicHttpUrl",
+          "lineNumber": 82
+        },
+        {
+          "caller": "ensureView",
+          "callee": "wc.loadURL",
+          "lineNumber": 83
+        },
+        {
+          "caller": "ensureView",
+          "callee": "this.onLog",
+          "lineNumber": 84
+        },
+        {
+          "caller": "ensureView",
+          "callee": "wc.on",
+          "lineNumber": 87
+        },
+        {
+          "caller": "ensureView",
+          "callee": "this.onLog",
+          "lineNumber": 88
+        },
+        {
+          "caller": "setBounds",
+          "callee": "this.view.setBounds",
+          "lineNumber": 95
+        },
+        {
+          "caller": "show",
+          "callee": "this.ensureView",
+          "lineNumber": 99
+        },
+        {
+          "caller": "show",
+          "callee": "this.window.contentView.addChildView",
+          "lineNumber": 101
+        },
+        {
+          "caller": "show",
+          "callee": "view.setBounds",
+          "lineNumber": 104
+        },
+        {
+          "caller": "hide",
+          "callee": "this.window.contentView.removeChildView",
+          "lineNumber": 109
+        },
+        {
+          "caller": "run",
+          "callee": "ACTIONS.has",
+          "lineNumber": 114
+        },
+        {
+          "caller": "run",
+          "callee": "this.ensureView",
+          "lineNumber": 115
+        },
+        {
+          "caller": "run",
+          "callee": "validatePublicHttpUrl",
+          "lineNumber": 118
+        },
+        {
+          "caller": "run",
+          "callee": "this.withTimeout",
+          "lineNumber": 119
+        },
+        {
+          "caller": "run",
+          "callee": "wc.loadURL",
+          "lineNumber": 119
+        },
+        {
+          "caller": "run",
+          "callee": "wc.getURL",
+          "lineNumber": 120
+        },
+        {
+          "caller": "run",
+          "callee": "wc.getTitle",
+          "lineNumber": 120
+        },
+        {
+          "caller": "run",
+          "callee": "wc.navigationHistory.canGoBack",
+          "lineNumber": 124
+        },
+        {
+          "caller": "run",
+          "callee": "wc.navigationHistory.goBack",
+          "lineNumber": 124
+        },
+        {
+          "caller": "run",
+          "callee": "wc.getURL",
+          "lineNumber": 125
+        },
+        {
+          "caller": "run",
+          "callee": "Math.min",
+          "lineNumber": 129
+        },
+        {
+          "caller": "run",
+          "callee": "Math.max",
+          "lineNumber": 129
+        },
+        {
+          "caller": "run",
+          "callee": "Number",
+          "lineNumber": 129
+        },
+        {
+          "caller": "run",
+          "callee": "setTimeout",
+          "lineNumber": 130
+        },
+        {
+          "caller": "run",
+          "callee": "wc.getTitle",
+          "lineNumber": 134
+        },
+        {
+          "caller": "run",
+          "callee": "wc.getURL",
+          "lineNumber": 135
+        },
+        {
+          "caller": "run",
+          "callee": "this.eval",
+          "lineNumber": 138
+        },
+        {
+          "caller": "run",
+          "callee": "String(text || '').slice",
+          "lineNumber": 139
+        },
+        {
+          "caller": "run",
+          "callee": "String",
+          "lineNumber": 139
+        },
+        {
+          "caller": "run",
+          "callee": "wc.getURL",
+          "lineNumber": 139
+        },
+        {
+          "caller": "run",
+          "callee": "this.withTimeout",
+          "lineNumber": 143
+        },
+        {
+          "caller": "run",
+          "callee": "wc.capturePage",
+          "lineNumber": 143
+        },
+        {
+          "caller": "run",
+          "callee": "image.toPNG().toString",
+          "lineNumber": 144
+        },
+        {
+          "caller": "run",
+          "callee": "image.toPNG",
+          "lineNumber": 144
+        },
+        {
+          "caller": "run",
+          "callee": "String",
+          "lineNumber": 148
+        },
+        {
+          "caller": "run",
+          "callee": "JSON.stringify",
+          "lineNumber": 150
+        },
+        {
+          "caller": "run",
+          "callee": "this.eval",
+          "lineNumber": 153
+        },
+        {
+          "caller": "run",
+          "callee": "JSON.stringify",
+          "lineNumber": 163
+        },
+        {
+          "caller": "run",
+          "callee": "String",
+          "lineNumber": 163
+        },
+        {
+          "caller": "run",
+          "callee": "this.eval",
+          "lineNumber": 164
+        },
+        {
+          "caller": "eval",
+          "callee": "wc.getURL",
+          "lineNumber": 181
+        },
+        {
+          "caller": "eval",
+          "callee": "Promise.reject",
+          "lineNumber": 182
+        },
+        {
+          "caller": "eval",
+          "callee": "this.withTimeout",
+          "lineNumber": 185
+        },
+        {
+          "caller": "eval",
+          "callee": "wc.executeJavaScript",
+          "lineNumber": 185
+        },
+        {
+          "caller": "withTimeout",
+          "callee": "Promise.race",
+          "lineNumber": 189
+        },
+        {
+          "caller": "withTimeout",
+          "callee": "setTimeout",
+          "lineNumber": 191
+        },
+        {
+          "caller": "withTimeout",
+          "callee": "reject",
+          "lineNumber": 191
+        },
+        {
+          "caller": "start",
+          "callee": "Promise.resolve",
+          "lineNumber": 197
+        },
+        {
+          "caller": "start",
+          "callee": "http.createServer",
+          "lineNumber": 199
+        },
+        {
+          "caller": "start",
+          "callee": "this.handle",
+          "lineNumber": 199
+        },
+        {
+          "caller": "start",
+          "callee": "this.server.on",
+          "lineNumber": 200
+        },
+        {
+          "caller": "start",
+          "callee": "this.server.listen",
+          "lineNumber": 201
+        },
+        {
+          "caller": "start",
+          "callee": "this.server.address",
+          "lineNumber": 202
+        },
+        {
+          "caller": "start",
+          "callee": "this.onLog",
+          "lineNumber": 203
+        },
+        {
+          "caller": "start",
+          "callee": "resolve",
+          "lineNumber": 204
+        },
+        {
+          "caller": "send",
+          "callee": "res.writeHead",
+          "lineNumber": 211
+        },
+        {
+          "caller": "send",
+          "callee": "res.end",
+          "lineNumber": 212
+        },
+        {
+          "caller": "send",
+          "callee": "JSON.stringify",
+          "lineNumber": 212
+        },
+        {
+          "caller": "handle",
+          "callee": "String",
+          "lineNumber": 215
+        },
+        {
+          "caller": "handle",
+          "callee": "crypto.timingSafeEqual",
+          "lineNumber": 219
+        },
+        {
+          "caller": "handle",
+          "callee": "Buffer.from",
+          "lineNumber": 219
+        },
+        {
+          "caller": "handle",
+          "callee": "Buffer.from",
+          "lineNumber": 219
+        },
+        {
+          "caller": "handle",
+          "callee": "send",
+          "lineNumber": 220
+        },
+        {
+          "caller": "handle",
+          "callee": "send",
+          "lineNumber": 221
+        },
+        {
+          "caller": "handle",
+          "callee": "req.on",
+          "lineNumber": 224
+        },
+        {
+          "caller": "handle",
+          "callee": "req.destroy",
+          "lineNumber": 227
+        },
+        {
+          "caller": "handle",
+          "callee": "req.on",
+          "lineNumber": 229
+        },
+        {
+          "caller": "handle",
+          "callee": "JSON.parse",
+          "lineNumber": 232
+        },
+        {
+          "caller": "handle",
+          "callee": "send",
+          "lineNumber": 234
+        },
+        {
+          "caller": "handle",
+          "callee": "this.run",
+          "lineNumber": 237
+        },
+        {
+          "caller": "handle",
+          "callee": "String",
+          "lineNumber": 237
+        },
+        {
+          "caller": "handle",
+          "callee": "send",
+          "lineNumber": 238
+        },
+        {
+          "caller": "handle",
+          "callee": "send",
+          "lineNumber": 240
+        },
+        {
+          "caller": "stop",
+          "callee": "this.server.close",
+          "lineNumber": 247
+        },
+        {
+          "caller": "stop",
+          "callee": "this.hide",
+          "lineNumber": 250
+        },
+        {
+          "caller": "stop",
+          "callee": "this.view.webContents.close",
+          "lineNumber": 252
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/daemon-runner.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 156,
+      "nonEmptyLines": 140,
+      "functions": [
+        {
+          "name": "killTreeWindows",
+          "startLine": 34,
+          "endLine": 43,
+          "params": [
+            "pid",
+            "onLog"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DaemonRunner",
+          "startLine": 45,
+          "endLine": 154,
+          "methods": [
+            "constructor",
+            "start",
+            "handleExit",
+            "stop"
+          ],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "killTreeWindows",
+          "callee": "spawn",
+          "lineNumber": 36
+        },
+        {
+          "caller": "killTreeWindows",
+          "callee": "String",
+          "lineNumber": 36
+        },
+        {
+          "caller": "killTreeWindows",
+          "callee": "proc.on",
+          "lineNumber": 37
+        },
+        {
+          "caller": "killTreeWindows",
+          "callee": "onLog",
+          "lineNumber": 38
+        },
+        {
+          "caller": "killTreeWindows",
+          "callee": "onLog",
+          "lineNumber": 41
+        },
+        {
+          "caller": "constructor",
+          "callee": "path.dirname",
+          "lineNumber": 50
+        },
+        {
+          "caller": "start",
+          "callee": "Date.now",
+          "lineNumber": 62
+        },
+        {
+          "caller": "start",
+          "callee": "spawn",
+          "lineNumber": 66
+        },
+        {
+          "caller": "start",
+          "callee": "child.on",
+          "lineNumber": 74
+        },
+        {
+          "caller": "start",
+          "callee": "this.onLog",
+          "lineNumber": 77
+        },
+        {
+          "caller": "relay",
+          "callee": "String(buf).trim",
+          "lineNumber": 81
+        },
+        {
+          "caller": "relay",
+          "callee": "String",
+          "lineNumber": 81
+        },
+        {
+          "caller": "relay",
+          "callee": "this.onLog",
+          "lineNumber": 82
+        },
+        {
+          "caller": "start",
+          "callee": "child.stdout.on",
+          "lineNumber": 84
+        },
+        {
+          "caller": "start",
+          "callee": "child.stderr.on",
+          "lineNumber": 85
+        },
+        {
+          "caller": "start",
+          "callee": "child.on",
+          "lineNumber": 87
+        },
+        {
+          "caller": "start",
+          "callee": "this.handleExit",
+          "lineNumber": 89
+        },
+        {
+          "caller": "handleExit",
+          "callee": "this.onLog",
+          "lineNumber": 102
+        },
+        {
+          "caller": "handleExit",
+          "callee": "Date.now",
+          "lineNumber": 116
+        },
+        {
+          "caller": "handleExit",
+          "callee": "this.onLog",
+          "lineNumber": 122
+        },
+        {
+          "caller": "handleExit",
+          "callee": "setTimeout",
+          "lineNumber": 126
+        },
+        {
+          "caller": "handleExit",
+          "callee": "this.start",
+          "lineNumber": 127
+        },
+        {
+          "caller": "stop",
+          "callee": "killTreeWindows",
+          "lineNumber": 137
+        },
+        {
+          "caller": "stop",
+          "callee": "child.kill",
+          "lineNumber": 140
+        },
+        {
+          "caller": "stop",
+          "callee": "setTimeout",
+          "lineNumber": 143
+        },
+        {
+          "caller": "stop",
+          "callee": "this.onLog",
+          "lineNumber": 145
+        },
+        {
+          "caller": "stop",
+          "callee": "child.kill",
+          "lineNumber": 147
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/main.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 503,
+      "nonEmptyLines": 458,
+      "functions": [
+        {
+          "name": "loadBounds",
+          "startLine": 34,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "saveBounds",
+          "startLine": 45,
+          "endLine": 52,
+          "params": [
+            "win"
+          ]
+        },
+        {
+          "name": "attachContextMenu",
+          "startLine": 80,
+          "endLine": 105,
+          "params": [
+            "contents"
+          ]
+        },
+        {
+          "name": "createWindow",
+          "startLine": 107,
+          "endLine": 221,
+          "params": []
+        },
+        {
+          "name": "forward",
+          "startLine": 223,
+          "endLine": 227,
+          "params": [
+            "channel",
+            "payload"
+          ]
+        },
+        {
+          "name": "startBridge",
+          "startLine": 229,
+          "endLine": 242,
+          "params": [
+            "browserEndpoint"
+          ]
+        },
+        {
+          "name": "startDaemon",
+          "startLine": 249,
+          "endLine": 258,
+          "params": []
+        },
+        {
+          "name": "escapeHtml",
+          "startLine": 262,
+          "endLine": 263,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "wrapForPrint",
+          "startLine": 266,
+          "endLine": 279,
+          "params": [
+            "bodyHtml",
+            "name"
+          ]
+        },
+        {
+          "name": "exportPdf",
+          "startLine": 287,
+          "endLine": 331,
+          "params": [
+            "payload"
+          ]
+        },
+        {
+          "name": "createBrowserHost",
+          "startLine": 466,
+          "endLine": 482,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadBounds",
+          "callee": "require('node:fs').readFileSync",
+          "lineNumber": 36
+        },
+        {
+          "caller": "loadBounds",
+          "callee": "require",
+          "lineNumber": 36
+        },
+        {
+          "caller": "loadBounds",
+          "callee": "JSON.parse",
+          "lineNumber": 37
+        },
+        {
+          "caller": "loadBounds",
+          "callee": "[b.width, b.height, b.x, b.y].every",
+          "lineNumber": 38
+        },
+        {
+          "caller": "loadBounds",
+          "callee": "Number.isFinite",
+          "lineNumber": 38
+        },
+        {
+          "caller": "saveBounds",
+          "callee": "win.isDestroyed",
+          "lineNumber": 46
+        },
+        {
+          "caller": "saveBounds",
+          "callee": "win.isMinimized",
+          "lineNumber": 46
+        },
+        {
+          "caller": "saveBounds",
+          "callee": "win.isFullScreen",
+          "lineNumber": 46
+        },
+        {
+          "caller": "saveBounds",
+          "callee": "require('node:fs').writeFileSync",
+          "lineNumber": 48
+        },
+        {
+          "caller": "saveBounds",
+          "callee": "require",
+          "lineNumber": 48
+        },
+        {
+          "caller": "saveBounds",
+          "callee": "JSON.stringify",
+          "lineNumber": 48
+        },
+        {
+          "caller": "saveBounds",
+          "callee": "win.getBounds",
+          "lineNumber": 48
+        },
+        {
+          "caller": "attachContextMenu",
+          "callee": "contents.on",
+          "lineNumber": 81
+        },
+        {
+          "caller": "attachContextMenu",
+          "callee": "Boolean",
+          "lineNumber": 83
+        },
+        {
+          "caller": "attachContextMenu",
+          "callee": "String(props.selectionText || '').trim",
+          "lineNumber": 83
+        },
+        {
+          "caller": "attachContextMenu",
+          "callee": "String",
+          "lineNumber": 83
+        },
+        {
+          "caller": "attachContextMenu",
+          "callee": "items.push",
+          "lineNumber": 87
+        },
+        {
+          "caller": "attachContextMenu",
+          "callee": "items.push",
+          "lineNumber": 88
+        },
+        {
+          "caller": "attachContextMenu",
+          "callee": "items.push",
+          "lineNumber": 90
+        },
+        {
+          "caller": "attachContextMenu",
+          "callee": "items.push",
+          "lineNumber": 94
+        },
+        {
+          "caller": "attachContextMenu",
+          "callee": "items.push",
+          "lineNumber": 95
+        },
+        {
+          "caller": "attachContextMenu",
+          "callee": "clipboard.writeText",
+          "lineNumber": 97
+        },
+        {
+          "caller": "attachContextMenu",
+          "callee": "Menu.buildFromTemplate(items).popup",
+          "lineNumber": 103
+        },
+        {
+          "caller": "attachContextMenu",
+          "callee": "Menu.buildFromTemplate",
+          "lineNumber": 103
+        },
+        {
+          "caller": "attachContextMenu",
+          "callee": "BrowserWindow.fromWebContents",
+          "lineNumber": 103
+        },
+        {
+          "caller": "createWindow",
+          "callee": "require",
+          "lineNumber": 111
+        },
+        {
+          "caller": "createWindow",
+          "callee": "screen.getPrimaryDisplay",
+          "lineNumber": 112
+        },
+        {
+          "caller": "createWindow",
+          "callee": "Math.min",
+          "lineNumber": 113
+        },
+        {
+          "caller": "createWindow",
+          "callee": "Math.min",
+          "lineNumber": 114
+        },
+        {
+          "caller": "createWindow",
+          "callee": "loadBounds",
+          "lineNumber": 119
+        },
+        {
+          "caller": "createWindow",
+          "callee": "screen.getAllDisplays().some",
+          "lineNumber": 120
+        },
+        {
+          "caller": "createWindow",
+          "callee": "screen.getAllDisplays",
+          "lineNumber": 120
+        },
+        {
+          "caller": "createWindow",
+          "callee": "Math.min",
+          "lineNumber": 131
+        },
+        {
+          "caller": "createWindow",
+          "callee": "Math.min",
+          "lineNumber": 132
+        },
+        {
+          "caller": "createWindow",
+          "callee": "path.join",
+          "lineNumber": 137
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.webContents.on",
+          "lineNumber": 155
+        },
+        {
+          "caller": "createWindow",
+          "callee": "String",
+          "lineNumber": 156
+        },
+        {
+          "caller": "createWindow",
+          "callee": "console.error",
+          "lineNumber": 159
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.webContents.on",
+          "lineNumber": 161
+        },
+        {
+          "caller": "createWindow",
+          "callee": "console.error",
+          "lineNumber": 162
+        },
+        {
+          "caller": "createWindow",
+          "callee": "attachContextMenu",
+          "lineNumber": 165
+        },
+        {
+          "caller": "createWindow",
+          "callee": "path.join",
+          "lineNumber": 178
+        },
+        {
+          "caller": "createWindow",
+          "callee": "fs.existsSync",
+          "lineNumber": 179
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.loadFile",
+          "lineNumber": 180
+        },
+        {
+          "caller": "createWindow",
+          "callee": "console.error",
+          "lineNumber": 182
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.loadURL",
+          "lineNumber": 191
+        },
+        {
+          "caller": "createWindow",
+          "callee": "encodeURIComponent",
+          "lineNumber": 191
+        },
+        {
+          "caller": "createWindow",
+          "callee": "console.warn",
+          "lineNumber": 193
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.loadFile",
+          "lineNumber": 194
+        },
+        {
+          "caller": "createWindow",
+          "callee": "path.join",
+          "lineNumber": 194
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.once",
+          "lineNumber": 199
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.show",
+          "lineNumber": 200
+        },
+        {
+          "caller": "createWindow",
+          "callee": "app.focus",
+          "lineNumber": 201
+        },
+        {
+          "caller": "rememberBounds",
+          "callee": "clearTimeout",
+          "lineNumber": 207
+        },
+        {
+          "caller": "rememberBounds",
+          "callee": "setTimeout",
+          "lineNumber": 208
+        },
+        {
+          "caller": "rememberBounds",
+          "callee": "saveBounds",
+          "lineNumber": 208
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.on",
+          "lineNumber": 210
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.on",
+          "lineNumber": 211
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.on",
+          "lineNumber": 213
+        },
+        {
+          "caller": "createWindow",
+          "callee": "clearTimeout",
+          "lineNumber": 214
+        },
+        {
+          "caller": "createWindow",
+          "callee": "saveBounds",
+          "lineNumber": 215
+        },
+        {
+          "caller": "createWindow",
+          "callee": "mainWindow.on",
+          "lineNumber": 218
+        },
+        {
+          "caller": "forward",
+          "callee": "mainWindow.isDestroyed",
+          "lineNumber": 224
+        },
+        {
+          "caller": "forward",
+          "callee": "mainWindow.webContents.send",
+          "lineNumber": 225
+        },
+        {
+          "caller": "startBridge",
+          "callee": "forward",
+          "lineNumber": 233
+        },
+        {
+          "caller": "startBridge",
+          "callee": "console.error",
+          "lineNumber": 237
+        },
+        {
+          "caller": "startBridge",
+          "callee": "forward",
+          "lineNumber": 238
+        },
+        {
+          "caller": "startBridge",
+          "callee": "bridge.start",
+          "lineNumber": 241
+        },
+        {
+          "caller": "startDaemon",
+          "callee": "bridge.bundledBinary",
+          "lineNumber": 250
+        },
+        {
+          "caller": "startDaemon",
+          "callee": "bridge.pythonPath",
+          "lineNumber": 253
+        },
+        {
+          "caller": "startDaemon",
+          "callee": "console.log",
+          "lineNumber": 255
+        },
+        {
+          "caller": "startDaemon",
+          "callee": "daemon.start",
+          "lineNumber": 257
+        },
+        {
+          "caller": "escapeHtml",
+          "callee": "String(s).replace",
+          "lineNumber": 263
+        },
+        {
+          "caller": "escapeHtml",
+          "callee": "String",
+          "lineNumber": 263
+        },
+        {
+          "caller": "wrapForPrint",
+          "callee": "fs.promises.readFile",
+          "lineNumber": 269
+        },
+        {
+          "caller": "wrapForPrint",
+          "callee": "path.join",
+          "lineNumber": 269
+        },
+        {
+          "caller": "wrapForPrint",
+          "callee": "escapeHtml",
+          "lineNumber": 276
+        },
+        {
+          "caller": "exportPdf",
+          "callee": "String",
+          "lineNumber": 288
+        },
+        {
+          "caller": "exportPdf",
+          "callee": "String",
+          "lineNumber": 290
+        },
+        {
+          "caller": "exportPdf",
+          "callee": "wrapForPrint",
+          "lineNumber": 293
+        },
+        {
+          "caller": "exportPdf",
+          "callee": "dialog.showSaveDialog",
+          "lineNumber": 299
+        },
+        {
+          "caller": "exportPdf",
+          "callee": "path.join",
+          "lineNumber": 300
+        },
+        {
+          "caller": "exportPdf",
+          "callee": "path.dirname",
+          "lineNumber": 304
+        },
+        {
+          "caller": "exportPdf",
+          "callee": "Date.now",
+          "lineNumber": 312
+        },
+        {
+          "caller": "exportPdf",
+          "callee": "Math.random().toString(16).slice",
+          "lineNumber": 312
+        },
+        {
+          "caller": "exportPdf",
+          "callee": "Math.random().toString",
+          "lineNumber": 312
+        },
+        {
+          "caller": "exportPdf",
+          "callee": "Math.random",
+          "lineNumber": 312
+        },
+        {
+          "caller": "exportPdf",
+          "callee": "blockPrintNetwork",
+          "lineNumber": 315
+        },
+        {
+          "caller": "exportPdf",
+          "callee": "win.loadURL",
+          "lineNumber": 318
+        },
+        {
+          "caller": "exportPdf",
+          "callee": "encodeURIComponent",
+          "lineNumber": 318
+        },
+        {
+          "caller": "exportPdf",
+          "callee": "win.webContents.printToPDF",
+          "lineNumber": 319
+        },
+        {
+          "caller": "exportPdf",
+          "callee": "fs.promises.writeFile",
+          "lineNumber": 324
+        },
+        {
+          "caller": "exportPdf",
+          "callee": "win.destroy",
+          "lineNumber": 329
+        },
+        {
+          "caller": "createBrowserHost",
+          "callee": "console.log",
+          "lineNumber": 469
+        },
+        {
+          "caller": "createBrowserHost",
+          "callee": "console.log",
+          "lineNumber": 474
+        },
+        {
+          "caller": "createBrowserHost",
+          "callee": "browser.start",
+          "lineNumber": 477
+        },
+        {
+          "caller": "createBrowserHost",
+          "callee": "console.error",
+          "lineNumber": 479
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/print-security.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 13,
+      "functions": [
+        {
+          "name": "blockPrintNetwork",
+          "startLine": 10,
+          "endLine": 14,
+          "params": [
+            "session"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "blockPrintNetwork",
+          "callee": "session.webRequest.onBeforeRequest",
+          "lineNumber": 11
+        },
+        {
+          "caller": "blockPrintNetwork",
+          "callee": "callback",
+          "lineNumber": 12
+        },
+        {
+          "caller": "blockPrintNetwork",
+          "callee": "/^https?:/i.test",
+          "lineNumber": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/public-url.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 179,
+      "nonEmptyLines": 161,
+      "functions": [
+        {
+          "name": "parseIPv6",
+          "startLine": 28,
+          "endLine": 63,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "isPublicIPv4",
+          "startLine": 66,
+          "endLine": 81,
+          "params": [
+            "address",
+            "allowProxyFakeIp"
+          ]
+        },
+        {
+          "name": "isPublicAddress",
+          "startLine": 91,
+          "endLine": 128,
+          "params": [
+            "address"
+          ]
+        },
+        {
+          "name": "parseHttpUrl",
+          "startLine": 131,
+          "endLine": 144,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "validatePublicHttpUrl",
+          "startLine": 154,
+          "endLine": 177,
+          "params": [
+            "raw",
+            "session"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseIPv6",
+          "callee": "String(input).toLowerCase().replace",
+          "lineNumber": 29
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "String(input).toLowerCase",
+          "lineNumber": 29
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "String",
+          "lineNumber": 29
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "text.indexOf",
+          "lineNumber": 31
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "text.slice",
+          "lineNumber": 32
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "text.lastIndexOf",
+          "lineNumber": 38
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "text.slice",
+          "lineNumber": 39
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "maybeV4.includes",
+          "lineNumber": 40
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "net.isIPv4",
+          "lineNumber": 41
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "maybeV4.split('.').map",
+          "lineNumber": 42
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "maybeV4.split",
+          "lineNumber": 42
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "text.slice",
+          "lineNumber": 45
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "text.split",
+          "lineNumber": 48
+        },
+        {
+          "caller": "toGroups",
+          "callee": "(part ? part.split(':').filter((s) => s !== '') : [])\n    .map",
+          "lineNumber": 50
+        },
+        {
+          "caller": "toGroups",
+          "callee": "part.split(':').filter",
+          "lineNumber": 50
+        },
+        {
+          "caller": "toGroups",
+          "callee": "part.split",
+          "lineNumber": 50
+        },
+        {
+          "caller": "toGroups",
+          "callee": "/^[0-9a-f]{1,4}$/.test",
+          "lineNumber": 51
+        },
+        {
+          "caller": "toGroups",
+          "callee": "parseInt",
+          "lineNumber": 51
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "toGroups",
+          "lineNumber": 53
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "toGroups",
+          "lineNumber": 54
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "[...head, ...rest].some",
+          "lineNumber": 55
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "new Array(Math.max(0, 8 - head.length - rest.length - tail.length)).fill",
+          "lineNumber": 59
+        },
+        {
+          "caller": "parseIPv6",
+          "callee": "Math.max",
+          "lineNumber": 59
+        },
+        {
+          "caller": "isPublicIPv4",
+          "callee": "address.split('.').map",
+          "lineNumber": 67
+        },
+        {
+          "caller": "isPublicIPv4",
+          "callee": "address.split",
+          "lineNumber": 67
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "net.isIPv4",
+          "lineNumber": 92
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "isPublicIPv4",
+          "lineNumber": 92
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "net.isIPv6",
+          "lineNumber": 93
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "parseIPv6",
+          "lineNumber": 95
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "g.every",
+          "lineNumber": 100
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "g.slice(0, 7).every",
+          "lineNumber": 101
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "g.slice",
+          "lineNumber": 101
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "g.slice(0, 5).every",
+          "lineNumber": 104
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "g.slice",
+          "lineNumber": 104
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "isPublicIPv4",
+          "lineNumber": 105
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "v4",
+          "lineNumber": 105
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "g.slice(0, 6).every",
+          "lineNumber": 107
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "g.slice",
+          "lineNumber": 107
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "isPublicIPv4",
+          "lineNumber": 108
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "v4",
+          "lineNumber": 108
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "isPublicIPv4",
+          "lineNumber": 112
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "v4",
+          "lineNumber": 112
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "isPublicIPv4",
+          "lineNumber": 115
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "v4",
+          "lineNumber": 115
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "isPublicIPv4",
+          "lineNumber": 118
+        },
+        {
+          "caller": "isPublicAddress",
+          "callee": "v4",
+          "lineNumber": 118
+        },
+        {
+          "caller": "parseHttpUrl",
+          "callee": "String(raw || '').trim",
+          "lineNumber": 134
+        },
+        {
+          "caller": "parseHttpUrl",
+          "callee": "String",
+          "lineNumber": 134
+        },
+        {
+          "caller": "parseHttpUrl",
+          "callee": "['http:', 'https:'].includes",
+          "lineNumber": 138
+        },
+        {
+          "caller": "parseHttpUrl",
+          "callee": "STANDARD_PORTS.has",
+          "lineNumber": 140
+        },
+        {
+          "caller": "parseHttpUrl",
+          "callee": "url.hostname.toLowerCase().replace(/^\\[|\\]$/g, '').replace",
+          "lineNumber": 141
+        },
+        {
+          "caller": "parseHttpUrl",
+          "callee": "url.hostname.toLowerCase().replace",
+          "lineNumber": 141
+        },
+        {
+          "caller": "parseHttpUrl",
+          "callee": "url.hostname.toLowerCase",
+          "lineNumber": 141
+        },
+        {
+          "caller": "parseHttpUrl",
+          "callee": "host.endsWith",
+          "lineNumber": 142
+        },
+        {
+          "caller": "validatePublicHttpUrl",
+          "callee": "parseHttpUrl",
+          "lineNumber": 155
+        },
+        {
+          "caller": "validatePublicHttpUrl",
+          "callee": "net.isIP",
+          "lineNumber": 156
+        },
+        {
+          "caller": "validatePublicHttpUrl",
+          "callee": "session.resolveHost",
+          "lineNumber": 166
+        },
+        {
+          "caller": "validatePublicHttpUrl",
+          "callee": "(resolved.endpoints || []).map",
+          "lineNumber": 167
+        },
+        {
+          "caller": "validatePublicHttpUrl",
+          "callee": "addresses.some",
+          "lineNumber": 173
+        },
+        {
+          "caller": "validatePublicHttpUrl",
+          "callee": "isPublicAddress",
+          "lineNumber": 173
+        },
+        {
+          "caller": "validatePublicHttpUrl",
+          "callee": "url.toString",
+          "lineNumber": 176
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/python-bridge.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 413,
+      "nonEmptyLines": 379,
+      "functions": [
+        {
+          "name": "killTreeWindows",
+          "startLine": 26,
+          "endLine": 35,
+          "params": [
+            "pid",
+            "onLog"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PythonBridge",
+          "startLine": 41,
+          "endLine": 411,
+          "methods": [
+            "constructor",
+            "venvPython",
+            "bundledBinary",
+            "pythonPath",
+            "start",
+            "handleLine",
+            "handleExit",
+            "failPending",
+            "send",
+            "armIdleTimer",
+            "touchPending",
+            "stop",
+            "restart",
+            "status"
+          ],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "killTreeWindows",
+          "callee": "spawn",
+          "lineNumber": 28
+        },
+        {
+          "caller": "killTreeWindows",
+          "callee": "String",
+          "lineNumber": 28
+        },
+        {
+          "caller": "killTreeWindows",
+          "callee": "proc.on",
+          "lineNumber": 29
+        },
+        {
+          "caller": "killTreeWindows",
+          "callee": "onLog",
+          "lineNumber": 30
+        },
+        {
+          "caller": "killTreeWindows",
+          "callee": "onLog",
+          "lineNumber": 33
+        },
+        {
+          "caller": "venvPython",
+          "callee": "path.join",
+          "lineNumber": 59
+        },
+        {
+          "caller": "venvPython",
+          "callee": "path.join",
+          "lineNumber": 60
+        },
+        {
+          "caller": "bundledBinary",
+          "callee": "path.join",
+          "lineNumber": 70
+        },
+        {
+          "caller": "bundledBinary",
+          "callee": "fs.existsSync",
+          "lineNumber": 71
+        },
+        {
+          "caller": "pythonPath",
+          "callee": "fs.existsSync",
+          "lineNumber": 81
+        },
+        {
+          "caller": "pythonPath",
+          "callee": "this.venvPython",
+          "lineNumber": 83
+        },
+        {
+          "caller": "pythonPath",
+          "callee": "fs.existsSync",
+          "lineNumber": 84
+        },
+        {
+          "caller": "pythonPath",
+          "callee": "this.repoRoot.indexOf",
+          "lineNumber": 88
+        },
+        {
+          "caller": "pythonPath",
+          "callee": "this.repoRoot.slice",
+          "lineNumber": 90
+        },
+        {
+          "caller": "pythonPath",
+          "callee": "this.venvPython",
+          "lineNumber": 91
+        },
+        {
+          "caller": "pythonPath",
+          "callee": "fs.existsSync",
+          "lineNumber": 92
+        },
+        {
+          "caller": "start",
+          "callee": "this.bundledBinary",
+          "lineNumber": 101
+        },
+        {
+          "caller": "start",
+          "callee": "this.pythonPath",
+          "lineNumber": 102
+        },
+        {
+          "caller": "start",
+          "callee": "path.dirname",
+          "lineNumber": 106
+        },
+        {
+          "caller": "start",
+          "callee": "spawn",
+          "lineNumber": 109
+        },
+        {
+          "caller": "start",
+          "callee": "this.child.on",
+          "lineNumber": 136
+        },
+        {
+          "caller": "start",
+          "callee": "clearTimeout",
+          "lineNumber": 140
+        },
+        {
+          "caller": "start",
+          "callee": "this.status",
+          "lineNumber": 142
+        },
+        {
+          "caller": "start",
+          "callee": "this.child.stdin.on",
+          "lineNumber": 147
+        },
+        {
+          "caller": "start",
+          "callee": "console.error",
+          "lineNumber": 149
+        },
+        {
+          "caller": "start",
+          "callee": "readline\n      .createInterface({ input: this.child.stdout, crlfDelay: Infinity })\n      .on",
+          "lineNumber": 152
+        },
+        {
+          "caller": "start",
+          "callee": "readline\n      .createInterface",
+          "lineNumber": 152
+        },
+        {
+          "caller": "start",
+          "callee": "this.handleLine",
+          "lineNumber": 154
+        },
+        {
+          "caller": "start",
+          "callee": "readline\n      .createInterface({ input: this.child.stderr, crlfDelay: Infinity })\n      .on",
+          "lineNumber": 157
+        },
+        {
+          "caller": "start",
+          "callee": "readline\n      .createInterface",
+          "lineNumber": 157
+        },
+        {
+          "caller": "start",
+          "callee": "this.onStatus",
+          "lineNumber": 159
+        },
+        {
+          "caller": "start",
+          "callee": "this.child.on",
+          "lineNumber": 164
+        },
+        {
+          "caller": "start",
+          "callee": "this.handleExit",
+          "lineNumber": 166
+        },
+        {
+          "caller": "start",
+          "callee": "setTimeout",
+          "lineNumber": 169
+        },
+        {
+          "caller": "start",
+          "callee": "this.status",
+          "lineNumber": 171
+        },
+        {
+          "caller": "start",
+          "callee": "this.status",
+          "lineNumber": 175
+        },
+        {
+          "caller": "handleLine",
+          "callee": "line.trim",
+          "lineNumber": 179
+        },
+        {
+          "caller": "handleLine",
+          "callee": "JSON.parse",
+          "lineNumber": 183
+        },
+        {
+          "caller": "handleLine",
+          "callee": "this.onStatus",
+          "lineNumber": 186
+        },
+        {
+          "caller": "handleLine",
+          "callee": "clearTimeout",
+          "lineNumber": 194
+        },
+        {
+          "caller": "handleLine",
+          "callee": "this.status",
+          "lineNumber": 195
+        },
+        {
+          "caller": "handleLine",
+          "callee": "this.pending.get",
+          "lineNumber": 202
+        },
+        {
+          "caller": "handleLine",
+          "callee": "clearTimeout",
+          "lineNumber": 203
+        },
+        {
+          "caller": "handleLine",
+          "callee": "this.pending.delete",
+          "lineNumber": 204
+        },
+        {
+          "caller": "handleLine",
+          "callee": "this.touchPending",
+          "lineNumber": 207
+        },
+        {
+          "caller": "handleLine",
+          "callee": "this.onEvent",
+          "lineNumber": 209
+        },
+        {
+          "caller": "handleExit",
+          "callee": "clearTimeout",
+          "lineNumber": 216
+        },
+        {
+          "caller": "handleExit",
+          "callee": "this.failPending",
+          "lineNumber": 218
+        },
+        {
+          "caller": "handleExit",
+          "callee": "this.status",
+          "lineNumber": 221
+        },
+        {
+          "caller": "handleExit",
+          "callee": "this.status",
+          "lineNumber": 230
+        },
+        {
+          "caller": "handleExit",
+          "callee": "this.status",
+          "lineNumber": 238
+        },
+        {
+          "caller": "handleExit",
+          "callee": "this.status",
+          "lineNumber": 246
+        },
+        {
+          "caller": "handleExit",
+          "callee": "setTimeout",
+          "lineNumber": 251
+        },
+        {
+          "caller": "handleExit",
+          "callee": "this.start",
+          "lineNumber": 251
+        },
+        {
+          "caller": "failPending",
+          "callee": "clearTimeout",
+          "lineNumber": 259
+        },
+        {
+          "caller": "failPending",
+          "callee": "this.onEvent",
+          "lineNumber": 260
+        },
+        {
+          "caller": "failPending",
+          "callee": "this.onEvent",
+          "lineNumber": 261
+        },
+        {
+          "caller": "failPending",
+          "callee": "this.pending.clear",
+          "lineNumber": 263
+        },
+        {
+          "caller": "send",
+          "callee": "this.pending.set",
+          "lineNumber": 284
+        },
+        {
+          "caller": "send",
+          "callee": "this.armIdleTimer",
+          "lineNumber": 284
+        },
+        {
+          "caller": "send",
+          "callee": "this.child.stdin.write",
+          "lineNumber": 285
+        },
+        {
+          "caller": "send",
+          "callee": "JSON.stringify",
+          "lineNumber": 285
+        },
+        {
+          "caller": "armIdleTimer",
+          "callee": "setTimeout",
+          "lineNumber": 291
+        },
+        {
+          "caller": "armIdleTimer",
+          "callee": "this.pending.get",
+          "lineNumber": 292
+        },
+        {
+          "caller": "armIdleTimer",
+          "callee": "this.pending.delete",
+          "lineNumber": 294
+        },
+        {
+          "caller": "armIdleTimer",
+          "callee": "Math.round",
+          "lineNumber": 295
+        },
+        {
+          "caller": "armIdleTimer",
+          "callee": "this.onStatus",
+          "lineNumber": 296
+        },
+        {
+          "caller": "armIdleTimer",
+          "callee": "this.onEvent",
+          "lineNumber": 298
+        },
+        {
+          "caller": "armIdleTimer",
+          "callee": "this.onEvent",
+          "lineNumber": 304
+        },
+        {
+          "caller": "touchPending",
+          "callee": "this.pending.get",
+          "lineNumber": 310
+        },
+        {
+          "caller": "touchPending",
+          "callee": "clearTimeout",
+          "lineNumber": 312
+        },
+        {
+          "caller": "touchPending",
+          "callee": "this.armIdleTimer",
+          "lineNumber": 313
+        },
+        {
+          "caller": "stop",
+          "callee": "child.stdin.write",
+          "lineNumber": 327
+        },
+        {
+          "caller": "stop",
+          "callee": "console.error",
+          "lineNumber": 329
+        },
+        {
+          "caller": "stop",
+          "callee": "setTimeout",
+          "lineNumber": 337
+        },
+        {
+          "caller": "stop",
+          "callee": "killTreeWindows",
+          "lineNumber": 341
+        },
+        {
+          "caller": "stop",
+          "callee": "this.onStatus",
+          "lineNumber": 341
+        },
+        {
+          "caller": "stop",
+          "callee": "child.kill",
+          "lineNumber": 344
+        },
+        {
+          "caller": "stop",
+          "callee": "setTimeout",
+          "lineNumber": 348
+        },
+        {
+          "caller": "stop",
+          "callee": "this.onStatus",
+          "lineNumber": 352
+        },
+        {
+          "caller": "stop",
+          "callee": "child.kill",
+          "lineNumber": 354
+        },
+        {
+          "caller": "restart",
+          "callee": "clearTimeout",
+          "lineNumber": 377
+        },
+        {
+          "caller": "restart",
+          "callee": "this.failPending",
+          "lineNumber": 378
+        },
+        {
+          "caller": "restart",
+          "callee": "old.stdin.write",
+          "lineNumber": 382
+        },
+        {
+          "caller": "restart",
+          "callee": "killTreeWindows",
+          "lineNumber": 389
+        },
+        {
+          "caller": "restart",
+          "callee": "this.onStatus",
+          "lineNumber": 389
+        },
+        {
+          "caller": "restart",
+          "callee": "old.kill",
+          "lineNumber": 391
+        },
+        {
+          "caller": "restart",
+          "callee": "setTimeout",
+          "lineNumber": 396
+        },
+        {
+          "caller": "restart",
+          "callee": "this.onStatus",
+          "lineNumber": 398
+        },
+        {
+          "caller": "restart",
+          "callee": "old.kill",
+          "lineNumber": 399
+        },
+        {
+          "caller": "restart",
+          "callee": "setTimeout",
+          "lineNumber": 405
+        },
+        {
+          "caller": "restart",
+          "callee": "this.start",
+          "lineNumber": 405
+        },
+        {
+          "caller": "status",
+          "callee": "this.onStatus",
+          "lineNumber": 409
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/src/update-service.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "versionParts",
+          "startLine": 6,
+          "endLine": 9,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "isNewerVersion",
+          "startLine": 11,
+          "endLine": 19,
+          "params": [
+            "latest",
+            "current"
+          ]
+        },
+        {
+          "name": "isAllowedReleaseUrl",
+          "startLine": 21,
+          "endLine": 28,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "checkForDesktopUpdate",
+          "startLine": 30,
+          "endLine": 50,
+          "params": [
+            "fetchImpl",
+            "currentVersion"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "versionParts",
+          "callee": "/^\\d+\\.\\d+\\.\\d+$/.test",
+          "lineNumber": 7
+        },
+        {
+          "caller": "versionParts",
+          "callee": "String",
+          "lineNumber": 7
+        },
+        {
+          "caller": "versionParts",
+          "callee": "String(value).split('.').map",
+          "lineNumber": 8
+        },
+        {
+          "caller": "versionParts",
+          "callee": "String(value).split",
+          "lineNumber": 8
+        },
+        {
+          "caller": "versionParts",
+          "callee": "String",
+          "lineNumber": 8
+        },
+        {
+          "caller": "isNewerVersion",
+          "callee": "versionParts",
+          "lineNumber": 12
+        },
+        {
+          "caller": "isNewerVersion",
+          "callee": "versionParts",
+          "lineNumber": 13
+        },
+        {
+          "caller": "isAllowedReleaseUrl",
+          "callee": "String",
+          "lineNumber": 23
+        },
+        {
+          "caller": "isAllowedReleaseUrl",
+          "callee": "url.pathname.startsWith",
+          "lineNumber": 24
+        },
+        {
+          "caller": "checkForDesktopUpdate",
+          "callee": "fetchImpl",
+          "lineNumber": 32
+        },
+        {
+          "caller": "checkForDesktopUpdate",
+          "callee": "response.json",
+          "lineNumber": 34
+        },
+        {
+          "caller": "checkForDesktopUpdate",
+          "callee": "String",
+          "lineNumber": 35
+        },
+        {
+          "caller": "checkForDesktopUpdate",
+          "callee": "String",
+          "lineNumber": 36
+        },
+        {
+          "caller": "checkForDesktopUpdate",
+          "callee": "versionParts",
+          "lineNumber": 37
+        },
+        {
+          "caller": "checkForDesktopUpdate",
+          "callee": "isAllowedReleaseUrl",
+          "lineNumber": 37
+        },
+        {
+          "caller": "checkForDesktopUpdate",
+          "callee": "isNewerVersion",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/test/bridgeTimeout.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 125,
+      "nonEmptyLines": 111,
+      "functions": [
+        {
+          "name": "makeBridge",
+          "startLine": 20,
+          "endLine": 32,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "makeBridge",
+          "callee": "events.push",
+          "lineNumber": 26
+        },
+        {
+          "caller": "makeBridge",
+          "callee": "logs.push",
+          "lineNumber": 27
+        },
+        {
+          "caller": "makeBridge",
+          "callee": "written.push",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/test/daemonRestartBudget.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 74,
+      "functions": [
+        {
+          "name": "makeRunner",
+          "startLine": 17,
+          "endLine": 27,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "makeRunner",
+          "callee": "logs.push",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/test/package-runtime.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 51,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/test/print-security.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 19,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/test/public-url.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 125,
+      "nonEmptyLines": 110,
+      "functions": [
+        {
+          "name": "fakeSession",
+          "startLine": 17,
+          "endLine": 25,
+          "params": [
+            "map"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolveHost",
+          "callee": "this.calls.push",
+          "lineNumber": 20
+        },
+        {
+          "caller": "resolveHost",
+          "callee": "addresses.map",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/test/python-bridge.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 22,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/desktop/test/updateService.test.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 32,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

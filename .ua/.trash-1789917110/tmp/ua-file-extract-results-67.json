@@ -1,0 +1,5027 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 8,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 8,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 8,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-utils/src/bar_generator.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 1181,
+      "nonEmptyLines": 1070,
+      "functions": [
+        {
+          "name": "clone",
+          "startLine": 37,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "serialize",
+          "startLine": 69,
+          "endLine": 86,
+          "params": [
+            "serializer"
+          ]
+        },
+        {
+          "name": "deserialize",
+          "startLine": 90,
+          "endLine": 114,
+          "params": [
+            "deserializer"
+          ]
+        },
+        {
+          "name": "new",
+          "startLine": 118,
+          "endLine": 138,
+          "params": [
+            "base_freq",
+            "freqs",
+            "max_count",
+            "market"
+          ]
+        },
+        {
+          "name": "init_freq_with_bars",
+          "startLine": 158,
+          "endLine": 197,
+          "params": [
+            "freq",
+            "bars"
+          ]
+        },
+        {
+          "name": "update_freq",
+          "startLine": 221,
+          "endLine": 310,
+          "params": [
+            "bar",
+            "freq",
+            "bars"
+          ]
+        },
+        {
+          "name": "latest_date",
+          "startLine": 313,
+          "endLine": 319,
+          "params": []
+        },
+        {
+          "name": "symbol",
+          "startLine": 322,
+          "endLine": 328,
+          "params": []
+        },
+        {
+          "name": "update_bar",
+          "startLine": 354,
+          "endLine": 389,
+          "params": [
+            "bar"
+          ]
+        },
+        {
+          "name": "nan_ohlcv_field",
+          "startLine": 410,
+          "endLine": 415,
+          "params": [
+            "bar"
+          ]
+        },
+        {
+          "name": "new_py",
+          "startLine": 423,
+          "endLine": 489,
+          "params": [
+            "base_freq",
+            "freqs",
+            "max_count",
+            "market"
+          ]
+        },
+        {
+          "name": "init_freq_bars",
+          "startLine": 504,
+          "endLine": 525,
+          "params": [
+            "freq",
+            "bars"
+          ]
+        },
+        {
+          "name": "get_latest_date",
+          "startLine": 528,
+          "endLine": 530,
+          "params": []
+        },
+        {
+          "name": "get_symbol_py",
+          "startLine": 535,
+          "endLine": 541,
+          "params": []
+        },
+        {
+          "name": "base_freq",
+          "startLine": 545,
+          "endLine": 570,
+          "params": []
+        },
+        {
+          "name": "end_dt",
+          "startLine": 574,
+          "endLine": 582,
+          "params": [
+            "py"
+          ]
+        },
+        {
+          "name": "bars",
+          "startLine": 586,
+          "endLine": 623,
+          "params": [
+            "py"
+          ]
+        },
+        {
+          "name": "update",
+          "startLine": 627,
+          "endLine": 630,
+          "params": [
+            "bar"
+          ]
+        },
+        {
+          "name": "__reduce__",
+          "startLine": 633,
+          "endLine": 661,
+          "params": [
+            "py"
+          ]
+        },
+        {
+          "name": "__setstate__",
+          "startLine": 664,
+          "endLine": 695,
+          "params": [
+            "py",
+            "state"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BarGenerator",
+          "startLine": 26,
+          "endLine": 34,
+          "methods": [
+            "clone",
+            "serialize",
+            "deserialize",
+            "new",
+            "init_freq_with_bars",
+            "update_freq",
+            "latest_date",
+            "symbol",
+            "update_bar",
+            "new_py",
+            "init_freq_bars",
+            "get_latest_date",
+            "get_symbol_py",
+            "base_freq",
+            "end_dt",
+            "bars",
+            "update",
+            "__reduce__",
+            "__setstate__"
+          ],
+          "properties": [
+            "market",
+            "base_freq",
+            "max_count",
+            "freq_bars"
+          ]
+        },
+        {
+          "name": "BarGeneratorSnapshot",
+          "startLine": 61,
+          "endLine": 66,
+          "methods": [],
+          "properties": [
+            "market",
+            "base_freq",
+            "max_count",
+            "freq_bars"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BarGenerator",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "new",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "init_freq_with_bars",
+          "line": 158,
+          "isDefault": false
+        },
+        {
+          "name": "latest_date",
+          "line": 313,
+          "isDefault": false
+        },
+        {
+          "name": "symbol",
+          "line": 322,
+          "isDefault": false
+        },
+        {
+          "name": "update_bar",
+          "line": 354,
+          "isDefault": false
+        },
+        {
+          "name": "nan_ohlcv_field",
+          "line": 410,
+          "isDefault": false
+        },
+        {
+          "name": "get_latest_date",
+          "line": 528,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "clone",
+          "callee": "self\n            .freq_bars\n            .iter()\n            .map(|(freq, bars_lock)| {\n                let bars = bars_lock.read().clone();\n                (*freq, RwLock::new(bars))\n            }).collect",
+          "lineNumber": 38
+        },
+        {
+          "caller": "clone",
+          "callee": "self\n            .freq_bars\n            .iter().map",
+          "lineNumber": 38
+        },
+        {
+          "caller": "clone",
+          "callee": "self\n            .freq_bars.iter",
+          "lineNumber": 38
+        },
+        {
+          "caller": "clone",
+          "callee": "bars_lock.read().clone",
+          "lineNumber": 42
+        },
+        {
+          "caller": "clone",
+          "callee": "bars_lock.read",
+          "lineNumber": 42
+        },
+        {
+          "caller": "clone",
+          "callee": "RwLock::new",
+          "lineNumber": 43
+        },
+        {
+          "caller": "serialize",
+          "callee": "self.base_freq.to_string",
+          "lineNumber": 75
+        },
+        {
+          "caller": "serialize",
+          "callee": "self\n                .freq_bars\n                .iter()\n                .map(|(freq, bars_lock)| {\n                    (freq.to_string(), bars_lock.read().iter().cloned().collect())\n                }).collect",
+          "lineNumber": 77
+        },
+        {
+          "caller": "serialize",
+          "callee": "self\n                .freq_bars\n                .iter().map",
+          "lineNumber": 77
+        },
+        {
+          "caller": "serialize",
+          "callee": "self\n                .freq_bars.iter",
+          "lineNumber": 77
+        },
+        {
+          "caller": "serialize",
+          "callee": "freq.to_string",
+          "lineNumber": 81
+        },
+        {
+          "caller": "serialize",
+          "callee": "bars_lock.read().iter().cloned().collect",
+          "lineNumber": 81
+        },
+        {
+          "caller": "serialize",
+          "callee": "bars_lock.read().iter().cloned",
+          "lineNumber": 81
+        },
+        {
+          "caller": "serialize",
+          "callee": "bars_lock.read().iter",
+          "lineNumber": 81
+        },
+        {
+          "caller": "serialize",
+          "callee": "bars_lock.read",
+          "lineNumber": 81
+        },
+        {
+          "caller": "serialize",
+          "callee": "snapshot.serialize",
+          "lineNumber": 85
+        },
+        {
+          "caller": "deserialize",
+          "callee": "BarGeneratorSnapshot::deserialize",
+          "lineNumber": 97
+        },
+        {
+          "caller": "deserialize",
+          "callee": "Freq::from_str(&snapshot.base_freq).map_err",
+          "lineNumber": 98
+        },
+        {
+          "caller": "deserialize",
+          "callee": "Freq::from_str",
+          "lineNumber": 98
+        },
+        {
+          "caller": "deserialize",
+          "callee": "D::Error::custom",
+          "lineNumber": 99
+        },
+        {
+          "caller": "deserialize",
+          "callee": "BTreeMap::new",
+          "lineNumber": 101
+        },
+        {
+          "caller": "deserialize",
+          "callee": "Freq::from_str(&freq_str).map_err",
+          "lineNumber": 103
+        },
+        {
+          "caller": "deserialize",
+          "callee": "Freq::from_str",
+          "lineNumber": 103
+        },
+        {
+          "caller": "deserialize",
+          "callee": "D::Error::custom",
+          "lineNumber": 104
+        },
+        {
+          "caller": "deserialize",
+          "callee": "freq_bars.insert",
+          "lineNumber": 105
+        },
+        {
+          "caller": "deserialize",
+          "callee": "RwLock::new",
+          "lineNumber": 105
+        },
+        {
+          "caller": "deserialize",
+          "callee": "bars.into_iter().collect",
+          "lineNumber": 105
+        },
+        {
+          "caller": "deserialize",
+          "callee": "bars.into_iter",
+          "lineNumber": 105
+        },
+        {
+          "caller": "deserialize",
+          "callee": "Ok",
+          "lineNumber": 108
+        },
+        {
+          "caller": "new",
+          "callee": "freqs\n            .into_iter()\n            .chain(std::iter::once(base_freq))\n            .map(|f| (f, RwLock::new(VecDeque::with_capacity(max_count)))).collect",
+          "lineNumber": 124
+        },
+        {
+          "caller": "new",
+          "callee": "freqs\n            .into_iter()\n            .chain(std::iter::once(base_freq)).map",
+          "lineNumber": 124
+        },
+        {
+          "caller": "new",
+          "callee": "freqs\n            .into_iter().chain",
+          "lineNumber": 124
+        },
+        {
+          "caller": "new",
+          "callee": "freqs.into_iter",
+          "lineNumber": 124
+        },
+        {
+          "caller": "new",
+          "callee": "std::iter::once",
+          "lineNumber": 126
+        },
+        {
+          "caller": "new",
+          "callee": "RwLock::new",
+          "lineNumber": 127
+        },
+        {
+          "caller": "new",
+          "callee": "VecDeque::with_capacity",
+          "lineNumber": 127
+        },
+        {
+          "caller": "new",
+          "callee": "Ok",
+          "lineNumber": 137
+        },
+        {
+          "caller": "init_freq_with_bars",
+          "callee": "self.freq_bars.contains_key",
+          "lineNumber": 162
+        },
+        {
+          "caller": "init_freq_with_bars",
+          "callee": "self.freq_bars.get",
+          "lineNumber": 166
+        },
+        {
+          "caller": "init_freq_with_bars",
+          "callee": "existing_bars.read().is_empty",
+          "lineNumber": 167
+        },
+        {
+          "caller": "init_freq_with_bars",
+          "callee": "existing_bars.read",
+          "lineNumber": 167
+        },
+        {
+          "caller": "init_freq_with_bars",
+          "callee": "bars\n            .into_iter()\n            .enumerate()\n            .map(|(id, mut bar)| {\n                bar.id = id as i32;\n                bar\n            }).collect",
+          "lineNumber": 172
+        },
+        {
+          "caller": "init_freq_with_bars",
+          "callee": "bars\n            .into_iter()\n            .enumerate().map",
+          "lineNumber": 172
+        },
+        {
+          "caller": "init_freq_with_bars",
+          "callee": "bars\n            .into_iter().enumerate",
+          "lineNumber": 172
+        },
+        {
+          "caller": "init_freq_with_bars",
+          "callee": "bars.into_iter",
+          "lineNumber": 172
+        },
+        {
+          "caller": "init_freq_with_bars",
+          "callee": "bars.iter().enumerate",
+          "lineNumber": 183
+        },
+        {
+          "caller": "init_freq_with_bars",
+          "callee": "bars.iter",
+          "lineNumber": 183
+        },
+        {
+          "caller": "init_freq_with_bars",
+          "callee": "nan_ohlcv_field",
+          "lineNumber": 184
+        },
+        {
+          "caller": "init_freq_with_bars",
+          "callee": "self.freq_bars.insert",
+          "lineNumber": 195
+        },
+        {
+          "caller": "init_freq_with_bars",
+          "callee": "RwLock::new",
+          "lineNumber": 195
+        },
+        {
+          "caller": "init_freq_with_bars",
+          "callee": "Ok",
+          "lineNumber": 196
+        },
+        {
+          "caller": "update_freq",
+          "callee": "freq_end_time",
+          "lineNumber": 228
+        },
+        {
+          "caller": "update_freq",
+          "callee": "bars.is_empty",
+          "lineNumber": 231
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(0)\n                .dt(freq_edt)\n                .freq(freq)\n                .open(bar.open)\n                .close(bar.close)\n                .high(bar.high)\n                .low(bar.low)\n                .vol(bar.vol)\n                .amount(bar.amount)\n                .build().context",
+          "lineNumber": 232
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(0)\n                .dt(freq_edt)\n                .freq(freq)\n                .open(bar.open)\n                .close(bar.close)\n                .high(bar.high)\n                .low(bar.low)\n                .vol(bar.vol)\n                .amount(bar.amount).build",
+          "lineNumber": 232
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(0)\n                .dt(freq_edt)\n                .freq(freq)\n                .open(bar.open)\n                .close(bar.close)\n                .high(bar.high)\n                .low(bar.low)\n                .vol(bar.vol).amount",
+          "lineNumber": 232
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(0)\n                .dt(freq_edt)\n                .freq(freq)\n                .open(bar.open)\n                .close(bar.close)\n                .high(bar.high)\n                .low(bar.low).vol",
+          "lineNumber": 232
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(0)\n                .dt(freq_edt)\n                .freq(freq)\n                .open(bar.open)\n                .close(bar.close)\n                .high(bar.high).low",
+          "lineNumber": 232
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(0)\n                .dt(freq_edt)\n                .freq(freq)\n                .open(bar.open)\n                .close(bar.close).high",
+          "lineNumber": 232
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(0)\n                .dt(freq_edt)\n                .freq(freq)\n                .open(bar.open).close",
+          "lineNumber": 232
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(0)\n                .dt(freq_edt)\n                .freq(freq).open",
+          "lineNumber": 232
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(0)\n                .dt(freq_edt).freq",
+          "lineNumber": 232
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(0).dt",
+          "lineNumber": 232
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone()).id",
+          "lineNumber": 232
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 232
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 232
+        },
+        {
+          "caller": "update_freq",
+          "callee": "bar.symbol.clone",
+          "lineNumber": 233
+        },
+        {
+          "caller": "update_freq",
+          "callee": "bars.len",
+          "lineNumber": 247
+        },
+        {
+          "caller": "update_freq",
+          "callee": "bars.pop_front",
+          "lineNumber": 248
+        },
+        {
+          "caller": "update_freq",
+          "callee": "bars.push_back",
+          "lineNumber": 250
+        },
+        {
+          "caller": "update_freq",
+          "callee": "Ok",
+          "lineNumber": 251
+        },
+        {
+          "caller": "update_freq",
+          "callee": "bars.back().unwrap",
+          "lineNumber": 255
+        },
+        {
+          "caller": "update_freq",
+          "callee": "bars.back",
+          "lineNumber": 255
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id + 1)\n                .dt(freq_edt)\n                .freq(freq)\n                .open(bar.open)\n                .close(bar.close)\n                .high(bar.high)\n                .low(bar.low)\n                .vol(bar.vol)\n                .amount(bar.amount)\n                .build().context",
+          "lineNumber": 260
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id + 1)\n                .dt(freq_edt)\n                .freq(freq)\n                .open(bar.open)\n                .close(bar.close)\n                .high(bar.high)\n                .low(bar.low)\n                .vol(bar.vol)\n                .amount(bar.amount).build",
+          "lineNumber": 260
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id + 1)\n                .dt(freq_edt)\n                .freq(freq)\n                .open(bar.open)\n                .close(bar.close)\n                .high(bar.high)\n                .low(bar.low)\n                .vol(bar.vol).amount",
+          "lineNumber": 260
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id + 1)\n                .dt(freq_edt)\n                .freq(freq)\n                .open(bar.open)\n                .close(bar.close)\n                .high(bar.high)\n                .low(bar.low).vol",
+          "lineNumber": 260
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id + 1)\n                .dt(freq_edt)\n                .freq(freq)\n                .open(bar.open)\n                .close(bar.close)\n                .high(bar.high).low",
+          "lineNumber": 260
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id + 1)\n                .dt(freq_edt)\n                .freq(freq)\n                .open(bar.open)\n                .close(bar.close).high",
+          "lineNumber": 260
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id + 1)\n                .dt(freq_edt)\n                .freq(freq)\n                .open(bar.open).close",
+          "lineNumber": 260
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id + 1)\n                .dt(freq_edt)\n                .freq(freq).open",
+          "lineNumber": 260
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id + 1)\n                .dt(freq_edt).freq",
+          "lineNumber": 260
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id + 1).dt",
+          "lineNumber": 260
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone()).id",
+          "lineNumber": 260
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 260
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 260
+        },
+        {
+          "caller": "update_freq",
+          "callee": "bar.symbol.clone",
+          "lineNumber": 261
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id)\n                .dt(freq_edt)\n                .freq(freq)\n                // 保持原有开盘价\n                .open(last.open)\n                // 更新收盘价\n                .close(bar.close)\n                // 取最大值\n                .high(last.high.max(bar.high))\n                // 取最小值\n                .low(last.low.min(bar.low))\n                // 累加成交量\n                .vol(last.vol + bar.vol)\n                // 累加成交额\n                .amount(last.amount + bar.amount)\n                .build().context",
+          "lineNumber": 275
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id)\n                .dt(freq_edt)\n                .freq(freq)\n                // 保持原有开盘价\n                .open(last.open)\n                // 更新收盘价\n                .close(bar.close)\n                // 取最大值\n                .high(last.high.max(bar.high))\n                // 取最小值\n                .low(last.low.min(bar.low))\n                // 累加成交量\n                .vol(last.vol + bar.vol)\n                // 累加成交额\n                .amount(last.amount + bar.amount).build",
+          "lineNumber": 275
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id)\n                .dt(freq_edt)\n                .freq(freq)\n                // 保持原有开盘价\n                .open(last.open)\n                // 更新收盘价\n                .close(bar.close)\n                // 取最大值\n                .high(last.high.max(bar.high))\n                // 取最小值\n                .low(last.low.min(bar.low))\n                // 累加成交量\n                .vol(last.vol + bar.vol).amount",
+          "lineNumber": 275
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id)\n                .dt(freq_edt)\n                .freq(freq)\n                // 保持原有开盘价\n                .open(last.open)\n                // 更新收盘价\n                .close(bar.close)\n                // 取最大值\n                .high(last.high.max(bar.high))\n                // 取最小值\n                .low(last.low.min(bar.low)).vol",
+          "lineNumber": 275
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id)\n                .dt(freq_edt)\n                .freq(freq)\n                // 保持原有开盘价\n                .open(last.open)\n                // 更新收盘价\n                .close(bar.close)\n                // 取最大值\n                .high(last.high.max(bar.high)).low",
+          "lineNumber": 275
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id)\n                .dt(freq_edt)\n                .freq(freq)\n                // 保持原有开盘价\n                .open(last.open)\n                // 更新收盘价\n                .close(bar.close).high",
+          "lineNumber": 275
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id)\n                .dt(freq_edt)\n                .freq(freq)\n                // 保持原有开盘价\n                .open(last.open).close",
+          "lineNumber": 275
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id)\n                .dt(freq_edt)\n                .freq(freq).open",
+          "lineNumber": 275
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id)\n                .dt(freq_edt).freq",
+          "lineNumber": 275
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone())\n                .id(last.id).dt",
+          "lineNumber": 275
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default()\n                .symbol(bar.symbol.clone()).id",
+          "lineNumber": 275
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 275
+        },
+        {
+          "caller": "update_freq",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 275
+        },
+        {
+          "caller": "update_freq",
+          "callee": "bar.symbol.clone",
+          "lineNumber": 276
+        },
+        {
+          "caller": "update_freq",
+          "callee": "last.high.max",
+          "lineNumber": 285
+        },
+        {
+          "caller": "update_freq",
+          "callee": "last.low.min",
+          "lineNumber": 287
+        },
+        {
+          "caller": "update_freq",
+          "callee": "bars.len",
+          "lineNumber": 300
+        },
+        {
+          "caller": "update_freq",
+          "callee": "bars.pop_front",
+          "lineNumber": 301
+        },
+        {
+          "caller": "update_freq",
+          "callee": "bars.push_back",
+          "lineNumber": 303
+        },
+        {
+          "caller": "update_freq",
+          "callee": "bars.len",
+          "lineNumber": 305
+        },
+        {
+          "caller": "update_freq",
+          "callee": "Ok",
+          "lineNumber": 309
+        },
+        {
+          "caller": "latest_date",
+          "callee": "self.freq_bars\n            .values()\n            .next()\n            .and_then(|v| v.read().back().cloned()).map",
+          "lineNumber": 314
+        },
+        {
+          "caller": "latest_date",
+          "callee": "self.freq_bars\n            .values()\n            .next().and_then",
+          "lineNumber": 314
+        },
+        {
+          "caller": "latest_date",
+          "callee": "self.freq_bars\n            .values().next",
+          "lineNumber": 314
+        },
+        {
+          "caller": "latest_date",
+          "callee": "self.freq_bars.values",
+          "lineNumber": 314
+        },
+        {
+          "caller": "latest_date",
+          "callee": "v.read().back().cloned",
+          "lineNumber": 317
+        },
+        {
+          "caller": "latest_date",
+          "callee": "v.read().back",
+          "lineNumber": 317
+        },
+        {
+          "caller": "latest_date",
+          "callee": "v.read",
+          "lineNumber": 317
+        },
+        {
+          "caller": "symbol",
+          "callee": "self.freq_bars\n            .values()\n            .next()\n            .and_then(|v| v.read().back().cloned()).map",
+          "lineNumber": 323
+        },
+        {
+          "caller": "symbol",
+          "callee": "self.freq_bars\n            .values()\n            .next().and_then",
+          "lineNumber": 323
+        },
+        {
+          "caller": "symbol",
+          "callee": "self.freq_bars\n            .values().next",
+          "lineNumber": 323
+        },
+        {
+          "caller": "symbol",
+          "callee": "self.freq_bars.values",
+          "lineNumber": 323
+        },
+        {
+          "caller": "symbol",
+          "callee": "v.read().back().cloned",
+          "lineNumber": 326
+        },
+        {
+          "caller": "symbol",
+          "callee": "v.read().back",
+          "lineNumber": 326
+        },
+        {
+          "caller": "symbol",
+          "callee": "v.read",
+          "lineNumber": 326
+        },
+        {
+          "caller": "update_bar",
+          "callee": "nan_ohlcv_field",
+          "lineNumber": 367
+        },
+        {
+          "caller": "update_bar",
+          "callee": "self.freq_bars.get",
+          "lineNumber": 376
+        },
+        {
+          "caller": "update_bar",
+          "callee": "base_bars.read().back",
+          "lineNumber": 377
+        },
+        {
+          "caller": "update_bar",
+          "callee": "base_bars.read",
+          "lineNumber": 377
+        },
+        {
+          "caller": "update_bar",
+          "callee": "Ok",
+          "lineNumber": 380
+        },
+        {
+          "caller": "update_bar",
+          "callee": "self.freq_bars.iter",
+          "lineNumber": 383
+        },
+        {
+          "caller": "update_bar",
+          "callee": "self.update_freq",
+          "lineNumber": 385
+        },
+        {
+          "caller": "update_bar",
+          "callee": "bars.write",
+          "lineNumber": 385
+        },
+        {
+          "caller": "update_bar",
+          "callee": "Ok",
+          "lineNumber": 388
+        },
+        {
+          "caller": "nan_ohlcv_field",
+          "callee": "OHLCV_FIELDS\n        .iter()\n        .find(|(_, getter)| getter(bar).is_nan()).map",
+          "lineNumber": 411
+        },
+        {
+          "caller": "nan_ohlcv_field",
+          "callee": "OHLCV_FIELDS\n        .iter().find",
+          "lineNumber": 411
+        },
+        {
+          "caller": "nan_ohlcv_field",
+          "callee": "OHLCV_FIELDS.iter",
+          "lineNumber": 411
+        },
+        {
+          "caller": "nan_ohlcv_field",
+          "callee": "getter(bar).is_nan",
+          "lineNumber": 413
+        },
+        {
+          "caller": "nan_ohlcv_field",
+          "callee": "getter",
+          "lineNumber": 413
+        },
+        {
+          "caller": "new_py",
+          "callee": "Python::attach",
+          "lineNumber": 431
+        },
+        {
+          "caller": "new_py",
+          "callee": "base_freq.cast_bound::<pyo3::types::PyString>",
+          "lineNumber": 433
+        },
+        {
+          "caller": "new_py",
+          "callee": "py_str.to_string",
+          "lineNumber": 434
+        },
+        {
+          "caller": "new_py",
+          "callee": "Freq::from_str(&py_str).map_err",
+          "lineNumber": 435
+        },
+        {
+          "caller": "new_py",
+          "callee": "Freq::from_str",
+          "lineNumber": 435
+        },
+        {
+          "caller": "new_py",
+          "callee": "pyo3::exceptions::PyValueError::new_err",
+          "lineNumber": 436
+        },
+        {
+          "caller": "new_py",
+          "callee": "base_freq.extract::<Freq>",
+          "lineNumber": 438
+        },
+        {
+          "caller": "new_py",
+          "callee": "Err",
+          "lineNumber": 441
+        },
+        {
+          "caller": "new_py",
+          "callee": "pyo3::exceptions::PyValueError::new_err",
+          "lineNumber": 441
+        },
+        {
+          "caller": "new_py",
+          "callee": "freqs\n                .cast_bound::<pyo3::types::PyList>(py).map_err",
+          "lineNumber": 447
+        },
+        {
+          "caller": "new_py",
+          "callee": "freqs\n                .cast_bound::<pyo3::types::PyList>",
+          "lineNumber": 447
+        },
+        {
+          "caller": "new_py",
+          "callee": "pyo3::exceptions::PyValueError::new_err",
+          "lineNumber": 449
+        },
+        {
+          "caller": "new_py",
+          "callee": "Vec::new",
+          "lineNumber": 451
+        },
+        {
+          "caller": "new_py",
+          "callee": "freqs_list.iter",
+          "lineNumber": 452
+        },
+        {
+          "caller": "new_py",
+          "callee": "freq_item.cast::<pyo3::types::PyString>",
+          "lineNumber": 453
+        },
+        {
+          "caller": "new_py",
+          "callee": "py_str.to_string",
+          "lineNumber": 454
+        },
+        {
+          "caller": "new_py",
+          "callee": "Freq::from_str(&py_str).map_err",
+          "lineNumber": 455
+        },
+        {
+          "caller": "new_py",
+          "callee": "Freq::from_str",
+          "lineNumber": 455
+        },
+        {
+          "caller": "new_py",
+          "callee": "pyo3::exceptions::PyValueError::new_err",
+          "lineNumber": 456
+        },
+        {
+          "caller": "new_py",
+          "callee": "freq_item.extract::<Freq>",
+          "lineNumber": 458
+        },
+        {
+          "caller": "new_py",
+          "callee": "Err",
+          "lineNumber": 461
+        },
+        {
+          "caller": "new_py",
+          "callee": "pyo3::exceptions::PyValueError::new_err",
+          "lineNumber": 461
+        },
+        {
+          "caller": "new_py",
+          "callee": "converted_freqs.push",
+          "lineNumber": 465
+        },
+        {
+          "caller": "new_py",
+          "callee": "market_obj.cast_bound::<pyo3::types::PyString>",
+          "lineNumber": 470
+        },
+        {
+          "caller": "new_py",
+          "callee": "py_str.to_string",
+          "lineNumber": 471
+        },
+        {
+          "caller": "new_py",
+          "callee": "Market::from_str(&py_str).map_err",
+          "lineNumber": 472
+        },
+        {
+          "caller": "new_py",
+          "callee": "Market::from_str",
+          "lineNumber": 472
+        },
+        {
+          "caller": "new_py",
+          "callee": "pyo3::exceptions::PyValueError::new_err",
+          "lineNumber": 473
+        },
+        {
+          "caller": "new_py",
+          "callee": "market_obj.extract::<Market>",
+          "lineNumber": 475
+        },
+        {
+          "caller": "new_py",
+          "callee": "Err",
+          "lineNumber": 478
+        },
+        {
+          "caller": "new_py",
+          "callee": "pyo3::exceptions::PyValueError::new_err",
+          "lineNumber": 478
+        },
+        {
+          "caller": "new_py",
+          "callee": "Self::new",
+          "lineNumber": 486
+        },
+        {
+          "caller": "new_py",
+          "callee": "Ok",
+          "lineNumber": 487
+        },
+        {
+          "caller": "init_freq_bars",
+          "callee": "Python::attach",
+          "lineNumber": 507
+        },
+        {
+          "caller": "init_freq_bars",
+          "callee": "freq.cast_bound::<pyo3::types::PyString>",
+          "lineNumber": 509
+        },
+        {
+          "caller": "init_freq_bars",
+          "callee": "py_str.to_string",
+          "lineNumber": 510
+        },
+        {
+          "caller": "init_freq_bars",
+          "callee": "Freq::from_str(&py_str).map_err",
+          "lineNumber": 511
+        },
+        {
+          "caller": "init_freq_bars",
+          "callee": "Freq::from_str",
+          "lineNumber": 511
+        },
+        {
+          "caller": "init_freq_bars",
+          "callee": "pyo3::exceptions::PyValueError::new_err",
+          "lineNumber": 512
+        },
+        {
+          "caller": "init_freq_bars",
+          "callee": "freq.extract::<Freq>",
+          "lineNumber": 514
+        },
+        {
+          "caller": "init_freq_bars",
+          "callee": "Err",
+          "lineNumber": 517
+        },
+        {
+          "caller": "init_freq_bars",
+          "callee": "pyo3::exceptions::PyValueError::new_err",
+          "lineNumber": 517
+        },
+        {
+          "caller": "init_freq_bars",
+          "callee": "self.init_freq_with_bars",
+          "lineNumber": 522
+        },
+        {
+          "caller": "init_freq_bars",
+          "callee": "Ok",
+          "lineNumber": 523
+        },
+        {
+          "caller": "get_latest_date",
+          "callee": "self.latest_date().map",
+          "lineNumber": 529
+        },
+        {
+          "caller": "get_latest_date",
+          "callee": "self.latest_date",
+          "lineNumber": 529
+        },
+        {
+          "caller": "get_latest_date",
+          "callee": "dt.to_string",
+          "lineNumber": 529
+        },
+        {
+          "caller": "get_symbol_py",
+          "callee": "self.freq_bars\n            .values()\n            .next()\n            .and_then(|v| v.read().back().cloned()).map",
+          "lineNumber": 536
+        },
+        {
+          "caller": "get_symbol_py",
+          "callee": "self.freq_bars\n            .values()\n            .next().and_then",
+          "lineNumber": 536
+        },
+        {
+          "caller": "get_symbol_py",
+          "callee": "self.freq_bars\n            .values().next",
+          "lineNumber": 536
+        },
+        {
+          "caller": "get_symbol_py",
+          "callee": "self.freq_bars.values",
+          "lineNumber": 536
+        },
+        {
+          "caller": "get_symbol_py",
+          "callee": "v.read().back().cloned",
+          "lineNumber": 539
+        },
+        {
+          "caller": "get_symbol_py",
+          "callee": "v.read().back",
+          "lineNumber": 539
+        },
+        {
+          "caller": "get_symbol_py",
+          "callee": "v.read",
+          "lineNumber": 539
+        },
+        {
+          "caller": "get_symbol_py",
+          "callee": "b.symbol.to_string",
+          "lineNumber": 540
+        },
+        {
+          "caller": "base_freq",
+          "callee": "match self.base_freq {\n            Freq::F1 => \"1分钟\",\n            Freq::F2 => \"2分钟\",\n            Freq::F3 => \"3分钟\",\n            Freq::F4 => \"4分钟\",\n            Freq::F5 => \"5分钟\",\n            Freq::F6 => \"6分钟\",\n            Freq::F10 => \"10分钟\",\n            Freq::F12 => \"12分钟\",\n            Freq::F15 => \"15分钟\",\n            Freq::F20 => \"20分钟\",\n            Freq::F30 => \"30分钟\",\n            Freq::F60 => \"60分钟\",\n            Freq::F120 => \"120分钟\",\n            Freq::F240 => \"240分钟\",\n            Freq::F360 => \"360分钟\",\n            Freq::D => \"日线\",\n            Freq::W => \"周线\",\n            Freq::M => \"月线\",\n            Freq::S => \"季线\",\n            Freq::Y => \"年线\",\n            Freq::Tick => \"Tick\",\n        }.to_string",
+          "lineNumber": 546
+        },
+        {
+          "caller": "end_dt",
+          "callee": "self.latest_date",
+          "lineNumber": 575
+        },
+        {
+          "caller": "end_dt",
+          "callee": "czsc_core::utils::common::create_naive_pandas_timestamp",
+          "lineNumber": 577
+        },
+        {
+          "caller": "end_dt",
+          "callee": "Ok",
+          "lineNumber": 578
+        },
+        {
+          "caller": "end_dt",
+          "callee": "Some",
+          "lineNumber": 578
+        },
+        {
+          "caller": "end_dt",
+          "callee": "Ok",
+          "lineNumber": 580
+        },
+        {
+          "caller": "bars",
+          "callee": "PyDict::new",
+          "lineNumber": 587
+        },
+        {
+          "caller": "bars",
+          "callee": "bars_lock.read",
+          "lineNumber": 591
+        },
+        {
+          "caller": "bars",
+          "callee": "bars.iter().cloned().collect",
+          "lineNumber": 617
+        },
+        {
+          "caller": "bars",
+          "callee": "bars.iter().cloned",
+          "lineNumber": 617
+        },
+        {
+          "caller": "bars",
+          "callee": "bars.iter",
+          "lineNumber": 617
+        },
+        {
+          "caller": "bars",
+          "callee": "dict.set_item",
+          "lineNumber": 619
+        },
+        {
+          "caller": "bars",
+          "callee": "Ok",
+          "lineNumber": 622
+        },
+        {
+          "caller": "bars",
+          "callee": "dict.into",
+          "lineNumber": 622
+        },
+        {
+          "caller": "update",
+          "callee": "self.update_bar(bar).map_err",
+          "lineNumber": 628
+        },
+        {
+          "caller": "update",
+          "callee": "self.update_bar",
+          "lineNumber": 628
+        },
+        {
+          "caller": "update",
+          "callee": "pyo3::exceptions::PyRuntimeError::new_err",
+          "lineNumber": 629
+        },
+        {
+          "caller": "update",
+          "callee": "e.to_string",
+          "lineNumber": 629
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "self\n            .freq_bars\n            .keys()\n            .filter(|&freq| *freq != self.base_freq) // 排除基准频率\n            .map(|freq| freq.to_string()).collect",
+          "lineNumber": 635
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "self\n            .freq_bars\n            .keys()\n            .filter(|&freq| *freq != self.base_freq).map",
+          "lineNumber": 635
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "self\n            .freq_bars\n            .keys().filter",
+          "lineNumber": 635
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "self\n            .freq_bars.keys",
+          "lineNumber": 635
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "freq.to_string",
+          "lineNumber": 639
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "(self.base_freq.to_string(), freqs, self.max_count).into_pyobject",
+          "lineNumber": 642
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "self.base_freq.to_string",
+          "lineNumber": 642
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "PyDict::new",
+          "lineNumber": 645
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "state.set_item",
+          "lineNumber": 646
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "self.market.to_string",
+          "lineNumber": 646
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "PyDict::new",
+          "lineNumber": 649
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "bars_lock.read",
+          "lineNumber": 651
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "bars.iter().cloned().collect",
+          "lineNumber": 652
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "bars.iter().cloned",
+          "lineNumber": 652
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "bars.iter",
+          "lineNumber": 652
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "freq_bars_dict.set_item",
+          "lineNumber": 653
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "freq.to_string",
+          "lineNumber": 653
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "state.set_item",
+          "lineNumber": 655
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "py.get_type::<Self>",
+          "lineNumber": 658
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "(constructor, args, state).into_pyobject",
+          "lineNumber": 659
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "Ok",
+          "lineNumber": 660
+        },
+        {
+          "caller": "__reduce__",
+          "callee": "result.into",
+          "lineNumber": 660
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "state.cast_bound::<PyDict>",
+          "lineNumber": 667
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "state_dict.get_item",
+          "lineNumber": 670
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "market_item.extract",
+          "lineNumber": 671
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "Market::from_str(&market_str).map_err",
+          "lineNumber": 672
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "Market::from_str",
+          "lineNumber": 672
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "pyo3::exceptions::PyValueError::new_err",
+          "lineNumber": 673
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "state_dict.get_item",
+          "lineNumber": 678
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "freq_bars_item.cast::<PyDict>",
+          "lineNumber": 679
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "self.freq_bars.clear",
+          "lineNumber": 680
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "freq_bars_dict.iter",
+          "lineNumber": 682
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "freq_str.extract",
+          "lineNumber": 683
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "Freq::from_str(&freq_str).map_err",
+          "lineNumber": 684
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "Freq::from_str",
+          "lineNumber": 684
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "pyo3::exceptions::PyValueError::new_err",
+          "lineNumber": 685
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "bars_obj.extract",
+          "lineNumber": 688
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "bars_list.into_iter().collect",
+          "lineNumber": 689
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "bars_list.into_iter",
+          "lineNumber": 689
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "self.freq_bars.insert",
+          "lineNumber": 690
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "RwLock::new",
+          "lineNumber": 690
+        },
+        {
+          "caller": "__setstate__",
+          "callee": "Ok",
+          "lineNumber": 694
+        },
+        {
+          "caller": "test_init_freq_bars",
+          "callee": "BarGenerator::new(Freq::F1, vec![Freq::F5, Freq::F15], 5, Market::Default).unwrap",
+          "lineNumber": 708
+        },
+        {
+          "caller": "test_init_freq_bars",
+          "callee": "BarGenerator::new",
+          "lineNumber": 708
+        },
+        {
+          "caller": "test_init_freq_bars",
+          "callee": "bg.init_freq_with_bars",
+          "lineNumber": 745
+        },
+        {
+          "caller": "test_init_freq_bars",
+          "callee": "test_bars.clone",
+          "lineNumber": 745
+        },
+        {
+          "caller": "test_init_freq_bars",
+          "callee": "bg.freq_bars.get(&Freq::F5).unwrap().read",
+          "lineNumber": 749
+        },
+        {
+          "caller": "test_init_freq_bars",
+          "callee": "bg.freq_bars.get(&Freq::F5).unwrap",
+          "lineNumber": 749
+        },
+        {
+          "caller": "test_init_freq_bars",
+          "callee": "bg.freq_bars.get",
+          "lineNumber": 749
+        },
+        {
+          "caller": "test_init_freq_bars",
+          "callee": "drop",
+          "lineNumber": 755
+        },
+        {
+          "caller": "test_init_freq_bars",
+          "callee": "bg.init_freq_with_bars",
+          "lineNumber": 756
+        },
+        {
+          "caller": "test_init_freq_bars",
+          "callee": "bg.init_freq_with_bars",
+          "lineNumber": 760
+        },
+        {
+          "caller": "test_init_freq_bars",
+          "callee": "bg.freq_bars.get(&Freq::F15).unwrap().read",
+          "lineNumber": 762
+        },
+        {
+          "caller": "test_init_freq_bars",
+          "callee": "bg.freq_bars.get(&Freq::F15).unwrap",
+          "lineNumber": 762
+        },
+        {
+          "caller": "test_init_freq_bars",
+          "callee": "bg.freq_bars.get",
+          "lineNumber": 762
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "BarGenerator::new(Freq::F1, vec![Freq::F5, Freq::F15], 5, Market::AShare).unwrap",
+          "lineNumber": 768
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "BarGenerator::new",
+          "lineNumber": 768
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .close(4010.0)\n            .high(4020.0)\n            .low(3990.0)\n            .vol(1000.0)\n            .amount(4000.0)\n            .build().unwrap",
+          "lineNumber": 771
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .close(4010.0)\n            .high(4020.0)\n            .low(3990.0)\n            .vol(1000.0)\n            .amount(4000.0).build",
+          "lineNumber": 771
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .close(4010.0)\n            .high(4020.0)\n            .low(3990.0)\n            .vol(1000.0).amount",
+          "lineNumber": 771
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .close(4010.0)\n            .high(4020.0)\n            .low(3990.0).vol",
+          "lineNumber": 771
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .close(4010.0)\n            .high(4020.0).low",
+          "lineNumber": 771
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .close(4010.0).high",
+          "lineNumber": 771
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0).close",
+          "lineNumber": 771
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1).open",
+          "lineNumber": 771
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            )).freq",
+          "lineNumber": 771
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1).dt",
+          "lineNumber": 771
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string()).id",
+          "lineNumber": 771
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 771
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 771
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "\"000016.SH\".to_string",
+          "lineNumber": 772
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 774
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap",
+          "lineNumber": 775
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 775
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "bg.update_bar",
+          "lineNumber": 787
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "bg.freq_bars.get(&Freq::F5).unwrap().read",
+          "lineNumber": 790
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "bg.freq_bars.get(&Freq::F5).unwrap",
+          "lineNumber": 790
+        },
+        {
+          "caller": "test_update_freq_new_bar",
+          "callee": "bg.freq_bars.get",
+          "lineNumber": 790
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "BarGenerator::new(Freq::F1, vec![Freq::F5, Freq::F15], 5, Market::AShare).unwrap",
+          "lineNumber": 801
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "BarGenerator::new",
+          "lineNumber": 801
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .close(4010.0)\n            .high(4020.0)\n            .low(3990.0)\n            .vol(10.0)\n            .amount(40.0)\n            .build().unwrap",
+          "lineNumber": 803
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .close(4010.0)\n            .high(4020.0)\n            .low(3990.0)\n            .vol(10.0)\n            .amount(40.0).build",
+          "lineNumber": 803
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .close(4010.0)\n            .high(4020.0)\n            .low(3990.0)\n            .vol(10.0).amount",
+          "lineNumber": 803
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .close(4010.0)\n            .high(4020.0)\n            .low(3990.0).vol",
+          "lineNumber": 803
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .close(4010.0)\n            .high(4020.0).low",
+          "lineNumber": 803
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .close(4010.0).high",
+          "lineNumber": 803
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0).close",
+          "lineNumber": 803
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1).open",
+          "lineNumber": 803
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            )).freq",
+          "lineNumber": 803
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1).dt",
+          "lineNumber": 803
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string()).id",
+          "lineNumber": 803
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 803
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 803
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "\"000016.SH\".to_string",
+          "lineNumber": 804
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 806
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "NaiveDateTime::parse_from_str(\"2024-1-1 2:1:0\", \"%Y-%m-%d %H:%M:%S\").unwrap",
+          "lineNumber": 807
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 807
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "bg.update_bar(&bar1).unwrap",
+          "lineNumber": 818
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "bg.update_bar",
+          "lineNumber": 818
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:2:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4006.0)\n            .high(4020.0)\n            .low(4000.0)\n            .close(4015.0)\n            .vol(15.0)\n            .amount(60.0)\n            .build().unwrap",
+          "lineNumber": 821
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:2:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4006.0)\n            .high(4020.0)\n            .low(4000.0)\n            .close(4015.0)\n            .vol(15.0)\n            .amount(60.0).build",
+          "lineNumber": 821
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:2:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4006.0)\n            .high(4020.0)\n            .low(4000.0)\n            .close(4015.0)\n            .vol(15.0).amount",
+          "lineNumber": 821
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:2:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4006.0)\n            .high(4020.0)\n            .low(4000.0)\n            .close(4015.0).vol",
+          "lineNumber": 821
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:2:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4006.0)\n            .high(4020.0)\n            .low(4000.0).close",
+          "lineNumber": 821
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:2:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4006.0)\n            .high(4020.0).low",
+          "lineNumber": 821
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:2:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4006.0).high",
+          "lineNumber": 821
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:2:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1).open",
+          "lineNumber": 821
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:2:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            )).freq",
+          "lineNumber": 821
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1).dt",
+          "lineNumber": 821
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string()).id",
+          "lineNumber": 821
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 821
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 821
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "\"000016.SH\".to_string",
+          "lineNumber": 822
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 824
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "NaiveDateTime::parse_from_str(\"2024-1-1 2:2:0\", \"%Y-%m-%d %H:%M:%S\").unwrap",
+          "lineNumber": 825
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 825
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "bg.update_bar(&bar2).unwrap",
+          "lineNumber": 837
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "bg.update_bar",
+          "lineNumber": 837
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "bg.freq_bars.get(&Freq::F5).unwrap().read",
+          "lineNumber": 839
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "bg.freq_bars.get(&Freq::F5).unwrap",
+          "lineNumber": 839
+        },
+        {
+          "caller": "test_update_freq_same_bar",
+          "callee": "bg.freq_bars.get",
+          "lineNumber": 839
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "BarGenerator::new(Freq::F1, vec![Freq::F5, Freq::F15], 5, Market::AShare).unwrap",
+          "lineNumber": 851
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "BarGenerator::new",
+          "lineNumber": 851
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:31:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0)\n            .vol(10.0)\n            .amount(40.0)\n            .build().unwrap",
+          "lineNumber": 853
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:31:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0)\n            .vol(10.0)\n            .amount(40.0).build",
+          "lineNumber": 853
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:31:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0)\n            .vol(10.0).amount",
+          "lineNumber": 853
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:31:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0).vol",
+          "lineNumber": 853
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:31:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0).close",
+          "lineNumber": 853
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:31:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0).low",
+          "lineNumber": 853
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:31:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0).high",
+          "lineNumber": 853
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:31:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1).open",
+          "lineNumber": 853
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:31:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            )).freq",
+          "lineNumber": 853
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1).dt",
+          "lineNumber": 853
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string()).id",
+          "lineNumber": 853
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 853
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 853
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "\"000016.SH\".to_string",
+          "lineNumber": 854
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 856
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "NaiveDateTime::parse_from_str(\"2024-1-2 09:31:00\", \"%Y-%m-%d %H:%M:%S\").unwrap",
+          "lineNumber": 857
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 857
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "bg.update_bar(&bar1).unwrap",
+          "lineNumber": 869
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "bg.update_bar",
+          "lineNumber": 869
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:36:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4010.0)\n            .high(4030.0)\n            .low(4000.0)\n            .close(4020.0)\n            .vol(20.0)\n            .amount(60.0)\n            .build().unwrap",
+          "lineNumber": 872
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:36:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4010.0)\n            .high(4030.0)\n            .low(4000.0)\n            .close(4020.0)\n            .vol(20.0)\n            .amount(60.0).build",
+          "lineNumber": 872
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:36:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4010.0)\n            .high(4030.0)\n            .low(4000.0)\n            .close(4020.0)\n            .vol(20.0).amount",
+          "lineNumber": 872
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:36:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4010.0)\n            .high(4030.0)\n            .low(4000.0)\n            .close(4020.0).vol",
+          "lineNumber": 872
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:36:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4010.0)\n            .high(4030.0)\n            .low(4000.0).close",
+          "lineNumber": 872
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:36:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4010.0)\n            .high(4030.0).low",
+          "lineNumber": 872
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:36:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4010.0).high",
+          "lineNumber": 872
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:36:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1).open",
+          "lineNumber": 872
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 09:36:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            )).freq",
+          "lineNumber": 872
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1).dt",
+          "lineNumber": 872
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string()).id",
+          "lineNumber": 872
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 872
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 872
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "\"000016.SH\".to_string",
+          "lineNumber": 873
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 875
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "NaiveDateTime::parse_from_str(\"2024-1-2 09:36:00\", \"%Y-%m-%d %H:%M:%S\").unwrap",
+          "lineNumber": 876
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 876
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "bg.update_bar(&bar2).unwrap",
+          "lineNumber": 887
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "bg.update_bar",
+          "lineNumber": 887
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "bg.freq_bars.get(&Freq::F5).unwrap().read",
+          "lineNumber": 889
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "bg.freq_bars.get(&Freq::F5).unwrap",
+          "lineNumber": 889
+        },
+        {
+          "caller": "test_update_freq_new_period",
+          "callee": "bg.freq_bars.get",
+          "lineNumber": 889
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "BarGenerator::new(Freq::F1, vec![Freq::F5, Freq::F15], 5, Market::AShare).unwrap",
+          "lineNumber": 902
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "BarGenerator::new",
+          "lineNumber": 902
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0)\n            .vol(10.0)\n            .amount(40.0)\n            .build().unwrap",
+          "lineNumber": 904
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0)\n            .vol(10.0)\n            .amount(40.0).build",
+          "lineNumber": 904
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0)\n            .vol(10.0).amount",
+          "lineNumber": 904
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0).vol",
+          "lineNumber": 904
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0).close",
+          "lineNumber": 904
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0).low",
+          "lineNumber": 904
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4000.0).high",
+          "lineNumber": 904
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1).open",
+          "lineNumber": 904
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-1 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            )).freq",
+          "lineNumber": 904
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1).dt",
+          "lineNumber": 904
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string()).id",
+          "lineNumber": 904
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 904
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 904
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "\"000016.SH\".to_string",
+          "lineNumber": 905
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 907
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "NaiveDateTime::parse_from_str(\"2024-1-1 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap",
+          "lineNumber": 908
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 908
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "bg.update_bar(&bar1).unwrap",
+          "lineNumber": 919
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "bg.update_bar",
+          "lineNumber": 919
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4010.0)\n            .high(4030.0)\n            .low(4000.0)\n            .close(4020.0)\n            .vol(20.0)\n            .amount(60.0)\n            .build().unwrap",
+          "lineNumber": 922
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4010.0)\n            .high(4030.0)\n            .low(4000.0)\n            .close(4020.0)\n            .vol(20.0)\n            .amount(60.0).build",
+          "lineNumber": 922
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4010.0)\n            .high(4030.0)\n            .low(4000.0)\n            .close(4020.0)\n            .vol(20.0).amount",
+          "lineNumber": 922
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4010.0)\n            .high(4030.0)\n            .low(4000.0)\n            .close(4020.0).vol",
+          "lineNumber": 922
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4010.0)\n            .high(4030.0)\n            .low(4000.0).close",
+          "lineNumber": 922
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4010.0)\n            .high(4030.0).low",
+          "lineNumber": 922
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1)\n            .open(4010.0).high",
+          "lineNumber": 922
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F1).open",
+          "lineNumber": 922
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-1-2 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            )).freq",
+          "lineNumber": 922
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1).dt",
+          "lineNumber": 922
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string()).id",
+          "lineNumber": 922
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 922
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 922
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "\"000016.SH\".to_string",
+          "lineNumber": 923
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 925
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "NaiveDateTime::parse_from_str(\"2024-1-2 2:6:0\", \"%Y-%m-%d %H:%M:%S\").unwrap",
+          "lineNumber": 926
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 926
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "bg.update_bar(&bar2).unwrap",
+          "lineNumber": 937
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "bg.update_bar",
+          "lineNumber": 937
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "bg.freq_bars.get(&Freq::F5).unwrap().read",
+          "lineNumber": 939
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "bg.freq_bars.get(&Freq::F5).unwrap",
+          "lineNumber": 939
+        },
+        {
+          "caller": "test_update_freq_edge_cases",
+          "callee": "bg.freq_bars.get",
+          "lineNumber": 939
+        },
+        {
+          "caller": "test_update",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 952
+        },
+        {
+          "caller": "test_update",
+          "callee": "NaiveDateTime::parse_from_str(\"2024-12-12 10:01:00\", \"%Y-%m-%d %H:%M:%S\").unwrap",
+          "lineNumber": 953
+        },
+        {
+          "caller": "test_update",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 953
+        },
+        {
+          "caller": "test_update",
+          "callee": "BarGenerator::new(Freq::F1, vec![Freq::F5, Freq::F15], 5, Market::AShare).unwrap",
+          "lineNumber": 957
+        },
+        {
+          "caller": "test_update",
+          "callee": "BarGenerator::new",
+          "lineNumber": 957
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F5)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0)\n            .vol(1000.0)\n            .amount(4000.0)\n            .build().unwrap",
+          "lineNumber": 960
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F5)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0)\n            .vol(1000.0)\n            .amount(4000.0).build",
+          "lineNumber": 960
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F5)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0)\n            .vol(1000.0).amount",
+          "lineNumber": 960
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F5)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0).vol",
+          "lineNumber": 960
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F5)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0).close",
+          "lineNumber": 960
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F5)\n            .open(4000.0)\n            .high(4010.0).low",
+          "lineNumber": 960
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F5)\n            .open(4000.0).high",
+          "lineNumber": 960
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F5).open",
+          "lineNumber": 960
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt).freq",
+          "lineNumber": 960
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1).dt",
+          "lineNumber": 960
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string()).id",
+          "lineNumber": 960
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 960
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 960
+        },
+        {
+          "caller": "test_update",
+          "callee": "\"000016.SH\".to_string",
+          "lineNumber": 961
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0)\n            .vol(1000.0)\n            .amount(4000.0)\n            .build().unwrap",
+          "lineNumber": 980
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0)\n            .vol(1000.0)\n            .amount(4000.0).build",
+          "lineNumber": 980
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0)\n            .vol(1000.0).amount",
+          "lineNumber": 980
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0).vol",
+          "lineNumber": 980
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0).close",
+          "lineNumber": 980
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F1)\n            .open(4000.0)\n            .high(4010.0).low",
+          "lineNumber": 980
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F1)\n            .open(4000.0).high",
+          "lineNumber": 980
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F1).open",
+          "lineNumber": 980
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1)\n            .dt(dt).freq",
+          "lineNumber": 980
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(1).dt",
+          "lineNumber": 980
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string()).id",
+          "lineNumber": 980
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 980
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 980
+        },
+        {
+          "caller": "test_update",
+          "callee": "\"000016.SH\".to_string",
+          "lineNumber": 981
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n                .symbol(Arc::from(\"000016.SH\".to_string()))\n                .id(i)\n                .dt(Utc.from_utc_datetime(\n                    &NaiveDateTime::parse_from_str(\n                        format!(\"2024-1-2 9:3{i}:0\").as_str(),\n                        \"%Y-%m-%d %H:%M:%S\",\n                    )\n                    .unwrap(),\n                ))\n                .freq(Freq::F1)\n                .open(4000.0 + i as f64)\n                .high(4010.0 + i as f64)\n                .low(3990.0 + i as f64)\n                .close(4005.0 + i as f64)\n                .vol(1000.0)\n                .amount(4000.0)\n                .build().unwrap",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n                .symbol(Arc::from(\"000016.SH\".to_string()))\n                .id(i)\n                .dt(Utc.from_utc_datetime(\n                    &NaiveDateTime::parse_from_str(\n                        format!(\"2024-1-2 9:3{i}:0\").as_str(),\n                        \"%Y-%m-%d %H:%M:%S\",\n                    )\n                    .unwrap(),\n                ))\n                .freq(Freq::F1)\n                .open(4000.0 + i as f64)\n                .high(4010.0 + i as f64)\n                .low(3990.0 + i as f64)\n                .close(4005.0 + i as f64)\n                .vol(1000.0)\n                .amount(4000.0).build",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n                .symbol(Arc::from(\"000016.SH\".to_string()))\n                .id(i)\n                .dt(Utc.from_utc_datetime(\n                    &NaiveDateTime::parse_from_str(\n                        format!(\"2024-1-2 9:3{i}:0\").as_str(),\n                        \"%Y-%m-%d %H:%M:%S\",\n                    )\n                    .unwrap(),\n                ))\n                .freq(Freq::F1)\n                .open(4000.0 + i as f64)\n                .high(4010.0 + i as f64)\n                .low(3990.0 + i as f64)\n                .close(4005.0 + i as f64)\n                .vol(1000.0).amount",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n                .symbol(Arc::from(\"000016.SH\".to_string()))\n                .id(i)\n                .dt(Utc.from_utc_datetime(\n                    &NaiveDateTime::parse_from_str(\n                        format!(\"2024-1-2 9:3{i}:0\").as_str(),\n                        \"%Y-%m-%d %H:%M:%S\",\n                    )\n                    .unwrap(),\n                ))\n                .freq(Freq::F1)\n                .open(4000.0 + i as f64)\n                .high(4010.0 + i as f64)\n                .low(3990.0 + i as f64)\n                .close(4005.0 + i as f64).vol",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n                .symbol(Arc::from(\"000016.SH\".to_string()))\n                .id(i)\n                .dt(Utc.from_utc_datetime(\n                    &NaiveDateTime::parse_from_str(\n                        format!(\"2024-1-2 9:3{i}:0\").as_str(),\n                        \"%Y-%m-%d %H:%M:%S\",\n                    )\n                    .unwrap(),\n                ))\n                .freq(Freq::F1)\n                .open(4000.0 + i as f64)\n                .high(4010.0 + i as f64)\n                .low(3990.0 + i as f64).close",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n                .symbol(Arc::from(\"000016.SH\".to_string()))\n                .id(i)\n                .dt(Utc.from_utc_datetime(\n                    &NaiveDateTime::parse_from_str(\n                        format!(\"2024-1-2 9:3{i}:0\").as_str(),\n                        \"%Y-%m-%d %H:%M:%S\",\n                    )\n                    .unwrap(),\n                ))\n                .freq(Freq::F1)\n                .open(4000.0 + i as f64)\n                .high(4010.0 + i as f64).low",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n                .symbol(Arc::from(\"000016.SH\".to_string()))\n                .id(i)\n                .dt(Utc.from_utc_datetime(\n                    &NaiveDateTime::parse_from_str(\n                        format!(\"2024-1-2 9:3{i}:0\").as_str(),\n                        \"%Y-%m-%d %H:%M:%S\",\n                    )\n                    .unwrap(),\n                ))\n                .freq(Freq::F1)\n                .open(4000.0 + i as f64).high",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n                .symbol(Arc::from(\"000016.SH\".to_string()))\n                .id(i)\n                .dt(Utc.from_utc_datetime(\n                    &NaiveDateTime::parse_from_str(\n                        format!(\"2024-1-2 9:3{i}:0\").as_str(),\n                        \"%Y-%m-%d %H:%M:%S\",\n                    )\n                    .unwrap(),\n                ))\n                .freq(Freq::F1).open",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n                .symbol(Arc::from(\"000016.SH\".to_string()))\n                .id(i)\n                .dt(Utc.from_utc_datetime(\n                    &NaiveDateTime::parse_from_str(\n                        format!(\"2024-1-2 9:3{i}:0\").as_str(),\n                        \"%Y-%m-%d %H:%M:%S\",\n                    )\n                    .unwrap(),\n                )).freq",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n                .symbol(Arc::from(\"000016.SH\".to_string()))\n                .id(i).dt",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n                .symbol(Arc::from(\"000016.SH\".to_string())).id",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "test_update",
+          "callee": "Arc::from",
+          "lineNumber": 1035
+        },
+        {
+          "caller": "test_update",
+          "callee": "\"000016.SH\".to_string",
+          "lineNumber": 1035
+        },
+        {
+          "caller": "test_update",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 1037
+        },
+        {
+          "caller": "test_update",
+          "callee": "NaiveDateTime::parse_from_str(\n                        format!(\"2024-1-2 9:3{i}:0\").as_str(),\n                        \"%Y-%m-%d %H:%M:%S\",\n                    ).unwrap",
+          "lineNumber": 1038
+        },
+        {
+          "caller": "test_update",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 1038
+        },
+        {
+          "caller": "test_update",
+          "callee": "format!(\"2024-1-2 9:3{i}:0\").as_str",
+          "lineNumber": 1039
+        },
+        {
+          "caller": "test_update",
+          "callee": "bg.freq_bars.values",
+          "lineNumber": 1058
+        },
+        {
+          "caller": "test_update",
+          "callee": "bg.freq_bars.get(&Freq::F5).unwrap().read",
+          "lineNumber": 1063
+        },
+        {
+          "caller": "test_update",
+          "callee": "bg.freq_bars.get(&Freq::F5).unwrap",
+          "lineNumber": 1063
+        },
+        {
+          "caller": "test_update",
+          "callee": "bg.freq_bars.get",
+          "lineNumber": 1063
+        },
+        {
+          "caller": "test_update",
+          "callee": "bars_5min.back().unwrap",
+          "lineNumber": 1064
+        },
+        {
+          "caller": "test_update",
+          "callee": "bars_5min.back",
+          "lineNumber": 1064
+        },
+        {
+          "caller": "test_update",
+          "callee": "bg.freq_bars.get(&Freq::F15).unwrap().read",
+          "lineNumber": 1071
+        },
+        {
+          "caller": "test_update",
+          "callee": "bg.freq_bars.get(&Freq::F15).unwrap",
+          "lineNumber": 1071
+        },
+        {
+          "caller": "test_update",
+          "callee": "bg.freq_bars.get",
+          "lineNumber": 1071
+        },
+        {
+          "caller": "test_update",
+          "callee": "bars_15min.back().unwrap",
+          "lineNumber": 1072
+        },
+        {
+          "caller": "test_update",
+          "callee": "bars_15min.back",
+          "lineNumber": 1072
+        },
+        {
+          "caller": "test_update",
+          "callee": "BarGenerator::new(Freq::F1, vec![Freq::F15], 5, Market::Futures).unwrap",
+          "lineNumber": 1082
+        },
+        {
+          "caller": "test_update",
+          "callee": "BarGenerator::new",
+          "lineNumber": 1082
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"IF2403\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F1)\n            .open(5180.0)\n            .high(5185.0)\n            .low(5178.0)\n            .close(5182.0)\n            .vol(100.0)\n            .amount(518200.0)\n            .build().unwrap",
+          "lineNumber": 1084
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"IF2403\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F1)\n            .open(5180.0)\n            .high(5185.0)\n            .low(5178.0)\n            .close(5182.0)\n            .vol(100.0)\n            .amount(518200.0).build",
+          "lineNumber": 1084
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"IF2403\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F1)\n            .open(5180.0)\n            .high(5185.0)\n            .low(5178.0)\n            .close(5182.0)\n            .vol(100.0).amount",
+          "lineNumber": 1084
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"IF2403\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F1)\n            .open(5180.0)\n            .high(5185.0)\n            .low(5178.0)\n            .close(5182.0).vol",
+          "lineNumber": 1084
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"IF2403\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F1)\n            .open(5180.0)\n            .high(5185.0)\n            .low(5178.0).close",
+          "lineNumber": 1084
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"IF2403\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F1)\n            .open(5180.0)\n            .high(5185.0).low",
+          "lineNumber": 1084
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"IF2403\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F1)\n            .open(5180.0).high",
+          "lineNumber": 1084
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"IF2403\".to_string())\n            .id(1)\n            .dt(dt)\n            .freq(Freq::F1).open",
+          "lineNumber": 1084
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"IF2403\".to_string())\n            .id(1)\n            .dt(dt).freq",
+          "lineNumber": 1084
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"IF2403\".to_string())\n            .id(1).dt",
+          "lineNumber": 1084
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"IF2403\".to_string()).id",
+          "lineNumber": 1084
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 1084
+        },
+        {
+          "caller": "test_update",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 1084
+        },
+        {
+          "caller": "test_update",
+          "callee": "\"IF2403\".to_string",
+          "lineNumber": 1085
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 1115
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "NaiveDateTime::parse_from_str(\"2024-12-12 10:01:00\", \"%Y-%m-%d %H:%M:%S\").unwrap",
+          "lineNumber": 1116
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 1116
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "BarGenerator::new(Freq::F1, vec![Freq::F5], 10, Market::AShare).unwrap",
+          "lineNumber": 1118
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "BarGenerator::new",
+          "lineNumber": 1118
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 1121
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder\n                .symbol(\"000016.SH\".to_string())\n                .id(1)\n                .dt(dt)\n                .freq(Freq::F1)\n                .open(4000.0)\n                .high(4010.0)\n                .low(3990.0)\n                .close(4005.0)\n                .vol(1000.0).amount",
+          "lineNumber": 1122
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder\n                .symbol(\"000016.SH\".to_string())\n                .id(1)\n                .dt(dt)\n                .freq(Freq::F1)\n                .open(4000.0)\n                .high(4010.0)\n                .low(3990.0)\n                .close(4005.0).vol",
+          "lineNumber": 1122
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder\n                .symbol(\"000016.SH\".to_string())\n                .id(1)\n                .dt(dt)\n                .freq(Freq::F1)\n                .open(4000.0)\n                .high(4010.0)\n                .low(3990.0).close",
+          "lineNumber": 1122
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder\n                .symbol(\"000016.SH\".to_string())\n                .id(1)\n                .dt(dt)\n                .freq(Freq::F1)\n                .open(4000.0)\n                .high(4010.0).low",
+          "lineNumber": 1122
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder\n                .symbol(\"000016.SH\".to_string())\n                .id(1)\n                .dt(dt)\n                .freq(Freq::F1)\n                .open(4000.0).high",
+          "lineNumber": 1122
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder\n                .symbol(\"000016.SH\".to_string())\n                .id(1)\n                .dt(dt)\n                .freq(Freq::F1).open",
+          "lineNumber": 1122
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder\n                .symbol(\"000016.SH\".to_string())\n                .id(1)\n                .dt(dt).freq",
+          "lineNumber": 1122
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder\n                .symbol(\"000016.SH\".to_string())\n                .id(1).dt",
+          "lineNumber": 1122
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder\n                .symbol(\"000016.SH\".to_string()).id",
+          "lineNumber": 1122
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder.symbol",
+          "lineNumber": 1122
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "\"000016.SH\".to_string",
+          "lineNumber": 1123
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder.open",
+          "lineNumber": 1135
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder.close",
+          "lineNumber": 1136
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder.high",
+          "lineNumber": 1137
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder.low",
+          "lineNumber": 1138
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder.vol",
+          "lineNumber": 1139
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder.amount",
+          "lineNumber": 1140
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder.build().unwrap",
+          "lineNumber": 1143
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "builder.build",
+          "lineNumber": 1143
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "bg.update_bar(&bar).unwrap_err",
+          "lineNumber": 1145
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "bg.update_bar",
+          "lineNumber": 1145
+        },
+        {
+          "caller": "test_update_bar_rejects_nan_ohlcv",
+          "callee": "err.to_string",
+          "lineNumber": 1146
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "BarGenerator::new(Freq::F1, vec![Freq::F5], 10, Market::AShare).unwrap",
+          "lineNumber": 1157
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "BarGenerator::new",
+          "lineNumber": 1157
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(0)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-12-12 10:05:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F5)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0)\n            .vol(f64::NAN) // 故意污染 vol\n            .amount(4000.0)\n            .build().unwrap",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(0)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-12-12 10:05:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F5)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0)\n            .vol(f64::NAN) // 故意污染 vol\n            .amount(4000.0).build",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(0)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-12-12 10:05:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F5)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0)\n            .vol(f64::NAN).amount",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(0)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-12-12 10:05:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F5)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0)\n            .close(4005.0).vol",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(0)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-12-12 10:05:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F5)\n            .open(4000.0)\n            .high(4010.0)\n            .low(3990.0).close",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(0)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-12-12 10:05:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F5)\n            .open(4000.0)\n            .high(4010.0).low",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(0)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-12-12 10:05:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F5)\n            .open(4000.0).high",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(0)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-12-12 10:05:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            ))\n            .freq(Freq::F5).open",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(0)\n            .dt(Utc.from_utc_datetime(\n                &NaiveDateTime::parse_from_str(\"2024-12-12 10:05:00\", \"%Y-%m-%d %H:%M:%S\").unwrap(),\n            )).freq",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string())\n            .id(0).dt",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "RawBarBuilder::default()\n            .symbol(\"000016.SH\".to_string()).id",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "\"000016.SH\".to_string",
+          "lineNumber": 1159
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 1161
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "NaiveDateTime::parse_from_str(\"2024-12-12 10:05:00\", \"%Y-%m-%d %H:%M:%S\").unwrap",
+          "lineNumber": 1162
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 1162
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "bg.init_freq_with_bars(Freq::F5, vec![bar]).unwrap_err",
+          "lineNumber": 1174
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "bg.init_freq_with_bars",
+          "lineNumber": 1174
+        },
+        {
+          "caller": "test_init_freq_with_bars_rejects_nan_ohlcv",
+          "callee": "err.to_string",
+          "lineNumber": 1175
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 20,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-utils/src/errors.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "from",
+          "startLine": 38,
+          "endLine": 40,
+          "params": [
+            "e"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UtilsError",
+          "startLine": 11,
+          "endLine": 34,
+          "methods": [],
+          "properties": [
+            "Polars",
+            "InvalidDateTime",
+            "InvalidFreqEndDate",
+            "ReturnsEmpty",
+            "NoWeightsAvail",
+            "Unexpected"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UtilsError",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "from",
+          "callee": "PyException::new_err",
+          "lineNumber": 39
+        },
+        {
+          "caller": "from",
+          "callee": "e.to_string",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-utils/src/freq_data.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 503,
+      "nonEmptyLines": 440,
+      "functions": [
+        {
+          "name": "freq_market_times",
+          "startLine": 82,
+          "endLine": 87,
+          "params": [
+            "freq",
+            "market"
+          ]
+        },
+        {
+          "name": "infer_market_from_bars",
+          "startLine": 93,
+          "endLine": 121,
+          "params": [
+            "bars",
+            "freq"
+          ]
+        },
+        {
+          "name": "freq_end_date",
+          "startLine": 168,
+          "endLine": 242,
+          "params": [
+            "dt",
+            "freq"
+          ]
+        },
+        {
+          "name": "freq_end_time",
+          "startLine": 245,
+          "endLine": 374,
+          "params": [
+            "dt",
+            "freq",
+            "market"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "infer_market_from_bars",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "freq_end_time",
+          "line": 245,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "freq_market_times",
+          "callee": "FREQ_EDT_MAP.get",
+          "lineNumber": 83
+        },
+        {
+          "caller": "freq_market_times",
+          "callee": "time_map.keys().cloned().collect",
+          "lineNumber": 84
+        },
+        {
+          "caller": "freq_market_times",
+          "callee": "time_map.keys().cloned",
+          "lineNumber": 84
+        },
+        {
+          "caller": "freq_market_times",
+          "callee": "time_map.keys",
+          "lineNumber": 84
+        },
+        {
+          "caller": "freq_market_times",
+          "callee": "times.sort",
+          "lineNumber": 85
+        },
+        {
+          "caller": "freq_market_times",
+          "callee": "Some",
+          "lineNumber": 86
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "freq.is_minute_freq",
+          "lineNumber": 94
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "bars.iter().rev().take(2000).map(|b| b.dt.time()).collect",
+          "lineNumber": 98
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "bars.iter().rev().take(2000).map",
+          "lineNumber": 98
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "bars.iter().rev().take",
+          "lineNumber": 98
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "bars.iter().rev",
+          "lineNumber": 98
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "bars.iter",
+          "lineNumber": 98
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "b.dt.time",
+          "lineNumber": 98
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "time_seq.sort",
+          "lineNumber": 99
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "time_seq.dedup",
+          "lineNumber": 100
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "time_seq.len",
+          "lineNumber": 101
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "time_seq.first().unwrap",
+          "lineNumber": 105
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "time_seq.first",
+          "lineNumber": 105
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "time_seq.last().unwrap",
+          "lineNumber": 106
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "time_seq.last",
+          "lineNumber": 106
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "freq_market_times",
+          "lineNumber": 108
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "times\n            .into_iter()\n            .filter(|t| *t >= min_time && *t <= max_time).collect",
+          "lineNumber": 111
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "times\n            .into_iter().filter",
+          "lineNumber": 111
+        },
+        {
+          "caller": "infer_market_from_bars",
+          "callee": "times.into_iter",
+          "lineNumber": 111
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "Ok",
+          "lineNumber": 170
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "dt.weekday().number_from_monday",
+          "lineNumber": 173
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "dt.weekday",
+          "lineNumber": 173
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "Ok",
+          "lineNumber": 181
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "Duration::days",
+          "lineNumber": 181
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "NaiveDate::from_ymd_opt(dt.year(), 12, 31).ok_or_else",
+          "lineNumber": 185
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "NaiveDate::from_ymd_opt",
+          "lineNumber": 185
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "dt.year",
+          "lineNumber": 185
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "UtilsError::InvalidFreqEndDate",
+          "lineNumber": 186
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "dt.year",
+          "lineNumber": 191
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "dt.month",
+          "lineNumber": 192
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "NaiveDate::from_ymd_opt(next_year, next_month, 1)\n                .ok_or_else(|| {\n                    UtilsError::InvalidFreqEndDate(format!(\n                        \"M freq: next_year={next_year}, next_month={next_month}\"\n                    ))\n                })?\n                .pred_opt().ok_or_else",
+          "lineNumber": 202
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "NaiveDate::from_ymd_opt(next_year, next_month, 1)\n                .ok_or_else(|| {\n                    UtilsError::InvalidFreqEndDate(format!(\n                        \"M freq: next_year={next_year}, next_month={next_month}\"\n                    ))\n                })?.pred_opt",
+          "lineNumber": 202
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "NaiveDate::from_ymd_opt(next_year, next_month, 1).ok_or_else",
+          "lineNumber": 202
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "NaiveDate::from_ymd_opt",
+          "lineNumber": 202
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "UtilsError::InvalidFreqEndDate",
+          "lineNumber": 204
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "UtilsError::InvalidFreqEndDate",
+          "lineNumber": 210
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "\"M freq: failed to get previous day\".to_string",
+          "lineNumber": 210
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "dt.year",
+          "lineNumber": 215
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "dt.month",
+          "lineNumber": 216
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "NaiveDate::from_ymd_opt(next_quarter_year, next_quarter_month, 1)\n                .ok_or_else(|| {\n                    UtilsError::InvalidFreqEndDate(format!(\n                        \"S freq: next_quarter_year={next_quarter_year}, next_quarter_month={next_quarter_month}\"\n                    ))\n                })?\n                .pred_opt().ok_or_else",
+          "lineNumber": 228
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "NaiveDate::from_ymd_opt(next_quarter_year, next_quarter_month, 1)\n                .ok_or_else(|| {\n                    UtilsError::InvalidFreqEndDate(format!(\n                        \"S freq: next_quarter_year={next_quarter_year}, next_quarter_month={next_quarter_month}\"\n                    ))\n                })?.pred_opt",
+          "lineNumber": 228
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "NaiveDate::from_ymd_opt(next_quarter_year, next_quarter_month, 1).ok_or_else",
+          "lineNumber": 228
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "NaiveDate::from_ymd_opt",
+          "lineNumber": 228
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "UtilsError::InvalidFreqEndDate",
+          "lineNumber": 230
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "UtilsError::InvalidFreqEndDate",
+          "lineNumber": 236
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "\"S freq: failed to get previous day\".to_string",
+          "lineNumber": 236
+        },
+        {
+          "caller": "freq_end_date",
+          "callee": "Ok",
+          "lineNumber": 240
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt.second",
+          "lineNumber": 251
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt.nanosecond",
+          "lineNumber": 251
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt.with_second(0).unwrap().with_nanosecond(0).unwrap",
+          "lineNumber": 252
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt.with_second(0).unwrap().with_nanosecond",
+          "lineNumber": 252
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt.with_second(0).unwrap",
+          "lineNumber": 252
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt.with_second",
+          "lineNumber": 252
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "Duration::minutes",
+          "lineNumber": 252
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt.format(\"%H:%M\").to_string",
+          "lineNumber": 258
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt.format",
+          "lineNumber": 258
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt.time",
+          "lineNumber": 259
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "freq.is_minute_freq",
+          "lineNumber": 262
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "FREQ_EDT_MAP.get",
+          "lineNumber": 263
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "time_map.get",
+          "lineNumber": 264
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt\n                .with_hour(end_time.hour())\n                .ok_or(UtilsError::InvalidDateTime)?\n                .with_minute(end_time.minute()).ok_or",
+          "lineNumber": 267
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt\n                .with_hour(end_time.hour())\n                .ok_or(UtilsError::InvalidDateTime)?.with_minute",
+          "lineNumber": 267
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt\n                .with_hour(end_time.hour()).ok_or",
+          "lineNumber": 267
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt.with_hour",
+          "lineNumber": 267
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "end_time.hour",
+          "lineNumber": 268
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "end_time.minute",
+          "lineNumber": 270
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "end_time.hour",
+          "lineNumber": 275
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "end_time.minute",
+          "lineNumber": 276
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "Ok",
+          "lineNumber": 281
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "Duration::days",
+          "lineNumber": 281
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "Ok",
+          "lineNumber": 284
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "FREQ_EDT_MAP.get",
+          "lineNumber": 288
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "NaiveTime::parse_from_str",
+          "lineNumber": 290
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "time_map.get",
+          "lineNumber": 291
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt\n                    .with_hour(end_time.hour())\n                    .ok_or(UtilsError::InvalidDateTime)?\n                    .with_minute(end_time.minute()).ok_or",
+          "lineNumber": 293
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt\n                    .with_hour(end_time.hour())\n                    .ok_or(UtilsError::InvalidDateTime)?.with_minute",
+          "lineNumber": 293
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt\n                    .with_hour(end_time.hour()).ok_or",
+          "lineNumber": 293
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt.with_hour",
+          "lineNumber": 293
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "end_time.hour",
+          "lineNumber": 294
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "end_time.minute",
+          "lineNumber": 296
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "end_time.hour",
+          "lineNumber": 299
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "end_time.minute",
+          "lineNumber": 300
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "Ok",
+          "lineNumber": 304
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "Duration::days",
+          "lineNumber": 304
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "Ok",
+          "lineNumber": 306
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "FREQ_EDT_MAP.get",
+          "lineNumber": 311
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "time_map.keys().collect",
+          "lineNumber": 312
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "time_map.keys",
+          "lineNumber": 312
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "available_times.sort",
+          "lineNumber": 313
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "NaiveTime::parse_from_str",
+          "lineNumber": 316
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "time_map.get",
+          "lineNumber": 319
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt\n                            .with_hour(end_time.hour())\n                            .ok_or(UtilsError::InvalidDateTime)?\n                            .with_minute(end_time.minute()).ok_or",
+          "lineNumber": 321
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt\n                            .with_hour(end_time.hour())\n                            .ok_or(UtilsError::InvalidDateTime)?.with_minute",
+          "lineNumber": 321
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt\n                            .with_hour(end_time.hour()).ok_or",
+          "lineNumber": 321
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt.with_hour",
+          "lineNumber": 321
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "end_time.hour",
+          "lineNumber": 322
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "end_time.minute",
+          "lineNumber": 324
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "end_time.hour",
+          "lineNumber": 327
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "end_time.minute",
+          "lineNumber": 328
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "Ok",
+          "lineNumber": 332
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "Duration::days",
+          "lineNumber": 332
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "Ok",
+          "lineNumber": 334
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "available_times.first",
+          "lineNumber": 339
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "time_map.get",
+          "lineNumber": 340
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "Duration::days",
+          "lineNumber": 342
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "next_day\n                        .with_hour(end_time.hour())\n                        .ok_or(UtilsError::InvalidDateTime)?\n                        .with_minute(end_time.minute()).ok_or",
+          "lineNumber": 343
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "next_day\n                        .with_hour(end_time.hour())\n                        .ok_or(UtilsError::InvalidDateTime)?.with_minute",
+          "lineNumber": 343
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "next_day\n                        .with_hour(end_time.hour()).ok_or",
+          "lineNumber": 343
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "next_day.with_hour",
+          "lineNumber": 343
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "end_time.hour",
+          "lineNumber": 344
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "end_time.minute",
+          "lineNumber": 346
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "Ok",
+          "lineNumber": 348
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "freq_end_date",
+          "lineNumber": 363
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "dt.date_naive",
+          "lineNumber": 363
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "utc_date\n        .and_hms_opt(0, 0, 0)\n        .ok_or(UtilsError::InvalidDateTime)?.and_utc",
+          "lineNumber": 367
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "utc_date\n        .and_hms_opt(0, 0, 0).ok_or",
+          "lineNumber": 367
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "utc_date.and_hms_opt",
+          "lineNumber": 367
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "Ok",
+          "lineNumber": 373
+        },
+        {
+          "caller": "test_daily_freq_end_time",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 418
+        },
+        {
+          "caller": "test_daily_freq_end_time",
+          "callee": "NaiveDateTime::parse_from_str(input_str, \"%Y-%m-%d %H:%M:%S\").unwrap",
+          "lineNumber": 419
+        },
+        {
+          "caller": "test_daily_freq_end_time",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 419
+        },
+        {
+          "caller": "test_daily_freq_end_time",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 422
+        },
+        {
+          "caller": "test_daily_freq_end_time",
+          "callee": "NaiveDateTime::parse_from_str(expected_str, \"%Y-%m-%d %H:%M:%S\").unwrap",
+          "lineNumber": 423
+        },
+        {
+          "caller": "test_daily_freq_end_time",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 423
+        },
+        {
+          "caller": "test_daily_freq_end_time",
+          "callee": "freq_end_time(input_dt, Freq::D, Market::AShare).unwrap",
+          "lineNumber": 426
+        },
+        {
+          "caller": "test_daily_freq_end_time",
+          "callee": "freq_end_time",
+          "lineNumber": 426
+        },
+        {
+          "caller": "to_dt_str",
+          "callee": "self.format(\"%Y-%m-%d %H:%M:%S\").to_string",
+          "lineNumber": 445
+        },
+        {
+          "caller": "to_dt_str",
+          "callee": "self.format",
+          "lineNumber": 445
+        },
+        {
+          "caller": "test_freq_minute",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 452
+        },
+        {
+          "caller": "test_freq_minute",
+          "callee": "NaiveDateTime::parse_from_str(\"2024-12-12 10:01:00\", \"%Y-%m-%d %H:%M:%S\").unwrap",
+          "lineNumber": 453
+        },
+        {
+          "caller": "test_freq_minute",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 453
+        },
+        {
+          "caller": "test_freq_year",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 492
+        },
+        {
+          "caller": "test_freq_year",
+          "callee": "NaiveDateTime::parse_from_str(\"2024-12-12 10:01:00\", \"%Y-%m-%d %H:%M:%S\").unwrap",
+          "lineNumber": 493
+        },
+        {
+          "caller": "test_freq_year",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 493
+        },
+        {
+          "caller": "test_freq_year",
+          "callee": "freq_end_time(dt, Freq::Y, Market::AShare)\n            .unwrap().to_dt_str",
+          "lineNumber": 496
+        },
+        {
+          "caller": "test_freq_year",
+          "callee": "freq_end_time(dt, Freq::Y, Market::AShare).unwrap",
+          "lineNumber": 496
+        },
+        {
+          "caller": "test_freq_year",
+          "callee": "freq_end_time",
+          "lineNumber": 496
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-utils/src/lib.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 19,
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-utils/src/monotonicity.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 160,
+      "nonEmptyLines": 144,
+      "functions": [
+        {
+          "name": "monotonicity",
+          "startLine": 23,
+          "endLine": 36,
+          "params": [
+            "sequence"
+          ]
+        },
+        {
+          "name": "average_ranks",
+          "startLine": 45,
+          "endLine": 68,
+          "params": [
+            "values"
+          ]
+        },
+        {
+          "name": "pearson_with_naturals",
+          "startLine": 75,
+          "endLine": 96,
+          "params": [
+            "ranks"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "monotonicity",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "monotonicity",
+          "callee": "sequence.len",
+          "lineNumber": 24
+        },
+        {
+          "caller": "monotonicity",
+          "callee": "sequence.iter().any",
+          "lineNumber": 29
+        },
+        {
+          "caller": "monotonicity",
+          "callee": "sequence.iter",
+          "lineNumber": 29
+        },
+        {
+          "caller": "monotonicity",
+          "callee": "x.is_nan",
+          "lineNumber": 29
+        },
+        {
+          "caller": "monotonicity",
+          "callee": "average_ranks",
+          "lineNumber": 33
+        },
+        {
+          "caller": "monotonicity",
+          "callee": "pearson_with_naturals",
+          "lineNumber": 35
+        },
+        {
+          "caller": "average_ranks",
+          "callee": "values.len",
+          "lineNumber": 46
+        },
+        {
+          "caller": "average_ranks",
+          "callee": "values.iter().copied().enumerate().collect",
+          "lineNumber": 47
+        },
+        {
+          "caller": "average_ranks",
+          "callee": "values.iter().copied().enumerate",
+          "lineNumber": 47
+        },
+        {
+          "caller": "average_ranks",
+          "callee": "values.iter().copied",
+          "lineNumber": 47
+        },
+        {
+          "caller": "average_ranks",
+          "callee": "values.iter",
+          "lineNumber": 47
+        },
+        {
+          "caller": "average_ranks",
+          "callee": "indexed.sort_by",
+          "lineNumber": 50
+        },
+        {
+          "caller": "average_ranks",
+          "callee": "a.1.partial_cmp(&b.1).unwrap_or",
+          "lineNumber": 50
+        },
+        {
+          "caller": "average_ranks",
+          "callee": "a.1.partial_cmp",
+          "lineNumber": 50
+        },
+        {
+          "caller": "pearson_with_naturals",
+          "callee": "ranks.len",
+          "lineNumber": 76
+        },
+        {
+          "caller": "pearson_with_naturals",
+          "callee": "ranks.iter().sum",
+          "lineNumber": 78
+        },
+        {
+          "caller": "pearson_with_naturals",
+          "callee": "ranks.iter",
+          "lineNumber": 78
+        },
+        {
+          "caller": "pearson_with_naturals",
+          "callee": "ranks.iter().map(|v| v * v).sum",
+          "lineNumber": 79
+        },
+        {
+          "caller": "pearson_with_naturals",
+          "callee": "ranks.iter().map",
+          "lineNumber": 79
+        },
+        {
+          "caller": "pearson_with_naturals",
+          "callee": "ranks.iter",
+          "lineNumber": 79
+        },
+        {
+          "caller": "pearson_with_naturals",
+          "callee": "ranks\n        .iter()\n        .enumerate()\n        .map(|(i, &y)| (i + 1) as f64 * y).sum",
+          "lineNumber": 80
+        },
+        {
+          "caller": "pearson_with_naturals",
+          "callee": "ranks\n        .iter()\n        .enumerate().map",
+          "lineNumber": 80
+        },
+        {
+          "caller": "pearson_with_naturals",
+          "callee": "ranks\n        .iter().enumerate",
+          "lineNumber": 80
+        },
+        {
+          "caller": "pearson_with_naturals",
+          "callee": "ranks.iter",
+          "lineNumber": 80
+        },
+        {
+          "caller": "pearson_with_naturals",
+          "callee": "(var_x * var_y).sqrt",
+          "lineNumber": 91
+        },
+        {
+          "caller": "approx_eq",
+          "callee": "a.is_nan",
+          "lineNumber": 103
+        },
+        {
+          "caller": "approx_eq",
+          "callee": "b.is_nan",
+          "lineNumber": 103
+        },
+        {
+          "caller": "approx_eq",
+          "callee": "(a - b).abs",
+          "lineNumber": 103
+        },
+        {
+          "caller": "strictly_increasing_returns_one",
+          "callee": "(0..50).map(|i| i as f64).collect",
+          "lineNumber": 108
+        },
+        {
+          "caller": "strictly_increasing_returns_one",
+          "callee": "(0..50).map",
+          "lineNumber": 108
+        },
+        {
+          "caller": "strictly_decreasing_returns_minus_one",
+          "callee": "(0..50).map(|i| -(i as f64)).collect",
+          "lineNumber": 114
+        },
+        {
+          "caller": "strictly_decreasing_returns_minus_one",
+          "callee": "(0..50).map",
+          "lineNumber": 114
+        },
+        {
+          "caller": "duplicates_use_average_rank",
+          "callee": "monotonicity",
+          "lineNumber": 139
+        },
+        {
+          "caller": "random_sample_matches_known_value",
+          "callee": "monotonicity",
+          "lineNumber": 150
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-utils/src/python/mod.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 87,
+      "functions": [
+        {
+          "name": "is_trading_time",
+          "startLine": 17,
+          "endLine": 19,
+          "params": [
+            "dt",
+            "market"
+          ]
+        },
+        {
+          "name": "freq_end_time",
+          "startLine": 27,
+          "endLine": 30,
+          "params": [
+            "dt",
+            "freq",
+            "market"
+          ]
+        },
+        {
+          "name": "monotonicity",
+          "startLine": 40,
+          "endLine": 42,
+          "params": [
+            "sequence"
+          ]
+        },
+        {
+          "name": "resample_bars",
+          "startLine": 53,
+          "endLine": 76,
+          "params": [
+            "py",
+            "bars",
+            "target_freq",
+            "drop_unfinished"
+          ]
+        },
+        {
+          "name": "register",
+          "startLine": 80,
+          "endLine": 97,
+          "params": [
+            "py",
+            "parent"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "register",
+          "line": 80,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "is_trading_time",
+          "callee": "crate::is_trading_time",
+          "lineNumber": 18
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "crate::freq_data::freq_end_time(dt, freq, market).map_err",
+          "lineNumber": 28
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "crate::freq_data::freq_end_time",
+          "lineNumber": 28
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "pyo3::exceptions::PyValueError::new_err",
+          "lineNumber": 29
+        },
+        {
+          "caller": "freq_end_time",
+          "callee": "e.to_string",
+          "lineNumber": 29
+        },
+        {
+          "caller": "monotonicity",
+          "callee": "crate::monotonicity::monotonicity",
+          "lineNumber": 41
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "target_freq.cast_bound::<pyo3::types::PyString>",
+          "lineNumber": 61
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "py_str.to_string",
+          "lineNumber": 62
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "Freq::from_str(&s).map_err",
+          "lineNumber": 63
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "Freq::from_str",
+          "lineNumber": 63
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "pyo3::exceptions::PyValueError::new_err",
+          "lineNumber": 64
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "target_freq.extract::<Freq>",
+          "lineNumber": 66
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "Err",
+          "lineNumber": 69
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "pyo3::exceptions::PyValueError::new_err",
+          "lineNumber": 69
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "crate::resample::resample_bars(&bars, target_freq, drop_unfinished).map_err",
+          "lineNumber": 74
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "crate::resample::resample_bars",
+          "lineNumber": 74
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "pyo3::exceptions::PyValueError::new_err",
+          "lineNumber": 75
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "e.to_string",
+          "lineNumber": 75
+        },
+        {
+          "caller": "register",
+          "callee": "PyModule::new",
+          "lineNumber": 81
+        },
+        {
+          "caller": "register",
+          "callee": "utils.add_function",
+          "lineNumber": 82
+        },
+        {
+          "caller": "register",
+          "callee": "utils.add_function",
+          "lineNumber": 83
+        },
+        {
+          "caller": "register",
+          "callee": "utils.add_function",
+          "lineNumber": 84
+        },
+        {
+          "caller": "register",
+          "callee": "utils.add_function",
+          "lineNumber": 85
+        },
+        {
+          "caller": "register",
+          "callee": "utils.add_class::<BarGenerator>",
+          "lineNumber": 86
+        },
+        {
+          "caller": "register",
+          "callee": "parent.add_submodule",
+          "lineNumber": 87
+        },
+        {
+          "caller": "register",
+          "callee": "parent.add_function",
+          "lineNumber": 91
+        },
+        {
+          "caller": "register",
+          "callee": "parent.add_function",
+          "lineNumber": 92
+        },
+        {
+          "caller": "register",
+          "callee": "parent.add_function",
+          "lineNumber": 93
+        },
+        {
+          "caller": "register",
+          "callee": "parent.add_function",
+          "lineNumber": 94
+        },
+        {
+          "caller": "register",
+          "callee": "parent.add_class::<BarGenerator>",
+          "lineNumber": 95
+        },
+        {
+          "caller": "register",
+          "callee": "Ok",
+          "lineNumber": 96
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-utils/src/resample.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 366,
+      "nonEmptyLines": 333,
+      "functions": [
+        {
+          "name": "resample_bars",
+          "startLine": 46,
+          "endLine": 88,
+          "params": [
+            "bars",
+            "target_freq",
+            "drop_unfinished"
+          ]
+        },
+        {
+          "name": "validate_batch_invariants",
+          "startLine": 95,
+          "endLine": 145,
+          "params": [
+            "bars"
+          ]
+        },
+        {
+          "name": "check_no_nan",
+          "startLine": 152,
+          "endLine": 164,
+          "params": [
+            "bar",
+            "idx"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "resample_bars",
+          "line": 46,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resample_bars",
+          "callee": "bars.is_empty",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "Ok",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "Vec::new",
+          "lineNumber": 52
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "validate_batch_invariants",
+          "lineNumber": 55
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "infer_market_from_bars",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "bars.len().saturating_add",
+          "lineNumber": 64
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "bars.len",
+          "lineNumber": 64
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "BarGenerator::new",
+          "lineNumber": 65
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "bg.update_bar",
+          "lineNumber": 68
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "bg\n        .freq_bars\n        .get(&target_freq)\n        .map(|lock| lock.read().iter().cloned().collect()).unwrap_or_default",
+          "lineNumber": 71
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "bg\n        .freq_bars\n        .get(&target_freq).map",
+          "lineNumber": 71
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "bg\n        .freq_bars.get",
+          "lineNumber": 71
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "lock.read().iter().cloned().collect",
+          "lineNumber": 74
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "lock.read().iter().cloned",
+          "lineNumber": 74
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "lock.read().iter",
+          "lineNumber": 74
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "lock.read",
+          "lineNumber": 74
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "bars.last().map",
+          "lineNumber": 78
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "bars.last",
+          "lineNumber": 78
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "out.last().map",
+          "lineNumber": 79
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "out.last",
+          "lineNumber": 79
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "out.pop",
+          "lineNumber": 83
+        },
+        {
+          "caller": "resample_bars",
+          "callee": "Ok",
+          "lineNumber": 87
+        },
+        {
+          "caller": "validate_batch_invariants",
+          "callee": "check_no_nan",
+          "lineNumber": 103
+        },
+        {
+          "caller": "validate_batch_invariants",
+          "callee": "bars.iter().enumerate().skip",
+          "lineNumber": 105
+        },
+        {
+          "caller": "validate_batch_invariants",
+          "callee": "bars.iter().enumerate",
+          "lineNumber": 105
+        },
+        {
+          "caller": "validate_batch_invariants",
+          "callee": "bars.iter",
+          "lineNumber": 105
+        },
+        {
+          "caller": "validate_batch_invariants",
+          "callee": "Err",
+          "lineNumber": 107
+        },
+        {
+          "caller": "validate_batch_invariants",
+          "callee": "UtilsError::Unexpected",
+          "lineNumber": 107
+        },
+        {
+          "caller": "validate_batch_invariants",
+          "callee": "Err",
+          "lineNumber": 116
+        },
+        {
+          "caller": "validate_batch_invariants",
+          "callee": "UtilsError::Unexpected",
+          "lineNumber": 116
+        },
+        {
+          "caller": "validate_batch_invariants",
+          "callee": "Err",
+          "lineNumber": 130
+        },
+        {
+          "caller": "validate_batch_invariants",
+          "callee": "UtilsError::Unexpected",
+          "lineNumber": 130
+        },
+        {
+          "caller": "validate_batch_invariants",
+          "callee": "check_no_nan",
+          "lineNumber": 140
+        },
+        {
+          "caller": "validate_batch_invariants",
+          "callee": "Ok",
+          "lineNumber": 144
+        },
+        {
+          "caller": "check_no_nan",
+          "callee": "nan_ohlcv_field",
+          "lineNumber": 153
+        },
+        {
+          "caller": "check_no_nan",
+          "callee": "Err",
+          "lineNumber": 154
+        },
+        {
+          "caller": "check_no_nan",
+          "callee": "UtilsError::Unexpected",
+          "lineNumber": 154
+        },
+        {
+          "caller": "check_no_nan",
+          "callee": "Ok",
+          "lineNumber": 163
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 174
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "NaiveDateTime::parse_from_str(\"2024-12-12 09:31:00\", \"%Y-%m-%d %H:%M:%S\").unwrap",
+          "lineNumber": 175
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 175
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "(0..n)\n            .map(|i| {\n                let price = 100.0 + i as f64;\n                RawBarBuilder::default()\n                    .symbol(\"000001.XSHG\")\n                    .id(i as i32)\n                    .dt(start + chrono::Duration::minutes(i as i64))\n                    .freq(Freq::F1)\n                    .open(price)\n                    .close(price + 0.1)\n                    .high(price + 0.5)\n                    .low(price - 0.5)\n                    .vol(1_000.0 * (i as f64 + 1.0))\n                    .amount(10_000.0 * (i as f64 + 1.0))\n                    .build()\n                    .unwrap()\n            }).collect",
+          "lineNumber": 178
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "(0..n).map",
+          "lineNumber": 178
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "RawBarBuilder::default()\n                    .symbol(\"000001.XSHG\")\n                    .id(i as i32)\n                    .dt(start + chrono::Duration::minutes(i as i64))\n                    .freq(Freq::F1)\n                    .open(price)\n                    .close(price + 0.1)\n                    .high(price + 0.5)\n                    .low(price - 0.5)\n                    .vol(1_000.0 * (i as f64 + 1.0))\n                    .amount(10_000.0 * (i as f64 + 1.0))\n                    .build().unwrap",
+          "lineNumber": 181
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "RawBarBuilder::default()\n                    .symbol(\"000001.XSHG\")\n                    .id(i as i32)\n                    .dt(start + chrono::Duration::minutes(i as i64))\n                    .freq(Freq::F1)\n                    .open(price)\n                    .close(price + 0.1)\n                    .high(price + 0.5)\n                    .low(price - 0.5)\n                    .vol(1_000.0 * (i as f64 + 1.0))\n                    .amount(10_000.0 * (i as f64 + 1.0)).build",
+          "lineNumber": 181
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "RawBarBuilder::default()\n                    .symbol(\"000001.XSHG\")\n                    .id(i as i32)\n                    .dt(start + chrono::Duration::minutes(i as i64))\n                    .freq(Freq::F1)\n                    .open(price)\n                    .close(price + 0.1)\n                    .high(price + 0.5)\n                    .low(price - 0.5)\n                    .vol(1_000.0 * (i as f64 + 1.0)).amount",
+          "lineNumber": 181
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "RawBarBuilder::default()\n                    .symbol(\"000001.XSHG\")\n                    .id(i as i32)\n                    .dt(start + chrono::Duration::minutes(i as i64))\n                    .freq(Freq::F1)\n                    .open(price)\n                    .close(price + 0.1)\n                    .high(price + 0.5)\n                    .low(price - 0.5).vol",
+          "lineNumber": 181
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "RawBarBuilder::default()\n                    .symbol(\"000001.XSHG\")\n                    .id(i as i32)\n                    .dt(start + chrono::Duration::minutes(i as i64))\n                    .freq(Freq::F1)\n                    .open(price)\n                    .close(price + 0.1)\n                    .high(price + 0.5).low",
+          "lineNumber": 181
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "RawBarBuilder::default()\n                    .symbol(\"000001.XSHG\")\n                    .id(i as i32)\n                    .dt(start + chrono::Duration::minutes(i as i64))\n                    .freq(Freq::F1)\n                    .open(price)\n                    .close(price + 0.1).high",
+          "lineNumber": 181
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "RawBarBuilder::default()\n                    .symbol(\"000001.XSHG\")\n                    .id(i as i32)\n                    .dt(start + chrono::Duration::minutes(i as i64))\n                    .freq(Freq::F1)\n                    .open(price).close",
+          "lineNumber": 181
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "RawBarBuilder::default()\n                    .symbol(\"000001.XSHG\")\n                    .id(i as i32)\n                    .dt(start + chrono::Duration::minutes(i as i64))\n                    .freq(Freq::F1).open",
+          "lineNumber": 181
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "RawBarBuilder::default()\n                    .symbol(\"000001.XSHG\")\n                    .id(i as i32)\n                    .dt(start + chrono::Duration::minutes(i as i64)).freq",
+          "lineNumber": 181
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "RawBarBuilder::default()\n                    .symbol(\"000001.XSHG\")\n                    .id(i as i32).dt",
+          "lineNumber": 181
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "RawBarBuilder::default()\n                    .symbol(\"000001.XSHG\").id",
+          "lineNumber": 181
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 181
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 181
+        },
+        {
+          "caller": "build_ashare_1min_bars",
+          "callee": "chrono::Duration::minutes",
+          "lineNumber": 184
+        },
+        {
+          "caller": "dt_str",
+          "callee": "bar.dt.format(\"%Y-%m-%d %H:%M:%S\").to_string",
+          "lineNumber": 199
+        },
+        {
+          "caller": "dt_str",
+          "callee": "bar.dt.format",
+          "lineNumber": 199
+        },
+        {
+          "caller": "empty_input_returns_empty",
+          "callee": "resample_bars(&[], Freq::F5, true).unwrap",
+          "lineNumber": 204
+        },
+        {
+          "caller": "empty_input_returns_empty",
+          "callee": "resample_bars",
+          "lineNumber": 204
+        },
+        {
+          "caller": "one_minute_to_five_minute_complete_bucket",
+          "callee": "build_ashare_1min_bars",
+          "lineNumber": 212
+        },
+        {
+          "caller": "one_minute_to_five_minute_complete_bucket",
+          "callee": "resample_bars(&bars, Freq::F5, true).unwrap",
+          "lineNumber": 213
+        },
+        {
+          "caller": "one_minute_to_five_minute_complete_bucket",
+          "callee": "resample_bars",
+          "lineNumber": 213
+        },
+        {
+          "caller": "one_minute_to_five_minute_complete_bucket",
+          "callee": "bars.iter().map(|b| b.vol).sum",
+          "lineNumber": 221
+        },
+        {
+          "caller": "one_minute_to_five_minute_complete_bucket",
+          "callee": "bars.iter().map",
+          "lineNumber": 221
+        },
+        {
+          "caller": "one_minute_to_five_minute_complete_bucket",
+          "callee": "bars.iter",
+          "lineNumber": 221
+        },
+        {
+          "caller": "one_minute_to_five_minute_complete_bucket",
+          "callee": "bars.iter().map(|b| b.amount).sum",
+          "lineNumber": 222
+        },
+        {
+          "caller": "one_minute_to_five_minute_complete_bucket",
+          "callee": "bars.iter().map",
+          "lineNumber": 222
+        },
+        {
+          "caller": "one_minute_to_five_minute_complete_bucket",
+          "callee": "bars.iter",
+          "lineNumber": 222
+        },
+        {
+          "caller": "drop_unfinished_drops_partial_tail",
+          "callee": "build_ashare_1min_bars",
+          "lineNumber": 231
+        },
+        {
+          "caller": "drop_unfinished_drops_partial_tail",
+          "callee": "resample_bars(&bars, Freq::F5, true).unwrap",
+          "lineNumber": 233
+        },
+        {
+          "caller": "drop_unfinished_drops_partial_tail",
+          "callee": "resample_bars",
+          "lineNumber": 233
+        },
+        {
+          "caller": "drop_unfinished_drops_partial_tail",
+          "callee": "resample_bars(&bars, Freq::F5, false).unwrap",
+          "lineNumber": 237
+        },
+        {
+          "caller": "drop_unfinished_drops_partial_tail",
+          "callee": "resample_bars",
+          "lineNumber": 237
+        },
+        {
+          "caller": "base_equals_target_is_identity_in_count",
+          "callee": "build_ashare_1min_bars",
+          "lineNumber": 254
+        },
+        {
+          "caller": "base_equals_target_is_identity_in_count",
+          "callee": "resample_bars(&bars, Freq::F1, true).unwrap",
+          "lineNumber": 255
+        },
+        {
+          "caller": "base_equals_target_is_identity_in_count",
+          "callee": "resample_bars",
+          "lineNumber": 255
+        },
+        {
+          "caller": "base_equals_target_is_identity_in_count",
+          "callee": "bars.iter().zip",
+          "lineNumber": 257
+        },
+        {
+          "caller": "base_equals_target_is_identity_in_count",
+          "callee": "bars.iter",
+          "lineNumber": 257
+        },
+        {
+          "caller": "base_equals_target_is_identity_in_count",
+          "callee": "out.iter",
+          "lineNumber": 257
+        },
+        {
+          "caller": "one_minute_to_daily_keeps_partial_known_limitation",
+          "callee": "build_ashare_1min_bars",
+          "lineNumber": 274
+        },
+        {
+          "caller": "one_minute_to_daily_keeps_partial_known_limitation",
+          "callee": "resample_bars(&bars, Freq::D, true).unwrap",
+          "lineNumber": 275
+        },
+        {
+          "caller": "one_minute_to_daily_keeps_partial_known_limitation",
+          "callee": "resample_bars",
+          "lineNumber": 275
+        },
+        {
+          "caller": "mixed_symbol_returns_err",
+          "callee": "build_ashare_1min_bars",
+          "lineNumber": 286
+        },
+        {
+          "caller": "mixed_symbol_returns_err",
+          "callee": "\"OTHER.XSHG\".into",
+          "lineNumber": 287
+        },
+        {
+          "caller": "mixed_symbol_returns_err",
+          "callee": "resample_bars(&bars, Freq::F5, true).unwrap_err",
+          "lineNumber": 288
+        },
+        {
+          "caller": "mixed_symbol_returns_err",
+          "callee": "resample_bars",
+          "lineNumber": 288
+        },
+        {
+          "caller": "mixed_freq_returns_err",
+          "callee": "build_ashare_1min_bars",
+          "lineNumber": 298
+        },
+        {
+          "caller": "mixed_freq_returns_err",
+          "callee": "resample_bars(&bars, Freq::F5, true).unwrap_err",
+          "lineNumber": 300
+        },
+        {
+          "caller": "mixed_freq_returns_err",
+          "callee": "resample_bars",
+          "lineNumber": 300
+        },
+        {
+          "caller": "duplicate_dt_returns_err",
+          "callee": "build_ashare_1min_bars",
+          "lineNumber": 311
+        },
+        {
+          "caller": "duplicate_dt_returns_err",
+          "callee": "resample_bars(&bars, Freq::F5, true).unwrap_err",
+          "lineNumber": 313
+        },
+        {
+          "caller": "duplicate_dt_returns_err",
+          "callee": "resample_bars",
+          "lineNumber": 313
+        },
+        {
+          "caller": "out_of_order_dt_returns_err",
+          "callee": "build_ashare_1min_bars",
+          "lineNumber": 323
+        },
+        {
+          "caller": "out_of_order_dt_returns_err",
+          "callee": "bars.swap",
+          "lineNumber": 324
+        },
+        {
+          "caller": "out_of_order_dt_returns_err",
+          "callee": "resample_bars(&bars, Freq::F5, true).unwrap_err",
+          "lineNumber": 325
+        },
+        {
+          "caller": "out_of_order_dt_returns_err",
+          "callee": "resample_bars",
+          "lineNumber": 325
+        },
+        {
+          "caller": "nan_ohlcv_returns_err",
+          "callee": "build_ashare_1min_bars",
+          "lineNumber": 336
+        },
+        {
+          "caller": "nan_ohlcv_returns_err",
+          "callee": "resample_bars(&bars, Freq::F5, true).unwrap_err",
+          "lineNumber": 346
+        },
+        {
+          "caller": "nan_ohlcv_returns_err",
+          "callee": "resample_bars",
+          "lineNumber": 346
+        },
+        {
+          "caller": "nan_ohlcv_returns_err",
+          "callee": "err.to_string",
+          "lineNumber": 347
+        },
+        {
+          "caller": "nan_at_first_bar_returns_err",
+          "callee": "build_ashare_1min_bars",
+          "lineNumber": 358
+        },
+        {
+          "caller": "nan_at_first_bar_returns_err",
+          "callee": "resample_bars(&bars, Freq::F5, true).unwrap_err",
+          "lineNumber": 360
+        },
+        {
+          "caller": "nan_at_first_bar_returns_err",
+          "callee": "resample_bars",
+          "lineNumber": 360
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-utils/src/trading_time.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "hm_minutes",
+          "startLine": 11,
+          "endLine": 13,
+          "params": [
+            "h",
+            "m"
+          ]
+        },
+        {
+          "name": "minute_of_day",
+          "startLine": 15,
+          "endLine": 17,
+          "params": [
+            "dt"
+          ]
+        },
+        {
+          "name": "is_weekday",
+          "startLine": 19,
+          "endLine": 21,
+          "params": [
+            "dt"
+          ]
+        },
+        {
+          "name": "is_trading_time",
+          "startLine": 25,
+          "endLine": 47,
+          "params": [
+            "dt",
+            "market"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "is_trading_time",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "minute_of_day",
+          "callee": "hm_minutes",
+          "lineNumber": 16
+        },
+        {
+          "caller": "minute_of_day",
+          "callee": "dt.hour",
+          "lineNumber": 16
+        },
+        {
+          "caller": "minute_of_day",
+          "callee": "dt.minute",
+          "lineNumber": 16
+        },
+        {
+          "caller": "is_trading_time",
+          "callee": "is_weekday",
+          "lineNumber": 29
+        },
+        {
+          "caller": "is_trading_time",
+          "callee": "minute_of_day",
+          "lineNumber": 32
+        },
+        {
+          "caller": "is_trading_time",
+          "callee": "(hm_minutes(9, 30)..=hm_minutes(11, 30)).contains",
+          "lineNumber": 33
+        },
+        {
+          "caller": "is_trading_time",
+          "callee": "hm_minutes",
+          "lineNumber": 33
+        },
+        {
+          "caller": "is_trading_time",
+          "callee": "hm_minutes",
+          "lineNumber": 33
+        },
+        {
+          "caller": "is_trading_time",
+          "callee": "(hm_minutes(13, 0)..=hm_minutes(15, 0)).contains",
+          "lineNumber": 34
+        },
+        {
+          "caller": "is_trading_time",
+          "callee": "hm_minutes",
+          "lineNumber": 34
+        },
+        {
+          "caller": "is_trading_time",
+          "callee": "hm_minutes",
+          "lineNumber": 34
+        },
+        {
+          "caller": "is_trading_time",
+          "callee": "is_weekday",
+          "lineNumber": 37
+        },
+        {
+          "caller": "is_trading_time",
+          "callee": "minute_of_day",
+          "lineNumber": 40
+        },
+        {
+          "caller": "is_trading_time",
+          "callee": "(hm_minutes(9, 30)..hm_minutes(12, 0)).contains",
+          "lineNumber": 42
+        },
+        {
+          "caller": "is_trading_time",
+          "callee": "hm_minutes",
+          "lineNumber": 42
+        },
+        {
+          "caller": "is_trading_time",
+          "callee": "hm_minutes",
+          "lineNumber": 42
+        },
+        {
+          "caller": "is_trading_time",
+          "callee": "(hm_minutes(13, 0)..=hm_minutes(16, 0)).contains",
+          "lineNumber": 43
+        },
+        {
+          "caller": "is_trading_time",
+          "callee": "hm_minutes",
+          "lineNumber": 43
+        },
+        {
+          "caller": "is_trading_time",
+          "callee": "hm_minutes",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    }
+  ]
+}

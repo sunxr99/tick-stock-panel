@@ -280,9 +280,9 @@ function wyckoffResearchDetail(row: Record<string, unknown>): string {
   const rs = contextOf(row.rs_context)
   return [
     ...unavailableLines,
-    '【Sector / RS 研究状态】不参与 Wyckoff 默认排序、策略评分或交易决策。',
+    '【Sector / RS 研究状态】不参与 Wyckoff 正式入选、策略评分或交易决策。',
     `研究上下文分：${fmtRankingNumber(researchScore)}（仅供后续候选池验证）`,
-    `OpportunityScore V2（研究）：${fmtRankingNumber(row.opportunity_score_v2)} = SectorScore V2 ${fmtRankingNumber(row.sector_score_v2)} × 40% + RSScore V2 ${fmtRankingNumber(row.rs_score_v2)} × 60%；正式 OpportunityScore（Legacy）：${fmtRankingNumber(row.strength_score)}`,
+    `未验证研究排序：#${fmtRankingInteger(row.research_candidate_rank)}，Legacy StrengthScore ${fmtRankingNumber(row.research_candidate_score)}。该排序不决定正式入选。OpportunityScore V2（研究）：${fmtRankingNumber(row.opportunity_score_v2)} = SectorScore V2 ${fmtRankingNumber(row.sector_score_v2)} × 40% + RSScore V2 ${fmtRankingNumber(row.rs_score_v2)} × 60%。`,
     `行业层级：SW1 ${String(row.sw1_name ?? '—')}｜SW2 ${String(row.sw2_name ?? '—')}｜SW3 ${String(row.sw3_name ?? '—')}；可用性：SW2 ${row.sw2_available ? '可用' : '缺失'}｜SW3 ${row.sw3_available ? '可用' : '缺失'}；合成口径：${String(row.opportunity_score_basis ?? '—')}`,
     `Sector：SW2 ${fmtRankingNumber(row.sw2_sector_score)} × 70% + SW3 ${fmtRankingNumber(row.sw3_sector_score)} × 30% = ${fmtRankingNumber(row.sector_score_v2)}；SW1 仅保留研究值 ${fmtRankingNumber(row.sw1_sector_score)}；层级状态 ${String(row.sector_hierarchy_state ?? '—')}`,
     `RS：市场 ${fmtRankingNumber(row.market_rs)} × 40% + SW2 ${fmtRankingNumber(row.sw2_rs)} × 40% + SW3 ${fmtRankingNumber(row.sw3_rs)} × 20% = ${fmtRankingNumber(row.rs_score_v2)}；Legacy Sector/RS/Opportunity：${fmtRankingNumber(row.sector_score_legacy)} / ${fmtRankingNumber(row.rs_score_legacy)} / ${fmtRankingNumber(row.opportunity_score_legacy)}`,
@@ -531,7 +531,7 @@ export function ScreenerTable({
       case 'score': {
         const numCls = 'px-3 py-2 text-right num tabular-nums'
         const isWyckoff = activeStrategy === WYCKOFF_FUNNEL_ID
-        const displayScore = r.score
+        const displayScore = isWyckoff ? r.research_candidate_score : r.score
         const scoreClass = displayScore >= 70
           ? 'text-accent font-medium'
           : displayScore >= 50
@@ -541,11 +541,11 @@ export function ScreenerTable({
           <td key={col.id} className={numCls}>
             {isWyckoff ? (
               <span className="inline-flex items-center justify-end gap-1.5">
-                <span className="text-muted">#{r.opportunity_rank ?? '—'}</span>
+                <span className="text-muted">研究 #{r.research_candidate_rank ?? '—'}</span>
                 <span
                   className="cursor-help text-accent font-medium"
-                  title={`正式 OpportunityScore：Legacy（当前确定 Top150）。\n研究 OpportunityScore V2 = 40% SectorScore + 60% RSScore\nSector：SW2 70% + SW3 30% = ${r.sector_score_v2 ?? '—'}\nRS：Market 40% + SW2 40% + SW3 20% = ${r.rs_score_v2 ?? '—'}\nV2 仅展示与消融研究；VP 不参与扣分或过滤。\n\n${wyckoffResearchDetail(r)}`}
-                  aria-label="查看 OpportunityScore 详情"
+                  title={`未验证研究排序：Legacy StrengthScore，不决定 Wyckoff 正式入选。\n研究 OpportunityScore V2 = 40% SectorScore + 60% RSScore\nSector：SW2 70% + SW3 30% = ${r.sector_score_v2 ?? '—'}\nRS：Market 40% + SW2 40% + SW3 20% = ${r.rs_score_v2 ?? '—'}\nVP 仅作风险路由，不参与扣分或过滤。\n\n${wyckoffResearchDetail(r)}`}
+                  aria-label="查看研究候选排序详情"
                 >
                   {displayScore != null ? Number(displayScore).toFixed(1) : '—'}
                 </span>
@@ -643,7 +643,7 @@ export function ScreenerTable({
         if (col.source.type !== 'builtin') return undefined
         const key = col.source.key
         if (key === 'score' && activeStrategy === WYCKOFF_FUNNEL_ID) {
-          return <span title="当前 Top150 使用 Legacy OpportunityScore。SW2+SW3 V2 = 40% Sector(SW2 70% + SW3 30%) + 60% RS(Market 40% + SW2 40% + SW3 20%)，仅用于展示与消融研究；VP 仅作风险路由。">机会</span>
+          return <span title="正式入选只由 Wyckoff L3 与基础过滤决定。此列为未验证的 Legacy StrengthScore 研究排序；SW2+SW3 V2 仅用于展示与消融研究；VP 仅作风险路由。">研究排序</span>
         }
         // 日k 蜡烛图开关
         if (key === 'candle' && onToggleDailyKChart) {

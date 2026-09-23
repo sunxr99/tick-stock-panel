@@ -436,6 +436,132 @@ export interface RpsRotationData {
   concept_count: number
 }
 
+export type SectorRotationKind = 'industry' | 'concept'
+
+export interface SectorRotationRow {
+  date: string
+  kind: SectorRotationKind
+  level: number | null
+  sector_id: string
+  name: string
+  membership_as_of: string | null
+  membership_source: string
+  benchmark_id: string
+  data_status: 'complete' | 'partial'
+  member_count: number
+  valid_member_count: number
+  up_ratio: number | null
+  breadth_ma20: number | null
+  amount_ratio: number | null
+  rs20_score: number | null
+  trend_score: number | null
+  breadth_score: number | null
+  volume_score: number | null
+  sector_score: number | null
+  score_delta_1d: number | null
+  score_delta_3d: number | null
+  score_delta_5d: number | null
+}
+
+export interface SectorRotationLatest {
+  row_date: string | null
+  rows: SectorRotationRow[]
+  total: number
+}
+
+export interface SectorRotationHistory {
+  rows: SectorRotationRow[]
+  total: number
+}
+
+export interface EastmoneyHotRotationRow {
+  date: string
+  ts_code: string
+  name: string
+  category: 'theme' | 'sentiment' | 'style'
+  classification_reason: string
+  taxonomy_version: string
+  leading: string | null
+  leading_code: string | null
+  pct_change: number | null
+  leading_pct: number | null
+  total_mv: number | null
+  turnover_rate: number | null
+  up_num: number | null
+  down_num: number | null
+  return_5d: number | null
+  return_5d_percentile: number | null
+}
+
+export interface EastmoneyHotRotationLatest {
+  row_date: string | null
+  rows: EastmoneyHotRotationRow[]
+  total: number
+}
+
+export interface EastmoneyHotRotationHistory {
+  rows: EastmoneyHotRotationRow[]
+  total: number
+}
+
+/** 东方财富概念板块某交易日的点时成员关系。 */
+export interface EastmoneyHotRotationMember {
+  trade_date: string
+  ts_code: string
+  con_code: string
+  name: string | null
+}
+
+export interface EastmoneyHotRotationMembers {
+  trade_date: string
+  ts_code: string
+  rows: EastmoneyHotRotationMember[]
+  total: number
+}
+
+export type TdxHotRotationCategory = 'concept' | 'industry' | 'style' | 'region'
+
+export interface TdxHotRotationRow {
+  date: string
+  ts_code: string
+  name: string
+  category: TdxHotRotationCategory
+  idx_type: string
+  close: number | null
+  pct_change: number | null
+  amount: number | null
+  turnover_rate: number | null
+  up_num: number | null
+  down_num: number | null
+  return_5d: number | null
+  return_5d_percentile: number | null
+}
+
+export interface TdxHotRotationLatest {
+  row_date: string | null
+  rows: TdxHotRotationRow[]
+  total: number
+}
+
+export interface TdxHotRotationHistory {
+  rows: TdxHotRotationRow[]
+  total: number
+}
+
+export interface TdxHotRotationMember {
+  trade_date: string
+  ts_code: string
+  con_code: string
+  con_name: string | null
+}
+
+export interface TdxHotRotationMembers {
+  trade_date: string
+  ts_code: string
+  rows: TdxHotRotationMember[]
+  total: number
+}
+
 // ===== 市场环境(Regime) =====
 export type RegimeState = 'strong' | 'lean_strong' | 'range' | 'lean_weak' | 'weak'
 
@@ -2372,6 +2498,22 @@ export const api = {
   // 概念涨幅轮动矩阵: 每列(日期)各自把所有概念按当天涨幅从高到低排序
   rpsRotation: (days: number, kind?: 'concept' | 'industry', level?: number) =>
     request<RpsRotationData>(`/api/rps/rotation?days=${days}${kind ? `&kind=${kind}` : ''}${level ? `&level=${level}` : ''}`),
+  sectorRotationLatest: (kind: SectorRotationKind, level = 3) =>
+    request<SectorRotationLatest>(`/api/rps/sector-rotation/latest?kind=${kind}${kind === 'industry' ? `&level=${level}` : ''}`),
+  sectorRotationHistory: (kind: SectorRotationKind, sectorId: string, level = 3, limit = 60) =>
+    request<SectorRotationHistory>(`/api/rps/sector-rotation/history?kind=${kind}&sector_id=${encodeURIComponent(sectorId)}&limit=${limit}${kind === 'industry' ? `&level=${level}` : ''}`),
+  eastmoneyHotRotationLatest: (category: 'theme' | 'sentiment' | 'style' | 'all' = 'theme') =>
+    request<EastmoneyHotRotationLatest>(`/api/rps/eastmoney-hot-rotation/latest?category=${category}`),
+  eastmoneyHotRotationHistory: (tsCode: string, limit = 60) =>
+    request<EastmoneyHotRotationHistory>(`/api/rps/eastmoney-hot-rotation/history?ts_code=${encodeURIComponent(tsCode)}&limit=${limit}`),
+  eastmoneyHotRotationMembers: (tsCode: string, tradeDate: string) =>
+    request<EastmoneyHotRotationMembers>(`/api/rps/eastmoney-hot-rotation/members?ts_code=${encodeURIComponent(tsCode)}&trade_date=${encodeURIComponent(tradeDate)}`),
+  tdxHotRotationLatest: (category: 'concept' | 'industry' | 'style' | 'all' = 'concept') =>
+    request<TdxHotRotationLatest>(`/api/rps/tdx-hot-rotation/latest?category=${category}`),
+  tdxHotRotationHistory: (tsCode: string, limit = 60) =>
+    request<TdxHotRotationHistory>(`/api/rps/tdx-hot-rotation/history?ts_code=${encodeURIComponent(tsCode)}&limit=${limit}`),
+  tdxHotRotationMembers: (tsCode: string, tradeDate: string) =>
+    request<TdxHotRotationMembers>(`/api/rps/tdx-hot-rotation/members?ts_code=${encodeURIComponent(tsCode)}&trade_date=${encodeURIComponent(tradeDate)}`),
 
   // 市场环境(Regime)
   regimeHistory: (start?: string, end?: string, limit?: number) => {

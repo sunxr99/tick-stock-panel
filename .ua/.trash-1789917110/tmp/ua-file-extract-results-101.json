@@ -1,0 +1,2239 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 11,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 11,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 11
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/.claude.example.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 17,
+      "nonEmptyLines": 17,
+      "sections": [
+        {
+          "heading": "projects",
+          "level": 1,
+          "line": 2
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/.env.example",
+      "language": "config",
+      "fileCategory": "config",
+      "totalLines": 311,
+      "nonEmptyLines": 290,
+      "definitions": [
+        {
+          "name": "SUPABASE_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 2,
+          "endLine": 2
+        },
+        {
+          "name": "SUPABASE_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 3,
+          "endLine": 3
+        },
+        {
+          "name": "SUPABASE_SERVICE_ROLE_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 5,
+          "endLine": 5
+        },
+        {
+          "name": "FEISHU_WEBHOOK_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 8,
+          "endLine": 8
+        },
+        {
+          "name": "TICKFLOW_API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 12,
+          "endLine": 12
+        },
+        {
+          "name": "TICKFLOW_TIMEOUT_SECONDS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 13,
+          "endLine": 13
+        },
+        {
+          "name": "TICKFLOW_MAX_RETRIES",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 14,
+          "endLine": 14
+        },
+        {
+          "name": "TICKFLOW_RETRY_BACKOFF_SECONDS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 15,
+          "endLine": 15
+        },
+        {
+          "name": "TUSHARE_TOKEN",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 18,
+          "endLine": 18
+        },
+        {
+          "name": "DEFAULT_LLM_PROVIDER",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 23,
+          "endLine": 23
+        },
+        {
+          "name": "GEMINI_API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 24,
+          "endLine": 24
+        },
+        {
+          "name": "GEMINI_MODEL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 25,
+          "endLine": 25
+        },
+        {
+          "name": "OPENAI_API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 27,
+          "endLine": 27
+        },
+        {
+          "name": "OPENAI_MODEL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 28,
+          "endLine": 28
+        },
+        {
+          "name": "DEEPSEEK_API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 29,
+          "endLine": 29
+        },
+        {
+          "name": "DEEPSEEK_MODEL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 30,
+          "endLine": 30
+        },
+        {
+          "name": "ZHIPU_API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 31,
+          "endLine": 31
+        },
+        {
+          "name": "ZHIPU_MODEL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 32,
+          "endLine": 32
+        },
+        {
+          "name": "OPENAI_COMPATIBLE_API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 33,
+          "endLine": 33
+        },
+        {
+          "name": "OPENAI_COMPATIBLE_MODEL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 34,
+          "endLine": 34
+        },
+        {
+          "name": "OPENAI_COMPATIBLE_BASE_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 35,
+          "endLine": 35
+        },
+        {
+          "name": "QWEN_API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 36,
+          "endLine": 36
+        },
+        {
+          "name": "QWEN_MODEL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 37,
+          "endLine": 37
+        },
+        {
+          "name": "VOLCENGINE_API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 38,
+          "endLine": 38
+        },
+        {
+          "name": "VOLCENGINE_MODEL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 39,
+          "endLine": 39
+        },
+        {
+          "name": "EFFICIENCY_API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 43,
+          "endLine": 43
+        },
+        {
+          "name": "EFFICIENCY_MODEL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 44,
+          "endLine": 44
+        },
+        {
+          "name": "EFFICIENCY_BASE_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 45,
+          "endLine": 45
+        },
+        {
+          "name": "SUPABASE_USER_ID",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 49,
+          "endLine": 49
+        },
+        {
+          "name": "TG_BOT_TOKEN",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 50,
+          "endLine": 50
+        },
+        {
+          "name": "TG_CHAT_ID",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 51,
+          "endLine": 51
+        },
+        {
+          "name": "MY_PORTFOLIO_STATE",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 53,
+          "endLine": 53
+        },
+        {
+          "name": "RAG_VETO_ENABLED",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 56,
+          "endLine": 56
+        },
+        {
+          "name": "RAG_NEGATIVE_KEYWORDS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 57,
+          "endLine": 57
+        },
+        {
+          "name": "RAG_TIMEOUT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 58,
+          "endLine": 58
+        },
+        {
+          "name": "RAG_MAX_WORKERS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 59,
+          "endLine": 59
+        },
+        {
+          "name": "RAG_NEWS_LOOKBACK_DAYS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 60,
+          "endLine": 60
+        },
+        {
+          "name": "RAG_MAX_RESULTS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 61,
+          "endLine": 61
+        },
+        {
+          "name": "WYCKOFF_BROWSER_CDP_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 63,
+          "endLine": 63
+        },
+        {
+          "name": "WYCKOFF_BROWSER_SEARCH_ENGINE",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 65,
+          "endLine": 65
+        },
+        {
+          "name": "FUNNEL_AI_SELECTION_MODE",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 70,
+          "endLine": 70
+        },
+        {
+          "name": "FUNNEL_CARD_STYLE",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 73,
+          "endLine": 73
+        },
+        {
+          "name": "FUNNEL_TRACKING_SHAPE_DISPLAY_LIMIT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 75,
+          "endLine": 75
+        },
+        {
+          "name": "FUNNEL_BYPASS_DISPLAY_LIMIT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 76,
+          "endLine": 76
+        },
+        {
+          "name": "FUNNEL_MAINLINE_DISPLAY_LIMIT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 77,
+          "endLine": 77
+        },
+        {
+          "name": "SHADOW_LEDGER_ENABLED",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 81,
+          "endLine": 81
+        },
+        {
+          "name": "FUNNEL_EVR_POLICY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 87,
+          "endLine": 87
+        },
+        {
+          "name": "BACKTEST_REGIME_RISK_ON_POSITION_RATIO",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 90,
+          "endLine": 90
+        },
+        {
+          "name": "BACKTEST_REGIME_NEUTRAL_POSITION_RATIO",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 91,
+          "endLine": 91
+        },
+        {
+          "name": "BACKTEST_REGIME_BEAR_REBOUND_POSITION_RATIO",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 92,
+          "endLine": 92
+        },
+        {
+          "name": "FUNNEL_AI_TOTAL_CAP",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 94,
+          "endLine": 94
+        },
+        {
+          "name": "FUNNEL_AI_MAX_PER_SECTOR",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 95,
+          "endLine": 95
+        },
+        {
+          "name": "FUNNEL_AI_RISK_ON_TREND",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 96,
+          "endLine": 96
+        },
+        {
+          "name": "FUNNEL_AI_RISK_ON_ACCUM",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 97,
+          "endLine": 97
+        },
+        {
+          "name": "FUNNEL_AI_RISK_OFF_TREND",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 98,
+          "endLine": 98
+        },
+        {
+          "name": "FUNNEL_AI_RISK_OFF_ACCUM",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 99,
+          "endLine": 99
+        },
+        {
+          "name": "FUNNEL_AI_NEUTRAL_TREND",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 100,
+          "endLine": 100
+        },
+        {
+          "name": "FUNNEL_AI_NEUTRAL_ACCUM",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 101,
+          "endLine": 101
+        },
+        {
+          "name": "FUNNEL_AI_MAX_TREND_L3_FILL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 102,
+          "endLine": 102
+        },
+        {
+          "name": "FUNNEL_AI_MAX_ACCUM_L3_FILL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 103,
+          "endLine": 103
+        },
+        {
+          "name": "FUNNEL_DYNAMIC_SHADOW_PROMOTION",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 108,
+          "endLine": 108
+        },
+        {
+          "name": "FUNNEL_DYNAMIC_SHADOW_PROMOTION_CAP",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 109,
+          "endLine": 109
+        },
+        {
+          "name": "FUNNEL_DYNAMIC_SHADOW_CONTEXT_CANDIDATES",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 110,
+          "endLine": 110
+        },
+        {
+          "name": "FUNNEL_DYNAMIC_SHADOW_HORIZON",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 111,
+          "endLine": 111
+        },
+        {
+          "name": "FUNNEL_DYNAMIC_SHADOW_MIN_BASE_SCORE",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 112,
+          "endLine": 112
+        },
+        {
+          "name": "FUNNEL_DYNAMIC_SHADOW_MIN_SCORE",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 113,
+          "endLine": 113
+        },
+        {
+          "name": "FUNNEL_DYNAMIC_SHADOW_MIN_SAMPLES",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 114,
+          "endLine": 114
+        },
+        {
+          "name": "FUNNEL_DYNAMIC_SHADOW_MIN_SPRINGBOARD",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 115,
+          "endLine": 115
+        },
+        {
+          "name": "FUNNEL_DYNAMIC_SHADOW_REQUIRE_STOCK_CAPITAL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 117,
+          "endLine": 117
+        },
+        {
+          "name": "FUNNEL_EXTERNAL_CAPITAL_MAX_SYMBOLS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 123,
+          "endLine": 123
+        },
+        {
+          "name": "FUNNEL_PANIC_REPAIR_MIN_AVG_AMOUNT_WAN",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 127,
+          "endLine": 127
+        },
+        {
+          "name": "FUNNEL_RISK_OFF_MIN_AVG_AMOUNT_WAN",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 128,
+          "endLine": 128
+        },
+        {
+          "name": "FUNNEL_RISK_OFF_DEEP_MIN_AVG_AMOUNT_WAN",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 129,
+          "endLine": 129
+        },
+        {
+          "name": "FUNNEL_CRASH_MIN_AVG_AMOUNT_WAN",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 130,
+          "endLine": 130
+        },
+        {
+          "name": "STEP3_REPORT_STYLE",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 134,
+          "endLine": 134
+        },
+        {
+          "name": "STEP3_SPLIT_BY_TRACK",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 136,
+          "endLine": 136
+        },
+        {
+          "name": "STEP3_MAX_AI_INPUT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 138,
+          "endLine": 138
+        },
+        {
+          "name": "STEP3_DEFAULT_CONTEXT_CAP",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 139,
+          "endLine": 139
+        },
+        {
+          "name": "STEP3_CONFIRMED_REVIEW_CAP",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 143,
+          "endLine": 143
+        },
+        {
+          "name": "STEP3_ENABLE_COMPRESSION",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 144,
+          "endLine": 144
+        },
+        {
+          "name": "STEP3_MAX_PER_INDUSTRY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 145,
+          "endLine": 145
+        },
+        {
+          "name": "STEP3_MAX_UPSTREAM_FILL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 146,
+          "endLine": 146
+        },
+        {
+          "name": "STEP3_RESPECT_UPSTREAM_PRIORITY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 147,
+          "endLine": 147
+        },
+        {
+          "name": "STEP3_ENABLE_RAG_VETO",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 148,
+          "endLine": 148
+        },
+        {
+          "name": "STEP3_SEND_COMPLIANCE_BRIEF",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 150,
+          "endLine": 150
+        },
+        {
+          "name": "STEP3_COMPLIANCE_FOCUS_LIMIT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 151,
+          "endLine": 151
+        },
+        {
+          "name": "STEP3_SKIP_LLM",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 153,
+          "endLine": 153
+        },
+        {
+          "name": "STEP3_LLM_PROVIDER",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 155,
+          "endLine": 155
+        },
+        {
+          "name": "STEP3_LLM_FALLBACK_PROVIDERS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 156,
+          "endLine": 156
+        },
+        {
+          "name": "DAILY_JOB_SKIP_STEP4",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 158,
+          "endLine": 158
+        },
+        {
+          "name": "STEP4_ATR_PERIOD",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 161,
+          "endLine": 161
+        },
+        {
+          "name": "STEP4_ATR_MULTIPLIER",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 162,
+          "endLine": 162
+        },
+        {
+          "name": "STEP4_ATR_SLIPPAGE_FACTOR",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 163,
+          "endLine": 163
+        },
+        {
+          "name": "STEP4_MAX_WORKERS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 164,
+          "endLine": 164
+        },
+        {
+          "name": "STEP4_BUY_HARD_STOP_ENABLED",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 166,
+          "endLine": 166
+        },
+        {
+          "name": "STEP4_BUY_HARD_STOP_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 167,
+          "endLine": 167
+        },
+        {
+          "name": "FUNNEL_MAX_STRUCTURE_STOP_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 169,
+          "endLine": 169
+        },
+        {
+          "name": "FUNNEL_LOSS_GUARD_PURE_SOS_OBSERVE_ONLY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 171,
+          "endLine": 171
+        },
+        {
+          "name": "STEP4_BUY_STOP_MODE",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 172,
+          "endLine": 172
+        },
+        {
+          "name": "STEP4_BUY_BLOCK_REGIMES",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 176,
+          "endLine": 176
+        },
+        {
+          "name": "STEP4_BUY_ALLOW_REGIMES",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 178,
+          "endLine": 178
+        },
+        {
+          "name": "STEP4_BLOCK_BUY_ON_STALE_EXIT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 181,
+          "endLine": 181
+        },
+        {
+          "name": "STEP4_PROBE_BUDGET_LIMIT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 183,
+          "endLine": 183
+        },
+        {
+          "name": "STEP4_REPAIR_PROBE_BUDGET_LIMIT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 185,
+          "endLine": 185
+        },
+        {
+          "name": "STEP4_ATTACK_BUDGET_LIMIT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 186,
+          "endLine": 186
+        },
+        {
+          "name": "STEP4_AI_CANDIDATE_POLICY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 191,
+          "endLine": 191
+        },
+        {
+          "name": "STEP4_MAX_NEW_BUYS_NEUTRAL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 193,
+          "endLine": 193
+        },
+        {
+          "name": "FUNNEL_TRADING_DAYS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 196,
+          "endLine": 196
+        },
+        {
+          "name": "FUNNEL_ENABLE_TICKFLOW_BATCH",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 197,
+          "endLine": 197
+        },
+        {
+          "name": "FUNNEL_ENFORCE_TARGET_TRADE_DATE",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 198,
+          "endLine": 198
+        },
+        {
+          "name": "FUNNEL_DATA_FRESHNESS_HARD_FAIL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 199,
+          "endLine": 199
+        },
+        {
+          "name": "FUNNEL_EXECUTOR_MODE",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 200,
+          "endLine": 200
+        },
+        {
+          "name": "FUNNEL_MAX_WORKERS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 201,
+          "endLine": 201
+        },
+        {
+          "name": "FUNNEL_BATCH_SIZE",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 202,
+          "endLine": 202
+        },
+        {
+          "name": "FUNNEL_BATCH_SLEEP",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 203,
+          "endLine": 203
+        },
+        {
+          "name": "FUNNEL_BATCH_TIMEOUT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 204,
+          "endLine": 204
+        },
+        {
+          "name": "FUNNEL_FETCH_TIMEOUT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 205,
+          "endLine": 205
+        },
+        {
+          "name": "FUNNEL_SOCKET_TIMEOUT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 206,
+          "endLine": 206
+        },
+        {
+          "name": "FUNNEL_FETCH_RETRIES",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 207,
+          "endLine": 207
+        },
+        {
+          "name": "FUNNEL_RETRY_BASE_DELAY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 208,
+          "endLine": 208
+        },
+        {
+          "name": "FUNNEL_CFG_MIN_MARKET_CAP_YI",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 211,
+          "endLine": 211
+        },
+        {
+          "name": "FUNNEL_CFG_MIN_AVG_AMOUNT_WAN",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 212,
+          "endLine": 212
+        },
+        {
+          "name": "FUNNEL_CFG_AMOUNT_AVG_WINDOW",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 213,
+          "endLine": 213
+        },
+        {
+          "name": "FUNNEL_CFG_MA_SHORT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 214,
+          "endLine": 214
+        },
+        {
+          "name": "FUNNEL_CFG_MA_LONG",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 215,
+          "endLine": 215
+        },
+        {
+          "name": "FUNNEL_CFG_MA_HOLD",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 216,
+          "endLine": 216
+        },
+        {
+          "name": "FUNNEL_CFG_BENCH_DROP_DAYS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 217,
+          "endLine": 217
+        },
+        {
+          "name": "FUNNEL_CFG_BENCH_DROP_THRESHOLD",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 218,
+          "endLine": 218
+        },
+        {
+          "name": "FUNNEL_CFG_RS_WINDOW_LONG",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 219,
+          "endLine": 219
+        },
+        {
+          "name": "FUNNEL_CFG_RS_WINDOW_SHORT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 220,
+          "endLine": 220
+        },
+        {
+          "name": "FUNNEL_CFG_RS_MIN_LONG",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 221,
+          "endLine": 221
+        },
+        {
+          "name": "FUNNEL_CFG_RS_MIN_SHORT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 222,
+          "endLine": 222
+        },
+        {
+          "name": "FUNNEL_CFG_ENABLE_RS_FILTER",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 223,
+          "endLine": 223
+        },
+        {
+          "name": "FUNNEL_CFG_ENABLE_RPS_FILTER",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 224,
+          "endLine": 224
+        },
+        {
+          "name": "FUNNEL_CFG_RPS_WINDOW_FAST",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 225,
+          "endLine": 225
+        },
+        {
+          "name": "FUNNEL_CFG_RPS_WINDOW_SLOW",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 226,
+          "endLine": 226
+        },
+        {
+          "name": "FUNNEL_CFG_RPS_FAST_MIN",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 227,
+          "endLine": 227
+        },
+        {
+          "name": "FUNNEL_CFG_RPS_SLOW_MIN",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 228,
+          "endLine": 228
+        },
+        {
+          "name": "FUNNEL_CFG_REQUIRE_BENCH_LATEST_ALIGNMENT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 229,
+          "endLine": 229
+        },
+        {
+          "name": "FUNNEL_CFG_TOP_N_SECTORS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 230,
+          "endLine": 230
+        },
+        {
+          "name": "FUNNEL_CFG_SECTOR_SUPER_STRENGTH_QUANTILE",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 231,
+          "endLine": 231
+        },
+        {
+          "name": "FUNNEL_CFG_SPRING_SUPPORT_WINDOW",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 232,
+          "endLine": 232
+        },
+        {
+          "name": "FUNNEL_CFG_SPRING_VOL_RATIO",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 233,
+          "endLine": 233
+        },
+        {
+          "name": "FUNNEL_CFG_SPRING_TR_MAX_RANGE_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 234,
+          "endLine": 234
+        },
+        {
+          "name": "FUNNEL_CFG_SPRING_TR_MAX_DRIFT_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 235,
+          "endLine": 235
+        },
+        {
+          "name": "FUNNEL_CFG_LPS_LOOKBACK",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 236,
+          "endLine": 236
+        },
+        {
+          "name": "FUNNEL_CFG_LPS_MA",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 237,
+          "endLine": 237
+        },
+        {
+          "name": "FUNNEL_CFG_LPS_MA_TOLERANCE",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 238,
+          "endLine": 238
+        },
+        {
+          "name": "FUNNEL_CFG_LPS_VOL_DRY_RATIO",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 239,
+          "endLine": 239
+        },
+        {
+          "name": "FUNNEL_CFG_LPS_VOL_REF_WINDOW",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 240,
+          "endLine": 240
+        },
+        {
+          "name": "FUNNEL_CFG_LPS_CREEK_CONFIRMATION_ENABLED",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 242,
+          "endLine": 242
+        },
+        {
+          "name": "FUNNEL_CFG_LPS_CREEK_LOOKBACK",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 243,
+          "endLine": 243
+        },
+        {
+          "name": "FUNNEL_CFG_LPS_CREEK_BREAKOUT_LOOKBACK",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 244,
+          "endLine": 244
+        },
+        {
+          "name": "FUNNEL_CFG_LPS_CREEK_SWING_WINDOW",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 245,
+          "endLine": 245
+        },
+        {
+          "name": "FUNNEL_CFG_LPS_CREEK_BREAKOUT_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 246,
+          "endLine": 246
+        },
+        {
+          "name": "FUNNEL_CFG_LPS_CREEK_HOLD_TOLERANCE_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 247,
+          "endLine": 247
+        },
+        {
+          "name": "FUNNEL_CFG_LPS_CREEK_MAX_RISE_PCT_PER_BAR",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 248,
+          "endLine": 248
+        },
+        {
+          "name": "FUNNEL_CFG_SIGNAL_SEQUENCE_BONUS_ENABLED",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 249,
+          "endLine": 249
+        },
+        {
+          "name": "FUNNEL_CFG_SIGNAL_SEQUENCE_LOOKBACK",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 250,
+          "endLine": 250
+        },
+        {
+          "name": "FUNNEL_CFG_SIGNAL_SEQUENCE_SCORE_BONUS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 251,
+          "endLine": 251
+        },
+        {
+          "name": "FUNNEL_CFG_REGIME_TRIGGER_PROFILES_ENABLED",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 253,
+          "endLine": 253
+        },
+        {
+          "name": "FUNNEL_CFG_REGIME_RISK_ON_VOLUME_MULTIPLIER",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 254,
+          "endLine": 254
+        },
+        {
+          "name": "FUNNEL_CFG_REGIME_DEFENSIVE_VOLUME_MULTIPLIER",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 255,
+          "endLine": 255
+        },
+        {
+          "name": "FUNNEL_CFG_REGIME_REPAIR_VOLUME_MULTIPLIER",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 256,
+          "endLine": 256
+        },
+        {
+          "name": "FUNNEL_CFG_EVR_LOOKBACK",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 257,
+          "endLine": 257
+        },
+        {
+          "name": "FUNNEL_CFG_EVR_VOL_RATIO",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 258,
+          "endLine": 258
+        },
+        {
+          "name": "FUNNEL_CFG_EVR_VOL_WINDOW",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 259,
+          "endLine": 259
+        },
+        {
+          "name": "FUNNEL_CFG_EVR_MAX_DROP",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 260,
+          "endLine": 260
+        },
+        {
+          "name": "FUNNEL_CFG_GLOBAL_ENTRY_MAX_BIAS_200",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 261,
+          "endLine": 261
+        },
+        {
+          "name": "FUNNEL_CFG_EVR_CONFIRM_DAYS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 262,
+          "endLine": 262
+        },
+        {
+          "name": "FUNNEL_CFG_EVR_CONFIRM_ALLOW_BREAK_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 263,
+          "endLine": 263
+        },
+        {
+          "name": "FUNNEL_CFG_ENABLE_EVR_TRIGGER",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 264,
+          "endLine": 264
+        },
+        {
+          "name": "FUNNEL_CFG_DIST_UPTHRUST_ENABLED",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 265,
+          "endLine": 265
+        },
+        {
+          "name": "FUNNEL_CFG_DIST_UPTHRUST_LOOKBACK",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 266,
+          "endLine": 266
+        },
+        {
+          "name": "FUNNEL_CFG_DIST_UPTHRUST_BREAKOUT_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 267,
+          "endLine": 267
+        },
+        {
+          "name": "FUNNEL_CFG_DIST_UPTHRUST_CLOSE_BACK_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 268,
+          "endLine": 268
+        },
+        {
+          "name": "FUNNEL_CFG_DIST_UPTHRUST_UPPER_SHADOW_RATIO",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 269,
+          "endLine": 269
+        },
+        {
+          "name": "FUNNEL_CFG_DIST_UPTHRUST_VOL_RATIO",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 270,
+          "endLine": 270
+        },
+        {
+          "name": "FUNNEL_CFG_DIST_UPTHRUST_MIN_BIAS_200_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 271,
+          "endLine": 271
+        },
+        {
+          "name": "FUNNEL_BREADTH_MA_WINDOW",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 274,
+          "endLine": 274
+        },
+        {
+          "name": "FUNNEL_BREADTH_RISK_OFF_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 275,
+          "endLine": 275
+        },
+        {
+          "name": "FUNNEL_BREADTH_RISK_ON_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 276,
+          "endLine": 276
+        },
+        {
+          "name": "FUNNEL_BREADTH_RISK_ON_DELTA",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 277,
+          "endLine": 277
+        },
+        {
+          "name": "FUNNEL_BREADTH_CLIFF_DROP_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 278,
+          "endLine": 278
+        },
+        {
+          "name": "FUNNEL_DAILY_BREADTH_REPAIR_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 279,
+          "endLine": 279
+        },
+        {
+          "name": "FUNNEL_DAILY_BREADTH_WEAK_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 280,
+          "endLine": 280
+        },
+        {
+          "name": "FUNNEL_PANIC_REPAIR_MAIN_REBOUND_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 281,
+          "endLine": 281
+        },
+        {
+          "name": "FUNNEL_PANIC_REPAIR_SMALL_REBOUND_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 282,
+          "endLine": 282
+        },
+        {
+          "name": "FUNNEL_PANIC_REPAIR_CONFIRM_MAIN_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 283,
+          "endLine": 283
+        },
+        {
+          "name": "FUNNEL_PANIC_REPAIR_CONFIRM_BREADTH_PCT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 284,
+          "endLine": 284
+        },
+        {
+          "name": "ALLOW_APPROX_TRADE_CALENDAR",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 291,
+          "endLine": 291
+        },
+        {
+          "name": "ENFORCE_TARGET_TRADE_DATE",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 292,
+          "endLine": 292
+        },
+        {
+          "name": "SPOT_SNAPSHOT_TTL_SECONDS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 295,
+          "endLine": 295
+        },
+        {
+          "name": "FUNNEL_ENABLE_SPOT_PATCH",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 296,
+          "endLine": 296
+        },
+        {
+          "name": "FUNNEL_SPOT_PATCH_RETRIES",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 297,
+          "endLine": 297
+        },
+        {
+          "name": "FUNNEL_SPOT_PATCH_SLEEP",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 298,
+          "endLine": 298
+        },
+        {
+          "name": "STEP3_ENABLE_SPOT_PATCH",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 299,
+          "endLine": 299
+        },
+        {
+          "name": "STEP3_SPOT_PATCH_RETRIES",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 300,
+          "endLine": 300
+        },
+        {
+          "name": "STEP3_SPOT_PATCH_SLEEP",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 301,
+          "endLine": 301
+        },
+        {
+          "name": "STEP4_ENABLE_SPOT_PATCH",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 302,
+          "endLine": 302
+        },
+        {
+          "name": "STEP4_SPOT_PATCH_RETRIES",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 303,
+          "endLine": 303
+        },
+        {
+          "name": "STEP4_SPOT_PATCH_SLEEP",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 304,
+          "endLine": 304
+        },
+        {
+          "name": "STEP4_BLOCK_BUY_SIGNAL_TYPES",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 311,
+          "endLine": 311
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 203
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/.pre-commit-config.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 15,
+      "nonEmptyLines": 15,
+      "sections": [
+        {
+          "heading": "repos",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/AGENTS.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 148,
+      "nonEmptyLines": 103,
+      "sections": [
+        {
+          "heading": "Wyckoff-Analysis Development Rules",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Project Overview",
+          "level": 2,
+          "line": 6
+        },
+        {
+          "heading": "Quick Commands",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Hard Rules (CI enforced, will block merge)",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "Review Rules (strong expectations, not mechanically CI-enforced)",
+          "level": 2,
+          "line": 51
+        },
+        {
+          "heading": "Strategy Evidence Rules (策略结论的证据要求)",
+          "level": 2,
+          "line": 65
+        },
+        {
+          "heading": "Gate Levels",
+          "level": 2,
+          "line": 110
+        },
+        {
+          "heading": "CI and Submission Contract",
+          "level": 2,
+          "line": 115
+        },
+        {
+          "heading": "Architecture Constraints",
+          "level": 2,
+          "line": 123
+        },
+        {
+          "heading": "Documentation Synchronization",
+          "level": 2,
+          "line": 132
+        },
+        {
+          "heading": "Commit Messages",
+          "level": 2,
+          "line": 140
+        },
+        {
+          "heading": "Before Submitting Code",
+          "level": 2,
+          "line": 144
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/CHANGELOG.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 20,
+      "nonEmptyLines": 15,
+      "sections": [
+        {
+          "heading": "Changelog",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Unreleased",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "改进",
+          "level": 3,
+          "line": 5
+        },
+        {
+          "heading": "修复",
+          "level": 3,
+          "line": 9
+        },
+        {
+          "heading": "0.9.3 (2026-05-19)",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "改进",
+          "level": 3,
+          "line": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/GEMINI.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 3,
+      "nonEmptyLines": 2,
+      "sections": [
+        {
+          "heading": "Gemini Project Instructions",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/GLOSSARY.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 411,
+      "nonEmptyLines": 328,
+      "sections": [
+        {
+          "heading": "金融术语与策略概念速查手册",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "午间独立研究扫描",
+          "level": 3,
+          "line": 5
+        },
+        {
+          "heading": "1. 回测指标",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "2. Wyckoff 方法论",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "市场四阶段",
+          "level": 3,
+          "line": 33
+        },
+        {
+          "heading": "核心触发信号（本项目 L4 层检测目标）",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "3. 漏斗管线 (Funnel Pipeline)",
+          "level": 2,
+          "line": 64
+        },
+        {
+          "heading": "L2 八通道详解",
+          "level": 3,
+          "line": 81
+        },
+        {
+          "heading": "主线引擎术语",
+          "level": 3,
+          "line": 94
+        },
+        {
+          "heading": "4. 板块轮动",
+          "level": 2,
+          "line": 120
+        },
+        {
+          "heading": "基本概念",
+          "level": 3,
+          "line": 122
+        },
+        {
+          "heading": "板块轮动状态分类",
+          "level": 3,
+          "line": 130
+        },
+        {
+          "heading": "5. 大盘水温 (Market Regime)",
+          "level": 2,
+          "line": 144
+        },
+        {
+          "heading": "实测验证",
+          "level": 3,
+          "line": 160
+        },
+        {
+          "heading": "6. watch_score 评分公式",
+          "level": 2,
+          "line": 172
+        },
+        {
+          "heading": "7. 相对强弱指标",
+          "level": 2,
+          "line": 196
+        },
+        {
+          "heading": "8. 回测偏差",
+          "level": 2,
+          "line": 208
+        },
+        {
+          "heading": "9. OMS 风控相关",
+          "level": 2,
+          "line": 224
+        },
+        {
+          "heading": "10. 技术/数据源相关",
+          "level": 2,
+          "line": 247
+        },
+        {
+          "heading": "11. 信号反馈闭环",
+          "level": 2,
+          "line": 260
+        },
+        {
+          "heading": "12. 盘中分析指标 (IntradayProfile)",
+          "level": 2,
+          "line": 287
+        },
+        {
+          "heading": "位置类（此刻价格在哪）",
+          "level": 3,
+          "line": 291
+        },
+        {
+          "heading": "方向类（往哪走、走多快）",
+          "level": 3,
+          "line": 299
+        },
+        {
+          "heading": "成交行为类（钱往哪流）",
+          "level": 3,
+          "line": 310
+        },
+        {
+          "heading": "威科夫验证类",
+          "level": 3,
+          "line": 316
+        },
+        {
+          "heading": "综合评分",
+          "level": 3,
+          "line": 322
+        },
+        {
+          "heading": "13. 研究假设（Research Hypothesis）",
+          "level": 2,
+          "line": 328
+        },
+        {
+          "heading": "14. Conversation Turn / Resume",
+          "level": 2,
+          "line": 339
+        },
+        {
+          "heading": "15. Web 运行边界",
+          "level": 2,
+          "line": 361
+        },
+        {
+          "heading": "16. 定时调度与写操作审批",
+          "level": 2,
+          "line": 381
+        },
+        {
+          "heading": "17. 外部 MCP 接入（客户端方向）",
+          "level": 2,
+          "line": 398
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 31
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 346,
+      "nonEmptyLines": 242,
+      "sections": [
+        {
+          "heading": "WyckoffAgent — Open-Source Wyckoff Trading Agent",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "云端运行成本透明",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "Special Thanks",
+          "level": 2,
+          "line": 34
+        },
+        {
+          "heading": "快速开始",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "CLI（推荐）",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "Web App",
+          "level": 3,
+          "line": 98
+        },
+        {
+          "heading": "Desktop",
+          "level": 3,
+          "line": 125
+        },
+        {
+          "heading": "Streamlit MVP 已下线",
+          "level": 3,
+          "line": 131
+        },
+        {
+          "heading": "本地可视化面板（Dashboard）",
+          "level": 3,
+          "line": 135
+        },
+        {
+          "heading": "定时任务常驻（macOS launchd）",
+          "level": 3,
+          "line": 162
+        },
+        {
+          "heading": "接入外部 MCP server",
+          "level": 3,
+          "line": 195
+        },
+        {
+          "heading": "回测网格",
+          "level": 3,
+          "line": 221
+        },
+        {
+          "heading": "功能亮点",
+          "level": 2,
+          "line": 238
+        },
+        {
+          "heading": "演示视频",
+          "level": 2,
+          "line": 263
+        },
+        {
+          "heading": "文档导航",
+          "level": 2,
+          "line": 281
+        },
+        {
+          "heading": "配置",
+          "level": 2,
+          "line": 303
+        },
+        {
+          "heading": "交流",
+          "level": 2,
+          "line": 313
+        },
+        {
+          "heading": "赞助",
+          "level": 2,
+          "line": 327
+        },
+        {
+          "heading": "License",
+          "level": 2,
+          "line": 335
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 19
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/README_STRATEGY.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 393,
+      "nonEmptyLines": 268,
+      "sections": [
+        {
+          "heading": "策略手册",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "0. 阅读索引",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "1. 系统调度与数据工程",
+          "level": 2,
+          "line": 32
+        },
+        {
+          "heading": "定时调度",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "数据窗口",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "快照机制",
+          "level": 3,
+          "line": 46
+        },
+        {
+          "heading": "信号反馈闭环",
+          "level": 3,
+          "line": 50
+        },
+        {
+          "heading": "外部观察验证",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "跨市场 universe",
+          "level": 3,
+          "line": 70
+        },
+        {
+          "heading": "盘前风控",
+          "level": 3,
+          "line": 76
+        },
+        {
+          "heading": "2. Step2：主线发现 + 多车道漏斗",
+          "level": 2,
+          "line": 102
+        },
+        {
+          "heading": "前置：大盘水温总闸",
+          "level": 3,
+          "line": 104
+        },
+        {
+          "heading": "L2 诊断与失败缺口排序",
+          "level": 3,
+          "line": 117
+        },
+        {
+          "heading": "L1：流动性过滤",
+          "level": 3,
+          "line": 135
+        },
+        {
+          "heading": "L2：八通道强度筛选",
+          "level": 3,
+          "line": 145
+        },
+        {
+          "heading": "主线引擎：可绕过 L2，不绕过买点",
+          "level": 3,
+          "line": 165
+        },
+        {
+          "heading": "L3：板块共振",
+          "level": 3,
+          "line": 179
+        },
+        {
+          "heading": "L4：威科夫触发信号",
+          "level": 3,
+          "line": 188
+        },
+        {
+          "heading": "L5：退出信号",
+          "level": 3,
+          "line": 212
+        },
+        {
+          "heading": "策略消融（手动复现）",
+          "level": 3,
+          "line": 217
+        },
+        {
+          "heading": "正式候选损失护栏",
+          "level": 3,
+          "line": 240
+        },
+        {
+          "heading": "3. Step3：AI 研报",
+          "level": 2,
+          "line": 251
+        },
+        {
+          "heading": "特征切片（不喂原始 K 线）",
+          "level": 3,
+          "line": 259
+        },
+        {
+          "heading": "候选车道",
+          "level": 3,
+          "line": 269
+        },
+        {
+          "heading": "报告执行纪律",
+          "level": 3,
+          "line": 293
+        },
+        {
+          "heading": "三阵营审判",
+          "level": 3,
+          "line": 298
+        },
+        {
+          "heading": "RAG 防雷",
+          "level": 3,
+          "line": 321
+        },
+        {
+          "heading": "4. Step4：OMS 持仓决断",
+          "level": 2,
+          "line": 327
+        },
+        {
+          "heading": "优先级",
+          "level": 3,
+          "line": 337
+        },
+        {
+          "heading": "极寒熔断",
+          "level": 3,
+          "line": 343
+        },
+        {
+          "heading": "止损继承",
+          "level": 3,
+          "line": 347
+        },
+        {
+          "heading": "双轨退出",
+          "level": 3,
+          "line": 361
+        },
+        {
+          "heading": "T+1 可卖约束",
+          "level": 3,
+          "line": 369
+        },
+        {
+          "heading": "其他规则",
+          "level": 3,
+          "line": 373
+        },
+        {
+          "heading": "5. 设计哲学",
+          "level": 2,
+          "line": 386
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 35
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/install.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 116,
+      "nonEmptyLines": 101,
+      "functions": [
+        {
+          "name": "info",
+          "startLine": 12,
+          "endLine": 12,
+          "params": []
+        },
+        {
+          "name": "ok",
+          "startLine": 13,
+          "endLine": 13,
+          "params": []
+        },
+        {
+          "name": "warn",
+          "startLine": 14,
+          "endLine": 14,
+          "params": []
+        },
+        {
+          "name": "err",
+          "startLine": 15,
+          "endLine": 15,
+          "params": []
+        },
+        {
+          "name": "find_python",
+          "startLine": 20,
+          "endLine": 35,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/pyproject.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 84,
+      "nonEmptyLines": 72,
+      "sections": [
+        {
+          "heading": "project",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "project.optional-dependencies",
+          "level": 2,
+          "line": 37
+        },
+        {
+          "heading": "project.scripts",
+          "level": 2,
+          "line": 43
+        },
+        {
+          "heading": "build-system",
+          "level": 1,
+          "line": 47
+        },
+        {
+          "heading": "tool.setuptools",
+          "level": 2,
+          "line": 51
+        },
+        {
+          "heading": "tool.setuptools.packages.find",
+          "level": 4,
+          "line": 54
+        },
+        {
+          "heading": "tool.setuptools.package-data",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "tool.setuptools.data-files",
+          "level": 3,
+          "line": 60
+        },
+        {
+          "heading": "tool.pytest.ini_options",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "tool.ruff",
+          "level": 2,
+          "line": 72
+        },
+        {
+          "heading": "tool.ruff.lint",
+          "level": 3,
+          "line": 76
+        },
+        {
+          "heading": "tool.ruff.lint.isort",
+          "level": 4,
+          "line": 80
+        },
+        {
+          "heading": "tool.ruff.lint.per-file-ignores",
+          "level": 4,
+          "line": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    }
+  ]
+}

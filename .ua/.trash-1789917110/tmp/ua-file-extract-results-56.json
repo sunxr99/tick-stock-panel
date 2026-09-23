@@ -1,0 +1,2581 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 21,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 21,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 21,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/agent-run-queue.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 65,
+      "functions": [
+        {
+          "name": "message",
+          "startLine": 10,
+          "endLine": 19,
+          "params": [
+            "body",
+            "attempts"
+          ]
+        },
+        {
+          "name": "batch",
+          "startLine": 21,
+          "endLine": 29,
+          "params": [
+            "queue",
+            "messages"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "message",
+          "callee": "vi.fn",
+          "lineNumber": 16
+        },
+        {
+          "caller": "message",
+          "callee": "vi.fn",
+          "lineNumber": 17
+        },
+        {
+          "caller": "batch",
+          "callee": "vi.fn",
+          "lineNumber": 26
+        },
+        {
+          "caller": "batch",
+          "callee": "vi.fn",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/agent-run-queue.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 71,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "handleAgentRunQueue",
+          "startLine": 20,
+          "endLine": 32,
+          "params": [
+            "batch",
+            "env",
+            "dependencies"
+          ]
+        },
+        {
+          "name": "handleMessage",
+          "startLine": 34,
+          "endLine": 67,
+          "params": [
+            "queue",
+            "message",
+            "env",
+            "dependencies"
+          ]
+        },
+        {
+          "name": "retryDelay",
+          "startLine": 69,
+          "endLine": 71,
+          "params": [
+            "attempts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AGENT_RUN_QUEUE_NAME",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "AGENT_RUN_DEAD_LETTER_QUEUE_NAME",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "handleAgentRunQueue",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handleAgentRunQueue",
+          "callee": "isAgentRunMessage",
+          "lineNumber": 26
+        },
+        {
+          "caller": "handleAgentRunQueue",
+          "callee": "message.ack",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handleAgentRunQueue",
+          "callee": "handleMessage",
+          "lineNumber": 30
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "(dependencies.failDeadLetter || failDeadLetterAgentRun)",
+          "lineNumber": 42
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "message.ack",
+          "lineNumber": 43
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "message.ack",
+          "lineNumber": 47
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "(dependencies.consume || consumePythonResearch)",
+          "lineNumber": 50
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "message.retry",
+          "lineNumber": 52
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "retryDelay",
+          "lineNumber": 52
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "message.ack",
+          "lineNumber": 55
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "log",
+          "lineNumber": 58
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "safeRequestId",
+          "lineNumber": 59
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "message.retry",
+          "lineNumber": 65
+        },
+        {
+          "caller": "handleMessage",
+          "callee": "retryDelay",
+          "lineNumber": 65
+        },
+        {
+          "caller": "retryDelay",
+          "callee": "Math.min",
+          "lineNumber": 70
+        },
+        {
+          "caller": "retryDelay",
+          "callee": "Math.max",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/agent-run-store.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 166,
+      "nonEmptyLines": 140,
+      "classes": [
+        {
+          "name": "FakeRedis",
+          "startLine": 6,
+          "endLine": 51,
+          "methods": [
+            "set",
+            "get",
+            "del",
+            "incrby",
+            "expireat",
+            "createScript"
+          ],
+          "properties": [
+            "values",
+            "expirations"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "set",
+          "callee": "this.values.has",
+          "lineNumber": 11
+        },
+        {
+          "caller": "set",
+          "callee": "this.values.set",
+          "lineNumber": 12
+        },
+        {
+          "caller": "get",
+          "callee": "this.values.get",
+          "lineNumber": 17
+        },
+        {
+          "caller": "del",
+          "callee": "this.values.delete",
+          "lineNumber": 21
+        },
+        {
+          "caller": "incrby",
+          "callee": "Number",
+          "lineNumber": 25
+        },
+        {
+          "caller": "incrby",
+          "callee": "this.values.get",
+          "lineNumber": 25
+        },
+        {
+          "caller": "incrby",
+          "callee": "this.values.set",
+          "lineNumber": 26
+        },
+        {
+          "caller": "expireat",
+          "callee": "this.values.has",
+          "lineNumber": 31
+        },
+        {
+          "caller": "expireat",
+          "callee": "this.expirations.set",
+          "lineNumber": 32
+        },
+        {
+          "caller": "createScript",
+          "callee": "script.includes",
+          "lineNumber": 39
+        },
+        {
+          "caller": "createScript",
+          "callee": "this.values.get",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createScript",
+          "callee": "this.values.delete",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createScript",
+          "callee": "this.values.get",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createScript",
+          "callee": "JSON.parse",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createScript",
+          "callee": "this.values.set",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/agent-run-store.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 192,
+      "nonEmptyLines": 163,
+      "functions": [
+        {
+          "name": "createAgentRunStore",
+          "startLine": 155,
+          "endLine": 161,
+          "params": [
+            "env"
+          ]
+        },
+        {
+          "name": "isClaimable",
+          "startLine": 163,
+          "endLine": 165,
+          "params": [
+            "status"
+          ]
+        },
+        {
+          "name": "runKey",
+          "startLine": 167,
+          "endLine": 169,
+          "params": [
+            "userId",
+            "runId"
+          ]
+        },
+        {
+          "name": "leaseKey",
+          "startLine": 171,
+          "endLine": 173,
+          "params": [
+            "userId",
+            "runId"
+          ]
+        },
+        {
+          "name": "activeSlotKey",
+          "startLine": 175,
+          "endLine": 177,
+          "params": [
+            "userId"
+          ]
+        },
+        {
+          "name": "dailyCpuKey",
+          "startLine": 179,
+          "endLine": 181,
+          "params": [
+            "userId",
+            "now"
+          ]
+        },
+        {
+          "name": "nextUtcDay",
+          "startLine": 183,
+          "endLine": 186,
+          "params": [
+            "now"
+          ]
+        },
+        {
+          "name": "runTtl",
+          "startLine": 188,
+          "endLine": 192,
+          "params": [
+            "raw"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AgentRunStore",
+          "startLine": 54,
+          "endLine": 153,
+          "methods": [
+            "constructor",
+            "save",
+            "get",
+            "remove",
+            "cancel",
+            "claim",
+            "requeue",
+            "fail",
+            "acquireLease",
+            "releaseLease",
+            "acquireActiveSlot",
+            "releaseActiveSlot",
+            "dailyCpuUsage",
+            "addDailyCpuUsage",
+            "transition"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "AgentRunStore",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "createAgentRunStore",
+          "line": 155,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "save",
+          "callee": "this.redis.set",
+          "lineNumber": 58
+        },
+        {
+          "caller": "save",
+          "callee": "runKey",
+          "lineNumber": 58
+        },
+        {
+          "caller": "get",
+          "callee": "this.redis.get",
+          "lineNumber": 62
+        },
+        {
+          "caller": "get",
+          "callee": "runKey",
+          "lineNumber": 62
+        },
+        {
+          "caller": "remove",
+          "callee": "this.redis.del",
+          "lineNumber": 66
+        },
+        {
+          "caller": "remove",
+          "callee": "runKey",
+          "lineNumber": 66
+        },
+        {
+          "caller": "cancel",
+          "callee": "this.get",
+          "lineNumber": 70
+        },
+        {
+          "caller": "cancel",
+          "callee": "this.transition",
+          "lineNumber": 72
+        },
+        {
+          "caller": "cancel",
+          "callee": "new Date().toISOString",
+          "lineNumber": 75
+        },
+        {
+          "caller": "claim",
+          "callee": "this.get",
+          "lineNumber": 80
+        },
+        {
+          "caller": "claim",
+          "callee": "isClaimable",
+          "lineNumber": 81
+        },
+        {
+          "caller": "claim",
+          "callee": "this.transition",
+          "lineNumber": 82
+        },
+        {
+          "caller": "claim",
+          "callee": "new Date().toISOString",
+          "lineNumber": 86
+        },
+        {
+          "caller": "requeue",
+          "callee": "this.transition",
+          "lineNumber": 92
+        },
+        {
+          "caller": "fail",
+          "callee": "isClaimable",
+          "lineNumber": 100
+        },
+        {
+          "caller": "fail",
+          "callee": "this.transition",
+          "lineNumber": 101
+        },
+        {
+          "caller": "fail",
+          "callee": "new Date().toISOString",
+          "lineNumber": 105
+        },
+        {
+          "caller": "acquireLease",
+          "callee": "Boolean",
+          "lineNumber": 110
+        },
+        {
+          "caller": "acquireLease",
+          "callee": "this.redis.set",
+          "lineNumber": 110
+        },
+        {
+          "caller": "acquireLease",
+          "callee": "leaseKey",
+          "lineNumber": 110
+        },
+        {
+          "caller": "releaseLease",
+          "callee": "this.redis.del",
+          "lineNumber": 114
+        },
+        {
+          "caller": "releaseLease",
+          "callee": "leaseKey",
+          "lineNumber": 114
+        },
+        {
+          "caller": "acquireActiveSlot",
+          "callee": "Boolean",
+          "lineNumber": 118
+        },
+        {
+          "caller": "acquireActiveSlot",
+          "callee": "this.redis.set",
+          "lineNumber": 118
+        },
+        {
+          "caller": "acquireActiveSlot",
+          "callee": "activeSlotKey",
+          "lineNumber": 118
+        },
+        {
+          "caller": "releaseActiveSlot",
+          "callee": "this.redis.createScript",
+          "lineNumber": 122
+        },
+        {
+          "caller": "releaseActiveSlot",
+          "callee": "script.eval",
+          "lineNumber": 123
+        },
+        {
+          "caller": "releaseActiveSlot",
+          "callee": "activeSlotKey",
+          "lineNumber": 123
+        },
+        {
+          "caller": "dailyCpuUsage",
+          "callee": "Date.now",
+          "lineNumber": 126
+        },
+        {
+          "caller": "dailyCpuUsage",
+          "callee": "await this.redis.get",
+          "lineNumber": 127
+        },
+        {
+          "caller": "dailyCpuUsage",
+          "callee": "dailyCpuKey",
+          "lineNumber": 127
+        },
+        {
+          "caller": "dailyCpuUsage",
+          "callee": "Number.isFinite",
+          "lineNumber": 128
+        },
+        {
+          "caller": "dailyCpuUsage",
+          "callee": "Math.trunc",
+          "lineNumber": 128
+        },
+        {
+          "caller": "addDailyCpuUsage",
+          "callee": "Date.now",
+          "lineNumber": 131
+        },
+        {
+          "caller": "addDailyCpuUsage",
+          "callee": "Math.max",
+          "lineNumber": 132
+        },
+        {
+          "caller": "addDailyCpuUsage",
+          "callee": "Math.trunc",
+          "lineNumber": 132
+        },
+        {
+          "caller": "addDailyCpuUsage",
+          "callee": "this.dailyCpuUsage",
+          "lineNumber": 133
+        },
+        {
+          "caller": "addDailyCpuUsage",
+          "callee": "dailyCpuKey",
+          "lineNumber": 134
+        },
+        {
+          "caller": "addDailyCpuUsage",
+          "callee": "this.redis.incrby",
+          "lineNumber": 135
+        },
+        {
+          "caller": "addDailyCpuUsage",
+          "callee": "this.redis.expireat",
+          "lineNumber": 136
+        },
+        {
+          "caller": "addDailyCpuUsage",
+          "callee": "nextUtcDay",
+          "lineNumber": 136
+        },
+        {
+          "caller": "transition",
+          "callee": "this.redis.createScript",
+          "lineNumber": 146
+        },
+        {
+          "caller": "transition",
+          "callee": "script.eval",
+          "lineNumber": 147
+        },
+        {
+          "caller": "transition",
+          "callee": "runKey",
+          "lineNumber": 147
+        },
+        {
+          "caller": "transition",
+          "callee": "JSON.stringify",
+          "lineNumber": 149
+        },
+        {
+          "caller": "transition",
+          "callee": "String",
+          "lineNumber": 150
+        },
+        {
+          "caller": "createAgentRunStore",
+          "callee": "env.UPSTASH_REDIS_REST_URL?.trim",
+          "lineNumber": 156
+        },
+        {
+          "caller": "createAgentRunStore",
+          "callee": "env.UPSTASH_REDIS_REST_TOKEN?.trim",
+          "lineNumber": 157
+        },
+        {
+          "caller": "createAgentRunStore",
+          "callee": "runTtl",
+          "lineNumber": 160
+        },
+        {
+          "caller": "runKey",
+          "callee": "encodeURIComponent",
+          "lineNumber": 168
+        },
+        {
+          "caller": "runKey",
+          "callee": "encodeURIComponent",
+          "lineNumber": 168
+        },
+        {
+          "caller": "leaseKey",
+          "callee": "runKey",
+          "lineNumber": 172
+        },
+        {
+          "caller": "activeSlotKey",
+          "callee": "encodeURIComponent",
+          "lineNumber": 176
+        },
+        {
+          "caller": "dailyCpuKey",
+          "callee": "new Date(now).toISOString().slice",
+          "lineNumber": 180
+        },
+        {
+          "caller": "dailyCpuKey",
+          "callee": "new Date(now).toISOString",
+          "lineNumber": 180
+        },
+        {
+          "caller": "dailyCpuKey",
+          "callee": "encodeURIComponent",
+          "lineNumber": 180
+        },
+        {
+          "caller": "nextUtcDay",
+          "callee": "Math.floor",
+          "lineNumber": 185
+        },
+        {
+          "caller": "nextUtcDay",
+          "callee": "Date.UTC",
+          "lineNumber": 185
+        },
+        {
+          "caller": "nextUtcDay",
+          "callee": "date.getUTCFullYear",
+          "lineNumber": 185
+        },
+        {
+          "caller": "nextUtcDay",
+          "callee": "date.getUTCMonth",
+          "lineNumber": 185
+        },
+        {
+          "caller": "nextUtcDay",
+          "callee": "date.getUTCDate",
+          "lineNumber": 185
+        },
+        {
+          "caller": "runTtl",
+          "callee": "Number",
+          "lineNumber": 189
+        },
+        {
+          "caller": "runTtl",
+          "callee": "Number.isFinite",
+          "lineNumber": 190
+        },
+        {
+          "caller": "runTtl",
+          "callee": "Math.min",
+          "lineNumber": 191
+        },
+        {
+          "caller": "runTtl",
+          "callee": "Math.trunc",
+          "lineNumber": 191
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 8,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/agent-run.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 415,
+      "nonEmptyLines": 356,
+      "functions": [
+        {
+          "name": "testStore",
+          "startLine": 22,
+          "endLine": 39,
+          "params": [
+            "overrides"
+          ]
+        },
+        {
+          "name": "runMessage",
+          "startLine": 41,
+          "endLine": 43,
+          "params": [
+            "overrides"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testStore",
+          "callee": "vi.fn",
+          "lineNumber": 24
+        },
+        {
+          "caller": "testStore",
+          "callee": "vi.fn",
+          "lineNumber": 25
+        },
+        {
+          "caller": "testStore",
+          "callee": "vi.fn",
+          "lineNumber": 26
+        },
+        {
+          "caller": "testStore",
+          "callee": "vi.fn",
+          "lineNumber": 27
+        },
+        {
+          "caller": "testStore",
+          "callee": "vi.fn",
+          "lineNumber": 28
+        },
+        {
+          "caller": "testStore",
+          "callee": "vi.fn",
+          "lineNumber": 29
+        },
+        {
+          "caller": "testStore",
+          "callee": "vi.fn",
+          "lineNumber": 30
+        },
+        {
+          "caller": "testStore",
+          "callee": "vi.fn",
+          "lineNumber": 31
+        },
+        {
+          "caller": "testStore",
+          "callee": "vi.fn",
+          "lineNumber": 32
+        },
+        {
+          "caller": "testStore",
+          "callee": "vi.fn",
+          "lineNumber": 33
+        },
+        {
+          "caller": "testStore",
+          "callee": "vi.fn",
+          "lineNumber": 34
+        },
+        {
+          "caller": "testStore",
+          "callee": "vi.fn",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testStore",
+          "callee": "vi.fn",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/agent-run.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 410,
+      "nonEmptyLines": 379,
+      "functions": [
+        {
+          "name": "enqueuePythonResearch",
+          "startLine": 56,
+          "endLine": 89,
+          "params": [
+            "env",
+            "userId",
+            "script",
+            "dependencies"
+          ]
+        },
+        {
+          "name": "consumePythonResearch",
+          "startLine": 91,
+          "endLine": 114,
+          "params": [
+            "env",
+            "message",
+            "dependencies"
+          ]
+        },
+        {
+          "name": "failDeadLetterAgentRun",
+          "startLine": 116,
+          "endLine": 135,
+          "params": [
+            "env",
+            "message",
+            "dependencies"
+          ]
+        },
+        {
+          "name": "isAgentRunMessage",
+          "startLine": 137,
+          "endLine": 145,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "reserveActiveRunSlot",
+          "startLine": 147,
+          "endLine": 157,
+          "params": [
+            "store",
+            "userId",
+            "runId"
+          ]
+        },
+        {
+          "name": "ensureAgentRunQuota",
+          "startLine": 159,
+          "endLine": 173,
+          "params": [
+            "env",
+            "userId",
+            "dependencies"
+          ]
+        },
+        {
+          "name": "ensureDailyCpuBudget",
+          "startLine": 175,
+          "endLine": 184,
+          "params": [
+            "env",
+            "store",
+            "userId"
+          ]
+        },
+        {
+          "name": "releaseActiveRunSlot",
+          "startLine": 186,
+          "endLine": 188,
+          "params": [
+            "store",
+            "userId",
+            "runId"
+          ]
+        },
+        {
+          "name": "failQueueDelivery",
+          "startLine": 190,
+          "endLine": 201,
+          "params": [
+            "store",
+            "userId",
+            "record",
+            "context",
+            "log"
+          ]
+        },
+        {
+          "name": "executeQueuedRun",
+          "startLine": 203,
+          "endLine": 241,
+          "params": [
+            "store",
+            "message",
+            "record",
+            "env",
+            "context",
+            "log",
+            "executeSandbox",
+            "notify"
+          ]
+        },
+        {
+          "name": "finishExecutedRun",
+          "startLine": 243,
+          "endLine": 290,
+          "params": [
+            "store",
+            "message",
+            "record",
+            "result",
+            "context",
+            "log",
+            "notify",
+            "env",
+            "startedAt",
+            "alreadyStaged"
+          ]
+        },
+        {
+          "name": "stageRunningResult",
+          "startLine": 292,
+          "endLine": 314,
+          "params": [
+            "store",
+            "userId",
+            "record",
+            "result"
+          ]
+        },
+        {
+          "name": "stagedSandboxResult",
+          "startLine": 316,
+          "endLine": 334,
+          "params": [
+            "record"
+          ]
+        },
+        {
+          "name": "failConfiguration",
+          "startLine": 336,
+          "endLine": 357,
+          "params": [
+            "store",
+            "userId",
+            "record",
+            "context",
+            "log",
+            "error",
+            "startedAt",
+            "errorCode"
+          ]
+        },
+        {
+          "name": "storeFor",
+          "startLine": 359,
+          "endLine": 367,
+          "params": [
+            "env",
+            "dependencies"
+          ]
+        },
+        {
+          "name": "newRunRecord",
+          "startLine": 369,
+          "endLine": 377,
+          "params": []
+        },
+        {
+          "name": "completeRun",
+          "startLine": 379,
+          "endLine": 393,
+          "params": [
+            "record",
+            "result"
+          ]
+        },
+        {
+          "name": "failRun",
+          "startLine": 395,
+          "endLine": 397,
+          "params": [
+            "record",
+            "error"
+          ]
+        },
+        {
+          "name": "positiveInt",
+          "startLine": 399,
+          "endLine": 402,
+          "params": [
+            "raw",
+            "fallback"
+          ]
+        },
+        {
+          "name": "isConfigurationError",
+          "startLine": 404,
+          "endLine": 406,
+          "params": [
+            "error"
+          ]
+        },
+        {
+          "name": "isTerminal",
+          "startLine": 408,
+          "endLine": 410,
+          "params": [
+            "record"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "AgentRunServiceError",
+          "startLine": 46,
+          "endLine": 54,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PYTHON_RESEARCH_SCRIPT_SCHEMA",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "AGENT_RUN_INPUT_SCHEMA",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "AgentRunServiceError",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "enqueuePythonResearch",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "consumePythonResearch",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "failDeadLetterAgentRun",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "isAgentRunMessage",
+          "line": 137,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 52
+        },
+        {
+          "caller": "enqueuePythonResearch",
+          "callee": "storeFor",
+          "lineNumber": 63
+        },
+        {
+          "caller": "enqueuePythonResearch",
+          "callee": "newRunRecord",
+          "lineNumber": 64
+        },
+        {
+          "caller": "enqueuePythonResearch",
+          "callee": "safeRequestId",
+          "lineNumber": 65
+        },
+        {
+          "caller": "enqueuePythonResearch",
+          "callee": "ensureDailyCpuBudget",
+          "lineNumber": 68
+        },
+        {
+          "caller": "enqueuePythonResearch",
+          "callee": "reserveActiveRunSlot",
+          "lineNumber": 69
+        },
+        {
+          "caller": "enqueuePythonResearch",
+          "callee": "ensureAgentRunQuota",
+          "lineNumber": 72
+        },
+        {
+          "caller": "enqueuePythonResearch",
+          "callee": "store.save",
+          "lineNumber": 73
+        },
+        {
+          "caller": "enqueuePythonResearch",
+          "callee": "failQueueDelivery",
+          "lineNumber": 75
+        },
+        {
+          "caller": "enqueuePythonResearch",
+          "callee": "queue.send",
+          "lineNumber": 77
+        },
+        {
+          "caller": "enqueuePythonResearch",
+          "callee": "failQueueDelivery",
+          "lineNumber": 79
+        },
+        {
+          "caller": "enqueuePythonResearch",
+          "callee": "log",
+          "lineNumber": 81
+        },
+        {
+          "caller": "enqueuePythonResearch",
+          "callee": "releaseActiveRunSlot",
+          "lineNumber": 84
+        },
+        {
+          "caller": "enqueuePythonResearch",
+          "callee": "log",
+          "lineNumber": 86
+        },
+        {
+          "caller": "consumePythonResearch",
+          "callee": "storeFor",
+          "lineNumber": 96
+        },
+        {
+          "caller": "consumePythonResearch",
+          "callee": "safeRequestId",
+          "lineNumber": 99
+        },
+        {
+          "caller": "consumePythonResearch",
+          "callee": "store.acquireLease",
+          "lineNumber": 100
+        },
+        {
+          "caller": "consumePythonResearch",
+          "callee": "store.claim",
+          "lineNumber": 103
+        },
+        {
+          "caller": "consumePythonResearch",
+          "callee": "failConfiguration",
+          "lineNumber": 106
+        },
+        {
+          "caller": "consumePythonResearch",
+          "callee": "Date.now",
+          "lineNumber": 106
+        },
+        {
+          "caller": "consumePythonResearch",
+          "callee": "notify",
+          "lineNumber": 107
+        },
+        {
+          "caller": "consumePythonResearch",
+          "callee": "executeQueuedRun",
+          "lineNumber": 110
+        },
+        {
+          "caller": "consumePythonResearch",
+          "callee": "store.releaseLease",
+          "lineNumber": 112
+        },
+        {
+          "caller": "failDeadLetterAgentRun",
+          "callee": "storeFor",
+          "lineNumber": 121
+        },
+        {
+          "caller": "failDeadLetterAgentRun",
+          "callee": "store.get",
+          "lineNumber": 122
+        },
+        {
+          "caller": "failDeadLetterAgentRun",
+          "callee": "isTerminal",
+          "lineNumber": 123
+        },
+        {
+          "caller": "failDeadLetterAgentRun",
+          "callee": "safeRequestId",
+          "lineNumber": 124
+        },
+        {
+          "caller": "failDeadLetterAgentRun",
+          "callee": "store.fail",
+          "lineNumber": 125
+        },
+        {
+          "caller": "failDeadLetterAgentRun",
+          "callee": "releaseActiveRunSlot",
+          "lineNumber": 127
+        },
+        {
+          "caller": "failDeadLetterAgentRun",
+          "callee": "(dependencies.notify || notifyAgentRun)",
+          "lineNumber": 128
+        },
+        {
+          "caller": "failDeadLetterAgentRun",
+          "callee": "(dependencies.log || logSandboxRun)",
+          "lineNumber": 129
+        },
+        {
+          "caller": "reserveActiveRunSlot",
+          "callee": "store.acquireActiveSlot",
+          "lineNumber": 150
+        },
+        {
+          "caller": "ensureAgentRunQuota",
+          "callee": "(dependencies.checkQuota || checkAgentRunQuota)",
+          "lineNumber": 166
+        },
+        {
+          "caller": "ensureDailyCpuBudget",
+          "callee": "positiveInt",
+          "lineNumber": 176
+        },
+        {
+          "caller": "ensureDailyCpuBudget",
+          "callee": "store.dailyCpuUsage",
+          "lineNumber": 179
+        },
+        {
+          "caller": "releaseActiveRunSlot",
+          "callee": "store.releaseActiveSlot(userId, runId).catch",
+          "lineNumber": 187
+        },
+        {
+          "caller": "releaseActiveRunSlot",
+          "callee": "store.releaseActiveSlot",
+          "lineNumber": 187
+        },
+        {
+          "caller": "failQueueDelivery",
+          "callee": "store.fail(userId, record, 'Agent run queue is unavailable').catch",
+          "lineNumber": 197
+        },
+        {
+          "caller": "failQueueDelivery",
+          "callee": "store.fail",
+          "lineNumber": 197
+        },
+        {
+          "caller": "failQueueDelivery",
+          "callee": "failRun",
+          "lineNumber": 198
+        },
+        {
+          "caller": "failQueueDelivery",
+          "callee": "log",
+          "lineNumber": 199
+        },
+        {
+          "caller": "executeQueuedRun",
+          "callee": "Date.now",
+          "lineNumber": 213
+        },
+        {
+          "caller": "executeQueuedRun",
+          "callee": "log",
+          "lineNumber": 214
+        },
+        {
+          "caller": "executeQueuedRun",
+          "callee": "notify",
+          "lineNumber": 215
+        },
+        {
+          "caller": "executeQueuedRun",
+          "callee": "stagedSandboxResult",
+          "lineNumber": 216
+        },
+        {
+          "caller": "executeQueuedRun",
+          "callee": "finishExecutedRun",
+          "lineNumber": 219
+        },
+        {
+          "caller": "executeQueuedRun",
+          "callee": "executeSandbox",
+          "lineNumber": 222
+        },
+        {
+          "caller": "executeQueuedRun",
+          "callee": "finishExecutedRun",
+          "lineNumber": 223
+        },
+        {
+          "caller": "executeQueuedRun",
+          "callee": "isConfigurationError",
+          "lineNumber": 225
+        },
+        {
+          "caller": "executeQueuedRun",
+          "callee": "failConfiguration",
+          "lineNumber": 226
+        },
+        {
+          "caller": "executeQueuedRun",
+          "callee": "notify",
+          "lineNumber": 227
+        },
+        {
+          "caller": "executeQueuedRun",
+          "callee": "store.requeue",
+          "lineNumber": 230
+        },
+        {
+          "caller": "executeQueuedRun",
+          "callee": "log",
+          "lineNumber": 232
+        },
+        {
+          "caller": "executeQueuedRun",
+          "callee": "Date.now",
+          "lineNumber": 234
+        },
+        {
+          "caller": "finishExecutedRun",
+          "callee": "completeRun",
+          "lineNumber": 255
+        },
+        {
+          "caller": "finishExecutedRun",
+          "callee": "stageRunningResult",
+          "lineNumber": 259
+        },
+        {
+          "caller": "finishExecutedRun",
+          "callee": "store.save",
+          "lineNumber": 261
+        },
+        {
+          "caller": "finishExecutedRun",
+          "callee": "log",
+          "lineNumber": 265
+        },
+        {
+          "caller": "finishExecutedRun",
+          "callee": "Date.now",
+          "lineNumber": 267
+        },
+        {
+          "caller": "finishExecutedRun",
+          "callee": "store.addDailyCpuUsage",
+          "lineNumber": 275
+        },
+        {
+          "caller": "finishExecutedRun",
+          "callee": "log",
+          "lineNumber": 277
+        },
+        {
+          "caller": "finishExecutedRun",
+          "callee": "notify(env, message.userId, completed).catch",
+          "lineNumber": 279
+        },
+        {
+          "caller": "finishExecutedRun",
+          "callee": "notify",
+          "lineNumber": 279
+        },
+        {
+          "caller": "finishExecutedRun",
+          "callee": "log",
+          "lineNumber": 280
+        },
+        {
+          "caller": "finishExecutedRun",
+          "callee": "Date.now",
+          "lineNumber": 282
+        },
+        {
+          "caller": "finishExecutedRun",
+          "callee": "releaseActiveRunSlot",
+          "lineNumber": 288
+        },
+        {
+          "caller": "stageRunningResult",
+          "callee": "store.save",
+          "lineNumber": 299
+        },
+        {
+          "caller": "failConfiguration",
+          "callee": "Date.now",
+          "lineNumber": 343
+        },
+        {
+          "caller": "failConfiguration",
+          "callee": "store.fail",
+          "lineNumber": 346
+        },
+        {
+          "caller": "failConfiguration",
+          "callee": "log",
+          "lineNumber": 348
+        },
+        {
+          "caller": "failConfiguration",
+          "callee": "Date.now",
+          "lineNumber": 350
+        },
+        {
+          "caller": "failConfiguration",
+          "callee": "releaseActiveRunSlot",
+          "lineNumber": 355
+        },
+        {
+          "caller": "storeFor",
+          "callee": "(dependencies.createStore || createAgentRunStore)",
+          "lineNumber": 361
+        },
+        {
+          "caller": "newRunRecord",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 371
+        },
+        {
+          "caller": "newRunRecord",
+          "callee": "new Date().toISOString",
+          "lineNumber": 375
+        },
+        {
+          "caller": "completeRun",
+          "callee": "new Date().toISOString",
+          "lineNumber": 383
+        },
+        {
+          "caller": "failRun",
+          "callee": "new Date().toISOString",
+          "lineNumber": 396
+        },
+        {
+          "caller": "positiveInt",
+          "callee": "Number",
+          "lineNumber": 400
+        },
+        {
+          "caller": "positiveInt",
+          "callee": "Number.isFinite",
+          "lineNumber": 401
+        },
+        {
+          "caller": "positiveInt",
+          "callee": "Math.trunc",
+          "lineNumber": 401
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 7,
+        "functionCount": 21,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/chat-agent-loop.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 80,
+      "functions": [
+        {
+          "name": "duplicateSandboxLifecycle",
+          "startLine": 67,
+          "endLine": 92,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/chat-agent-loop.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "decideAgentLoop",
+          "startLine": 15,
+          "endLine": 36,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "continuationLimitMessage",
+          "startLine": 38,
+          "endLine": 42,
+          "params": [
+            "reason"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CHAT_MAX_OUTPUT_TOKENS",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "CHAT_MAX_STEPS",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "CHAT_MAX_TOTAL_STEPS",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "CHAT_MAX_AUTO_CONTINUATIONS",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "CHAT_CONTINUATION_PROMPT",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "decideAgentLoop",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "continuationLimitMessage",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/chat-language-model.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 151,
+      "nonEmptyLines": 131,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/chat-language-model.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 120,
+      "nonEmptyLines": 112,
+      "functions": [
+        {
+          "name": "supportsDeepSeekWebSearch",
+          "startLine": 32,
+          "endLine": 34,
+          "params": [
+            "provider",
+            "model",
+            "baseUrl"
+          ]
+        },
+        {
+          "name": "deepSeekResponsesBaseUrl",
+          "startLine": 37,
+          "endLine": 50,
+          "params": [
+            "chatBaseUrl"
+          ]
+        },
+        {
+          "name": "resolveChatLanguageModel",
+          "startLine": 52,
+          "endLine": 86,
+          "params": [
+            "config",
+            "fetchImpl"
+          ]
+        },
+        {
+          "name": "patchDeepSeekApiBody",
+          "startLine": 88,
+          "endLine": 120,
+          "params": [
+            "requestUrl",
+            "body",
+            "requestedLevel"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "supportsDeepSeekWebSearch",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "deepSeekResponsesBaseUrl",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "resolveChatLanguageModel",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "patchDeepSeekApiBody",
+          "line": 88,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "supportsDeepSeekWebSearch",
+          "callee": "isOfficialDeepSeek",
+          "lineNumber": 33
+        },
+        {
+          "caller": "deepSeekResponsesBaseUrl",
+          "callee": "url.pathname.replace",
+          "lineNumber": 40
+        },
+        {
+          "caller": "deepSeekResponsesBaseUrl",
+          "callee": "path.endsWith",
+          "lineNumber": 41
+        },
+        {
+          "caller": "deepSeekResponsesBaseUrl",
+          "callee": "path.slice",
+          "lineNumber": 42
+        },
+        {
+          "caller": "deepSeekResponsesBaseUrl",
+          "callee": "url.pathname.replace",
+          "lineNumber": 43
+        },
+        {
+          "caller": "deepSeekResponsesBaseUrl",
+          "callee": "`${url.origin}${path || ''}`.replace",
+          "lineNumber": 46
+        },
+        {
+          "caller": "resolveChatLanguageModel",
+          "callee": "createAnthropic",
+          "lineNumber": 57
+        },
+        {
+          "caller": "resolveChatLanguageModel",
+          "callee": "provider.chat",
+          "lineNumber": 58
+        },
+        {
+          "caller": "resolveChatLanguageModel",
+          "callee": "resolveOfficialDeepSeekModel",
+          "lineNumber": 62
+        },
+        {
+          "caller": "resolveChatLanguageModel",
+          "callee": "createOpenAI",
+          "lineNumber": 64
+        },
+        {
+          "caller": "resolveChatLanguageModel",
+          "callee": "nestedProvider.chat",
+          "lineNumber": 69
+        },
+        {
+          "caller": "resolveChatLanguageModel",
+          "callee": "supportsDeepSeekWebSearch",
+          "lineNumber": 70
+        },
+        {
+          "caller": "resolveChatLanguageModel",
+          "callee": "createOpenAI",
+          "lineNumber": 74
+        },
+        {
+          "caller": "resolveChatLanguageModel",
+          "callee": "deepSeekResponsesBaseUrl",
+          "lineNumber": 76
+        },
+        {
+          "caller": "resolveChatLanguageModel",
+          "callee": "provider.responses",
+          "lineNumber": 80
+        },
+        {
+          "caller": "resolveChatLanguageModel",
+          "callee": "provider.tools.webSearch",
+          "lineNumber": 82
+        },
+        {
+          "caller": "patchDeepSeekApiBody",
+          "callee": "JSON.parse",
+          "lineNumber": 102
+        },
+        {
+          "caller": "patchDeepSeekApiBody",
+          "callee": "resolveOfficialDeepSeekModel",
+          "lineNumber": 103
+        },
+        {
+          "caller": "patchDeepSeekApiBody",
+          "callee": "String",
+          "lineNumber": 103
+        },
+        {
+          "caller": "patchDeepSeekApiBody",
+          "callee": "isDeepSeekV4Model",
+          "lineNumber": 104
+        },
+        {
+          "caller": "patchDeepSeekApiBody",
+          "callee": "url.pathname.endsWith",
+          "lineNumber": 105
+        },
+        {
+          "caller": "patchDeepSeekApiBody",
+          "callee": "deepSeekResponsesReasoningBody",
+          "lineNumber": 110
+        },
+        {
+          "caller": "patchDeepSeekApiBody",
+          "callee": "deepSeekThinkingBody",
+          "lineNumber": 110
+        },
+        {
+          "caller": "patchDeepSeekApiBody",
+          "callee": "JSON.stringify",
+          "lineNumber": 116
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/chat-prompt-prefix.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 17,
+      "functions": [
+        {
+          "name": "buildStableChatSystemPrompt",
+          "startLine": 5,
+          "endLine": 10,
+          "params": [
+            "parts"
+          ]
+        },
+        {
+          "name": "appendMarketWatchModelMessage",
+          "startLine": 12,
+          "endLine": 19,
+          "params": [
+            "messages",
+            "marketWatchContext"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "buildStableChatSystemPrompt",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "appendMarketWatchModelMessage",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "buildStableChatSystemPrompt",
+          "callee": "[parts.rolePrompt, parts.webSearchGuidance || ''].filter(Boolean).join",
+          "lineNumber": 9
+        },
+        {
+          "caller": "buildStableChatSystemPrompt",
+          "callee": "[parts.rolePrompt, parts.webSearchGuidance || ''].filter",
+          "lineNumber": 9
+        },
+        {
+          "caller": "appendMarketWatchModelMessage",
+          "callee": "marketWatchContext.trim",
+          "lineNumber": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/python-sandbox.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 42,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/python-sandbox.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 99,
+      "nonEmptyLines": 88,
+      "functions": [
+        {
+          "name": "executePythonSandbox",
+          "startLine": 19,
+          "endLine": 44,
+          "params": [
+            "env",
+            "script",
+            "context",
+            "bridgeFetch"
+          ]
+        },
+        {
+          "name": "correlationHeaders",
+          "startLine": 46,
+          "endLine": 50,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "bridgeConfig",
+          "startLine": 52,
+          "endLine": 57,
+          "params": [
+            "env"
+          ]
+        },
+        {
+          "name": "isHttpsUrl",
+          "startLine": 59,
+          "endLine": 65,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "bridgeSignature",
+          "startLine": 67,
+          "endLine": 77,
+          "params": [
+            "secret",
+            "timestamp",
+            "body"
+          ]
+        },
+        {
+          "name": "sandboxTimeout",
+          "startLine": 79,
+          "endLine": 83,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "parseResult",
+          "startLine": 85,
+          "endLine": 88,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "isSandboxResult",
+          "startLine": 90,
+          "endLine": 99,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "executePythonSandbox",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "executePythonSandbox",
+          "callee": "crypto.randomUUID",
+          "lineNumber": 22
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "bridgeConfig",
+          "lineNumber": 25
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "sandboxTimeout",
+          "lineNumber": 26
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "JSON.stringify",
+          "lineNumber": 27
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "String",
+          "lineNumber": 28
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "Date.now",
+          "lineNumber": 28
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "bridgeFetch",
+          "lineNumber": 29
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "bridgeSignature",
+          "lineNumber": 34
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "correlationHeaders",
+          "lineNumber": 35
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "AbortSignal.timeout",
+          "lineNumber": 40
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "parseResult",
+          "lineNumber": 43
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "response.json",
+          "lineNumber": 43
+        },
+        {
+          "caller": "bridgeConfig",
+          "callee": "env.SANDBOX_BRIDGE_URL?.trim",
+          "lineNumber": 53
+        },
+        {
+          "caller": "bridgeConfig",
+          "callee": "env.SANDBOX_BRIDGE_SECRET?.trim",
+          "lineNumber": 54
+        },
+        {
+          "caller": "bridgeConfig",
+          "callee": "isHttpsUrl",
+          "lineNumber": 55
+        },
+        {
+          "caller": "bridgeSignature",
+          "callee": "crypto.subtle.importKey",
+          "lineNumber": 68
+        },
+        {
+          "caller": "bridgeSignature",
+          "callee": "new TextEncoder().encode",
+          "lineNumber": 70
+        },
+        {
+          "caller": "bridgeSignature",
+          "callee": "crypto.subtle.sign",
+          "lineNumber": 75
+        },
+        {
+          "caller": "bridgeSignature",
+          "callee": "new TextEncoder().encode",
+          "lineNumber": 75
+        },
+        {
+          "caller": "bridgeSignature",
+          "callee": "[...new Uint8Array(signature)].map((byte) => byte.toString(16).padStart(2, '0')).join",
+          "lineNumber": 76
+        },
+        {
+          "caller": "bridgeSignature",
+          "callee": "[...new Uint8Array(signature)].map",
+          "lineNumber": 76
+        },
+        {
+          "caller": "bridgeSignature",
+          "callee": "byte.toString(16).padStart",
+          "lineNumber": 76
+        },
+        {
+          "caller": "bridgeSignature",
+          "callee": "byte.toString",
+          "lineNumber": 76
+        },
+        {
+          "caller": "sandboxTimeout",
+          "callee": "Number",
+          "lineNumber": 80
+        },
+        {
+          "caller": "sandboxTimeout",
+          "callee": "Number.isFinite",
+          "lineNumber": 81
+        },
+        {
+          "caller": "sandboxTimeout",
+          "callee": "Math.min",
+          "lineNumber": 82
+        },
+        {
+          "caller": "sandboxTimeout",
+          "callee": "Math.trunc",
+          "lineNumber": 82
+        },
+        {
+          "caller": "parseResult",
+          "callee": "isSandboxResult",
+          "lineNumber": 86
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/request-observability.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 24,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/request-observability.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 42,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "logUnhandledWorkerError",
+          "startLine": 3,
+          "endLine": 17,
+          "params": [
+            "error",
+            "request"
+          ]
+        },
+        {
+          "name": "readOptionalUserId",
+          "startLine": 19,
+          "endLine": 24,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "sanitizeLogText",
+          "startLine": 26,
+          "endLine": 28,
+          "params": [
+            "value",
+            "limit"
+          ]
+        },
+        {
+          "name": "readRequestId",
+          "startLine": 30,
+          "endLine": 33,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "errorName",
+          "startLine": 35,
+          "endLine": 37,
+          "params": [
+            "error"
+          ]
+        },
+        {
+          "name": "errorMessage",
+          "startLine": 39,
+          "endLine": 42,
+          "params": [
+            "error"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "logUnhandledWorkerError",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "readOptionalUserId",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "sanitizeLogText",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "logUnhandledWorkerError",
+          "callee": "console.error",
+          "lineNumber": 7
+        },
+        {
+          "caller": "logUnhandledWorkerError",
+          "callee": "JSON.stringify",
+          "lineNumber": 7
+        },
+        {
+          "caller": "logUnhandledWorkerError",
+          "callee": "new Date().toISOString",
+          "lineNumber": 9
+        },
+        {
+          "caller": "logUnhandledWorkerError",
+          "callee": "readRequestId",
+          "lineNumber": 10
+        },
+        {
+          "caller": "logUnhandledWorkerError",
+          "callee": "readOptionalUserId",
+          "lineNumber": 13
+        },
+        {
+          "caller": "logUnhandledWorkerError",
+          "callee": "errorName",
+          "lineNumber": 14
+        },
+        {
+          "caller": "logUnhandledWorkerError",
+          "callee": "sanitizeLogText",
+          "lineNumber": 15
+        },
+        {
+          "caller": "logUnhandledWorkerError",
+          "callee": "errorMessage",
+          "lineNumber": 15
+        },
+        {
+          "caller": "readOptionalUserId",
+          "callee": "request.get",
+          "lineNumber": 20
+        },
+        {
+          "caller": "readOptionalUserId",
+          "callee": "userId.trim",
+          "lineNumber": 23
+        },
+        {
+          "caller": "sanitizeLogText",
+          "callee": "value.replace(SECRET_FRAGMENT, '[redacted]').replace(/\\s+/g, ' ').trim().slice",
+          "lineNumber": 27
+        },
+        {
+          "caller": "sanitizeLogText",
+          "callee": "value.replace(SECRET_FRAGMENT, '[redacted]').replace(/\\s+/g, ' ').trim",
+          "lineNumber": 27
+        },
+        {
+          "caller": "sanitizeLogText",
+          "callee": "value.replace(SECRET_FRAGMENT, '[redacted]').replace",
+          "lineNumber": 27
+        },
+        {
+          "caller": "sanitizeLogText",
+          "callee": "value.replace",
+          "lineNumber": 27
+        },
+        {
+          "caller": "readRequestId",
+          "callee": "request.get",
+          "lineNumber": 31
+        },
+        {
+          "caller": "readRequestId",
+          "callee": "requestId.trim",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/runtime-readiness.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 20,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/runtime-readiness.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "getToolApprovalSecret",
+          "startLine": 6,
+          "endLine": 12,
+          "params": [
+            "env"
+          ]
+        },
+        {
+          "name": "missingWorkerRuntimeSecrets",
+          "startLine": 14,
+          "endLine": 21,
+          "params": [
+            "env"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getToolApprovalSecret",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "missingWorkerRuntimeSecrets",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getToolApprovalSecret",
+          "callee": "secret.trim",
+          "lineNumber": 8
+        },
+        {
+          "caller": "missingWorkerRuntimeSecrets",
+          "callee": "getToolApprovalSecret",
+          "lineNumber": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/api/src/services/sandbox-observability.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "safeRequestId",
+          "startLine": 25,
+          "endLine": 28,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "logSandboxRun",
+          "startLine": 30,
+          "endLine": 41,
+          "params": [
+            "event",
+            "fields"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "safeRequestId",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "logSandboxRun",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "safeRequestId",
+          "callee": "CORRELATION_ID_PATTERN.test",
+          "lineNumber": 26
+        },
+        {
+          "caller": "logSandboxRun",
+          "callee": "JSON.stringify",
+          "lineNumber": 31
+        },
+        {
+          "caller": "logSandboxRun",
+          "callee": "new Date().toISOString",
+          "lineNumber": 33
+        },
+        {
+          "caller": "logSandboxRun",
+          "callee": "console.error",
+          "lineNumber": 37
+        },
+        {
+          "caller": "logSandboxRun",
+          "callee": "console.info",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/functions/api/chat/[[path]].ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 4,
+      "functions": [
+        {
+          "name": "onRequest",
+          "startLine": 3,
+          "endLine": 5,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "onRequest",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "onRequest",
+          "callee": "app.fetch",
+          "lineNumber": 4
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/functions/api/portfolio/[[path]].ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 4,
+      "functions": [
+        {
+          "name": "onRequest",
+          "startLine": 3,
+          "endLine": 5,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "onRequest",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "onRequest",
+          "callee": "app.fetch",
+          "lineNumber": 4
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/functions/api/settings/[[path]].ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 4,
+      "functions": [
+        {
+          "name": "onRequest",
+          "startLine": 3,
+          "endLine": 5,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "onRequest",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "onRequest",
+          "callee": "app.fetch",
+          "lineNumber": 4
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

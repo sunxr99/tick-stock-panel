@@ -1,0 +1,727 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 7,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 7,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 7,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/sandbox-bridge/api/sandbox-run.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 88,
+      "nonEmptyLines": 80,
+      "functions": [
+        {
+          "name": "handler",
+          "startLine": 12,
+          "endLine": 55,
+          "params": [
+            "request",
+            "response"
+          ]
+        },
+        {
+          "name": "readBody",
+          "startLine": 57,
+          "endLine": 67,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "parsePayload",
+          "startLine": 69,
+          "endLine": 77,
+          "params": [
+            "body"
+          ]
+        },
+        {
+          "name": "normalizeTimeout",
+          "startLine": 79,
+          "endLine": 82,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "reply",
+          "startLine": 84,
+          "endLine": 88,
+          "params": [
+            "response",
+            "status",
+            "body"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "config",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "handler",
+          "line": 12,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "handler",
+          "callee": "Date.now",
+          "lineNumber": 13
+        },
+        {
+          "caller": "handler",
+          "callee": "bridgeLogContext",
+          "lineNumber": 14
+        },
+        {
+          "caller": "handler",
+          "callee": "reply",
+          "lineNumber": 15
+        },
+        {
+          "caller": "handler",
+          "callee": "readBody",
+          "lineNumber": 16
+        },
+        {
+          "caller": "handler",
+          "callee": "process.env.SANDBOX_BRIDGE_SECRET?.trim",
+          "lineNumber": 17
+        },
+        {
+          "caller": "handler",
+          "callee": "hasValidBridgeSignature",
+          "lineNumber": 18
+        },
+        {
+          "caller": "handler",
+          "callee": "logSandboxBridge",
+          "lineNumber": 19
+        },
+        {
+          "caller": "handler",
+          "callee": "Date.now",
+          "lineNumber": 19
+        },
+        {
+          "caller": "handler",
+          "callee": "reply",
+          "lineNumber": 20
+        },
+        {
+          "caller": "handler",
+          "callee": "parsePayload",
+          "lineNumber": 22
+        },
+        {
+          "caller": "handler",
+          "callee": "logSandboxBridge",
+          "lineNumber": 24
+        },
+        {
+          "caller": "handler",
+          "callee": "Date.now",
+          "lineNumber": 24
+        },
+        {
+          "caller": "handler",
+          "callee": "reply",
+          "lineNumber": 25
+        },
+        {
+          "caller": "handler",
+          "callee": "logSandboxBridge",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handler",
+          "callee": "Buffer.byteLength",
+          "lineNumber": 29
+        },
+        {
+          "caller": "handler",
+          "callee": "executePythonSandbox",
+          "lineNumber": 34
+        },
+        {
+          "caller": "handler",
+          "callee": "logSandboxBridge",
+          "lineNumber": 35
+        },
+        {
+          "caller": "handler",
+          "callee": "Date.now",
+          "lineNumber": 37
+        },
+        {
+          "caller": "handler",
+          "callee": "reply",
+          "lineNumber": 46
+        },
+        {
+          "caller": "handler",
+          "callee": "logSandboxBridge",
+          "lineNumber": 48
+        },
+        {
+          "caller": "handler",
+          "callee": "Date.now",
+          "lineNumber": 50
+        },
+        {
+          "caller": "handler",
+          "callee": "reply",
+          "lineNumber": 53
+        },
+        {
+          "caller": "readBody",
+          "callee": "Buffer.isBuffer",
+          "lineNumber": 61
+        },
+        {
+          "caller": "readBody",
+          "callee": "Buffer.from",
+          "lineNumber": 61
+        },
+        {
+          "caller": "readBody",
+          "callee": "chunks.push",
+          "lineNumber": 64
+        },
+        {
+          "caller": "readBody",
+          "callee": "Buffer.concat(chunks).toString",
+          "lineNumber": 66
+        },
+        {
+          "caller": "readBody",
+          "callee": "Buffer.concat",
+          "lineNumber": 66
+        },
+        {
+          "caller": "parsePayload",
+          "callee": "JSON.parse",
+          "lineNumber": 71
+        },
+        {
+          "caller": "parsePayload",
+          "callee": "value.script.trim",
+          "lineNumber": 72
+        },
+        {
+          "caller": "parsePayload",
+          "callee": "normalizeTimeout",
+          "lineNumber": 73
+        },
+        {
+          "caller": "normalizeTimeout",
+          "callee": "Number.isFinite",
+          "lineNumber": 80
+        },
+        {
+          "caller": "normalizeTimeout",
+          "callee": "Math.min",
+          "lineNumber": 81
+        },
+        {
+          "caller": "normalizeTimeout",
+          "callee": "Math.trunc",
+          "lineNumber": 81
+        },
+        {
+          "caller": "reply",
+          "callee": "JSON.stringify",
+          "lineNumber": 85
+        },
+        {
+          "caller": "reply",
+          "callee": "response.writeHead",
+          "lineNumber": 86
+        },
+        {
+          "caller": "reply",
+          "callee": "Buffer.byteLength",
+          "lineNumber": 86
+        },
+        {
+          "caller": "reply",
+          "callee": "response.end",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/sandbox-bridge/src/observability.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 33,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/sandbox-bridge/src/observability.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 40,
+      "functions": [
+        {
+          "name": "bridgeLogContext",
+          "startLine": 23,
+          "endLine": 28,
+          "params": [
+            "headers"
+          ]
+        },
+        {
+          "name": "logSandboxBridge",
+          "startLine": 30,
+          "endLine": 41,
+          "params": [
+            "event",
+            "fields"
+          ]
+        },
+        {
+          "name": "validHeader",
+          "startLine": 43,
+          "endLine": 46,
+          "params": [
+            "value",
+            "maxLength"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "bridgeLogContext",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "logSandboxBridge",
+          "line": 30,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "bridgeLogContext",
+          "callee": "validHeader",
+          "lineNumber": 25
+        },
+        {
+          "caller": "bridgeLogContext",
+          "callee": "validHeader",
+          "lineNumber": 26
+        },
+        {
+          "caller": "logSandboxBridge",
+          "callee": "JSON.stringify",
+          "lineNumber": 31
+        },
+        {
+          "caller": "logSandboxBridge",
+          "callee": "new Date().toISOString",
+          "lineNumber": 33
+        },
+        {
+          "caller": "logSandboxBridge",
+          "callee": "console.error",
+          "lineNumber": 37
+        },
+        {
+          "caller": "logSandboxBridge",
+          "callee": "console.info",
+          "lineNumber": 40
+        },
+        {
+          "caller": "validHeader",
+          "callee": "CORRELATION_ID_PATTERN.test",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/sandbox-bridge/src/request-auth.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "headers",
+          "startLine": 9,
+          "endLine": 14,
+          "params": [
+            "signature"
+          ]
+        },
+        {
+          "name": "signature",
+          "startLine": 16,
+          "endLine": 18,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "signature",
+          "callee": "createHmac('sha256', secret).update(`${timestamp}.${body}`).digest",
+          "lineNumber": 17
+        },
+        {
+          "caller": "signature",
+          "callee": "createHmac('sha256', secret).update",
+          "lineNumber": 17
+        },
+        {
+          "caller": "signature",
+          "callee": "createHmac",
+          "lineNumber": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/sandbox-bridge/src/request-auth.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "hasValidBridgeSignature",
+          "startLine": 6,
+          "endLine": 17,
+          "params": [
+            "headers",
+            "body",
+            "secret",
+            "now"
+          ]
+        },
+        {
+          "name": "headerValue",
+          "startLine": 19,
+          "endLine": 22,
+          "params": [
+            "headers",
+            "name"
+          ]
+        },
+        {
+          "name": "isFreshTimestamp",
+          "startLine": 24,
+          "endLine": 27,
+          "params": [
+            "value",
+            "now"
+          ]
+        },
+        {
+          "name": "equalSignatures",
+          "startLine": 29,
+          "endLine": 32,
+          "params": [
+            "expected",
+            "supplied"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "hasValidBridgeSignature",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "hasValidBridgeSignature",
+          "callee": "Date.now",
+          "lineNumber": 10
+        },
+        {
+          "caller": "hasValidBridgeSignature",
+          "callee": "headerValue",
+          "lineNumber": 12
+        },
+        {
+          "caller": "hasValidBridgeSignature",
+          "callee": "headerValue",
+          "lineNumber": 13
+        },
+        {
+          "caller": "hasValidBridgeSignature",
+          "callee": "isFreshTimestamp",
+          "lineNumber": 14
+        },
+        {
+          "caller": "hasValidBridgeSignature",
+          "callee": "createHmac('sha256', secret).update(`${timestamp}.${body}`).digest",
+          "lineNumber": 15
+        },
+        {
+          "caller": "hasValidBridgeSignature",
+          "callee": "createHmac('sha256', secret).update",
+          "lineNumber": 15
+        },
+        {
+          "caller": "hasValidBridgeSignature",
+          "callee": "createHmac",
+          "lineNumber": 15
+        },
+        {
+          "caller": "hasValidBridgeSignature",
+          "callee": "equalSignatures",
+          "lineNumber": 16
+        },
+        {
+          "caller": "isFreshTimestamp",
+          "callee": "/^\\d{13}$/.test",
+          "lineNumber": 25
+        },
+        {
+          "caller": "isFreshTimestamp",
+          "callee": "Math.abs",
+          "lineNumber": 26
+        },
+        {
+          "caller": "isFreshTimestamp",
+          "callee": "Number",
+          "lineNumber": 26
+        },
+        {
+          "caller": "equalSignatures",
+          "callee": "/^[a-f0-9]{64}$/i.test",
+          "lineNumber": 30
+        },
+        {
+          "caller": "equalSignatures",
+          "callee": "timingSafeEqual",
+          "lineNumber": 31
+        },
+        {
+          "caller": "equalSignatures",
+          "callee": "Buffer.from",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/sandbox-bridge/src/sandbox.integration.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 11,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/sandbox-bridge/src/sandbox.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 57,
+      "functions": [
+        {
+          "name": "executePythonSandbox",
+          "startLine": 15,
+          "endLine": 34,
+          "params": [
+            "script",
+            "timeout"
+          ]
+        },
+        {
+          "name": "localCredentials",
+          "startLine": 36,
+          "endLine": 41,
+          "params": []
+        },
+        {
+          "name": "usageResult",
+          "startLine": 43,
+          "endLine": 57,
+          "params": [
+            "exitCode",
+            "stdout",
+            "stderr",
+            "sandbox"
+          ]
+        },
+        {
+          "name": "limitOutput",
+          "startLine": 59,
+          "endLine": 63,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "executePythonSandbox",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "executePythonSandbox",
+          "callee": "Sandbox.create",
+          "lineNumber": 16
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "localCredentials",
+          "lineNumber": 17
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "sandbox.writeFiles",
+          "lineNumber": 26
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "Buffer.from",
+          "lineNumber": 26
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "sandbox.runCommand",
+          "lineNumber": 27
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "Promise.all",
+          "lineNumber": 28
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "command.stdout",
+          "lineNumber": 28
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "command.stderr",
+          "lineNumber": 28
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "sandbox.stop",
+          "lineNumber": 29
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "usageResult",
+          "lineNumber": 30
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "sandbox.delete().catch",
+          "lineNumber": 32
+        },
+        {
+          "caller": "executePythonSandbox",
+          "callee": "sandbox.delete",
+          "lineNumber": 32
+        },
+        {
+          "caller": "localCredentials",
+          "callee": "process.env.VERCEL_TOKEN?.trim",
+          "lineNumber": 37
+        },
+        {
+          "caller": "localCredentials",
+          "callee": "process.env.VERCEL_TEAM_ID?.trim",
+          "lineNumber": 38
+        },
+        {
+          "caller": "localCredentials",
+          "callee": "process.env.VERCEL_PROJECT_ID?.trim",
+          "lineNumber": 39
+        },
+        {
+          "caller": "usageResult",
+          "callee": "limitOutput",
+          "lineNumber": 51
+        },
+        {
+          "caller": "usageResult",
+          "callee": "limitOutput",
+          "lineNumber": 52
+        },
+        {
+          "caller": "limitOutput",
+          "callee": "Buffer.from",
+          "lineNumber": 60
+        },
+        {
+          "caller": "limitOutput",
+          "callee": "output.subarray(0, MAX_OUTPUT_BYTES).toString",
+          "lineNumber": 62
+        },
+        {
+          "caller": "limitOutput",
+          "callee": "output.subarray",
+          "lineNumber": 62
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    }
+  ]
+}

@@ -137,7 +137,11 @@ export function getSortValue(r: any, col: ColumnConfig): any {
     case 'deviate_30d':  return r.deviate_30d
     case 'limit_ups':     return r.consecutive_limit_ups ?? 0
     case 'limit_downs':   return r.consecutive_limit_downs ?? 0
-    case 'score':         return r.score
+    // Wyckoff deliberately keeps the generic score contract empty so an
+    // unverified research blend cannot affect formal membership.  Its visible
+    // "研究排序" column is nevertheless sortable by the explicitly named
+    // research field.
+    case 'score':         return r.research_candidate_score ?? r.score
     default: return null
   }
 }

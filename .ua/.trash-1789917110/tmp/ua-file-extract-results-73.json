@@ -1,0 +1,1174 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 4,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 4,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/vite.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 179,
+      "nonEmptyLines": 163,
+      "functions": [
+        {
+          "name": "sourceForMarketDataFile",
+          "startLine": 25,
+          "endLine": 29,
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "llmProxyPlugin",
+          "startLine": 31,
+          "endLine": 97,
+          "params": []
+        },
+        {
+          "name": "marketDataPlugin",
+          "startLine": 99,
+          "endLine": 131,
+          "params": []
+        },
+        {
+          "name": "appVersionPlugin",
+          "startLine": 133,
+          "endLine": 148,
+          "params": []
+        },
+        {
+          "name": "newsEventsPlugin",
+          "startLine": 150,
+          "endLine": 164,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sourceForMarketDataFile",
+          "callee": "path.join",
+          "lineNumber": 27
+        },
+        {
+          "caller": "sourceForMarketDataFile",
+          "callee": "path.join",
+          "lineNumber": 28
+        },
+        {
+          "caller": "configureServer",
+          "callee": "server.middlewares.use",
+          "lineNumber": 35
+        },
+        {
+          "caller": "configureServer",
+          "callee": "res.end",
+          "lineNumber": 39
+        },
+        {
+          "caller": "configureServer",
+          "callee": "JSON.stringify",
+          "lineNumber": 39
+        },
+        {
+          "caller": "configureServer",
+          "callee": "Object.entries",
+          "lineNumber": 45
+        },
+        {
+          "caller": "configureServer",
+          "callee": "Array.isArray",
+          "lineNumber": 47
+        },
+        {
+          "caller": "configureServer",
+          "callee": "req.on",
+          "lineNumber": 53
+        },
+        {
+          "caller": "configureServer",
+          "callee": "chunks.push",
+          "lineNumber": 53
+        },
+        {
+          "caller": "configureServer",
+          "callee": "Buffer.from",
+          "lineNumber": 53
+        },
+        {
+          "caller": "configureServer",
+          "callee": "req.on",
+          "lineNumber": 54
+        },
+        {
+          "caller": "configureServer",
+          "callee": "resolve",
+          "lineNumber": 54
+        },
+        {
+          "caller": "configureServer",
+          "callee": "Buffer.concat",
+          "lineNumber": 56
+        },
+        {
+          "caller": "configureServer",
+          "callee": "Object.entries",
+          "lineNumber": 59
+        },
+        {
+          "caller": "configureServer",
+          "callee": "String",
+          "lineNumber": 63
+        },
+        {
+          "caller": "configureServer",
+          "callee": "fetch",
+          "lineNumber": 66
+        },
+        {
+          "caller": "configureServer",
+          "callee": "response.headers.entries",
+          "lineNumber": 73
+        },
+        {
+          "caller": "configureServer",
+          "callee": "res.setHeader",
+          "lineNumber": 75
+        },
+        {
+          "caller": "configureServer",
+          "callee": "response.headers.get",
+          "lineNumber": 78
+        },
+        {
+          "caller": "configureServer",
+          "callee": "(req.url || '').split",
+          "lineNumber": 79
+        },
+        {
+          "caller": "configureServer",
+          "callee": "targetUrl.startsWith",
+          "lineNumber": 80
+        },
+        {
+          "caller": "configureServer",
+          "callee": "proxyPath.endsWith",
+          "lineNumber": 80
+        },
+        {
+          "caller": "configureServer",
+          "callee": "SSE_CONTENT_RE.test",
+          "lineNumber": 81
+        },
+        {
+          "caller": "configureServer",
+          "callee": "Readable.fromWeb(normalizeGeminiStream(response.body)).pipe",
+          "lineNumber": 82
+        },
+        {
+          "caller": "configureServer",
+          "callee": "Readable.fromWeb",
+          "lineNumber": 82
+        },
+        {
+          "caller": "configureServer",
+          "callee": "normalizeGeminiStream",
+          "lineNumber": 82
+        },
+        {
+          "caller": "configureServer",
+          "callee": "response.arrayBuffer",
+          "lineNumber": 86
+        },
+        {
+          "caller": "configureServer",
+          "callee": "res.end",
+          "lineNumber": 87
+        },
+        {
+          "caller": "configureServer",
+          "callee": "Buffer.from",
+          "lineNumber": 87
+        },
+        {
+          "caller": "configureServer",
+          "callee": "String",
+          "lineNumber": 89
+        },
+        {
+          "caller": "configureServer",
+          "callee": "console.error",
+          "lineNumber": 90
+        },
+        {
+          "caller": "configureServer",
+          "callee": "res.end",
+          "lineNumber": 92
+        },
+        {
+          "caller": "configureServer",
+          "callee": "JSON.stringify",
+          "lineNumber": 92
+        },
+        {
+          "caller": "configureServer",
+          "callee": "server.middlewares.use",
+          "lineNumber": 103
+        },
+        {
+          "caller": "configureServer",
+          "callee": "path.basename",
+          "lineNumber": 105
+        },
+        {
+          "caller": "configureServer",
+          "callee": "MARKET_DATA_FILES.has",
+          "lineNumber": 106
+        },
+        {
+          "caller": "configureServer",
+          "callee": "next",
+          "lineNumber": 107
+        },
+        {
+          "caller": "configureServer",
+          "callee": "fs.readFile",
+          "lineNumber": 112
+        },
+        {
+          "caller": "configureServer",
+          "callee": "sourceForMarketDataFile",
+          "lineNumber": 112
+        },
+        {
+          "caller": "configureServer",
+          "callee": "res.setHeader",
+          "lineNumber": 114
+        },
+        {
+          "caller": "configureServer",
+          "callee": "res.setHeader",
+          "lineNumber": 115
+        },
+        {
+          "caller": "configureServer",
+          "callee": "res.end",
+          "lineNumber": 116
+        },
+        {
+          "caller": "configureServer",
+          "callee": "res.end",
+          "lineNumber": 119
+        },
+        {
+          "caller": "configureServer",
+          "callee": "JSON.stringify",
+          "lineNumber": 119
+        },
+        {
+          "caller": "configureServer",
+          "callee": "String",
+          "lineNumber": 119
+        },
+        {
+          "caller": "writeBundle",
+          "callee": "path.resolve",
+          "lineNumber": 124
+        },
+        {
+          "caller": "writeBundle",
+          "callee": "fs.mkdir",
+          "lineNumber": 125
+        },
+        {
+          "caller": "writeBundle",
+          "callee": "Promise.all",
+          "lineNumber": 126
+        },
+        {
+          "caller": "writeBundle",
+          "callee": "Array.from",
+          "lineNumber": 127
+        },
+        {
+          "caller": "writeBundle",
+          "callee": "fs.copyFile",
+          "lineNumber": 127
+        },
+        {
+          "caller": "writeBundle",
+          "callee": "sourceForMarketDataFile",
+          "lineNumber": 127
+        },
+        {
+          "caller": "writeBundle",
+          "callee": "path.join",
+          "lineNumber": 127
+        },
+        {
+          "caller": "appVersionPlugin",
+          "callee": "path.resolve",
+          "lineNumber": 134
+        },
+        {
+          "caller": "configResolved",
+          "callee": "path.resolve",
+          "lineNumber": 138
+        },
+        {
+          "caller": "writeBundle",
+          "callee": "fs.mkdir",
+          "lineNumber": 141
+        },
+        {
+          "caller": "writeBundle",
+          "callee": "fs.writeFile",
+          "lineNumber": 142
+        },
+        {
+          "caller": "writeBundle",
+          "callee": "path.join",
+          "lineNumber": 143
+        },
+        {
+          "caller": "writeBundle",
+          "callee": "JSON.stringify",
+          "lineNumber": 144
+        },
+        {
+          "caller": "configureServer",
+          "callee": "server.middlewares.use",
+          "lineNumber": 154
+        },
+        {
+          "caller": "configureServer",
+          "callee": "import",
+          "lineNumber": 155
+        },
+        {
+          "caller": "configureServer",
+          "callee": "handleNewsEventsRequest",
+          "lineNumber": 157
+        },
+        {
+          "caller": "configureServer",
+          "callee": "res.setHeader",
+          "lineNumber": 159
+        },
+        {
+          "caller": "configureServer",
+          "callee": "res.end",
+          "lineNumber": 160
+        },
+        {
+          "caller": "configureServer",
+          "callee": "response.text",
+          "lineNumber": 160
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/functions/api/llm-proxy/[[path]].ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 167,
+      "nonEmptyLines": 144,
+      "functions": [
+        {
+          "name": "corsHeaders",
+          "startLine": 16,
+          "endLine": 23,
+          "params": [
+            "origin"
+          ]
+        },
+        {
+          "name": "normalizeTargetUrl",
+          "startLine": 39,
+          "endLine": 48,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "joinTargetUrl",
+          "startLine": 50,
+          "endLine": 53,
+          "params": [
+            "targetUrl",
+            "proxyPath",
+            "search"
+          ]
+        },
+        {
+          "name": "isOneRouteChatCompletion",
+          "startLine": 55,
+          "endLine": 57,
+          "params": [
+            "targetUrl",
+            "proxyPath"
+          ]
+        },
+        {
+          "name": "isGeminiChatCompletion",
+          "startLine": 59,
+          "endLine": 61,
+          "params": [
+            "targetUrl",
+            "proxyPath"
+          ]
+        },
+        {
+          "name": "buildOneRouteChatBody",
+          "startLine": 63,
+          "endLine": 82,
+          "params": [
+            "body",
+            "contentType"
+          ]
+        },
+        {
+          "name": "onRequest",
+          "startLine": 84,
+          "endLine": 167,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "onRequest",
+          "line": 84,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "corsHeaders",
+          "callee": "ALLOWED_ORIGINS.has",
+          "lineNumber": 18
+        },
+        {
+          "caller": "normalizeTargetUrl",
+          "callee": "['https:', 'http:'].includes",
+          "lineNumber": 42
+        },
+        {
+          "caller": "normalizeTargetUrl",
+          "callee": "ALLOWED_TARGET_ORIGINS.has",
+          "lineNumber": 43
+        },
+        {
+          "caller": "joinTargetUrl",
+          "callee": "targetUrl.href.replace",
+          "lineNumber": 51
+        },
+        {
+          "caller": "isOneRouteChatCompletion",
+          "callee": "ONE_ROUTE_ORIGINS.has",
+          "lineNumber": 56
+        },
+        {
+          "caller": "isOneRouteChatCompletion",
+          "callee": "proxyPath.endsWith",
+          "lineNumber": 56
+        },
+        {
+          "caller": "isGeminiChatCompletion",
+          "callee": "proxyPath.endsWith",
+          "lineNumber": 60
+        },
+        {
+          "caller": "buildOneRouteChatBody",
+          "callee": "JSON_CONTENT_RE.test",
+          "lineNumber": 64
+        },
+        {
+          "caller": "buildOneRouteChatBody",
+          "callee": "JSON.parse",
+          "lineNumber": 67
+        },
+        {
+          "caller": "buildOneRouteChatBody",
+          "callee": "new TextDecoder().decode",
+          "lineNumber": 67
+        },
+        {
+          "caller": "buildOneRouteChatBody",
+          "callee": "Array.isArray",
+          "lineNumber": 70
+        },
+        {
+          "caller": "buildOneRouteChatBody",
+          "callee": "payload.messages.map",
+          "lineNumber": 71
+        },
+        {
+          "caller": "buildOneRouteChatBody",
+          "callee": "Array.isArray",
+          "lineNumber": 72
+        },
+        {
+          "caller": "buildOneRouteChatBody",
+          "callee": "JSON.stringify",
+          "lineNumber": 78
+        },
+        {
+          "caller": "onRequest",
+          "callee": "request.headers.get",
+          "lineNumber": 86
+        },
+        {
+          "caller": "onRequest",
+          "callee": "corsHeaders",
+          "lineNumber": 87
+        },
+        {
+          "caller": "onRequest",
+          "callee": "ALLOWED_ORIGINS.has",
+          "lineNumber": 89
+        },
+        {
+          "caller": "onRequest",
+          "callee": "Response.json",
+          "lineNumber": 90
+        },
+        {
+          "caller": "onRequest",
+          "callee": "ALLOWED_METHODS.has",
+          "lineNumber": 92
+        },
+        {
+          "caller": "onRequest",
+          "callee": "Response.json",
+          "lineNumber": 93
+        },
+        {
+          "caller": "onRequest",
+          "callee": "request.headers.get",
+          "lineNumber": 100
+        },
+        {
+          "caller": "onRequest",
+          "callee": "Response.json",
+          "lineNumber": 102
+        },
+        {
+          "caller": "onRequest",
+          "callee": "normalizeTargetUrl",
+          "lineNumber": 104
+        },
+        {
+          "caller": "onRequest",
+          "callee": "Response.json",
+          "lineNumber": 106
+        },
+        {
+          "caller": "onRequest",
+          "callee": "url.pathname.replace",
+          "lineNumber": 110
+        },
+        {
+          "caller": "onRequest",
+          "callee": "joinTargetUrl",
+          "lineNumber": 111
+        },
+        {
+          "caller": "onRequest",
+          "callee": "Number",
+          "lineNumber": 112
+        },
+        {
+          "caller": "onRequest",
+          "callee": "request.headers.get",
+          "lineNumber": 112
+        },
+        {
+          "caller": "onRequest",
+          "callee": "Number.isFinite",
+          "lineNumber": 113
+        },
+        {
+          "caller": "onRequest",
+          "callee": "Response.json",
+          "lineNumber": 114
+        },
+        {
+          "caller": "onRequest",
+          "callee": "request.arrayBuffer",
+          "lineNumber": 117
+        },
+        {
+          "caller": "onRequest",
+          "callee": "Response.json",
+          "lineNumber": 120
+        },
+        {
+          "caller": "onRequest",
+          "callee": "request.headers.forEach",
+          "lineNumber": 124
+        },
+        {
+          "caller": "onRequest",
+          "callee": "FORWARD_HEADERS.has",
+          "lineNumber": 125
+        },
+        {
+          "caller": "onRequest",
+          "callee": "headers.set",
+          "lineNumber": 125
+        },
+        {
+          "caller": "onRequest",
+          "callee": "headers.set",
+          "lineNumber": 127
+        },
+        {
+          "caller": "onRequest",
+          "callee": "isOneRouteChatCompletion",
+          "lineNumber": 130
+        },
+        {
+          "caller": "onRequest",
+          "callee": "buildOneRouteChatBody",
+          "lineNumber": 131
+        },
+        {
+          "caller": "onRequest",
+          "callee": "headers.get",
+          "lineNumber": 131
+        },
+        {
+          "caller": "onRequest",
+          "callee": "fetch",
+          "lineNumber": 133
+        },
+        {
+          "caller": "onRequest",
+          "callee": "AbortSignal.timeout",
+          "lineNumber": 138
+        },
+        {
+          "caller": "onRequest",
+          "callee": "Response.json",
+          "lineNumber": 141
+        },
+        {
+          "caller": "onRequest",
+          "callee": "response.headers.forEach",
+          "lineNumber": 145
+        },
+        {
+          "caller": "onRequest",
+          "callee": "['transfer-encoding', 'content-encoding'].includes",
+          "lineNumber": 146
+        },
+        {
+          "caller": "onRequest",
+          "callee": "respHeaders.set",
+          "lineNumber": 147
+        },
+        {
+          "caller": "onRequest",
+          "callee": "Object.entries",
+          "lineNumber": 150
+        },
+        {
+          "caller": "onRequest",
+          "callee": "respHeaders.set",
+          "lineNumber": 150
+        },
+        {
+          "caller": "onRequest",
+          "callee": "respHeaders.set",
+          "lineNumber": 151
+        },
+        {
+          "caller": "onRequest",
+          "callee": "response.headers.get",
+          "lineNumber": 154
+        },
+        {
+          "caller": "onRequest",
+          "callee": "isGeminiChatCompletion",
+          "lineNumber": 155
+        },
+        {
+          "caller": "onRequest",
+          "callee": "SSE_CONTENT_RE.test",
+          "lineNumber": 155
+        },
+        {
+          "caller": "onRequest",
+          "callee": "normalizeGeminiStream",
+          "lineNumber": 156
+        },
+        {
+          "caller": "onRequest",
+          "callee": "String",
+          "lineNumber": 164
+        },
+        {
+          "caller": "onRequest",
+          "callee": "Response.json",
+          "lineNumber": 165
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/packages/shared/src/constants.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 89,
+      "functions": [
+        {
+          "name": "isAllowedModelBaseUrl",
+          "startLine": 57,
+          "endLine": 64,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "isSafeProviderBaseUrl",
+          "startLine": 66,
+          "endLine": 80,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "normalizeBaseUrl",
+          "startLine": 82,
+          "endLine": 84,
+          "params": [
+            "raw"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PROVIDERS",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "PROVIDER_LABELS",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "PROVIDER_BASE_URLS",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "ALLOWED_MODEL_BASE_URLS",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "ALLOWED_PROXY_TARGET_ORIGINS",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "isAllowedModelBaseUrl",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "isSafeProviderBaseUrl",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "PROVIDER_DEFAULT_MODELS",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "TABLE_NAMES",
+          "line": 94,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isAllowedModelBaseUrl",
+          "callee": "ALLOWED_MODEL_BASE_URL_SET.has",
+          "lineNumber": 60
+        },
+        {
+          "caller": "isAllowedModelBaseUrl",
+          "callee": "normalizeBaseUrl",
+          "lineNumber": 60
+        },
+        {
+          "caller": "isAllowedModelBaseUrl",
+          "callee": "ALLOWED_MODEL_ORIGINS.has",
+          "lineNumber": 60
+        },
+        {
+          "caller": "isSafeProviderBaseUrl",
+          "callee": "url.hostname.toLowerCase().replace",
+          "lineNumber": 70
+        },
+        {
+          "caller": "isSafeProviderBaseUrl",
+          "callee": "url.hostname.toLowerCase",
+          "lineNumber": 70
+        },
+        {
+          "caller": "isSafeProviderBaseUrl",
+          "callee": "host.endsWith",
+          "lineNumber": 71
+        },
+        {
+          "caller": "isSafeProviderBaseUrl",
+          "callee": "/^(10\\.|127\\.|169\\.254\\.|192\\.168\\.)/.test",
+          "lineNumber": 72
+        },
+        {
+          "caller": "isSafeProviderBaseUrl",
+          "callee": "host.match",
+          "lineNumber": 73
+        },
+        {
+          "caller": "isSafeProviderBaseUrl",
+          "callee": "Number",
+          "lineNumber": 74
+        },
+        {
+          "caller": "isSafeProviderBaseUrl",
+          "callee": "Number",
+          "lineNumber": 74
+        },
+        {
+          "caller": "isSafeProviderBaseUrl",
+          "callee": "/^(0\\.|224\\.|240\\.)/.test",
+          "lineNumber": 75
+        },
+        {
+          "caller": "isSafeProviderBaseUrl",
+          "callee": "host.startsWith",
+          "lineNumber": 75
+        },
+        {
+          "caller": "isSafeProviderBaseUrl",
+          "callee": "host.startsWith",
+          "lineNumber": 75
+        },
+        {
+          "caller": "isSafeProviderBaseUrl",
+          "callee": "host.startsWith",
+          "lineNumber": 75
+        },
+        {
+          "caller": "isSafeProviderBaseUrl",
+          "callee": "host.startsWith",
+          "lineNumber": 75
+        },
+        {
+          "caller": "isSafeProviderBaseUrl",
+          "callee": "host.startsWith",
+          "lineNumber": 75
+        },
+        {
+          "caller": "isSafeProviderBaseUrl",
+          "callee": "host.startsWith",
+          "lineNumber": 75
+        },
+        {
+          "caller": "isSafeProviderBaseUrl",
+          "callee": "Boolean",
+          "lineNumber": 76
+        },
+        {
+          "caller": "normalizeBaseUrl",
+          "callee": "raw.replace",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/packages/shared/src/gemini-sse-normalize.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 61,
+      "functions": [
+        {
+          "name": "isRecord",
+          "startLine": 1,
+          "endLine": 3,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "normalizeGeminiToolCalls",
+          "startLine": 5,
+          "endLine": 13,
+          "params": [
+            "toolCalls"
+          ]
+        },
+        {
+          "name": "normalizeGeminiChunk",
+          "startLine": 16,
+          "endLine": 33,
+          "params": [
+            "payload"
+          ]
+        },
+        {
+          "name": "normalizeGeminiSseLine",
+          "startLine": 35,
+          "endLine": 45,
+          "params": [
+            "line"
+          ]
+        },
+        {
+          "name": "normalizeGeminiStream",
+          "startLine": 47,
+          "endLine": 70,
+          "params": [
+            "body"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "normalizeGeminiToolCalls",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeGeminiChunk",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeGeminiSseLine",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "normalizeGeminiStream",
+          "line": 47,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isRecord",
+          "callee": "Boolean",
+          "lineNumber": 2
+        },
+        {
+          "caller": "isRecord",
+          "callee": "Array.isArray",
+          "lineNumber": 2
+        },
+        {
+          "caller": "normalizeGeminiToolCalls",
+          "callee": "toolCalls.map",
+          "lineNumber": 6
+        },
+        {
+          "caller": "normalizeGeminiToolCalls",
+          "callee": "isRecord",
+          "lineNumber": 7
+        },
+        {
+          "caller": "normalizeGeminiChunk",
+          "callee": "isRecord",
+          "lineNumber": 17
+        },
+        {
+          "caller": "normalizeGeminiChunk",
+          "callee": "Array.isArray",
+          "lineNumber": 17
+        },
+        {
+          "caller": "normalizeGeminiChunk",
+          "callee": "payload.choices.map",
+          "lineNumber": 19
+        },
+        {
+          "caller": "normalizeGeminiChunk",
+          "callee": "isRecord",
+          "lineNumber": 20
+        },
+        {
+          "caller": "normalizeGeminiChunk",
+          "callee": "isRecord",
+          "lineNumber": 23
+        },
+        {
+          "caller": "normalizeGeminiChunk",
+          "callee": "Array.isArray",
+          "lineNumber": 23
+        },
+        {
+          "caller": "normalizeGeminiChunk",
+          "callee": "normalizeGeminiToolCalls",
+          "lineNumber": 24
+        },
+        {
+          "caller": "normalizeGeminiChunk",
+          "callee": "isRecord",
+          "lineNumber": 26
+        },
+        {
+          "caller": "normalizeGeminiChunk",
+          "callee": "Array.isArray",
+          "lineNumber": 26
+        },
+        {
+          "caller": "normalizeGeminiChunk",
+          "callee": "normalizeGeminiToolCalls",
+          "lineNumber": 27
+        },
+        {
+          "caller": "normalizeGeminiSseLine",
+          "callee": "line.startsWith",
+          "lineNumber": 36
+        },
+        {
+          "caller": "normalizeGeminiSseLine",
+          "callee": "line.slice(6).trim",
+          "lineNumber": 37
+        },
+        {
+          "caller": "normalizeGeminiSseLine",
+          "callee": "line.slice",
+          "lineNumber": 37
+        },
+        {
+          "caller": "normalizeGeminiSseLine",
+          "callee": "JSON.stringify",
+          "lineNumber": 41
+        },
+        {
+          "caller": "normalizeGeminiSseLine",
+          "callee": "normalizeGeminiChunk",
+          "lineNumber": 41
+        },
+        {
+          "caller": "normalizeGeminiSseLine",
+          "callee": "JSON.parse",
+          "lineNumber": 41
+        },
+        {
+          "caller": "normalizeGeminiStream",
+          "callee": "body.pipeThrough",
+          "lineNumber": 52
+        },
+        {
+          "caller": "transform",
+          "callee": "decoder.decode",
+          "lineNumber": 54
+        },
+        {
+          "caller": "transform",
+          "callee": "buffer.split",
+          "lineNumber": 55
+        },
+        {
+          "caller": "transform",
+          "callee": "lines.pop",
+          "lineNumber": 56
+        },
+        {
+          "caller": "transform",
+          "callee": "controller.enqueue",
+          "lineNumber": 58
+        },
+        {
+          "caller": "transform",
+          "callee": "encoder.encode",
+          "lineNumber": 58
+        },
+        {
+          "caller": "transform",
+          "callee": "normalizeGeminiSseLine",
+          "lineNumber": 58
+        },
+        {
+          "caller": "transform",
+          "callee": "line.replace",
+          "lineNumber": 58
+        },
+        {
+          "caller": "flush",
+          "callee": "decoder.decode",
+          "lineNumber": 62
+        },
+        {
+          "caller": "flush",
+          "callee": "buffer.split",
+          "lineNumber": 64
+        },
+        {
+          "caller": "flush",
+          "callee": "controller.enqueue",
+          "lineNumber": 66
+        },
+        {
+          "caller": "flush",
+          "callee": "encoder.encode",
+          "lineNumber": 66
+        },
+        {
+          "caller": "flush",
+          "callee": "normalizeGeminiSseLine",
+          "lineNumber": 66
+        },
+        {
+          "caller": "flush",
+          "callee": "line.replace",
+          "lineNumber": 66
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    }
+  ]
+}

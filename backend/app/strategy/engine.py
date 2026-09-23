@@ -1287,11 +1287,11 @@ class StrategyEngine:
             "PRIORITY_C": "RISK_STATE",
             "UNKNOWN": "UNAVAILABLE",
         }
-        # Candidate Pool V1: the frozen raw strength composition is the only
-        # membership rank. VP is attached below as a route/disclosure, never a
-        # score adjustment or eligibility filter.
+        # Formal membership is exclusively L3 plus the optional saved basic
+        # filter.  The frozen legacy strength blend remains an *unverified*
+        # research ordering, never a Top-N membership gate.
         from app.services.right_side_candidates import (
-            RIGHT_SIDE_CANDIDATE_LIMIT,
+            VP_RESEARCH_COVERAGE_LIMIT,
             industry_concentration,
             order_rows,
             risk_route,
@@ -1303,37 +1303,42 @@ class StrategyEngine:
             VolumeProfileService,
         )
 
-        ranked_candidates = sorted(
+        research_ranked_candidates = sorted(
             ranked_context_rows,
             key=lambda row: (
                 -float(row.get("strength_score") or float("-inf")),
                 str(row.get("symbol") or ""),
             ),
-        )[:RIGHT_SIDE_CANDIDATE_LIMIT]
+        )
+        # Full minute VP is intentionally cost-bounded.  Coverage is a
+        # disclosed research enrichment only; candidates outside this subset
+        # remain formal rows with VP risk marked UNKNOWN.
+        vp_research_candidates = research_ranked_candidates[:VP_RESEARCH_COVERAGE_LIMIT]
         vp_service = VolumeProfileService(context.repo)
         vp_context = vp_service.prepare_batch_context(
-            symbols=[str(row["symbol"]) for row in ranked_candidates],
+            symbols=[str(row["symbol"]) for row in vp_research_candidates],
             as_of=context.as_of,
         )
         vp_rows = vp_service.build_batch(
             vp_context,
-            symbols=[str(row["symbol"]) for row in ranked_candidates],
+            symbols=[str(row["symbol"]) for row in vp_research_candidates],
             mode=VolumeProfileMode.FULL,
         )
         rows = []
-        for candidate_order, candidate in enumerate(ranked_candidates, start=1):
+        for research_candidate_rank, candidate in enumerate(research_ranked_candidates, start=1):
             row = dict(ranked_by_symbol.get(str(candidate["symbol"]), candidate))
             row["research_context_score"] = row.pop("final_rank_score", None)
             row["research_context_rank"] = row.pop("rank", None)
             row["research_context_level"] = research_level_by_priority.get(
                 row.pop("priority_level", "UNKNOWN"), "UNAVAILABLE"
             )
-            row["candidate_order"] = candidate_order
-            row["opportunity_score"] = row.get("strength_score")
-            # The generic result table calls this column "score".  In this
-            # dedicated candidate pool its only meaning is the frozen
-            # OpportunityScore, not a VP-adjusted score.
-            row["score"] = row["opportunity_score"]
+            row["research_candidate_rank"] = research_candidate_rank
+            row["research_candidate_score"] = row.get("strength_score")
+            row["research_candidate_score_status"] = "UNVERIFIED_RESEARCH"
+            # Keep the generic strategy-score contract empty.  The named
+            # research field above is display-only and must not leak into
+            # composite ranking, monitoring, or formal candidate selection.
+            row["score"] = None
             profiles = vp_rows.get(str(row["symbol"]), {})
             vp20, vp60 = profiles.get("vp20"), profiles.get("vp60")
             complete = bool(
@@ -1346,18 +1351,27 @@ class StrategyEngine:
             )
             vp20_extension = str(vp20.extension_context) if vp20 else None
             vp60_extension = str(vp60.extension_context) if vp60 else None
-            row["vp_risk_bucket"], row["vp_risk_score"] = risk_route(vp20_extension, vp60_extension, complete=complete)
+            vp20_position = str(vp20.position_context) if vp20 else None
+            vp60_position = str(vp60.position_context) if vp60 else None
+            row["vp_risk_bucket"], row["vp_risk_score"] = risk_route(
+                vp20_extension,
+                vp60_extension,
+                position20=vp20_position,
+                position60=vp60_position,
+                complete=complete,
+            )
             row.update({
                 "vp20_extension": vp20_extension, "vp60_extension": vp60_extension,
-                "vp20_position": str(vp20.position_context) if vp20 else None,
-                "vp60_position": str(vp60.position_context) if vp60 else None,
+                "vp20_position": vp20_position,
+                "vp60_position": vp60_position,
                 "vp20_acceptance": str(vp20.acceptance_context) if vp20 else None,
                 "vp60_acceptance": str(vp60.acceptance_context) if vp60 else None,
+                "vp_research_covered": str(row["symbol"]) in vp_rows,
                 "timing_status": None,
-                "ranking_mode": "right_side_candidate_pool_v1",
+                "ranking_mode": "formal_l3_with_unverified_research_order",
             })
             rows.append(row)
-        rows = order_rows(rows, limit=RIGHT_SIDE_CANDIDATE_LIMIT)
+        rows = order_rows(rows)
         logger.info("wyckoff_funnel diagnostics: %s", result.diagnostics)
         return StrategyResult(
             as_of=context.as_of,
@@ -1373,7 +1387,10 @@ class StrategyEngine:
                 "wyckoff_research_trigger_affects_formal_selection": False,
                 "basic_filter_candidate_count": len(candidates),
                 "basic_filter_applied": filter_applied,
-                "right_side_candidate_limit": RIGHT_SIDE_CANDIDATE_LIMIT,
+                "formal_candidate_selection": "l3_plus_basic_filter_only",
+                "research_candidate_order_status": "UNVERIFIED_RESEARCH",
+                "vp_research_coverage_limit": VP_RESEARCH_COVERAGE_LIMIT,
+                "vp_research_coverage_count": len(vp_research_candidates),
                 "risk_distribution": {
                     bucket: sum(row.get("vp_risk_bucket") == bucket for row in rows)
                     for bucket in ("EXTREME", "HIGH", "MEDIUM", "LOW", "UNKNOWN")

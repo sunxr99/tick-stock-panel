@@ -1,0 +1,182 @@
+{
+  "nodes": [
+    {
+      "id": "config:.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": ".env.example",
+      "summary": "配置文件，负责承载 .env.example 所定义的功能与协作关系。",
+      "tags": [
+        "配置",
+        "工程化",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:AGENTS.md",
+      "type": "document",
+      "name": "AGENTS.md",
+      "filePath": "AGENTS.md",
+      "summary": "项目文档，负责承载 AGENTS.md 所定义的功能与协作关系。",
+      "tags": [
+        "文档",
+        "说明",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:CONTRIBUTING.md",
+      "type": "document",
+      "name": "CONTRIBUTING.md",
+      "filePath": "CONTRIBUTING.md",
+      "summary": "项目文档，负责承载 CONTRIBUTING.md 所定义的功能与协作关系。",
+      "tags": [
+        "文档",
+        "说明",
+        "实现"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "项目文档，负责承载 README.md 所定义的功能与协作关系。",
+      "tags": [
+        "文档",
+        "说明",
+        "实现"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:dev.ps1",
+      "type": "file",
+      "name": "dev.ps1",
+      "filePath": "dev.ps1",
+      "summary": "辅助脚本，负责承载 dev.ps1 所定义的功能与协作关系。",
+      "tags": [
+        "脚本",
+        "自动化",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:dev.sh",
+      "type": "file",
+      "name": "dev.sh",
+      "filePath": "dev.sh",
+      "summary": "辅助脚本，负责承载 dev.sh 所定义的功能与协作关系。",
+      "tags": [
+        "脚本",
+        "自动化",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:dev.sh:read_dotenv_value",
+      "type": "function",
+      "name": "read_dotenv_value",
+      "filePath": "dev.sh",
+      "lineRange": [
+        20,
+        37
+      ],
+      "summary": "实现 read_dotenv_value，承担该模块中的具体处理逻辑。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:dev.sh:free_port",
+      "type": "function",
+      "name": "free_port",
+      "filePath": "dev.sh",
+      "lineRange": [
+        94,
+        119
+      ],
+      "summary": "实现 free_port，承担该模块中的具体处理逻辑。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:dev.sh:cleanup",
+      "type": "function",
+      "name": "cleanup",
+      "filePath": "dev.sh",
+      "lineRange": [
+        145,
+        157
+      ],
+      "summary": "实现 cleanup，承担该模块中的具体处理逻辑。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:tiers.yaml",
+      "type": "config",
+      "name": "tiers.yaml",
+      "filePath": "tiers.yaml",
+      "summary": "配置文件，负责承载 tiers.yaml 所定义的功能与协作关系。",
+      "tags": [
+        "配置",
+        "工程化",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:操作说明书.md",
+      "type": "document",
+      "name": "操作说明书.md",
+      "filePath": "操作说明书.md",
+      "summary": "项目文档，负责承载 操作说明书.md 所定义的功能与协作关系。",
+      "tags": [
+        "文档",
+        "说明",
+        "实现"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:dev.sh",
+      "target": "function:dev.sh:read_dotenv_value",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:dev.sh",
+      "target": "function:dev.sh:free_port",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:dev.sh",
+      "target": "function:dev.sh:cleanup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

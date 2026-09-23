@@ -1,0 +1,56 @@
+{
+  "nodes": [
+    {
+      "id": "service:reference/py-market-profile-master/.dockerignore",
+      "type": "service",
+      "name": ".dockerignore",
+      "filePath": "reference/py-market-profile-master/.dockerignore",
+      "summary": "部署或自动化配置，负责承载 .dockerignore 所定义的功能与协作关系。",
+      "tags": [
+        "基础设施",
+        "部署",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:reference/py-market-profile-master/Dockerfile",
+      "type": "service",
+      "name": "Dockerfile",
+      "filePath": "reference/py-market-profile-master/Dockerfile",
+      "summary": "部署或自动化配置，负责承载 Dockerfile 所定义的功能与协作关系。",
+      "tags": [
+        "基础设施",
+        "部署",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:reference/py-market-profile-master/Dockerfile:python",
+      "type": "service",
+      "name": "python",
+      "filePath": "reference/py-market-profile-master/Dockerfile",
+      "lineRange": [
+        1,
+        9
+      ],
+      "summary": "定义 python，作为 Dockerfile 中的重要基础设施或模式元素。",
+      "tags": [
+        "定义",
+        "配置",
+        "基础设施"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "service:reference/py-market-profile-master/Dockerfile",
+      "target": "service:reference/py-market-profile-master/Dockerfile:python",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

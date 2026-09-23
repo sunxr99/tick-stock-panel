@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "file:reference/WyckoffTradingAgent/WyckoffTradingAgent-main/agents/stream_events.py",
+      "type": "file",
+      "name": "stream_events.py",
+      "filePath": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/agents/stream_events.py",
+      "summary": "提供 stream_events.py 的实现与定义，包含约 12 行可分析内容。",
+      "tags": [
+        "源码",
+        "实现",
+        "静态分析"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:reference/WyckoffTradingAgent/WyckoffTradingAgent-main/agents/stream_events.py:stream_event",
+      "type": "function",
+      "name": "stream_event",
+      "filePath": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/agents/stream_events.py",
+      "lineRange": [
+        8,
+        17
+      ],
+      "summary": "定义 stream_event，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:reference/WyckoffTradingAgent/WyckoffTradingAgent-main/agents/stream_events.py",
+      "target": "function:reference/WyckoffTradingAgent/WyckoffTradingAgent-main/agents/stream_events.py:stream_event",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:reference/WyckoffTradingAgent/WyckoffTradingAgent-main/agents/stream_events.py",
+      "target": "function:reference/WyckoffTradingAgent/WyckoffTradingAgent-main/agents/stream_events.py:stream_event",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:reference/WyckoffTradingAgent/WyckoffTradingAgent-main/agents/stream_events.py",
+      "target": "file:reference/WyckoffTradingAgent/WyckoffTradingAgent-main/cli/runtime.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

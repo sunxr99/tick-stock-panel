@@ -1,0 +1,2835 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 24,
+  "filesSkipped": [
+    "reference/czsc-master/czsc-master/crates/czsc-utils/data/minutes_split.feather"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 24,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 16,
+      "failed": 0,
+      "skipped": 8
+    }
+  },
+  "results": [
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-signals/benches/signals_bench.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 114,
+      "nonEmptyLines": 102,
+      "functions": [
+        {
+          "name": "generate_bars",
+          "startLine": 27,
+          "endLine": 57,
+          "params": [
+            "count"
+          ]
+        },
+        {
+          "name": "dispatch_all_signals",
+          "startLine": 61,
+          "endLine": 72,
+          "params": [
+            "czsc"
+          ]
+        },
+        {
+          "name": "bench_signals_dispatch",
+          "startLine": 74,
+          "endLine": 107,
+          "params": [
+            "c"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generate_bars",
+          "callee": "Arc::from",
+          "lineNumber": 28
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "(0..count)\n        .map(|i| {\n            let slow = (i as f64 * 0.001).sin() * 30.0;\n            let fast = (i as f64 * 0.07).sin() * 4.0;\n            let drift = i as f64 * 0.0002;\n            let close = 100.0 + slow + fast + drift;\n            let open = close - fast * 0.5;\n            let high = close.max(open) + 0.6;\n            let low = close.min(open) - 0.6;\n            let dt = Utc.timestamp_opt(base_ts + i as i64 * 1800, 0).unwrap();\n\n            RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30)\n                .open(open)\n                .close(close)\n                .high(high)\n                .low(low)\n                .vol(1_000_000.0)\n                .amount(close * 1_000_000.0)\n                .build()\n                .expect(\"RawBar 构造失败\")\n        }).collect",
+          "lineNumber": 31
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "(0..count).map",
+          "lineNumber": 31
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "(i as f64 * 0.001).sin",
+          "lineNumber": 33
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "(i as f64 * 0.07).sin",
+          "lineNumber": 34
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "close.max",
+          "lineNumber": 38
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "close.min",
+          "lineNumber": 39
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "Utc.timestamp_opt(base_ts + i as i64 * 1800, 0).unwrap",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "Utc.timestamp_opt",
+          "lineNumber": 40
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30)\n                .open(open)\n                .close(close)\n                .high(high)\n                .low(low)\n                .vol(1_000_000.0)\n                .amount(close * 1_000_000.0)\n                .build().expect",
+          "lineNumber": 42
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30)\n                .open(open)\n                .close(close)\n                .high(high)\n                .low(low)\n                .vol(1_000_000.0)\n                .amount(close * 1_000_000.0).build",
+          "lineNumber": 42
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30)\n                .open(open)\n                .close(close)\n                .high(high)\n                .low(low)\n                .vol(1_000_000.0).amount",
+          "lineNumber": 42
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30)\n                .open(open)\n                .close(close)\n                .high(high)\n                .low(low).vol",
+          "lineNumber": 42
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30)\n                .open(open)\n                .close(close)\n                .high(high).low",
+          "lineNumber": 42
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30)\n                .open(open)\n                .close(close).high",
+          "lineNumber": 42
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30)\n                .open(open).close",
+          "lineNumber": 42
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt)\n                .freq(Freq::F30).open",
+          "lineNumber": 42
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32)\n                .dt(dt).freq",
+          "lineNumber": 42
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone())\n                .id(i as i32).dt",
+          "lineNumber": 42
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default()\n                .symbol(symbol.clone()).id",
+          "lineNumber": 42
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 42
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 42
+        },
+        {
+          "caller": "generate_bars",
+          "callee": "symbol.clone",
+          "lineNumber": 43
+        },
+        {
+          "caller": "dispatch_all_signals",
+          "callee": "HashMap::new",
+          "lineNumber": 62
+        },
+        {
+          "caller": "dispatch_all_signals",
+          "callee": "TaCache::default",
+          "lineNumber": 63
+        },
+        {
+          "caller": "dispatch_all_signals",
+          "callee": "SIGNAL_REGISTRY.values",
+          "lineNumber": 65
+        },
+        {
+          "caller": "dispatch_all_signals",
+          "callee": "(meta.func)",
+          "lineNumber": 66
+        },
+        {
+          "caller": "dispatch_all_signals",
+          "callee": "black_box",
+          "lineNumber": 68
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "generate_bars",
+          "lineNumber": 76
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "CZSC::new",
+          "lineNumber": 77
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "SIGNAL_REGISTRY.len",
+          "lineNumber": 78
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "c.benchmark_group",
+          "lineNumber": 80
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "group.sample_size",
+          "lineNumber": 81
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "group.bench_function",
+          "lineNumber": 83
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "b.iter",
+          "lineNumber": 86
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "dispatch_all_signals",
+          "lineNumber": 87
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "black_box",
+          "lineNumber": 87
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "black_box",
+          "lineNumber": 88
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "generate_bars",
+          "lineNumber": 94
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "CZSC::new",
+          "lineNumber": 95
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "group.bench_function",
+          "lineNumber": 96
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "b.iter",
+          "lineNumber": 99
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "dispatch_all_signals",
+          "lineNumber": 100
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "black_box",
+          "lineNumber": 100
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "black_box",
+          "lineNumber": 101
+        },
+        {
+          "caller": "bench_signals_dispatch",
+          "callee": "group.finish",
+          "lineNumber": 106
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-ta/Cargo.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 27,
+      "nonEmptyLines": 24,
+      "sections": [
+        {
+          "heading": "package",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "lib",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "dependencies",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "features",
+          "level": 1,
+          "line": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-ta/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 35,
+      "nonEmptyLines": 24,
+      "sections": [
+        {
+          "heading": "czsc-ta",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "用法",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "特性",
+          "level": 2,
+          "line": 28
+        },
+        {
+          "heading": "项目主页",
+          "level": 2,
+          "line": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-ta/tests/test_pure.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 126,
+      "nonEmptyLines": 111,
+      "functions": [
+        {
+          "name": "series",
+          "startLine": 9,
+          "endLine": 11,
+          "params": [
+            "n"
+          ]
+        },
+        {
+          "name": "ultimate_smoother_preserves_length",
+          "startLine": 14,
+          "endLine": 18,
+          "params": []
+        },
+        {
+          "name": "ultimate_smoother_first_4_passthrough",
+          "startLine": 21,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "ultimate_smoother_empty_returns_empty",
+          "startLine": 36,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "rolling_rank_preserves_length",
+          "startLine": 41,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "ema_preserves_length",
+          "startLine": 48,
+          "endLine": 52,
+          "params": []
+        },
+        {
+          "name": "ema_zero_period_returns_empty",
+          "startLine": 55,
+          "endLine": 61,
+          "params": []
+        },
+        {
+          "name": "single_sma_positions_preserves_length",
+          "startLine": 64,
+          "endLine": 67,
+          "params": []
+        },
+        {
+          "name": "single_ema_positions_preserves_length",
+          "startLine": 70,
+          "endLine": 73,
+          "params": []
+        },
+        {
+          "name": "mid_positions_in_range",
+          "startLine": 76,
+          "endLine": 82,
+          "params": []
+        },
+        {
+          "name": "mid_positions_oscillating_produces_both_signs",
+          "startLine": 85,
+          "endLine": 96,
+          "params": []
+        },
+        {
+          "name": "double_sma_positions_returns_signal_length",
+          "startLine": 99,
+          "endLine": 103,
+          "params": []
+        },
+        {
+          "name": "boll_positions_in_signed_range",
+          "startLine": 106,
+          "endLine": 113,
+          "params": []
+        },
+        {
+          "name": "true_range_matches_input_length",
+          "startLine": 116,
+          "endLine": 126,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "series",
+          "callee": "(0..n).map(|i| (i as f64) * 0.1 + 100.0).collect",
+          "lineNumber": 10
+        },
+        {
+          "caller": "series",
+          "callee": "(0..n).map",
+          "lineNumber": 10
+        },
+        {
+          "caller": "ultimate_smoother_preserves_length",
+          "callee": "series",
+          "lineNumber": 15
+        },
+        {
+          "caller": "ultimate_smoother_preserves_length",
+          "callee": "ultimate_smoother",
+          "lineNumber": 16
+        },
+        {
+          "caller": "ultimate_smoother_first_4_passthrough",
+          "callee": "series",
+          "lineNumber": 23
+        },
+        {
+          "caller": "ultimate_smoother_first_4_passthrough",
+          "callee": "ultimate_smoother",
+          "lineNumber": 24
+        },
+        {
+          "caller": "rolling_rank_preserves_length",
+          "callee": "series",
+          "lineNumber": 42
+        },
+        {
+          "caller": "rolling_rank_preserves_length",
+          "callee": "rolling_rank",
+          "lineNumber": 43
+        },
+        {
+          "caller": "ema_preserves_length",
+          "callee": "series",
+          "lineNumber": 49
+        },
+        {
+          "caller": "ema_preserves_length",
+          "callee": "ema",
+          "lineNumber": 50
+        },
+        {
+          "caller": "ema_zero_period_returns_empty",
+          "callee": "ema",
+          "lineNumber": 59
+        },
+        {
+          "caller": "single_sma_positions_preserves_length",
+          "callee": "series",
+          "lineNumber": 65
+        },
+        {
+          "caller": "single_ema_positions_preserves_length",
+          "callee": "series",
+          "lineNumber": 71
+        },
+        {
+          "caller": "mid_positions_in_range",
+          "callee": "series",
+          "lineNumber": 77
+        },
+        {
+          "caller": "mid_positions_in_range",
+          "callee": "mid_positions",
+          "lineNumber": 78
+        },
+        {
+          "caller": "mid_positions_oscillating_produces_both_signs",
+          "callee": "(0..60)\n        .map(|i| 100.0 + 5.0 * ((i as f64) * std::f64::consts::PI / 6.0).sin()).collect",
+          "lineNumber": 87
+        },
+        {
+          "caller": "mid_positions_oscillating_produces_both_signs",
+          "callee": "(0..60).map",
+          "lineNumber": 87
+        },
+        {
+          "caller": "mid_positions_oscillating_produces_both_signs",
+          "callee": "((i as f64) * std::f64::consts::PI / 6.0).sin",
+          "lineNumber": 88
+        },
+        {
+          "caller": "mid_positions_oscillating_produces_both_signs",
+          "callee": "mid_positions",
+          "lineNumber": 90
+        },
+        {
+          "caller": "mid_positions_oscillating_produces_both_signs",
+          "callee": "out.iter().any",
+          "lineNumber": 92
+        },
+        {
+          "caller": "mid_positions_oscillating_produces_both_signs",
+          "callee": "out.iter",
+          "lineNumber": 92
+        },
+        {
+          "caller": "mid_positions_oscillating_produces_both_signs",
+          "callee": "out.iter().any",
+          "lineNumber": 93
+        },
+        {
+          "caller": "mid_positions_oscillating_produces_both_signs",
+          "callee": "out.iter",
+          "lineNumber": 93
+        },
+        {
+          "caller": "double_sma_positions_returns_signal_length",
+          "callee": "series",
+          "lineNumber": 100
+        },
+        {
+          "caller": "double_sma_positions_returns_signal_length",
+          "callee": "double_sma_positions",
+          "lineNumber": 101
+        },
+        {
+          "caller": "boll_positions_in_signed_range",
+          "callee": "series",
+          "lineNumber": 107
+        },
+        {
+          "caller": "boll_positions_in_signed_range",
+          "callee": "boll_positions",
+          "lineNumber": 108
+        },
+        {
+          "caller": "true_range_matches_input_length",
+          "callee": "true_range",
+          "lineNumber": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 14,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-trader/Cargo.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 49,
+      "nonEmptyLines": 44,
+      "sections": [
+        {
+          "heading": "package",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "lib",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "dependencies",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "features",
+          "level": 1,
+          "line": 45
+        },
+        {
+          "heading": "dev-dependencies",
+          "level": 1,
+          "line": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-trader/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 31,
+      "nonEmptyLines": 22,
+      "sections": [
+        {
+          "heading": "czsc-trader",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "用法",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "项目主页",
+          "level": 2,
+          "line": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-trader/tests/test_state_snapshot.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 99,
+      "nonEmptyLines": 90,
+      "functions": [
+        {
+          "name": "make_bar",
+          "startLine": 14,
+          "endLine": 38,
+          "params": [
+            "id",
+            "offset_min",
+            "close"
+          ]
+        },
+        {
+          "name": "build_trader_with_bars",
+          "startLine": 40,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "dump_restore_roundtrip_preserves_state",
+          "startLine": 51,
+          "endLine": 91,
+          "params": []
+        },
+        {
+          "name": "restore_state_rejects_garbage",
+          "startLine": 94,
+          "endLine": 99,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "make_bar",
+          "callee": "Utc.from_utc_datetime",
+          "lineNumber": 18
+        },
+        {
+          "caller": "make_bar",
+          "callee": "NaiveDateTime::parse_from_str(\n            &format!(\"2024-01-02 {hh:02}:{mm:02}:00\"),\n            \"%Y-%m-%d %H:%M:%S\",\n        ).unwrap",
+          "lineNumber": 19
+        },
+        {
+          "caller": "make_bar",
+          "callee": "NaiveDateTime::parse_from_str",
+          "lineNumber": 19
+        },
+        {
+          "caller": "make_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001.SZ\".to_string())\n        .id(id)\n        .dt(dt)\n        .freq(Freq::F1)\n        .open(close - 1.0)\n        .close(close)\n        .high(close + 1.0)\n        .low(close - 2.0)\n        .vol(1000.0)\n        .amount(1000.0 * close)\n        .build().unwrap",
+          "lineNumber": 25
+        },
+        {
+          "caller": "make_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001.SZ\".to_string())\n        .id(id)\n        .dt(dt)\n        .freq(Freq::F1)\n        .open(close - 1.0)\n        .close(close)\n        .high(close + 1.0)\n        .low(close - 2.0)\n        .vol(1000.0)\n        .amount(1000.0 * close).build",
+          "lineNumber": 25
+        },
+        {
+          "caller": "make_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001.SZ\".to_string())\n        .id(id)\n        .dt(dt)\n        .freq(Freq::F1)\n        .open(close - 1.0)\n        .close(close)\n        .high(close + 1.0)\n        .low(close - 2.0)\n        .vol(1000.0).amount",
+          "lineNumber": 25
+        },
+        {
+          "caller": "make_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001.SZ\".to_string())\n        .id(id)\n        .dt(dt)\n        .freq(Freq::F1)\n        .open(close - 1.0)\n        .close(close)\n        .high(close + 1.0)\n        .low(close - 2.0).vol",
+          "lineNumber": 25
+        },
+        {
+          "caller": "make_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001.SZ\".to_string())\n        .id(id)\n        .dt(dt)\n        .freq(Freq::F1)\n        .open(close - 1.0)\n        .close(close)\n        .high(close + 1.0).low",
+          "lineNumber": 25
+        },
+        {
+          "caller": "make_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001.SZ\".to_string())\n        .id(id)\n        .dt(dt)\n        .freq(Freq::F1)\n        .open(close - 1.0)\n        .close(close).high",
+          "lineNumber": 25
+        },
+        {
+          "caller": "make_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001.SZ\".to_string())\n        .id(id)\n        .dt(dt)\n        .freq(Freq::F1)\n        .open(close - 1.0).close",
+          "lineNumber": 25
+        },
+        {
+          "caller": "make_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001.SZ\".to_string())\n        .id(id)\n        .dt(dt)\n        .freq(Freq::F1).open",
+          "lineNumber": 25
+        },
+        {
+          "caller": "make_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001.SZ\".to_string())\n        .id(id)\n        .dt(dt).freq",
+          "lineNumber": 25
+        },
+        {
+          "caller": "make_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001.SZ\".to_string())\n        .id(id).dt",
+          "lineNumber": 25
+        },
+        {
+          "caller": "make_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001.SZ\".to_string()).id",
+          "lineNumber": 25
+        },
+        {
+          "caller": "make_bar",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 25
+        },
+        {
+          "caller": "make_bar",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 25
+        },
+        {
+          "caller": "make_bar",
+          "callee": "\"000001.SZ\".to_string",
+          "lineNumber": 26
+        },
+        {
+          "caller": "build_trader_with_bars",
+          "callee": "BarGenerator::new(Freq::F1, vec![Freq::F5], 2000, Market::Default).unwrap",
+          "lineNumber": 41
+        },
+        {
+          "caller": "build_trader_with_bars",
+          "callee": "BarGenerator::new",
+          "lineNumber": 41
+        },
+        {
+          "caller": "build_trader_with_bars",
+          "callee": "make_bar",
+          "lineNumber": 44
+        },
+        {
+          "caller": "build_trader_with_bars",
+          "callee": "bg.update_bar(&bar).unwrap",
+          "lineNumber": 45
+        },
+        {
+          "caller": "build_trader_with_bars",
+          "callee": "bg.update_bar",
+          "lineNumber": 45
+        },
+        {
+          "caller": "build_trader_with_bars",
+          "callee": "CzscTrader::new",
+          "lineNumber": 47
+        },
+        {
+          "caller": "build_trader_with_bars",
+          "callee": "\"000001.SZ\".to_string",
+          "lineNumber": 47
+        },
+        {
+          "caller": "dump_restore_roundtrip_preserves_state",
+          "callee": "build_trader_with_bars",
+          "lineNumber": 52
+        },
+        {
+          "caller": "dump_restore_roundtrip_preserves_state",
+          "callee": "trader.dump_state(&[], \"mean\").expect",
+          "lineNumber": 53
+        },
+        {
+          "caller": "dump_restore_roundtrip_preserves_state",
+          "callee": "trader.dump_state",
+          "lineNumber": 53
+        },
+        {
+          "caller": "dump_restore_roundtrip_preserves_state",
+          "callee": "CzscTrader::restore_state(&bytes).expect",
+          "lineNumber": 56
+        },
+        {
+          "caller": "dump_restore_roundtrip_preserves_state",
+          "callee": "CzscTrader::restore_state",
+          "lineNumber": 56
+        },
+        {
+          "caller": "dump_restore_roundtrip_preserves_state",
+          "callee": "lock.read",
+          "lineNumber": 68
+        },
+        {
+          "caller": "dump_restore_roundtrip_preserves_state",
+          "callee": "r.signals.bg.freq_bars.get(freq).expect(\"freq 缺失\").read",
+          "lineNumber": 69
+        },
+        {
+          "caller": "dump_restore_roundtrip_preserves_state",
+          "callee": "r.signals.bg.freq_bars.get(freq).expect",
+          "lineNumber": 69
+        },
+        {
+          "caller": "dump_restore_roundtrip_preserves_state",
+          "callee": "r.signals.bg.freq_bars.get",
+          "lineNumber": 69
+        },
+        {
+          "caller": "dump_restore_roundtrip_preserves_state",
+          "callee": "r.signals.kas.get(freq).expect",
+          "lineNumber": 81
+        },
+        {
+          "caller": "dump_restore_roundtrip_preserves_state",
+          "callee": "r.signals.kas.get",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-utils/Cargo.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 39,
+      "nonEmptyLines": 35,
+      "sections": [
+        {
+          "heading": "package",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "lib",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "dependencies",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "features",
+          "level": 1,
+          "line": 33
+        },
+        {
+          "heading": "dev-dependencies",
+          "level": 1,
+          "line": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-utils/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 37,
+      "nonEmptyLines": 25,
+      "sections": [
+        {
+          "heading": "czsc-utils",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "用法",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "特性",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "项目主页",
+          "level": 2,
+          "line": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-utils/tests/test_bar_generator.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "bar",
+          "startLine": 13,
+          "endLine": 27,
+          "params": [
+            "ts",
+            "open",
+            "close",
+            "high",
+            "low"
+          ]
+        },
+        {
+          "name": "new_constructs_with_freq_keys",
+          "startLine": 30,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "init_freq_with_bars_populates_seed_data",
+          "startLine": 37,
+          "endLine": 42,
+          "params": []
+        },
+        {
+          "name": "init_freq_with_bars_rejects_unknown_freq",
+          "startLine": 45,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "init_freq_with_bars_rejects_double_init",
+          "startLine": 52,
+          "endLine": 58,
+          "params": []
+        },
+        {
+          "name": "update_bar_appends_for_new_freq_window",
+          "startLine": 61,
+          "endLine": 68,
+          "params": []
+        },
+        {
+          "name": "symbol_returns_seed_symbol_after_update",
+          "startLine": 71,
+          "endLine": 79,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F1)\n        .id(0)\n        .open(open)\n        .close(close)\n        .high(high)\n        .low(low)\n        .vol(1000.0_f64)\n        .amount(1_000_000.0_f64)\n        .build().unwrap",
+          "lineNumber": 14
+        },
+        {
+          "caller": "bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F1)\n        .id(0)\n        .open(open)\n        .close(close)\n        .high(high)\n        .low(low)\n        .vol(1000.0_f64)\n        .amount(1_000_000.0_f64).build",
+          "lineNumber": 14
+        },
+        {
+          "caller": "bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F1)\n        .id(0)\n        .open(open)\n        .close(close)\n        .high(high)\n        .low(low)\n        .vol(1000.0_f64).amount",
+          "lineNumber": 14
+        },
+        {
+          "caller": "bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F1)\n        .id(0)\n        .open(open)\n        .close(close)\n        .high(high)\n        .low(low).vol",
+          "lineNumber": 14
+        },
+        {
+          "caller": "bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F1)\n        .id(0)\n        .open(open)\n        .close(close)\n        .high(high).low",
+          "lineNumber": 14
+        },
+        {
+          "caller": "bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F1)\n        .id(0)\n        .open(open)\n        .close(close).high",
+          "lineNumber": 14
+        },
+        {
+          "caller": "bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F1)\n        .id(0)\n        .open(open).close",
+          "lineNumber": 14
+        },
+        {
+          "caller": "bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F1)\n        .id(0).open",
+          "lineNumber": 14
+        },
+        {
+          "caller": "bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F1).id",
+          "lineNumber": 14
+        },
+        {
+          "caller": "bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap()).freq",
+          "lineNumber": 14
+        },
+        {
+          "caller": "bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\")).dt",
+          "lineNumber": 14
+        },
+        {
+          "caller": "bar",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 14
+        },
+        {
+          "caller": "bar",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 14
+        },
+        {
+          "caller": "bar",
+          "callee": "Arc::<str>::from",
+          "lineNumber": 15
+        },
+        {
+          "caller": "bar",
+          "callee": "Utc.timestamp_opt(ts, 0).unwrap",
+          "lineNumber": 16
+        },
+        {
+          "caller": "bar",
+          "callee": "Utc.timestamp_opt",
+          "lineNumber": 16
+        },
+        {
+          "caller": "new_constructs_with_freq_keys",
+          "callee": "BarGenerator::new(Freq::F1, vec![Freq::F30], 100, Market::Default).unwrap",
+          "lineNumber": 31
+        },
+        {
+          "caller": "new_constructs_with_freq_keys",
+          "callee": "BarGenerator::new",
+          "lineNumber": 31
+        },
+        {
+          "caller": "init_freq_with_bars_populates_seed_data",
+          "callee": "BarGenerator::new(Freq::F1, vec![Freq::F30], 100, Market::Default).unwrap",
+          "lineNumber": 38
+        },
+        {
+          "caller": "init_freq_with_bars_populates_seed_data",
+          "callee": "BarGenerator::new",
+          "lineNumber": 38
+        },
+        {
+          "caller": "init_freq_with_bars_populates_seed_data",
+          "callee": "bg.init_freq_with_bars(Freq::F30, seed).unwrap",
+          "lineNumber": 40
+        },
+        {
+          "caller": "init_freq_with_bars_populates_seed_data",
+          "callee": "bg.init_freq_with_bars",
+          "lineNumber": 40
+        },
+        {
+          "caller": "init_freq_with_bars_rejects_unknown_freq",
+          "callee": "BarGenerator::new(Freq::F1, vec![Freq::F30], 100, Market::Default).unwrap",
+          "lineNumber": 46
+        },
+        {
+          "caller": "init_freq_with_bars_rejects_unknown_freq",
+          "callee": "BarGenerator::new",
+          "lineNumber": 46
+        },
+        {
+          "caller": "init_freq_with_bars_rejects_double_init",
+          "callee": "BarGenerator::new(Freq::F1, vec![Freq::F30], 100, Market::Default).unwrap",
+          "lineNumber": 53
+        },
+        {
+          "caller": "init_freq_with_bars_rejects_double_init",
+          "callee": "BarGenerator::new",
+          "lineNumber": 53
+        },
+        {
+          "caller": "init_freq_with_bars_rejects_double_init",
+          "callee": "bg.init_freq_with_bars(Freq::F30, vec![bar(1_700_000_000, 10.0, 11.0, 12.0, 9.0)]).unwrap",
+          "lineNumber": 54
+        },
+        {
+          "caller": "init_freq_with_bars_rejects_double_init",
+          "callee": "bg.init_freq_with_bars",
+          "lineNumber": 54
+        },
+        {
+          "caller": "init_freq_with_bars_rejects_double_init",
+          "callee": "bg.init_freq_with_bars",
+          "lineNumber": 56
+        },
+        {
+          "caller": "update_bar_appends_for_new_freq_window",
+          "callee": "BarGenerator::new(Freq::F1, vec![Freq::F30], 100, Market::Default).unwrap",
+          "lineNumber": 62
+        },
+        {
+          "caller": "update_bar_appends_for_new_freq_window",
+          "callee": "BarGenerator::new",
+          "lineNumber": 62
+        },
+        {
+          "caller": "update_bar_appends_for_new_freq_window",
+          "callee": "bg.update_bar(&bar(1_700_000_000, 10.0, 11.0, 12.0, 9.0)).unwrap",
+          "lineNumber": 63
+        },
+        {
+          "caller": "update_bar_appends_for_new_freq_window",
+          "callee": "bg.update_bar",
+          "lineNumber": 63
+        },
+        {
+          "caller": "update_bar_appends_for_new_freq_window",
+          "callee": "bar",
+          "lineNumber": 63
+        },
+        {
+          "caller": "symbol_returns_seed_symbol_after_update",
+          "callee": "BarGenerator::new(Freq::F1, vec![Freq::F30], 100, Market::Default).unwrap",
+          "lineNumber": 72
+        },
+        {
+          "caller": "symbol_returns_seed_symbol_after_update",
+          "callee": "BarGenerator::new",
+          "lineNumber": 72
+        },
+        {
+          "caller": "symbol_returns_seed_symbol_after_update",
+          "callee": "bg.update_bar(&bar(1_700_000_000, 10.0, 11.0, 12.0, 9.0)).unwrap",
+          "lineNumber": 73
+        },
+        {
+          "caller": "symbol_returns_seed_symbol_after_update",
+          "callee": "bg.update_bar",
+          "lineNumber": 73
+        },
+        {
+          "caller": "symbol_returns_seed_symbol_after_update",
+          "callee": "bar",
+          "lineNumber": 73
+        },
+        {
+          "caller": "symbol_returns_seed_symbol_after_update",
+          "callee": "bg\n        .symbol().expect",
+          "lineNumber": 75
+        },
+        {
+          "caller": "symbol_returns_seed_symbol_after_update",
+          "callee": "bg.symbol",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-utils/tests/test_errors.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 35,
+      "functions": [
+        {
+          "name": "invalid_datetime_message",
+          "startLine": 9,
+          "endLine": 12,
+          "params": []
+        },
+        {
+          "name": "invalid_freq_end_date_carries_payload",
+          "startLine": 15,
+          "endLine": 18,
+          "params": []
+        },
+        {
+          "name": "no_weights_avail_includes_date",
+          "startLine": 21,
+          "endLine": 25,
+          "params": []
+        },
+        {
+          "name": "from_anyhow_routes_to_unexpected",
+          "startLine": 28,
+          "endLine": 32,
+          "params": []
+        },
+        {
+          "name": "from_polars_error_routes_to_polars",
+          "startLine": 35,
+          "endLine": 41,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "invalid_freq_end_date_carries_payload",
+          "callee": "UtilsError::InvalidFreqEndDate",
+          "lineNumber": 16
+        },
+        {
+          "caller": "invalid_freq_end_date_carries_payload",
+          "callee": "\"2024-99-99\".into",
+          "lineNumber": 16
+        },
+        {
+          "caller": "no_weights_avail_includes_date",
+          "callee": "NaiveDate::from_ymd_opt(2024, 1, 8).unwrap",
+          "lineNumber": 22
+        },
+        {
+          "caller": "no_weights_avail_includes_date",
+          "callee": "NaiveDate::from_ymd_opt",
+          "lineNumber": 22
+        },
+        {
+          "caller": "no_weights_avail_includes_date",
+          "callee": "UtilsError::NoWeightsAvail",
+          "lineNumber": 23
+        },
+        {
+          "caller": "from_anyhow_routes_to_unexpected",
+          "callee": "any.into",
+          "lineNumber": 30
+        },
+        {
+          "caller": "from_polars_error_routes_to_polars",
+          "callee": "PolarsError::ComputeError",
+          "lineNumber": 37
+        },
+        {
+          "caller": "from_polars_error_routes_to_polars",
+          "callee": "\"compute failed\".into",
+          "lineNumber": 37
+        },
+        {
+          "caller": "from_polars_error_routes_to_polars",
+          "callee": "pe.into",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-utils/tests/test_freq_data.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "freq_end_time_returns_some_datetime_for_30min_default_market",
+          "startLine": 13,
+          "endLine": 20,
+          "params": []
+        },
+        {
+          "name": "freq_end_time_idempotent_when_already_at_boundary",
+          "startLine": 23,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "freq_end_time_handles_daily_freq",
+          "startLine": 33,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "raw_bar",
+          "startLine": 40,
+          "endLine": 54,
+          "params": [
+            "ts_secs",
+            "freq"
+          ]
+        },
+        {
+          "name": "infer_market_returns_default_for_non_minute_freq",
+          "startLine": 57,
+          "endLine": 60,
+          "params": []
+        },
+        {
+          "name": "infer_market_returns_default_for_empty_bars",
+          "startLine": 63,
+          "endLine": 66,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "freq_end_time_returns_some_datetime_for_30min_default_market",
+          "callee": "Utc.with_ymd_and_hms(2024, 1, 8, 9, 30, 0).unwrap",
+          "lineNumber": 17
+        },
+        {
+          "caller": "freq_end_time_returns_some_datetime_for_30min_default_market",
+          "callee": "Utc.with_ymd_and_hms",
+          "lineNumber": 17
+        },
+        {
+          "caller": "freq_end_time_returns_some_datetime_for_30min_default_market",
+          "callee": "freq_end_time(dt, Freq::F30, Market::Default).unwrap",
+          "lineNumber": 18
+        },
+        {
+          "caller": "freq_end_time_returns_some_datetime_for_30min_default_market",
+          "callee": "freq_end_time",
+          "lineNumber": 18
+        },
+        {
+          "caller": "freq_end_time_idempotent_when_already_at_boundary",
+          "callee": "Utc.with_ymd_and_hms(2024, 1, 8, 10, 0, 0).unwrap",
+          "lineNumber": 26
+        },
+        {
+          "caller": "freq_end_time_idempotent_when_already_at_boundary",
+          "callee": "Utc.with_ymd_and_hms",
+          "lineNumber": 26
+        },
+        {
+          "caller": "freq_end_time_idempotent_when_already_at_boundary",
+          "callee": "freq_end_time(dt, Freq::F30, Market::Default).unwrap",
+          "lineNumber": 27
+        },
+        {
+          "caller": "freq_end_time_idempotent_when_already_at_boundary",
+          "callee": "freq_end_time",
+          "lineNumber": 27
+        },
+        {
+          "caller": "freq_end_time_idempotent_when_already_at_boundary",
+          "callee": "freq_end_time(edt1, Freq::F30, Market::Default).unwrap",
+          "lineNumber": 28
+        },
+        {
+          "caller": "freq_end_time_idempotent_when_already_at_boundary",
+          "callee": "freq_end_time",
+          "lineNumber": 28
+        },
+        {
+          "caller": "freq_end_time_handles_daily_freq",
+          "callee": "Utc.with_ymd_and_hms(2024, 1, 8, 14, 30, 0).unwrap",
+          "lineNumber": 36
+        },
+        {
+          "caller": "freq_end_time_handles_daily_freq",
+          "callee": "Utc.with_ymd_and_hms",
+          "lineNumber": 36
+        },
+        {
+          "caller": "freq_end_time_handles_daily_freq",
+          "callee": "freq_end_time(dt, Freq::D, Market::Default).unwrap",
+          "lineNumber": 37
+        },
+        {
+          "caller": "freq_end_time_handles_daily_freq",
+          "callee": "freq_end_time",
+          "lineNumber": 37
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts_secs, 0).unwrap())\n        .freq(freq)\n        .id(0)\n        .open(10.0)\n        .close(11.0)\n        .high(12.0)\n        .low(9.5)\n        .vol(1000.0)\n        .amount(1_000_000.0)\n        .build().unwrap",
+          "lineNumber": 41
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts_secs, 0).unwrap())\n        .freq(freq)\n        .id(0)\n        .open(10.0)\n        .close(11.0)\n        .high(12.0)\n        .low(9.5)\n        .vol(1000.0)\n        .amount(1_000_000.0).build",
+          "lineNumber": 41
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts_secs, 0).unwrap())\n        .freq(freq)\n        .id(0)\n        .open(10.0)\n        .close(11.0)\n        .high(12.0)\n        .low(9.5)\n        .vol(1000.0).amount",
+          "lineNumber": 41
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts_secs, 0).unwrap())\n        .freq(freq)\n        .id(0)\n        .open(10.0)\n        .close(11.0)\n        .high(12.0)\n        .low(9.5).vol",
+          "lineNumber": 41
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts_secs, 0).unwrap())\n        .freq(freq)\n        .id(0)\n        .open(10.0)\n        .close(11.0)\n        .high(12.0).low",
+          "lineNumber": 41
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts_secs, 0).unwrap())\n        .freq(freq)\n        .id(0)\n        .open(10.0)\n        .close(11.0).high",
+          "lineNumber": 41
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts_secs, 0).unwrap())\n        .freq(freq)\n        .id(0)\n        .open(10.0).close",
+          "lineNumber": 41
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts_secs, 0).unwrap())\n        .freq(freq)\n        .id(0).open",
+          "lineNumber": 41
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts_secs, 0).unwrap())\n        .freq(freq).id",
+          "lineNumber": 41
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts_secs, 0).unwrap()).freq",
+          "lineNumber": 41
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\")).dt",
+          "lineNumber": 41
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 41
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 41
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "Arc::<str>::from",
+          "lineNumber": 42
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "Utc.timestamp_opt(ts_secs, 0).unwrap",
+          "lineNumber": 43
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "Utc.timestamp_opt",
+          "lineNumber": 43
+        },
+        {
+          "caller": "infer_market_returns_default_for_empty_bars",
+          "callee": "Vec::new",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-utils/tests/test_trading_time.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "dt",
+          "startLine": 9,
+          "endLine": 14,
+          "params": [
+            "y",
+            "mo",
+            "d",
+            "h",
+            "mi"
+          ]
+        },
+        {
+          "name": "astock_regular_session",
+          "startLine": 17,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "astock_lunch_break_and_off_hours",
+          "startLine": 27,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "astock_weekend_closed",
+          "startLine": 33,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "hk_regular_session_and_lunch",
+          "startLine": 39,
+          "endLine": 43,
+          "params": []
+        },
+        {
+          "name": "crypto_always_open",
+          "startLine": 46,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "unknown_market_returns_false",
+          "startLine": 52,
+          "endLine": 54,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "dt",
+          "callee": "NaiveDate::from_ymd_opt(y, mo, d)\n        .unwrap()\n        .and_hms_opt(h, mi, 0).unwrap",
+          "lineNumber": 10
+        },
+        {
+          "caller": "dt",
+          "callee": "NaiveDate::from_ymd_opt(y, mo, d)\n        .unwrap().and_hms_opt",
+          "lineNumber": 10
+        },
+        {
+          "caller": "dt",
+          "callee": "NaiveDate::from_ymd_opt(y, mo, d).unwrap",
+          "lineNumber": 10
+        },
+        {
+          "caller": "dt",
+          "callee": "NaiveDate::from_ymd_opt",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc/Cargo.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 38,
+      "nonEmptyLines": 35,
+      "sections": [
+        {
+          "heading": "package",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "lib",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "dependencies",
+          "level": 1,
+          "line": 22
+        },
+        {
+          "heading": "features",
+          "level": 1,
+          "line": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 90,
+      "nonEmptyLines": 69,
+      "sections": [
+        {
+          "heading": "czsc",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "用法",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "命名空间速查",
+          "level": 2,
+          "line": 44
+        },
+        {
+          "heading": "Features",
+          "level": 2,
+          "line": 63
+        },
+        {
+          "heading": "工作区其它 crate",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "项目主页",
+          "level": 2,
+          "line": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc/src/lib.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 81,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/_native/__init__.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1436,
+      "nonEmptyLines": 1374,
+      "functions": [
+        {
+          "name": "check_bi",
+          "startLine": 1331,
+          "endLine": 1335,
+          "params": [
+            "bars",
+            "min_bi_len"
+          ]
+        },
+        {
+          "name": "check_fx",
+          "startLine": 1337,
+          "endLine": 1340,
+          "params": [
+            "k1",
+            "k2",
+            "k3"
+          ]
+        },
+        {
+          "name": "check_fxs",
+          "startLine": 1342,
+          "endLine": 1345,
+          "params": [
+            "bars"
+          ]
+        },
+        {
+          "name": "check_gap_info",
+          "startLine": 1347,
+          "endLine": 1350,
+          "params": [
+            "bars"
+          ]
+        },
+        {
+          "name": "chip_distribution_triangle",
+          "startLine": 1352,
+          "endLine": 1383,
+          "params": [
+            "data",
+            "price_step",
+            "decay_factor"
+          ]
+        },
+        {
+          "name": "create_fake_bis",
+          "startLine": 1385,
+          "endLine": 1388,
+          "params": [
+            "fxs"
+          ]
+        },
+        {
+          "name": "format_standard_kline",
+          "startLine": 1390,
+          "endLine": 1396,
+          "params": [
+            "bars"
+          ]
+        },
+        {
+          "name": "get_zs_seq",
+          "startLine": 1398,
+          "endLine": 1401,
+          "params": [
+            "bis"
+          ]
+        },
+        {
+          "name": "is_bis_down",
+          "startLine": 1403,
+          "endLine": 1406,
+          "params": [
+            "bis"
+          ]
+        },
+        {
+          "name": "is_bis_up",
+          "startLine": 1408,
+          "endLine": 1411,
+          "params": [
+            "bis"
+          ]
+        },
+        {
+          "name": "is_symmetry_zs",
+          "startLine": 1413,
+          "endLine": 1416,
+          "params": [
+            "bis",
+            "th"
+          ]
+        },
+        {
+          "name": "monotonicity",
+          "startLine": 1418,
+          "endLine": 1425,
+          "params": [
+            "sequence"
+          ]
+        },
+        {
+          "name": "parse_signal_doc",
+          "startLine": 1427,
+          "endLine": 1430,
+          "params": [
+            "doc"
+          ]
+        },
+        {
+          "name": "remove_include",
+          "startLine": 1432,
+          "endLine": 1435,
+          "params": [
+            "k1",
+            "k2",
+            "k3"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BI",
+          "startLine": 48,
+          "endLine": 165,
+          "methods": [
+            "symbol",
+            "direction",
+            "high",
+            "low",
+            "cache",
+            "__dict__",
+            "sdt",
+            "edt",
+            "fx_a",
+            "fx_b",
+            "fxs",
+            "bars",
+            "power",
+            "power_price",
+            "power_volume",
+            "power_snr",
+            "change",
+            "SNR",
+            "slope",
+            "acceleration",
+            "length",
+            "rsq",
+            "hypotenuse",
+            "angle",
+            "raw_bars",
+            "fake_bis",
+            "__new__",
+            "get_cache_with_default",
+            "get_price_linear",
+            "__repr__",
+            "__richcmp__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "BarGenerator",
+          "startLine": 168,
+          "endLine": 221,
+          "methods": [
+            "symbol",
+            "base_freq",
+            "end_dt",
+            "bars",
+            "__new__",
+            "init_freq_bars",
+            "get_latest_date",
+            "update",
+            "__reduce__",
+            "__setstate__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "CZSC",
+          "startLine": 224,
+          "endLine": 337,
+          "methods": [
+            "symbol",
+            "freq",
+            "max_bi_num",
+            "min_bi_len",
+            "bi_list",
+            "bars_raw",
+            "bars_raw_df",
+            "bars_ubi",
+            "finished_bis",
+            "zs_list",
+            "fx_list",
+            "cache",
+            "signals",
+            "ubi_fxs",
+            "ubi",
+            "verbose",
+            "last_bi_extend",
+            "__new__",
+            "from_dataframe",
+            "open_in_browser",
+            "to_echarts",
+            "to_plotly",
+            "update",
+            "__repr__",
+            "__reduce__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "CzscSignals",
+          "startLine": 340,
+          "endLine": 412,
+          "methods": [
+            "name",
+            "symbol",
+            "s",
+            "kas",
+            "freqs",
+            "base_freq",
+            "end_dt",
+            "bid",
+            "latest_price",
+            "signals_config",
+            "__new__",
+            "update_signals",
+            "get_signals_by_conf",
+            "__reduce__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "CzscTrader",
+          "startLine": 415,
+          "endLine": 532,
+          "methods": [
+            "name",
+            "symbol",
+            "s",
+            "kas",
+            "freqs",
+            "base_freq",
+            "end_dt",
+            "bid",
+            "latest_price",
+            "signals_config",
+            "positions",
+            "pos_changed",
+            "__new__",
+            "update",
+            "on_bar",
+            "on_sig",
+            "get_ensemble_pos",
+            "get_position",
+            "get_signals_by_conf",
+            "update_signals",
+            "dump_state",
+            "restore_state",
+            "__reduce__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Event",
+          "startLine": 535,
+          "endLine": 595,
+          "methods": [
+            "operate",
+            "signals_all",
+            "signals_any",
+            "signals_not",
+            "name",
+            "unique_signals",
+            "sha256",
+            "__new__",
+            "from_dict",
+            "from_json",
+            "compute_sha8",
+            "is_match",
+            "to_json",
+            "__repr__",
+            "__str__",
+            "dump",
+            "load",
+            "get_signals_config",
+            "__reduce__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "FX",
+          "startLine": 598,
+          "endLine": 656,
+          "methods": [
+            "symbol",
+            "dt",
+            "mark",
+            "high",
+            "low",
+            "fx",
+            "new_bars",
+            "raw_bars",
+            "power_str",
+            "power_volume",
+            "has_zs",
+            "elements",
+            "cache",
+            "__dict__",
+            "__new__",
+            "__repr__",
+            "__richcmp__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "FakeBI",
+          "startLine": 659,
+          "endLine": 680,
+          "methods": [
+            "symbol",
+            "sdt",
+            "edt",
+            "direction",
+            "high",
+            "low",
+            "power",
+            "cache",
+            "__repr__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "LiteBar",
+          "startLine": 683,
+          "endLine": 694,
+          "methods": [
+            "id",
+            "dt",
+            "price",
+            "__new__",
+            "__repr__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "NewBar",
+          "startLine": 697,
+          "endLine": 732,
+          "methods": [
+            "symbol",
+            "dt",
+            "freq",
+            "id",
+            "open",
+            "close",
+            "high",
+            "low",
+            "vol",
+            "amount",
+            "cache",
+            "elements",
+            "raw_bars",
+            "__new__",
+            "__repr__",
+            "__richcmp__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Operate",
+          "startLine": 735,
+          "endLine": 783,
+          "methods": [
+            "value",
+            "name",
+            "hl",
+            "hs",
+            "ho",
+            "lo",
+            "le",
+            "so",
+            "se",
+            "from_str_py",
+            "from_str",
+            "__str__",
+            "__repr__",
+            "__eq__",
+            "__hash__",
+            "__reduce__"
+          ],
+          "properties": [
+            "HL",
+            "HS",
+            "HO",
+            "LO",
+            "LE",
+            "SO",
+            "SE"
+          ]
+        },
+        {
+          "name": "ParsedSignalDoc",
+          "startLine": 786,
+          "endLine": 794,
+          "methods": [
+            "param_template",
+            "signals",
+            "__repr__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Pos",
+          "startLine": 797,
+          "endLine": 841,
+          "methods": [
+            "short",
+            "flat",
+            "long",
+            "__str__",
+            "__repr__",
+            "__eq__",
+            "__add__",
+            "__radd__",
+            "__float__",
+            "__int__",
+            "__lt__",
+            "__le__",
+            "__gt__",
+            "__ge__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Position",
+          "startLine": 844,
+          "endLine": 926,
+          "methods": [
+            "opens",
+            "exits",
+            "interval",
+            "timeout",
+            "stop_loss",
+            "t0",
+            "name",
+            "symbol",
+            "pos",
+            "pos_changed",
+            "end_dt",
+            "operates",
+            "pairs",
+            "holds",
+            "unique_signals",
+            "events",
+            "__new__",
+            "load_from_file",
+            "from_json",
+            "save",
+            "to_json",
+            "all_events",
+            "update",
+            "__reduce__",
+            "dump",
+            "load",
+            "__repr__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "RawBar",
+          "startLine": 929,
+          "endLine": 993,
+          "methods": [
+            "symbol",
+            "dt",
+            "freq",
+            "id",
+            "open",
+            "close",
+            "high",
+            "low",
+            "vol",
+            "amount",
+            "solid",
+            "upper",
+            "lower",
+            "cache",
+            "__dict__",
+            "__new__",
+            "_asdict",
+            "to_dict",
+            "__reduce__",
+            "__deepcopy__",
+            "__repr__",
+            "__richcmp__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Signal",
+          "startLine": 996,
+          "endLine": 1043,
+          "methods": [
+            "key",
+            "value",
+            "k3",
+            "v1",
+            "v2",
+            "v3",
+            "score",
+            "k1",
+            "k2",
+            "__new__",
+            "from_string",
+            "to_json",
+            "__str__",
+            "__repr__",
+            "__eq__",
+            "__hash__",
+            "matches",
+            "is_match",
+            "to_string"
+          ],
+          "properties": []
+        },
+        {
+          "name": "ZS",
+          "startLine": 1046,
+          "endLine": 1103,
+          "methods": [
+            "bis",
+            "sdt",
+            "edt",
+            "sdir",
+            "edir",
+            "zg",
+            "zd",
+            "zz",
+            "gg",
+            "dd",
+            "cache",
+            "__new__",
+            "is_valid"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Direction",
+          "startLine": 1106,
+          "endLine": 1144,
+          "methods": [
+            "value",
+            "name",
+            "__deepcopy__",
+            "__reduce__",
+            "__new__",
+            "__str__",
+            "__repr__",
+            "__hash__",
+            "__richcmp__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Freq",
+          "startLine": 1147,
+          "endLine": 1265,
+          "methods": [
+            "value",
+            "name",
+            "__deepcopy__",
+            "__reduce__",
+            "__new__",
+            "__str__",
+            "__repr__",
+            "__hash__",
+            "__richcmp__"
+          ],
+          "properties": [
+            "__members__"
+          ]
+        },
+        {
+          "name": "Mark",
+          "startLine": 1268,
+          "endLine": 1312,
+          "methods": [
+            "value",
+            "name",
+            "__deepcopy__",
+            "__reduce__",
+            "__new__",
+            "__str__",
+            "__repr__",
+            "__hash__",
+            "__richcmp__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Market",
+          "startLine": 1315,
+          "endLine": 1329,
+          "methods": [
+            "__new__"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "BI",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "BarGenerator",
+          "line": 167,
+          "isDefault": false
+        },
+        {
+          "name": "CZSC",
+          "line": 223,
+          "isDefault": false
+        },
+        {
+          "name": "CzscSignals",
+          "line": 339,
+          "isDefault": false
+        },
+        {
+          "name": "CzscTrader",
+          "line": 414,
+          "isDefault": false
+        },
+        {
+          "name": "Event",
+          "line": 534,
+          "isDefault": false
+        },
+        {
+          "name": "FX",
+          "line": 597,
+          "isDefault": false
+        },
+        {
+          "name": "FakeBI",
+          "line": 658,
+          "isDefault": false
+        },
+        {
+          "name": "LiteBar",
+          "line": 682,
+          "isDefault": false
+        },
+        {
+          "name": "NewBar",
+          "line": 696,
+          "isDefault": false
+        },
+        {
+          "name": "Operate",
+          "line": 734,
+          "isDefault": false
+        },
+        {
+          "name": "ParsedSignalDoc",
+          "line": 785,
+          "isDefault": false
+        },
+        {
+          "name": "Pos",
+          "line": 796,
+          "isDefault": false
+        },
+        {
+          "name": "Position",
+          "line": 843,
+          "isDefault": false
+        },
+        {
+          "name": "RawBar",
+          "line": 928,
+          "isDefault": false
+        },
+        {
+          "name": "Signal",
+          "line": 995,
+          "isDefault": false
+        },
+        {
+          "name": "ZS",
+          "line": 1045,
+          "isDefault": false
+        },
+        {
+          "name": "Direction",
+          "line": 1105,
+          "isDefault": false
+        },
+        {
+          "name": "Freq",
+          "line": 1146,
+          "isDefault": false
+        },
+        {
+          "name": "Mark",
+          "line": 1267,
+          "isDefault": false
+        },
+        {
+          "name": "Market",
+          "line": 1314,
+          "isDefault": false
+        },
+        {
+          "name": "check_bi",
+          "line": 1331,
+          "isDefault": false
+        },
+        {
+          "name": "check_fx",
+          "line": 1337,
+          "isDefault": false
+        },
+        {
+          "name": "check_fxs",
+          "line": 1342,
+          "isDefault": false
+        },
+        {
+          "name": "check_gap_info",
+          "line": 1347,
+          "isDefault": false
+        },
+        {
+          "name": "chip_distribution_triangle",
+          "line": 1352,
+          "isDefault": false
+        },
+        {
+          "name": "create_fake_bis",
+          "line": 1385,
+          "isDefault": false
+        },
+        {
+          "name": "format_standard_kline",
+          "line": 1390,
+          "isDefault": false
+        },
+        {
+          "name": "get_zs_seq",
+          "line": 1398,
+          "isDefault": false
+        },
+        {
+          "name": "is_bis_down",
+          "line": 1403,
+          "isDefault": false
+        },
+        {
+          "name": "is_bis_up",
+          "line": 1408,
+          "isDefault": false
+        },
+        {
+          "name": "is_symmetry_zs",
+          "line": 1413,
+          "isDefault": false
+        },
+        {
+          "name": "monotonicity",
+          "line": 1418,
+          "isDefault": false
+        },
+        {
+          "name": "parse_signal_doc",
+          "line": 1427,
+          "isDefault": false
+        },
+        {
+          "name": "remove_include",
+          "line": 1432,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 35,
+        "functionCount": 14,
+        "classCount": 21
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/_utils/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/aphorism.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 3,
+      "functions": [
+        {
+          "name": "print_one",
+          "startLine": 5,
+          "endLine": 5,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "print_one",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/connectors/__init__.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/connectors/ccxt_connector.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "functions": [
+        {
+          "name": "get_symbols",
+          "startLine": 5,
+          "endLine": 5,
+          "params": [
+            "exchange",
+            "**kwargs"
+          ]
+        },
+        {
+          "name": "get_raw_bars",
+          "startLine": 6,
+          "endLine": 8,
+          "params": [
+            "symbol",
+            "period",
+            "sdt",
+            "edt",
+            "**kwargs"
+          ]
+        },
+        {
+          "name": "get_latest_klines",
+          "startLine": 9,
+          "endLine": 9,
+          "params": [
+            "symbol",
+            "period",
+            "sdt",
+            "**kwargs"
+          ]
+        },
+        {
+          "name": "test_fetcher",
+          "startLine": 10,
+          "endLine": 10,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "get_symbols",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "get_raw_bars",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "get_latest_klines",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "test_fetcher",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/connectors/local_data.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 5,
+      "functions": [
+        {
+          "name": "get_groups",
+          "startLine": 5,
+          "endLine": 5,
+          "params": []
+        },
+        {
+          "name": "get_symbols",
+          "startLine": 6,
+          "endLine": 6,
+          "params": [
+            "name",
+            "**kwargs"
+          ]
+        },
+        {
+          "name": "get_raw_bars",
+          "startLine": 7,
+          "endLine": 7,
+          "params": [
+            "symbol",
+            "freq",
+            "sdt",
+            "edt",
+            "fq",
+            "**kwargs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "get_groups",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "get_symbols",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "get_raw_bars",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/eda.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 4,
+      "functions": [
+        {
+          "name": "monotonicity",
+          "startLine": 3,
+          "endLine": 3,
+          "params": [
+            "sequence"
+          ]
+        },
+        {
+          "name": "mark_cta_periods",
+          "startLine": 4,
+          "endLine": 4,
+          "params": [
+            "df",
+            "**kwargs"
+          ]
+        },
+        {
+          "name": "mark_volatility",
+          "startLine": 5,
+          "endLine": 5,
+          "params": [
+            "df",
+            "kind",
+            "**kwargs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "monotonicity",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "mark_cta_periods",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "mark_volatility",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/envs.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "functions": [
+        {
+          "name": "get_verbose",
+          "startLine": 1,
+          "endLine": 1,
+          "params": [
+            "verbose"
+          ]
+        },
+        {
+          "name": "get_min_bi_len",
+          "startLine": 2,
+          "endLine": 2,
+          "params": [
+            "v"
+          ]
+        },
+        {
+          "name": "get_max_bi_num",
+          "startLine": 3,
+          "endLine": 3,
+          "params": [
+            "v"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "get_verbose",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "get_min_bi_len",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "get_max_bi_num",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    }
+  ]
+}

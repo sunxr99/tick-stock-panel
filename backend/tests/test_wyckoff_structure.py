@@ -9,6 +9,7 @@ from app.wyckoff.wyckoff_structure import (
     _ensure_pct_chg,
     _range_quality,
     build_structure_shadow,
+    detect_sos,
     detect_structure_triggers,
     identify_trading_range,
 )
@@ -98,6 +99,20 @@ def test_structure_sos_uses_dynamic_resistance() -> None:
 
     assert result.triggers["sos"]
     assert result.stage_map["000001"] == "Markup"
+
+
+def test_layer2_sos_detector_reuses_the_same_prior_range_rule() -> None:
+    frame = _range_df()
+    frame.loc[frame.index[-1], ["open", "high", "low", "close", "volume", "pct_chg"]] = [
+        11.6,
+        12.9,
+        11.5,
+        12.65,
+        3_000_000.0,
+        7.0,
+    ]
+
+    assert detect_sos(frame, FunnelConfig(sos_pct_min=5.0, sos_vol_ratio=2.0)) is not None
 
 
 def test_structure_converts_decimal_change_pct_for_sos() -> None:

@@ -1,0 +1,6547 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 11,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 11,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 11,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "backend/_debug_chan.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 27,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/app/custom/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 3,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/app/custom/chanlun.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 863,
+      "nonEmptyLines": 762,
+      "functions": [
+        {
+          "name": "_load_czsc",
+          "startLine": 69,
+          "endLine": 76,
+          "params": []
+        },
+        {
+          "name": "_dt_str",
+          "startLine": 79,
+          "endLine": 82,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "_validate_and_standardize",
+          "startLine": 85,
+          "endLine": 119,
+          "params": [
+            "frame",
+            "symbol",
+            "timestamp_col"
+          ]
+        },
+        {
+          "name": "_latest_completed_minute_end",
+          "startLine": 122,
+          "endLine": 129,
+          "params": [
+            "now",
+            "freq"
+          ]
+        },
+        {
+          "name": "_drop_unclosed_bars",
+          "startLine": 132,
+          "endLine": 149,
+          "params": [
+            "frame",
+            "timestamp_col",
+            "freq"
+          ]
+        },
+        {
+          "name": "_fetch_daily_frame",
+          "startLine": 152,
+          "endLine": 158,
+          "params": [
+            "repo",
+            "symbol",
+            "days"
+          ]
+        },
+        {
+          "name": "_fetch_minute_frame",
+          "startLine": 161,
+          "endLine": 173,
+          "params": [
+            "repo",
+            "symbol",
+            "asset_type",
+            "days"
+          ]
+        },
+        {
+          "name": "_fetch_native_minute_frames",
+          "startLine": 176,
+          "endLine": 209,
+          "params": [
+            "repo",
+            "symbol",
+            "asset_type",
+            "start",
+            "end",
+            "expected_dates"
+          ]
+        },
+        {
+          "name": "_to_bars",
+          "startLine": 212,
+          "endLine": 213,
+          "params": [
+            "czsc",
+            "frame",
+            "freq"
+          ]
+        },
+        {
+          "name": "_signal_config",
+          "startLine": 216,
+          "endLine": 224,
+          "params": [
+            "freqs"
+          ]
+        },
+        {
+          "name": "_latest_fx",
+          "startLine": 227,
+          "endLine": 231,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "_timeframe_state",
+          "startLine": 234,
+          "endLine": 283,
+          "params": [
+            "czsc",
+            "c",
+            "freq",
+            "as_of",
+            "signal_state"
+          ]
+        },
+        {
+          "name": "_serialize_czsc",
+          "startLine": 286,
+          "endLine": 307,
+          "params": [
+            "c",
+            "confirmations",
+            "as_of",
+            "chart_bars"
+          ]
+        },
+        {
+          "name": "_track_structure_confirmations",
+          "startLine": 310,
+          "endLine": 321,
+          "params": [
+            "czsc",
+            "bars"
+          ]
+        },
+        {
+          "name": "_split_signal_value",
+          "startLine": 324,
+          "endLine": 327,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "_bi_anchor",
+          "startLine": 330,
+          "endLine": 335,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "_signal_detail",
+          "startLine": 338,
+          "endLine": 349,
+          "params": [
+            "name",
+            "key",
+            "params",
+            "value"
+          ]
+        },
+        {
+          "name": "_higher_context",
+          "startLine": 352,
+          "endLine": 374,
+          "params": [
+            "freq",
+            "state",
+            "point_type"
+          ]
+        },
+        {
+          "name": "_make_signal_point",
+          "startLine": 377,
+          "endLine": 390,
+          "params": [
+            "c",
+            "name",
+            "key",
+            "params",
+            "value",
+            "confirmation_time",
+            "price",
+            "context"
+          ]
+        },
+        {
+          "name": "_signal_occurrence_key",
+          "startLine": 393,
+          "endLine": 396,
+          "params": [
+            "point"
+          ]
+        },
+        {
+          "name": "_find_daily_buy_sell_points",
+          "startLine": 399,
+          "endLine": 417,
+          "params": [
+            "czsc",
+            "bars"
+          ]
+        },
+        {
+          "name": "_daily_buy_points_at_snapshot",
+          "startLine": 420,
+          "endLine": 440,
+          "params": [
+            "czsc",
+            "c",
+            "confirmation_time",
+            "price"
+          ]
+        },
+        {
+          "name": "find_latest_daily_buy_points",
+          "startLine": 443,
+          "endLine": 497,
+          "params": [
+            "czsc",
+            "bars"
+          ]
+        },
+        {
+          "name": "filter_daily_czsc_buy_points",
+          "startLine": 500,
+          "endLine": 546,
+          "params": [
+            "history",
+            "params"
+          ]
+        },
+        {
+          "name": "_serialize_daily",
+          "startLine": 549,
+          "endLine": 554,
+          "params": [
+            "czsc",
+            "bars"
+          ]
+        },
+        {
+          "name": "_parse_signal_points",
+          "startLine": 557,
+          "endLine": 569,
+          "params": [
+            "c",
+            "state",
+            "freq",
+            "confirmation_time",
+            "price",
+            "seen"
+          ]
+        },
+        {
+          "name": "_resonance_evidence",
+          "startLine": 572,
+          "endLine": 573,
+          "params": [
+            "code",
+            "state"
+          ]
+        },
+        {
+          "name": "_analyze_resonance",
+          "startLine": 576,
+          "endLine": 607,
+          "params": [
+            "symbol",
+            "states"
+          ]
+        },
+        {
+          "name": "_analyze_minute_multi",
+          "startLine": 610,
+          "endLine": 683,
+          "params": [
+            "czsc",
+            "frame",
+            "daily_bars"
+          ]
+        },
+        {
+          "name": "_analyze_native_minute_multi",
+          "startLine": 686,
+          "endLine": 805,
+          "params": [
+            "czsc",
+            "frames",
+            "daily_bars"
+          ]
+        },
+        {
+          "name": "setup",
+          "startLine": 808,
+          "endLine": 863,
+          "params": [
+            "registrar"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MultiTimeframeCZSCResult",
+          "startLine": 61,
+          "endLine": 66,
+          "methods": [],
+          "properties": [
+            "timeframes",
+            "summary",
+            "base_frequency"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MultiTimeframeCZSCResult",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "_load_czsc",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "_dt_str",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "_validate_and_standardize",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "_latest_completed_minute_end",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "_drop_unclosed_bars",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "_fetch_daily_frame",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "_fetch_minute_frame",
+          "line": 161,
+          "isDefault": false
+        },
+        {
+          "name": "_fetch_native_minute_frames",
+          "line": 176,
+          "isDefault": false
+        },
+        {
+          "name": "_to_bars",
+          "line": 212,
+          "isDefault": false
+        },
+        {
+          "name": "_signal_config",
+          "line": 216,
+          "isDefault": false
+        },
+        {
+          "name": "_latest_fx",
+          "line": 227,
+          "isDefault": false
+        },
+        {
+          "name": "_timeframe_state",
+          "line": 234,
+          "isDefault": false
+        },
+        {
+          "name": "_serialize_czsc",
+          "line": 286,
+          "isDefault": false
+        },
+        {
+          "name": "_track_structure_confirmations",
+          "line": 310,
+          "isDefault": false
+        },
+        {
+          "name": "_split_signal_value",
+          "line": 324,
+          "isDefault": false
+        },
+        {
+          "name": "_bi_anchor",
+          "line": 330,
+          "isDefault": false
+        },
+        {
+          "name": "_signal_detail",
+          "line": 338,
+          "isDefault": false
+        },
+        {
+          "name": "_higher_context",
+          "line": 352,
+          "isDefault": false
+        },
+        {
+          "name": "_make_signal_point",
+          "line": 377,
+          "isDefault": false
+        },
+        {
+          "name": "_signal_occurrence_key",
+          "line": 393,
+          "isDefault": false
+        },
+        {
+          "name": "_find_daily_buy_sell_points",
+          "line": 399,
+          "isDefault": false
+        },
+        {
+          "name": "_daily_buy_points_at_snapshot",
+          "line": 420,
+          "isDefault": false
+        },
+        {
+          "name": "find_latest_daily_buy_points",
+          "line": 443,
+          "isDefault": false
+        },
+        {
+          "name": "filter_daily_czsc_buy_points",
+          "line": 500,
+          "isDefault": false
+        },
+        {
+          "name": "_serialize_daily",
+          "line": 549,
+          "isDefault": false
+        },
+        {
+          "name": "_parse_signal_points",
+          "line": 557,
+          "isDefault": false
+        },
+        {
+          "name": "_resonance_evidence",
+          "line": 572,
+          "isDefault": false
+        },
+        {
+          "name": "_analyze_resonance",
+          "line": 576,
+          "isDefault": false
+        },
+        {
+          "name": "_analyze_minute_multi",
+          "line": 610,
+          "isDefault": false
+        },
+        {
+          "name": "_analyze_native_minute_multi",
+          "line": 686,
+          "isDefault": false
+        },
+        {
+          "name": "setup",
+          "line": 808,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_load_czsc",
+          "callee": "HTTPException",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_dt_str",
+          "callee": "pd.Timestamp",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_dt_str",
+          "callee": "timestamp.strftime",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_dt_str",
+          "callee": "timestamp.time",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_dt_str",
+          "callee": "pd.Timestamp(0).time",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_dt_str",
+          "callee": "pd.Timestamp",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "sorted",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "set",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "ValueError",
+          "lineNumber": 90
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "', '.join",
+          "lineNumber": 90
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "frame.is_empty",
+          "lineNumber": 91
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "pd.DataFrame",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "frame.select([timestamp_col, \"open\", \"high\", \"low\", \"close\", \"volume\", \"amount\"]).to_pandas",
+          "lineNumber": 94
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "frame.select",
+          "lineNumber": 94
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "pd.DataFrame",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "pd.to_datetime",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "pd.to_numeric",
+          "lineNumber": 97
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "out.sort_values(\"dt\", kind=\"stable\").reset_index",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "out.sort_values",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "out[\"dt\"].isna().any",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "out[\"dt\"].isna",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "out[\"dt\"].duplicated().any",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "out[\"dt\"].duplicated",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "ValueError",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "out[list(_OHLCV_COLUMNS)].isna().any().any",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "out[list(_OHLCV_COLUMNS)].isna().any",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "out[list(_OHLCV_COLUMNS)].isna",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "list",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "ValueError",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "(out[[\"open\", \"close\", \"high\", \"low\"]] <= 0).any().any",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "(out[[\"open\", \"close\", \"high\", \"low\"]] <= 0).any",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "ValueError",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "(out[[\"vol\", \"amount\"]] < 0).any().any",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "(out[[\"vol\", \"amount\"]] < 0).any",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "ValueError",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "out[[\"open\", \"close\", \"low\"]].max",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "out[[\"open\", \"close\", \"high\"]].min",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "invalid_ohlc.any",
+          "lineNumber": 115
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "ValueError",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "out[[\"high\", \"open\", \"close\"]].max",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_validate_and_standardize",
+          "callee": "out[[\"low\", \"open\", \"close\"]].min",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_latest_completed_minute_end",
+          "callee": "now.replace",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_latest_completed_minute_end",
+          "callee": "timedelta",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_latest_completed_minute_end",
+          "callee": "now.time",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_latest_completed_minute_end",
+          "callee": "datetime.combine",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_latest_completed_minute_end",
+          "callee": "now.date",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "frame.is_empty",
+          "lineNumber": 134
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "cn_now().replace",
+          "lineNumber": 136
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "cn_now",
+          "lineNumber": 136
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "now.date",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "now.time",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "frame.filter",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "pl.col",
+          "lineNumber": 141
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "_latest_completed_minute_end",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "frame.filter",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "pl.col(timestamp_col).dt.date",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "pl.col",
+          "lineNumber": 145
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "frame.filter",
+          "lineNumber": 146
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "pl.col(timestamp_col).dt.date",
+          "lineNumber": 147
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "pl.col",
+          "lineNumber": 147
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "pl.col(timestamp_col).dt.date",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "pl.col",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_drop_unclosed_bars",
+          "callee": "pl.col",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_fetch_daily_frame",
+          "callee": "repo.resolve_asset_type",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_fetch_daily_frame",
+          "callee": "cn_today",
+          "lineNumber": 154
+        },
+        {
+          "caller": "_fetch_daily_frame",
+          "callee": "repo.get_daily_asset",
+          "lineNumber": 155
+        },
+        {
+          "caller": "_fetch_daily_frame",
+          "callee": "timedelta",
+          "lineNumber": 155
+        },
+        {
+          "caller": "_fetch_daily_frame",
+          "callee": "_drop_unclosed_bars",
+          "lineNumber": 156
+        },
+        {
+          "caller": "_fetch_daily_frame",
+          "callee": "_validate_and_standardize",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_fetch_daily_frame",
+          "callee": "standardized.tail(days).reset_index",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_fetch_daily_frame",
+          "callee": "standardized.tail",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "pd.DataFrame",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "cn_today",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "repo.get_minute_range",
+          "lineNumber": 166
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "timedelta",
+          "lineNumber": 166
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "_drop_unclosed_bars",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "frame.is_empty",
+          "lineNumber": 168
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "pd.DataFrame",
+          "lineNumber": 169
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "ValueError",
+          "lineNumber": 171
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "sorted",
+          "lineNumber": 172
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "frame.select(pl.col(\"datetime\").dt.date()).unique().to_series().to_list",
+          "lineNumber": 172
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "frame.select(pl.col(\"datetime\").dt.date()).unique().to_series",
+          "lineNumber": 172
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "frame.select(pl.col(\"datetime\").dt.date()).unique",
+          "lineNumber": 172
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "frame.select",
+          "lineNumber": 172
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "pl.col(\"datetime\").dt.date",
+          "lineNumber": 172
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "pl.col",
+          "lineNumber": 172
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "_validate_and_standardize",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "frame.filter",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "pl.col(\"datetime\").dt.date().is_in",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "pl.col(\"datetime\").dt.date",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_fetch_minute_frame",
+          "callee": "pl.col",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_fetch_native_minute_frames",
+          "callee": "_NATIVE_MINUTE_FREQS.items",
+          "lineNumber": 193
+        },
+        {
+          "caller": "_fetch_native_minute_frames",
+          "callee": "repo.get_czsc_minute_range",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_fetch_native_minute_frames",
+          "callee": "_drop_unclosed_bars",
+          "lineNumber": 195
+        },
+        {
+          "caller": "_fetch_native_minute_frames",
+          "callee": "frame.is_empty",
+          "lineNumber": 196
+        },
+        {
+          "caller": "_fetch_native_minute_frames",
+          "callee": "_validate_and_standardize",
+          "lineNumber": 198
+        },
+        {
+          "caller": "_fetch_native_minute_frames",
+          "callee": "set",
+          "lineNumber": 199
+        },
+        {
+          "caller": "_fetch_native_minute_frames",
+          "callee": "expected_dates.issubset",
+          "lineNumber": 200
+        },
+        {
+          "caller": "_fetch_native_minute_frames",
+          "callee": "logger.info",
+          "lineNumber": 201
+        },
+        {
+          "caller": "_fetch_native_minute_frames",
+          "callee": "sorted",
+          "lineNumber": 205
+        },
+        {
+          "caller": "_to_bars",
+          "callee": "czsc.format_standard_kline",
+          "lineNumber": 213
+        },
+        {
+          "caller": "_latest_fx",
+          "callee": "_dt_str",
+          "lineNumber": 231
+        },
+        {
+          "caller": "_latest_fx",
+          "callee": "str",
+          "lineNumber": 231
+        },
+        {
+          "caller": "_latest_fx",
+          "callee": "float",
+          "lineNumber": 231
+        },
+        {
+          "caller": "_latest_fx",
+          "callee": "float",
+          "lineNumber": 231
+        },
+        {
+          "caller": "_latest_fx",
+          "callee": "float",
+          "lineNumber": 231
+        },
+        {
+          "caller": "_latest_fx",
+          "callee": "str",
+          "lineNumber": 231
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "call_signal",
+          "lineNumber": 241
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "signal_state.get",
+          "lineNumber": 245
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "_signal_detail",
+          "lineNumber": 246
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "{\"向上\": \"BULLISH\", \"向下\": \"BEARISH\"}.get",
+          "lineNumber": 248
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "{\n        (\"BULLISH\", \"中继\"): \"UP_CONTINUATION\",\n        (\"BULLISH\", \"转折\"): \"UP_TURNING\",\n        (\"BEARISH\", \"中继\"): \"DOWN_CONTINUATION\",\n        (\"BEARISH\", \"转折\"): \"DOWN_TURNING\",\n    }.get",
+          "lineNumber": 249
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "signal_state.get",
+          "lineNumber": 259
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "call_signal",
+          "lineNumber": 263
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "quality.append",
+          "lineNumber": 266
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "_split_signal_value",
+          "lineNumber": 271
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "_bi_anchor",
+          "lineNumber": 279
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "_latest_fx",
+          "lineNumber": 280
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "_dt_str",
+          "lineNumber": 281
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "_dt_str",
+          "lineNumber": 281
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "float",
+          "lineNumber": 281
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "float",
+          "lineNumber": 281
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "float",
+          "lineNumber": 281
+        },
+        {
+          "caller": "_timeframe_state",
+          "callee": "float",
+          "lineNumber": 281
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "pd.Timestamp",
+          "lineNumber": 291
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "pd.Timestamp",
+          "lineNumber": 291
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "_dt_str",
+          "lineNumber": 293
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "_dt_str",
+          "lineNumber": 293
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "bis.append",
+          "lineNumber": 294
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "confirmations.get",
+          "lineNumber": 294
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "str",
+          "lineNumber": 294
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "float",
+          "lineNumber": 294
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "float",
+          "lineNumber": 294
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "float",
+          "lineNumber": 294
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "float",
+          "lineNumber": 294
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "float",
+          "lineNumber": 294
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "pd.Timestamp",
+          "lineNumber": 298
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "pd.Timestamp",
+          "lineNumber": 298
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "_dt_str",
+          "lineNumber": 300
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "_dt_str",
+          "lineNumber": 300
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "round",
+          "lineNumber": 303
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "float",
+          "lineNumber": 303
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "round",
+          "lineNumber": 303
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "float",
+          "lineNumber": 303
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "zss.append",
+          "lineNumber": 304
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "confirmations.get",
+          "lineNumber": 304
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "float",
+          "lineNumber": 304
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "float",
+          "lineNumber": 304
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "float",
+          "lineNumber": 304
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "float",
+          "lineNumber": 304
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "_dt_str",
+          "lineNumber": 306
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "float",
+          "lineNumber": 306
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "float",
+          "lineNumber": 306
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "float",
+          "lineNumber": 306
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "float",
+          "lineNumber": 306
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "float",
+          "lineNumber": 306
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "pd.Timestamp",
+          "lineNumber": 306
+        },
+        {
+          "caller": "_serialize_czsc",
+          "callee": "pd.Timestamp",
+          "lineNumber": 306
+        },
+        {
+          "caller": "_track_structure_confirmations",
+          "callee": "czsc.CZSC",
+          "lineNumber": 312
+        },
+        {
+          "caller": "_track_structure_confirmations",
+          "callee": "c.update",
+          "lineNumber": 315
+        },
+        {
+          "caller": "_track_structure_confirmations",
+          "callee": "_dt_str",
+          "lineNumber": 316
+        },
+        {
+          "caller": "_track_structure_confirmations",
+          "callee": "confirmations.setdefault",
+          "lineNumber": 318
+        },
+        {
+          "caller": "_track_structure_confirmations",
+          "callee": "_dt_str",
+          "lineNumber": 318
+        },
+        {
+          "caller": "_track_structure_confirmations",
+          "callee": "_dt_str",
+          "lineNumber": 318
+        },
+        {
+          "caller": "_track_structure_confirmations",
+          "callee": "confirmations.setdefault",
+          "lineNumber": 320
+        },
+        {
+          "caller": "_track_structure_confirmations",
+          "callee": "_dt_str",
+          "lineNumber": 320
+        },
+        {
+          "caller": "_track_structure_confirmations",
+          "callee": "_dt_str",
+          "lineNumber": 320
+        },
+        {
+          "caller": "_track_structure_confirmations",
+          "callee": "round",
+          "lineNumber": 320
+        },
+        {
+          "caller": "_track_structure_confirmations",
+          "callee": "float",
+          "lineNumber": 320
+        },
+        {
+          "caller": "_track_structure_confirmations",
+          "callee": "round",
+          "lineNumber": 320
+        },
+        {
+          "caller": "_track_structure_confirmations",
+          "callee": "float",
+          "lineNumber": 320
+        },
+        {
+          "caller": "_split_signal_value",
+          "callee": "value.split",
+          "lineNumber": 326
+        },
+        {
+          "caller": "_split_signal_value",
+          "callee": "int",
+          "lineNumber": 327
+        },
+        {
+          "caller": "_bi_anchor",
+          "callee": "_dt_str",
+          "lineNumber": 335
+        },
+        {
+          "caller": "_bi_anchor",
+          "callee": "_dt_str",
+          "lineNumber": 335
+        },
+        {
+          "caller": "_bi_anchor",
+          "callee": "str",
+          "lineNumber": 335
+        },
+        {
+          "caller": "_signal_detail",
+          "callee": "_split_signal_value",
+          "lineNumber": 339
+        },
+        {
+          "caller": "_signal_detail",
+          "callee": "values[\"v2\"].endswith",
+          "lineNumber": 347
+        },
+        {
+          "caller": "_higher_context",
+          "callee": "state.get",
+          "lineNumber": 358
+        },
+        {
+          "caller": "_higher_context",
+          "callee": "_signal_detail",
+          "lineNumber": 359
+        },
+        {
+          "caller": "_higher_context",
+          "callee": "contexts.append",
+          "lineNumber": 360
+        },
+        {
+          "caller": "_higher_context",
+          "callee": "missing_timeframes.append",
+          "lineNumber": 362
+        },
+        {
+          "caller": "_higher_context",
+          "callee": "point_type.endswith",
+          "lineNumber": 367
+        },
+        {
+          "caller": "_higher_context",
+          "callee": "all",
+          "lineNumber": 369
+        },
+        {
+          "caller": "_higher_context",
+          "callee": "all",
+          "lineNumber": 369
+        },
+        {
+          "caller": "_make_signal_point",
+          "callee": "_signal_detail",
+          "lineNumber": 378
+        },
+        {
+          "caller": "_make_signal_point",
+          "callee": "_bi_anchor",
+          "lineNumber": 379
+        },
+        {
+          "caller": "_make_signal_point",
+          "callee": "round",
+          "lineNumber": 385
+        },
+        {
+          "caller": "_signal_occurrence_key",
+          "callee": "anchor.get",
+          "lineNumber": 396
+        },
+        {
+          "caller": "_signal_occurrence_key",
+          "callee": "anchor.get",
+          "lineNumber": 396
+        },
+        {
+          "caller": "_find_daily_buy_sell_points",
+          "callee": "set",
+          "lineNumber": 404
+        },
+        {
+          "caller": "_find_daily_buy_sell_points",
+          "callee": "range",
+          "lineNumber": 405
+        },
+        {
+          "caller": "_find_daily_buy_sell_points",
+          "callee": "len",
+          "lineNumber": 405
+        },
+        {
+          "caller": "_find_daily_buy_sell_points",
+          "callee": "czsc.CZSC",
+          "lineNumber": 406
+        },
+        {
+          "caller": "_find_daily_buy_sell_points",
+          "callee": "_dt_str",
+          "lineNumber": 407
+        },
+        {
+          "caller": "_find_daily_buy_sell_points",
+          "callee": "call_signal",
+          "lineNumber": 409
+        },
+        {
+          "caller": "_find_daily_buy_sell_points",
+          "callee": "_make_signal_point",
+          "lineNumber": 412
+        },
+        {
+          "caller": "_find_daily_buy_sell_points",
+          "callee": "float",
+          "lineNumber": 412
+        },
+        {
+          "caller": "_find_daily_buy_sell_points",
+          "callee": "_signal_occurrence_key",
+          "lineNumber": 413
+        },
+        {
+          "caller": "_find_daily_buy_sell_points",
+          "callee": "seen.add",
+          "lineNumber": 415
+        },
+        {
+          "caller": "_find_daily_buy_sell_points",
+          "callee": "points.append",
+          "lineNumber": 416
+        },
+        {
+          "caller": "_daily_buy_points_at_snapshot",
+          "callee": "call_signal",
+          "lineNumber": 426
+        },
+        {
+          "caller": "_daily_buy_points_at_snapshot",
+          "callee": "points.append",
+          "lineNumber": 429
+        },
+        {
+          "caller": "_daily_buy_points_at_snapshot",
+          "callee": "_make_signal_point",
+          "lineNumber": 430
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "len",
+          "lineNumber": 454
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "czsc.CZSC",
+          "lineNumber": 456
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "_dt_str",
+          "lineNumber": 457
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "_daily_buy_points_at_snapshot",
+          "lineNumber": 458
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "float",
+          "lineNumber": 462
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "czsc.CZSC",
+          "lineNumber": 464
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "_daily_buy_points_at_snapshot",
+          "lineNumber": 465
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "_dt_str",
+          "lineNumber": 468
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "float",
+          "lineNumber": 469
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "_signal_occurrence_key",
+          "lineNumber": 471
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "_signal_occurrence_key",
+          "lineNumber": 475
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "set",
+          "lineNumber": 480
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "_signal_occurrence_key",
+          "lineNumber": 481
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "range",
+          "lineNumber": 485
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "len",
+          "lineNumber": 485
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "czsc.CZSC",
+          "lineNumber": 486
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "_daily_buy_points_at_snapshot",
+          "lineNumber": 487
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "_dt_str",
+          "lineNumber": 490
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "float",
+          "lineNumber": 491
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "earlier_occurrences.update",
+          "lineNumber": 493
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "_signal_occurrence_key",
+          "lineNumber": 493
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "pending.difference_update",
+          "lineNumber": 494
+        },
+        {
+          "caller": "find_latest_daily_buy_points",
+          "callee": "_signal_occurrence_key",
+          "lineNumber": 497
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "history.is_empty",
+          "lineNumber": 510
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "set",
+          "lineNumber": 510
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "pl.DataFrame",
+          "lineNumber": 511
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "cn_now().time",
+          "lineNumber": 516
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "cn_now",
+          "lineNumber": 516
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "history.filter",
+          "lineNumber": 517
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "pl.col",
+          "lineNumber": 517
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "cn_today",
+          "lineNumber": 517
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "history.is_empty",
+          "lineNumber": 518
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "pl.DataFrame",
+          "lineNumber": 519
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "RuntimeError",
+          "lineNumber": 524
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "history.partition_by(\"symbol\", as_dict=True, maintain_order=True).items",
+          "lineNumber": 527
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "history.partition_by",
+          "lineNumber": 527
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "str",
+          "lineNumber": 529
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "isinstance",
+          "lineNumber": 529
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "frame.sort",
+          "lineNumber": 530
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "_validate_and_standardize",
+          "lineNumber": 532
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "_to_bars",
+          "lineNumber": 533
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "find_latest_daily_buy_points",
+          "lineNumber": 534
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "logger.warning",
+          "lineNumber": 536
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "frame.tail(1).to_dicts",
+          "lineNumber": 540
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "frame.tail",
+          "lineNumber": 540
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "sorted",
+          "lineNumber": 541
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "str",
+          "lineNumber": 541
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "str",
+          "lineNumber": 542
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "str",
+          "lineNumber": 543
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "selected.append",
+          "lineNumber": 545
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "pl.from_dicts",
+          "lineNumber": 546
+        },
+        {
+          "caller": "filter_daily_czsc_buy_points",
+          "callee": "pl.DataFrame",
+          "lineNumber": 546
+        },
+        {
+          "caller": "_serialize_daily",
+          "callee": "_track_structure_confirmations",
+          "lineNumber": 550
+        },
+        {
+          "caller": "_serialize_daily",
+          "callee": "_serialize_czsc",
+          "lineNumber": 551
+        },
+        {
+          "caller": "_serialize_daily",
+          "callee": "_find_daily_buy_sell_points",
+          "lineNumber": 552
+        },
+        {
+          "caller": "_serialize_daily",
+          "callee": "_timeframe_state",
+          "lineNumber": 553
+        },
+        {
+          "caller": "_serialize_daily",
+          "callee": "_dt_str",
+          "lineNumber": 553
+        },
+        {
+          "caller": "_parse_signal_points",
+          "callee": "state.get",
+          "lineNumber": 561
+        },
+        {
+          "caller": "_parse_signal_points",
+          "callee": "_split_signal_value",
+          "lineNumber": 562
+        },
+        {
+          "caller": "_parse_signal_points",
+          "callee": "_make_signal_point",
+          "lineNumber": 564
+        },
+        {
+          "caller": "_parse_signal_points",
+          "callee": "_higher_context",
+          "lineNumber": 564
+        },
+        {
+          "caller": "_parse_signal_points",
+          "callee": "_split_signal_value",
+          "lineNumber": 564
+        },
+        {
+          "caller": "_parse_signal_points",
+          "callee": "_signal_occurrence_key",
+          "lineNumber": 565
+        },
+        {
+          "caller": "_parse_signal_points",
+          "callee": "seen.add",
+          "lineNumber": 567
+        },
+        {
+          "caller": "_parse_signal_points",
+          "callee": "points.append",
+          "lineNumber": 568
+        },
+        {
+          "caller": "_analyze_resonance",
+          "callee": "max",
+          "lineNumber": 581
+        },
+        {
+          "caller": "_analyze_resonance",
+          "callee": "states.values",
+          "lineNumber": 581
+        },
+        {
+          "caller": "_analyze_resonance",
+          "callee": "len",
+          "lineNumber": 585
+        },
+        {
+          "caller": "_analyze_resonance",
+          "callee": "set",
+          "lineNumber": 585
+        },
+        {
+          "caller": "_analyze_resonance",
+          "callee": "state_dates.values",
+          "lineNumber": 585
+        },
+        {
+          "caller": "_analyze_resonance",
+          "callee": "max",
+          "lineNumber": 586
+        },
+        {
+          "caller": "_analyze_resonance",
+          "callee": "states.values",
+          "lineNumber": 586
+        },
+        {
+          "caller": "_analyze_resonance",
+          "callee": "tuple",
+          "lineNumber": 588
+        },
+        {
+          "caller": "_analyze_resonance",
+          "callee": "dict",
+          "lineNumber": 598
+        },
+        {
+          "caller": "_analyze_resonance",
+          "callee": "zip",
+          "lineNumber": 598
+        },
+        {
+          "caller": "_analyze_resonance",
+          "callee": "_resonance_evidence",
+          "lineNumber": 601
+        },
+        {
+          "caller": "_analyze_resonance",
+          "callee": "zip",
+          "lineNumber": 601
+        },
+        {
+          "caller": "_analyze_resonance",
+          "callee": "max",
+          "lineNumber": 605
+        },
+        {
+          "caller": "_analyze_resonance",
+          "callee": "max",
+          "lineNumber": 607
+        },
+        {
+          "caller": "_analyze_resonance",
+          "callee": "states.values",
+          "lineNumber": 607
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "_to_bars",
+          "lineNumber": 624
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "len",
+          "lineNumber": 625
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "MultiTimeframeCZSCResult",
+          "lineNumber": 626
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "czsc.BarGenerator",
+          "lineNumber": 628
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "czsc.BarGenerator",
+          "lineNumber": 630
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "max",
+          "lineNumber": 630
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "len",
+          "lineNumber": 630
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "czsc.CzscSignals",
+          "lineNumber": 631
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "_signal_config",
+          "lineNumber": 631
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "set",
+          "lineNumber": 634
+        },
+        {
+          "caller": "with_daily_context",
+          "callee": "len",
+          "lineNumber": 645
+        },
+        {
+          "caller": "with_daily_context",
+          "callee": "pd.Timestamp(daily_bars[daily_index].dt).date",
+          "lineNumber": 645
+        },
+        {
+          "caller": "with_daily_context",
+          "callee": "pd.Timestamp",
+          "lineNumber": 645
+        },
+        {
+          "caller": "with_daily_context",
+          "callee": "now.date",
+          "lineNumber": 645
+        },
+        {
+          "caller": "with_daily_context",
+          "callee": "czsc.CZSC",
+          "lineNumber": 648
+        },
+        {
+          "caller": "with_daily_context",
+          "callee": "daily_context.update",
+          "lineNumber": 650
+        },
+        {
+          "caller": "with_daily_context",
+          "callee": "call_signal",
+          "lineNumber": 652
+        },
+        {
+          "caller": "with_daily_context",
+          "callee": "dict",
+          "lineNumber": 657
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "signals.update_signals",
+          "lineNumber": 662
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "chart_bg.update",
+          "lineNumber": 663
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "_dt_str",
+          "lineNumber": 664
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "with_daily_context",
+          "lineNumber": 665
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "pd.Timestamp",
+          "lineNumber": 665
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "signals.kas.items",
+          "lineNumber": 666
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "_dt_str",
+          "lineNumber": 667
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "confirmations[freq].setdefault",
+          "lineNumber": 670
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "_dt_str",
+          "lineNumber": 670
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "_dt_str",
+          "lineNumber": 670
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "confirmations[freq].setdefault",
+          "lineNumber": 672
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "_dt_str",
+          "lineNumber": 672
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "_dt_str",
+          "lineNumber": 672
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "round",
+          "lineNumber": 672
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "float",
+          "lineNumber": 672
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "round",
+          "lineNumber": 672
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "float",
+          "lineNumber": 672
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "points[freq].extend",
+          "lineNumber": 673
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "_parse_signal_points",
+          "lineNumber": 673
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "float",
+          "lineNumber": 673
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "signals.kas.get",
+          "lineNumber": 676
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "_serialize_czsc",
+          "lineNumber": 679
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "data.update",
+          "lineNumber": 680
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "_timeframe_state",
+          "lineNumber": 680
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "_dt_str",
+          "lineNumber": 680
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "summary.append",
+          "lineNumber": 682
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "len",
+          "lineNumber": 682
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "len",
+          "lineNumber": 682
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "len",
+          "lineNumber": 682
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "len",
+          "lineNumber": 682
+        },
+        {
+          "caller": "_analyze_minute_multi",
+          "callee": "MultiTimeframeCZSCResult",
+          "lineNumber": 683
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "_to_bars",
+          "lineNumber": 700
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "frames.items",
+          "lineNumber": 705
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "any",
+          "lineNumber": 707
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "len",
+          "lineNumber": 707
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "raw_by_freq.values",
+          "lineNumber": 707
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "MultiTimeframeCZSCResult",
+          "lineNumber": 708
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "czsc.CZSC",
+          "lineNumber": 710
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "raw_by_freq.items",
+          "lineNumber": 710
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "set",
+          "lineNumber": 713
+        },
+        {
+          "caller": "advance_daily_context",
+          "callee": "len",
+          "lineNumber": 724
+        },
+        {
+          "caller": "advance_daily_context",
+          "callee": "pd.Timestamp(daily_bars[daily_index].dt).date",
+          "lineNumber": 724
+        },
+        {
+          "caller": "advance_daily_context",
+          "callee": "pd.Timestamp",
+          "lineNumber": 724
+        },
+        {
+          "caller": "advance_daily_context",
+          "callee": "now.date",
+          "lineNumber": 724
+        },
+        {
+          "caller": "advance_daily_context",
+          "callee": "czsc.CZSC",
+          "lineNumber": 727
+        },
+        {
+          "caller": "advance_daily_context",
+          "callee": "daily_context.update",
+          "lineNumber": 729
+        },
+        {
+          "caller": "advance_daily_context",
+          "callee": "call_signal",
+          "lineNumber": 731
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "sorted",
+          "lineNumber": 737
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "pd.Timestamp",
+          "lineNumber": 739
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "raw_by_freq.items",
+          "lineNumber": 740
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "enumerate",
+          "lineNumber": 741
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "advance_daily_context",
+          "lineNumber": 746
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "analyzer.update",
+          "lineNumber": 748
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "_dt_str",
+          "lineNumber": 749
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "confirmations[freq].setdefault",
+          "lineNumber": 751
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "_dt_str",
+          "lineNumber": 751
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "_dt_str",
+          "lineNumber": 751
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "confirmations[freq].setdefault",
+          "lineNumber": 753
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "_dt_str",
+          "lineNumber": 754
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "_dt_str",
+          "lineNumber": 754
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "round",
+          "lineNumber": 754
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "float",
+          "lineNumber": 754
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "round",
+          "lineNumber": 754
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "float",
+          "lineNumber": 754
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "call_signal",
+          "lineNumber": 761
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "call_signal",
+          "lineNumber": 765
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "points[freq].extend",
+          "lineNumber": 768
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "_parse_signal_points",
+          "lineNumber": 769
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "float",
+          "lineNumber": 774
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "_dt_str",
+          "lineNumber": 783
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "_serialize_czsc",
+          "lineNumber": 784
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "data.update",
+          "lineNumber": 790
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "_timeframe_state",
+          "lineNumber": 794
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "summary.append",
+          "lineNumber": 797
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "len",
+          "lineNumber": 799
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "len",
+          "lineNumber": 800
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "len",
+          "lineNumber": 801
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "len",
+          "lineNumber": 802
+        },
+        {
+          "caller": "_analyze_native_minute_multi",
+          "callee": "MultiTimeframeCZSCResult",
+          "lineNumber": 805
+        },
+        {
+          "caller": "setup",
+          "callee": "APIRouter",
+          "lineNumber": 809
+        },
+        {
+          "caller": "setup",
+          "callee": "router.get",
+          "lineNumber": 811
+        },
+        {
+          "caller": "chan_plot",
+          "callee": "Query",
+          "lineNumber": 812
+        },
+        {
+          "caller": "chan_plot",
+          "callee": "Query",
+          "lineNumber": 812
+        },
+        {
+          "caller": "chan_plot",
+          "callee": "Query",
+          "lineNumber": 812
+        },
+        {
+          "caller": "chan_plot",
+          "callee": "_load_czsc",
+          "lineNumber": 813
+        },
+        {
+          "caller": "chan_plot",
+          "callee": "_fetch_daily_frame",
+          "lineNumber": 815
+        },
+        {
+          "caller": "chan_plot",
+          "callee": "_to_bars",
+          "lineNumber": 816
+        },
+        {
+          "caller": "chan_plot",
+          "callee": "HTTPException",
+          "lineNumber": 818
+        },
+        {
+          "caller": "chan_plot",
+          "callee": "str",
+          "lineNumber": 818
+        },
+        {
+          "caller": "chan_plot",
+          "callee": "len",
+          "lineNumber": 819
+        },
+        {
+          "caller": "chan_plot",
+          "callee": "HTTPException",
+          "lineNumber": 820
+        },
+        {
+          "caller": "chan_plot",
+          "callee": "czsc.CZSC",
+          "lineNumber": 821
+        },
+        {
+          "caller": "chan_plot",
+          "callee": "len",
+          "lineNumber": 822
+        },
+        {
+          "caller": "chan_plot",
+          "callee": "len",
+          "lineNumber": 822
+        },
+        {
+          "caller": "chan_plot",
+          "callee": "len",
+          "lineNumber": 822
+        },
+        {
+          "caller": "chan_plot",
+          "callee": "plot_czsc",
+          "lineNumber": 822
+        },
+        {
+          "caller": "setup",
+          "callee": "router.get",
+          "lineNumber": 824
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "Query",
+          "lineNumber": 825
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "Query",
+          "lineNumber": 825
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "Query",
+          "lineNumber": 825
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "_load_czsc",
+          "lineNumber": 826
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "_fetch_daily_frame",
+          "lineNumber": 829
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "_to_bars",
+          "lineNumber": 830
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "_fetch_native_minute_frames",
+          "lineNumber": 831
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "daily_frame[\"dt\"].iloc[0].date",
+          "lineNumber": 835
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "cn_today",
+          "lineNumber": 835
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "daily_frame[\"dt\"].iloc[-1].date",
+          "lineNumber": 836
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "cn_today",
+          "lineNumber": 836
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "set",
+          "lineNumber": 837
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "set",
+          "lineNumber": 837
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "pd.DataFrame",
+          "lineNumber": 839
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "_fetch_minute_frame",
+          "lineNumber": 839
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "HTTPException",
+          "lineNumber": 841
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "str",
+          "lineNumber": 841
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "len",
+          "lineNumber": 842
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "HTTPException",
+          "lineNumber": 843
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "_serialize_daily",
+          "lineNumber": 844
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "len",
+          "lineNumber": 846
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "len",
+          "lineNumber": 846
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "len",
+          "lineNumber": 846
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "len",
+          "lineNumber": 846
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "_analyze_native_minute_multi",
+          "lineNumber": 848
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "timeframes.update",
+          "lineNumber": 849
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "summary.extend",
+          "lineNumber": 850
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "_analyze_minute_multi",
+          "lineNumber": 852
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "timeframes.update",
+          "lineNumber": 853
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "multi.timeframes.items",
+          "lineNumber": 853
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "summary.extend",
+          "lineNumber": 854
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "timeframes.items",
+          "lineNumber": 855
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "_analyze_resonance",
+          "lineNumber": 856
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "bool",
+          "lineNumber": 857
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "len",
+          "lineNumber": 861
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "len",
+          "lineNumber": 861
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "len",
+          "lineNumber": 861
+        },
+        {
+          "caller": "chan_analyze",
+          "callee": "len",
+          "lineNumber": 861
+        },
+        {
+          "caller": "setup",
+          "callee": "registrar.include_router",
+          "lineNumber": 863
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 32,
+        "functionCount": 31,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/app/extensions/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/app/extensions/contracts.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 37,
+      "classes": [
+        {
+          "name": "RepositoryAccess",
+          "startLine": 12,
+          "endLine": 15,
+          "methods": [
+            "get_name_map"
+          ],
+          "properties": []
+        },
+        {
+          "name": "ExtensionContext",
+          "startLine": 19,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "api_version",
+            "data_dir",
+            "repository"
+          ]
+        },
+        {
+          "name": "NotificationFormatContext",
+          "startLine": 26,
+          "endLine": 27,
+          "methods": [],
+          "properties": [
+            "api_version"
+          ]
+        },
+        {
+          "name": "NotificationFormatter",
+          "startLine": 30,
+          "endLine": 42,
+          "methods": [
+            "format_message"
+          ],
+          "properties": []
+        },
+        {
+          "name": "DefaultNotificationFormatter",
+          "startLine": 45,
+          "endLine": 52,
+          "methods": [
+            "format_message"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RepositoryAccess",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionContext",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "NotificationFormatContext",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "NotificationFormatter",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "DefaultNotificationFormatter",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "format_message",
+          "callee": "str",
+          "lineNumber": 52
+        },
+        {
+          "caller": "format_message",
+          "callee": "event.get",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 0,
+        "classCount": 5
+      }
+    },
+    {
+      "path": "backend/app/extensions/loader.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 93,
+      "functions": [
+        {
+          "name": "_custom_module_names",
+          "startLine": 24,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "configure_backend_extensions",
+          "startLine": 36,
+          "endLine": 64,
+          "params": [
+            "app"
+          ]
+        },
+        {
+          "name": "_validate_router_conflicts",
+          "startLine": 67,
+          "endLine": 86,
+          "params": [
+            "app",
+            "registrar"
+          ]
+        },
+        {
+          "name": "start_backend_extensions",
+          "startLine": 89,
+          "endLine": 103,
+          "params": [
+            "context",
+            "registry"
+          ]
+        },
+        {
+          "name": "current_extension_context",
+          "startLine": 106,
+          "endLine": 111,
+          "params": [
+            "data_dir",
+            "repository"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "BackendExtensionLoadError",
+          "startLine": 19,
+          "endLine": 21,
+          "methods": [],
+          "properties": [
+            "module",
+            "error"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BackendExtensionLoadError",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "_custom_module_names",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "configure_backend_extensions",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "_validate_router_conflicts",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "start_backend_extensions",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "current_extension_context",
+          "line": 106,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_custom_module_names",
+          "callee": "importlib.import_module",
+          "lineNumber": 26
+        },
+        {
+          "caller": "_custom_module_names",
+          "callee": "sorted",
+          "lineNumber": 29
+        },
+        {
+          "caller": "_custom_module_names",
+          "callee": "pkgutil.iter_modules",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_custom_module_names",
+          "callee": "item.name.rsplit(\".\", 1)[-1].startswith",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_custom_module_names",
+          "callee": "item.name.rsplit",
+          "lineNumber": 32
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "BackendExtensionRegistry",
+          "lineNumber": 40
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "_custom_module_names",
+          "lineNumber": 43
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "importlib.import_module",
+          "lineNumber": 45
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "getattr",
+          "lineNumber": 46
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "getattr",
+          "lineNumber": 47
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "isinstance",
+          "lineNumber": 48
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "ValueError",
+          "lineNumber": 49
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "BackendExtensionRegistrar",
+          "lineNumber": 50
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "getattr",
+          "lineNumber": 51
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "callable",
+          "lineNumber": 52
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "ValueError",
+          "lineNumber": 53
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "setup",
+          "lineNumber": 54
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "_validate_router_conflicts",
+          "lineNumber": 55
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "registry.register",
+          "lineNumber": 56
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "app.include_router",
+          "lineNumber": 58
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "logger.warning",
+          "lineNumber": 60
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "errors.append",
+          "lineNumber": 61
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "BackendExtensionLoadError",
+          "lineNumber": 61
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "str",
+          "lineNumber": 61
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "registry.freeze",
+          "lineNumber": 63
+        },
+        {
+          "caller": "configure_backend_extensions",
+          "callee": "tuple",
+          "lineNumber": 64
+        },
+        {
+          "caller": "_validate_router_conflicts",
+          "callee": "isinstance",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_validate_router_conflicts",
+          "callee": "set",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_validate_router_conflicts",
+          "callee": "isinstance",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_validate_router_conflicts",
+          "callee": "ValueError",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_validate_router_conflicts",
+          "callee": "staged.add",
+          "lineNumber": 86
+        },
+        {
+          "caller": "start_backend_extensions",
+          "callee": "_custom_module_names",
+          "lineNumber": 94
+        },
+        {
+          "caller": "start_backend_extensions",
+          "callee": "importlib.import_module",
+          "lineNumber": 96
+        },
+        {
+          "caller": "start_backend_extensions",
+          "callee": "getattr",
+          "lineNumber": 97
+        },
+        {
+          "caller": "start_backend_extensions",
+          "callee": "registry.extension_ids",
+          "lineNumber": 97
+        },
+        {
+          "caller": "start_backend_extensions",
+          "callee": "getattr",
+          "lineNumber": 99
+        },
+        {
+          "caller": "start_backend_extensions",
+          "callee": "callable",
+          "lineNumber": 100
+        },
+        {
+          "caller": "start_backend_extensions",
+          "callee": "startup",
+          "lineNumber": 101
+        },
+        {
+          "caller": "start_backend_extensions",
+          "callee": "logger.warning",
+          "lineNumber": 103
+        },
+        {
+          "caller": "current_extension_context",
+          "callee": "ExtensionContext",
+          "lineNumber": 107
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/app/extensions/registry.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 134,
+      "nonEmptyLines": 110,
+      "classes": [
+        {
+          "name": "RegisteredImplementation",
+          "startLine": 21,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "extension_id",
+            "implementation_id",
+            "implementation",
+            "order"
+          ]
+        },
+        {
+          "name": "BackendExtensionRegistrar",
+          "startLine": 28,
+          "endLine": 49,
+          "methods": [
+            "__init__",
+            "include_router",
+            "register_notification_formatter"
+          ],
+          "properties": []
+        },
+        {
+          "name": "BackendExtensionRegistry",
+          "startLine": 52,
+          "endLine": 134,
+          "methods": [
+            "__init__",
+            "frozen",
+            "has_customizations",
+            "has_notification_formatters",
+            "extension_ids",
+            "register",
+            "freeze",
+            "notification_formatters",
+            "_ensure_mutable",
+            "_validate_id"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RegisteredImplementation",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "BackendExtensionRegistrar",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "BackendExtensionRegistry",
+          "line": 52,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "include_router",
+          "callee": "isinstance",
+          "lineNumber": 38
+        },
+        {
+          "caller": "include_router",
+          "callee": "TypeError",
+          "lineNumber": 39
+        },
+        {
+          "caller": "include_router",
+          "callee": "self.routers.append",
+          "lineNumber": 40
+        },
+        {
+          "caller": "register_notification_formatter",
+          "callee": "self.notification_formatters.append",
+          "lineNumber": 49
+        },
+        {
+          "caller": "__init__",
+          "callee": "set",
+          "lineNumber": 54
+        },
+        {
+          "caller": "has_customizations",
+          "callee": "bool",
+          "lineNumber": 64
+        },
+        {
+          "caller": "has_notification_formatters",
+          "callee": "bool",
+          "lineNumber": 68
+        },
+        {
+          "caller": "extension_ids",
+          "callee": "frozenset",
+          "lineNumber": 71
+        },
+        {
+          "caller": "register",
+          "callee": "self._ensure_mutable",
+          "lineNumber": 75
+        },
+        {
+          "caller": "register",
+          "callee": "self._validate_id",
+          "lineNumber": 77
+        },
+        {
+          "caller": "register",
+          "callee": "ValueError",
+          "lineNumber": 79
+        },
+        {
+          "caller": "register",
+          "callee": "ValueError",
+          "lineNumber": 84
+        },
+        {
+          "caller": "register",
+          "callee": "set",
+          "lineNumber": 87
+        },
+        {
+          "caller": "register",
+          "callee": "self._validate_id",
+          "lineNumber": 90
+        },
+        {
+          "caller": "register",
+          "callee": "isinstance",
+          "lineNumber": 91
+        },
+        {
+          "caller": "register",
+          "callee": "TypeError",
+          "lineNumber": 92
+        },
+        {
+          "caller": "register",
+          "callee": "ValueError",
+          "lineNumber": 94
+        },
+        {
+          "caller": "register",
+          "callee": "ValueError",
+          "lineNumber": 99
+        },
+        {
+          "caller": "register",
+          "callee": "staged_ids.add",
+          "lineNumber": 100
+        },
+        {
+          "caller": "register",
+          "callee": "staged.append",
+          "lineNumber": 101
+        },
+        {
+          "caller": "register",
+          "callee": "RegisteredImplementation",
+          "lineNumber": 102
+        },
+        {
+          "caller": "register",
+          "callee": "self._extension_ids.add",
+          "lineNumber": 105
+        },
+        {
+          "caller": "register",
+          "callee": "self._notification_formatters.extend",
+          "lineNumber": 106
+        },
+        {
+          "caller": "freeze",
+          "callee": "self._notification_formatters.sort",
+          "lineNumber": 109
+        },
+        {
+          "caller": "notification_formatters",
+          "callee": "RuntimeError",
+          "lineNumber": 118
+        },
+        {
+          "caller": "notification_formatters",
+          "callee": "RegisteredImplementation",
+          "lineNumber": 121
+        },
+        {
+          "caller": "notification_formatters",
+          "callee": "DefaultNotificationFormatter",
+          "lineNumber": 122
+        },
+        {
+          "caller": "notification_formatters",
+          "callee": "tuple",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_ensure_mutable",
+          "callee": "RuntimeError",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_validate_id",
+          "callee": "isinstance",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_validate_id",
+          "callee": "_ID_RE.fullmatch",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_validate_id",
+          "callee": "ValueError",
+          "lineNumber": 134
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "backend/app/strategy/builtin/czsc_daily_buy_point.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "filter_history",
+          "startLine": 22,
+          "endLine": 23,
+          "params": [
+            "history",
+            "params"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "filter_history",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "filter_history",
+          "callee": "filter_daily_czsc_buy_points",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/scripts/run_right_side_czsc_60m_timing_research.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 249,
+      "nonEmptyLines": 210,
+      "functions": [
+        {
+          "name": "_write",
+          "startLine": 22,
+          "endLine": 24,
+          "params": [
+            "path",
+            "value"
+          ]
+        },
+        {
+          "name": "_read",
+          "startLine": 27,
+          "endLine": 28,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "_points_for_as_of",
+          "startLine": 31,
+          "endLine": 91,
+          "params": [
+            "czsc",
+            "frame",
+            "as_of"
+          ]
+        },
+        {
+          "name": "_fmt",
+          "startLine": 94,
+          "endLine": 97,
+          "params": [
+            "value",
+            "pct"
+          ]
+        },
+        {
+          "name": "_table",
+          "startLine": 100,
+          "endLine": 101,
+          "params": [
+            "headers",
+            "rows"
+          ]
+        },
+        {
+          "name": "_pf",
+          "startLine": 104,
+          "endLine": 106,
+          "params": [
+            "values"
+          ]
+        },
+        {
+          "name": "_metrics",
+          "startLine": 109,
+          "endLine": 113,
+          "params": [
+            "frame",
+            "horizon"
+          ]
+        },
+        {
+          "name": "_metric_table",
+          "startLine": 116,
+          "endLine": 122,
+          "params": [
+            "groups"
+          ]
+        },
+        {
+          "name": "_date_values",
+          "startLine": 125,
+          "endLine": 133,
+          "params": [
+            "frame",
+            "horizon",
+            "metric"
+          ]
+        },
+        {
+          "name": "_comparison",
+          "startLine": 136,
+          "endLine": 139,
+          "params": [
+            "left",
+            "right",
+            "horizon",
+            "metric",
+            "label"
+          ]
+        },
+        {
+          "name": "_comparison_table",
+          "startLine": 142,
+          "endLine": 143,
+          "params": [
+            "items"
+          ]
+        },
+        {
+          "name": "_month_text",
+          "startLine": 146,
+          "endLine": 153,
+          "params": [
+            "left",
+            "right",
+            "metric"
+          ]
+        },
+        {
+          "name": "_status",
+          "startLine": 156,
+          "endLine": 166,
+          "params": [
+            "signal",
+            "base"
+          ]
+        },
+        {
+          "name": "_render",
+          "startLine": 169,
+          "endLine": 193,
+          "params": [
+            "frame",
+            "source_state"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 196,
+          "endLine": 245,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_write",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "_read",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "_points_for_as_of",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "_fmt",
+          "line": 94,
+          "isDefault": false
+        },
+        {
+          "name": "_table",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "_pf",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "_metrics",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "_metric_table",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "_date_values",
+          "line": 125,
+          "isDefault": false
+        },
+        {
+          "name": "_comparison",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "_comparison_table",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "_month_text",
+          "line": 146,
+          "isDefault": false
+        },
+        {
+          "name": "_status",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "_render",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 196,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_write",
+          "callee": "path.parent.mkdir",
+          "lineNumber": 23
+        },
+        {
+          "caller": "_write",
+          "callee": "path.write_text",
+          "lineNumber": 24
+        },
+        {
+          "caller": "_write",
+          "callee": "json.dumps",
+          "lineNumber": 24
+        },
+        {
+          "caller": "_read",
+          "callee": "json.loads",
+          "lineNumber": 28
+        },
+        {
+          "caller": "_read",
+          "callee": "path.read_text",
+          "lineNumber": 28
+        },
+        {
+          "caller": "_read",
+          "callee": "path.exists",
+          "lineNumber": 28
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "chanlun._to_bars",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "czsc.BarGenerator",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "set",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "set",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "generator.update",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "chanlun._dt_str",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "chanlun._dt_str",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "seen_times.add",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "czsc.CZSC",
+          "lineNumber": 64
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "analyzer.update",
+          "lineNumber": 64
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "len",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "call_signal",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "chanlun._make_signal_point",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "float",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "chanlun._signal_occurrence_key",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "seen_events.add",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "points.append",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "as_of.isoformat",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "str(point.get(\"confirmation_time\", \"\")).startswith",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "str",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "point.get",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "max",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "str",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "bool",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "bool",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "bool",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "latest.get",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "latest.get",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_points_for_as_of",
+          "callee": "bool",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_fmt",
+          "callee": "pd.isna",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_fmt",
+          "callee": "np.isfinite",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_fmt",
+          "callee": "float",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_fmt",
+          "callee": "float",
+          "lineNumber": 97
+        },
+        {
+          "caller": "_fmt",
+          "callee": "float",
+          "lineNumber": 97
+        },
+        {
+          "caller": "_table",
+          "callee": "\"\\n\".join",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_table",
+          "callee": "\" | \".join",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_table",
+          "callee": "\" | \".join",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_table",
+          "callee": "len",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_table",
+          "callee": "\" | \".join",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_table",
+          "callee": "map",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_pf",
+          "callee": "values[values < 0].sum",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_pf",
+          "callee": "float",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_pf",
+          "callee": "values[values > 0].sum",
+          "lineNumber": 106
+        },
+        {
+          "caller": "_metrics",
+          "callee": "frame.dropna",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_metrics",
+          "callee": "len",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_metrics",
+          "callee": "data.symbol.nunique",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_metrics",
+          "callee": "data.signal_date.nunique",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_metrics",
+          "callee": "data[f\"return_{horizon}d\"].mean",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_metrics",
+          "callee": "data[f\"return_{horizon}d\"].median",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_metrics",
+          "callee": "excess.mean",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_metrics",
+          "callee": "excess.median",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_metrics",
+          "callee": "(excess > 0).mean",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_metrics",
+          "callee": "_pf",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_metrics",
+          "callee": "data[f\"mae_{horizon}d\"].mean",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_metrics",
+          "callee": "data[f\"mfe_{horizon}d\"].mean",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_metrics",
+          "callee": "len",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_metrics",
+          "callee": "data.signal_date.nunique",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_metrics",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "rows.append",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_fmt",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_fmt",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_fmt",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_fmt",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_fmt",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_fmt",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_fmt",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_fmt",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_metric_table",
+          "callee": "_table",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_date_values",
+          "callee": "frame.dropna",
+          "lineNumber": 126
+        },
+        {
+          "caller": "_date_values",
+          "callee": "data.groupby(\"signal_date\")[f\"excess_return_{horizon}d\"].median",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_date_values",
+          "callee": "data.groupby",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_date_values",
+          "callee": "data.assign(_x=data[f\"excess_return_{horizon}d\"].gt(0)).groupby(\"signal_date\")._x.mean",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_date_values",
+          "callee": "data.assign(_x=data[f\"excess_return_{horizon}d\"].gt(0)).groupby",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_date_values",
+          "callee": "data.assign",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_date_values",
+          "callee": "data[f\"excess_return_{horizon}d\"].gt",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_date_values",
+          "callee": "data.groupby(\"signal_date\")[f\"excess_return_{horizon}d\"].mean",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_date_values",
+          "callee": "data.groupby",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_date_values",
+          "callee": "data.groupby(\"signal_date\")[f\"{metric}_{horizon}d\"].mean",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_date_values",
+          "callee": "data.groupby",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_comparison",
+          "callee": "pd.concat([_date_values(left, horizon, metric).rename(\"l\"), _date_values(right, horizon, metric).rename(\"r\")], axis=1, join=\"inner\").dropna",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_comparison",
+          "callee": "pd.concat",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_comparison",
+          "callee": "_date_values(left, horizon, metric).rename",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_comparison",
+          "callee": "_date_values",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_comparison",
+          "callee": "_date_values(right, horizon, metric).rename",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_comparison",
+          "callee": "_date_values",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_comparison",
+          "callee": "len",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_comparison",
+          "callee": "int",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_comparison",
+          "callee": "(diff > 0).sum",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_comparison",
+          "callee": "int",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_comparison",
+          "callee": "(diff < 0).sum",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_comparison",
+          "callee": "int",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_comparison",
+          "callee": "(diff == 0).sum",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_comparison",
+          "callee": "(diff > 0).mean",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_comparison",
+          "callee": "len",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_comparison",
+          "callee": "diff.mean",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_comparison",
+          "callee": "len",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_comparison",
+          "callee": "diff.median",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_comparison",
+          "callee": "len",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_comparison_table",
+          "callee": "_table",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_comparison_table",
+          "callee": "_fmt",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_comparison_table",
+          "callee": "_fmt",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_comparison_table",
+          "callee": "_fmt",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_month_text",
+          "callee": "_date_values",
+          "lineNumber": 147
+        },
+        {
+          "caller": "_month_text",
+          "callee": "_date_values",
+          "lineNumber": 147
+        },
+        {
+          "caller": "_month_text",
+          "callee": "pd.concat([a.rename(\"a\"), b.rename(\"b\")], axis=1, join=\"inner\").dropna",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_month_text",
+          "callee": "pd.concat",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_month_text",
+          "callee": "a.rename",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_month_text",
+          "callee": "b.rename",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_month_text",
+          "callee": "pd.to_datetime(merged.index).strftime",
+          "lineNumber": 151
+        },
+        {
+          "caller": "_month_text",
+          "callee": "pd.to_datetime",
+          "lineNumber": 151
+        },
+        {
+          "caller": "_month_text",
+          "callee": "merged.groupby(\"month\").apply",
+          "lineNumber": 152
+        },
+        {
+          "caller": "_month_text",
+          "callee": "merged.groupby",
+          "lineNumber": 152
+        },
+        {
+          "caller": "_month_text",
+          "callee": "(x.a - x.b).mean",
+          "lineNumber": 152
+        },
+        {
+          "caller": "_month_text",
+          "callee": "int",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_month_text",
+          "callee": "(delta > 0).sum",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_month_text",
+          "callee": "len",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_month_text",
+          "callee": "\"、\".join",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_month_text",
+          "callee": "_fmt",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_month_text",
+          "callee": "delta.items",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_status",
+          "callee": "_comparison",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_status",
+          "callee": "_comparison",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_status",
+          "callee": "_comparison",
+          "lineNumber": 159
+        },
+        {
+          "caller": "_status",
+          "callee": "_metrics",
+          "lineNumber": 160
+        },
+        {
+          "caller": "_status",
+          "callee": "abs",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_status",
+          "callee": "_metrics",
+          "lineNumber": 164
+        },
+        {
+          "caller": "_status",
+          "callee": "any",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_render",
+          "callee": "pd.to_datetime",
+          "lineNumber": 170
+        },
+        {
+          "caller": "_render",
+          "callee": "\"、\".join",
+          "lineNumber": 171
+        },
+        {
+          "caller": "_render",
+          "callee": "sorted",
+          "lineNumber": 171
+        },
+        {
+          "caller": "_render",
+          "callee": "frame.signal_date.dt.strftime(\"%Y-%m-%d\").unique",
+          "lineNumber": 171
+        },
+        {
+          "caller": "_render",
+          "callee": "frame.signal_date.dt.strftime",
+          "lineNumber": 171
+        },
+        {
+          "caller": "_render",
+          "callee": "frame.v0_rank.le",
+          "lineNumber": 175
+        },
+        {
+          "caller": "_render",
+          "callee": "coverage_rows.append",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_render",
+          "callee": "len",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_render",
+          "callee": "len",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_render",
+          "callee": "len",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_render",
+          "callee": "len",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_render",
+          "callee": "selected.symbol.nunique",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_render",
+          "callee": "selected.signal_date.nunique",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_render",
+          "callee": "len",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_render",
+          "callee": "len",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_render",
+          "callee": "lines.extend",
+          "lineNumber": 179
+        },
+        {
+          "caller": "_render",
+          "callee": "_table",
+          "lineNumber": 179
+        },
+        {
+          "caller": "_render",
+          "callee": "frame.v0_rank.le",
+          "lineNumber": 182
+        },
+        {
+          "caller": "_render",
+          "callee": "groups.extend",
+          "lineNumber": 187
+        },
+        {
+          "caller": "_render",
+          "callee": "_comparison",
+          "lineNumber": 188
+        },
+        {
+          "caller": "_render",
+          "callee": "lines.extend",
+          "lineNumber": 189
+        },
+        {
+          "caller": "_render",
+          "callee": "_metric_table",
+          "lineNumber": 189
+        },
+        {
+          "caller": "_render",
+          "callee": "_comparison_table",
+          "lineNumber": 189
+        },
+        {
+          "caller": "_render",
+          "callee": "_month_text",
+          "lineNumber": 189
+        },
+        {
+          "caller": "_render",
+          "callee": "_month_text",
+          "lineNumber": 189
+        },
+        {
+          "caller": "_render",
+          "callee": "_status",
+          "lineNumber": 190
+        },
+        {
+          "caller": "_render",
+          "callee": "summary_rows.append",
+          "lineNumber": 191
+        },
+        {
+          "caller": "_render",
+          "callee": "len",
+          "lineNumber": 191
+        },
+        {
+          "caller": "_render",
+          "callee": "len",
+          "lineNumber": 191
+        },
+        {
+          "caller": "_render",
+          "callee": "lines.extend",
+          "lineNumber": 192
+        },
+        {
+          "caller": "_render",
+          "callee": "_table",
+          "lineNumber": 192
+        },
+        {
+          "caller": "_render",
+          "callee": "\"\\n\".join",
+          "lineNumber": 193
+        },
+        {
+          "caller": "main",
+          "callee": "argparse.ArgumentParser",
+          "lineNumber": 197
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 198
+        },
+        {
+          "caller": "main",
+          "callee": "Path",
+          "lineNumber": 198
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 199
+        },
+        {
+          "caller": "main",
+          "callee": "Path",
+          "lineNumber": 199
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 200
+        },
+        {
+          "caller": "main",
+          "callee": "Path",
+          "lineNumber": 200
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 201
+        },
+        {
+          "caller": "main",
+          "callee": "parser.parse_args",
+          "lineNumber": 202
+        },
+        {
+          "caller": "main",
+          "callee": "args.input_dir.resolve",
+          "lineNumber": 203
+        },
+        {
+          "caller": "main",
+          "callee": "args.output_dir.resolve",
+          "lineNumber": 203
+        },
+        {
+          "caller": "main",
+          "callee": "_read",
+          "lineNumber": 204
+        },
+        {
+          "caller": "main",
+          "callee": "source_state.get",
+          "lineNumber": 205
+        },
+        {
+          "caller": "main",
+          "callee": "ValueError",
+          "lineNumber": 206
+        },
+        {
+          "caller": "main",
+          "callee": "out_snapshots.mkdir",
+          "lineNumber": 208
+        },
+        {
+          "caller": "main",
+          "callee": "_read",
+          "lineNumber": 209
+        },
+        {
+          "caller": "main",
+          "callee": "str",
+          "lineNumber": 209
+        },
+        {
+          "caller": "main",
+          "callee": "KlineRepository",
+          "lineNumber": 210
+        },
+        {
+          "caller": "main",
+          "callee": "DataStore",
+          "lineNumber": 210
+        },
+        {
+          "caller": "main",
+          "callee": "Path(\"../data\").resolve",
+          "lineNumber": 210
+        },
+        {
+          "caller": "main",
+          "callee": "Path",
+          "lineNumber": 210
+        },
+        {
+          "caller": "main",
+          "callee": "chanlun._load_czsc",
+          "lineNumber": 211
+        },
+        {
+          "caller": "main",
+          "callee": "time.perf_counter",
+          "lineNumber": 212
+        },
+        {
+          "caller": "main",
+          "callee": "sorted",
+          "lineNumber": 213
+        },
+        {
+          "caller": "main",
+          "callee": "(source / \"snapshots\").glob",
+          "lineNumber": 213
+        },
+        {
+          "caller": "main",
+          "callee": "path.stem.removeprefix",
+          "lineNumber": 215
+        },
+        {
+          "caller": "main",
+          "callee": "target.exists",
+          "lineNumber": 216
+        },
+        {
+          "caller": "main",
+          "callee": "time.perf_counter",
+          "lineNumber": 218
+        },
+        {
+          "caller": "main",
+          "callee": "pd.read_parquet",
+          "lineNumber": 219
+        },
+        {
+          "caller": "main",
+          "callee": "pd.Timestamp(frame.signal_date.iloc[0]).date",
+          "lineNumber": 220
+        },
+        {
+          "caller": "main",
+          "callee": "pd.Timestamp",
+          "lineNumber": 220
+        },
+        {
+          "caller": "main",
+          "callee": "frame.loc[frame.v0_rank.le(50), \"symbol\"].astype(str).tolist",
+          "lineNumber": 221
+        },
+        {
+          "caller": "main",
+          "callee": "frame.loc[frame.v0_rank.le(50), \"symbol\"].astype",
+          "lineNumber": 221
+        },
+        {
+          "caller": "main",
+          "callee": "frame.v0_rank.le",
+          "lineNumber": 221
+        },
+        {
+          "caller": "main",
+          "callee": "repo.list_minute_dates",
+          "lineNumber": 222
+        },
+        {
+          "caller": "main",
+          "callee": "timedelta",
+          "lineNumber": 222
+        },
+        {
+          "caller": "main",
+          "callee": "repo.get_minute_by_dates",
+          "lineNumber": 224
+        },
+        {
+          "caller": "main",
+          "callee": "frame.iterrows",
+          "lineNumber": 226
+        },
+        {
+          "caller": "main",
+          "callee": "annotations.append",
+          "lineNumber": 228
+        },
+        {
+          "caller": "main",
+          "callee": "minute.filter",
+          "lineNumber": 230
+        },
+        {
+          "caller": "main",
+          "callee": "chanlun._validate_and_standardize",
+          "lineNumber": 232
+        },
+        {
+          "caller": "main",
+          "callee": "str",
+          "lineNumber": 232
+        },
+        {
+          "caller": "main",
+          "callee": "annotations.append",
+          "lineNumber": 233
+        },
+        {
+          "caller": "main",
+          "callee": "_points_for_as_of",
+          "lineNumber": 233
+        },
+        {
+          "caller": "main",
+          "callee": "annotations.append",
+          "lineNumber": 235
+        },
+        {
+          "caller": "main",
+          "callee": "type",
+          "lineNumber": 235
+        },
+        {
+          "caller": "main",
+          "callee": "pd.concat",
+          "lineNumber": 236
+        },
+        {
+          "caller": "main",
+          "callee": "frame.reset_index",
+          "lineNumber": 236
+        },
+        {
+          "caller": "main",
+          "callee": "pd.DataFrame",
+          "lineNumber": 236
+        },
+        {
+          "caller": "main",
+          "callee": "result.to_parquet",
+          "lineNumber": 237
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 238
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 238
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 238
+        },
+        {
+          "caller": "main",
+          "callee": "time.perf_counter",
+          "lineNumber": 238
+        },
+        {
+          "caller": "main",
+          "callee": "_write",
+          "lineNumber": 239
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 240
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 240
+        },
+        {
+          "caller": "main",
+          "callee": "pd.concat",
+          "lineNumber": 241
+        },
+        {
+          "caller": "main",
+          "callee": "pd.read_parquet",
+          "lineNumber": 241
+        },
+        {
+          "caller": "main",
+          "callee": "sorted",
+          "lineNumber": 241
+        },
+        {
+          "caller": "main",
+          "callee": "out_snapshots.glob",
+          "lineNumber": 241
+        },
+        {
+          "caller": "main",
+          "callee": "state.update",
+          "lineNumber": 242
+        },
+        {
+          "caller": "main",
+          "callee": "time.perf_counter",
+          "lineNumber": 242
+        },
+        {
+          "caller": "main",
+          "callee": "_write",
+          "lineNumber": 243
+        },
+        {
+          "caller": "main",
+          "callee": "args.report.resolve().write_text",
+          "lineNumber": 244
+        },
+        {
+          "caller": "main",
+          "callee": "args.report.resolve",
+          "lineNumber": 244
+        },
+        {
+          "caller": "main",
+          "callee": "_render",
+          "lineNumber": 244
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 245
+        },
+        {
+          "caller": "main",
+          "callee": "args.report.resolve",
+          "lineNumber": 245
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 15,
+        "functionCount": 15,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "backend/tests/test_chanlun_extension.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 486,
+      "nonEmptyLines": 392,
+      "functions": [
+        {
+          "name": "_daily_frame",
+          "startLine": 42,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "test_daily_adapter_sorts_and_maps_rawbar_contract",
+          "startLine": 52,
+          "endLine": 57,
+          "params": []
+        },
+        {
+          "name": "test_daily_adapter_limits_analysis_to_requested_trading_bars",
+          "startLine": 60,
+          "endLine": 73,
+          "params": []
+        },
+        {
+          "name": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "startLine": 76,
+          "endLine": 98,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "startLine": 101,
+          "endLine": 109,
+          "params": []
+        },
+        {
+          "name": "test_adapter_normalizes_only_floating_point_ohlc_noise",
+          "startLine": 112,
+          "endLine": 119,
+          "params": []
+        },
+        {
+          "name": "test_adapter_normalizes_only_tiny_negative_volume_amount_noise",
+          "startLine": 122,
+          "endLine": 134,
+          "params": []
+        },
+        {
+          "name": "test_daily_structure_has_event_and_confirmation_time",
+          "startLine": 137,
+          "endLine": 153,
+          "params": []
+        },
+        {
+          "name": "test_daily_marker_and_screener_do_not_duplicate_a_reappearing_structure_event",
+          "startLine": 156,
+          "endLine": 185,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_daily_buy_screener_only_returns_a_new_final_bar_signal",
+          "startLine": 188,
+          "endLine": 224,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_daily_buy_screener_does_not_repeat_an_existing_signal",
+          "startLine": 227,
+          "endLine": 245,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "startLine": 248,
+          "endLine": 272,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_multitimeframe_uses_native_czscsignals_and_bar_generator",
+          "startLine": 275,
+          "endLine": 301,
+          "params": []
+        },
+        {
+          "name": "test_f1_minute_context_uses_long_daily_history",
+          "startLine": 304,
+          "endLine": 324,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_native_minute_periods_are_analyzed_independently",
+          "startLine": 327,
+          "endLine": 341,
+          "params": []
+        },
+        {
+          "name": "test_native_minute_context_includes_previously_closed_daily_state",
+          "startLine": 344,
+          "endLine": 368,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_native_minute_reader_requires_all_three_provider_periods",
+          "startLine": 371,
+          "endLine": 385,
+          "params": []
+        },
+        {
+          "name": "test_native_minute_reader_requires_each_period_to_cover_daily_window",
+          "startLine": 388,
+          "endLine": 405,
+          "params": []
+        },
+        {
+          "name": "test_higher_context_requires_every_declared_higher_timeframe",
+          "startLine": 408,
+          "endLine": 418,
+          "params": []
+        },
+        {
+          "name": "_state",
+          "startLine": 421,
+          "endLine": 432,
+          "params": [
+            "freq",
+            "direction",
+            "as_of"
+          ]
+        },
+        {
+          "name": "test_resonance_compares_confirmed_snapshots_without_historical_replay",
+          "startLine": 444,
+          "endLine": 460,
+          "params": [
+            "directions",
+            "expected",
+            "event_time"
+          ]
+        },
+        {
+          "name": "test_resonance_does_not_create_event_when_a_required_state_is_unknown",
+          "startLine": 463,
+          "endLine": 473,
+          "params": []
+        },
+        {
+          "name": "test_resonance_rejects_stale_minute_context",
+          "startLine": 476,
+          "endLine": 486,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "_FakeRepo",
+          "startLine": 29,
+          "endLine": 39,
+          "methods": [
+            "__init__",
+            "resolve_asset_type",
+            "get_daily_asset"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_FakeRepo",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "_daily_frame",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "test_daily_adapter_sorts_and_maps_rawbar_contract",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "test_daily_adapter_limits_analysis_to_requested_trading_bars",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "test_adapter_normalizes_only_floating_point_ohlc_noise",
+          "line": 112,
+          "isDefault": false
+        },
+        {
+          "name": "test_adapter_normalizes_only_tiny_negative_volume_amount_noise",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "test_daily_structure_has_event_and_confirmation_time",
+          "line": 137,
+          "isDefault": false
+        },
+        {
+          "name": "test_daily_marker_and_screener_do_not_duplicate_a_reappearing_structure_event",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "test_daily_buy_screener_only_returns_a_new_final_bar_signal",
+          "line": 188,
+          "isDefault": false
+        },
+        {
+          "name": "test_daily_buy_screener_does_not_repeat_an_existing_signal",
+          "line": 227,
+          "isDefault": false
+        },
+        {
+          "name": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "line": 248,
+          "isDefault": false
+        },
+        {
+          "name": "test_multitimeframe_uses_native_czscsignals_and_bar_generator",
+          "line": 275,
+          "isDefault": false
+        },
+        {
+          "name": "test_f1_minute_context_uses_long_daily_history",
+          "line": 304,
+          "isDefault": false
+        },
+        {
+          "name": "test_native_minute_periods_are_analyzed_independently",
+          "line": 327,
+          "isDefault": false
+        },
+        {
+          "name": "test_native_minute_context_includes_previously_closed_daily_state",
+          "line": 344,
+          "isDefault": false
+        },
+        {
+          "name": "test_native_minute_reader_requires_all_three_provider_periods",
+          "line": 371,
+          "isDefault": false
+        },
+        {
+          "name": "test_native_minute_reader_requires_each_period_to_cover_daily_window",
+          "line": 388,
+          "isDefault": false
+        },
+        {
+          "name": "test_higher_context_requires_every_declared_higher_timeframe",
+          "line": 408,
+          "isDefault": false
+        },
+        {
+          "name": "_state",
+          "line": 421,
+          "isDefault": false
+        },
+        {
+          "name": "test_resonance_compares_confirmed_snapshots_without_historical_replay",
+          "line": 435,
+          "isDefault": false
+        },
+        {
+          "name": "test_resonance_does_not_create_event_when_a_required_state_is_unknown",
+          "line": 463,
+          "isDefault": false
+        },
+        {
+          "name": "test_resonance_rejects_stale_minute_context",
+          "line": 476,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_daily_frame",
+          "callee": "pl.DataFrame",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_daily_frame",
+          "callee": "date",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_daily_frame",
+          "callee": "date",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_daily_frame",
+          "callee": "date",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_daily_adapter_sorts_and_maps_rawbar_contract",
+          "callee": "_fetch_daily_frame",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_daily_adapter_sorts_and_maps_rawbar_contract",
+          "callee": "_FakeRepo",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_daily_adapter_sorts_and_maps_rawbar_contract",
+          "callee": "_daily_frame",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_daily_adapter_sorts_and_maps_rawbar_contract",
+          "callee": "list",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_daily_adapter_sorts_and_maps_rawbar_contract",
+          "callee": "out[\"dt\"].tolist",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_daily_adapter_sorts_and_maps_rawbar_contract",
+          "callee": "pd.Timestamp",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_daily_adapter_sorts_and_maps_rawbar_contract",
+          "callee": "pd.Timestamp",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_daily_adapter_sorts_and_maps_rawbar_contract",
+          "callee": "pd.Timestamp",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_daily_adapter_sorts_and_maps_rawbar_contract",
+          "callee": "out[\"vol\"].tolist",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_daily_adapter_limits_analysis_to_requested_trading_bars",
+          "callee": "pl.concat",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_daily_adapter_limits_analysis_to_requested_trading_bars",
+          "callee": "_daily_frame",
+          "lineNumber": 62
+        },
+        {
+          "caller": "test_daily_adapter_limits_analysis_to_requested_trading_bars",
+          "callee": "pl.DataFrame",
+          "lineNumber": 63
+        },
+        {
+          "caller": "test_daily_adapter_limits_analysis_to_requested_trading_bars",
+          "callee": "date",
+          "lineNumber": 65
+        },
+        {
+          "caller": "test_daily_adapter_limits_analysis_to_requested_trading_bars",
+          "callee": "date",
+          "lineNumber": 65
+        },
+        {
+          "caller": "test_daily_adapter_limits_analysis_to_requested_trading_bars",
+          "callee": "_fetch_daily_frame",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_daily_adapter_limits_analysis_to_requested_trading_bars",
+          "callee": "_FakeRepo",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_daily_adapter_limits_analysis_to_requested_trading_bars",
+          "callee": "out[\"dt\"].tolist",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_daily_adapter_limits_analysis_to_requested_trading_bars",
+          "callee": "pd.Timestamp",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_daily_adapter_limits_analysis_to_requested_trading_bars",
+          "callee": "pd.Timestamp",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 79
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "datetime",
+          "lineNumber": 79
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "pl.DataFrame",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "date",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "date",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "pl.DataFrame",
+          "lineNumber": 81
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "datetime",
+          "lineNumber": 83
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "datetime",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "datetime",
+          "lineNumber": 85
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "datetime",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "_drop_unclosed_bars(daily, timestamp_col=\"date\")[\"date\"].to_list",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "_drop_unclosed_bars",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "date",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "_drop_unclosed_bars(minutes, timestamp_col=\"datetime\", freq=\"15m\")[\"datetime\"].to_list",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "_drop_unclosed_bars",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "datetime",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "datetime",
+          "lineNumber": 93
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "_drop_unclosed_bars(minutes, timestamp_col=\"datetime\", freq=\"1m\")[\"datetime\"].to_list",
+          "lineNumber": 95
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "_drop_unclosed_bars",
+          "lineNumber": 95
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "datetime",
+          "lineNumber": 96
+        },
+        {
+          "caller": "test_unclosed_daily_and_minute_bars_are_excluded",
+          "callee": "datetime",
+          "lineNumber": 97
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "pytest.raises",
+          "lineNumber": 102
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "_validate_and_standardize",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "_daily_frame().drop",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "_daily_frame",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "_daily_frame().with_columns",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "_daily_frame",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "pl.lit(date(2026, 1, 5)).alias",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "pl.lit",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "date",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "pytest.raises",
+          "lineNumber": 105
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "_validate_and_standardize",
+          "lineNumber": 106
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "_daily_frame().with_columns",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "_daily_frame",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "pl.lit(9.0).alias",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "pl.lit",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "pytest.raises",
+          "lineNumber": 108
+        },
+        {
+          "caller": "test_adapter_rejects_missing_amount_duplicate_and_invalid_ohlc",
+          "callee": "_validate_and_standardize",
+          "lineNumber": 109
+        },
+        {
+          "caller": "test_adapter_normalizes_only_floating_point_ohlc_noise",
+          "callee": "pl.DataFrame",
+          "lineNumber": 113
+        },
+        {
+          "caller": "test_adapter_normalizes_only_floating_point_ohlc_noise",
+          "callee": "date",
+          "lineNumber": 114
+        },
+        {
+          "caller": "test_adapter_normalizes_only_floating_point_ohlc_noise",
+          "callee": "_validate_and_standardize",
+          "lineNumber": 117
+        },
+        {
+          "caller": "test_adapter_normalizes_only_tiny_negative_volume_amount_noise",
+          "callee": "pl.DataFrame",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_adapter_normalizes_only_tiny_negative_volume_amount_noise",
+          "callee": "date",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_adapter_normalizes_only_tiny_negative_volume_amount_noise",
+          "callee": "date",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_adapter_normalizes_only_tiny_negative_volume_amount_noise",
+          "callee": "_validate_and_standardize",
+          "lineNumber": 128
+        },
+        {
+          "caller": "test_adapter_normalizes_only_tiny_negative_volume_amount_noise",
+          "callee": "out[\"vol\"].tolist",
+          "lineNumber": 129
+        },
+        {
+          "caller": "test_adapter_normalizes_only_tiny_negative_volume_amount_noise",
+          "callee": "out[\"amount\"].tolist",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_adapter_normalizes_only_tiny_negative_volume_amount_noise",
+          "callee": "noisy.with_columns",
+          "lineNumber": 132
+        },
+        {
+          "caller": "test_adapter_normalizes_only_tiny_negative_volume_amount_noise",
+          "callee": "pl.lit(-0.001).alias",
+          "lineNumber": 132
+        },
+        {
+          "caller": "test_adapter_normalizes_only_tiny_negative_volume_amount_noise",
+          "callee": "pl.lit",
+          "lineNumber": 132
+        },
+        {
+          "caller": "test_adapter_normalizes_only_tiny_negative_volume_amount_noise",
+          "callee": "pytest.raises",
+          "lineNumber": 133
+        },
+        {
+          "caller": "test_adapter_normalizes_only_tiny_negative_volume_amount_noise",
+          "callee": "_validate_and_standardize",
+          "lineNumber": 134
+        },
+        {
+          "caller": "test_daily_structure_has_event_and_confirmation_time",
+          "callee": "czsc.mock.generate_symbol_kines",
+          "lineNumber": 140
+        },
+        {
+          "caller": "test_daily_structure_has_event_and_confirmation_time",
+          "callee": "czsc.format_standard_kline",
+          "lineNumber": 141
+        },
+        {
+          "caller": "test_daily_structure_has_event_and_confirmation_time",
+          "callee": "_serialize_daily",
+          "lineNumber": 142
+        },
+        {
+          "caller": "test_daily_structure_has_event_and_confirmation_time",
+          "callee": "len",
+          "lineNumber": 143
+        },
+        {
+          "caller": "test_daily_structure_has_event_and_confirmation_time",
+          "callee": "len",
+          "lineNumber": 143
+        },
+        {
+          "caller": "test_daily_marker_and_screener_do_not_duplicate_a_reappearing_structure_event",
+          "callee": "SimpleNamespace",
+          "lineNumber": 162
+        },
+        {
+          "caller": "test_daily_marker_and_screener_do_not_duplicate_a_reappearing_structure_event",
+          "callee": "datetime",
+          "lineNumber": 162
+        },
+        {
+          "caller": "test_daily_marker_and_screener_do_not_duplicate_a_reappearing_structure_event",
+          "callee": "range",
+          "lineNumber": 163
+        },
+        {
+          "caller": "test_daily_marker_and_screener_do_not_duplicate_a_reappearing_structure_event",
+          "callee": "SimpleNamespace",
+          "lineNumber": 165
+        },
+        {
+          "caller": "test_daily_marker_and_screener_do_not_duplicate_a_reappearing_structure_event",
+          "callee": "SimpleNamespace",
+          "lineNumber": 165
+        },
+        {
+          "caller": "test_daily_marker_and_screener_do_not_duplicate_a_reappearing_structure_event",
+          "callee": "len",
+          "lineNumber": 165
+        },
+        {
+          "caller": "test_daily_marker_and_screener_do_not_duplicate_a_reappearing_structure_event",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 166
+        },
+        {
+          "caller": "test_daily_marker_and_screener_do_not_duplicate_a_reappearing_structure_event",
+          "callee": "SimpleNamespace",
+          "lineNumber": 170
+        },
+        {
+          "caller": "test_daily_marker_and_screener_do_not_duplicate_a_reappearing_structure_event",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 175
+        },
+        {
+          "caller": "test_daily_marker_and_screener_do_not_duplicate_a_reappearing_structure_event",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 180
+        },
+        {
+          "caller": "test_daily_marker_and_screener_do_not_duplicate_a_reappearing_structure_event",
+          "callee": "_find_daily_buy_sell_points",
+          "lineNumber": 182
+        },
+        {
+          "caller": "test_daily_marker_and_screener_do_not_duplicate_a_reappearing_structure_event",
+          "callee": "find_latest_daily_buy_points",
+          "lineNumber": 185
+        },
+        {
+          "caller": "test_daily_buy_screener_only_returns_a_new_final_bar_signal",
+          "callee": "czsc.mock.generate_symbol_kines",
+          "lineNumber": 193
+        },
+        {
+          "caller": "test_daily_buy_screener_only_returns_a_new_final_bar_signal",
+          "callee": "czsc.format_standard_kline",
+          "lineNumber": 194
+        },
+        {
+          "caller": "test_daily_buy_screener_only_returns_a_new_final_bar_signal",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 195
+        },
+        {
+          "caller": "_new_final_signal",
+          "callee": "SimpleNamespace",
+          "lineNumber": 208
+        },
+        {
+          "caller": "_patch_new_final_signal",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 210
+        },
+        {
+          "caller": "test_daily_buy_screener_only_returns_a_new_final_bar_signal",
+          "callee": "_patch_new_final_signal",
+          "lineNumber": 212
+        },
+        {
+          "caller": "test_daily_buy_screener_only_returns_a_new_final_bar_signal",
+          "callee": "find_latest_daily_buy_points",
+          "lineNumber": 213
+        },
+        {
+          "caller": "test_daily_buy_screener_only_returns_a_new_final_bar_signal",
+          "callee": "bars[-1].dt.strftime",
+          "lineNumber": 216
+        },
+        {
+          "caller": "test_daily_buy_screener_only_returns_a_new_final_bar_signal",
+          "callee": "pl.from_pandas(source).rename",
+          "lineNumber": 218
+        },
+        {
+          "caller": "test_daily_buy_screener_only_returns_a_new_final_bar_signal",
+          "callee": "pl.from_pandas",
+          "lineNumber": 218
+        },
+        {
+          "caller": "test_daily_buy_screener_only_returns_a_new_final_bar_signal",
+          "callee": "_patch_new_final_signal",
+          "lineNumber": 219
+        },
+        {
+          "caller": "test_daily_buy_screener_only_returns_a_new_final_bar_signal",
+          "callee": "filter_daily_czsc_buy_points",
+          "lineNumber": 220
+        },
+        {
+          "caller": "test_daily_buy_screener_only_returns_a_new_final_bar_signal",
+          "callee": "selected[\"czsc_buy_types\"].to_list",
+          "lineNumber": 222
+        },
+        {
+          "caller": "test_daily_buy_screener_only_returns_a_new_final_bar_signal",
+          "callee": "selected[\"czsc_confirmation_time\"].to_list",
+          "lineNumber": 223
+        },
+        {
+          "caller": "test_daily_buy_screener_only_returns_a_new_final_bar_signal",
+          "callee": "bars[-1].dt.strftime",
+          "lineNumber": 223
+        },
+        {
+          "caller": "test_daily_buy_screener_only_returns_a_new_final_bar_signal",
+          "callee": "selected[\"czsc_event_identity_version\"].to_list",
+          "lineNumber": 224
+        },
+        {
+          "caller": "test_daily_buy_screener_does_not_repeat_an_existing_signal",
+          "callee": "czsc.mock.generate_symbol_kines",
+          "lineNumber": 232
+        },
+        {
+          "caller": "test_daily_buy_screener_does_not_repeat_an_existing_signal",
+          "callee": "czsc.format_standard_kline",
+          "lineNumber": 233
+        },
+        {
+          "caller": "test_daily_buy_screener_does_not_repeat_an_existing_signal",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 234
+        },
+        {
+          "caller": "test_daily_buy_screener_does_not_repeat_an_existing_signal",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 239
+        },
+        {
+          "caller": "test_daily_buy_screener_does_not_repeat_an_existing_signal",
+          "callee": "SimpleNamespace",
+          "lineNumber": 242
+        },
+        {
+          "caller": "test_daily_buy_screener_does_not_repeat_an_existing_signal",
+          "callee": "find_latest_daily_buy_points",
+          "lineNumber": 245
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "pl.DataFrame",
+          "lineNumber": 251
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "date",
+          "lineNumber": 253
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "range",
+          "lineNumber": 253
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "range",
+          "lineNumber": 254
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "range",
+          "lineNumber": 255
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "range",
+          "lineNumber": 256
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "range",
+          "lineNumber": 257
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 261
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "datetime",
+          "lineNumber": 261
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 262
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "date",
+          "lineNumber": 262
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 263
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "bars[-1].dt.strftime",
+          "lineNumber": 266
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "filter_daily_czsc_buy_points",
+          "lineNumber": 269
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "selected[\"date\"].to_list",
+          "lineNumber": 271
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "date",
+          "lineNumber": 271
+        },
+        {
+          "caller": "test_daily_buy_screener_excludes_a_still_open_daily_bar",
+          "callee": "selected[\"czsc_confirmation_time\"].to_list",
+          "lineNumber": 272
+        },
+        {
+          "caller": "test_multitimeframe_uses_native_czscsignals_and_bar_generator",
+          "callee": "_signal_config",
+          "lineNumber": 278
+        },
+        {
+          "caller": "test_multitimeframe_uses_native_czscsignals_and_bar_generator",
+          "callee": "czsc.mock.generate_symbol_kines",
+          "lineNumber": 285
+        },
+        {
+          "caller": "test_multitimeframe_uses_native_czscsignals_and_bar_generator",
+          "callee": "_analyze_minute_multi",
+          "lineNumber": 286
+        },
+        {
+          "caller": "test_multitimeframe_uses_native_czscsignals_and_bar_generator",
+          "callee": "set",
+          "lineNumber": 288
+        },
+        {
+          "caller": "test_multitimeframe_uses_native_czscsignals_and_bar_generator",
+          "callee": "all",
+          "lineNumber": 289
+        },
+        {
+          "caller": "test_multitimeframe_uses_native_czscsignals_and_bar_generator",
+          "callee": "all",
+          "lineNumber": 290
+        },
+        {
+          "caller": "test_multitimeframe_uses_native_czscsignals_and_bar_generator",
+          "callee": "point[\"signal\"][\"raw_signal\"].endswith",
+          "lineNumber": 292
+        },
+        {
+          "caller": "test_multitimeframe_uses_native_czscsignals_and_bar_generator",
+          "callee": "point[\"signal\"][\"signal_name\"].startswith",
+          "lineNumber": 293
+        },
+        {
+          "caller": "test_multitimeframe_uses_native_czscsignals_and_bar_generator",
+          "callee": "(point[\"structure_anchor\"] or {}).get",
+          "lineNumber": 296
+        },
+        {
+          "caller": "test_multitimeframe_uses_native_czscsignals_and_bar_generator",
+          "callee": "len",
+          "lineNumber": 297
+        },
+        {
+          "caller": "test_multitimeframe_uses_native_czscsignals_and_bar_generator",
+          "callee": "len",
+          "lineNumber": 297
+        },
+        {
+          "caller": "test_multitimeframe_uses_native_czscsignals_and_bar_generator",
+          "callee": "set",
+          "lineNumber": 297
+        },
+        {
+          "caller": "test_f1_minute_context_uses_long_daily_history",
+          "callee": "czsc.mock.generate_symbol_kines",
+          "lineNumber": 309
+        },
+        {
+          "caller": "test_f1_minute_context_uses_long_daily_history",
+          "callee": "czsc.mock.generate_symbol_kines",
+          "lineNumber": 310
+        },
+        {
+          "caller": "test_f1_minute_context_uses_long_daily_history",
+          "callee": "czsc.format_standard_kline",
+          "lineNumber": 311
+        },
+        {
+          "caller": "capture_daily_context",
+          "callee": "observed_states.append",
+          "lineNumber": 316
+        },
+        {
+          "caller": "capture_daily_context",
+          "callee": "dict",
+          "lineNumber": 316
+        },
+        {
+          "caller": "capture_daily_context",
+          "callee": "original",
+          "lineNumber": 317
+        },
+        {
+          "caller": "test_f1_minute_context_uses_long_daily_history",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 319
+        },
+        {
+          "caller": "test_f1_minute_context_uses_long_daily_history",
+          "callee": "_analyze_minute_multi",
+          "lineNumber": 321
+        },
+        {
+          "caller": "test_f1_minute_context_uses_long_daily_history",
+          "callee": "all",
+          "lineNumber": 324
+        },
+        {
+          "caller": "test_native_minute_periods_are_analyzed_independently",
+          "callee": "czsc.mock.generate_symbol_kines",
+          "lineNumber": 331
+        },
+        {
+          "caller": "test_native_minute_periods_are_analyzed_independently",
+          "callee": "frames[\"30分钟\"].iloc[::2].reset_index",
+          "lineNumber": 335
+        },
+        {
+          "caller": "test_native_minute_periods_are_analyzed_independently",
+          "callee": "_analyze_native_minute_multi",
+          "lineNumber": 336
+        },
+        {
+          "caller": "test_native_minute_periods_are_analyzed_independently",
+          "callee": "set",
+          "lineNumber": 339
+        },
+        {
+          "caller": "test_native_minute_periods_are_analyzed_independently",
+          "callee": "all",
+          "lineNumber": 340
+        },
+        {
+          "caller": "test_native_minute_periods_are_analyzed_independently",
+          "callee": "all",
+          "lineNumber": 341
+        },
+        {
+          "caller": "test_native_minute_context_includes_previously_closed_daily_state",
+          "callee": "czsc.mock.generate_symbol_kines",
+          "lineNumber": 350
+        },
+        {
+          "caller": "test_native_minute_context_includes_previously_closed_daily_state",
+          "callee": "frames[\"30分钟\"].iloc[::2].reset_index",
+          "lineNumber": 353
+        },
+        {
+          "caller": "test_native_minute_context_includes_previously_closed_daily_state",
+          "callee": "czsc.mock.generate_symbol_kines",
+          "lineNumber": 354
+        },
+        {
+          "caller": "test_native_minute_context_includes_previously_closed_daily_state",
+          "callee": "czsc.format_standard_kline",
+          "lineNumber": 355
+        },
+        {
+          "caller": "capture_daily_context",
+          "callee": "observed_states.append",
+          "lineNumber": 360
+        },
+        {
+          "caller": "capture_daily_context",
+          "callee": "dict",
+          "lineNumber": 360
+        },
+        {
+          "caller": "capture_daily_context",
+          "callee": "original",
+          "lineNumber": 361
+        },
+        {
+          "caller": "test_native_minute_context_includes_previously_closed_daily_state",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 363
+        },
+        {
+          "caller": "test_native_minute_context_includes_previously_closed_daily_state",
+          "callee": "_analyze_native_minute_multi",
+          "lineNumber": 365
+        },
+        {
+          "caller": "test_native_minute_context_includes_previously_closed_daily_state",
+          "callee": "all",
+          "lineNumber": 368
+        },
+        {
+          "caller": "get_czsc_minute_range",
+          "callee": "pl.DataFrame",
+          "lineNumber": 376
+        },
+        {
+          "caller": "get_czsc_minute_range",
+          "callee": "pl.DataFrame",
+          "lineNumber": 377
+        },
+        {
+          "caller": "get_czsc_minute_range",
+          "callee": "pd.Timestamp",
+          "lineNumber": 378
+        },
+        {
+          "caller": "test_native_minute_reader_requires_all_three_provider_periods",
+          "callee": "_fetch_native_minute_frames",
+          "lineNumber": 383
+        },
+        {
+          "caller": "test_native_minute_reader_requires_all_three_provider_periods",
+          "callee": "_NativeRepo",
+          "lineNumber": 384
+        },
+        {
+          "caller": "test_native_minute_reader_requires_all_three_provider_periods",
+          "callee": "date",
+          "lineNumber": 384
+        },
+        {
+          "caller": "test_native_minute_reader_requires_all_three_provider_periods",
+          "callee": "date",
+          "lineNumber": 384
+        },
+        {
+          "caller": "get_czsc_minute_range",
+          "callee": "pl.DataFrame",
+          "lineNumber": 392
+        },
+        {
+          "caller": "get_czsc_minute_range",
+          "callee": "pd.Timestamp",
+          "lineNumber": 393
+        },
+        {
+          "caller": "test_native_minute_reader_requires_each_period_to_cover_daily_window",
+          "callee": "_fetch_native_minute_frames",
+          "lineNumber": 398
+        },
+        {
+          "caller": "test_native_minute_reader_requires_each_period_to_cover_daily_window",
+          "callee": "_PartialNativeRepo",
+          "lineNumber": 399
+        },
+        {
+          "caller": "test_native_minute_reader_requires_each_period_to_cover_daily_window",
+          "callee": "date",
+          "lineNumber": 402
+        },
+        {
+          "caller": "test_native_minute_reader_requires_each_period_to_cover_daily_window",
+          "callee": "date",
+          "lineNumber": 403
+        },
+        {
+          "caller": "test_native_minute_reader_requires_each_period_to_cover_daily_window",
+          "callee": "date",
+          "lineNumber": 404
+        },
+        {
+          "caller": "test_native_minute_reader_requires_each_period_to_cover_daily_window",
+          "callee": "date",
+          "lineNumber": 404
+        },
+        {
+          "caller": "test_higher_context_requires_every_declared_higher_timeframe",
+          "callee": "_higher_context",
+          "lineNumber": 415
+        },
+        {
+          "caller": "_state",
+          "callee": "{\"BULLISH\": \"向上\", \"BEARISH\": \"向下\"}.get",
+          "lineNumber": 422
+        },
+        {
+          "caller": "_state",
+          "callee": "{\"BULLISH\": \"UP_TURNING\", \"BEARISH\": \"DOWN_CONTINUATION\"}.get",
+          "lineNumber": 426
+        },
+        {
+          "caller": "test_resonance_compares_confirmed_snapshots_without_historical_replay",
+          "callee": "_state",
+          "lineNumber": 446
+        },
+        {
+          "caller": "test_resonance_compares_confirmed_snapshots_without_historical_replay",
+          "callee": "zip",
+          "lineNumber": 447
+        },
+        {
+          "caller": "test_resonance_compares_confirmed_snapshots_without_historical_replay",
+          "callee": "_analyze_resonance",
+          "lineNumber": 454
+        },
+        {
+          "caller": "test_resonance_does_not_create_event_when_a_required_state_is_unknown",
+          "callee": "_state",
+          "lineNumber": 465
+        },
+        {
+          "caller": "test_resonance_does_not_create_event_when_a_required_state_is_unknown",
+          "callee": "_state",
+          "lineNumber": 466
+        },
+        {
+          "caller": "test_resonance_does_not_create_event_when_a_required_state_is_unknown",
+          "callee": "_state",
+          "lineNumber": 467
+        },
+        {
+          "caller": "test_resonance_does_not_create_event_when_a_required_state_is_unknown",
+          "callee": "_state",
+          "lineNumber": 468
+        },
+        {
+          "caller": "test_resonance_does_not_create_event_when_a_required_state_is_unknown",
+          "callee": "_analyze_resonance",
+          "lineNumber": 470
+        },
+        {
+          "caller": "test_resonance_rejects_stale_minute_context",
+          "callee": "_state",
+          "lineNumber": 478
+        },
+        {
+          "caller": "test_resonance_rejects_stale_minute_context",
+          "callee": "_state",
+          "lineNumber": 479
+        },
+        {
+          "caller": "test_resonance_rejects_stale_minute_context",
+          "callee": "_state",
+          "lineNumber": 480
+        },
+        {
+          "caller": "test_resonance_rejects_stale_minute_context",
+          "callee": "_state",
+          "lineNumber": 481
+        },
+        {
+          "caller": "test_resonance_rejects_stale_minute_context",
+          "callee": "_analyze_resonance",
+          "lineNumber": 483
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 24,
+        "functionCount": 23,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "backend/tests/test_extensions.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 157,
+      "nonEmptyLines": 116,
+      "functions": [
+        {
+          "name": "_registrar",
+          "startLine": 34,
+          "endLine": 38,
+          "params": [
+            "extension_id"
+          ]
+        },
+        {
+          "name": "test_empty_registry_preserves_existing_notification_objects",
+          "startLine": 41,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "test_notification_formatters_are_ordered_and_do_not_mutate_input",
+          "startLine": 54,
+          "endLine": 70,
+          "params": []
+        },
+        {
+          "name": "test_broken_formatter_keeps_previous_message_and_later_formatters_run",
+          "startLine": 73,
+          "endLine": 86,
+          "params": []
+        },
+        {
+          "name": "test_registry_rejects_version_mismatch_without_partial_registration",
+          "startLine": 89,
+          "endLine": 99,
+          "params": []
+        },
+        {
+          "name": "test_registry_is_frozen_after_startup",
+          "startLine": 102,
+          "endLine": 107,
+          "params": []
+        },
+        {
+          "name": "test_loader_isolates_failed_setup_and_registers_valid_route",
+          "startLine": 110,
+          "endLine": 157,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PrefixFormatter",
+          "startLine": 19,
+          "endLine": 25,
+          "methods": [
+            "__init__",
+            "format_message"
+          ],
+          "properties": []
+        },
+        {
+          "name": "BrokenFormatter",
+          "startLine": 28,
+          "endLine": 31,
+          "methods": [
+            "format_message"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PrefixFormatter",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "BrokenFormatter",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "_registrar",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "test_empty_registry_preserves_existing_notification_objects",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "test_notification_formatters_are_ordered_and_do_not_mutate_input",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "test_broken_formatter_keeps_previous_message_and_later_formatters_run",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "test_registry_rejects_version_mismatch_without_partial_registration",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "test_registry_is_frozen_after_startup",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "test_loader_isolates_failed_setup_and_registers_valid_route",
+          "line": 110,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "format_message",
+          "callee": "RuntimeError",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_registrar",
+          "callee": "BackendExtensionRegistrar",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_empty_registry_preserves_existing_notification_objects",
+          "callee": "BackendExtensionRegistry",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_empty_registry_preserves_existing_notification_objects",
+          "callee": "registry.freeze",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_empty_registry_preserves_existing_notification_objects",
+          "callee": "QuoteService",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_empty_registry_preserves_existing_notification_objects",
+          "callee": "types.SimpleNamespace",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_empty_registry_preserves_existing_notification_objects",
+          "callee": "service._format_extension_notifications",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_notification_formatters_are_ordered_and_do_not_mutate_input",
+          "callee": "BackendExtensionRegistry",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_notification_formatters_are_ordered_and_do_not_mutate_input",
+          "callee": "_registrar",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_notification_formatters_are_ordered_and_do_not_mutate_input",
+          "callee": "registrar.register_notification_formatter",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_notification_formatters_are_ordered_and_do_not_mutate_input",
+          "callee": "PrefixFormatter",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_notification_formatters_are_ordered_and_do_not_mutate_input",
+          "callee": "registrar.register_notification_formatter",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_notification_formatters_are_ordered_and_do_not_mutate_input",
+          "callee": "PrefixFormatter",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_notification_formatters_are_ordered_and_do_not_mutate_input",
+          "callee": "registry.register",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_notification_formatters_are_ordered_and_do_not_mutate_input",
+          "callee": "registry.freeze",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_notification_formatters_are_ordered_and_do_not_mutate_input",
+          "callee": "QuoteService",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_notification_formatters_are_ordered_and_do_not_mutate_input",
+          "callee": "types.SimpleNamespace",
+          "lineNumber": 62
+        },
+        {
+          "caller": "test_notification_formatters_are_ordered_and_do_not_mutate_input",
+          "callee": "service._format_extension_notifications",
+          "lineNumber": 65
+        },
+        {
+          "caller": "test_broken_formatter_keeps_previous_message_and_later_formatters_run",
+          "callee": "BackendExtensionRegistry",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_broken_formatter_keeps_previous_message_and_later_formatters_run",
+          "callee": "_registrar",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_broken_formatter_keeps_previous_message_and_later_formatters_run",
+          "callee": "registrar.register_notification_formatter",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_broken_formatter_keeps_previous_message_and_later_formatters_run",
+          "callee": "PrefixFormatter",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_broken_formatter_keeps_previous_message_and_later_formatters_run",
+          "callee": "registrar.register_notification_formatter",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_broken_formatter_keeps_previous_message_and_later_formatters_run",
+          "callee": "BrokenFormatter",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_broken_formatter_keeps_previous_message_and_later_formatters_run",
+          "callee": "registrar.register_notification_formatter",
+          "lineNumber": 78
+        },
+        {
+          "caller": "test_broken_formatter_keeps_previous_message_and_later_formatters_run",
+          "callee": "PrefixFormatter",
+          "lineNumber": 78
+        },
+        {
+          "caller": "test_broken_formatter_keeps_previous_message_and_later_formatters_run",
+          "callee": "registry.register",
+          "lineNumber": 79
+        },
+        {
+          "caller": "test_broken_formatter_keeps_previous_message_and_later_formatters_run",
+          "callee": "registry.freeze",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_broken_formatter_keeps_previous_message_and_later_formatters_run",
+          "callee": "QuoteService",
+          "lineNumber": 81
+        },
+        {
+          "caller": "test_broken_formatter_keeps_previous_message_and_later_formatters_run",
+          "callee": "types.SimpleNamespace",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_broken_formatter_keeps_previous_message_and_later_formatters_run",
+          "callee": "service._format_extension_notifications",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_registry_rejects_version_mismatch_without_partial_registration",
+          "callee": "BackendExtensionRegistry",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_registry_rejects_version_mismatch_without_partial_registration",
+          "callee": "BackendExtensionRegistrar",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_registry_rejects_version_mismatch_without_partial_registration",
+          "callee": "registrar.register_notification_formatter",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_registry_rejects_version_mismatch_without_partial_registration",
+          "callee": "PrefixFormatter",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_registry_rejects_version_mismatch_without_partial_registration",
+          "callee": "pytest.raises",
+          "lineNumber": 94
+        },
+        {
+          "caller": "test_registry_rejects_version_mismatch_without_partial_registration",
+          "callee": "registry.register",
+          "lineNumber": 95
+        },
+        {
+          "caller": "test_registry_rejects_version_mismatch_without_partial_registration",
+          "callee": "registry.freeze",
+          "lineNumber": 97
+        },
+        {
+          "caller": "test_registry_is_frozen_after_startup",
+          "callee": "BackendExtensionRegistry",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_registry_is_frozen_after_startup",
+          "callee": "registry.freeze",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_registry_is_frozen_after_startup",
+          "callee": "pytest.raises",
+          "lineNumber": 106
+        },
+        {
+          "caller": "test_registry_is_frozen_after_startup",
+          "callee": "registry.register",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_registry_is_frozen_after_startup",
+          "callee": "_registrar",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_loader_isolates_failed_setup_and_registers_valid_route",
+          "callee": "types.ModuleType",
+          "lineNumber": 113
+        },
+        {
+          "caller": "broken_setup",
+          "callee": "registrar.register_notification_formatter",
+          "lineNumber": 118
+        },
+        {
+          "caller": "broken_setup",
+          "callee": "PrefixFormatter",
+          "lineNumber": 118
+        },
+        {
+          "caller": "broken_setup",
+          "callee": "RuntimeError",
+          "lineNumber": 119
+        },
+        {
+          "caller": "test_loader_isolates_failed_setup_and_registers_valid_route",
+          "callee": "types.ModuleType",
+          "lineNumber": 123
+        },
+        {
+          "caller": "valid_setup",
+          "callee": "APIRouter",
+          "lineNumber": 128
+        },
+        {
+          "caller": "valid_setup",
+          "callee": "router.get",
+          "lineNumber": 130
+        },
+        {
+          "caller": "valid_setup",
+          "callee": "registrar.include_router",
+          "lineNumber": 134
+        },
+        {
+          "caller": "test_loader_isolates_failed_setup_and_registers_valid_route",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 139
+        },
+        {
+          "caller": "test_loader_isolates_failed_setup_and_registers_valid_route",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 143
+        },
+        {
+          "caller": "test_loader_isolates_failed_setup_and_registers_valid_route",
+          "callee": "FastAPI",
+          "lineNumber": 147
+        },
+        {
+          "caller": "test_loader_isolates_failed_setup_and_registers_valid_route",
+          "callee": "configure_backend_extensions",
+          "lineNumber": 149
+        },
+        {
+          "caller": "test_loader_isolates_failed_setup_and_registers_valid_route",
+          "callee": "registry.extension_ids",
+          "lineNumber": 152
+        },
+        {
+          "caller": "test_loader_isolates_failed_setup_and_registers_valid_route",
+          "callee": "frozenset",
+          "lineNumber": 152
+        },
+        {
+          "caller": "test_loader_isolates_failed_setup_and_registers_valid_route",
+          "callee": "len",
+          "lineNumber": 153
+        },
+        {
+          "caller": "test_loader_isolates_failed_setup_and_registers_valid_route",
+          "callee": "TestClient",
+          "lineNumber": 155
+        },
+        {
+          "caller": "test_loader_isolates_failed_setup_and_registers_valid_route",
+          "callee": "client.get",
+          "lineNumber": 156
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 9,
+        "functionCount": 7,
+        "classCount": 2
+      }
+    }
+  ]
+}

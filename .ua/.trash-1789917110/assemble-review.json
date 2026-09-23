@@ -1,0 +1,63 @@
+{
+  "reviewedAt": "2026-09-20T22:55:45+08:00",
+  "status": "passed",
+  "summary": "Assembled graph passed structural, inventory, import-map, and tested_by linkage validation. No repair was warranted.",
+  "issues": [],
+  "repairsApplied": [],
+  "notes": [
+    "Validated the complete scan-result.json importMap: all 2,779 source entries were read, producing 4,419 expected resolved internal import pairs.",
+    "All 4,419 expected import pairs are represented exactly once by file-level imports edges; there are no missing, unexpected, malformed, or unresolved import targets.",
+    "Every one of the 2,779 scanned paths has a corresponding file-level graph node. The five additional file-level nodes are valid Docker multi-stage service nodes for two already-scanned Dockerfiles.",
+    "The merge report's 10 dropped invalid tested_by edges, 23 convention-added tested_by edges, and 2 recovered imports leave no residual integrity issue. All 106 final tested_by edges point from production code to a test file.",
+    "The two unrecoverable desktop package.json imports mentioned in the merge report target a path outside the scanned inventory and are correctly absent from the final graph."
+  ],
+  "stats": {
+    "mergeInput": {
+      "nodes": 20007,
+      "edges": 42883
+    },
+    "assembledOutput": {
+      "nodes": 20007,
+      "edges": 42896
+    },
+    "structuralValidation": {
+      "duplicateNodeIds": 0,
+      "duplicateEdges": 0,
+      "danglingEdges": 0,
+      "invalidRequiredNodes": 0,
+      "invalidNodeTypes": 0,
+      "invalidEdges": 0,
+      "nodesOutsideScanInventory": 0,
+      "nodesWithoutFilePath": 0,
+      "invalidComplexityValues": 0
+    },
+    "scanCoverage": {
+      "scannedPaths": 2779,
+      "representedPaths": 2779,
+      "missingPaths": 0,
+      "extraPaths": 0
+    },
+    "importMapValidation": {
+      "sourceEntriesRead": 2779,
+      "expectedPairs": 4419,
+      "actualPairs": 4419,
+      "missingPairs": 0,
+      "unexpectedPairs": 0,
+      "malformedImportEdges": 0,
+      "unresolvedTargets": 0
+    },
+    "testedByValidation": {
+      "edges": 106,
+      "invalidDirectionOrEndpoint": 0
+    }
+  },
+  "mergeReport": {
+    "invalidTestedByEdgesDropped": 10,
+    "pathConventionTestedByEdgesAdded": 23,
+    "importsRecovered": 2,
+    "unresolvedExternalToScanImports": 2,
+    "emptyBatchFragmentsIgnored": [
+      "batch-54-part-10.json"
+    ]
+  }
+}

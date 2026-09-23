@@ -1,0 +1,2292 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 5,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 5,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 5,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-ta/src/lib.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-ta/src/mixed/chip_dist.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 133,
+      "nonEmptyLines": 112,
+      "functions": [
+        {
+          "name": "chip_distribution_triangle",
+          "startLine": 40,
+          "endLine": 133,
+          "params": [
+            "py",
+            "data",
+            "price_step",
+            "decay_factor"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "chip_distribution_triangle",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "data.as_array",
+          "lineNumber": 46
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "data.shape",
+          "lineNumber": 47
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "data.shape",
+          "lineNumber": 50
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "data.column",
+          "lineNumber": 56
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "data.column",
+          "lineNumber": 57
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "low_col.fold",
+          "lineNumber": 60
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "a.min",
+          "lineNumber": 60
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "high_col.fold",
+          "lineNumber": 61
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "a.max",
+          "lineNumber": 61
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "(min_low / price_step).floor",
+          "lineNumber": 64
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "(max_high / price_step).ceil",
+          "lineNumber": 65
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "((max_price - min_price) / price_step).ceil",
+          "lineNumber": 67
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "Array1::<f64>::zeros",
+          "lineNumber": 69
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "Array1::from_iter",
+          "lineNumber": 72
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "(0..nbins).map",
+          "lineNumber": 72
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "HashMap::new",
+          "lineNumber": 76
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "((low - min_price) / price_step).floor().max",
+          "lineNumber": 87
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "((low - min_price) / price_step).floor",
+          "lineNumber": 87
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "((high - min_price) / price_step).ceil().min",
+          "lineNumber": 88
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "((high - min_price) / price_step).ceil",
+          "lineNumber": 88
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "chip_dist.iter_mut",
+          "lineNumber": 95
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "OrderedFloat",
+          "lineNumber": 101
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "OrderedFloat",
+          "lineNumber": 102
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "weight_cache.entry((low_key, high_key)).or_insert_with",
+          "lineNumber": 104
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "weight_cache.entry",
+          "lineNumber": 104
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "Vec::with_capacity",
+          "lineNumber": 106
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "(center_price - mid_price).abs",
+          "lineNumber": 109
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "w.push",
+          "lineNumber": 110
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "weight.max",
+          "lineNumber": 110
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "weights.iter().sum",
+          "lineNumber": 115
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "weights.iter",
+          "lineNumber": 115
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "(start_idx..end_idx).enumerate",
+          "lineNumber": 121
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "chip_dist.sum",
+          "lineNumber": 127
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "chip_dist.iter_mut().for_each",
+          "lineNumber": 129
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "chip_dist.iter_mut",
+          "lineNumber": 129
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "price_centers.into_pyarray",
+          "lineNumber": 132
+        },
+        {
+          "caller": "chip_distribution_triangle",
+          "callee": "chip_dist.into_pyarray",
+          "lineNumber": 132
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-ta/src/mixed/mod.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 2,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-ta/src/pure.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 1535,
+      "nonEmptyLines": 1374,
+      "functions": [
+        {
+          "name": "sma",
+          "startLine": 10,
+          "endLine": 26,
+          "params": [
+            "series",
+            "n"
+          ]
+        },
+        {
+          "name": "ultimate_smoother",
+          "startLine": 29,
+          "endLine": 59,
+          "params": [
+            "price",
+            "period"
+          ]
+        },
+        {
+          "name": "rolling_rank",
+          "startLine": 61,
+          "endLine": 81,
+          "params": [
+            "series",
+            "window"
+          ]
+        },
+        {
+          "name": "single_sma_positions",
+          "startLine": 83,
+          "endLine": 123,
+          "params": [
+            "series",
+            "n"
+          ]
+        },
+        {
+          "name": "single_ema_positions",
+          "startLine": 126,
+          "endLine": 183,
+          "params": [
+            "series",
+            "n"
+          ]
+        },
+        {
+          "name": "mid_positions",
+          "startLine": 187,
+          "endLine": 237,
+          "params": [
+            "series",
+            "n"
+          ]
+        },
+        {
+          "name": "double_sma_positions",
+          "startLine": 241,
+          "endLine": 292,
+          "params": [
+            "series",
+            "n",
+            "m"
+          ]
+        },
+        {
+          "name": "triple_sma_positions",
+          "startLine": 297,
+          "endLine": 399,
+          "params": [
+            "series",
+            "m1",
+            "m2",
+            "m3"
+          ]
+        },
+        {
+          "name": "boll_positions",
+          "startLine": 403,
+          "endLine": 484,
+          "params": [
+            "series",
+            "n",
+            "k"
+          ]
+        },
+        {
+          "name": "boll_reverse_positions",
+          "startLine": 491,
+          "endLine": 584,
+          "params": [
+            "series",
+            "n",
+            "k"
+          ]
+        },
+        {
+          "name": "mms_positions",
+          "startLine": 588,
+          "endLine": 663,
+          "params": [
+            "series",
+            "timeperiod",
+            "window"
+          ]
+        },
+        {
+          "name": "rsi_reverse_positions",
+          "startLine": 667,
+          "endLine": 770,
+          "params": [
+            "series",
+            "n",
+            "rsi_upper",
+            "rsi_lower",
+            "rsi_exit"
+          ]
+        },
+        {
+          "name": "tanh_positions",
+          "startLine": 774,
+          "endLine": 840,
+          "params": [
+            "series",
+            "n"
+          ]
+        },
+        {
+          "name": "rank_positions",
+          "startLine": 844,
+          "endLine": 901,
+          "params": [
+            "series",
+            "n"
+          ]
+        },
+        {
+          "name": "ema",
+          "startLine": 905,
+          "endLine": 930,
+          "params": [
+            "series",
+            "period"
+          ]
+        },
+        {
+          "name": "true_range",
+          "startLine": 934,
+          "endLine": 970,
+          "params": [
+            "high",
+            "low",
+            "close_prev"
+          ]
+        },
+        {
+          "name": "rsx_ss2",
+          "startLine": 974,
+          "endLine": 1053,
+          "params": [
+            "close",
+            "period",
+            "smooth_period"
+          ]
+        },
+        {
+          "name": "jurik_volty",
+          "startLine": 1057,
+          "endLine": 1209,
+          "params": [
+            "close",
+            "period",
+            "power"
+          ]
+        },
+        {
+          "name": "ultimate_channel",
+          "startLine": 1213,
+          "endLine": 1269,
+          "params": [
+            "high",
+            "low",
+            "close",
+            "period",
+            "multiplier"
+          ]
+        },
+        {
+          "name": "ultimate_bands",
+          "startLine": 1273,
+          "endLine": 1351,
+          "params": [
+            "close",
+            "period",
+            "std_multiplier",
+            "smooth_period"
+          ]
+        },
+        {
+          "name": "ultimate_oscillator",
+          "startLine": 1355,
+          "endLine": 1470,
+          "params": [
+            "high",
+            "low",
+            "close",
+            "short_period",
+            "med_period",
+            "long_period"
+          ]
+        },
+        {
+          "name": "exponential_smoothing",
+          "startLine": 1474,
+          "endLine": 1491,
+          "params": [
+            "series",
+            "alpha"
+          ]
+        },
+        {
+          "name": "holt_winters",
+          "startLine": 1495,
+          "endLine": 1535,
+          "params": [
+            "series",
+            "season_length",
+            "alpha",
+            "beta",
+            "gamma"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "sma",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "ultimate_smoother",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "rolling_rank",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "single_sma_positions",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "single_ema_positions",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "mid_positions",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "double_sma_positions",
+          "line": 241,
+          "isDefault": false
+        },
+        {
+          "name": "triple_sma_positions",
+          "line": 297,
+          "isDefault": false
+        },
+        {
+          "name": "boll_positions",
+          "line": 403,
+          "isDefault": false
+        },
+        {
+          "name": "boll_reverse_positions",
+          "line": 491,
+          "isDefault": false
+        },
+        {
+          "name": "mms_positions",
+          "line": 588,
+          "isDefault": false
+        },
+        {
+          "name": "rsi_reverse_positions",
+          "line": 667,
+          "isDefault": false
+        },
+        {
+          "name": "tanh_positions",
+          "line": 774,
+          "isDefault": false
+        },
+        {
+          "name": "rank_positions",
+          "line": 844,
+          "isDefault": false
+        },
+        {
+          "name": "ema",
+          "line": 905,
+          "isDefault": false
+        },
+        {
+          "name": "true_range",
+          "line": 934,
+          "isDefault": false
+        },
+        {
+          "name": "rsx_ss2",
+          "line": 974,
+          "isDefault": false
+        },
+        {
+          "name": "jurik_volty",
+          "line": 1057,
+          "isDefault": false
+        },
+        {
+          "name": "ultimate_channel",
+          "line": 1213,
+          "isDefault": false
+        },
+        {
+          "name": "ultimate_bands",
+          "line": 1273,
+          "isDefault": false
+        },
+        {
+          "name": "ultimate_oscillator",
+          "line": 1355,
+          "isDefault": false
+        },
+        {
+          "name": "exponential_smoothing",
+          "line": 1474,
+          "isDefault": false
+        },
+        {
+          "name": "holt_winters",
+          "line": 1495,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sma",
+          "callee": "series.len",
+          "lineNumber": 11
+        },
+        {
+          "caller": "sma",
+          "callee": "series.iter().take(n).sum",
+          "lineNumber": 19
+        },
+        {
+          "caller": "sma",
+          "callee": "series.iter().take",
+          "lineNumber": 19
+        },
+        {
+          "caller": "sma",
+          "callee": "series.iter",
+          "lineNumber": 19
+        },
+        {
+          "caller": "ultimate_smoother",
+          "callee": "price.len",
+          "lineNumber": 30
+        },
+        {
+          "caller": "ultimate_smoother",
+          "callee": "(-1.414 * std::f64::consts::PI / period).exp",
+          "lineNumber": 34
+        },
+        {
+          "caller": "ultimate_smoother",
+          "callee": "(1.414 * 180.0 / period).to_radians().cos",
+          "lineNumber": 35
+        },
+        {
+          "caller": "ultimate_smoother",
+          "callee": "(1.414 * 180.0 / period).to_radians",
+          "lineNumber": 35
+        },
+        {
+          "caller": "ultimate_smoother",
+          "callee": "price[i].is_nan",
+          "lineNumber": 47
+        },
+        {
+          "caller": "ultimate_smoother",
+          "callee": "price[i - 1].is_nan",
+          "lineNumber": 47
+        },
+        {
+          "caller": "ultimate_smoother",
+          "callee": "price[i - 2].is_nan",
+          "lineNumber": 47
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "series.len",
+          "lineNumber": 62
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "Vec::with_capacity",
+          "lineNumber": 63
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "ranks.push",
+          "lineNumber": 66
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "window_slice.to_vec",
+          "lineNumber": 71
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "sorted.sort_by",
+          "lineNumber": 72
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "a.partial_cmp(b).unwrap",
+          "lineNumber": 72
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "a.partial_cmp",
+          "lineNumber": 72
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "sorted\n            .iter()\n            .position(|&x| (x - value).abs() < 1e-8).map",
+          "lineNumber": 74
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "sorted\n            .iter().position",
+          "lineNumber": 74
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "sorted.iter",
+          "lineNumber": 74
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "(x - value).abs",
+          "lineNumber": 76
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "ranks.push",
+          "lineNumber": 78
+        },
+        {
+          "caller": "single_sma_positions",
+          "callee": "series.len",
+          "lineNumber": 84
+        },
+        {
+          "caller": "single_sma_positions",
+          "callee": "series[i + 1 - n..=i].iter().sum",
+          "lineNumber": 98
+        },
+        {
+          "caller": "single_sma_positions",
+          "callee": "series[i + 1 - n..=i].iter",
+          "lineNumber": 98
+        },
+        {
+          "caller": "single_sma_positions",
+          "callee": "ms[i + 1 - n..=i].iter().sum",
+          "lineNumber": 108
+        },
+        {
+          "caller": "single_sma_positions",
+          "callee": "ms[i + 1 - n..=i].iter",
+          "lineNumber": 108
+        },
+        {
+          "caller": "single_sma_positions",
+          "callee": "(series[i] - ms_sma[i]).signum",
+          "lineNumber": 117
+        },
+        {
+          "caller": "single_ema_positions",
+          "callee": "series.len",
+          "lineNumber": 127
+        },
+        {
+          "caller": "single_ema_positions",
+          "callee": "series[i + 1 - n..=i].iter().sum",
+          "lineNumber": 146
+        },
+        {
+          "caller": "single_ema_positions",
+          "callee": "series[i + 1 - n..=i].iter",
+          "lineNumber": 146
+        },
+        {
+          "caller": "single_ema_positions",
+          "callee": "ms[first_valid_idx..=i].iter().sum",
+          "lineNumber": 173
+        },
+        {
+          "caller": "single_ema_positions",
+          "callee": "ms[first_valid_idx..=i].iter",
+          "lineNumber": 173
+        },
+        {
+          "caller": "single_ema_positions",
+          "callee": "(series[i] - ms_ema[i]).signum",
+          "lineNumber": 175
+        },
+        {
+          "caller": "single_ema_positions",
+          "callee": "(series[i] - ms_ema[i]).signum",
+          "lineNumber": 178
+        },
+        {
+          "caller": "mid_positions",
+          "callee": "series.len",
+          "lineNumber": 188
+        },
+        {
+          "caller": "mid_positions",
+          "callee": "series[i + 1 - n..=i].iter().sum",
+          "lineNumber": 202
+        },
+        {
+          "caller": "mid_positions",
+          "callee": "series[i + 1 - n..=i].iter",
+          "lineNumber": 202
+        },
+        {
+          "caller": "mid_positions",
+          "callee": "window.iter().fold",
+          "lineNumber": 217
+        },
+        {
+          "caller": "mid_positions",
+          "callee": "window.iter",
+          "lineNumber": 217
+        },
+        {
+          "caller": "mid_positions",
+          "callee": "a.max",
+          "lineNumber": 217
+        },
+        {
+          "caller": "mid_positions",
+          "callee": "window.iter().fold",
+          "lineNumber": 218
+        },
+        {
+          "caller": "mid_positions",
+          "callee": "window.iter",
+          "lineNumber": 218
+        },
+        {
+          "caller": "mid_positions",
+          "callee": "a.min",
+          "lineNumber": 218
+        },
+        {
+          "caller": "mid_positions",
+          "callee": "(ms[i] - mid).signum",
+          "lineNumber": 230
+        },
+        {
+          "caller": "double_sma_positions",
+          "callee": "series.len",
+          "lineNumber": 242
+        },
+        {
+          "caller": "double_sma_positions",
+          "callee": "series[i + 1 - n..=i].iter().sum",
+          "lineNumber": 265
+        },
+        {
+          "caller": "double_sma_positions",
+          "callee": "series[i + 1 - n..=i].iter",
+          "lineNumber": 265
+        },
+        {
+          "caller": "double_sma_positions",
+          "callee": "series[i + 1 - m..=i].iter().sum",
+          "lineNumber": 275
+        },
+        {
+          "caller": "double_sma_positions",
+          "callee": "series[i + 1 - m..=i].iter",
+          "lineNumber": 275
+        },
+        {
+          "caller": "double_sma_positions",
+          "callee": "(sma_n - sma_m).signum",
+          "lineNumber": 285
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "series.len",
+          "lineNumber": 298
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "series[i + 1 - m1..=i].iter().sum",
+          "lineNumber": 315
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "series[i + 1 - m1..=i].iter",
+          "lineNumber": 315
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "Some",
+          "lineNumber": 316
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "smoothed_series[i + 1 - m1..=i]\n                .iter()\n                .filter_map(|&x| x).collect",
+          "lineNumber": 330
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "smoothed_series[i + 1 - m1..=i]\n                .iter().filter_map",
+          "lineNumber": 330
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "smoothed_series[i + 1 - m1..=i].iter",
+          "lineNumber": 330
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "window.len",
+          "lineNumber": 334
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "window.iter().sum",
+          "lineNumber": 335
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "window.iter",
+          "lineNumber": 335
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "Some",
+          "lineNumber": 336
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "smoothed_series[i + 1 - m2..=i]\n                .iter()\n                .filter_map(|&x| x).collect",
+          "lineNumber": 348
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "smoothed_series[i + 1 - m2..=i]\n                .iter().filter_map",
+          "lineNumber": 348
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "smoothed_series[i + 1 - m2..=i].iter",
+          "lineNumber": 348
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "window.len",
+          "lineNumber": 352
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "window.iter().sum",
+          "lineNumber": 353
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "window.iter",
+          "lineNumber": 353
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "Some",
+          "lineNumber": 354
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "smoothed_series[i + 1 - m3..=i]\n                .iter()\n                .filter_map(|&x| x).collect",
+          "lineNumber": 366
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "smoothed_series[i + 1 - m3..=i]\n                .iter().filter_map",
+          "lineNumber": 366
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "smoothed_series[i + 1 - m3..=i].iter",
+          "lineNumber": 366
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "window.len",
+          "lineNumber": 370
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "window.iter().sum",
+          "lineNumber": 371
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "window.iter",
+          "lineNumber": 371
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "Some",
+          "lineNumber": 372
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "series.len",
+          "lineNumber": 404
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "series[i + 1 - n..=i].iter().sum",
+          "lineNumber": 418
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "series[i + 1 - n..=i].iter",
+          "lineNumber": 418
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "Some",
+          "lineNumber": 419
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "smoothed_series[i + 1 - n..=i]\n                .iter()\n                .filter_map(|&x| x).collect",
+          "lineNumber": 429
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "smoothed_series[i + 1 - n..=i]\n                .iter().filter_map",
+          "lineNumber": 429
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "smoothed_series[i + 1 - n..=i].iter",
+          "lineNumber": 429
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "window.len",
+          "lineNumber": 433
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "window.iter().sum",
+          "lineNumber": 434
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "window.iter",
+          "lineNumber": 434
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "Some",
+          "lineNumber": 435
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "smoothed_series[i + 1 - n..=i]\n                .iter()\n                .filter_map(|&x| x).collect",
+          "lineNumber": 448
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "smoothed_series[i + 1 - n..=i]\n                .iter().filter_map",
+          "lineNumber": 448
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "smoothed_series[i + 1 - n..=i].iter",
+          "lineNumber": 448
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "window.len",
+          "lineNumber": 452
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "window.iter().sum::<f64>",
+          "lineNumber": 453
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "window.iter",
+          "lineNumber": 453
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "window.iter().map(|&x| (x - mean).powi(2)).sum::<f64>",
+          "lineNumber": 455
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "window.iter().map",
+          "lineNumber": 455
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "window.iter",
+          "lineNumber": 455
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "(x - mean).powi",
+          "lineNumber": 455
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "Some",
+          "lineNumber": 456
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "variance.sqrt",
+          "lineNumber": 456
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "series.len",
+          "lineNumber": 492
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "series[i + 1 - n..=i].iter().sum",
+          "lineNumber": 506
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "series[i + 1 - n..=i].iter",
+          "lineNumber": 506
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "Some",
+          "lineNumber": 507
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "smoothed_series[i + 1 - n..=i]\n                .iter()\n                .filter_map(|&x| x).collect",
+          "lineNumber": 522
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "smoothed_series[i + 1 - n..=i]\n                .iter().filter_map",
+          "lineNumber": 522
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "smoothed_series[i + 1 - n..=i].iter",
+          "lineNumber": 522
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "window.len",
+          "lineNumber": 526
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "window.iter().sum::<f64>",
+          "lineNumber": 527
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "window.iter",
+          "lineNumber": 527
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "window.iter().map(|&x| (x - mean).powi(2)).sum::<f64>",
+          "lineNumber": 528
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "window.iter().map",
+          "lineNumber": 528
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "window.iter",
+          "lineNumber": 528
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "(x - mean).powi",
+          "lineNumber": 528
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "variance.sqrt",
+          "lineNumber": 529
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "Some",
+          "lineNumber": 531
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "Some",
+          "lineNumber": 532
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "Some",
+          "lineNumber": 533
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "smoothed_series[i].unwrap",
+          "lineNumber": 549
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "series.len",
+          "lineNumber": 589
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "series[i + 1 - timeperiod..=i].iter().sum",
+          "lineNumber": 603
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "series[i + 1 - timeperiod..=i].iter",
+          "lineNumber": 603
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "Some",
+          "lineNumber": 604
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "sm[i + 1 - window..=i].iter().filter_map(|&x| x).collect",
+          "lineNumber": 615
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "sm[i + 1 - window..=i].iter().filter_map",
+          "lineNumber": 615
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "sm[i + 1 - window..=i].iter",
+          "lineNumber": 615
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "window_values.len",
+          "lineNumber": 616
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "Some",
+          "lineNumber": 617
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "window_values.iter().fold",
+          "lineNumber": 617
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "window_values.iter",
+          "lineNumber": 617
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "a.min",
+          "lineNumber": 617
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "sm[i + 1 - window..=i].iter().filter_map(|&x| x).collect",
+          "lineNumber": 631
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "sm[i + 1 - window..=i].iter().filter_map",
+          "lineNumber": 631
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "sm[i + 1 - window..=i].iter",
+          "lineNumber": 631
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "window_values.len",
+          "lineNumber": 632
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "Some",
+          "lineNumber": 633
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "window_values\n                        .iter().fold",
+          "lineNumber": 634
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "window_values.iter",
+          "lineNumber": 634
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "a.max",
+          "lineNumber": 636
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "denominator.abs",
+          "lineNumber": 649
+        },
+        {
+          "caller": "rsi_reverse_positions",
+          "callee": "series.len",
+          "lineNumber": 674
+        },
+        {
+          "caller": "rsi_reverse_positions",
+          "callee": "series[i + 1 - n..=i].iter().sum",
+          "lineNumber": 688
+        },
+        {
+          "caller": "rsi_reverse_positions",
+          "callee": "series[i + 1 - n..=i].iter",
+          "lineNumber": 688
+        },
+        {
+          "caller": "rsi_reverse_positions",
+          "callee": "Some",
+          "lineNumber": 689
+        },
+        {
+          "caller": "rsi_reverse_positions",
+          "callee": "i.saturating_sub",
+          "lineNumber": 702
+        },
+        {
+          "caller": "rsi_reverse_positions",
+          "callee": "change.abs",
+          "lineNumber": 711
+        },
+        {
+          "caller": "rsi_reverse_positions",
+          "callee": "Some",
+          "lineNumber": 721
+        },
+        {
+          "caller": "rsi_reverse_positions",
+          "callee": "Some",
+          "lineNumber": 726
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "series.len",
+          "lineNumber": 775
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "series[i + 1 - n..=i].iter().sum",
+          "lineNumber": 789
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "series[i + 1 - n..=i].iter",
+          "lineNumber": 789
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "Some",
+          "lineNumber": 790
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "Vec::new",
+          "lineNumber": 803
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "values.push",
+          "lineNumber": 806
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "values.len",
+          "lineNumber": 810
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "values.iter().sum",
+          "lineNumber": 811
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "values.iter",
+          "lineNumber": 811
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "Some",
+          "lineNumber": 813
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "values.iter().map(|&x| (x - mean_val).powi(2)).sum::<f64>",
+          "lineNumber": 817
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "values.iter().map",
+          "lineNumber": 817
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "values.iter",
+          "lineNumber": 817
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "(x - mean_val).powi",
+          "lineNumber": 817
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "Some",
+          "lineNumber": 818
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "variance.sqrt",
+          "lineNumber": 818
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "z_score.tanh",
+          "lineNumber": 830
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "(*val * 100.0).round",
+          "lineNumber": 836
+        },
+        {
+          "caller": "rank_positions",
+          "callee": "series.len",
+          "lineNumber": 845
+        },
+        {
+          "caller": "rank_positions",
+          "callee": "series[i + 1 - n..=i].iter().sum",
+          "lineNumber": 859
+        },
+        {
+          "caller": "rank_positions",
+          "callee": "series[i + 1 - n..=i].iter",
+          "lineNumber": 859
+        },
+        {
+          "caller": "rank_positions",
+          "callee": "Some",
+          "lineNumber": 860
+        },
+        {
+          "caller": "rank_positions",
+          "callee": "Vec::new",
+          "lineNumber": 870
+        },
+        {
+          "caller": "rank_positions",
+          "callee": "values.push",
+          "lineNumber": 873
+        },
+        {
+          "caller": "rank_positions",
+          "callee": "values.len",
+          "lineNumber": 877
+        },
+        {
+          "caller": "rank_positions",
+          "callee": "(*val * 100.0).round",
+          "lineNumber": 897
+        },
+        {
+          "caller": "ema",
+          "callee": "series.len",
+          "lineNumber": 912
+        },
+        {
+          "caller": "ema",
+          "callee": "series.iter().take(period).sum::<f64>",
+          "lineNumber": 923
+        },
+        {
+          "caller": "ema",
+          "callee": "series.iter().take",
+          "lineNumber": 923
+        },
+        {
+          "caller": "ema",
+          "callee": "series.iter",
+          "lineNumber": 923
+        },
+        {
+          "caller": "true_range",
+          "callee": "high.len",
+          "lineNumber": 935
+        },
+        {
+          "caller": "true_range",
+          "callee": "prev_close.is_nan",
+          "lineNumber": 949
+        },
+        {
+          "caller": "true_range",
+          "callee": "(high[i] - prev_close).abs",
+          "lineNumber": 952
+        },
+        {
+          "caller": "true_range",
+          "callee": "prev_close.is_nan",
+          "lineNumber": 954
+        },
+        {
+          "caller": "true_range",
+          "callee": "(low[i] - prev_close).abs",
+          "lineNumber": 957
+        },
+        {
+          "caller": "true_range",
+          "callee": "tr2.is_nan",
+          "lineNumber": 961
+        },
+        {
+          "caller": "true_range",
+          "callee": "tr3.is_nan",
+          "lineNumber": 961
+        },
+        {
+          "caller": "true_range",
+          "callee": "tr1.max(tr2).max",
+          "lineNumber": 965
+        },
+        {
+          "caller": "true_range",
+          "callee": "tr1.max",
+          "lineNumber": 965
+        },
+        {
+          "caller": "rsx_ss2",
+          "callee": "close.len",
+          "lineNumber": 975
+        },
+        {
+          "caller": "rsx_ss2",
+          "callee": "gain[i].is_nan",
+          "lineNumber": 1010
+        },
+        {
+          "caller": "rsx_ss2",
+          "callee": "loss[i].is_nan",
+          "lineNumber": 1010
+        },
+        {
+          "caller": "rsx_ss2",
+          "callee": "Some",
+          "lineNumber": 1011
+        },
+        {
+          "caller": "rsx_ss2",
+          "callee": "gain[i].is_nan",
+          "lineNumber": 1023
+        },
+        {
+          "caller": "rsx_ss2",
+          "callee": "loss[i].is_nan",
+          "lineNumber": 1023
+        },
+        {
+          "caller": "rsx_ss2",
+          "callee": "avg_gain[i].is_nan",
+          "lineNumber": 1036
+        },
+        {
+          "caller": "rsx_ss2",
+          "callee": "avg_loss[i].is_nan",
+          "lineNumber": 1036
+        },
+        {
+          "caller": "rsx_ss2",
+          "callee": "ultimate_smoother",
+          "lineNumber": 1052
+        },
+        {
+          "caller": "jurik_volty",
+          "callee": "close.len",
+          "lineNumber": 1058
+        },
+        {
+          "caller": "jurik_volty",
+          "callee": "(close[i] - close[i - 1]).abs",
+          "lineNumber": 1066
+        },
+        {
+          "caller": "jurik_volty",
+          "callee": "price_change[i].is_nan",
+          "lineNumber": 1077
+        },
+        {
+          "caller": "jurik_volty",
+          "callee": "Some",
+          "lineNumber": 1078
+        },
+        {
+          "caller": "jurik_volty",
+          "callee": "price_change[i].is_nan",
+          "lineNumber": 1088
+        },
+        {
+          "caller": "jurik_volty",
+          "callee": "price_change[i].is_nan",
+          "lineNumber": 1097
+        },
+        {
+          "caller": "jurik_volty",
+          "callee": "price_change[i].is_nan",
+          "lineNumber": 1105
+        },
+        {
+          "caller": "jurik_volty",
+          "callee": "smooth1[i].is_nan",
+          "lineNumber": 1120
+        },
+        {
+          "caller": "jurik_volty",
+          "callee": "Some",
+          "lineNumber": 1121
+        },
+        {
+          "caller": "jurik_volty",
+          "callee": "smooth1[i].is_nan",
+          "lineNumber": 1131
+        },
+        {
+          "caller": "jurik_volty",
+          "callee": "smooth1[i].is_nan",
+          "lineNumber": 1140
+        },
+        {
+          "caller": "jurik_volty",
+          "callee": "smooth1[i].is_nan",
+          "lineNumber": 1148
+        },
+        {
+          "caller": "jurik_volty",
+          "callee": "smooth2[i].is_nan",
+          "lineNumber": 1160
+        },
+        {
+          "caller": "jurik_volty",
+          "callee": "smooth2[i - 1].is_nan",
+          "lineNumber": 1160
+        },
+        {
+          "caller": "jurik_volty",
+          "callee": "Some",
+          "lineNumber": 1176
+        },
+        {
+          "caller": "ultimate_channel",
+          "callee": "high.len",
+          "lineNumber": 1220
+        },
+        {
+          "caller": "ultimate_channel",
+          "callee": "ultimate_smoother",
+          "lineNumber": 1226
+        },
+        {
+          "caller": "ultimate_channel",
+          "callee": "true_range",
+          "lineNumber": 1234
+        },
+        {
+          "caller": "ultimate_channel",
+          "callee": "ultimate_smoother",
+          "lineNumber": 1258
+        },
+        {
+          "caller": "ultimate_bands",
+          "callee": "close.len",
+          "lineNumber": 1279
+        },
+        {
+          "caller": "ultimate_bands",
+          "callee": "ultimate_smoother",
+          "lineNumber": 1290
+        },
+        {
+          "caller": "ultimate_bands",
+          "callee": "i.saturating_sub",
+          "lineNumber": 1305
+        },
+        {
+          "caller": "ultimate_bands",
+          "callee": "(variance / (period - 1) as f64).sqrt",
+          "lineNumber": 1333
+        },
+        {
+          "caller": "ultimate_bands",
+          "callee": "ultimate_smoother",
+          "lineNumber": 1340
+        },
+        {
+          "caller": "ultimate_oscillator",
+          "callee": "high.len",
+          "lineNumber": 1363
+        },
+        {
+          "caller": "ultimate_oscillator",
+          "callee": "low[i].min",
+          "lineNumber": 1373
+        },
+        {
+          "caller": "ultimate_oscillator",
+          "callee": "true_range",
+          "lineNumber": 1382
+        },
+        {
+          "caller": "ultimate_oscillator",
+          "callee": "buying_pressure[j].is_nan",
+          "lineNumber": 1396
+        },
+        {
+          "caller": "ultimate_oscillator",
+          "callee": "true_range[j].is_nan",
+          "lineNumber": 1396
+        },
+        {
+          "caller": "ultimate_oscillator",
+          "callee": "buying_pressure[j].is_nan",
+          "lineNumber": 1419
+        },
+        {
+          "caller": "ultimate_oscillator",
+          "callee": "true_range[j].is_nan",
+          "lineNumber": 1419
+        },
+        {
+          "caller": "ultimate_oscillator",
+          "callee": "buying_pressure[j].is_nan",
+          "lineNumber": 1442
+        },
+        {
+          "caller": "ultimate_oscillator",
+          "callee": "true_range[j].is_nan",
+          "lineNumber": 1442
+        },
+        {
+          "caller": "ultimate_oscillator",
+          "callee": "avg7[i].is_nan",
+          "lineNumber": 1462
+        },
+        {
+          "caller": "ultimate_oscillator",
+          "callee": "avg14[i].is_nan",
+          "lineNumber": 1462
+        },
+        {
+          "caller": "ultimate_oscillator",
+          "callee": "avg28[i].is_nan",
+          "lineNumber": 1462
+        },
+        {
+          "caller": "exponential_smoothing",
+          "callee": "series.len",
+          "lineNumber": 1475
+        },
+        {
+          "caller": "holt_winters",
+          "callee": "series.len",
+          "lineNumber": 1502
+        },
+        {
+          "caller": "holt_winters",
+          "callee": "series[..season_length].iter().sum::<f64>",
+          "lineNumber": 1513
+        },
+        {
+          "caller": "holt_winters",
+          "callee": "series[..season_length].iter",
+          "lineNumber": 1513
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 23,
+        "functionCount": 23,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-ta/src/python.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 256,
+      "nonEmptyLines": 226,
+      "functions": [
+        {
+          "name": "ultimate_smoother",
+          "startLine": 14,
+          "endLine": 16,
+          "params": [
+            "close",
+            "period"
+          ]
+        },
+        {
+          "name": "rolling_rank",
+          "startLine": 19,
+          "endLine": 27,
+          "params": [
+            "series",
+            "window"
+          ]
+        },
+        {
+          "name": "sma",
+          "startLine": 31,
+          "endLine": 42,
+          "params": [
+            "series",
+            "n",
+            "period",
+            "length"
+          ]
+        },
+        {
+          "name": "single_sma_positions",
+          "startLine": 45,
+          "endLine": 47,
+          "params": [
+            "series",
+            "n"
+          ]
+        },
+        {
+          "name": "single_ema_positions",
+          "startLine": 50,
+          "endLine": 52,
+          "params": [
+            "series",
+            "n"
+          ]
+        },
+        {
+          "name": "mid_positions",
+          "startLine": 55,
+          "endLine": 57,
+          "params": [
+            "series",
+            "n"
+          ]
+        },
+        {
+          "name": "double_sma_positions",
+          "startLine": 60,
+          "endLine": 62,
+          "params": [
+            "series",
+            "n",
+            "m"
+          ]
+        },
+        {
+          "name": "triple_sma_positions",
+          "startLine": 65,
+          "endLine": 67,
+          "params": [
+            "series",
+            "m1",
+            "m2",
+            "m3"
+          ]
+        },
+        {
+          "name": "boll_positions",
+          "startLine": 70,
+          "endLine": 72,
+          "params": [
+            "series",
+            "n",
+            "k"
+          ]
+        },
+        {
+          "name": "boll_reverse_positions",
+          "startLine": 75,
+          "endLine": 77,
+          "params": [
+            "series",
+            "n",
+            "k"
+          ]
+        },
+        {
+          "name": "mms_positions",
+          "startLine": 80,
+          "endLine": 82,
+          "params": [
+            "series",
+            "timeperiod",
+            "window"
+          ]
+        },
+        {
+          "name": "rsi_reverse_positions",
+          "startLine": 85,
+          "endLine": 93,
+          "params": [
+            "series",
+            "n",
+            "rsi_upper",
+            "rsi_lower",
+            "rsi_exit"
+          ]
+        },
+        {
+          "name": "tanh_positions",
+          "startLine": 96,
+          "endLine": 98,
+          "params": [
+            "series",
+            "n"
+          ]
+        },
+        {
+          "name": "rank_positions",
+          "startLine": 101,
+          "endLine": 103,
+          "params": [
+            "series",
+            "n"
+          ]
+        },
+        {
+          "name": "ema",
+          "startLine": 107,
+          "endLine": 120,
+          "params": [
+            "series",
+            "n",
+            "period",
+            "length"
+          ]
+        },
+        {
+          "name": "true_range",
+          "startLine": 123,
+          "endLine": 125,
+          "params": [
+            "high",
+            "low",
+            "close_prev"
+          ]
+        },
+        {
+          "name": "rsx_ss2",
+          "startLine": 128,
+          "endLine": 130,
+          "params": [
+            "close",
+            "period",
+            "smooth_period"
+          ]
+        },
+        {
+          "name": "jurik_volty",
+          "startLine": 133,
+          "endLine": 135,
+          "params": [
+            "close",
+            "period",
+            "power"
+          ]
+        },
+        {
+          "name": "ultimate_channel",
+          "startLine": 138,
+          "endLine": 146,
+          "params": [
+            "high",
+            "low",
+            "close",
+            "period",
+            "multiplier"
+          ]
+        },
+        {
+          "name": "ultimate_bands",
+          "startLine": 149,
+          "endLine": 156,
+          "params": [
+            "close",
+            "period",
+            "std_multiplier",
+            "smooth_period"
+          ]
+        },
+        {
+          "name": "ultimate_oscillator",
+          "startLine": 159,
+          "endLine": 168,
+          "params": [
+            "high",
+            "low",
+            "close",
+            "short_period",
+            "med_period",
+            "long_period"
+          ]
+        },
+        {
+          "name": "exponential_smoothing",
+          "startLine": 171,
+          "endLine": 173,
+          "params": [
+            "series",
+            "alpha"
+          ]
+        },
+        {
+          "name": "holt_winters",
+          "startLine": 176,
+          "endLine": 184,
+          "params": [
+            "series",
+            "season_length",
+            "alpha",
+            "beta",
+            "gamma"
+          ]
+        },
+        {
+          "name": "register",
+          "startLine": 189,
+          "endLine": 256,
+          "params": [
+            "py",
+            "parent"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "register",
+          "line": 189,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ultimate_smoother",
+          "callee": "pure::ultimate_smoother",
+          "lineNumber": 15
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "pure::rolling_rank(&series, window)\n        .into_iter()\n        .map(|opt| opt.map(|r| r as f64).unwrap_or(f64::NAN)).collect",
+          "lineNumber": 23
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "pure::rolling_rank(&series, window)\n        .into_iter().map",
+          "lineNumber": 23
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "pure::rolling_rank(&series, window).into_iter",
+          "lineNumber": 23
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "pure::rolling_rank",
+          "lineNumber": 23
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "opt.map(|r| r as f64).unwrap_or",
+          "lineNumber": 25
+        },
+        {
+          "caller": "rolling_rank",
+          "callee": "opt.map",
+          "lineNumber": 25
+        },
+        {
+          "caller": "sma",
+          "callee": "n.or(period).or(length).unwrap_or",
+          "lineNumber": 40
+        },
+        {
+          "caller": "sma",
+          "callee": "n.or(period).or",
+          "lineNumber": 40
+        },
+        {
+          "caller": "sma",
+          "callee": "n.or",
+          "lineNumber": 40
+        },
+        {
+          "caller": "sma",
+          "callee": "pure::sma",
+          "lineNumber": 41
+        },
+        {
+          "caller": "single_sma_positions",
+          "callee": "pure::single_sma_positions",
+          "lineNumber": 46
+        },
+        {
+          "caller": "single_ema_positions",
+          "callee": "pure::single_ema_positions",
+          "lineNumber": 51
+        },
+        {
+          "caller": "mid_positions",
+          "callee": "pure::mid_positions",
+          "lineNumber": 56
+        },
+        {
+          "caller": "double_sma_positions",
+          "callee": "pure::double_sma_positions",
+          "lineNumber": 61
+        },
+        {
+          "caller": "triple_sma_positions",
+          "callee": "pure::triple_sma_positions",
+          "lineNumber": 66
+        },
+        {
+          "caller": "boll_positions",
+          "callee": "pure::boll_positions",
+          "lineNumber": 71
+        },
+        {
+          "caller": "boll_reverse_positions",
+          "callee": "pure::boll_reverse_positions",
+          "lineNumber": 76
+        },
+        {
+          "caller": "mms_positions",
+          "callee": "pure::mms_positions",
+          "lineNumber": 81
+        },
+        {
+          "caller": "rsi_reverse_positions",
+          "callee": "pure::rsi_reverse_positions",
+          "lineNumber": 92
+        },
+        {
+          "caller": "tanh_positions",
+          "callee": "pure::tanh_positions",
+          "lineNumber": 97
+        },
+        {
+          "caller": "rank_positions",
+          "callee": "pure::rank_positions",
+          "lineNumber": 102
+        },
+        {
+          "caller": "ema",
+          "callee": "n.or(period).or(length).unwrap_or",
+          "lineNumber": 118
+        },
+        {
+          "caller": "ema",
+          "callee": "n.or(period).or",
+          "lineNumber": 118
+        },
+        {
+          "caller": "ema",
+          "callee": "n.or",
+          "lineNumber": 118
+        },
+        {
+          "caller": "ema",
+          "callee": "pure::ema",
+          "lineNumber": 119
+        },
+        {
+          "caller": "true_range",
+          "callee": "pure::true_range",
+          "lineNumber": 124
+        },
+        {
+          "caller": "rsx_ss2",
+          "callee": "pure::rsx_ss2",
+          "lineNumber": 129
+        },
+        {
+          "caller": "jurik_volty",
+          "callee": "pure::jurik_volty",
+          "lineNumber": 134
+        },
+        {
+          "caller": "ultimate_channel",
+          "callee": "pure::ultimate_channel",
+          "lineNumber": 145
+        },
+        {
+          "caller": "ultimate_bands",
+          "callee": "pure::ultimate_bands",
+          "lineNumber": 155
+        },
+        {
+          "caller": "ultimate_oscillator",
+          "callee": "pure::ultimate_oscillator",
+          "lineNumber": 167
+        },
+        {
+          "caller": "exponential_smoothing",
+          "callee": "pure::exponential_smoothing",
+          "lineNumber": 172
+        },
+        {
+          "caller": "holt_winters",
+          "callee": "pure::holt_winters",
+          "lineNumber": 183
+        },
+        {
+          "caller": "register",
+          "callee": "PyModule::new",
+          "lineNumber": 190
+        },
+        {
+          "caller": "register",
+          "callee": "ta.setattr",
+          "lineNumber": 195
+        },
+        {
+          "caller": "register",
+          "callee": "ta.add_function",
+          "lineNumber": 233
+        },
+        {
+          "caller": "register",
+          "callee": "parent.add_function",
+          "lineNumber": 237
+        },
+        {
+          "caller": "register",
+          "callee": "py.import",
+          "lineNumber": 247
+        },
+        {
+          "caller": "register",
+          "callee": "sys.getattr",
+          "lineNumber": 248
+        },
+        {
+          "caller": "register",
+          "callee": "py_modules.set_item",
+          "lineNumber": 249
+        },
+        {
+          "caller": "register",
+          "callee": "parent.add",
+          "lineNumber": 254
+        },
+        {
+          "caller": "register",
+          "callee": "Ok",
+          "lineNumber": 255
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 24,
+        "classCount": 0
+      }
+    }
+  ]
+}

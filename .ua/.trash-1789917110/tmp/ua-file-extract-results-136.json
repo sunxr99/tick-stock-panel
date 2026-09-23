@@ -1,0 +1,3461 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 25,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 18,
+      "failed": 0,
+      "skipped": 7
+    }
+  },
+  "results": [
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_mark_direction.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "mark_parses_chinese_names",
+          "startLine": 10,
+          "endLine": 13,
+          "params": []
+        },
+        {
+          "name": "mark_display_round_trips",
+          "startLine": 16,
+          "endLine": 19,
+          "params": []
+        },
+        {
+          "name": "mark_rejects_unknown_string",
+          "startLine": 22,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "direction_parses_chinese_names",
+          "startLine": 27,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "direction_display_round_trips",
+          "startLine": 33,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "direction_equality_and_clone",
+          "startLine": 39,
+          "endLine": 44,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_market.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "parses_chinese_names",
+          "startLine": 9,
+          "endLine": 13,
+          "params": []
+        },
+        {
+          "name": "rejects_unknown_strings",
+          "startLine": 16,
+          "endLine": 18,
+          "params": []
+        },
+        {
+          "name": "display_round_trips",
+          "startLine": 21,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "copy_and_equality",
+          "startLine": 27,
+          "endLine": 31,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_object_error.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "factor_signals_all_empty_message",
+          "startLine": 8,
+          "endLine": 14,
+          "params": []
+        },
+        {
+          "name": "score_out_of_range_carries_value",
+          "startLine": 17,
+          "endLine": 20,
+          "params": []
+        },
+        {
+          "name": "from_anyhow_blanket_routes_to_unexpected",
+          "startLine": 23,
+          "endLine": 27,
+          "params": []
+        },
+        {
+          "name": "serialize_emits_string_payload",
+          "startLine": 30,
+          "endLine": 35,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "score_out_of_range_carries_value",
+          "callee": "ObjectError::ScoreOutOfRange",
+          "lineNumber": 18
+        },
+        {
+          "caller": "from_anyhow_blanket_routes_to_unexpected",
+          "callee": "any.into",
+          "lineNumber": 25
+        },
+        {
+          "caller": "serialize_emits_string_payload",
+          "callee": "ObjectError::SignalKeyNotFound",
+          "lineNumber": 31
+        },
+        {
+          "caller": "serialize_emits_string_payload",
+          "callee": "\"k1\".into",
+          "lineNumber": 31
+        },
+        {
+          "caller": "serialize_emits_string_payload",
+          "callee": "serde_json::to_string(&err).unwrap",
+          "lineNumber": 32
+        },
+        {
+          "caller": "serialize_emits_string_payload",
+          "callee": "serde_json::to_string",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_operate.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "parses_all_short_codes",
+          "startLine": 10,
+          "endLine": 18,
+          "params": []
+        },
+        {
+          "name": "rejects_unknown_string",
+          "startLine": 21,
+          "endLine": 23,
+          "params": []
+        },
+        {
+          "name": "display_round_trips_short_codes",
+          "startLine": 26,
+          "endLine": 29,
+          "params": []
+        },
+        {
+          "name": "to_chinese_returns_canonical_labels",
+          "startLine": 32,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "copy_and_equality",
+          "startLine": 43,
+          "endLine": 48,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_position.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "pos_default_is_flat",
+          "startLine": 8,
+          "endLine": 10,
+          "params": []
+        },
+        {
+          "name": "pos_to_f64_canonical",
+          "startLine": 13,
+          "endLine": 17,
+          "params": []
+        },
+        {
+          "name": "pos_from_f64_threshold_at_half",
+          "startLine": 20,
+          "endLine": 26,
+          "params": []
+        },
+        {
+          "name": "pos_display",
+          "startLine": 29,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "position_deserialises_minimal_json",
+          "startLine": 47,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "position_get_pos_starts_flat",
+          "startLine": 57,
+          "endLine": 62,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "position_deserialises_minimal_json",
+          "callee": "serde_json::from_str(POSITION_JSON).unwrap",
+          "lineNumber": 48
+        },
+        {
+          "caller": "position_deserialises_minimal_json",
+          "callee": "serde_json::from_str",
+          "lineNumber": 48
+        },
+        {
+          "caller": "position_deserialises_minimal_json",
+          "callee": "p.normalize_runtime_fields",
+          "lineNumber": 49
+        },
+        {
+          "caller": "position_get_pos_starts_flat",
+          "callee": "serde_json::from_str(POSITION_JSON).unwrap",
+          "lineNumber": 58
+        },
+        {
+          "caller": "position_get_pos_starts_flat",
+          "callee": "serde_json::from_str",
+          "lineNumber": 58
+        },
+        {
+          "caller": "position_get_pos_starts_flat",
+          "callee": "p.normalize_runtime_fields",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_raw_bar.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 56,
+      "functions": [
+        {
+          "name": "sample",
+          "startLine": 9,
+          "endLine": 23,
+          "params": [
+            "open",
+            "close",
+            "high",
+            "low"
+          ]
+        },
+        {
+          "name": "builder_populates_fields",
+          "startLine": 26,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "upper_shadow_is_high_minus_max_of_open_close",
+          "startLine": 37,
+          "endLine": 41,
+          "params": []
+        },
+        {
+          "name": "lower_shadow_is_min_of_open_close_minus_low",
+          "startLine": 44,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "solid_is_abs_diff_of_open_close",
+          "startLine": 51,
+          "endLine": 56,
+          "params": []
+        },
+        {
+          "name": "equality_matches_rs_czsc_baseline",
+          "startLine": 59,
+          "endLine": 63,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sample",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001\")\n        .dt(Utc.with_ymd_and_hms(2024, 1, 8, 9, 30, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open(open)\n        .close(close)\n        .high(high)\n        .low(low)\n        .vol(1000.0_f64)\n        .amount(1_000_000.0_f64)\n        .build().unwrap",
+          "lineNumber": 10
+        },
+        {
+          "caller": "sample",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001\")\n        .dt(Utc.with_ymd_and_hms(2024, 1, 8, 9, 30, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open(open)\n        .close(close)\n        .high(high)\n        .low(low)\n        .vol(1000.0_f64)\n        .amount(1_000_000.0_f64).build",
+          "lineNumber": 10
+        },
+        {
+          "caller": "sample",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001\")\n        .dt(Utc.with_ymd_and_hms(2024, 1, 8, 9, 30, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open(open)\n        .close(close)\n        .high(high)\n        .low(low)\n        .vol(1000.0_f64).amount",
+          "lineNumber": 10
+        },
+        {
+          "caller": "sample",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001\")\n        .dt(Utc.with_ymd_and_hms(2024, 1, 8, 9, 30, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open(open)\n        .close(close)\n        .high(high)\n        .low(low).vol",
+          "lineNumber": 10
+        },
+        {
+          "caller": "sample",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001\")\n        .dt(Utc.with_ymd_and_hms(2024, 1, 8, 9, 30, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open(open)\n        .close(close)\n        .high(high).low",
+          "lineNumber": 10
+        },
+        {
+          "caller": "sample",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001\")\n        .dt(Utc.with_ymd_and_hms(2024, 1, 8, 9, 30, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open(open)\n        .close(close).high",
+          "lineNumber": 10
+        },
+        {
+          "caller": "sample",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001\")\n        .dt(Utc.with_ymd_and_hms(2024, 1, 8, 9, 30, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open(open).close",
+          "lineNumber": 10
+        },
+        {
+          "caller": "sample",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001\")\n        .dt(Utc.with_ymd_and_hms(2024, 1, 8, 9, 30, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0).open",
+          "lineNumber": 10
+        },
+        {
+          "caller": "sample",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001\")\n        .dt(Utc.with_ymd_and_hms(2024, 1, 8, 9, 30, 0).unwrap())\n        .freq(Freq::F30).id",
+          "lineNumber": 10
+        },
+        {
+          "caller": "sample",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001\")\n        .dt(Utc.with_ymd_and_hms(2024, 1, 8, 9, 30, 0).unwrap()).freq",
+          "lineNumber": 10
+        },
+        {
+          "caller": "sample",
+          "callee": "RawBarBuilder::default()\n        .symbol(\"000001\").dt",
+          "lineNumber": 10
+        },
+        {
+          "caller": "sample",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 10
+        },
+        {
+          "caller": "sample",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 10
+        },
+        {
+          "caller": "sample",
+          "callee": "Utc.with_ymd_and_hms(2024, 1, 8, 9, 30, 0).unwrap",
+          "lineNumber": 12
+        },
+        {
+          "caller": "sample",
+          "callee": "Utc.with_ymd_and_hms",
+          "lineNumber": 12
+        },
+        {
+          "caller": "builder_populates_fields",
+          "callee": "sample",
+          "lineNumber": 27
+        },
+        {
+          "caller": "upper_shadow_is_high_minus_max_of_open_close",
+          "callee": "sample",
+          "lineNumber": 38
+        },
+        {
+          "caller": "lower_shadow_is_min_of_open_close_minus_low",
+          "callee": "sample",
+          "lineNumber": 45
+        },
+        {
+          "caller": "solid_is_abs_diff_of_open_close",
+          "callee": "sample",
+          "lineNumber": 52
+        },
+        {
+          "caller": "solid_is_abs_diff_of_open_close",
+          "callee": "sample",
+          "lineNumber": 53
+        },
+        {
+          "caller": "equality_matches_rs_czsc_baseline",
+          "callee": "sample",
+          "lineNumber": 60
+        },
+        {
+          "caller": "equality_matches_rs_czsc_baseline",
+          "callee": "sample",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_signal.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "parses_canonical_signal_string",
+          "startLine": 10,
+          "endLine": 17,
+          "params": []
+        },
+        {
+          "name": "display_round_trips_full_signal",
+          "startLine": 20,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "rejects_malformed_string",
+          "startLine": 27,
+          "endLine": 29,
+          "params": []
+        },
+        {
+          "name": "equality_is_full_signal_string",
+          "startLine": 32,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "key_skips_wildcards",
+          "startLine": 41,
+          "endLine": 45,
+          "params": []
+        },
+        {
+          "name": "is_match_obeys_score_and_wildcards",
+          "startLine": 48,
+          "endLine": 58,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parses_canonical_signal_string",
+          "callee": "Signal::from_str(raw).unwrap",
+          "lineNumber": 12
+        },
+        {
+          "caller": "parses_canonical_signal_string",
+          "callee": "Signal::from_str",
+          "lineNumber": 12
+        },
+        {
+          "caller": "display_round_trips_full_signal",
+          "callee": "Signal::from_str(raw).unwrap",
+          "lineNumber": 22
+        },
+        {
+          "caller": "display_round_trips_full_signal",
+          "callee": "Signal::from_str",
+          "lineNumber": 22
+        },
+        {
+          "caller": "equality_is_full_signal_string",
+          "callee": "Signal::from_str(\"30分钟_D1_前高_看多_强_任意_0\").unwrap",
+          "lineNumber": 33
+        },
+        {
+          "caller": "equality_is_full_signal_string",
+          "callee": "Signal::from_str",
+          "lineNumber": 33
+        },
+        {
+          "caller": "equality_is_full_signal_string",
+          "callee": "Signal::from_str(\"30分钟_D1_前高_看多_强_任意_0\").unwrap",
+          "lineNumber": 34
+        },
+        {
+          "caller": "equality_is_full_signal_string",
+          "callee": "Signal::from_str",
+          "lineNumber": 34
+        },
+        {
+          "caller": "equality_is_full_signal_string",
+          "callee": "Signal::from_str(\"30分钟_D1_前高_看空_强_任意_0\").unwrap",
+          "lineNumber": 36
+        },
+        {
+          "caller": "equality_is_full_signal_string",
+          "callee": "Signal::from_str",
+          "lineNumber": 36
+        },
+        {
+          "caller": "key_skips_wildcards",
+          "callee": "Signal::from_str(\"任意_D1_前高_看多_强_任意_0\").unwrap",
+          "lineNumber": 42
+        },
+        {
+          "caller": "key_skips_wildcards",
+          "callee": "Signal::from_str",
+          "lineNumber": 42
+        },
+        {
+          "caller": "is_match_obeys_score_and_wildcards",
+          "callee": "Signal::from_str(\"30分钟_D1_前高_看多_强_任意_50\").unwrap",
+          "lineNumber": 50
+        },
+        {
+          "caller": "is_match_obeys_score_and_wildcards",
+          "callee": "Signal::from_str",
+          "lineNumber": 50
+        },
+        {
+          "caller": "is_match_obeys_score_and_wildcards",
+          "callee": "HashMap::new",
+          "lineNumber": 51
+        },
+        {
+          "caller": "is_match_obeys_score_and_wildcards",
+          "callee": "dict.insert",
+          "lineNumber": 52
+        },
+        {
+          "caller": "is_match_obeys_score_and_wildcards",
+          "callee": "\"30分钟_D1_前高\".to_string",
+          "lineNumber": 52
+        },
+        {
+          "caller": "is_match_obeys_score_and_wildcards",
+          "callee": "\"看多_强_中_60\".to_string",
+          "lineNumber": 52
+        },
+        {
+          "caller": "is_match_obeys_score_and_wildcards",
+          "callee": "HashMap::new",
+          "lineNumber": 55
+        },
+        {
+          "caller": "is_match_obeys_score_and_wildcards",
+          "callee": "low_score.insert",
+          "lineNumber": 56
+        },
+        {
+          "caller": "is_match_obeys_score_and_wildcards",
+          "callee": "\"30分钟_D1_前高\".to_string",
+          "lineNumber": 56
+        },
+        {
+          "caller": "is_match_obeys_score_and_wildcards",
+          "callee": "\"看多_强_中_40\".to_string",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_state.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "get_position",
+          "startLine": 12,
+          "endLine": 14,
+          "params": [
+            "_name"
+          ]
+        },
+        {
+          "name": "get_czsc",
+          "startLine": 15,
+          "endLine": 17,
+          "params": [
+            "_freq"
+          ]
+        },
+        {
+          "name": "latest_price",
+          "startLine": 18,
+          "endLine": 20,
+          "params": []
+        },
+        {
+          "name": "stub_trader_implements_trait",
+          "startLine": 24,
+          "endLine": 30,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "StubTrader",
+          "startLine": 9,
+          "endLine": 9,
+          "methods": [
+            "get_position",
+            "get_czsc",
+            "latest_price"
+          ],
+          "properties": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_structure_analysis.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 192,
+      "nonEmptyLines": 173,
+      "functions": [
+        {
+          "name": "new_bar",
+          "startLine": 15,
+          "endLine": 30,
+          "params": [
+            "ts",
+            "high",
+            "low"
+          ]
+        },
+        {
+          "name": "fx",
+          "startLine": 32,
+          "endLine": 51,
+          "params": [
+            "ts",
+            "mark",
+            "price"
+          ]
+        },
+        {
+          "name": "bi",
+          "startLine": 53,
+          "endLine": 70,
+          "params": [
+            "ts",
+            "start",
+            "end"
+          ]
+        },
+        {
+          "name": "raw_bar",
+          "startLine": 72,
+          "endLine": 86,
+          "params": [
+            "id",
+            "high",
+            "low"
+          ]
+        },
+        {
+          "name": "structure_helpers_handle_empty_and_short_inputs",
+          "startLine": 89,
+          "endLine": 95,
+          "params": []
+        },
+        {
+          "name": "create_fake_bis_builds_expected_up_bi_and_trims_odd_tail",
+          "startLine": 98,
+          "endLine": 111,
+          "params": []
+        },
+        {
+          "name": "create_fake_bis_rejects_non_alternating_fxs",
+          "startLine": 115,
+          "endLine": 117,
+          "params": []
+        },
+        {
+          "name": "get_zs_seq_groups_overlapping_bis_and_splits_separated_bis",
+          "startLine": 120,
+          "endLine": 128,
+          "params": []
+        },
+        {
+          "name": "symmetry_and_trend_helpers_identify_valid_structures",
+          "startLine": 131,
+          "endLine": 142,
+          "params": []
+        },
+        {
+          "name": "symmetry_and_trend_helpers_reject_invalid_shapes",
+          "startLine": 145,
+          "endLine": 157,
+          "params": []
+        },
+        {
+          "name": "check_gap_info_reports_direction_range_and_cover",
+          "startLine": 160,
+          "endLine": 175,
+          "params": []
+        },
+        {
+          "name": "check_gap_info_handles_no_gap_and_covered_down_gap",
+          "startLine": 178,
+          "endLine": 192,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "new_bar",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(ts as i32)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(100.0)\n        .amount(1000.0)\n        .elements(Vec::new())\n        .build().unwrap",
+          "lineNumber": 16
+        },
+        {
+          "caller": "new_bar",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(ts as i32)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(100.0)\n        .amount(1000.0)\n        .elements(Vec::new()).build",
+          "lineNumber": 16
+        },
+        {
+          "caller": "new_bar",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(ts as i32)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(100.0)\n        .amount(1000.0).elements",
+          "lineNumber": 16
+        },
+        {
+          "caller": "new_bar",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(ts as i32)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(100.0).amount",
+          "lineNumber": 16
+        },
+        {
+          "caller": "new_bar",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(ts as i32)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low).vol",
+          "lineNumber": 16
+        },
+        {
+          "caller": "new_bar",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(ts as i32)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high).low",
+          "lineNumber": 16
+        },
+        {
+          "caller": "new_bar",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(ts as i32)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0).high",
+          "lineNumber": 16
+        },
+        {
+          "caller": "new_bar",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(ts as i32)\n        .open((high + low) / 2.0).close",
+          "lineNumber": 16
+        },
+        {
+          "caller": "new_bar",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(ts as i32).open",
+          "lineNumber": 16
+        },
+        {
+          "caller": "new_bar",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30).id",
+          "lineNumber": 16
+        },
+        {
+          "caller": "new_bar",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap()).freq",
+          "lineNumber": 16
+        },
+        {
+          "caller": "new_bar",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\")).dt",
+          "lineNumber": 16
+        },
+        {
+          "caller": "new_bar",
+          "callee": "NewBarBuilder::default().symbol",
+          "lineNumber": 16
+        },
+        {
+          "caller": "new_bar",
+          "callee": "NewBarBuilder::default",
+          "lineNumber": 16
+        },
+        {
+          "caller": "new_bar",
+          "callee": "Arc::<str>::from",
+          "lineNumber": 17
+        },
+        {
+          "caller": "new_bar",
+          "callee": "Utc.timestamp_opt(ts, 0).unwrap",
+          "lineNumber": 18
+        },
+        {
+          "caller": "new_bar",
+          "callee": "Utc.timestamp_opt",
+          "lineNumber": 18
+        },
+        {
+          "caller": "new_bar",
+          "callee": "Vec::new",
+          "lineNumber": 27
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark)\n        .high(high)\n        .low(low)\n        .fx(price)\n        .elements(vec![\n            new_bar(ts - 1, high, low),\n            new_bar(ts, high, low),\n            new_bar(ts + 1, high, low),\n        ])\n        .build().unwrap",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark)\n        .high(high)\n        .low(low)\n        .fx(price)\n        .elements(vec![\n            new_bar(ts - 1, high, low),\n            new_bar(ts, high, low),\n            new_bar(ts + 1, high, low),\n        ]).build",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark)\n        .high(high)\n        .low(low)\n        .fx(price).elements",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark)\n        .high(high)\n        .low(low).fx",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark)\n        .high(high).low",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark).high",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap()).mark",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\")).dt",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default().symbol",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "Arc::<str>::from",
+          "lineNumber": 38
+        },
+        {
+          "caller": "fx",
+          "callee": "Utc.timestamp_opt(ts, 0).unwrap",
+          "lineNumber": 39
+        },
+        {
+          "caller": "fx",
+          "callee": "Utc.timestamp_opt",
+          "lineNumber": 39
+        },
+        {
+          "caller": "bi",
+          "callee": "fx",
+          "lineNumber": 59
+        },
+        {
+          "caller": "bi",
+          "callee": "fx",
+          "lineNumber": 60
+        },
+        {
+          "caller": "bi",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a.clone())\n        .fx_b(fx_b.clone())\n        .fxs(vec![fx_a, fx_b])\n        .direction(direction)\n        .bars(vec![new_bar(ts, start.max(end), start.min(end))])\n        .build().unwrap",
+          "lineNumber": 61
+        },
+        {
+          "caller": "bi",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a.clone())\n        .fx_b(fx_b.clone())\n        .fxs(vec![fx_a, fx_b])\n        .direction(direction)\n        .bars(vec![new_bar(ts, start.max(end), start.min(end))]).build",
+          "lineNumber": 61
+        },
+        {
+          "caller": "bi",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a.clone())\n        .fx_b(fx_b.clone())\n        .fxs(vec![fx_a, fx_b])\n        .direction(direction).bars",
+          "lineNumber": 61
+        },
+        {
+          "caller": "bi",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a.clone())\n        .fx_b(fx_b.clone())\n        .fxs(vec![fx_a, fx_b]).direction",
+          "lineNumber": 61
+        },
+        {
+          "caller": "bi",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a.clone())\n        .fx_b(fx_b.clone()).fxs",
+          "lineNumber": 61
+        },
+        {
+          "caller": "bi",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a.clone()).fx_b",
+          "lineNumber": 61
+        },
+        {
+          "caller": "bi",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\")).fx_a",
+          "lineNumber": 61
+        },
+        {
+          "caller": "bi",
+          "callee": "BIBuilder::default().symbol",
+          "lineNumber": 61
+        },
+        {
+          "caller": "bi",
+          "callee": "BIBuilder::default",
+          "lineNumber": 61
+        },
+        {
+          "caller": "bi",
+          "callee": "Arc::<str>::from",
+          "lineNumber": 62
+        },
+        {
+          "caller": "bi",
+          "callee": "fx_a.clone",
+          "lineNumber": 63
+        },
+        {
+          "caller": "bi",
+          "callee": "fx_b.clone",
+          "lineNumber": 64
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(id as i64, 0).unwrap())\n        .freq(Freq::F30)\n        .id(id)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(100.0)\n        .amount(1000.0)\n        .build().unwrap",
+          "lineNumber": 73
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(id as i64, 0).unwrap())\n        .freq(Freq::F30)\n        .id(id)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(100.0)\n        .amount(1000.0).build",
+          "lineNumber": 73
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(id as i64, 0).unwrap())\n        .freq(Freq::F30)\n        .id(id)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(100.0).amount",
+          "lineNumber": 73
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(id as i64, 0).unwrap())\n        .freq(Freq::F30)\n        .id(id)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low).vol",
+          "lineNumber": 73
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(id as i64, 0).unwrap())\n        .freq(Freq::F30)\n        .id(id)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high).low",
+          "lineNumber": 73
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(id as i64, 0).unwrap())\n        .freq(Freq::F30)\n        .id(id)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0).high",
+          "lineNumber": 73
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(id as i64, 0).unwrap())\n        .freq(Freq::F30)\n        .id(id)\n        .open((high + low) / 2.0).close",
+          "lineNumber": 73
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(id as i64, 0).unwrap())\n        .freq(Freq::F30)\n        .id(id).open",
+          "lineNumber": 73
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(id as i64, 0).unwrap())\n        .freq(Freq::F30).id",
+          "lineNumber": 73
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(id as i64, 0).unwrap()).freq",
+          "lineNumber": 73
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\")).dt",
+          "lineNumber": 73
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default().symbol",
+          "lineNumber": 73
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "RawBarBuilder::default",
+          "lineNumber": 73
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "Arc::<str>::from",
+          "lineNumber": 74
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "Utc.timestamp_opt(id as i64, 0).unwrap",
+          "lineNumber": 75
+        },
+        {
+          "caller": "raw_bar",
+          "callee": "Utc.timestamp_opt",
+          "lineNumber": 75
+        },
+        {
+          "caller": "create_fake_bis_builds_expected_up_bi_and_trims_odd_tail",
+          "callee": "create_fake_bis",
+          "lineNumber": 104
+        },
+        {
+          "caller": "create_fake_bis_rejects_non_alternating_fxs",
+          "callee": "create_fake_bis",
+          "lineNumber": 116
+        },
+        {
+          "caller": "create_fake_bis_rejects_non_alternating_fxs",
+          "callee": "fx",
+          "lineNumber": 116
+        },
+        {
+          "caller": "create_fake_bis_rejects_non_alternating_fxs",
+          "callee": "fx",
+          "lineNumber": 116
+        },
+        {
+          "caller": "get_zs_seq_groups_overlapping_bis_and_splits_separated_bis",
+          "callee": "get_zs_seq",
+          "lineNumber": 122
+        },
+        {
+          "caller": "get_zs_seq_groups_overlapping_bis_and_splits_separated_bis",
+          "callee": "get_zs_seq",
+          "lineNumber": 126
+        },
+        {
+          "caller": "get_zs_seq_groups_overlapping_bis_and_splits_separated_bis",
+          "callee": "bis[0].clone",
+          "lineNumber": 126
+        },
+        {
+          "caller": "get_zs_seq_groups_overlapping_bis_and_splits_separated_bis",
+          "callee": "bi",
+          "lineNumber": 126
+        },
+        {
+          "caller": "check_gap_info_reports_direction_range_and_cover",
+          "callee": "check_gap_info",
+          "lineNumber": 167
+        },
+        {
+          "caller": "check_gap_info_handles_no_gap_and_covered_down_gap",
+          "callee": "check_gap_info",
+          "lineNumber": 187
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 12,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_utils_common.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "covers_minute_freqs",
+          "startLine": 9,
+          "endLine": 13,
+          "params": []
+        },
+        {
+          "name": "covers_higher_timeframes",
+          "startLine": 16,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "tick_returns_english_marker",
+          "startLine": 24,
+          "endLine": 26,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-core/tests/test_zs.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 161,
+      "nonEmptyLines": 150,
+      "functions": [
+        {
+          "name": "nb",
+          "startLine": 15,
+          "endLine": 30,
+          "params": [
+            "ts",
+            "high",
+            "low"
+          ]
+        },
+        {
+          "name": "fx",
+          "startLine": 32,
+          "endLine": 51,
+          "params": [
+            "ts",
+            "mark",
+            "level"
+          ]
+        },
+        {
+          "name": "make_bi",
+          "startLine": 53,
+          "endLine": 83,
+          "params": [
+            "ts_a",
+            "mark_a",
+            "level_a",
+            "ts_b",
+            "mark_b",
+            "level_b",
+            "direction"
+          ]
+        },
+        {
+          "name": "sample_zs",
+          "startLine": 85,
+          "endLine": 115,
+          "params": []
+        },
+        {
+          "name": "new_populates_endpoints",
+          "startLine": 118,
+          "endLine": 123,
+          "params": []
+        },
+        {
+          "name": "zg_zd_within_first_three_bis",
+          "startLine": 126,
+          "endLine": 130,
+          "params": []
+        },
+        {
+          "name": "zz_is_midpoint_of_zg_zd",
+          "startLine": 133,
+          "endLine": 142,
+          "params": []
+        },
+        {
+          "name": "gg_dd_envelope_zg_zd",
+          "startLine": 145,
+          "endLine": 149,
+          "params": []
+        },
+        {
+          "name": "is_valid_returns_true_for_standard_zs",
+          "startLine": 152,
+          "endLine": 161,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(100.0)\n        .amount(100.0 * (high + low) / 2.0)\n        .elements(Vec::new())\n        .build().unwrap",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(100.0)\n        .amount(100.0 * (high + low) / 2.0)\n        .elements(Vec::new()).build",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(100.0)\n        .amount(100.0 * (high + low) / 2.0).elements",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low)\n        .vol(100.0).amount",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high)\n        .low(low).vol",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0)\n        .high(high).low",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0)\n        .close((high + low) / 2.0).high",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0)\n        .open((high + low) / 2.0).close",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30)\n        .id(0).open",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .freq(Freq::F30).id",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap()).freq",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\")).dt",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default().symbol",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "NewBarBuilder::default",
+          "lineNumber": 16
+        },
+        {
+          "caller": "nb",
+          "callee": "Arc::<str>::from",
+          "lineNumber": 17
+        },
+        {
+          "caller": "nb",
+          "callee": "Utc.timestamp_opt(ts, 0).unwrap",
+          "lineNumber": 18
+        },
+        {
+          "caller": "nb",
+          "callee": "Utc.timestamp_opt",
+          "lineNumber": 18
+        },
+        {
+          "caller": "nb",
+          "callee": "Vec::new",
+          "lineNumber": 27
+        },
+        {
+          "caller": "fx",
+          "callee": "nb",
+          "lineNumber": 33
+        },
+        {
+          "caller": "fx",
+          "callee": "nb",
+          "lineNumber": 34
+        },
+        {
+          "caller": "fx",
+          "callee": "nb",
+          "lineNumber": 35
+        },
+        {
+          "caller": "fx",
+          "callee": "mark.clone",
+          "lineNumber": 36
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark_clone)\n        .high(k2.high)\n        .low(k2.low)\n        .fx(if matches!(mark, Mark::G) {\n            k2.high\n        } else {\n            k2.low\n        })\n        .elements(vec![k1, k2, k3])\n        .build().unwrap",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark_clone)\n        .high(k2.high)\n        .low(k2.low)\n        .fx(if matches!(mark, Mark::G) {\n            k2.high\n        } else {\n            k2.low\n        })\n        .elements(vec![k1, k2, k3]).build",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark_clone)\n        .high(k2.high)\n        .low(k2.low)\n        .fx(if matches!(mark, Mark::G) {\n            k2.high\n        } else {\n            k2.low\n        }).elements",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark_clone)\n        .high(k2.high)\n        .low(k2.low).fx",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark_clone)\n        .high(k2.high).low",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap())\n        .mark(mark_clone).high",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .dt(Utc.timestamp_opt(ts, 0).unwrap()).mark",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\")).dt",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default().symbol",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "FXBuilder::default",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fx",
+          "callee": "Arc::<str>::from",
+          "lineNumber": 38
+        },
+        {
+          "caller": "fx",
+          "callee": "Utc.timestamp_opt(ts, 0).unwrap",
+          "lineNumber": 39
+        },
+        {
+          "caller": "fx",
+          "callee": "Utc.timestamp_opt",
+          "lineNumber": 39
+        },
+        {
+          "caller": "make_bi",
+          "callee": "fx",
+          "lineNumber": 62
+        },
+        {
+          "caller": "make_bi",
+          "callee": "fx",
+          "lineNumber": 63
+        },
+        {
+          "caller": "make_bi",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a)\n        .fx_b(fx_b.clone())\n        .fxs(vec![fx_b])\n        .direction(direction)\n        .bars(bars)\n        .build().unwrap",
+          "lineNumber": 74
+        },
+        {
+          "caller": "make_bi",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a)\n        .fx_b(fx_b.clone())\n        .fxs(vec![fx_b])\n        .direction(direction)\n        .bars(bars).build",
+          "lineNumber": 74
+        },
+        {
+          "caller": "make_bi",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a)\n        .fx_b(fx_b.clone())\n        .fxs(vec![fx_b])\n        .direction(direction).bars",
+          "lineNumber": 74
+        },
+        {
+          "caller": "make_bi",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a)\n        .fx_b(fx_b.clone())\n        .fxs(vec![fx_b]).direction",
+          "lineNumber": 74
+        },
+        {
+          "caller": "make_bi",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a)\n        .fx_b(fx_b.clone()).fxs",
+          "lineNumber": 74
+        },
+        {
+          "caller": "make_bi",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\"))\n        .fx_a(fx_a).fx_b",
+          "lineNumber": 74
+        },
+        {
+          "caller": "make_bi",
+          "callee": "BIBuilder::default()\n        .symbol(Arc::<str>::from(\"000001\")).fx_a",
+          "lineNumber": 74
+        },
+        {
+          "caller": "make_bi",
+          "callee": "BIBuilder::default().symbol",
+          "lineNumber": 74
+        },
+        {
+          "caller": "make_bi",
+          "callee": "BIBuilder::default",
+          "lineNumber": 74
+        },
+        {
+          "caller": "make_bi",
+          "callee": "Arc::<str>::from",
+          "lineNumber": 75
+        },
+        {
+          "caller": "make_bi",
+          "callee": "fx_b.clone",
+          "lineNumber": 77
+        },
+        {
+          "caller": "sample_zs",
+          "callee": "make_bi",
+          "lineNumber": 87
+        },
+        {
+          "caller": "sample_zs",
+          "callee": "make_bi",
+          "lineNumber": 96
+        },
+        {
+          "caller": "sample_zs",
+          "callee": "make_bi",
+          "lineNumber": 105
+        },
+        {
+          "caller": "sample_zs",
+          "callee": "ZS::new",
+          "lineNumber": 114
+        },
+        {
+          "caller": "new_populates_endpoints",
+          "callee": "sample_zs",
+          "lineNumber": 119
+        },
+        {
+          "caller": "zg_zd_within_first_three_bis",
+          "callee": "sample_zs",
+          "lineNumber": 127
+        },
+        {
+          "caller": "zz_is_midpoint_of_zg_zd",
+          "callee": "sample_zs",
+          "lineNumber": 134
+        },
+        {
+          "caller": "gg_dd_envelope_zg_zd",
+          "callee": "sample_zs",
+          "lineNumber": 146
+        },
+        {
+          "caller": "is_valid_returns_true_for_standard_zs",
+          "callee": "sample_zs",
+          "lineNumber": 154
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-derive/Cargo.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 32,
+      "nonEmptyLines": 29,
+      "sections": [
+        {
+          "heading": "package",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "lib",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "dependencies",
+          "level": 1,
+          "line": 21
+        },
+        {
+          "heading": "dev-dependencies",
+          "level": 1,
+          "line": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-derive/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 49,
+      "nonEmptyLines": 37,
+      "sections": [
+        {
+          "heading": "czsc-derive",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "用法",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "历史",
+          "level": 2,
+          "line": 41
+        },
+        {
+          "heading": "项目主页",
+          "level": 2,
+          "line": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-derive/src/err.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "err_gen_code",
+          "startLine": 4,
+          "endLine": 35,
+          "params": [
+            "ast"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "err_gen_code",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "err_gen_code",
+          "callee": "TokenStream::from",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-derive/src/lib.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 16,
+      "functions": [
+        {
+          "name": "derive_utils_error",
+          "startLine": 16,
+          "endLine": 19,
+          "params": [
+            "input"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "derive_utils_error",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "derive_utils_error",
+          "callee": "err::err_gen_code",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-derive/tests/test_derive.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "from_anyhow_blanket_impl_exists",
+          "startLine": 14,
+          "endLine": 18,
+          "params": []
+        },
+        {
+          "name": "serialize_emits_string",
+          "startLine": 21,
+          "endLine": 28,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "DummyError",
+          "startLine": 8,
+          "endLine": 11,
+          "methods": [],
+          "properties": [
+            "Unexpected"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "from_anyhow_blanket_impl_exists",
+          "callee": "err.into",
+          "lineNumber": 16
+        },
+        {
+          "caller": "serialize_emits_string",
+          "callee": "DummyError::Unexpected",
+          "lineNumber": 22
+        },
+        {
+          "caller": "serialize_emits_string",
+          "callee": "serde_json::to_string(&dummy).unwrap",
+          "lineNumber": 23
+        },
+        {
+          "caller": "serialize_emits_string",
+          "callee": "serde_json::to_string",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-python/Cargo.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 68,
+      "nonEmptyLines": 64,
+      "sections": [
+        {
+          "heading": "package",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "lib",
+          "level": 1,
+          "line": 13
+        },
+        {
+          "heading": "features",
+          "level": 1,
+          "line": 35
+        },
+        {
+          "heading": "[[bin]]",
+          "level": 1,
+          "line": 40
+        },
+        {
+          "heading": "dependencies",
+          "level": 1,
+          "line": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-python/build.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 194,
+      "nonEmptyLines": 181,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 26,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "check_version_lockstep",
+          "startLine": 48,
+          "endLine": 107,
+          "params": []
+        },
+        {
+          "name": "check_python_version",
+          "startLine": 116,
+          "endLine": 173,
+          "params": []
+        },
+        {
+          "name": "which",
+          "startLine": 178,
+          "endLine": 194,
+          "params": [
+            "name"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "check_python_version",
+          "lineNumber": 31
+        },
+        {
+          "caller": "main",
+          "callee": "check_version_lockstep",
+          "lineNumber": 32
+        },
+        {
+          "caller": "main",
+          "callee": "std::env::var(\"CARGO_CFG_TARGET_OS\").as_deref",
+          "lineNumber": 34
+        },
+        {
+          "caller": "main",
+          "callee": "std::env::var",
+          "lineNumber": 34
+        },
+        {
+          "caller": "main",
+          "callee": "Ok",
+          "lineNumber": 34
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "env!(\"CARGO_MANIFEST_DIR\").into",
+          "lineNumber": 51
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "manifest_dir\n        .parent() // crates/\n        .and_then(|p| p.parent()).map",
+          "lineNumber": 52
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "manifest_dir\n        .parent().and_then",
+          "lineNumber": 52
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "manifest_dir.parent",
+          "lineNumber": 52
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "p.parent",
+          "lineNumber": 54
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "p.join",
+          "lineNumber": 55
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "std::fs::read_to_string",
+          "lineNumber": 62
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "content.lines",
+          "lineNumber": 71
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "raw_line.trim",
+          "lineNumber": 72
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "line.starts_with",
+          "lineNumber": 73
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "line.is_empty",
+          "lineNumber": 73
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "line.starts_with",
+          "lineNumber": 76
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "line.chars().filter(|c| !c.is_whitespace()).collect",
+          "lineNumber": 84
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "line.chars().filter",
+          "lineNumber": 84
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "line.chars",
+          "lineNumber": 84
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "c.is_whitespace",
+          "lineNumber": 84
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "no_space.starts_with",
+          "lineNumber": 85
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "no_space.starts_with",
+          "lineNumber": 88
+        },
+        {
+          "caller": "check_version_lockstep",
+          "callee": "no_space.contains",
+          "lineNumber": 88
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "std::env::var_os(\"PYO3_CONFIG_FILE\").is_some",
+          "lineNumber": 122
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "std::env::var_os",
+          "lineNumber": 122
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "std::env::var(\"PYO3_PYTHON\")\n        .ok()\n        .or_else(|| which(\"python3\"))\n        .or_else(|| which(\"python\")).unwrap_or_else",
+          "lineNumber": 126
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "std::env::var(\"PYO3_PYTHON\")\n        .ok()\n        .or_else(|| which(\"python3\")).or_else",
+          "lineNumber": 126
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "std::env::var(\"PYO3_PYTHON\")\n        .ok().or_else",
+          "lineNumber": 126
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "std::env::var(\"PYO3_PYTHON\").ok",
+          "lineNumber": 126
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "std::env::var",
+          "lineNumber": 126
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "which",
+          "lineNumber": 128
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "which",
+          "lineNumber": 129
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "Command::new(&interpreter)\n        .args([\n            \"-c\",\n            \"import sys; v = sys.version_info; print(f'{v.major}.{v.minor}.{v.micro}')\",\n        ])\n        .output().unwrap_or_else",
+          "lineNumber": 138
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "Command::new(&interpreter)\n        .args([\n            \"-c\",\n            \"import sys; v = sys.version_info; print(f'{v.major}.{v.minor}.{v.micro}')\",\n        ]).output",
+          "lineNumber": 138
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "Command::new(&interpreter).args",
+          "lineNumber": 138
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "Command::new",
+          "lineNumber": 138
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "output.status.success",
+          "lineNumber": 150
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "String::from_utf8_lossy(&output.stdout).trim().to_string",
+          "lineNumber": 157
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "String::from_utf8_lossy(&output.stdout).trim",
+          "lineNumber": 157
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "String::from_utf8_lossy",
+          "lineNumber": 157
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "version.splitn",
+          "lineNumber": 158
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "parts.next().and_then(|s| s.parse().ok()).unwrap_or",
+          "lineNumber": 159
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "parts.next().and_then",
+          "lineNumber": 159
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "parts.next",
+          "lineNumber": 159
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "s.parse().ok",
+          "lineNumber": 159
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "s.parse",
+          "lineNumber": 159
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "parts.next().and_then(|s| s.parse().ok()).unwrap_or",
+          "lineNumber": 160
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "parts.next().and_then",
+          "lineNumber": 160
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "parts.next",
+          "lineNumber": 160
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "s.parse().ok",
+          "lineNumber": 160
+        },
+        {
+          "caller": "check_python_version",
+          "callee": "s.parse",
+          "lineNumber": 160
+        },
+        {
+          "caller": "which",
+          "callee": "std::env::var_os",
+          "lineNumber": 179
+        },
+        {
+          "caller": "which",
+          "callee": "std::env::split_paths",
+          "lineNumber": 180
+        },
+        {
+          "caller": "which",
+          "callee": "dir.join",
+          "lineNumber": 181
+        },
+        {
+          "caller": "which",
+          "callee": "candidate.is_file",
+          "lineNumber": 182
+        },
+        {
+          "caller": "which",
+          "callee": "Some",
+          "lineNumber": 183
+        },
+        {
+          "caller": "which",
+          "callee": "candidate.to_string_lossy().into_owned",
+          "lineNumber": 183
+        },
+        {
+          "caller": "which",
+          "callee": "candidate.to_string_lossy",
+          "lineNumber": 183
+        },
+        {
+          "caller": "which",
+          "callee": "dir.join",
+          "lineNumber": 187
+        },
+        {
+          "caller": "which",
+          "callee": "candidate_exe.is_file",
+          "lineNumber": 188
+        },
+        {
+          "caller": "which",
+          "callee": "Some",
+          "lineNumber": 189
+        },
+        {
+          "caller": "which",
+          "callee": "candidate_exe.to_string_lossy().into_owned",
+          "lineNumber": 189
+        },
+        {
+          "caller": "which",
+          "callee": "candidate_exe.to_string_lossy",
+          "lineNumber": 189
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-python/src/bin/stub_gen.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 22,
+          "endLine": 27,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "czsc_python::stub_info",
+          "lineNumber": 23
+        },
+        {
+          "caller": "main",
+          "callee": "stub.generate",
+          "lineNumber": 24
+        },
+        {
+          "caller": "main",
+          "callee": "Ok",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-signal-macros/Cargo.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 24,
+      "nonEmptyLines": 22,
+      "sections": [
+        {
+          "heading": "package",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "lib",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "dependencies",
+          "level": 1,
+          "line": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-signal-macros/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 43,
+      "nonEmptyLines": 32,
+      "sections": [
+        {
+          "heading": "czsc-signal-macros",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "提供的宏",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "用法",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "项目主页",
+          "level": 2,
+          "line": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-signal-macros/src/lib.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 470,
+      "nonEmptyLines": 448,
+      "functions": [
+        {
+          "name": "type_tokens",
+          "startLine": 7,
+          "endLine": 9,
+          "params": [
+            "t"
+          ]
+        },
+        {
+          "name": "nth_arg_type",
+          "startLine": 11,
+          "endLine": 16,
+          "params": [
+            "f",
+            "idx"
+          ]
+        },
+        {
+          "name": "signal",
+          "startLine": 19,
+          "endLine": 357,
+          "params": [
+            "attr",
+            "item"
+          ]
+        },
+        {
+          "name": "signal_module",
+          "startLine": 360,
+          "endLine": 470,
+          "params": [
+            "_attr",
+            "item"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "signal",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "signal_module",
+          "line": 360,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "type_tokens",
+          "callee": "t.to_token_stream().to_string",
+          "lineNumber": 8
+        },
+        {
+          "caller": "type_tokens",
+          "callee": "t.to_token_stream",
+          "lineNumber": 8
+        },
+        {
+          "caller": "nth_arg_type",
+          "callee": "f.sig.inputs.iter().nth(idx).and_then",
+          "lineNumber": 12
+        },
+        {
+          "caller": "nth_arg_type",
+          "callee": "f.sig.inputs.iter().nth",
+          "lineNumber": 12
+        },
+        {
+          "caller": "nth_arg_type",
+          "callee": "f.sig.inputs.iter",
+          "lineNumber": 12
+        },
+        {
+          "caller": "nth_arg_type",
+          "callee": "Some",
+          "lineNumber": 13
+        },
+        {
+          "caller": "nth_arg_type",
+          "callee": "(*t.ty).clone",
+          "lineNumber": 13
+        },
+        {
+          "caller": "signal",
+          "callee": "parser.parse",
+          "lineNumber": 21
+        },
+        {
+          "caller": "signal",
+          "callee": "e.to_compile_error().into",
+          "lineNumber": 23
+        },
+        {
+          "caller": "signal",
+          "callee": "e.to_compile_error",
+          "lineNumber": 23
+        },
+        {
+          "caller": "signal",
+          "callee": "nv.path.get_ident",
+          "lineNumber": 36
+        },
+        {
+          "caller": "signal",
+          "callee": "ident.to_string().as_str",
+          "lineNumber": 41
+        },
+        {
+          "caller": "signal",
+          "callee": "ident.to_string",
+          "lineNumber": 41
+        },
+        {
+          "caller": "signal",
+          "callee": "Some",
+          "lineNumber": 42
+        },
+        {
+          "caller": "signal",
+          "callee": "v.value",
+          "lineNumber": 42
+        },
+        {
+          "caller": "signal",
+          "callee": "Some",
+          "lineNumber": 43
+        },
+        {
+          "caller": "signal",
+          "callee": "v.value",
+          "lineNumber": 43
+        },
+        {
+          "caller": "signal",
+          "callee": "Some",
+          "lineNumber": 44
+        },
+        {
+          "caller": "signal",
+          "callee": "v.value",
+          "lineNumber": 44
+        },
+        {
+          "caller": "signal",
+          "callee": "Some",
+          "lineNumber": 45
+        },
+        {
+          "caller": "signal",
+          "callee": "v.value",
+          "lineNumber": 45
+        },
+        {
+          "caller": "signal",
+          "callee": "Some",
+          "lineNumber": 46
+        },
+        {
+          "caller": "signal",
+          "callee": "v.value",
+          "lineNumber": 46
+        },
+        {
+          "caller": "signal",
+          "callee": "Some",
+          "lineNumber": 47
+        },
+        {
+          "caller": "signal",
+          "callee": "v.value",
+          "lineNumber": 47
+        },
+        {
+          "caller": "signal",
+          "callee": "Some",
+          "lineNumber": 48
+        },
+        {
+          "caller": "signal",
+          "callee": "v.value",
+          "lineNumber": 48
+        },
+        {
+          "caller": "signal",
+          "callee": "syn::parse",
+          "lineNumber": 54
+        },
+        {
+          "caller": "signal",
+          "callee": "e.to_compile_error().into",
+          "lineNumber": 56
+        },
+        {
+          "caller": "signal",
+          "callee": "e.to_compile_error",
+          "lineNumber": 56
+        },
+        {
+          "caller": "signal",
+          "callee": "Vec::new",
+          "lineNumber": 59
+        },
+        {
+          "caller": "signal",
+          "callee": "category.unwrap_or_default",
+          "lineNumber": 60
+        },
+        {
+          "caller": "signal",
+          "callee": "name.unwrap_or_default",
+          "lineNumber": 61
+        },
+        {
+          "caller": "signal",
+          "callee": "template.unwrap_or_default",
+          "lineNumber": 62
+        },
+        {
+          "caller": "signal",
+          "callee": "opcode.unwrap_or_default",
+          "lineNumber": 63
+        },
+        {
+          "caller": "signal",
+          "callee": "param_kind.unwrap_or_default",
+          "lineNumber": 64
+        },
+        {
+          "caller": "signal",
+          "callee": "fast_exec.unwrap_or_default",
+          "lineNumber": 65
+        },
+        {
+          "caller": "signal",
+          "callee": "fast_decode.unwrap_or_default",
+          "lineNumber": 66
+        },
+        {
+          "caller": "signal",
+          "callee": "errors.push",
+          "lineNumber": 69
+        },
+        {
+          "caller": "signal",
+          "callee": "name.is_empty",
+          "lineNumber": 71
+        },
+        {
+          "caller": "signal",
+          "callee": "template.is_empty",
+          "lineNumber": 71
+        },
+        {
+          "caller": "signal",
+          "callee": "opcode.is_empty",
+          "lineNumber": 71
+        },
+        {
+          "caller": "signal",
+          "callee": "param_kind.is_empty",
+          "lineNumber": 71
+        },
+        {
+          "caller": "signal",
+          "callee": "errors.push",
+          "lineNumber": 72
+        },
+        {
+          "caller": "signal",
+          "callee": "f.sig.ident.to_string",
+          "lineNumber": 76
+        },
+        {
+          "caller": "signal",
+          "callee": "fn_ident.contains",
+          "lineNumber": 77
+        },
+        {
+          "caller": "signal",
+          "callee": "errors.push",
+          "lineNumber": 78
+        },
+        {
+          "caller": "signal",
+          "callee": "fn_ident.rsplit_once",
+          "lineNumber": 80
+        },
+        {
+          "caller": "signal",
+          "callee": "tail.is_empty",
+          "lineNumber": 81
+        },
+        {
+          "caller": "signal",
+          "callee": "tail.chars().all",
+          "lineNumber": 81
+        },
+        {
+          "caller": "signal",
+          "callee": "tail.chars",
+          "lineNumber": 81
+        },
+        {
+          "caller": "signal",
+          "callee": "c.is_ascii_digit",
+          "lineNumber": 81
+        },
+        {
+          "caller": "signal",
+          "callee": "String::new",
+          "lineNumber": 84
+        },
+        {
+          "caller": "signal",
+          "callee": "String::new",
+          "lineNumber": 87
+        },
+        {
+          "caller": "signal",
+          "callee": "expected.is_empty",
+          "lineNumber": 89
+        },
+        {
+          "caller": "signal",
+          "callee": "name.is_empty",
+          "lineNumber": 89
+        },
+        {
+          "caller": "signal",
+          "callee": "errors.push",
+          "lineNumber": 90
+        },
+        {
+          "caller": "signal",
+          "callee": "template.is_empty",
+          "lineNumber": 92
+        },
+        {
+          "caller": "signal",
+          "callee": "expected\n                .rsplit_once(\"_V\")\n                .map(|(_, v)| v.to_string()).unwrap_or_default",
+          "lineNumber": 93
+        },
+        {
+          "caller": "signal",
+          "callee": "expected\n                .rsplit_once(\"_V\").map",
+          "lineNumber": 93
+        },
+        {
+          "caller": "signal",
+          "callee": "expected.rsplit_once",
+          "lineNumber": 93
+        },
+        {
+          "caller": "signal",
+          "callee": "v.to_string",
+          "lineNumber": 95
+        },
+        {
+          "caller": "signal",
+          "callee": "ver.is_empty",
+          "lineNumber": 97
+        },
+        {
+          "caller": "signal",
+          "callee": "template.contains",
+          "lineNumber": 97
+        },
+        {
+          "caller": "signal",
+          "callee": "ver.as_str",
+          "lineNumber": 97
+        },
+        {
+          "caller": "signal",
+          "callee": "errors.push",
+          "lineNumber": 98
+        },
+        {
+          "caller": "signal",
+          "callee": "f.sig.inputs.len",
+          "lineNumber": 105
+        },
+        {
+          "caller": "signal",
+          "callee": "category.as_str",
+          "lineNumber": 106
+        },
+        {
+          "caller": "signal",
+          "callee": "errors.push",
+          "lineNumber": 108
+        },
+        {
+          "caller": "signal",
+          "callee": "errors.push",
+          "lineNumber": 111
+        },
+        {
+          "caller": "signal",
+          "callee": "nth_arg_type(&f, 0)\n            .map(|t| type_tokens(&t)).unwrap_or_default",
+          "lineNumber": 116
+        },
+        {
+          "caller": "signal",
+          "callee": "nth_arg_type(&f, 0).map",
+          "lineNumber": 116
+        },
+        {
+          "caller": "signal",
+          "callee": "nth_arg_type",
+          "lineNumber": 116
+        },
+        {
+          "caller": "signal",
+          "callee": "type_tokens",
+          "lineNumber": 117
+        },
+        {
+          "caller": "signal",
+          "callee": "nth_arg_type(&f, 1)\n            .map(|t| type_tokens(&t)).unwrap_or_default",
+          "lineNumber": 119
+        },
+        {
+          "caller": "signal",
+          "callee": "nth_arg_type(&f, 1).map",
+          "lineNumber": 119
+        },
+        {
+          "caller": "signal",
+          "callee": "nth_arg_type",
+          "lineNumber": 119
+        },
+        {
+          "caller": "signal",
+          "callee": "type_tokens",
+          "lineNumber": 120
+        },
+        {
+          "caller": "signal",
+          "callee": "nth_arg_type(&f, 2)\n            .map(|t| type_tokens(&t)).unwrap_or_default",
+          "lineNumber": 122
+        },
+        {
+          "caller": "signal",
+          "callee": "nth_arg_type(&f, 2).map",
+          "lineNumber": 122
+        },
+        {
+          "caller": "signal",
+          "callee": "nth_arg_type",
+          "lineNumber": 122
+        },
+        {
+          "caller": "signal",
+          "callee": "type_tokens",
+          "lineNumber": 123
+        },
+        {
+          "caller": "signal",
+          "callee": "t0.contains",
+          "lineNumber": 125
+        },
+        {
+          "caller": "signal",
+          "callee": "errors.push",
+          "lineNumber": 126
+        },
+        {
+          "caller": "signal",
+          "callee": "t1.contains",
+          "lineNumber": 128
+        },
+        {
+          "caller": "signal",
+          "callee": "errors.push",
+          "lineNumber": 129
+        },
+        {
+          "caller": "signal",
+          "callee": "t2.contains",
+          "lineNumber": 131
+        },
+        {
+          "caller": "signal",
+          "callee": "t2.contains",
+          "lineNumber": 131
+        },
+        {
+          "caller": "signal",
+          "callee": "errors.push",
+          "lineNumber": 132
+        },
+        {
+          "caller": "signal",
+          "callee": "nth_arg_type(&f, 0)\n            .map(|t| type_tokens(&t)).unwrap_or_default",
+          "lineNumber": 136
+        },
+        {
+          "caller": "signal",
+          "callee": "nth_arg_type(&f, 0).map",
+          "lineNumber": 136
+        },
+        {
+          "caller": "signal",
+          "callee": "nth_arg_type",
+          "lineNumber": 136
+        },
+        {
+          "caller": "signal",
+          "callee": "type_tokens",
+          "lineNumber": 137
+        },
+        {
+          "caller": "signal",
+          "callee": "nth_arg_type(&f, 1)\n            .map(|t| type_tokens(&t)).unwrap_or_default",
+          "lineNumber": 139
+        },
+        {
+          "caller": "signal",
+          "callee": "nth_arg_type(&f, 1).map",
+          "lineNumber": 139
+        },
+        {
+          "caller": "signal",
+          "callee": "nth_arg_type",
+          "lineNumber": 139
+        },
+        {
+          "caller": "signal",
+          "callee": "type_tokens",
+          "lineNumber": 140
+        },
+        {
+          "caller": "signal",
+          "callee": "t0.contains",
+          "lineNumber": 142
+        },
+        {
+          "caller": "signal",
+          "callee": "errors.push",
+          "lineNumber": 143
+        },
+        {
+          "caller": "signal",
+          "callee": "t1.contains",
+          "lineNumber": 146
+        },
+        {
+          "caller": "signal",
+          "callee": "errors.push",
+          "lineNumber": 147
+        },
+        {
+          "caller": "signal",
+          "callee": "syn::Ident::new",
+          "lineNumber": 154
+        },
+        {
+          "caller": "signal",
+          "callee": "format!(\"__RS_CZSC_SIGNAL_META_{}\", f.sig.ident).to_uppercase",
+          "lineNumber": 155
+        },
+        {
+          "caller": "signal",
+          "callee": "f.sig.ident.span",
+          "lineNumber": 156
+        },
+        {
+          "caller": "signal",
+          "callee": "f.sig.inputs.iter().nth(1).and_then",
+          "lineNumber": 162
+        },
+        {
+          "caller": "signal",
+          "callee": "f.sig.inputs.iter().nth",
+          "lineNumber": 162
+        },
+        {
+          "caller": "signal",
+          "callee": "f.sig.inputs.iter",
+          "lineNumber": 162
+        },
+        {
+          "caller": "signal",
+          "callee": "Some",
+          "lineNumber": 163
+        },
+        {
+          "caller": "signal",
+          "callee": "(*t.ty).clone",
+          "lineNumber": 163
+        },
+        {
+          "caller": "signal",
+          "callee": "raw_param_ty.as_ref().map",
+          "lineNumber": 166
+        },
+        {
+          "caller": "signal",
+          "callee": "raw_param_ty.as_ref",
+          "lineNumber": 166
+        },
+        {
+          "caller": "signal",
+          "callee": "(*r.elem).clone",
+          "lineNumber": 167
+        },
+        {
+          "caller": "signal",
+          "callee": "t.clone",
+          "lineNumber": 168
+        },
+        {
+          "caller": "signal",
+          "callee": "raw_param_ty\n            .as_ref()\n            .map(|t| t.to_token_stream().to_string()).unwrap_or_default",
+          "lineNumber": 170
+        },
+        {
+          "caller": "signal",
+          "callee": "raw_param_ty\n            .as_ref().map",
+          "lineNumber": 170
+        },
+        {
+          "caller": "signal",
+          "callee": "raw_param_ty.as_ref",
+          "lineNumber": 170
+        },
+        {
+          "caller": "signal",
+          "callee": "t.to_token_stream().to_string",
+          "lineNumber": 172
+        },
+        {
+          "caller": "signal",
+          "callee": "t.to_token_stream",
+          "lineNumber": 172
+        },
+        {
+          "caller": "signal",
+          "callee": "raw_param_ty_tokens.contains",
+          "lineNumber": 174
+        },
+        {
+          "caller": "signal",
+          "callee": "raw_param_ty_tokens.contains",
+          "lineNumber": 175
+        },
+        {
+          "caller": "signal",
+          "callee": "param_ty.expect",
+          "lineNumber": 199
+        },
+        {
+          "caller": "signal",
+          "callee": "f.sig.inputs.iter().nth(1).and_then",
+          "lineNumber": 254
+        },
+        {
+          "caller": "signal",
+          "callee": "f.sig.inputs.iter().nth",
+          "lineNumber": 254
+        },
+        {
+          "caller": "signal",
+          "callee": "f.sig.inputs.iter",
+          "lineNumber": 254
+        },
+        {
+          "caller": "signal",
+          "callee": "Some",
+          "lineNumber": 255
+        },
+        {
+          "caller": "signal",
+          "callee": "(*t.ty).clone",
+          "lineNumber": 255
+        },
+        {
+          "caller": "signal",
+          "callee": "raw_param_ty\n            .as_ref()\n            .map(|t| t.to_token_stream().to_string()).unwrap_or_default",
+          "lineNumber": 258
+        },
+        {
+          "caller": "signal",
+          "callee": "raw_param_ty\n            .as_ref().map",
+          "lineNumber": 258
+        },
+        {
+          "caller": "signal",
+          "callee": "raw_param_ty.as_ref",
+          "lineNumber": 258
+        },
+        {
+          "caller": "signal",
+          "callee": "t.to_token_stream().to_string",
+          "lineNumber": 260
+        },
+        {
+          "caller": "signal",
+          "callee": "t.to_token_stream",
+          "lineNumber": 260
+        },
+        {
+          "caller": "signal",
+          "callee": "raw_param_ty_tokens.contains",
+          "lineNumber": 262
+        },
+        {
+          "caller": "signal",
+          "callee": "raw_param_ty_tokens.contains",
+          "lineNumber": 263
+        },
+        {
+          "caller": "signal",
+          "callee": "raw_param_ty.expect",
+          "lineNumber": 286
+        },
+        {
+          "caller": "signal",
+          "callee": "fast_exec.is_empty",
+          "lineNumber": 315
+        },
+        {
+          "caller": "signal",
+          "callee": "fast_decode.is_empty",
+          "lineNumber": 315
+        },
+        {
+          "caller": "signal",
+          "callee": "syn::parse_str",
+          "lineNumber": 317
+        },
+        {
+          "caller": "signal",
+          "callee": "e.to_compile_error().into",
+          "lineNumber": 319
+        },
+        {
+          "caller": "signal",
+          "callee": "e.to_compile_error",
+          "lineNumber": 319
+        },
+        {
+          "caller": "signal",
+          "callee": "syn::parse_str",
+          "lineNumber": 321
+        },
+        {
+          "caller": "signal",
+          "callee": "e.to_compile_error().into",
+          "lineNumber": 323
+        },
+        {
+          "caller": "signal",
+          "callee": "e.to_compile_error",
+          "lineNumber": 323
+        },
+        {
+          "caller": "signal",
+          "callee": "out.into",
+          "lineNumber": 356
+        },
+        {
+          "caller": "signal_module",
+          "callee": "parser.parse",
+          "lineNumber": 362
+        },
+        {
+          "caller": "signal_module",
+          "callee": "e.to_compile_error().into",
+          "lineNumber": 364
+        },
+        {
+          "caller": "signal_module",
+          "callee": "e.to_compile_error",
+          "lineNumber": 364
+        },
+        {
+          "caller": "signal_module",
+          "callee": "String::new",
+          "lineNumber": 366
+        },
+        {
+          "caller": "signal_module",
+          "callee": "nv.path.get_ident",
+          "lineNumber": 369
+        },
+        {
+          "caller": "signal_module",
+          "callee": "v.value",
+          "lineNumber": 375
+        },
+        {
+          "caller": "signal_module",
+          "callee": "quote! { compile_error!(\"#[signal_module] category 必须是 kline 或 trader\"); }.into",
+          "lineNumber": 379
+        },
+        {
+          "caller": "signal_module",
+          "callee": "syn::parse",
+          "lineNumber": 383
+        },
+        {
+          "caller": "signal_module",
+          "callee": "item.clone",
+          "lineNumber": 383
+        },
+        {
+          "caller": "signal_module",
+          "callee": "m.content.is_none",
+          "lineNumber": 388
+        },
+        {
+          "caller": "signal_module",
+          "callee": "quote! {\n            compile_error!(\"#[signal_module] 仅支持内联模块，用于编译期收集与校验\");\n            #m\n        }.into",
+          "lineNumber": 389
+        },
+        {
+          "caller": "signal_module",
+          "callee": "m.content.as_ref().expect",
+          "lineNumber": 396
+        },
+        {
+          "caller": "signal_module",
+          "callee": "m.content.as_ref",
+          "lineNumber": 396
+        },
+        {
+          "caller": "signal_module",
+          "callee": "std::collections::HashSet::new",
+          "lineNumber": 397
+        },
+        {
+          "caller": "signal_module",
+          "callee": "std::collections::HashSet::new",
+          "lineNumber": 398
+        },
+        {
+          "caller": "signal_module",
+          "callee": "f.sig.ident.to_string",
+          "lineNumber": 401
+        },
+        {
+          "caller": "signal_module",
+          "callee": "f.vis.to_token_stream().to_string",
+          "lineNumber": 402
+        },
+        {
+          "caller": "signal_module",
+          "callee": "f.vis.to_token_stream",
+          "lineNumber": 402
+        },
+        {
+          "caller": "signal_module",
+          "callee": "name.contains",
+          "lineNumber": 402
+        },
+        {
+          "caller": "signal_module",
+          "callee": "f.attrs.iter().find",
+          "lineNumber": 403
+        },
+        {
+          "caller": "signal_module",
+          "callee": "f.attrs.iter",
+          "lineNumber": 403
+        },
+        {
+          "caller": "signal_module",
+          "callee": "a.path().is_ident",
+          "lineNumber": 403
+        },
+        {
+          "caller": "signal_module",
+          "callee": "a.path",
+          "lineNumber": 403
+        },
+        {
+          "caller": "signal_module",
+          "callee": "signal_attr.is_none",
+          "lineNumber": 404
+        },
+        {
+          "caller": "signal_module",
+          "callee": "quote! {\n                        compile_error!(\"signal_module: pub fn *_v* 必须显式添加 #[signal(...)] 标注\");\n                        #m\n                    }.into",
+          "lineNumber": 405
+        },
+        {
+          "caller": "signal_module",
+          "callee": "f.sig.inputs.len",
+          "lineNumber": 411
+        },
+        {
+          "caller": "signal_module",
+          "callee": "quote! { compile_error!(\"signal_module: kline 模块中的 pub fn *_v* 必须是 3 参数签名\"); #m }.into",
+          "lineNumber": 414
+        },
+        {
+          "caller": "signal_module",
+          "callee": "nth_arg_type(f, 0)\n                        .map(|t| type_tokens(&t)).unwrap_or_default",
+          "lineNumber": 416
+        },
+        {
+          "caller": "signal_module",
+          "callee": "nth_arg_type(f, 0).map",
+          "lineNumber": 416
+        },
+        {
+          "caller": "signal_module",
+          "callee": "nth_arg_type",
+          "lineNumber": 416
+        },
+        {
+          "caller": "signal_module",
+          "callee": "type_tokens",
+          "lineNumber": 417
+        },
+        {
+          "caller": "signal_module",
+          "callee": "nth_arg_type(f, 2)\n                        .map(|t| type_tokens(&t)).unwrap_or_default",
+          "lineNumber": 419
+        },
+        {
+          "caller": "signal_module",
+          "callee": "nth_arg_type(f, 2).map",
+          "lineNumber": 419
+        },
+        {
+          "caller": "signal_module",
+          "callee": "nth_arg_type",
+          "lineNumber": 419
+        },
+        {
+          "caller": "signal_module",
+          "callee": "type_tokens",
+          "lineNumber": 420
+        },
+        {
+          "caller": "signal_module",
+          "callee": "t0.contains",
+          "lineNumber": 422
+        },
+        {
+          "caller": "signal_module",
+          "callee": "t2.contains",
+          "lineNumber": 422
+        },
+        {
+          "caller": "signal_module",
+          "callee": "t2.contains",
+          "lineNumber": 422
+        },
+        {
+          "caller": "signal_module",
+          "callee": "quote! { compile_error!(\"signal_module: kline 模块函数签名必须为 (&CZSC, &Params, &mut TaCache)\"); #m }.into",
+          "lineNumber": 423
+        },
+        {
+          "caller": "signal_module",
+          "callee": "quote! { compile_error!(\"signal_module: trader 模块中的 pub fn *_v* 必须是 2 参数签名\"); #m }.into",
+          "lineNumber": 427
+        },
+        {
+          "caller": "signal_module",
+          "callee": "nth_arg_type(f, 0)\n                        .map(|t| type_tokens(&t)).unwrap_or_default",
+          "lineNumber": 429
+        },
+        {
+          "caller": "signal_module",
+          "callee": "nth_arg_type(f, 0).map",
+          "lineNumber": 429
+        },
+        {
+          "caller": "signal_module",
+          "callee": "nth_arg_type",
+          "lineNumber": 429
+        },
+        {
+          "caller": "signal_module",
+          "callee": "type_tokens",
+          "lineNumber": 430
+        },
+        {
+          "caller": "signal_module",
+          "callee": "t0.contains",
+          "lineNumber": 432
+        },
+        {
+          "caller": "signal_module",
+          "callee": "quote! { compile_error!(\"signal_module: trader 模块函数签名必须为 (&dyn TraderState, &Params)\"); #m }.into",
+          "lineNumber": 433
+        },
+        {
+          "caller": "signal_module",
+          "callee": "String::new",
+          "lineNumber": 438
+        },
+        {
+          "caller": "signal_module",
+          "callee": "String::new",
+          "lineNumber": 439
+        },
+        {
+          "caller": "signal_module",
+          "callee": "parser.parse2",
+          "lineNumber": 441
+        },
+        {
+          "caller": "signal_module",
+          "callee": "list.tokens.clone",
+          "lineNumber": 441
+        },
+        {
+          "caller": "signal_module",
+          "callee": "nv.path.get_ident",
+          "lineNumber": 445
+        },
+        {
+          "caller": "signal_module",
+          "callee": "v.value",
+          "lineNumber": 451
+        },
+        {
+          "caller": "signal_module",
+          "callee": "v.value",
+          "lineNumber": 453
+        },
+        {
+          "caller": "signal_module",
+          "callee": "attr_name.is_empty",
+          "lineNumber": 458
+        },
+        {
+          "caller": "signal_module",
+          "callee": "seen_names.insert",
+          "lineNumber": 458
+        },
+        {
+          "caller": "signal_module",
+          "callee": "attr_name.clone",
+          "lineNumber": 458
+        },
+        {
+          "caller": "signal_module",
+          "callee": "quote! { compile_error!(\"signal_module: duplicate signal name in module\"); #m }.into",
+          "lineNumber": 459
+        },
+        {
+          "caller": "signal_module",
+          "callee": "attr_opcode.is_empty",
+          "lineNumber": 461
+        },
+        {
+          "caller": "signal_module",
+          "callee": "seen_opcodes.insert",
+          "lineNumber": 461
+        },
+        {
+          "caller": "signal_module",
+          "callee": "attr_opcode.clone",
+          "lineNumber": 461
+        },
+        {
+          "caller": "signal_module",
+          "callee": "quote! { compile_error!(\"signal_module: duplicate signal opcode in module\"); #m }.into",
+          "lineNumber": 462
+        },
+        {
+          "caller": "signal_module",
+          "callee": "quote! { #m }.into",
+          "lineNumber": 469
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-signal-macros/tests/test_export.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 12,
+      "functions": [
+        {
+          "name": "proc_macro_crate_links",
+          "startLine": 10,
+          "endLine": 13,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-signals/Cargo.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 40,
+      "nonEmptyLines": 35,
+      "sections": [
+        {
+          "heading": "package",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "lib",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "dependencies",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "features",
+          "level": 1,
+          "line": 30
+        },
+        {
+          "heading": "dev-dependencies",
+          "level": 1,
+          "line": 33
+        },
+        {
+          "heading": "[[bench]]",
+          "level": 1,
+          "line": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/crates/czsc-signals/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 36,
+      "nonEmptyLines": 27,
+      "sections": [
+        {
+          "heading": "czsc-signals",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "用法",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "项目主页",
+          "level": 2,
+          "line": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    }
+  ]
+}

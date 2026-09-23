@@ -1,0 +1,1737 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 24,
+  "filesSkipped": [
+    "reference/czsc-master/czsc-master/czsc/py.typed"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 24,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 21,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "results": [
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/fsa/base.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 20,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "request",
+          "startLine": 3,
+          "endLine": 3,
+          "params": [
+            "method",
+            "url",
+            "headers",
+            "payload"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FeishuApiBase",
+          "startLine": 5,
+          "endLine": 20,
+          "methods": [
+            "__init__",
+            "get_access_token",
+            "get_headers",
+            "get_root_folder_token",
+            "remove",
+            "move",
+            "copy",
+            "upload_file",
+            "download_file"
+          ],
+          "properties": [
+            "app_id",
+            "app_secret",
+            "host",
+            "headers",
+            "cache",
+            "logger"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "request",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "FeishuApiBase",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/fsa/push_strategy_latest.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 30,
+      "functions": [
+        {
+          "name": "push_strategy_latest",
+          "startLine": 25,
+          "endLine": 32,
+          "params": [
+            "strategy",
+            "dfw",
+            "feishu_key",
+            "out_sample_sdt",
+            "show_recent_detail",
+            "**kwargs"
+          ]
+        },
+        {
+          "name": "test_push_strategy_latest",
+          "startLine": 33,
+          "endLine": 33,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "StrategyCard",
+          "startLine": 6,
+          "endLine": 23,
+          "methods": [
+            "__init__",
+            "build"
+          ],
+          "properties": [
+            "dfw",
+            "strategy_name",
+            "show_recent_detail",
+            "wb",
+            "out_sample_sdt",
+            "describe",
+            "latest_weights"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "StrategyCard",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "push_strategy_latest",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "test_push_strategy_latest",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/traders/__init__.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 26,
+      "nonEmptyLines": 25,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/analysis/corr.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "functions": [
+        {
+          "name": "cross_sectional_ic",
+          "startLine": 1,
+          "endLine": 1,
+          "params": [
+            "df",
+            "x_col",
+            "y_col",
+            "method",
+            "**kwargs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "cross_sectional_ic",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/data/cache.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 21,
+      "nonEmptyLines": 16,
+      "functions": [
+        {
+          "name": "get_dir_size",
+          "startLine": 8,
+          "endLine": 8,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "empty_cache_path",
+          "startLine": 9,
+          "endLine": 9,
+          "params": []
+        },
+        {
+          "name": "disk_cache",
+          "startLine": 19,
+          "endLine": 19,
+          "params": [
+            "path",
+            "suffix",
+            "ttl"
+          ]
+        },
+        {
+          "name": "clear_expired_cache",
+          "startLine": 20,
+          "endLine": 20,
+          "params": [
+            "path",
+            "max_age"
+          ]
+        },
+        {
+          "name": "clear_cache",
+          "startLine": 21,
+          "endLine": 21,
+          "params": [
+            "path",
+            "subs",
+            "recreate"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DiskCache",
+          "startLine": 11,
+          "endLine": 17,
+          "methods": [
+            "__init__",
+            "is_found",
+            "get",
+            "set",
+            "remove"
+          ],
+          "properties": [
+            "path"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "get_dir_size",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "empty_cache_path",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "DiskCache",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "disk_cache",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "clear_expired_cache",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "clear_cache",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/data/client.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "set_url_token",
+          "startLine": 4,
+          "endLine": 4,
+          "params": [
+            "token",
+            "url",
+            "**kwargs"
+          ]
+        },
+        {
+          "name": "get_url_token",
+          "startLine": 5,
+          "endLine": 5,
+          "params": [
+            "url",
+            "**kwargs"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "DataClient",
+          "startLine": 7,
+          "endLine": 23,
+          "methods": [
+            "__init__",
+            "clear_cache",
+            "clear_api_cache",
+            "post_request",
+            "__getattr__"
+          ],
+          "properties": [
+            "__version__",
+            "logger",
+            "cache_path",
+            "verbose"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "set_url_token",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "get_url_token",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "DataClient",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/data/converters.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 17,
+      "functions": [
+        {
+          "name": "to_standard_kline_format",
+          "startLine": 5,
+          "endLine": 13,
+          "params": [
+            "df",
+            "dt_col",
+            "open_col",
+            "high_col",
+            "low_col",
+            "close_col",
+            "volume_col"
+          ]
+        },
+        {
+          "name": "pivot_weight_data",
+          "startLine": 14,
+          "endLine": 14,
+          "params": [
+            "dfw",
+            "fill_value"
+          ]
+        },
+        {
+          "name": "resample_to_period",
+          "startLine": 15,
+          "endLine": 15,
+          "params": [
+            "df",
+            "period",
+            "agg_dict"
+          ]
+        },
+        {
+          "name": "normalize_symbol",
+          "startLine": 16,
+          "endLine": 16,
+          "params": [
+            "symbol"
+          ]
+        },
+        {
+          "name": "convert_dict_to_dataframe",
+          "startLine": 17,
+          "endLine": 17,
+          "params": [
+            "data",
+            "sort_by"
+          ]
+        },
+        {
+          "name": "ensure_datetime_column",
+          "startLine": 18,
+          "endLine": 18,
+          "params": [
+            "df",
+            "column",
+            "inplace"
+          ]
+        },
+        {
+          "name": "flatten_multiindex_columns",
+          "startLine": 19,
+          "endLine": 19,
+          "params": [
+            "df",
+            "sep"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "to_standard_kline_format",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "pivot_weight_data",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "resample_to_period",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "normalize_symbol",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "convert_dict_to_dataframe",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "ensure_datetime_column",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "flatten_multiindex_columns",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/data/validators.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 12,
+      "functions": [
+        {
+          "name": "validate_dataframe_columns",
+          "startLine": 3,
+          "endLine": 3,
+          "params": [
+            "df",
+            "required_columns",
+            "name"
+          ]
+        },
+        {
+          "name": "validate_datetime_index",
+          "startLine": 4,
+          "endLine": 4,
+          "params": [
+            "df",
+            "name"
+          ]
+        },
+        {
+          "name": "validate_numeric_column",
+          "startLine": 5,
+          "endLine": 5,
+          "params": [
+            "df",
+            "column",
+            "name"
+          ]
+        },
+        {
+          "name": "validate_date_range",
+          "startLine": 6,
+          "endLine": 11,
+          "params": [
+            "df",
+            "start_date",
+            "end_date",
+            "name"
+          ]
+        },
+        {
+          "name": "validate_no_duplicates",
+          "startLine": 12,
+          "endLine": 12,
+          "params": [
+            "df",
+            "subset",
+            "name"
+          ]
+        },
+        {
+          "name": "validate_weight_data",
+          "startLine": 13,
+          "endLine": 13,
+          "params": [
+            "df"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "validate_dataframe_columns",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "validate_datetime_index",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "validate_numeric_column",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "validate_date_range",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "validate_no_duplicates",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "validate_weight_data",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/index_composition.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "functions": [
+        {
+          "name": "index_composition",
+          "startLine": 1,
+          "endLine": 1,
+          "params": [
+            "klines",
+            "weights",
+            "base_point",
+            "**kwagrs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "index_composition",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/io.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 7,
+      "functions": [
+        {
+          "name": "dill_dump",
+          "startLine": 1,
+          "endLine": 1,
+          "params": [
+            "data",
+            "file"
+          ]
+        },
+        {
+          "name": "dill_load",
+          "startLine": 2,
+          "endLine": 2,
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "save_pkl",
+          "startLine": 3,
+          "endLine": 3,
+          "params": [
+            "data",
+            "file"
+          ]
+        },
+        {
+          "name": "read_pkl",
+          "startLine": 4,
+          "endLine": 4,
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "save_json",
+          "startLine": 5,
+          "endLine": 5,
+          "params": [
+            "data",
+            "file"
+          ]
+        },
+        {
+          "name": "read_json",
+          "startLine": 6,
+          "endLine": 6,
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "make_zip",
+          "startLine": 7,
+          "endLine": 7,
+          "params": [
+            "source_dir",
+            "file_zip"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "dill_dump",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "dill_load",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "save_pkl",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "read_pkl",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "save_json",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "read_json",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "make_zip",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/kline_quality.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 9,
+      "functions": [
+        {
+          "name": "check_missing_values",
+          "startLine": 1,
+          "endLine": 1,
+          "params": [
+            "df"
+          ]
+        },
+        {
+          "name": "check_data_types",
+          "startLine": 2,
+          "endLine": 2,
+          "params": [
+            "df"
+          ]
+        },
+        {
+          "name": "check_datetime_order",
+          "startLine": 3,
+          "endLine": 3,
+          "params": [
+            "df"
+          ]
+        },
+        {
+          "name": "check_price_reasonableness",
+          "startLine": 4,
+          "endLine": 4,
+          "params": [
+            "df"
+          ]
+        },
+        {
+          "name": "check_volume_amount",
+          "startLine": 5,
+          "endLine": 5,
+          "params": [
+            "df"
+          ]
+        },
+        {
+          "name": "check_symbol_consistency",
+          "startLine": 6,
+          "endLine": 6,
+          "params": [
+            "df"
+          ]
+        },
+        {
+          "name": "check_duplicate_records",
+          "startLine": 7,
+          "endLine": 7,
+          "params": [
+            "df"
+          ]
+        },
+        {
+          "name": "check_extreme_values",
+          "startLine": 8,
+          "endLine": 8,
+          "params": [
+            "df",
+            "threshold"
+          ]
+        },
+        {
+          "name": "check_kline_quality",
+          "startLine": 9,
+          "endLine": 9,
+          "params": [
+            "df"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "check_missing_values",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "check_data_types",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "check_datetime_order",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "check_price_reasonableness",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "check_volume_amount",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "check_symbol_consistency",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "check_duplicate_records",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "check_extreme_values",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "check_kline_quality",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/log.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 2,
+      "functions": [
+        {
+          "name": "log_strategy_info",
+          "startLine": 3,
+          "endLine": 3,
+          "params": [
+            "strategy",
+            "df"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "log_strategy_info",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/mark_cta_periods.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 2,
+      "functions": [
+        {
+          "name": "mark_cta_periods",
+          "startLine": 3,
+          "endLine": 3,
+          "params": [
+            "df",
+            "**kwargs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "mark_cta_periods",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/mark_volatility.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 2,
+      "functions": [
+        {
+          "name": "mark_volatility",
+          "startLine": 3,
+          "endLine": 3,
+          "params": [
+            "df",
+            "kind",
+            "**kwargs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "mark_volatility",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/plotting/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 14,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/plotting/__init__.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/plotting/_macd.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 36,
+      "functions": [
+        {
+          "name": "_ema",
+          "startLine": 17,
+          "endLine": 31,
+          "params": [
+            "close",
+            "period"
+          ]
+        },
+        {
+          "name": "compute_macd",
+          "startLine": 34,
+          "endLine": 46,
+          "params": [
+            "real",
+            "fastperiod",
+            "slowperiod",
+            "signalperiod"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_ema",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "compute_macd",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_ema",
+          "callee": "range",
+          "lineNumber": 25
+        },
+        {
+          "caller": "_ema",
+          "callee": "len",
+          "lineNumber": 25
+        },
+        {
+          "caller": "_ema",
+          "callee": "res.append",
+          "lineNumber": 27
+        },
+        {
+          "caller": "_ema",
+          "callee": "float",
+          "lineNumber": 27
+        },
+        {
+          "caller": "_ema",
+          "callee": "res.append",
+          "lineNumber": 30
+        },
+        {
+          "caller": "_ema",
+          "callee": "np.array(res, dtype=np.double).round",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_ema",
+          "callee": "np.array",
+          "lineNumber": 31
+        },
+        {
+          "caller": "compute_macd",
+          "callee": "_ema",
+          "lineNumber": 41
+        },
+        {
+          "caller": "compute_macd",
+          "callee": "_ema",
+          "lineNumber": 42
+        },
+        {
+          "caller": "compute_macd",
+          "callee": "_ema",
+          "lineNumber": 44
+        },
+        {
+          "caller": "compute_macd",
+          "callee": "diff.round",
+          "lineNumber": 46
+        },
+        {
+          "caller": "compute_macd",
+          "callee": "dea.round",
+          "lineNumber": 46
+        },
+        {
+          "caller": "compute_macd",
+          "callee": "macd.round",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/trade.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 7,
+      "functions": [
+        {
+          "name": "risk_free_returns",
+          "startLine": 3,
+          "endLine": 3,
+          "params": [
+            "start_date",
+            "end_date",
+            "year_returns"
+          ]
+        },
+        {
+          "name": "update_nxb",
+          "startLine": 4,
+          "endLine": 4,
+          "params": [
+            "df",
+            "**kwargs"
+          ]
+        },
+        {
+          "name": "update_bbars",
+          "startLine": 5,
+          "endLine": 5,
+          "params": [
+            "da",
+            "price_col",
+            "numbers"
+          ]
+        },
+        {
+          "name": "update_tbars",
+          "startLine": 6,
+          "endLine": 6,
+          "params": [
+            "da",
+            "event_col"
+          ]
+        },
+        {
+          "name": "resample_to_daily",
+          "startLine": 7,
+          "endLine": 7,
+          "params": [
+            "df",
+            "sdt",
+            "edt",
+            "only_trade_date"
+          ]
+        },
+        {
+          "name": "adjust_holding_weights",
+          "startLine": 8,
+          "endLine": 8,
+          "params": [
+            "df",
+            "hold_periods",
+            "**kwargs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "risk_free_returns",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "update_nxb",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "update_bbars",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "update_tbars",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "resample_to_daily",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "adjust_holding_weights",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/warning_capture.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 9,
+      "functions": [
+        {
+          "name": "capture_warnings",
+          "startLine": 8,
+          "endLine": 8,
+          "params": []
+        },
+        {
+          "name": "execute_with_warning_capture",
+          "startLine": 9,
+          "endLine": 11,
+          "params": [
+            "func",
+            "*args",
+            "return_as_string",
+            "drop_duplicates",
+            "**kwargs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "capture_warnings",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "execute_with_warning_capture",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/weights_convert.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 134,
+      "nonEmptyLines": 98,
+      "functions": [
+        {
+          "name": "weights_convert",
+          "startLine": 20,
+          "endLine": 45,
+          "params": [
+            "weights_df",
+            "rule"
+          ]
+        },
+        {
+          "name": "_validate_input",
+          "startLine": 48,
+          "endLine": 63,
+          "params": [
+            "weights_df"
+          ]
+        },
+        {
+          "name": "_apply_t_plus_1_rule",
+          "startLine": 66,
+          "endLine": 94,
+          "params": [
+            "weights_df"
+          ]
+        },
+        {
+          "name": "_process_symbol_group",
+          "startLine": 97,
+          "endLine": 134,
+          "params": [
+            "group_df"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "weights_convert",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "_validate_input",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "_apply_t_plus_1_rule",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "_process_symbol_group",
+          "line": 97,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "weights_convert",
+          "callee": "_validate_input",
+          "lineNumber": 38
+        },
+        {
+          "caller": "weights_convert",
+          "callee": "_apply_t_plus_1_rule",
+          "lineNumber": 41
+        },
+        {
+          "caller": "weights_convert",
+          "callee": "weights_df.copy",
+          "lineNumber": 43
+        },
+        {
+          "caller": "weights_convert",
+          "callee": "ValueError",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_validate_input",
+          "callee": "ValueError",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_validate_input",
+          "callee": "len",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_validate_input",
+          "callee": "pd.api.types.is_datetime64_any_dtype",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_validate_input",
+          "callee": "ValueError",
+          "lineNumber": 60
+        },
+        {
+          "caller": "_validate_input",
+          "callee": "pd.api.types.is_numeric_dtype",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_validate_input",
+          "callee": "ValueError",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_apply_t_plus_1_rule",
+          "callee": "len",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_apply_t_plus_1_rule",
+          "callee": "weights_df.copy",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_apply_t_plus_1_rule",
+          "callee": "pl.from_pandas",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_apply_t_plus_1_rule",
+          "callee": "pldf.with_row_index(\"__orig_idx__\").with_columns",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_apply_t_plus_1_rule",
+          "callee": "pldf.with_row_index",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_apply_t_plus_1_rule",
+          "callee": "pl.col(\"dt\").dt.date().alias",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_apply_t_plus_1_rule",
+          "callee": "pl.col(\"dt\").dt.date",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_apply_t_plus_1_rule",
+          "callee": "pl.col",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_apply_t_plus_1_rule",
+          "callee": "pldf.sort(\"dt\").group_by(\"symbol\", maintain_order=True).map_groups",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_apply_t_plus_1_rule",
+          "callee": "pldf.sort(\"dt\").group_by",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_apply_t_plus_1_rule",
+          "callee": "pldf.sort",
+          "lineNumber": 81
+        },
+        {
+          "caller": "_apply_t_plus_1_rule",
+          "callee": "result.sort",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_apply_t_plus_1_rule",
+          "callee": "result.select([\"dt\", \"symbol\", \"weight\"]).to_pandas",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_apply_t_plus_1_rule",
+          "callee": "result.select",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_process_symbol_group",
+          "callee": "group_df[\"__date__\"].to_numpy",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_process_symbol_group",
+          "callee": "group_df[\"weight\"].to_numpy().copy",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_process_symbol_group",
+          "callee": "group_df[\"weight\"].to_numpy",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_process_symbol_group",
+          "callee": "len",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_process_symbol_group",
+          "callee": "np.empty",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_process_symbol_group",
+          "callee": "range",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_process_symbol_group",
+          "callee": "max",
+          "lineNumber": 130
+        },
+        {
+          "caller": "_process_symbol_group",
+          "callee": "group_df.with_columns",
+          "lineNumber": 134
+        },
+        {
+          "caller": "_process_symbol_group",
+          "callee": "pl.Series",
+          "lineNumber": 134
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/czsc/utils/weights_convert.pyi",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 2,
+      "functions": [
+        {
+          "name": "weights_convert",
+          "startLine": 3,
+          "endLine": 3,
+          "params": [
+            "weights_df",
+            "rule"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "weights_convert",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/docs/superpowers/plans/2026-06-02-czsc-cli.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 1479,
+      "nonEmptyLines": 1074,
+      "sections": [
+        {
+          "heading": "czsc CLI 模块实施计划",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "已验证的 API 契约（实测，实现时直接用）",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "文件结构（先定边界）",
+          "level": 2,
+          "line": 34
+        },
+        {
+          "heading": "Task 0: 依赖与入口骨架",
+          "level": 2,
+          "line": 54
+        },
+        {
+          "heading": "Task 1: `_io.py` 共享层",
+          "level": 2,
+          "line": 170
+        },
+        {
+          "heading": "Task 2: `data` 命令组（mock / quality）",
+          "level": 2,
+          "line": 350
+        },
+        {
+          "heading": "Task 3: `signals` 命令组（list / doc）",
+          "level": 2,
+          "line": 477
+        },
+        {
+          "heading": "Task 4: `analyze` 命令",
+          "level": 2,
+          "line": 597
+        },
+        {
+          "heading": "Task 5: `backtest` 命令（核心）",
+          "level": 2,
+          "line": 724
+        },
+        {
+          "heading": "Task 6: `research` 命令组（run / replay / config）",
+          "level": 2,
+          "line": 921
+        },
+        {
+          "heading": "Task 7: `plot` 命令组（czsc / trader / signals）",
+          "level": 2,
+          "line": 1043
+        },
+        {
+          "heading": "Task 8: `bench` 命令",
+          "level": 2,
+          "line": 1170
+        },
+        {
+          "heading": "Task 9: `schema` 元命令",
+          "level": 2,
+          "line": 1283
+        },
+        {
+          "heading": "Task 10: 全量验收（acceptance）",
+          "level": 2,
+          "line": 1390
+        },
+        {
+          "heading": "自检（plan reviewer 已内联修正）",
+          "level": 2,
+          "line": 1469
+        },
+        {
+          "heading": "已知后续增量（非 v1 阻塞）",
+          "level": 2,
+          "line": 1475
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 16
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/scripts/auto-czsc-quant/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 96,
+      "nonEmptyLines": 66,
+      "sections": [
+        {
+          "heading": "auto-czsc-quant",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "快速运行",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "优化语义",
+          "level": 2,
+          "line": 32
+        },
+        {
+          "heading": "候选协议",
+          "level": 2,
+          "line": 48
+        },
+        {
+          "heading": "数据源",
+          "level": 2,
+          "line": 65
+        },
+        {
+          "heading": "CLI",
+          "level": 2,
+          "line": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "reference/czsc-master/czsc-master/scripts/auto-czsc-quant/examples/baseline_position_30m.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 26,
+      "nonEmptyLines": 26,
+      "sections": [
+        {
+          "heading": "symbol",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "opens",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "exits",
+          "level": 1,
+          "line": 13
+        },
+        {
+          "heading": "interval",
+          "level": 1,
+          "line": 22
+        },
+        {
+          "heading": "timeout",
+          "level": 1,
+          "line": 23
+        },
+        {
+          "heading": "stop_loss",
+          "level": 1,
+          "line": 24
+        },
+        {
+          "heading": "T0",
+          "level": 1,
+          "line": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    }
+  ]
+}

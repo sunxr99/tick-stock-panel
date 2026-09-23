@@ -577,6 +577,18 @@ def run_now(
         else:
             logger.info("sync_minute skipped: user disabled")
 
+    # Refresh the repository cache before any post-close fact builders consume
+    # enriched history. Outer API/cron callers use this result flag to avoid a
+    # second expensive rebuild after a successful run.
+    cache_refreshed = False
+    try:
+        emit("refresh_enriched_cache", 93, "刷新日线指标缓存…")
+        repo.refresh_cache()
+        cache_refreshed = True
+    except Exception as e:
+        logger.warning("refresh enriched cache failed (soft): %s", e)
+        stage_errors.append(f"refresh enriched cache: {e}")
+
     # Step 2.6: 市场环境(regime) 增量计算 — enriched 已就绪后聚合环境指标。
     # 双检测(缺口+stale), 自动补算遗漏/被覆写的日。软失败: 不阻断主管道。
     # 默认关闭: regime 是本地聚合计算(非拉取), 首次/regime 表为空时需全量回填
@@ -650,6 +662,29 @@ def run_now(
         concept_membership_snapshot = {"status": "capture_failed", "error": str(e)}
         stage_errors.append(f"concept membership snapshot: {e}")
 
+    # Step 2.9: Build the persisted rotation facts only after the concept
+    # snapshot step.  Concept rows fail closed without a same-session snapshot;
+    # SW3 rows continue to use their own point-in-time interval store.
+    sector_rotation_rows: dict[str, int]
+    try:
+        emit("compute_sector_rotation", 94, "计算板块轮动日指标…")
+        from app.services import sector_rotation
+
+        sector_rotation_rows = (
+            sector_rotation.compute_rotation_incremental(
+                repo, repo.store.data_dir, as_of=repo.latest_enriched_date()
+            ) if cache_refreshed else {"industry": 0, "concept": 0}
+        )
+        emit(
+            "compute_sector_rotation", 94,
+            f"板块轮动: 行业 {sector_rotation_rows['industry']} · 概念 {sector_rotation_rows['concept']}",
+        )
+        logger.info("compute_sector_rotation: %s", sector_rotation_rows)
+    except Exception as e:
+        logger.warning("compute_sector_rotation failed (soft): %s", e)
+        sector_rotation_rows = {"industry": 0, "concept": 0}
+        stage_errors.append(f"compute sector rotation: {e}")
+
     # Step 3: 刷新视图
     emit("refresh_views", 95, "刷新 DuckDB 视图…")
     _refresh_views(repo)
@@ -668,9 +703,11 @@ def run_now(
         "etf_daily_rows": written_etf_daily,
         "etf_adj_factor_symbols": etf_adj_symbols,
         "minute_rows": written_minute,
+        "cache_refreshed": cache_refreshed,
         "regime_days": regime_days,
         "mainline_rows": mainline_rows,
         "concept_membership_snapshot": concept_membership_snapshot,
+        "sector_rotation_rows": sector_rotation_rows,
         "lagging_symbols": len(lagging_symbols),
         "integrity_repair_from": repair_start.isoformat() if repair_start else None,
         "integrity_issues": len(integrity_issues),
@@ -1078,6 +1115,7 @@ def start_scheduler(repo: KlineRepository, capset: CapabilitySet) -> AsyncIOSche
         # 旧 capset —— 否则 Key 中途过期/续费后, 调度管道仍按旧档位打端点。
         app_state = _get_app_state()
         capset_live = getattr(app_state, "capabilities", None) or capset
+        result: dict | None = None
         # 管道运行期间暂停实时行情取数, 防止覆写同一批 parquet 竞态
         qs = getattr(app_state, "quote_service", None)
         try:
@@ -1090,7 +1128,8 @@ def start_scheduler(repo: KlineRepository, capset: CapabilitySet) -> AsyncIOSche
             # 即便有阶段软失败(run_now 末尾抛 PipelineStageError), 已落盘的日K/enriched
             # 仍需刷进内存缓存, 否则 live_agg 基准列停留在旧交易日。放 finally 保证部分
             # 成功也生效; 随后异常继续上抛, 由 _run_tracked 标记任务 failed。
-            repo.refresh_cache()
+            if result is None or not result.get("cache_refreshed"):
+                repo.refresh_cache()
         return result
 
     scheduler.add_job(

@@ -1,0 +1,1122 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "type": "file",
+      "name": "test_robustness_metrics.py",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "summary": "为 test_robustness_metrics.py 所覆盖的功能提供自动化测试，验证预期行为与回归场景。",
+      "tags": [
+        "测试",
+        "质量保障",
+        "源码"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_all_losses_is_exact",
+      "type": "function",
+      "name": "test_sortino_all_losses_is_exact",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        21,
+        27
+      ],
+      "summary": "定义 test_sortino_all_losses_is_exact，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_no_downside_returns_none",
+      "type": "function",
+      "name": "test_sortino_no_downside_returns_none",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        30,
+        33
+      ],
+      "summary": "定义 test_sortino_no_downside_returns_none，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_exceeds_sharpe_when_downside_is_tamer",
+      "type": "function",
+      "name": "test_sortino_exceeds_sharpe_when_downside_is_tamer",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        36,
+        44
+      ],
+      "summary": "定义 test_sortino_exceeds_sharpe_when_downside_is_tamer，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_too_few_points",
+      "type": "function",
+      "name": "test_sortino_too_few_points",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        47,
+        49
+      ],
+      "summary": "定义 test_sortino_too_few_points，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_is_deterministic_snapshot",
+      "type": "function",
+      "name": "test_mc_drawdown_is_deterministic_snapshot",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        62,
+        68
+      ],
+      "summary": "定义 test_mc_drawdown_is_deterministic_snapshot，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_p95_strictly_worse_and_negative",
+      "type": "function",
+      "name": "test_mc_drawdown_p95_strictly_worse_and_negative",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        71,
+        75
+      ],
+      "summary": "定义 test_mc_drawdown_p95_strictly_worse_and_negative，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_ignores_non_finite",
+      "type": "function",
+      "name": "test_mc_drawdown_ignores_non_finite",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        78,
+        81
+      ],
+      "summary": "定义 test_mc_drawdown_ignores_non_finite，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_clips_sub_minus_100pct_pnl",
+      "type": "function",
+      "name": "test_mc_drawdown_clips_sub_minus_100pct_pnl",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        84,
+        91
+      ],
+      "summary": "定义 test_mc_drawdown_clips_sub_minus_100pct_pnl，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_all_positive_has_zero_drawdown",
+      "type": "function",
+      "name": "test_mc_drawdown_all_positive_has_zero_drawdown",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        94,
+        99
+      ],
+      "summary": "定义 test_mc_drawdown_all_positive_has_zero_drawdown，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_too_few_trades",
+      "type": "function",
+      "name": "test_mc_drawdown_too_few_trades",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        102,
+        105
+      ],
+      "summary": "定义 test_mc_drawdown_too_few_trades，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:_trades",
+      "type": "function",
+      "name": "_trades",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        112,
+        120
+      ],
+      "summary": "定义 _trades，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_emits_robustness_fields",
+      "type": "function",
+      "name": "test_calc_stats_emits_robustness_fields",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        123,
+        131
+      ],
+      "summary": "定义 test_calc_stats_emits_robustness_fields，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_empty_trades_safe",
+      "type": "function",
+      "name": "test_calc_stats_empty_trades_safe",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        134,
+        137
+      ],
+      "summary": "定义 test_calc_stats_empty_trades_safe，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_portfolio_stats_emits_robustness_fields",
+      "type": "function",
+      "name": "test_portfolio_stats_emits_robustness_fields",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        140,
+        151
+      ],
+      "summary": "定义 test_portfolio_stats_emits_robustness_fields，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_independent_candidate_stats_emits_sortino_and_mc",
+      "type": "function",
+      "name": "test_independent_candidate_stats_emits_sortino_and_mc",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        154,
+        167
+      ],
+      "summary": "定义 test_independent_candidate_stats_emits_sortino_and_mc，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_lightweight_candidate_stats_do_not_call_monte_carlo",
+      "type": "function",
+      "name": "test_lightweight_candidate_stats_do_not_call_monte_carlo",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        170,
+        194
+      ],
+      "summary": "定义 test_lightweight_candidate_stats_do_not_call_monte_carlo，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_all_wins_reports_sortino_none",
+      "type": "function",
+      "name": "test_calc_stats_all_wins_reports_sortino_none",
+      "filePath": "backend/tests/backtest/test_robustness_metrics.py",
+      "lineRange": [
+        197,
+        201
+      ],
+      "summary": "定义 test_calc_stats_all_wins_reports_sortino_none，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "type": "file",
+      "name": "test_strategy_backtest_correctness.py",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "summary": "为 test_strategy_backtest_correctness.py 所覆盖的功能提供自动化测试，验证预期行为与回归场景。",
+      "tags": [
+        "测试",
+        "质量保障",
+        "源码"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:_strategy",
+      "type": "function",
+      "name": "_strategy",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        16,
+        34
+      ],
+      "summary": "定义 _strategy，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "函数",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_basic_filter_only_limits_entries_not_panel_rows",
+      "type": "function",
+      "name": "test_basic_filter_only_limits_entries_not_panel_rows",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        124,
+        165
+      ],
+      "summary": "定义 test_basic_filter_only_limits_entries_not_panel_rows，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_non_matrix_strategy_applies_regime_filter_and_reports_config",
+      "type": "function",
+      "name": "test_non_matrix_strategy_applies_regime_filter_and_reports_config",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        168,
+        219
+      ],
+      "summary": "定义 test_non_matrix_strategy_applies_regime_filter_and_reports_config，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_regime_filter_matches_raw_five_level_states",
+      "type": "function",
+      "name": "test_regime_filter_matches_raw_five_level_states",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        222,
+        273
+      ],
+      "summary": "定义 test_regime_filter_matches_raw_five_level_states，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_selection_stats_explain_entry_trigger_filtering",
+      "type": "function",
+      "name": "test_selection_stats_explain_entry_trigger_filtering",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        276,
+        317
+      ],
+      "summary": "定义 test_selection_stats_explain_entry_trigger_filtering，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_score_normalizes_inside_strategy_candidate_universe",
+      "type": "function",
+      "name": "test_score_normalizes_inside_strategy_candidate_universe",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        320,
+        334
+      ],
+      "summary": "定义 test_score_normalizes_inside_strategy_candidate_universe，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_full_mode_executes_every_candidate_with_strategy_rules",
+      "type": "function",
+      "name": "test_full_mode_executes_every_candidate_with_strategy_rules",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        337,
+        371
+      ],
+      "summary": "定义 test_full_mode_executes_every_candidate_with_strategy_rules，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_native_strategy_uses_shared_orchestrator_path",
+      "type": "function",
+      "name": "test_matrix_native_strategy_uses_shared_orchestrator_path",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        374,
+        423
+      ],
+      "summary": "定义 test_matrix_native_strategy_uses_shared_orchestrator_path，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_native_accepts_legacy_default_signal_overrides_but_rejects_replacements",
+      "type": "function",
+      "name": "test_matrix_native_accepts_legacy_default_signal_overrides_but_rejects_replacements",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        426,
+        476
+      ],
+      "summary": "定义 test_matrix_native_accepts_legacy_default_signal_overrides_but_rejects_replacements，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_optimizer_preparation_loads_and_builds_base_data_once",
+      "type": "function",
+      "name": "test_matrix_optimizer_preparation_loads_and_builds_base_data_once",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        479,
+        534
+      ],
+      "summary": "定义 test_matrix_optimizer_preparation_loads_and_builds_base_data_once，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_prepare_signature_includes_regime_filter",
+      "type": "function",
+      "name": "test_matrix_prepare_signature_includes_regime_filter",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        537,
+        549
+      ],
+      "summary": "定义 test_matrix_prepare_signature_includes_regime_filter，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_cache_preserves_trades_daily_equity_and_core_stats",
+      "type": "function",
+      "name": "test_matrix_cache_preserves_trades_daily_equity_and_core_stats",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        552,
+        638
+      ],
+      "summary": "定义 test_matrix_cache_preserves_trades_daily_equity_and_core_stats，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_StrategyEngineStub",
+      "type": "class",
+      "name": "_StrategyEngineStub",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        37,
+        42
+      ],
+      "summary": "定义 _StrategyEngineStub 类型，封装相关状态与协作行为。",
+      "tags": [
+        "类型",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_RepoStub",
+      "type": "class",
+      "name": "_RepoStub",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        45,
+        50
+      ],
+      "summary": "定义 _RepoStub 类型，封装相关状态与协作行为。",
+      "tags": [
+        "类型",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_EngineStub",
+      "type": "class",
+      "name": "_EngineStub",
+      "filePath": "backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "lineRange": [
+        53,
+        121
+      ],
+      "summary": "定义 _EngineStub 类型，封装相关状态与协作行为。",
+      "tags": [
+        "类型",
+        "业务逻辑",
+        "实现"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_all_losses_is_exact",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_all_losses_is_exact",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_no_downside_returns_none",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_no_downside_returns_none",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_exceeds_sharpe_when_downside_is_tamer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_exceeds_sharpe_when_downside_is_tamer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_too_few_points",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_sortino_too_few_points",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_is_deterministic_snapshot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_is_deterministic_snapshot",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_p95_strictly_worse_and_negative",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_p95_strictly_worse_and_negative",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_ignores_non_finite",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_ignores_non_finite",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_clips_sub_minus_100pct_pnl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_clips_sub_minus_100pct_pnl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_all_positive_has_zero_drawdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_all_positive_has_zero_drawdown",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_too_few_trades",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_mc_drawdown_too_few_trades",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:_trades",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:_trades",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_emits_robustness_fields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_emits_robustness_fields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_empty_trades_safe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_empty_trades_safe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_portfolio_stats_emits_robustness_fields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_portfolio_stats_emits_robustness_fields",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_independent_candidate_stats_emits_sortino_and_mc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_independent_candidate_stats_emits_sortino_and_mc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_lightweight_candidate_stats_do_not_call_monte_carlo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_lightweight_candidate_stats_do_not_call_monte_carlo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_all_wins_reports_sortino_none",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "function:backend/tests/backtest/test_robustness_metrics.py:test_calc_stats_all_wins_reports_sortino_none",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "file:backend/app/backtest/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_robustness_metrics.py",
+      "target": "file:backend/app/backtest/engine.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:_strategy",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:_strategy",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_basic_filter_only_limits_entries_not_panel_rows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_basic_filter_only_limits_entries_not_panel_rows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_non_matrix_strategy_applies_regime_filter_and_reports_config",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_non_matrix_strategy_applies_regime_filter_and_reports_config",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_regime_filter_matches_raw_five_level_states",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_regime_filter_matches_raw_five_level_states",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_selection_stats_explain_entry_trigger_filtering",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_selection_stats_explain_entry_trigger_filtering",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_score_normalizes_inside_strategy_candidate_universe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_score_normalizes_inside_strategy_candidate_universe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_full_mode_executes_every_candidate_with_strategy_rules",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_full_mode_executes_every_candidate_with_strategy_rules",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_native_strategy_uses_shared_orchestrator_path",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_native_strategy_uses_shared_orchestrator_path",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_native_accepts_legacy_default_signal_overrides_but_rejects_replacements",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_native_accepts_legacy_default_signal_overrides_but_rejects_replacements",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_optimizer_preparation_loads_and_builds_base_data_once",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_optimizer_preparation_loads_and_builds_base_data_once",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_prepare_signature_includes_regime_filter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_prepare_signature_includes_regime_filter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_cache_preserves_trades_daily_equity_and_core_stats",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "function:backend/tests/backtest/test_strategy_backtest_correctness.py:test_matrix_cache_preserves_trades_daily_equity_and_core_stats",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_StrategyEngineStub",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_StrategyEngineStub",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_RepoStub",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_RepoStub",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_EngineStub",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "class:backend/tests/backtest/test_strategy_backtest_correctness.py:_EngineStub",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/backtest/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/backtest/matrix.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/backtest/strategy.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/services/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/services/regime_builder.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/strategy/engine.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/backtest/engine.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/backtest/matrix.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/backtest/strategy.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/services/__init__.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/services/regime_builder.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/tests/backtest/test_strategy_backtest_correctness.py",
+      "target": "file:backend/app/strategy/engine.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

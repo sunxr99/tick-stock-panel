@@ -1,0 +1,141 @@
+{
+  "nodes": [
+    {
+      "id": "service:.dockerignore",
+      "type": "service",
+      "name": ".dockerignore",
+      "filePath": ".dockerignore",
+      "summary": "部署或自动化配置，负责承载 .dockerignore 所定义的功能与协作关系。",
+      "tags": [
+        "基础设施",
+        "部署",
+        "实现"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "service:Dockerfile",
+      "type": "service",
+      "name": "Dockerfile",
+      "filePath": "Dockerfile",
+      "summary": "部署或自动化配置，负责承载 Dockerfile 所定义的功能与协作关系。",
+      "tags": [
+        "基础设施",
+        "部署",
+        "实现"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:Dockerfile:frontend-builder",
+      "type": "service",
+      "name": "frontend-builder",
+      "filePath": "Dockerfile",
+      "lineRange": [
+        15,
+        35
+      ],
+      "summary": "定义 frontend-builder，作为 Dockerfile 中的重要基础设施或模式元素。",
+      "tags": [
+        "定义",
+        "配置",
+        "基础设施"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:Dockerfile:stocksdk-builder",
+      "type": "service",
+      "name": "stocksdk-builder",
+      "filePath": "Dockerfile",
+      "lineRange": [
+        36,
+        51
+      ],
+      "summary": "定义 stocksdk-builder，作为 Dockerfile 中的重要基础设施或模式元素。",
+      "tags": [
+        "定义",
+        "配置",
+        "基础设施"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:Dockerfile:codex-builder",
+      "type": "service",
+      "name": "codex-builder",
+      "filePath": "Dockerfile",
+      "lineRange": [
+        52,
+        65
+      ],
+      "summary": "定义 codex-builder，作为 Dockerfile 中的重要基础设施或模式元素。",
+      "tags": [
+        "定义",
+        "配置",
+        "基础设施"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:Dockerfile:runtime",
+      "type": "service",
+      "name": "runtime",
+      "filePath": "Dockerfile",
+      "lineRange": [
+        66,
+        144
+      ],
+      "summary": "定义 runtime，作为 Dockerfile 中的重要基础设施或模式元素。",
+      "tags": [
+        "定义",
+        "配置",
+        "基础设施"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:docker-compose.yml",
+      "type": "service",
+      "name": "docker-compose.yml",
+      "filePath": "docker-compose.yml",
+      "summary": "部署或自动化配置，负责承载 docker-compose.yml 所定义的功能与协作关系。",
+      "tags": [
+        "基础设施",
+        "部署",
+        "实现"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "service:Dockerfile",
+      "target": "service:Dockerfile:frontend-builder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "service:Dockerfile:stocksdk-builder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "service:Dockerfile:codex-builder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "service:Dockerfile",
+      "target": "service:Dockerfile:runtime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

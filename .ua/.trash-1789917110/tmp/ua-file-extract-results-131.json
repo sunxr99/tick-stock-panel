@@ -1,0 +1,5203 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 23,
+  "filesSkipped": [
+    "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/golden/diagnostic_danger.txt",
+    "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/golden/diagnostic_healthy.txt"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 23,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 23,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/cli/test_event_stream.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 39,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "test_load_scratchpad_events_normalizes_trace",
+          "startLine": 9,
+          "endLine": 39,
+          "params": [
+            "tmp_path"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_load_scratchpad_events_normalizes_trace",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_load_scratchpad_events_normalizes_trace",
+          "callee": "trace.write_text",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_load_scratchpad_events_normalizes_trace",
+          "callee": "\"\\n\".join",
+          "lineNumber": 12
+        },
+        {
+          "caller": "test_load_scratchpad_events_normalizes_trace",
+          "callee": "json.dumps",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_load_scratchpad_events_normalizes_trace",
+          "callee": "json.dumps",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_load_scratchpad_events_normalizes_trace",
+          "callee": "json.dumps",
+          "lineNumber": 25
+        },
+        {
+          "caller": "test_load_scratchpad_events_normalizes_trace",
+          "callee": "load_scratchpad_events",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_load_scratchpad_events_normalizes_trace",
+          "callee": "json.loads",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_load_scratchpad_events_normalizes_trace",
+          "callee": "scratchpad_events_jsonl([trace]).splitlines",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_load_scratchpad_events_normalizes_trace",
+          "callee": "scratchpad_events_jsonl",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/cli/test_ipc_stdio.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 583,
+      "nonEmptyLines": 452,
+      "functions": [
+        {
+          "name": "_run_ipc",
+          "startLine": 14,
+          "endLine": 31,
+          "params": [
+            "stdin_text",
+            "extra_setup",
+            "timeout"
+          ]
+        },
+        {
+          "name": "_protocol_lines",
+          "startLine": 34,
+          "endLine": 40,
+          "params": [
+            "stdout"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TestProtocol",
+          "startLine": 43,
+          "endLine": 119,
+          "methods": [
+            "test_ready_then_result_then_end",
+            "test_request_ids_preserved",
+            "test_business_event_cannot_override_stream_id",
+            "test_unknown_method_is_error_not_crash",
+            "test_malformed_json_line_survives",
+            "test_blank_lines_ignored",
+            "test_eof_exits_cleanly",
+            "test_non_object_message_rejected",
+            "test_queries_are_not_blocked_by_a_long_request"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestStdoutGuard",
+          "startLine": 122,
+          "endLine": 147,
+          "methods": [
+            "test_stray_print_does_not_corrupt_protocol",
+            "test_stray_print_redirected_to_stderr"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestMethodErrors",
+          "startLine": 150,
+          "endLine": 169,
+          "methods": [
+            "test_chat_without_text_is_invalid_params",
+            "test_approve_decide_without_id",
+            "test_approve_decide_unknown_id",
+            "test_params_not_dict_is_tolerated"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestApprovalOwnership",
+          "startLine": 172,
+          "endLine": 300,
+          "methods": [
+            "_answer",
+            "test_approval_nav_uses_session_tool_registry",
+            "test_desktop_approval_records_the_current_user",
+            "test_each_confirm_gets_its_own_record",
+            "test_mismatched_account_cannot_approve",
+            "test_list_only_returns_current_account",
+            "test_list_exposes_the_risk_reason"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestEventProjection",
+          "startLine": 303,
+          "endLine": 329,
+          "methods": [
+            "test_only_whitelisted_fields_pass",
+            "test_unknown_event_type_reduced_to_type",
+            "test_non_dict_event",
+            "test_done_carries_text",
+            "test_thinking_text_does_not_cross_the_desktop_boundary"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestMethodTable",
+          "startLine": 332,
+          "endLine": 362,
+          "methods": [
+            "test_all_methods_are_generators",
+            "test_expected_methods_present",
+            "test_dispatch_rejects_unknown"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestScheduleRun",
+          "startLine": 365,
+          "endLine": 479,
+          "methods": [
+            "sched",
+            "_run",
+            "test_runs_the_configured_action",
+            "test_marks_source_manual_not_daemon",
+            "test_surfaces_queued_approvals",
+            "test_failure_is_reported_not_raised",
+            "test_does_not_touch_last_status",
+            "test_unknown_id",
+            "test_missing_id",
+            "test_empty_action_is_rejected_before_running",
+            "test_concurrent_rerun_is_refused",
+            "test_lock_is_released_after_a_failed_run"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestStdoutGuardAtFdLevel",
+          "startLine": 482,
+          "endLine": 547,
+          "methods": [
+            "_run",
+            "test_raw_fd_write_cannot_reach_the_protocol",
+            "test_subprocess_output_cannot_reach_the_protocol",
+            "test_python_print_still_goes_to_stderr",
+            "test_every_protocol_line_is_valid_json",
+            "test_guard_is_idempotent"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestAskUserWithoutTty",
+          "startLine": 550,
+          "endLine": 583,
+          "methods": [
+            "test_refuses_instead_of_blocking",
+            "test_protocol_stdin_is_not_consumed"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_run_ipc",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "_protocol_lines",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "TestProtocol",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "TestStdoutGuard",
+          "line": 122,
+          "isDefault": false
+        },
+        {
+          "name": "TestMethodErrors",
+          "line": 150,
+          "isDefault": false
+        },
+        {
+          "name": "TestApprovalOwnership",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "TestEventProjection",
+          "line": 303,
+          "isDefault": false
+        },
+        {
+          "name": "TestMethodTable",
+          "line": 332,
+          "isDefault": false
+        },
+        {
+          "name": "TestScheduleRun",
+          "line": 365,
+          "isDefault": false
+        },
+        {
+          "name": "TestStdoutGuardAtFdLevel",
+          "line": 482,
+          "isDefault": false
+        },
+        {
+          "name": "TestAskUserWithoutTty",
+          "line": 550,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_run_ipc",
+          "callee": "\"\\n\".join",
+          "lineNumber": 15
+        },
+        {
+          "caller": "_run_ipc",
+          "callee": "subprocess.run",
+          "lineNumber": 24
+        },
+        {
+          "caller": "_protocol_lines",
+          "callee": "stdout.strip().splitlines",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_protocol_lines",
+          "callee": "stdout.strip",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_protocol_lines",
+          "callee": "raw.strip",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_protocol_lines",
+          "callee": "lines.append",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_protocol_lines",
+          "callee": "json.loads",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_ready_then_result_then_end",
+          "callee": "_run_ipc",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_ready_then_result_then_end",
+          "callee": "_protocol_lines",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_request_ids_preserved",
+          "callee": "_run_ipc",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_request_ids_preserved",
+          "callee": "e.get",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_request_ids_preserved",
+          "callee": "_protocol_lines",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_request_ids_preserved",
+          "callee": "set",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_business_event_cannot_override_stream_id",
+          "callee": "\"\\n\".join",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_business_event_cannot_override_stream_id",
+          "callee": "_run_ipc",
+          "lineNumber": 67
+        },
+        {
+          "caller": "test_business_event_cannot_override_stream_id",
+          "callee": "next",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_business_event_cannot_override_stream_id",
+          "callee": "_protocol_lines",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_business_event_cannot_override_stream_id",
+          "callee": "e.get",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_unknown_method_is_error_not_crash",
+          "callee": "_run_ipc",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_unknown_method_is_error_not_crash",
+          "callee": "_protocol_lines",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_unknown_method_is_error_not_crash",
+          "callee": "next",
+          "lineNumber": 78
+        },
+        {
+          "caller": "test_unknown_method_is_error_not_crash",
+          "callee": "e.get",
+          "lineNumber": 78
+        },
+        {
+          "caller": "test_unknown_method_is_error_not_crash",
+          "callee": "any",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_unknown_method_is_error_not_crash",
+          "callee": "e.get",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_malformed_json_line_survives",
+          "callee": "_run_ipc",
+          "lineNumber": 83
+        },
+        {
+          "caller": "test_malformed_json_line_survives",
+          "callee": "_protocol_lines",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_malformed_json_line_survives",
+          "callee": "any",
+          "lineNumber": 85
+        },
+        {
+          "caller": "test_malformed_json_line_survives",
+          "callee": "e.get",
+          "lineNumber": 85
+        },
+        {
+          "caller": "test_malformed_json_line_survives",
+          "callee": "any",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_malformed_json_line_survives",
+          "callee": "e.get",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_blank_lines_ignored",
+          "callee": "_run_ipc",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_blank_lines_ignored",
+          "callee": "any",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_blank_lines_ignored",
+          "callee": "e.get",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_blank_lines_ignored",
+          "callee": "_protocol_lines",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_eof_exits_cleanly",
+          "callee": "_run_ipc",
+          "lineNumber": 93
+        },
+        {
+          "caller": "test_non_object_message_rejected",
+          "callee": "_run_ipc",
+          "lineNumber": 97
+        },
+        {
+          "caller": "test_non_object_message_rejected",
+          "callee": "any",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_non_object_message_rejected",
+          "callee": "e.get",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_non_object_message_rejected",
+          "callee": "_protocol_lines",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_queries_are_not_blocked_by_a_long_request",
+          "callee": "\"\\n\".join",
+          "lineNumber": 101
+        },
+        {
+          "caller": "test_queries_are_not_blocked_by_a_long_request",
+          "callee": "_protocol_lines",
+          "lineNumber": 112
+        },
+        {
+          "caller": "test_queries_are_not_blocked_by_a_long_request",
+          "callee": "_run_ipc",
+          "lineNumber": 112
+        },
+        {
+          "caller": "test_queries_are_not_blocked_by_a_long_request",
+          "callee": "next",
+          "lineNumber": 113
+        },
+        {
+          "caller": "test_queries_are_not_blocked_by_a_long_request",
+          "callee": "enumerate",
+          "lineNumber": 114
+        },
+        {
+          "caller": "test_queries_are_not_blocked_by_a_long_request",
+          "callee": "event.get",
+          "lineNumber": 114
+        },
+        {
+          "caller": "test_queries_are_not_blocked_by_a_long_request",
+          "callee": "next",
+          "lineNumber": 116
+        },
+        {
+          "caller": "test_queries_are_not_blocked_by_a_long_request",
+          "callee": "enumerate",
+          "lineNumber": 117
+        },
+        {
+          "caller": "test_queries_are_not_blocked_by_a_long_request",
+          "callee": "event.get",
+          "lineNumber": 117
+        },
+        {
+          "caller": "test_stray_print_does_not_corrupt_protocol",
+          "callee": "_run_ipc",
+          "lineNumber": 138
+        },
+        {
+          "caller": "test_stray_print_does_not_corrupt_protocol",
+          "callee": "_protocol_lines",
+          "lineNumber": 140
+        },
+        {
+          "caller": "test_stray_print_does_not_corrupt_protocol",
+          "callee": "any",
+          "lineNumber": 141
+        },
+        {
+          "caller": "test_stray_print_does_not_corrupt_protocol",
+          "callee": "e.get",
+          "lineNumber": 141
+        },
+        {
+          "caller": "test_stray_print_redirected_to_stderr",
+          "callee": "_run_ipc",
+          "lineNumber": 146
+        },
+        {
+          "caller": "test_chat_without_text_is_invalid_params",
+          "callee": "_run_ipc",
+          "lineNumber": 152
+        },
+        {
+          "caller": "test_chat_without_text_is_invalid_params",
+          "callee": "next",
+          "lineNumber": 153
+        },
+        {
+          "caller": "test_chat_without_text_is_invalid_params",
+          "callee": "_protocol_lines",
+          "lineNumber": 153
+        },
+        {
+          "caller": "test_chat_without_text_is_invalid_params",
+          "callee": "e.get",
+          "lineNumber": 153
+        },
+        {
+          "caller": "test_approve_decide_without_id",
+          "callee": "_run_ipc",
+          "lineNumber": 157
+        },
+        {
+          "caller": "test_approve_decide_without_id",
+          "callee": "next",
+          "lineNumber": 158
+        },
+        {
+          "caller": "test_approve_decide_without_id",
+          "callee": "_protocol_lines",
+          "lineNumber": 158
+        },
+        {
+          "caller": "test_approve_decide_without_id",
+          "callee": "e.get",
+          "lineNumber": 158
+        },
+        {
+          "caller": "test_approve_decide_unknown_id",
+          "callee": "_run_ipc",
+          "lineNumber": 163
+        },
+        {
+          "caller": "test_approve_decide_unknown_id",
+          "callee": "next",
+          "lineNumber": 164
+        },
+        {
+          "caller": "test_approve_decide_unknown_id",
+          "callee": "_protocol_lines",
+          "lineNumber": 164
+        },
+        {
+          "caller": "test_approve_decide_unknown_id",
+          "callee": "e.get",
+          "lineNumber": 164
+        },
+        {
+          "caller": "test_params_not_dict_is_tolerated",
+          "callee": "_run_ipc",
+          "lineNumber": 168
+        },
+        {
+          "caller": "test_params_not_dict_is_tolerated",
+          "callee": "any",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_params_not_dict_is_tolerated",
+          "callee": "e.get",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_params_not_dict_is_tolerated",
+          "callee": "_protocol_lines",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_approval_nav_uses_session_tool_registry",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 189
+        },
+        {
+          "caller": "test_approval_nav_uses_session_tool_registry",
+          "callee": "object",
+          "lineNumber": 190
+        },
+        {
+          "caller": "test_approval_nav_uses_session_tool_registry",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 192
+        },
+        {
+          "caller": "test_approval_nav_uses_session_tool_registry",
+          "callee": "seen.append",
+          "lineNumber": 194
+        },
+        {
+          "caller": "test_approval_nav_uses_session_tool_registry",
+          "callee": "DesktopSession",
+          "lineNumber": 196
+        },
+        {
+          "caller": "test_approval_nav_uses_session_tool_registry",
+          "callee": "self._answer",
+          "lineNumber": 198
+        },
+        {
+          "caller": "test_approval_nav_uses_session_tool_registry",
+          "callee": "session._confirm",
+          "lineNumber": 199
+        },
+        {
+          "caller": "test_approval_nav_uses_session_tool_registry",
+          "callee": "aq.list_decisions",
+          "lineNumber": 204
+        },
+        {
+          "caller": "test_approval_nav_uses_session_tool_registry",
+          "callee": "pytest.approx",
+          "lineNumber": 207
+        },
+        {
+          "caller": "test_desktop_approval_records_the_current_user",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 213
+        },
+        {
+          "caller": "test_desktop_approval_records_the_current_user",
+          "callee": "DesktopSession",
+          "lineNumber": 214
+        },
+        {
+          "caller": "test_desktop_approval_records_the_current_user",
+          "callee": "self._answer",
+          "lineNumber": 216
+        },
+        {
+          "caller": "test_desktop_approval_records_the_current_user",
+          "callee": "session._confirm",
+          "lineNumber": 217
+        },
+        {
+          "caller": "test_desktop_approval_records_the_current_user",
+          "callee": "aq.list_decisions",
+          "lineNumber": 219
+        },
+        {
+          "caller": "test_each_confirm_gets_its_own_record",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 232
+        },
+        {
+          "caller": "test_each_confirm_gets_its_own_record",
+          "callee": "DesktopSession",
+          "lineNumber": 233
+        },
+        {
+          "caller": "test_each_confirm_gets_its_own_record",
+          "callee": "self._answer",
+          "lineNumber": 234
+        },
+        {
+          "caller": "test_each_confirm_gets_its_own_record",
+          "callee": "session._confirm",
+          "lineNumber": 235
+        },
+        {
+          "caller": "test_each_confirm_gets_its_own_record",
+          "callee": "session._confirm",
+          "lineNumber": 236
+        },
+        {
+          "caller": "test_each_confirm_gets_its_own_record",
+          "callee": "aq.list_decisions",
+          "lineNumber": 238
+        },
+        {
+          "caller": "test_each_confirm_gets_its_own_record",
+          "callee": "len",
+          "lineNumber": 240
+        },
+        {
+          "caller": "test_each_confirm_gets_its_own_record",
+          "callee": "next",
+          "lineNumber": 241
+        },
+        {
+          "caller": "test_mismatched_account_cannot_approve",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 249
+        },
+        {
+          "caller": "test_mismatched_account_cannot_approve",
+          "callee": "aq.enqueue",
+          "lineNumber": 250
+        },
+        {
+          "caller": "test_mismatched_account_cannot_approve",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 257
+        },
+        {
+          "caller": "test_mismatched_account_cannot_approve",
+          "callee": "pytest.raises",
+          "lineNumber": 259
+        },
+        {
+          "caller": "test_mismatched_account_cannot_approve",
+          "callee": "list",
+          "lineNumber": 260
+        },
+        {
+          "caller": "test_mismatched_account_cannot_approve",
+          "callee": "methods.approve_decide",
+          "lineNumber": 260
+        },
+        {
+          "caller": "test_mismatched_account_cannot_approve",
+          "callee": "aq.get",
+          "lineNumber": 263
+        },
+        {
+          "caller": "test_list_only_returns_current_account",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 270
+        },
+        {
+          "caller": "test_list_only_returns_current_account",
+          "callee": "aq.enqueue",
+          "lineNumber": 271
+        },
+        {
+          "caller": "test_list_only_returns_current_account",
+          "callee": "aq.enqueue",
+          "lineNumber": 272
+        },
+        {
+          "caller": "test_list_only_returns_current_account",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 273
+        },
+        {
+          "caller": "test_list_only_returns_current_account",
+          "callee": "list",
+          "lineNumber": 275
+        },
+        {
+          "caller": "test_list_only_returns_current_account",
+          "callee": "methods.approve_list",
+          "lineNumber": 275
+        },
+        {
+          "caller": "test_list_exposes_the_risk_reason",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 285
+        },
+        {
+          "caller": "test_list_exposes_the_risk_reason",
+          "callee": "aq.enqueue",
+          "lineNumber": 286
+        },
+        {
+          "caller": "test_list_exposes_the_risk_reason",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 295
+        },
+        {
+          "caller": "test_list_exposes_the_risk_reason",
+          "callee": "list",
+          "lineNumber": 297
+        },
+        {
+          "caller": "test_list_exposes_the_risk_reason",
+          "callee": "methods.approve_list",
+          "lineNumber": 297
+        },
+        {
+          "caller": "test_list_exposes_the_risk_reason",
+          "callee": "pytest.approx",
+          "lineNumber": 300
+        },
+        {
+          "caller": "test_only_whitelisted_fields_pass",
+          "callee": "_project",
+          "lineNumber": 308
+        },
+        {
+          "caller": "test_unknown_event_type_reduced_to_type",
+          "callee": "_project",
+          "lineNumber": 313
+        },
+        {
+          "caller": "test_non_dict_event",
+          "callee": "_project",
+          "lineNumber": 318
+        },
+        {
+          "caller": "test_done_carries_text",
+          "callee": "_project",
+          "lineNumber": 323
+        },
+        {
+          "caller": "test_thinking_text_does_not_cross_the_desktop_boundary",
+          "callee": "_project",
+          "lineNumber": 329
+        },
+        {
+          "caller": "test_all_methods_are_generators",
+          "callee": "METHODS.items",
+          "lineNumber": 338
+        },
+        {
+          "caller": "test_all_methods_are_generators",
+          "callee": "inspect.isgeneratorfunction",
+          "lineNumber": 339
+        },
+        {
+          "caller": "test_expected_methods_present",
+          "callee": "set",
+          "lineNumber": 356
+        },
+        {
+          "caller": "test_dispatch_rejects_unknown",
+          "callee": "pytest.raises",
+          "lineNumber": 361
+        },
+        {
+          "caller": "test_dispatch_rejects_unknown",
+          "callee": "list",
+          "lineNumber": 362
+        },
+        {
+          "caller": "test_dispatch_rejects_unknown",
+          "callee": "dispatch",
+          "lineNumber": 362
+        },
+        {
+          "caller": "sched",
+          "callee": "scheduler.Schedule",
+          "lineNumber": 374
+        },
+        {
+          "caller": "sched",
+          "callee": "scheduler.Schedule",
+          "lineNumber": 375
+        },
+        {
+          "caller": "sched",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 377
+        },
+        {
+          "caller": "sched",
+          "callee": "set",
+          "lineNumber": 377
+        },
+        {
+          "caller": "sched",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 378
+        },
+        {
+          "caller": "fake_run_once",
+          "callee": "calls.append",
+          "lineNumber": 387
+        },
+        {
+          "caller": "_run",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 390
+        },
+        {
+          "caller": "_run",
+          "callee": "list",
+          "lineNumber": 391
+        },
+        {
+          "caller": "_run",
+          "callee": "methods.schedule_run",
+          "lineNumber": 391
+        },
+        {
+          "caller": "test_runs_the_configured_action",
+          "callee": "self._run",
+          "lineNumber": 397
+        },
+        {
+          "caller": "test_runs_the_configured_action",
+          "callee": "HeadlessResult",
+          "lineNumber": 397
+        },
+        {
+          "caller": "test_marks_source_manual_not_daemon",
+          "callee": "self._run",
+          "lineNumber": 406
+        },
+        {
+          "caller": "test_marks_source_manual_not_daemon",
+          "callee": "HeadlessResult",
+          "lineNumber": 406
+        },
+        {
+          "caller": "test_surfaces_queued_approvals",
+          "callee": "self._run",
+          "lineNumber": 413
+        },
+        {
+          "caller": "test_surfaces_queued_approvals",
+          "callee": "HeadlessResult",
+          "lineNumber": 413
+        },
+        {
+          "caller": "test_failure_is_reported_not_raised",
+          "callee": "self._run",
+          "lineNumber": 421
+        },
+        {
+          "caller": "test_failure_is_reported_not_raised",
+          "callee": "HeadlessResult",
+          "lineNumber": 421
+        },
+        {
+          "caller": "test_does_not_touch_last_status",
+          "callee": "self._run",
+          "lineNumber": 432
+        },
+        {
+          "caller": "test_does_not_touch_last_status",
+          "callee": "HeadlessResult",
+          "lineNumber": 432
+        },
+        {
+          "caller": "test_unknown_id",
+          "callee": "pytest.raises",
+          "lineNumber": 440
+        },
+        {
+          "caller": "test_unknown_id",
+          "callee": "list",
+          "lineNumber": 441
+        },
+        {
+          "caller": "test_unknown_id",
+          "callee": "schedule_run",
+          "lineNumber": 441
+        },
+        {
+          "caller": "test_missing_id",
+          "callee": "pytest.raises",
+          "lineNumber": 447
+        },
+        {
+          "caller": "test_missing_id",
+          "callee": "list",
+          "lineNumber": 448
+        },
+        {
+          "caller": "test_missing_id",
+          "callee": "schedule_run",
+          "lineNumber": 448
+        },
+        {
+          "caller": "test_empty_action_is_rejected_before_running",
+          "callee": "pytest.raises",
+          "lineNumber": 454
+        },
+        {
+          "caller": "test_empty_action_is_rejected_before_running",
+          "callee": "list",
+          "lineNumber": 455
+        },
+        {
+          "caller": "test_empty_action_is_rejected_before_running",
+          "callee": "schedule_run",
+          "lineNumber": 455
+        },
+        {
+          "caller": "test_concurrent_rerun_is_refused",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 462
+        },
+        {
+          "caller": "test_concurrent_rerun_is_refused",
+          "callee": "pytest.raises",
+          "lineNumber": 464
+        },
+        {
+          "caller": "test_concurrent_rerun_is_refused",
+          "callee": "list",
+          "lineNumber": 465
+        },
+        {
+          "caller": "test_concurrent_rerun_is_refused",
+          "callee": "methods.schedule_run",
+          "lineNumber": 465
+        },
+        {
+          "caller": "boom",
+          "callee": "RuntimeError",
+          "lineNumber": 473
+        },
+        {
+          "caller": "test_lock_is_released_after_a_failed_run",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 475
+        },
+        {
+          "caller": "test_lock_is_released_after_a_failed_run",
+          "callee": "pytest.raises",
+          "lineNumber": 476
+        },
+        {
+          "caller": "test_lock_is_released_after_a_failed_run",
+          "callee": "list",
+          "lineNumber": 477
+        },
+        {
+          "caller": "test_lock_is_released_after_a_failed_run",
+          "callee": "methods.schedule_run",
+          "lineNumber": 477
+        },
+        {
+          "caller": "_run",
+          "callee": "script.write_text",
+          "lineNumber": 498
+        },
+        {
+          "caller": "_run",
+          "callee": "subprocess.run",
+          "lineNumber": 505
+        },
+        {
+          "caller": "_run",
+          "callee": "str",
+          "lineNumber": 506
+        },
+        {
+          "caller": "test_raw_fd_write_cannot_reach_the_protocol",
+          "callee": "self._run",
+          "lineNumber": 515
+        },
+        {
+          "caller": "test_subprocess_output_cannot_reach_the_protocol",
+          "callee": "self._run",
+          "lineNumber": 523
+        },
+        {
+          "caller": "test_python_print_still_goes_to_stderr",
+          "callee": "self._run",
+          "lineNumber": 528
+        },
+        {
+          "caller": "test_every_protocol_line_is_valid_json",
+          "callee": "self._run",
+          "lineNumber": 534
+        },
+        {
+          "caller": "test_every_protocol_line_is_valid_json",
+          "callee": "stdout.splitlines",
+          "lineNumber": 535
+        },
+        {
+          "caller": "test_every_protocol_line_is_valid_json",
+          "callee": "line.strip",
+          "lineNumber": 536
+        },
+        {
+          "caller": "test_every_protocol_line_is_valid_json",
+          "callee": "json.loads",
+          "lineNumber": 537
+        },
+        {
+          "caller": "test_guard_is_idempotent",
+          "callee": "self._run",
+          "lineNumber": 541
+        },
+        {
+          "caller": "test_refuses_instead_of_blocking",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 562
+        },
+        {
+          "caller": "test_refuses_instead_of_blocking",
+          "callee": "io.StringIO",
+          "lineNumber": 562
+        },
+        {
+          "caller": "boom",
+          "callee": "AssertionError",
+          "lineNumber": 565
+        },
+        {
+          "caller": "test_refuses_instead_of_blocking",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 567
+        },
+        {
+          "caller": "test_refuses_instead_of_blocking",
+          "callee": "tools.ask_user_question",
+          "lineNumber": 568
+        },
+        {
+          "caller": "test_protocol_stdin_is_not_consumed",
+          "callee": "io.StringIO",
+          "lineNumber": 579
+        },
+        {
+          "caller": "test_protocol_stdin_is_not_consumed",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 580
+        },
+        {
+          "caller": "test_protocol_stdin_is_not_consumed",
+          "callee": "tools.ask_user_question",
+          "lineNumber": 581
+        },
+        {
+          "caller": "test_protocol_stdin_is_not_consumed",
+          "callee": "stream.read",
+          "lineNumber": 583
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 2,
+        "classCount": 9
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/cli/test_mcp_policy.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 74,
+      "classes": [
+        {
+          "name": "_Ann",
+          "startLine": 8,
+          "endLine": 11,
+          "methods": [
+            "__init__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestAnnotationsWin",
+          "startLine": 14,
+          "endLine": 27,
+          "methods": [
+            "test_read_only_hint_beats_write_verb",
+            "test_destructive_hint_beats_read_verb",
+            "test_dict_annotations_accepted",
+            "test_none_hints_fall_through_to_name"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestUnknownDefaultsToWrite",
+          "startLine": 30,
+          "endLine": 38,
+          "methods": [
+            "test_unrecognized_verbs_are_write",
+            "test_no_annotations_and_no_verb_is_write"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestWriteVerbs",
+          "startLine": 41,
+          "endLine": 66,
+          "methods": [
+            "test_write_verbs_detected",
+            "test_hyphenated_name",
+            "test_dotted_name"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestReadVerbs",
+          "startLine": 69,
+          "endLine": 79,
+          "methods": [
+            "test_read_verbs_detected",
+            "test_write_verb_wins_in_mixed_name"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestPrefixStripping",
+          "startLine": 82,
+          "endLine": 89,
+          "methods": [
+            "test_server_prefix_ignored",
+            "test_server_name_does_not_leak_into_match"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestExternalNeverAuto",
+          "startLine": 92,
+          "endLine": 102,
+          "methods": [
+            "test_external_write_maps_to_review",
+            "test_external_tools_are_not_in_auto_set"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_Ann",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "TestAnnotationsWin",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "TestUnknownDefaultsToWrite",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "TestWriteVerbs",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "TestReadVerbs",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "TestPrefixStripping",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "TestExternalNeverAuto",
+          "line": 92,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "kwargs.get",
+          "lineNumber": 10
+        },
+        {
+          "caller": "__init__",
+          "callee": "kwargs.get",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_read_only_hint_beats_write_verb",
+          "callee": "is_write_tool",
+          "lineNumber": 17
+        },
+        {
+          "caller": "test_read_only_hint_beats_write_verb",
+          "callee": "_Ann",
+          "lineNumber": 17
+        },
+        {
+          "caller": "test_destructive_hint_beats_read_verb",
+          "callee": "is_write_tool",
+          "lineNumber": 20
+        },
+        {
+          "caller": "test_destructive_hint_beats_read_verb",
+          "callee": "_Ann",
+          "lineNumber": 20
+        },
+        {
+          "caller": "test_dict_annotations_accepted",
+          "callee": "is_write_tool",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_none_hints_fall_through_to_name",
+          "callee": "is_write_tool",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_none_hints_fall_through_to_name",
+          "callee": "_Ann",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_none_hints_fall_through_to_name",
+          "callee": "is_write_tool",
+          "lineNumber": 27
+        },
+        {
+          "caller": "test_none_hints_fall_through_to_name",
+          "callee": "_Ann",
+          "lineNumber": 27
+        },
+        {
+          "caller": "test_unrecognized_verbs_are_write",
+          "callee": "is_write_tool",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_no_annotations_and_no_verb_is_write",
+          "callee": "is_write_tool",
+          "lineNumber": 38
+        },
+        {
+          "caller": "test_write_verbs_detected",
+          "callee": "is_write_tool",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_hyphenated_name",
+          "callee": "is_write_tool",
+          "lineNumber": 63
+        },
+        {
+          "caller": "test_dotted_name",
+          "callee": "is_write_tool",
+          "lineNumber": 66
+        },
+        {
+          "caller": "test_read_verbs_detected",
+          "callee": "is_write_tool",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_write_verb_wins_in_mixed_name",
+          "callee": "is_write_tool",
+          "lineNumber": 79
+        },
+        {
+          "caller": "test_server_prefix_ignored",
+          "callee": "is_write_tool",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_server_prefix_ignored",
+          "callee": "is_write_tool",
+          "lineNumber": 85
+        },
+        {
+          "caller": "test_server_name_does_not_leak_into_match",
+          "callee": "is_write_tool",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_external_write_maps_to_review",
+          "callee": "classify_external",
+          "lineNumber": 97
+        },
+        {
+          "caller": "test_external_tools_are_not_in_auto_set",
+          "callee": "any",
+          "lineNumber": 102
+        },
+        {
+          "caller": "test_external_tools_are_not_in_auto_set",
+          "callee": "name.startswith",
+          "lineNumber": 102
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 0,
+        "classCount": 7
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/cli/test_prompt_templates.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 114,
+      "nonEmptyLines": 89,
+      "classes": [
+        {
+          "name": "TestBuiltinPromptTemplates",
+          "startLine": 14,
+          "endLine": 45,
+          "methods": [
+            "test_builtins_cover_daily_workflows",
+            "test_builtins_have_descriptions_and_prompts",
+            "test_render_replaces_user_input",
+            "test_daily_template_requests_attribution_execution_state"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestParsePromptMd",
+          "startLine": 48,
+          "endLine": 86,
+          "methods": [
+            "test_with_frontmatter",
+            "test_without_frontmatter",
+            "test_invalid_name_rejected"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestLoadPromptTemplates",
+          "startLine": 89,
+          "endLine": 114,
+          "methods": [
+            "test_builtin_only",
+            "test_user_overrides_builtin"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestBuiltinPromptTemplates",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "TestParsePromptMd",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "TestLoadPromptTemplates",
+          "line": 89,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_builtins_cover_daily_workflows",
+          "callee": "{\"daily\", \"review-l4\", \"holding-risk\", \"step3-audit\", \"feishu-summary\"}.issubset",
+          "lineNumber": 16
+        },
+        {
+          "caller": "test_builtins_have_descriptions_and_prompts",
+          "callee": "BUILTIN_PROMPT_TEMPLATES.items",
+          "lineNumber": 21
+        },
+        {
+          "caller": "test_render_replaces_user_input",
+          "callee": "render_prompt_template",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_with_frontmatter",
+          "callee": "md.write_text",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_with_frontmatter",
+          "callee": "textwrap.dedent",
+          "lineNumber": 52
+        },
+        {
+          "caller": "test_with_frontmatter",
+          "callee": "_parse_prompt_md",
+          "lineNumber": 64
+        },
+        {
+          "caller": "test_without_frontmatter",
+          "callee": "md.write_text",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_without_frontmatter",
+          "callee": "_parse_prompt_md",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_invalid_name_rejected",
+          "callee": "md.write_text",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_invalid_name_rejected",
+          "callee": "_parse_prompt_md",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_builtin_only",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_builtin_only",
+          "callee": "Path",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_builtin_only",
+          "callee": "load_prompt_templates",
+          "lineNumber": 93
+        },
+        {
+          "caller": "test_builtin_only",
+          "callee": "len",
+          "lineNumber": 96
+        },
+        {
+          "caller": "test_user_overrides_builtin",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 99
+        },
+        {
+          "caller": "test_user_overrides_builtin",
+          "callee": "(tmp_path / \"daily.md\").write_text",
+          "lineNumber": 100
+        },
+        {
+          "caller": "test_user_overrides_builtin",
+          "callee": "textwrap.dedent",
+          "lineNumber": 101
+        },
+        {
+          "caller": "test_user_overrides_builtin",
+          "callee": "load_prompt_templates",
+          "lineNumber": 111
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/cli/test_session_registry.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 220,
+      "nonEmptyLines": 169,
+      "functions": [
+        {
+          "name": "registry",
+          "startLine": 19,
+          "endLine": 38,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_first_session_builds_the_environment",
+          "startLine": 41,
+          "endLine": 44,
+          "params": [
+            "registry"
+          ]
+        },
+        {
+          "name": "test_new_sessions_share_the_environment",
+          "startLine": 47,
+          "endLine": 53,
+          "params": [
+            "registry"
+          ]
+        },
+        {
+          "name": "test_only_the_owner_stops_shared_mcp",
+          "startLine": 56,
+          "endLine": 65,
+          "params": [
+            "registry"
+          ]
+        },
+        {
+          "name": "test_new_session_does_not_wipe_the_old_one",
+          "startLine": 68,
+          "endLine": 73,
+          "params": [
+            "registry"
+          ]
+        },
+        {
+          "name": "test_switching_returns_the_same_live_session",
+          "startLine": 76,
+          "endLine": 80,
+          "params": [
+            "registry"
+          ]
+        },
+        {
+          "name": "test_switching_updates_the_active_session",
+          "startLine": 83,
+          "endLine": 88,
+          "params": [
+            "registry"
+          ]
+        },
+        {
+          "name": "test_an_unknown_id_is_revived_from_storage",
+          "startLine": 91,
+          "endLine": 103,
+          "params": [
+            "registry",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_live_sessions_are_bounded",
+          "startLine": 106,
+          "endLine": 111,
+          "params": [
+            "registry"
+          ]
+        },
+        {
+          "name": "test_pruning_keeps_the_active_session",
+          "startLine": 114,
+          "endLine": 118,
+          "params": [
+            "registry"
+          ]
+        },
+        {
+          "name": "test_dropping_a_session_moves_the_active_pointer",
+          "startLine": 121,
+          "endLine": 126,
+          "params": [
+            "registry"
+          ]
+        },
+        {
+          "name": "test_identity_change_clears_every_session",
+          "startLine": 129,
+          "endLine": 145,
+          "params": [
+            "registry",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_identity_change_keeps_the_environment_shared",
+          "startLine": 148,
+          "endLine": 159,
+          "params": [
+            "registry",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_same_account_is_not_a_change",
+          "startLine": 162,
+          "endLine": 165,
+          "params": [
+            "registry",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_shutdown_empties_the_registry",
+          "startLine": 168,
+          "endLine": 173,
+          "params": [
+            "registry"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TestResumeIsAccountScoped",
+          "startLine": 176,
+          "endLine": 220,
+          "methods": [
+            "test_resume_skips_other_accounts_rows",
+            "test_resume_still_works_for_own_rows"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "registry",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "test_first_session_builds_the_environment",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "test_new_sessions_share_the_environment",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "test_only_the_owner_stops_shared_mcp",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "test_new_session_does_not_wipe_the_old_one",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "test_switching_returns_the_same_live_session",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "test_switching_updates_the_active_session",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "test_an_unknown_id_is_revived_from_storage",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "test_live_sessions_are_bounded",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "test_pruning_keeps_the_active_session",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "test_dropping_a_session_moves_the_active_pointer",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "test_identity_change_clears_every_session",
+          "line": 129,
+          "isDefault": false
+        },
+        {
+          "name": "test_identity_change_keeps_the_environment_shared",
+          "line": 148,
+          "isDefault": false
+        },
+        {
+          "name": "test_same_account_is_not_a_change",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "test_shutdown_empties_the_registry",
+          "line": 168,
+          "isDefault": false
+        },
+        {
+          "name": "TestResumeIsAccountScoped",
+          "line": 176,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "registry",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 27
+        },
+        {
+          "caller": "registry",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 28
+        },
+        {
+          "caller": "fake_start",
+          "callee": "object",
+          "lineNumber": 32
+        },
+        {
+          "caller": "fake_start",
+          "callee": "object",
+          "lineNumber": 33
+        },
+        {
+          "caller": "registry",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 37
+        },
+        {
+          "caller": "test_first_session_builds_the_environment",
+          "callee": "registry.get_session",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_new_sessions_share_the_environment",
+          "callee": "registry.get_session",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_new_sessions_share_the_environment",
+          "callee": "registry.new_session",
+          "lineNumber": 50
+        },
+        {
+          "caller": "test_only_the_owner_stops_shared_mcp",
+          "callee": "registry.get_session",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_only_the_owner_stops_shared_mcp",
+          "callee": "type",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_only_the_owner_stops_shared_mcp",
+          "callee": "stopped.append",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_only_the_owner_stops_shared_mcp",
+          "callee": "registry.new_session",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_only_the_owner_stops_shared_mcp",
+          "callee": "b.stop",
+          "lineNumber": 62
+        },
+        {
+          "caller": "test_only_the_owner_stops_shared_mcp",
+          "callee": "a.stop",
+          "lineNumber": 64
+        },
+        {
+          "caller": "test_new_session_does_not_wipe_the_old_one",
+          "callee": "registry.get_session",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_new_session_does_not_wipe_the_old_one",
+          "callee": "a._messages.append",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_new_session_does_not_wipe_the_old_one",
+          "callee": "registry.new_session",
+          "lineNumber": 72
+        },
+        {
+          "caller": "test_switching_returns_the_same_live_session",
+          "callee": "registry.get_session",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_switching_returns_the_same_live_session",
+          "callee": "a._messages.append",
+          "lineNumber": 78
+        },
+        {
+          "caller": "test_switching_returns_the_same_live_session",
+          "callee": "registry.new_session",
+          "lineNumber": 79
+        },
+        {
+          "caller": "test_switching_returns_the_same_live_session",
+          "callee": "registry.get_session",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_switching_updates_the_active_session",
+          "callee": "registry.get_session",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_switching_updates_the_active_session",
+          "callee": "registry.new_session",
+          "lineNumber": 85
+        },
+        {
+          "caller": "test_switching_updates_the_active_session",
+          "callee": "registry.active_session_id",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_switching_updates_the_active_session",
+          "callee": "registry.get_session",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_switching_updates_the_active_session",
+          "callee": "registry.active_session_id",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_an_unknown_id_is_revived_from_storage",
+          "callee": "registry.get_session",
+          "lineNumber": 93
+        },
+        {
+          "caller": "test_an_unknown_id_is_revived_from_storage",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 95
+        },
+        {
+          "caller": "test_an_unknown_id_is_revived_from_storage",
+          "callee": "loaded.append",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_an_unknown_id_is_revived_from_storage",
+          "callee": "registry.get_session",
+          "lineNumber": 100
+        },
+        {
+          "caller": "test_live_sessions_are_bounded",
+          "callee": "registry.get_session",
+          "lineNumber": 108
+        },
+        {
+          "caller": "test_live_sessions_are_bounded",
+          "callee": "range",
+          "lineNumber": 109
+        },
+        {
+          "caller": "test_live_sessions_are_bounded",
+          "callee": "registry.new_session",
+          "lineNumber": 110
+        },
+        {
+          "caller": "test_live_sessions_are_bounded",
+          "callee": "len",
+          "lineNumber": 111
+        },
+        {
+          "caller": "test_pruning_keeps_the_active_session",
+          "callee": "registry.get_session",
+          "lineNumber": 115
+        },
+        {
+          "caller": "test_pruning_keeps_the_active_session",
+          "callee": "range",
+          "lineNumber": 116
+        },
+        {
+          "caller": "test_pruning_keeps_the_active_session",
+          "callee": "registry.new_session",
+          "lineNumber": 117
+        },
+        {
+          "caller": "test_dropping_a_session_moves_the_active_pointer",
+          "callee": "registry.get_session",
+          "lineNumber": 122
+        },
+        {
+          "caller": "test_dropping_a_session_moves_the_active_pointer",
+          "callee": "registry.new_session",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_dropping_a_session_moves_the_active_pointer",
+          "callee": "registry.drop_session",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_dropping_a_session_moves_the_active_pointer",
+          "callee": "registry.active_session_id",
+          "lineNumber": 126
+        },
+        {
+          "caller": "test_identity_change_clears_every_session",
+          "callee": "registry.get_session",
+          "lineNumber": 134
+        },
+        {
+          "caller": "test_identity_change_clears_every_session",
+          "callee": "registry.new_session",
+          "lineNumber": 135
+        },
+        {
+          "caller": "test_identity_change_clears_every_session",
+          "callee": "a._messages.append",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_identity_change_clears_every_session",
+          "callee": "b._messages.append",
+          "lineNumber": 137
+        },
+        {
+          "caller": "test_identity_change_clears_every_session",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 138
+        },
+        {
+          "caller": "test_identity_change_clears_every_session",
+          "callee": "registry.sync_all_identities",
+          "lineNumber": 143
+        },
+        {
+          "caller": "test_identity_change_keeps_the_environment_shared",
+          "callee": "registry.get_session",
+          "lineNumber": 150
+        },
+        {
+          "caller": "test_identity_change_keeps_the_environment_shared",
+          "callee": "registry.new_session",
+          "lineNumber": 151
+        },
+        {
+          "caller": "test_identity_change_keeps_the_environment_shared",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 152
+        },
+        {
+          "caller": "test_identity_change_keeps_the_environment_shared",
+          "callee": "registry.sync_all_identities",
+          "lineNumber": 157
+        },
+        {
+          "caller": "test_same_account_is_not_a_change",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 163
+        },
+        {
+          "caller": "test_same_account_is_not_a_change",
+          "callee": "registry.get_session",
+          "lineNumber": 164
+        },
+        {
+          "caller": "test_same_account_is_not_a_change",
+          "callee": "registry.sync_all_identities",
+          "lineNumber": 165
+        },
+        {
+          "caller": "test_shutdown_empties_the_registry",
+          "callee": "registry.get_session",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_shutdown_empties_the_registry",
+          "callee": "registry.new_session",
+          "lineNumber": 170
+        },
+        {
+          "caller": "test_shutdown_empties_the_registry",
+          "callee": "registry.shutdown_session",
+          "lineNumber": 171
+        },
+        {
+          "caller": "test_shutdown_empties_the_registry",
+          "callee": "registry.active_session_id",
+          "lineNumber": 173
+        },
+        {
+          "caller": "fake_load",
+          "callee": "seen.update",
+          "lineNumber": 194
+        },
+        {
+          "caller": "test_resume_skips_other_accounts_rows",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 200
+        },
+        {
+          "caller": "test_resume_skips_other_accounts_rows",
+          "callee": "registry.DesktopSession",
+          "lineNumber": 202
+        },
+        {
+          "caller": "test_resume_skips_other_accounts_rows",
+          "callee": "session.start",
+          "lineNumber": 203
+        },
+        {
+          "caller": "test_resume_skips_other_accounts_rows",
+          "callee": "session.load_history",
+          "lineNumber": 205
+        },
+        {
+          "caller": "test_resume_still_works_for_own_rows",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 212
+        },
+        {
+          "caller": "test_resume_still_works_for_own_rows",
+          "callee": "registry.DesktopSession",
+          "lineNumber": 218
+        },
+        {
+          "caller": "test_resume_still_works_for_own_rows",
+          "callee": "session.start",
+          "lineNumber": 219
+        },
+        {
+          "caller": "test_resume_still_works_for_own_rows",
+          "callee": "session.load_history",
+          "lineNumber": 220
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 16,
+        "functionCount": 15,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/cli/test_session_title.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 165,
+      "nonEmptyLines": 118,
+      "functions": [
+        {
+          "name": "db",
+          "startLine": 18,
+          "endLine": 28,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "session",
+          "startLine": 45,
+          "endLine": 51,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_title_comes_from_the_model",
+          "startLine": 54,
+          "endLine": 55,
+          "params": [
+            "session"
+          ]
+        },
+        {
+          "name": "test_prompt_asks_for_a_specific_subject",
+          "startLine": 58,
+          "endLine": 61,
+          "params": [
+            "session"
+          ]
+        },
+        {
+          "name": "test_quotes_and_trailing_punctuation_are_stripped",
+          "startLine": 64,
+          "endLine": 66,
+          "params": [
+            "session"
+          ]
+        },
+        {
+          "name": "test_only_the_first_line_is_kept",
+          "startLine": 69,
+          "endLine": 71,
+          "params": [
+            "session"
+          ]
+        },
+        {
+          "name": "test_long_input_is_truncated_before_sending",
+          "startLine": 74,
+          "endLine": 78,
+          "params": [
+            "session"
+          ]
+        },
+        {
+          "name": "test_no_provider_yields_no_title",
+          "startLine": 81,
+          "endLine": 83,
+          "params": [
+            "session"
+          ]
+        },
+        {
+          "name": "test_generation_runs_off_the_turn",
+          "startLine": 86,
+          "endLine": 94,
+          "params": [
+            "session",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_empty_turns_are_skipped",
+          "startLine": 98,
+          "endLine": 102,
+          "params": [
+            "session",
+            "monkeypatch",
+            "user_text",
+            "reply"
+          ]
+        },
+        {
+          "name": "test_worker_titles_the_first_turn",
+          "startLine": 105,
+          "endLine": 110,
+          "params": [
+            "db",
+            "session"
+          ]
+        },
+        {
+          "name": "test_worker_leaves_later_turns_alone",
+          "startLine": 113,
+          "endLine": 120,
+          "params": [
+            "db",
+            "session"
+          ]
+        },
+        {
+          "name": "test_a_rename_during_generation_wins",
+          "startLine": 123,
+          "endLine": 141,
+          "params": [
+            "db",
+            "session"
+          ]
+        },
+        {
+          "name": "test_worker_failure_is_swallowed",
+          "startLine": 144,
+          "endLine": 156,
+          "params": [
+            "db",
+            "session"
+          ]
+        },
+        {
+          "name": "test_worker_scopes_to_the_account",
+          "startLine": 159,
+          "endLine": 165,
+          "params": [
+            "db",
+            "session"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FakeProvider",
+          "startLine": 31,
+          "endLine": 41,
+          "methods": [
+            "__init__",
+            "chat"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "db",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "FakeProvider",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "session",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "test_title_comes_from_the_model",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "test_prompt_asks_for_a_specific_subject",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "test_quotes_and_trailing_punctuation_are_stripped",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "test_only_the_first_line_is_kept",
+          "line": 69,
+          "isDefault": false
+        },
+        {
+          "name": "test_long_input_is_truncated_before_sending",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "test_no_provider_yields_no_title",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "test_generation_runs_off_the_turn",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "test_empty_turns_are_skipped",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "test_worker_titles_the_first_turn",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "test_worker_leaves_later_turns_alone",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "test_a_rename_during_generation_wins",
+          "line": 123,
+          "isDefault": false
+        },
+        {
+          "name": "test_worker_failure_is_swallowed",
+          "line": 144,
+          "isDefault": false
+        },
+        {
+          "name": "test_worker_scopes_to_the_account",
+          "line": 159,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "db",
+          "callee": "logging.disable",
+          "lineNumber": 22
+        },
+        {
+          "caller": "db",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 23
+        },
+        {
+          "caller": "db",
+          "callee": "ldb.reset_connection",
+          "lineNumber": 24
+        },
+        {
+          "caller": "db",
+          "callee": "ldb.init_db",
+          "lineNumber": 25
+        },
+        {
+          "caller": "db",
+          "callee": "ldb.reset_connection",
+          "lineNumber": 27
+        },
+        {
+          "caller": "db",
+          "callee": "logging.disable",
+          "lineNumber": 28
+        },
+        {
+          "caller": "chat",
+          "callee": "self.calls.append",
+          "lineNumber": 39
+        },
+        {
+          "caller": "session",
+          "callee": "S.DesktopSession",
+          "lineNumber": 48
+        },
+        {
+          "caller": "session",
+          "callee": "FakeProvider",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_title_comes_from_the_model",
+          "callee": "session._ask_for_title",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_prompt_asks_for_a_specific_subject",
+          "callee": "session._ask_for_title",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_quotes_and_trailing_punctuation_are_stripped",
+          "callee": "FakeProvider",
+          "lineNumber": 65
+        },
+        {
+          "caller": "test_quotes_and_trailing_punctuation_are_stripped",
+          "callee": "session._ask_for_title",
+          "lineNumber": 66
+        },
+        {
+          "caller": "test_only_the_first_line_is_kept",
+          "callee": "FakeProvider",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_only_the_first_line_is_kept",
+          "callee": "session._ask_for_title",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_long_input_is_truncated_before_sending",
+          "callee": "session._ask_for_title",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_long_input_is_truncated_before_sending",
+          "callee": "len",
+          "lineNumber": 78
+        },
+        {
+          "caller": "test_no_provider_yields_no_title",
+          "callee": "session._ask_for_title",
+          "lineNumber": 83
+        },
+        {
+          "caller": "test_generation_runs_off_the_turn",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_generation_runs_off_the_turn",
+          "callee": "type",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_generation_runs_off_the_turn",
+          "callee": "started.append",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_generation_runs_off_the_turn",
+          "callee": "kw.get",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_generation_runs_off_the_turn",
+          "callee": "session._maybe_title",
+          "lineNumber": 93
+        },
+        {
+          "caller": "test_empty_turns_are_skipped",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 100
+        },
+        {
+          "caller": "test_empty_turns_are_skipped",
+          "callee": "calls.append",
+          "lineNumber": 100
+        },
+        {
+          "caller": "test_empty_turns_are_skipped",
+          "callee": "session._maybe_title",
+          "lineNumber": 101
+        },
+        {
+          "caller": "test_worker_titles_the_first_turn",
+          "callee": "db.save_chat_log",
+          "lineNumber": 106
+        },
+        {
+          "caller": "test_worker_titles_the_first_turn",
+          "callee": "db.save_chat_log",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_worker_titles_the_first_turn",
+          "callee": "db.upsert_chat_session",
+          "lineNumber": 108
+        },
+        {
+          "caller": "test_worker_titles_the_first_turn",
+          "callee": "session._title_worker",
+          "lineNumber": 109
+        },
+        {
+          "caller": "test_worker_titles_the_first_turn",
+          "callee": "db.list_chat_sessions",
+          "lineNumber": 110
+        },
+        {
+          "caller": "test_worker_leaves_later_turns_alone",
+          "callee": "range",
+          "lineNumber": 115
+        },
+        {
+          "caller": "test_worker_leaves_later_turns_alone",
+          "callee": "db.save_chat_log",
+          "lineNumber": 116
+        },
+        {
+          "caller": "test_worker_leaves_later_turns_alone",
+          "callee": "db.save_chat_log",
+          "lineNumber": 117
+        },
+        {
+          "caller": "test_worker_leaves_later_turns_alone",
+          "callee": "db.upsert_chat_session",
+          "lineNumber": 118
+        },
+        {
+          "caller": "test_worker_leaves_later_turns_alone",
+          "callee": "session._title_worker",
+          "lineNumber": 119
+        },
+        {
+          "caller": "test_worker_leaves_later_turns_alone",
+          "callee": "db.list_chat_sessions",
+          "lineNumber": 120
+        },
+        {
+          "caller": "chat",
+          "callee": "db.rename_chat_session",
+          "lineNumber": 133
+        },
+        {
+          "caller": "test_a_rename_during_generation_wins",
+          "callee": "SlowProvider",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_a_rename_during_generation_wins",
+          "callee": "db.save_chat_log",
+          "lineNumber": 137
+        },
+        {
+          "caller": "test_a_rename_during_generation_wins",
+          "callee": "db.save_chat_log",
+          "lineNumber": 138
+        },
+        {
+          "caller": "test_a_rename_during_generation_wins",
+          "callee": "db.upsert_chat_session",
+          "lineNumber": 139
+        },
+        {
+          "caller": "test_a_rename_during_generation_wins",
+          "callee": "session._title_worker",
+          "lineNumber": 140
+        },
+        {
+          "caller": "test_a_rename_during_generation_wins",
+          "callee": "db.list_chat_sessions",
+          "lineNumber": 141
+        },
+        {
+          "caller": "chat",
+          "callee": "RuntimeError",
+          "lineNumber": 149
+        },
+        {
+          "caller": "test_worker_failure_is_swallowed",
+          "callee": "Boom",
+          "lineNumber": 151
+        },
+        {
+          "caller": "test_worker_failure_is_swallowed",
+          "callee": "db.save_chat_log",
+          "lineNumber": 152
+        },
+        {
+          "caller": "test_worker_failure_is_swallowed",
+          "callee": "db.save_chat_log",
+          "lineNumber": 153
+        },
+        {
+          "caller": "test_worker_failure_is_swallowed",
+          "callee": "db.upsert_chat_session",
+          "lineNumber": 154
+        },
+        {
+          "caller": "test_worker_failure_is_swallowed",
+          "callee": "session._title_worker",
+          "lineNumber": 155
+        },
+        {
+          "caller": "test_worker_failure_is_swallowed",
+          "callee": "db.list_chat_sessions",
+          "lineNumber": 156
+        },
+        {
+          "caller": "test_worker_scopes_to_the_account",
+          "callee": "db.save_chat_log",
+          "lineNumber": 161
+        },
+        {
+          "caller": "test_worker_scopes_to_the_account",
+          "callee": "db.save_chat_log",
+          "lineNumber": 162
+        },
+        {
+          "caller": "test_worker_scopes_to_the_account",
+          "callee": "db.upsert_chat_session",
+          "lineNumber": 163
+        },
+        {
+          "caller": "test_worker_scopes_to_the_account",
+          "callee": "session._title_worker",
+          "lineNumber": 164
+        },
+        {
+          "caller": "test_worker_scopes_to_the_account",
+          "callee": "db.list_chat_sessions",
+          "lineNumber": 165
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 16,
+        "functionCount": 15,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/cli/test_skills.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 185,
+      "nonEmptyLines": 147,
+      "classes": [
+        {
+          "name": "TestBuiltinSkills",
+          "startLine": 9,
+          "endLine": 22,
+          "methods": [
+            "test_five_builtins",
+            "test_names",
+            "test_all_have_description_and_prompt",
+            "test_user_input_placeholder"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestParseSkillMd",
+          "startLine": 25,
+          "endLine": 65,
+          "methods": [
+            "test_with_frontmatter",
+            "test_without_frontmatter",
+            "test_missing_file",
+            "test_invalid_name_rejected",
+            "test_invalid_frontmatter_name_rejected"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestLoadSkills",
+          "startLine": 68,
+          "endLine": 105,
+          "methods": [
+            "test_builtin_only",
+            "test_user_overrides_builtin",
+            "test_user_adds_new"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestLoopGuardRequiredArgs",
+          "startLine": 108,
+          "endLine": 169,
+          "methods": [
+            "test_missing_when_wrong_mode",
+            "test_satisfied_when_correct_mode",
+            "test_list_like_string_args_match_list_values",
+            "test_no_required_args_accepts_any",
+            "test_suggested_args_do_not_block_other_args",
+            "test_backward_compat_str_entries",
+            "test_str_entries_fail_when_args_required"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestExecuteSkillTool",
+          "startLine": 172,
+          "endLine": 185,
+          "methods": [
+            "test_execute_skill_success",
+            "test_execute_skill_not_found"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestBuiltinSkills",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "TestParseSkillMd",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "TestLoadSkills",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "TestLoopGuardRequiredArgs",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "TestExecuteSkillTool",
+          "line": 172,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_five_builtins",
+          "callee": "len",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_names",
+          "callee": "set",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_names",
+          "callee": "BUILTIN_SKILLS.keys",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_all_have_description_and_prompt",
+          "callee": "BUILTIN_SKILLS.items",
+          "lineNumber": 17
+        },
+        {
+          "caller": "test_with_frontmatter",
+          "callee": "md.write_text",
+          "lineNumber": 28
+        },
+        {
+          "caller": "test_with_frontmatter",
+          "callee": "textwrap.dedent",
+          "lineNumber": 29
+        },
+        {
+          "caller": "test_with_frontmatter",
+          "callee": "_parse_skill_md",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_without_frontmatter",
+          "callee": "md.write_text",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_without_frontmatter",
+          "callee": "_parse_skill_md",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_missing_file",
+          "callee": "_parse_skill_md",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_invalid_name_rejected",
+          "callee": "md.write_text",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_invalid_name_rejected",
+          "callee": "_parse_skill_md",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_invalid_frontmatter_name_rejected",
+          "callee": "md.write_text",
+          "lineNumber": 64
+        },
+        {
+          "caller": "test_invalid_frontmatter_name_rejected",
+          "callee": "_parse_skill_md",
+          "lineNumber": 65
+        },
+        {
+          "caller": "test_builtin_only",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_builtin_only",
+          "callee": "Path",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_builtin_only",
+          "callee": "load_skills",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_builtin_only",
+          "callee": "len",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_user_overrides_builtin",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_user_overrides_builtin",
+          "callee": "(tmp_path / \"screen.md\").write_text",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_user_overrides_builtin",
+          "callee": "textwrap.dedent",
+          "lineNumber": 78
+        },
+        {
+          "caller": "test_user_overrides_builtin",
+          "callee": "load_skills",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_user_adds_new",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_user_adds_new",
+          "callee": "(tmp_path / \"morning.md\").write_text",
+          "lineNumber": 93
+        },
+        {
+          "caller": "test_user_adds_new",
+          "callee": "textwrap.dedent",
+          "lineNumber": 94
+        },
+        {
+          "caller": "test_user_adds_new",
+          "callee": "load_skills",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_missing_when_wrong_mode",
+          "callee": "TurnExpectation",
+          "lineNumber": 112
+        },
+        {
+          "caller": "test_missing_when_wrong_mode",
+          "callee": "missing_required_tool",
+          "lineNumber": 117
+        },
+        {
+          "caller": "test_satisfied_when_correct_mode",
+          "callee": "TurnExpectation",
+          "lineNumber": 122
+        },
+        {
+          "caller": "test_satisfied_when_correct_mode",
+          "callee": "missing_required_tool",
+          "lineNumber": 127
+        },
+        {
+          "caller": "test_list_like_string_args_match_list_values",
+          "callee": "TurnExpectation",
+          "lineNumber": 132
+        },
+        {
+          "caller": "test_list_like_string_args_match_list_values",
+          "callee": "missing_required_tool",
+          "lineNumber": 137
+        },
+        {
+          "caller": "test_no_required_args_accepts_any",
+          "callee": "TurnExpectation",
+          "lineNumber": 142
+        },
+        {
+          "caller": "test_no_required_args_accepts_any",
+          "callee": "missing_required_tool",
+          "lineNumber": 143
+        },
+        {
+          "caller": "test_suggested_args_do_not_block_other_args",
+          "callee": "TurnExpectation",
+          "lineNumber": 148
+        },
+        {
+          "caller": "test_suggested_args_do_not_block_other_args",
+          "callee": "missing_required_tool",
+          "lineNumber": 153
+        },
+        {
+          "caller": "test_backward_compat_str_entries",
+          "callee": "TurnExpectation",
+          "lineNumber": 158
+        },
+        {
+          "caller": "test_backward_compat_str_entries",
+          "callee": "missing_required_tool",
+          "lineNumber": 159
+        },
+        {
+          "caller": "test_str_entries_fail_when_args_required",
+          "callee": "TurnExpectation",
+          "lineNumber": 164
+        },
+        {
+          "caller": "test_str_entries_fail_when_args_required",
+          "callee": "missing_required_tool",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_execute_skill_success",
+          "callee": "execute_skill",
+          "lineNumber": 176
+        },
+        {
+          "caller": "test_execute_skill_not_found",
+          "callee": "execute_skill",
+          "lineNumber": 184
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 0,
+        "classCount": 5
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/cli/test_update_browser_extra.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 17,
+      "functions": [
+        {
+          "name": "test_upgrade_package_cmd_targets_browser_extra",
+          "startLine": 4,
+          "endLine": 13,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_upgrade_package_cmd_falls_back_to_pip",
+          "startLine": 16,
+          "endLine": 23,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_upgrade_package_cmd_targets_browser_extra",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "test_upgrade_package_cmd_falls_back_to_pip",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_upgrade_package_cmd_targets_browser_extra",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 7
+        },
+        {
+          "caller": "test_upgrade_package_cmd_targets_browser_extra",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 8
+        },
+        {
+          "caller": "test_upgrade_package_cmd_targets_browser_extra",
+          "callee": "main._upgrade_package_cmd",
+          "lineNumber": 9
+        },
+        {
+          "caller": "test_upgrade_package_cmd_falls_back_to_pip",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_upgrade_package_cmd_falls_back_to_pip",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 20
+        },
+        {
+          "caller": "test_upgrade_package_cmd_falls_back_to_pip",
+          "callee": "main._upgrade_package_cmd",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/conftest.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "_no_network",
+          "startLine": 14,
+          "endLine": 22,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "mock_supabase",
+          "startLine": 26,
+          "endLine": 30,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_no_network",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "mock_supabase",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_guard",
+          "callee": "RuntimeError",
+          "lineNumber": 18
+        },
+        {
+          "caller": "_no_network",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 20
+        },
+        {
+          "caller": "_no_network",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 21
+        },
+        {
+          "caller": "_no_network",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 22
+        },
+        {
+          "caller": "mock_supabase",
+          "callee": "MagicMock",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/core/test_backtester.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 11,
+      "functions": [
+        {
+          "name": "test_backtest_helpers_are_importable_from_owner_modules",
+          "startLine": 10,
+          "endLine": 17,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_backtest_helpers_are_importable_from_owner_modules",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_backtest_helpers_are_importable_from_owner_modules",
+          "callee": "callable",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_backtest_helpers_are_importable_from_owner_modules",
+          "callee": "callable",
+          "lineNumber": 16
+        },
+        {
+          "caller": "test_backtest_helpers_are_importable_from_owner_modules",
+          "callee": "callable",
+          "lineNumber": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/core/test_compliance_report.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 235,
+      "nonEmptyLines": 183,
+      "functions": [
+        {
+          "name": "_sample_df",
+          "startLine": 8,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "test_public_payload_is_deidentified",
+          "startLine": 31,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "test_public_payload_includes_market_and_etf_metrics_without_codes",
+          "startLine": 50,
+          "endLine": 78,
+          "params": []
+        },
+        {
+          "name": "test_public_payload_sanitizes_nonfinite_market_metrics",
+          "startLine": 81,
+          "endLine": 96,
+          "params": []
+        },
+        {
+          "name": "test_public_payload_sector_buckets_ignore_nonfinite_scores",
+          "startLine": 99,
+          "endLine": 112,
+          "params": []
+        },
+        {
+          "name": "test_public_payload_handles_missing_industry_column",
+          "startLine": 115,
+          "endLine": 124,
+          "params": []
+        },
+        {
+          "name": "test_validate_compliance_report_blocks_codes_names_and_action_terms",
+          "startLine": 127,
+          "endLine": 136,
+          "params": []
+        },
+        {
+          "name": "test_validate_compliance_report_rejects_wrong_date",
+          "startLine": 139,
+          "endLine": 149,
+          "params": []
+        },
+        {
+          "name": "test_resolve_compliance_llm_uses_efficiency",
+          "startLine": 152,
+          "endLine": 163,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_generate_compliance_brief_fallback_has_no_stock_identifiers",
+          "startLine": 166,
+          "endLine": 186,
+          "params": []
+        },
+        {
+          "name": "test_generate_compliance_brief_rejects_bad_llm_output",
+          "startLine": 189,
+          "endLine": 212,
+          "params": []
+        },
+        {
+          "name": "test_generate_compliance_brief_rejects_wrong_llm_date",
+          "startLine": 215,
+          "endLine": 235,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_sample_df",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "test_public_payload_is_deidentified",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "test_public_payload_includes_market_and_etf_metrics_without_codes",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "test_public_payload_sanitizes_nonfinite_market_metrics",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "test_public_payload_sector_buckets_ignore_nonfinite_scores",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "test_public_payload_handles_missing_industry_column",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "test_validate_compliance_report_blocks_codes_names_and_action_terms",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "test_validate_compliance_report_rejects_wrong_date",
+          "line": 139,
+          "isDefault": false
+        },
+        {
+          "name": "test_resolve_compliance_llm_uses_efficiency",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "test_generate_compliance_brief_fallback_has_no_stock_identifiers",
+          "line": 166,
+          "isDefault": false
+        },
+        {
+          "name": "test_generate_compliance_brief_rejects_bad_llm_output",
+          "line": 189,
+          "isDefault": false
+        },
+        {
+          "name": "test_generate_compliance_brief_rejects_wrong_llm_date",
+          "line": 215,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_sample_df",
+          "callee": "pd.DataFrame",
+          "lineNumber": 9
+        },
+        {
+          "caller": "test_public_payload_is_deidentified",
+          "callee": "build_public_payload",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_public_payload_is_deidentified",
+          "callee": "_sample_df",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_public_payload_is_deidentified",
+          "callee": "json.dumps",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_public_payload_includes_market_and_etf_metrics_without_codes",
+          "callee": "build_public_payload",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_public_payload_includes_market_and_etf_metrics_without_codes",
+          "callee": "_sample_df",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_public_payload_includes_market_and_etf_metrics_without_codes",
+          "callee": "json.dumps",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_public_payload_sanitizes_nonfinite_market_metrics",
+          "callee": "build_public_payload",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_public_payload_sanitizes_nonfinite_market_metrics",
+          "callee": "float",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_public_payload_sanitizes_nonfinite_market_metrics",
+          "callee": "float",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_public_payload_sanitizes_nonfinite_market_metrics",
+          "callee": "_sample_df",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_public_payload_sector_buckets_ignore_nonfinite_scores",
+          "callee": "pd.DataFrame",
+          "lineNumber": 102
+        },
+        {
+          "caller": "test_public_payload_sector_buckets_ignore_nonfinite_scores",
+          "callee": "float",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_public_payload_sector_buckets_ignore_nonfinite_scores",
+          "callee": "float",
+          "lineNumber": 105
+        },
+        {
+          "caller": "test_public_payload_sector_buckets_ignore_nonfinite_scores",
+          "callee": "float",
+          "lineNumber": 105
+        },
+        {
+          "caller": "test_public_payload_sector_buckets_ignore_nonfinite_scores",
+          "callee": "build_public_payload",
+          "lineNumber": 109
+        },
+        {
+          "caller": "test_public_payload_handles_missing_industry_column",
+          "callee": "build_public_payload",
+          "lineNumber": 118
+        },
+        {
+          "caller": "test_public_payload_handles_missing_industry_column",
+          "callee": "pd.DataFrame",
+          "lineNumber": 120
+        },
+        {
+          "caller": "test_validate_compliance_report_blocks_codes_names_and_action_terms",
+          "callee": "validate_compliance_report",
+          "lineNumber": 131
+        },
+        {
+          "caller": "test_validate_compliance_report_blocks_codes_names_and_action_terms",
+          "callee": "any",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_validate_compliance_report_blocks_codes_names_and_action_terms",
+          "callee": "reason.startswith",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_validate_compliance_report_rejects_wrong_date",
+          "callee": "validate_compliance_report",
+          "lineNumber": 142
+        },
+        {
+          "caller": "test_resolve_compliance_llm_uses_efficiency",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 155
+        },
+        {
+          "caller": "test_resolve_compliance_llm_uses_efficiency",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 156
+        },
+        {
+          "caller": "test_resolve_compliance_llm_uses_efficiency",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 157
+        },
+        {
+          "caller": "test_resolve_compliance_llm_uses_efficiency",
+          "callee": "compliance_llm_config_from_env",
+          "lineNumber": 159
+        },
+        {
+          "caller": "test_generate_compliance_brief_fallback_has_no_stock_identifiers",
+          "callee": "generate_compliance_brief",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_generate_compliance_brief_fallback_has_no_stock_identifiers",
+          "callee": "_sample_df",
+          "lineNumber": 171
+        },
+        {
+          "caller": "test_generate_compliance_brief_rejects_bad_llm_output",
+          "callee": "cr.ComplianceLLMConfig",
+          "lineNumber": 192
+        },
+        {
+          "caller": "test_generate_compliance_brief_rejects_bad_llm_output",
+          "callee": "cr.generate_compliance_brief",
+          "lineNumber": 201
+        },
+        {
+          "caller": "test_generate_compliance_brief_rejects_bad_llm_output",
+          "callee": "_sample_df",
+          "lineNumber": 203
+        },
+        {
+          "caller": "test_generate_compliance_brief_rejects_wrong_llm_date",
+          "callee": "cr.ComplianceLLMConfig",
+          "lineNumber": 218
+        },
+        {
+          "caller": "test_generate_compliance_brief_rejects_wrong_llm_date",
+          "callee": "cr.generate_compliance_brief",
+          "lineNumber": 227
+        },
+        {
+          "caller": "test_generate_compliance_brief_rejects_wrong_llm_date",
+          "callee": "_sample_df",
+          "lineNumber": 229
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 12,
+        "functionCount": 12,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/core/test_fundamental_overlay.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 66,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "test_strong_fundamentals_boost_confidence",
+          "startLine": 4,
+          "endLine": 20,
+          "params": []
+        },
+        {
+          "name": "test_distressed_fundamentals_are_veto_only_overlay",
+          "startLine": 23,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "test_stale_or_thin_record_stays_unknown",
+          "startLine": 41,
+          "endLine": 48,
+          "params": []
+        },
+        {
+          "name": "test_profit_without_cash_conversion_flags_divergence",
+          "startLine": 51,
+          "endLine": 66,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_strong_fundamentals_boost_confidence",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "test_distressed_fundamentals_are_veto_only_overlay",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "test_stale_or_thin_record_stays_unknown",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "test_profit_without_cash_conversion_flags_divergence",
+          "line": 51,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_strong_fundamentals_boost_confidence",
+          "callee": "evaluate_fundamental_overlay",
+          "lineNumber": 5
+        },
+        {
+          "caller": "test_distressed_fundamentals_are_veto_only_overlay",
+          "callee": "evaluate_fundamental_overlay",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_stale_or_thin_record_stays_unknown",
+          "callee": "evaluate_fundamental_overlay",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_profit_without_cash_conversion_flags_divergence",
+          "callee": "evaluate_fundamental_overlay",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/core/test_premarket_public_brief.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 71,
+      "functions": [
+        {
+          "name": "test_generate_public_premarket_brief_uses_efficiency",
+          "startLine": 4,
+          "endLine": 35,
+          "params": []
+        },
+        {
+          "name": "test_generate_public_premarket_brief_rejects_private_or_action_terms",
+          "startLine": 38,
+          "endLine": 68,
+          "params": []
+        },
+        {
+          "name": "test_validate_public_brief_blocks_stock_codes_and_private_terms",
+          "startLine": 71,
+          "endLine": 85,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_generate_public_premarket_brief_uses_efficiency",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "test_generate_public_premarket_brief_rejects_private_or_action_terms",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "test_validate_public_brief_blocks_stock_codes_and_private_terms",
+          "line": 71,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_generate_public_premarket_brief_uses_efficiency",
+          "callee": "brief.PublicBriefLlmConfig",
+          "lineNumber": 7
+        },
+        {
+          "caller": "test_generate_public_premarket_brief_uses_efficiency",
+          "callee": "brief.generate_public_premarket_brief",
+          "lineNumber": 18
+        },
+        {
+          "caller": "test_generate_public_premarket_brief_rejects_private_or_action_terms",
+          "callee": "brief.PublicBriefLlmConfig",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_generate_public_premarket_brief_rejects_private_or_action_terms",
+          "callee": "brief.generate_public_premarket_brief",
+          "lineNumber": 52
+        },
+        {
+          "caller": "test_validate_public_brief_blocks_stock_codes_and_private_terms",
+          "callee": "validate_public_brief",
+          "lineNumber": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/core/test_wbt_adapter.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 27,
+      "functions": [
+        {
+          "name": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "startLine": 10,
+          "endLine": 34,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "callee": "date",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "callee": "range",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "callee": "build_position_weight_frame",
+          "lineNumber": 12
+        },
+        {
+          "caller": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "callee": "date",
+          "lineNumber": 13
+        },
+        {
+          "caller": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "callee": "date",
+          "lineNumber": 13
+        },
+        {
+          "caller": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "callee": "pd.DataFrame",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "callee": "date",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "callee": "date",
+          "lineNumber": 25
+        },
+        {
+          "caller": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "callee": "row.dt.date",
+          "lineNumber": 28
+        },
+        {
+          "caller": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "callee": "frame.itertuples",
+          "lineNumber": 28
+        },
+        {
+          "caller": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "callee": "date",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "callee": "date",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "callee": "date",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "callee": "date",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_position_weight_frame_uses_next_day_entry_and_exit_zero_weight",
+          "callee": "list",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/helpers/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_llm_adapter.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "test_call_llm_via_litellm_builds_openai_compatible_request",
+          "startLine": 9,
+          "endLine": 42,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_call_llm_via_litellm_rejects_empty_response",
+          "startLine": 45,
+          "endLine": 62,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_call_llm_via_litellm_builds_openai_compatible_request",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "test_call_llm_via_litellm_rejects_empty_response",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_call_llm_via_litellm_builds_openai_compatible_request",
+          "callee": "ModuleType",
+          "lineNumber": 13
+        },
+        {
+          "caller": "fake_completion",
+          "callee": "captured.update",
+          "lineNumber": 16
+        },
+        {
+          "caller": "fake_completion",
+          "callee": "SimpleNamespace",
+          "lineNumber": 17
+        },
+        {
+          "caller": "fake_completion",
+          "callee": "SimpleNamespace",
+          "lineNumber": 18
+        },
+        {
+          "caller": "fake_completion",
+          "callee": "SimpleNamespace",
+          "lineNumber": 18
+        },
+        {
+          "caller": "fake_completion",
+          "callee": "SimpleNamespace",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_call_llm_via_litellm_builds_openai_compatible_request",
+          "callee": "monkeypatch.setitem",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_call_llm_via_litellm_builds_openai_compatible_request",
+          "callee": "call_llm_via_litellm",
+          "lineNumber": 25
+        },
+        {
+          "caller": "test_call_llm_via_litellm_rejects_empty_response",
+          "callee": "ModuleType",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_call_llm_via_litellm_rejects_empty_response",
+          "callee": "SimpleNamespace",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_call_llm_via_litellm_rejects_empty_response",
+          "callee": "SimpleNamespace",
+          "lineNumber": 50
+        },
+        {
+          "caller": "test_call_llm_via_litellm_rejects_empty_response",
+          "callee": "SimpleNamespace",
+          "lineNumber": 50
+        },
+        {
+          "caller": "test_call_llm_via_litellm_rejects_empty_response",
+          "callee": "SimpleNamespace",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_call_llm_via_litellm_rejects_empty_response",
+          "callee": "monkeypatch.setitem",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_call_llm_via_litellm_rejects_empty_response",
+          "callee": "pytest.raises",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_call_llm_via_litellm_rejects_empty_response",
+          "callee": "call_llm_via_litellm",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_llm_client.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 251,
+      "nonEmptyLines": 218,
+      "classes": [
+        {
+          "name": "TestLiteLLMSwitch",
+          "startLine": 13,
+          "endLine": 167,
+          "methods": [
+            "test_one_route_defaults_to_api_base_url",
+            "test_litellm_disabled_by_default",
+            "test_litellm_enabled_routes_to_litellm",
+            "test_litellm_enabled_true_string",
+            "test_litellm_enabled_with_images_falls_back",
+            "test_litellm_import_error_falls_back",
+            "test_validation_still_works_with_litellm",
+            "test_unsupported_provider_still_raises",
+            "test_efficiency_requires_base_url"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestGeminiTruncationHandling",
+          "startLine": 170,
+          "endLine": 251,
+          "methods": [
+            "_install_fake_google_genai",
+            "test_gemini_truncation_can_return_text_when_allowed",
+            "test_gemini_truncation_still_raises_by_default"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestLiteLLMSwitch",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "TestGeminiTruncationHandling",
+          "line": 170,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_one_route_defaults_to_api_base_url",
+          "callee": "patch.dict",
+          "lineNumber": 18
+        },
+        {
+          "caller": "test_one_route_defaults_to_api_base_url",
+          "callee": "get_provider_credentials",
+          "lineNumber": 21
+        },
+        {
+          "caller": "test_litellm_disabled_by_default",
+          "callee": "patch.dict",
+          "lineNumber": 29
+        },
+        {
+          "caller": "test_litellm_disabled_by_default",
+          "callee": "os.environ.pop",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_litellm_disabled_by_default",
+          "callee": "patch",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test_litellm_disabled_by_default",
+          "callee": "call_llm",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_litellm_disabled_by_default",
+          "callee": "mock_native.assert_called_once",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_litellm_enabled_routes_to_litellm",
+          "callee": "patch.dict",
+          "lineNumber": 47
+        },
+        {
+          "caller": "test_litellm_enabled_routes_to_litellm",
+          "callee": "patch",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_litellm_enabled_routes_to_litellm",
+          "callee": "call_llm",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_litellm_enabled_routes_to_litellm",
+          "callee": "mock_litellm.assert_called_once",
+          "lineNumber": 63
+        },
+        {
+          "caller": "test_litellm_enabled_true_string",
+          "callee": "patch.dict",
+          "lineNumber": 68
+        },
+        {
+          "caller": "test_litellm_enabled_true_string",
+          "callee": "patch",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_litellm_enabled_true_string",
+          "callee": "patch",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_litellm_enabled_true_string",
+          "callee": "call_llm",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_litellm_enabled_true_string",
+          "callee": "mock_litellm.assert_not_called",
+          "lineNumber": 85
+        },
+        {
+          "caller": "test_litellm_enabled_true_string",
+          "callee": "mock_native.assert_called_once",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_litellm_enabled_with_images_falls_back",
+          "callee": "patch.dict",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_litellm_enabled_with_images_falls_back",
+          "callee": "patch",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_litellm_enabled_with_images_falls_back",
+          "callee": "call_llm",
+          "lineNumber": 96
+        },
+        {
+          "caller": "test_litellm_enabled_with_images_falls_back",
+          "callee": "mock_native.assert_called_once",
+          "lineNumber": 105
+        },
+        {
+          "caller": "test_litellm_import_error_falls_back",
+          "callee": "patch.dict",
+          "lineNumber": 110
+        },
+        {
+          "caller": "test_litellm_import_error_falls_back",
+          "callee": "patch",
+          "lineNumber": 111
+        },
+        {
+          "caller": "test_litellm_import_error_falls_back",
+          "callee": "ImportError",
+          "lineNumber": 113
+        },
+        {
+          "caller": "test_litellm_import_error_falls_back",
+          "callee": "patch",
+          "lineNumber": 115
+        },
+        {
+          "caller": "test_litellm_import_error_falls_back",
+          "callee": "call_llm",
+          "lineNumber": 119
+        },
+        {
+          "caller": "test_litellm_import_error_falls_back",
+          "callee": "mock_native.assert_called_once",
+          "lineNumber": 127
+        },
+        {
+          "caller": "test_validation_still_works_with_litellm",
+          "callee": "patch.dict",
+          "lineNumber": 131
+        },
+        {
+          "caller": "test_validation_still_works_with_litellm",
+          "callee": "pytest.raises",
+          "lineNumber": 134
+        },
+        {
+          "caller": "test_validation_still_works_with_litellm",
+          "callee": "call_llm",
+          "lineNumber": 135
+        },
+        {
+          "caller": "test_unsupported_provider_still_raises",
+          "callee": "patch.dict",
+          "lineNumber": 145
+        },
+        {
+          "caller": "test_unsupported_provider_still_raises",
+          "callee": "pytest.raises",
+          "lineNumber": 148
+        },
+        {
+          "caller": "test_unsupported_provider_still_raises",
+          "callee": "call_llm",
+          "lineNumber": 149
+        },
+        {
+          "caller": "test_efficiency_requires_base_url",
+          "callee": "pytest.raises",
+          "lineNumber": 160
+        },
+        {
+          "caller": "test_efficiency_requires_base_url",
+          "callee": "call_llm",
+          "lineNumber": 161
+        },
+        {
+          "caller": "_install_fake_google_genai",
+          "callee": "ModuleType",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_install_fake_google_genai",
+          "callee": "ModuleType",
+          "lineNumber": 174
+        },
+        {
+          "caller": "_install_fake_google_genai",
+          "callee": "ModuleType",
+          "lineNumber": 175
+        },
+        {
+          "caller": "__init__",
+          "callee": "SimpleNamespace",
+          "lineNumber": 179
+        },
+        {
+          "caller": "__init__",
+          "callee": "MagicMock",
+          "lineNumber": 179
+        },
+        {
+          "caller": "__init__",
+          "callee": "kwargs.items",
+          "lineNumber": 183
+        },
+        {
+          "caller": "__init__",
+          "callee": "setattr",
+          "lineNumber": 184
+        },
+        {
+          "caller": "test_gemini_truncation_can_return_text_when_allowed",
+          "callee": "SimpleNamespace",
+          "lineNumber": 199
+        },
+        {
+          "caller": "test_gemini_truncation_can_return_text_when_allowed",
+          "callee": "SimpleNamespace",
+          "lineNumber": 201
+        },
+        {
+          "caller": "test_gemini_truncation_can_return_text_when_allowed",
+          "callee": "SimpleNamespace",
+          "lineNumber": 202
+        },
+        {
+          "caller": "test_gemini_truncation_can_return_text_when_allowed",
+          "callee": "self._install_fake_google_genai",
+          "lineNumber": 208
+        },
+        {
+          "caller": "test_gemini_truncation_can_return_text_when_allowed",
+          "callee": "patch.dict",
+          "lineNumber": 209
+        },
+        {
+          "caller": "test_gemini_truncation_can_return_text_when_allowed",
+          "callee": "_call_gemini",
+          "lineNumber": 210
+        },
+        {
+          "caller": "test_gemini_truncation_still_raises_by_default",
+          "callee": "SimpleNamespace",
+          "lineNumber": 226
+        },
+        {
+          "caller": "test_gemini_truncation_still_raises_by_default",
+          "callee": "SimpleNamespace",
+          "lineNumber": 228
+        },
+        {
+          "caller": "test_gemini_truncation_still_raises_by_default",
+          "callee": "SimpleNamespace",
+          "lineNumber": 229
+        },
+        {
+          "caller": "test_gemini_truncation_still_raises_by_default",
+          "callee": "self._install_fake_google_genai",
+          "lineNumber": 235
+        },
+        {
+          "caller": "test_gemini_truncation_still_raises_by_default",
+          "callee": "patch.dict",
+          "lineNumber": 237
+        },
+        {
+          "caller": "test_gemini_truncation_still_raises_by_default",
+          "callee": "patch",
+          "lineNumber": 238
+        },
+        {
+          "caller": "test_gemini_truncation_still_raises_by_default",
+          "callee": "pytest.raises",
+          "lineNumber": 239
+        },
+        {
+          "caller": "test_gemini_truncation_still_raises_by_default",
+          "callee": "_call_gemini",
+          "lineNumber": 241
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_local_db_concurrency.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 133,
+      "nonEmptyLines": 99,
+      "functions": [
+        {
+          "name": "db",
+          "startLine": 23,
+          "endLine": 31,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_each_thread_gets_its_own_connection",
+          "startLine": 34,
+          "endLine": 48,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "test_same_thread_reuses_its_connection",
+          "startLine": 51,
+          "endLine": 53,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "test_writes_from_another_thread_are_visible",
+          "startLine": 56,
+          "endLine": 76,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "test_reset_while_other_threads_are_busy_does_not_crash",
+          "startLine": 79,
+          "endLine": 110,
+          "params": [
+            "db"
+          ]
+        },
+        {
+          "name": "test_concurrent_writes_do_not_corrupt_transactions",
+          "startLine": 113,
+          "endLine": 133,
+          "params": [
+            "db"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "db",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "test_each_thread_gets_its_own_connection",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "test_same_thread_reuses_its_connection",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "test_writes_from_another_thread_are_visible",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "test_reset_while_other_threads_are_busy_does_not_crash",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "test_concurrent_writes_do_not_corrupt_transactions",
+          "line": 113,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "db",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 27
+        },
+        {
+          "caller": "db",
+          "callee": "ldb.reset_connection",
+          "lineNumber": 28
+        },
+        {
+          "caller": "db",
+          "callee": "ldb.init_db",
+          "lineNumber": 29
+        },
+        {
+          "caller": "db",
+          "callee": "ldb.reset_connection",
+          "lineNumber": 31
+        },
+        {
+          "caller": "grab",
+          "callee": "threading.get_ident",
+          "lineNumber": 39
+        },
+        {
+          "caller": "grab",
+          "callee": "id",
+          "lineNumber": 39
+        },
+        {
+          "caller": "grab",
+          "callee": "db.get_db",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_each_thread_gets_its_own_connection",
+          "callee": "threading.Thread",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_each_thread_gets_its_own_connection",
+          "callee": "range",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_each_thread_gets_its_own_connection",
+          "callee": "t.start",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_each_thread_gets_its_own_connection",
+          "callee": "t.join",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_each_thread_gets_its_own_connection",
+          "callee": "grab",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_each_thread_gets_its_own_connection",
+          "callee": "len",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_each_thread_gets_its_own_connection",
+          "callee": "set",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_each_thread_gets_its_own_connection",
+          "callee": "seen.values",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_each_thread_gets_its_own_connection",
+          "callee": "len",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_same_thread_reuses_its_connection",
+          "callee": "db.get_db",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_same_thread_reuses_its_connection",
+          "callee": "db.get_db",
+          "lineNumber": 53
+        },
+        {
+          "caller": "writer",
+          "callee": "db.save_chat_log",
+          "lineNumber": 66
+        },
+        {
+          "caller": "writer",
+          "callee": "errors.append",
+          "lineNumber": 68
+        },
+        {
+          "caller": "test_writes_from_another_thread_are_visible",
+          "callee": "threading.Thread",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_writes_from_another_thread_are_visible",
+          "callee": "t.start",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_writes_from_another_thread_are_visible",
+          "callee": "t.join",
+          "lineNumber": 72
+        },
+        {
+          "caller": "test_writes_from_another_thread_are_visible",
+          "callee": "db.load_chat_logs",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_reset_while_other_threads_are_busy_does_not_crash",
+          "callee": "threading.Event",
+          "lineNumber": 87
+        },
+        {
+          "caller": "worker",
+          "callee": "stop.is_set",
+          "lineNumber": 91
+        },
+        {
+          "caller": "worker",
+          "callee": "db.get_db().execute(\"SELECT COUNT(*) FROM chat_log\").fetchone",
+          "lineNumber": 93
+        },
+        {
+          "caller": "worker",
+          "callee": "db.get_db().execute",
+          "lineNumber": 93
+        },
+        {
+          "caller": "worker",
+          "callee": "db.get_db",
+          "lineNumber": 93
+        },
+        {
+          "caller": "worker",
+          "callee": "errors.append",
+          "lineNumber": 95
+        },
+        {
+          "caller": "test_reset_while_other_threads_are_busy_does_not_crash",
+          "callee": "threading.Thread",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_reset_while_other_threads_are_busy_does_not_crash",
+          "callee": "range",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_reset_while_other_threads_are_busy_does_not_crash",
+          "callee": "t.start",
+          "lineNumber": 100
+        },
+        {
+          "caller": "test_reset_while_other_threads_are_busy_does_not_crash",
+          "callee": "range",
+          "lineNumber": 102
+        },
+        {
+          "caller": "test_reset_while_other_threads_are_busy_does_not_crash",
+          "callee": "db.reset_connection",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_reset_while_other_threads_are_busy_does_not_crash",
+          "callee": "db.init_db",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_reset_while_other_threads_are_busy_does_not_crash",
+          "callee": "stop.set",
+          "lineNumber": 106
+        },
+        {
+          "caller": "test_reset_while_other_threads_are_busy_does_not_crash",
+          "callee": "t.join",
+          "lineNumber": 108
+        },
+        {
+          "caller": "writer",
+          "callee": "range",
+          "lineNumber": 121
+        },
+        {
+          "caller": "writer",
+          "callee": "db.save_chat_log",
+          "lineNumber": 122
+        },
+        {
+          "caller": "writer",
+          "callee": "errors.append",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_concurrent_writes_do_not_corrupt_transactions",
+          "callee": "threading.Thread",
+          "lineNumber": 126
+        },
+        {
+          "caller": "test_concurrent_writes_do_not_corrupt_transactions",
+          "callee": "range",
+          "lineNumber": 126
+        },
+        {
+          "caller": "test_concurrent_writes_do_not_corrupt_transactions",
+          "callee": "t.start",
+          "lineNumber": 128
+        },
+        {
+          "caller": "test_concurrent_writes_do_not_corrupt_transactions",
+          "callee": "t.join",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_concurrent_writes_do_not_corrupt_transactions",
+          "callee": "len",
+          "lineNumber": 133
+        },
+        {
+          "caller": "test_concurrent_writes_do_not_corrupt_transactions",
+          "callee": "db.load_chat_logs",
+          "lineNumber": 133
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_local_db_schema.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 46,
+      "functions": [
+        {
+          "name": "_reset_local_db",
+          "startLine": 6,
+          "endLine": 7,
+          "params": [
+            "local_db"
+          ]
+        },
+        {
+          "name": "test_init_db_migrates_candidate_columns_before_lane_indexes",
+          "startLine": 10,
+          "endLine": 54,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_reset_local_db",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "test_init_db_migrates_candidate_columns_before_lane_indexes",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_reset_local_db",
+          "callee": "local_db.reset_connection",
+          "lineNumber": 7
+        },
+        {
+          "caller": "test_init_db_migrates_candidate_columns_before_lane_indexes",
+          "callee": "sqlite3.connect",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_init_db_migrates_candidate_columns_before_lane_indexes",
+          "callee": "conn.executescript",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_init_db_migrates_candidate_columns_before_lane_indexes",
+          "callee": "_reset_local_db",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_init_db_migrates_candidate_columns_before_lane_indexes",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_init_db_migrates_candidate_columns_before_lane_indexes",
+          "callee": "local_db.init_db",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_init_db_migrates_candidate_columns_before_lane_indexes",
+          "callee": "local_db.get_db",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_init_db_migrates_candidate_columns_before_lane_indexes",
+          "callee": "conn.execute",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_init_db_migrates_candidate_columns_before_lane_indexes",
+          "callee": "conn.execute",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_init_db_migrates_candidate_columns_before_lane_indexes",
+          "callee": "conn.execute",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_init_db_migrates_candidate_columns_before_lane_indexes",
+          "callee": "conn.execute",
+          "lineNumber": 47
+        },
+        {
+          "caller": "test_init_db_migrates_candidate_columns_before_lane_indexes",
+          "callee": "_reset_local_db",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_local_db_signal_cache.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "_reset_local_db",
+          "startLine": 4,
+          "endLine": 5,
+          "params": [
+            "local_db"
+          ]
+        },
+        {
+          "name": "test_load_signals_returns_empty_when_cache_table_missing",
+          "startLine": 8,
+          "endLine": 16,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_load_signals_by_codes_returns_empty_when_cache_table_missing",
+          "startLine": 19,
+          "endLine": 27,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_reset_local_db",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "test_load_signals_returns_empty_when_cache_table_missing",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "test_load_signals_by_codes_returns_empty_when_cache_table_missing",
+          "line": 19,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_reset_local_db",
+          "callee": "local_db.reset_connection",
+          "lineNumber": 5
+        },
+        {
+          "caller": "test_load_signals_returns_empty_when_cache_table_missing",
+          "callee": "_reset_local_db",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_load_signals_returns_empty_when_cache_table_missing",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 12
+        },
+        {
+          "caller": "test_load_signals_returns_empty_when_cache_table_missing",
+          "callee": "local_db.load_signals",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_load_signals_returns_empty_when_cache_table_missing",
+          "callee": "_reset_local_db",
+          "lineNumber": 16
+        },
+        {
+          "caller": "test_load_signals_by_codes_returns_empty_when_cache_table_missing",
+          "callee": "_reset_local_db",
+          "lineNumber": 22
+        },
+        {
+          "caller": "test_load_signals_by_codes_returns_empty_when_cache_table_missing",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_load_signals_by_codes_returns_empty_when_cache_table_missing",
+          "callee": "local_db.load_signals_by_codes",
+          "lineNumber": 25
+        },
+        {
+          "caller": "test_load_signals_by_codes_returns_empty_when_cache_table_missing",
+          "callee": "_reset_local_db",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_stock_hist_repository.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "test_get_stock_hist_returns_data_from_source",
+          "startLine": 8,
+          "endLine": 44,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_get_stock_hist_rejects_unknown_kwargs",
+          "startLine": 47,
+          "endLine": 53,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_get_stock_hist_returns_data_from_source",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "test_get_stock_hist_rejects_unknown_kwargs",
+          "line": 47,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_get_stock_hist_returns_data_from_source",
+          "callee": "pd.DataFrame",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_get_stock_hist_returns_data_from_source",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 37
+        },
+        {
+          "caller": "test_get_stock_hist_returns_data_from_source",
+          "callee": "repo.get_stock_hist",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_get_stock_hist_returns_data_from_source",
+          "callee": "date",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_get_stock_hist_returns_data_from_source",
+          "callee": "date",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_get_stock_hist_returns_data_from_source",
+          "callee": "len",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_get_stock_hist_rejects_unknown_kwargs",
+          "callee": "pytest.raises",
+          "lineNumber": 52
+        },
+        {
+          "caller": "test_get_stock_hist_rejects_unknown_kwargs",
+          "callee": "repo.get_stock_hist",
+          "lineNumber": 53
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_supabase_concept_heat.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 86,
+      "functions": [
+        {
+          "name": "test_upsert_concept_heat_history_sorts_and_limits",
+          "startLine": 61,
+          "endLine": 92,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_load_concept_heat_history_groups_recent_days",
+          "startLine": 95,
+          "endLine": 110,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "_Response",
+          "startLine": 4,
+          "endLine": 6,
+          "methods": [
+            "__init__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "_FakeTable",
+          "startLine": 9,
+          "endLine": 48,
+          "methods": [
+            "__init__",
+            "upsert",
+            "delete",
+            "eq",
+            "select",
+            "order",
+            "limit",
+            "execute"
+          ],
+          "properties": []
+        },
+        {
+          "name": "_FakeClient",
+          "startLine": 51,
+          "endLine": 58,
+          "methods": [
+            "__init__",
+            "table"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_Response",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "_FakeTable",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "_FakeClient",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "test_upsert_concept_heat_history_sorts_and_limits",
+          "line": 61,
+          "isDefault": false
+        },
+        {
+          "name": "test_load_concept_heat_history_groups_recent_days",
+          "line": 95,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "eq",
+          "callee": "self.deleted_filters.append",
+          "lineNumber": 30
+        },
+        {
+          "caller": "execute",
+          "callee": "_Response",
+          "lineNumber": 46
+        },
+        {
+          "caller": "execute",
+          "callee": "_Response",
+          "lineNumber": 48
+        },
+        {
+          "caller": "__init__",
+          "callee": "_FakeTable",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_upsert_concept_heat_history_sorts_and_limits",
+          "callee": "_FakeClient",
+          "lineNumber": 64
+        },
+        {
+          "caller": "test_upsert_concept_heat_history_sorts_and_limits",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 65
+        },
+        {
+          "caller": "test_upsert_concept_heat_history_sorts_and_limits",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 66
+        },
+        {
+          "caller": "test_upsert_concept_heat_history_sorts_and_limits",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 67
+        },
+        {
+          "caller": "test_upsert_concept_heat_history_sorts_and_limits",
+          "callee": "mod.upsert_concept_heat_history",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_load_concept_heat_history_groups_recent_days",
+          "callee": "_FakeClient",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_load_concept_heat_history_groups_recent_days",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 105
+        },
+        {
+          "caller": "test_load_concept_heat_history_groups_recent_days",
+          "callee": "mod.load_concept_heat_history_from_supabase",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_load_concept_heat_history_groups_recent_days",
+          "callee": "list",
+          "lineNumber": 109
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 2,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/integrations/test_supabase_theme_radar.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 57,
+      "functions": [
+        {
+          "name": "test_upsert_theme_radar_snapshot_writes_summary_columns",
+          "startLine": 48,
+          "endLine": 68,
+          "params": [
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_load_latest_theme_radar_snapshot_from_supabase",
+          "startLine": 71,
+          "endLine": 79,
+          "params": [
+            "monkeypatch"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "_Response",
+          "startLine": 4,
+          "endLine": 6,
+          "methods": [
+            "__init__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "_FakeTable",
+          "startLine": 9,
+          "endLine": 35,
+          "methods": [
+            "__init__",
+            "upsert",
+            "select",
+            "order",
+            "limit",
+            "execute"
+          ],
+          "properties": []
+        },
+        {
+          "name": "_FakeClient",
+          "startLine": 38,
+          "endLine": 45,
+          "methods": [
+            "__init__",
+            "table"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_Response",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "_FakeTable",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "_FakeClient",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "test_upsert_theme_radar_snapshot_writes_summary_columns",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "test_load_latest_theme_radar_snapshot_from_supabase",
+          "line": 71,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "execute",
+          "callee": "_Response",
+          "lineNumber": 33
+        },
+        {
+          "caller": "execute",
+          "callee": "_Response",
+          "lineNumber": 35
+        },
+        {
+          "caller": "__init__",
+          "callee": "_FakeTable",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_upsert_theme_radar_snapshot_writes_summary_columns",
+          "callee": "_FakeClient",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_upsert_theme_radar_snapshot_writes_summary_columns",
+          "callee": "monkeypatch.setenv",
+          "lineNumber": 52
+        },
+        {
+          "caller": "test_upsert_theme_radar_snapshot_writes_summary_columns",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_upsert_theme_radar_snapshot_writes_summary_columns",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_upsert_theme_radar_snapshot_writes_summary_columns",
+          "callee": "mod.upsert_theme_radar_snapshot",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_load_latest_theme_radar_snapshot_from_supabase",
+          "callee": "_FakeClient",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_load_latest_theme_radar_snapshot_from_supabase",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_load_latest_theme_radar_snapshot_from_supabase",
+          "callee": "mod.load_latest_theme_radar_snapshot_from_supabase",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 2,
+        "classCount": 3
+      }
+    }
+  ]
+}

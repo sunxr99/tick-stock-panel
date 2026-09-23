@@ -1,0 +1,986 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 25,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 23,
+      "failed": 0,
+      "skipped": 2
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/chat-message-history-web-search.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 35,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/chat-tool-approval.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 25,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/chat-tools.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 977,
+      "nonEmptyLines": 888,
+      "functions": [
+        {
+          "name": "createMockChain",
+          "startLine": 22,
+          "endLine": 34,
+          "params": [
+            "resolvedData",
+            "error"
+          ]
+        },
+        {
+          "name": "createPortfolioWriteDeps",
+          "startLine": 36,
+          "endLine": 48,
+          "params": [
+            "updateRows"
+          ]
+        },
+        {
+          "name": "createMockDeps",
+          "startLine": 50,
+          "endLine": 61,
+          "params": [
+            "tableData"
+          ]
+        },
+        {
+          "name": "makeKlineRows",
+          "startLine": 63,
+          "endLine": 72,
+          "params": [
+            "n",
+            "base"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "terminal",
+          "callee": "Promise.resolve",
+          "lineNumber": 24
+        },
+        {
+          "caller": "createMockChain",
+          "callee": "vi.fn().mockReturnValue",
+          "lineNumber": 26
+        },
+        {
+          "caller": "createMockChain",
+          "callee": "vi.fn",
+          "lineNumber": 26
+        },
+        {
+          "caller": "createMockChain",
+          "callee": "vi.fn().mockImplementation",
+          "lineNumber": 28
+        },
+        {
+          "caller": "createMockChain",
+          "callee": "vi.fn",
+          "lineNumber": 28
+        },
+        {
+          "caller": "createMockChain",
+          "callee": "vi.fn().mockImplementation",
+          "lineNumber": 29
+        },
+        {
+          "caller": "createMockChain",
+          "callee": "vi.fn",
+          "lineNumber": 29
+        },
+        {
+          "caller": "createMockChain",
+          "callee": "vi.fn().mockImplementation",
+          "lineNumber": 30
+        },
+        {
+          "caller": "createMockChain",
+          "callee": "vi.fn",
+          "lineNumber": 30
+        },
+        {
+          "caller": "createMockChain",
+          "callee": "resolve",
+          "lineNumber": 32
+        },
+        {
+          "caller": "createPortfolioWriteDeps",
+          "callee": "createMockChain",
+          "lineNumber": 37
+        },
+        {
+          "caller": "createPortfolioWriteDeps",
+          "callee": "createMockChain",
+          "lineNumber": 38
+        },
+        {
+          "caller": "createPortfolioWriteDeps",
+          "callee": "vi.fn()\n    .mockReturnValueOnce(updateChain)\n    .mockReturnValueOnce",
+          "lineNumber": 39
+        },
+        {
+          "caller": "createPortfolioWriteDeps",
+          "callee": "vi.fn()\n    .mockReturnValueOnce",
+          "lineNumber": 39
+        },
+        {
+          "caller": "createPortfolioWriteDeps",
+          "callee": "vi.fn",
+          "lineNumber": 39
+        },
+        {
+          "caller": "createPortfolioWriteDeps",
+          "callee": "vi.fn",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createPortfolioWriteDeps",
+          "callee": "vi.fn",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createMockDeps",
+          "callee": "vi.fn().mockImplementation",
+          "lineNumber": 51
+        },
+        {
+          "caller": "createMockDeps",
+          "callee": "vi.fn",
+          "lineNumber": 51
+        },
+        {
+          "caller": "createMockDeps",
+          "callee": "createMockChain",
+          "lineNumber": 53
+        },
+        {
+          "caller": "createMockDeps",
+          "callee": "vi.fn().mockResolvedValue",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createMockDeps",
+          "callee": "vi.fn",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createMockDeps",
+          "callee": "Promise.resolve",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createMockDeps",
+          "callee": "vi.fn().mockResolvedValue",
+          "lineNumber": 59
+        },
+        {
+          "caller": "createMockDeps",
+          "callee": "vi.fn",
+          "lineNumber": 59
+        },
+        {
+          "caller": "makeKlineRows",
+          "callee": "Array.from",
+          "lineNumber": 64
+        },
+        {
+          "caller": "makeKlineRows",
+          "callee": "String(i + 1).padStart",
+          "lineNumber": 65
+        },
+        {
+          "caller": "makeKlineRows",
+          "callee": "String",
+          "lineNumber": 65
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/gemini-sse-normalize.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 112,
+      "nonEmptyLines": 103,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/gemini-thought-signatures.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 60,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/llm-usage.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 89,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/market-regime-gate.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 92,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/market-watch-cache.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "snapshot",
+          "startLine": 7,
+          "endLine": 19,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/news-chart-events.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 45,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/policy-weight-meta.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 137,
+      "nonEmptyLines": 124,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/portfolio-symbol.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 11,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/portfolio-valuation.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "createSupabase",
+          "startLine": 4,
+          "endLine": 34,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "from",
+          "callee": "vi.fn",
+          "lineNumber": 20
+        },
+        {
+          "caller": "from",
+          "callee": "vi.fn",
+          "lineNumber": 21
+        },
+        {
+          "caller": "from",
+          "callee": "updates.push",
+          "lineNumber": 22
+        },
+        {
+          "caller": "from",
+          "callee": "vi.fn",
+          "lineNumber": 26
+        },
+        {
+          "caller": "from",
+          "callee": "vi.fn",
+          "lineNumber": 27
+        },
+        {
+          "caller": "then",
+          "callee": "resolve",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/price-basis.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 40,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/provider-constants.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 28,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/session-clock.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 129,
+      "nonEmptyLines": 107,
+      "functions": [
+        {
+          "name": "utc",
+          "startLine": 10,
+          "endLine": 12,
+          "params": [
+            "iso"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "at",
+          "callee": "resolveSessionClock",
+          "lineNumber": 35
+        },
+        {
+          "caller": "at",
+          "callee": "utc",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/stock-news.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "depsWith",
+          "startLine": 5,
+          "endLine": 7,
+          "params": [
+            "fetchImpl"
+          ]
+        },
+        {
+          "name": "eastMoneyResponse",
+          "startLine": 9,
+          "endLine": 11,
+          "params": [
+            "articles"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "eastMoneyResponse",
+          "callee": "JSON.stringify",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/tracking-dedupe.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 96,
+      "nonEmptyLines": 88,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/__tests__/wyckoff-chart-plan.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 229,
+      "nonEmptyLines": 206,
+      "functions": [
+        {
+          "name": "buildKline",
+          "startLine": 12,
+          "endLine": 24,
+          "params": [
+            "closes",
+            "startDay"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "buildKline",
+          "callee": "closes.map",
+          "lineNumber": 13
+        },
+        {
+          "caller": "buildKline",
+          "callee": "String(startDay + index).padStart",
+          "lineNumber": 14
+        },
+        {
+          "caller": "buildKline",
+          "callee": "String",
+          "lineNumber": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/lib/gemini-thought-signatures.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "createThoughtSignatureCache",
+          "startLine": 3,
+          "endLine": 5,
+          "params": []
+        },
+        {
+          "name": "isRecord",
+          "startLine": 7,
+          "endLine": 9,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "cacheKeyForToolCall",
+          "startLine": 11,
+          "endLine": 16,
+          "params": [
+            "toolCall",
+            "fallbackIndex"
+          ]
+        },
+        {
+          "name": "captureThoughtSignaturesFromChunk",
+          "startLine": 19,
+          "endLine": 41,
+          "params": [
+            "evt",
+            "cache"
+          ]
+        },
+        {
+          "name": "restoreThoughtSignaturesOnRequest",
+          "startLine": 44,
+          "endLine": 79,
+          "params": [
+            "init",
+            "cache"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createThoughtSignatureCache",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "captureThoughtSignaturesFromChunk",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "restoreThoughtSignaturesOnRequest",
+          "line": 44,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isRecord",
+          "callee": "Boolean",
+          "lineNumber": 8
+        },
+        {
+          "caller": "isRecord",
+          "callee": "Array.isArray",
+          "lineNumber": 8
+        },
+        {
+          "caller": "cacheKeyForToolCall",
+          "callee": "toolCall.id.trim",
+          "lineNumber": 12
+        },
+        {
+          "caller": "captureThoughtSignaturesFromChunk",
+          "callee": "isRecord",
+          "lineNumber": 20
+        },
+        {
+          "caller": "captureThoughtSignaturesFromChunk",
+          "callee": "Array.isArray",
+          "lineNumber": 20
+        },
+        {
+          "caller": "captureThoughtSignaturesFromChunk",
+          "callee": "isRecord",
+          "lineNumber": 23
+        },
+        {
+          "caller": "captureThoughtSignaturesFromChunk",
+          "callee": "isRecord",
+          "lineNumber": 24
+        },
+        {
+          "caller": "captureThoughtSignaturesFromChunk",
+          "callee": "isRecord",
+          "lineNumber": 25
+        },
+        {
+          "caller": "captureThoughtSignaturesFromChunk",
+          "callee": "Array.isArray",
+          "lineNumber": 27
+        },
+        {
+          "caller": "captureThoughtSignaturesFromChunk",
+          "callee": "toolCalls.forEach",
+          "lineNumber": 29
+        },
+        {
+          "caller": "captureThoughtSignaturesFromChunk",
+          "callee": "isRecord",
+          "lineNumber": 30
+        },
+        {
+          "caller": "captureThoughtSignaturesFromChunk",
+          "callee": "isRecord",
+          "lineNumber": 32
+        },
+        {
+          "caller": "captureThoughtSignaturesFromChunk",
+          "callee": "cacheKeyForToolCall",
+          "lineNumber": 33
+        },
+        {
+          "caller": "captureThoughtSignaturesFromChunk",
+          "callee": "cache.set",
+          "lineNumber": 35
+        },
+        {
+          "caller": "captureThoughtSignaturesFromChunk",
+          "callee": "cache.set",
+          "lineNumber": 37
+        },
+        {
+          "caller": "restoreThoughtSignaturesOnRequest",
+          "callee": "JSON.parse",
+          "lineNumber": 51
+        },
+        {
+          "caller": "restoreThoughtSignaturesOnRequest",
+          "callee": "Array.isArray",
+          "lineNumber": 52
+        },
+        {
+          "caller": "restoreThoughtSignaturesOnRequest",
+          "callee": "body.messages.map",
+          "lineNumber": 54
+        },
+        {
+          "caller": "restoreThoughtSignaturesOnRequest",
+          "callee": "isRecord",
+          "lineNumber": 55
+        },
+        {
+          "caller": "restoreThoughtSignaturesOnRequest",
+          "callee": "Array.isArray",
+          "lineNumber": 55
+        },
+        {
+          "caller": "restoreThoughtSignaturesOnRequest",
+          "callee": "message.tool_calls.map",
+          "lineNumber": 59
+        },
+        {
+          "caller": "restoreThoughtSignaturesOnRequest",
+          "callee": "isRecord",
+          "lineNumber": 60
+        },
+        {
+          "caller": "restoreThoughtSignaturesOnRequest",
+          "callee": "isRecord",
+          "lineNumber": 62
+        },
+        {
+          "caller": "restoreThoughtSignaturesOnRequest",
+          "callee": "isRecord",
+          "lineNumber": 62
+        },
+        {
+          "caller": "restoreThoughtSignaturesOnRequest",
+          "callee": "cacheKeyForToolCall",
+          "lineNumber": 66
+        },
+        {
+          "caller": "restoreThoughtSignaturesOnRequest",
+          "callee": "cache.get",
+          "lineNumber": 67
+        },
+        {
+          "caller": "restoreThoughtSignaturesOnRequest",
+          "callee": "JSON.stringify",
+          "lineNumber": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/src/vite-env.d.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 12,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/vitest.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/apps/web/vitest.setup.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/functions/desktop/latest.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 43,
+      "functions": [
+        {
+          "name": "onRequest",
+          "startLine": 17,
+          "endLine": 46,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "onRequest",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "onRequest",
+          "callee": "Response.json",
+          "lineNumber": 19
+        },
+        {
+          "caller": "onRequest",
+          "callee": "fetch",
+          "lineNumber": 21
+        },
+        {
+          "caller": "onRequest",
+          "callee": "Response.json",
+          "lineNumber": 29
+        },
+        {
+          "caller": "onRequest",
+          "callee": "upstream.json",
+          "lineNumber": 31
+        },
+        {
+          "caller": "onRequest",
+          "callee": "releases.find",
+          "lineNumber": 32
+        },
+        {
+          "caller": "onRequest",
+          "callee": "item.tag_name.startsWith",
+          "lineNumber": 33
+        },
+        {
+          "caller": "onRequest",
+          "callee": "Response.json",
+          "lineNumber": 35
+        },
+        {
+          "caller": "onRequest",
+          "callee": "Object.fromEntries",
+          "lineNumber": 36
+        },
+        {
+          "caller": "onRequest",
+          "callee": "release.assets.map",
+          "lineNumber": 36
+        },
+        {
+          "caller": "onRequest",
+          "callee": "Response.json",
+          "lineNumber": 37
+        },
+        {
+          "caller": "onRequest",
+          "callee": "release.tag_name.slice",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/package.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 13,
+      "nonEmptyLines": 13,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "private",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "scripts",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "engines",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "packageManager",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/web/packages/shared/package.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 18,
+      "nonEmptyLines": 18,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "private",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "type",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "main",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "types",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "scripts",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "dependencies",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "devDependencies",
+          "level": 1,
+          "line": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    }
+  ]
+}

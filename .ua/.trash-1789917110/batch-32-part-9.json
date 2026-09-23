@@ -1,0 +1,202 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "type": "file",
+      "name": "test_rate_limit_safety_budget.py",
+      "filePath": "backend/tests/test_rate_limit_safety_budget.py",
+      "summary": "为 test_rate_limit_safety_budget.py 所覆盖的功能提供自动化测试，验证预期行为与回归场景。",
+      "tags": [
+        "测试",
+        "质量保障",
+        "源码"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_rate_limit_safety_budget.py:test_apply_safety_rpm_scales_to_80_percent",
+      "type": "function",
+      "name": "test_apply_safety_rpm_scales_to_80_percent",
+      "filePath": "backend/tests/test_rate_limit_safety_budget.py",
+      "lineRange": [
+        18,
+        23
+      ],
+      "summary": "定义 test_apply_safety_rpm_scales_to_80_percent，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_rate_limit_safety_budget.py:test_resolve_limit_applies_safety_by_default",
+      "type": "function",
+      "name": "test_resolve_limit_applies_safety_by_default",
+      "filePath": "backend/tests/test_rate_limit_safety_budget.py",
+      "lineRange": [
+        26,
+        30
+      ],
+      "summary": "定义 test_resolve_limit_applies_safety_by_default，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_rate_limit_safety_budget.py:test_resolve_limit_can_skip_safety_for_diagnostics",
+      "type": "function",
+      "name": "test_resolve_limit_can_skip_safety_for_diagnostics",
+      "filePath": "backend/tests/test_rate_limit_safety_budget.py",
+      "lineRange": [
+        33,
+        36
+      ],
+      "summary": "定义 test_resolve_limit_can_skip_safety_for_diagnostics，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_rate_limit_safety_budget.py:test_two_first_batches_do_not_wait_even_when_slot_reserved",
+      "type": "function",
+      "name": "test_two_first_batches_do_not_wait_even_when_slot_reserved",
+      "filePath": "backend/tests/test_rate_limit_safety_budget.py",
+      "lineRange": [
+        39,
+        50
+      ],
+      "summary": "定义 test_two_first_batches_do_not_wait_even_when_slot_reserved，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:backend/tests/test_rate_limit_safety_budget.py:test_second_batch_waits_for_shared_slot",
+      "type": "function",
+      "name": "test_second_batch_waits_for_shared_slot",
+      "filePath": "backend/tests/test_rate_limit_safety_budget.py",
+      "lineRange": [
+        53,
+        59
+      ],
+      "summary": "定义 test_second_batch_waits_for_shared_slot，承担本文件中的业务处理或辅助计算。",
+      "tags": [
+        "测试",
+        "验证",
+        "函数"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_apply_safety_rpm_scales_to_80_percent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_apply_safety_rpm_scales_to_80_percent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_resolve_limit_applies_safety_by_default",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_resolve_limit_applies_safety_by_default",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_resolve_limit_can_skip_safety_for_diagnostics",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_resolve_limit_can_skip_safety_for_diagnostics",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_two_first_batches_do_not_wait_even_when_slot_reserved",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_two_first_batches_do_not_wait_even_when_slot_reserved",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_second_batch_waits_for_shared_slot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "function:backend/tests/test_rate_limit_safety_budget.py:test_second_batch_waits_for_shared_slot",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "file:backend/app/tickflow/capabilities.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "file:backend/app/tickflow/rate_limits.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "file:backend/app/tickflow/capabilities.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:backend/tests/test_rate_limit_safety_budget.py",
+      "target": "file:backend/app/tickflow/rate_limits.py",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

@@ -1,0 +1,1950 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 18,
+  "filesSkipped": [
+    "frontend/src/custom/_template/extension.tsx.example",
+    "frontend/src/index.css",
+    "packaging/ChineseSimplified.isl",
+    "packaging/icon.icns",
+    "packaging/tickflow.iss",
+    "packaging/tickflow.spec",
+    "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/.cursorrules"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 18,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 8,
+      "failed": 0,
+      "skipped": 10
+    }
+  },
+  "results": [
+    {
+      "path": "docs/research/sw-hierarchy/sw-hierarchy-pit-sparse-gate-audit-v1.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 65,
+      "nonEmptyLines": 53,
+      "sections": [
+        {
+          "heading": "SW hierarchy point-in-time and sparse-sample gate audit V1",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Pre-registered experiment gate",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Membership-history gate: not passed",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "Frozen N=8 coverage audit",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "Decision",
+          "level": 2,
+          "line": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "docs/research/volume-profile/volume-profile-extension-fix-random5.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 159,
+      "nonEmptyLines": 139,
+      "sections": [
+        {
+          "heading": "Volume Profile Extension 修复：随机五日历史标签回填",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "修复内容",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "数据来源与保留策略",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "修复后状态分布",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "VP20 Extension：只读未来表现",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "VP60 Extension：只读未来表现",
+          "level": 2,
+          "line": 58
+        },
+        {
+          "heading": "RS Strength × Extension（关键小组合）",
+          "level": 2,
+          "line": 85
+        },
+        {
+          "heading": "结论边界",
+          "level": 2,
+          "line": 154
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "docs/research/volume-profile/volume-profile-v1-vp-first-random5-analysis.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 560,
+      "nonEmptyLines": 522,
+      "sections": [
+        {
+          "heading": "Volume Profile V1：VP-first 随机五日再分析",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "固定样本与口径",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "已落盘字段审计",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "读前结论",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "VP20：先在 ALL_WYCKOFF 做 Position 与 Acceptance 研究",
+          "level": 2,
+          "line": 28
+        },
+        {
+          "heading": "VP60：先在 ALL_WYCKOFF 做 Position 与 Acceptance 研究",
+          "level": 2,
+          "line": 58
+        },
+        {
+          "heading": "ALL_WYCKOFF 与 Sector/RS Top30% 的直接对照",
+          "level": 2,
+          "line": 88
+        },
+        {
+          "heading": "VP20 Acceptance × RS strength level",
+          "level": 2,
+          "line": 135
+        },
+        {
+          "heading": "VP60 Acceptance × RS strength level",
+          "level": 2,
+          "line": 192
+        },
+        {
+          "heading": "VP20 Acceptance × Sector strength level",
+          "level": 2,
+          "line": 247
+        },
+        {
+          "heading": "VP60 Acceptance × Sector strength level",
+          "level": 2,
+          "line": 304
+        },
+        {
+          "heading": "VP20 Acceptance × RS State",
+          "level": 2,
+          "line": 359
+        },
+        {
+          "heading": "VP20 Acceptance × Sector Phase",
+          "level": 2,
+          "line": 424
+        },
+        {
+          "heading": "VP20 Acceptance 条件的只读拆解",
+          "level": 2,
+          "line": 479
+        },
+        {
+          "heading": "VP60 Acceptance 条件的只读拆解",
+          "level": 2,
+          "line": 506
+        },
+        {
+          "heading": "Extension 连续变量分布",
+          "level": 2,
+          "line": 531
+        },
+        {
+          "heading": "结论与边界",
+          "level": 2,
+          "line": 554
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": "docs/research/wyckoff/wyckoff-sector-rs-jan-feb-comparison.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 188,
+      "nonEmptyLines": 151,
+      "sections": [
+        {
+          "heading": "Wyckoff 候选池内 Sector/RS：2024 年 1 月与 2 月对照",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "结论",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "统一口径与样本",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "2024-01：三组与基准对照",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "2024-02：三组与基准对照",
+          "level": 2,
+          "line": 48
+        },
+        {
+          "heading": "Top20 状态、延展、分数和行业集中度",
+          "level": 2,
+          "line": 70
+        },
+        {
+          "heading": "Sector Phase（占当月 Top20 全部观测）",
+          "level": 3,
+          "line": 72
+        },
+        {
+          "heading": "RS State（占当月 Top20 全部观测）",
+          "level": 3,
+          "line": 85
+        },
+        {
+          "heading": "Extension：Top20 与全部 Wyckoff 候选对照",
+          "level": 3,
+          "line": 98
+        },
+        {
+          "heading": "Top20 分数分布与行业集中度",
+          "level": 3,
+          "line": 120
+        },
+        {
+          "heading": "对两个月差异的解释边界",
+          "level": 2,
+          "line": 161
+        },
+        {
+          "heading": "最终回答",
+          "level": 2,
+          "line": 169
+        },
+        {
+          "heading": "可复现产物",
+          "level": 2,
+          "line": 182
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    },
+    {
+      "path": "docs/research/wyckoff/wyckoff-sector-rs-top20-backtest.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 89,
+      "nonEmptyLines": 65,
+      "sections": [
+        {
+          "heading": "Wyckoff 候选内 Sector/RS Top20 回测",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "实验状态",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "本次试跑区间",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "成交与收益口径",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "结果",
+          "level": 2,
+          "line": 43
+        },
+        {
+          "heading": "当前解释",
+          "level": 2,
+          "line": 53
+        },
+        {
+          "heading": "可复现文件",
+          "level": 2,
+          "line": 59
+        },
+        {
+          "heading": "2024 年 2 月追加试跑（含相对大盘）",
+          "level": 2,
+          "line": 75
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "docs/theory/sector-rs/sector-strength-relative-strength-v1.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 238,
+      "nonEmptyLines": 177,
+      "sections": [
+        {
+          "heading": "Sector Strength 与 Relative Strength V1",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "状态与边界",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "数据与共同口径",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "当前成员口径决策（2026-09-11）",
+          "level": 3,
+          "line": 33
+        },
+        {
+          "heading": "申万历史成员区间（2026-09-12）",
+          "level": 3,
+          "line": 47
+        },
+        {
+          "heading": "Sector Strength V1.1",
+          "level": 2,
+          "line": 61
+        },
+        {
+          "heading": "RelativeStrengthEngine V1",
+          "level": 2,
+          "line": 91
+        },
+        {
+          "heading": "动态状态层（不改变 V1.1 / V1 分数）",
+          "level": 2,
+          "line": 125
+        },
+        {
+          "heading": "Wyckoff 候选的 Sector / RS 研究上下文",
+          "level": 2,
+          "line": 166
+        },
+        {
+          "heading": "前瞻性研究快照",
+          "level": 3,
+          "line": 204
+        },
+        {
+          "heading": "只读历史验证接口",
+          "level": 2,
+          "line": 211
+        },
+        {
+          "heading": "已验证范围与后续门槛",
+          "level": 2,
+          "line": 231
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "docs/theory/volume-profile/volume-profile-reference-study.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 292,
+      "nonEmptyLines": 200,
+      "sections": [
+        {
+          "heading": "Volume Profile 参考源码学习与接入设计",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "结论与边界",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "1. 指定参考源码的核心结构",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "2. 真正的 Volume-at-Price 算法",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "对当前项目的借鉴与改进",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "3. 价格桶（bin / row）",
+          "level": 2,
+          "line": 53
+        },
+        {
+          "heading": "参考实现",
+          "level": 3,
+          "line": 55
+        },
+        {
+          "heading": "当前项目建议",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "4. POC",
+          "level": 2,
+          "line": 85
+        },
+        {
+          "heading": "5. VAH / VAL 与 Value Area",
+          "level": 2,
+          "line": 101
+        },
+        {
+          "heading": "6. HVN / LVN",
+          "level": 2,
+          "line": 116
+        },
+        {
+          "heading": "7. Profile 类型与更新能力",
+          "level": 2,
+          "line": 128
+        },
+        {
+          "heading": "8. Non-repainting / look-ahead 审计",
+          "level": 2,
+          "line": 141
+        },
+        {
+          "heading": "9. 当前项目实际行情能力",
+          "level": 2,
+          "line": 155
+        },
+        {
+          "heading": "价格口径",
+          "level": 3,
+          "line": 170
+        },
+        {
+          "heading": "10. 方案比较",
+          "level": 2,
+          "line": 174
+        },
+        {
+          "heading": "11. 推荐的 VolumeProfileEngine 架构（设计，不实现）",
+          "level": 2,
+          "line": 182
+        },
+        {
+          "heading": "12. VP20 / VP60 / WyckoffRangeVP",
+          "level": 2,
+          "line": 224
+        },
+        {
+          "heading": "13. 动态 VP 与未来状态设计",
+          "level": 2,
+          "line": 234
+        },
+        {
+          "heading": "14. 与 Sector / RS / NARROWING 的未来结合",
+          "level": 2,
+          "line": 272
+        },
+        {
+          "heading": "15. 第一版建议实现范围",
+          "level": 2,
+          "line": 283
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 21
+      }
+    },
+    {
+      "path": "frontend/postcss.config.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/custom/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 9,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "前端二次开发目录",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "frontend/src/lib/ocrInstallHint.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 41,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "getOcrInstallHint",
+          "startLine": 2,
+          "endLine": 41,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getOcrInstallHint",
+          "line": 2,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getOcrInstallHint",
+          "callee": "platform.toLowerCase",
+          "lineNumber": 8
+        },
+        {
+          "caller": "getOcrInstallHint",
+          "callee": "p.includes",
+          "lineNumber": 10
+        },
+        {
+          "caller": "getOcrInstallHint",
+          "callee": "[\r\n      'OCR 引擎不可用：请安装 Tesseract 后重试。',\r\n      '',\r\n      'Windows：',\r\n      '• 下载 UB Mannheim 发行版并安装（勾选将 tesseract 加入 PATH）',\r\n      '• 或执行：choco install tesseract',\r\n      '',\r\n      '安装后重启应用。',\r\n    ].join",
+          "lineNumber": 11
+        },
+        {
+          "caller": "getOcrInstallHint",
+          "callee": "p.includes",
+          "lineNumber": 22
+        },
+        {
+          "caller": "getOcrInstallHint",
+          "callee": "[\r\n      'OCR 引擎不可用：请安装 Tesseract 后重试。',\r\n      '',\r\n      'macOS：',\r\n      '• 执行：brew install tesseract',\r\n      '',\r\n      '安装后重启应用。',\r\n    ].join",
+          "lineNumber": 23
+        },
+        {
+          "caller": "getOcrInstallHint",
+          "callee": "[\r\n    'OCR 引擎不可用：请安装 Tesseract 后重试。',\r\n    '',\r\n    'Linux：安装 tesseract-ocr（及语言包）',\r\n    'Docker：官方镜像已内置，请确认使用对应镜像。',\r\n    '',\r\n    '安装后重启应用。',\r\n  ].join",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/src/vite-env.d.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/tailwind.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 43,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/vite.config.d.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "frontend/vite.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 54,
+      "nonEmptyLines": 52,
+      "callGraph": [
+        {
+          "caller": "manualChunks",
+          "callee": "id.includes",
+          "lineNumber": 46
+        },
+        {
+          "caller": "manualChunks",
+          "callee": "id.includes",
+          "lineNumber": 47
+        },
+        {
+          "caller": "manualChunks",
+          "callee": "id.includes",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packaging/generate_icon.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 126,
+      "nonEmptyLines": 98,
+      "functions": [
+        {
+          "name": "_draw",
+          "startLine": 35,
+          "endLine": 70,
+          "params": [
+            "size",
+            "sw_b",
+            "sw_w",
+            "body_w"
+          ]
+        },
+        {
+          "name": "draw_logo",
+          "startLine": 73,
+          "endLine": 86,
+          "params": [
+            "size"
+          ]
+        },
+        {
+          "name": "_save_ico",
+          "startLine": 89,
+          "endLine": 98,
+          "params": [
+            "images_by_size"
+          ]
+        },
+        {
+          "name": "_save_icns",
+          "startLine": 101,
+          "endLine": 114,
+          "params": [
+            "images_by_size"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 117,
+          "endLine": 122,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_draw",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "draw_logo",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "_save_ico",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "_save_icns",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 117,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_draw",
+          "callee": "max",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_draw",
+          "callee": "Image.new",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_draw",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_draw",
+          "callee": "d.rounded_rectangle",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_draw",
+          "callee": "int",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_draw",
+          "callee": "max",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_draw",
+          "callee": "int",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_draw",
+          "callee": "round",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_draw",
+          "callee": "max",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_draw",
+          "callee": "int",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_draw",
+          "callee": "round",
+          "lineNumber": 50
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_draw",
+          "callee": "range",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_draw",
+          "callee": "len",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_draw",
+          "callee": "d.line",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_draw",
+          "callee": "d.line",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_draw",
+          "callee": "d.ellipse",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_draw",
+          "callee": "d.rounded_rectangle",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_draw",
+          "callee": "p",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_draw",
+          "callee": "img.resize",
+          "lineNumber": 70
+        },
+        {
+          "caller": "draw_logo",
+          "callee": "_draw",
+          "lineNumber": 81
+        },
+        {
+          "caller": "draw_logo",
+          "callee": "_draw",
+          "lineNumber": 83
+        },
+        {
+          "caller": "draw_logo",
+          "callee": "_draw",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_save_ico",
+          "callee": "images[-1].save",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_save_ico",
+          "callee": "print",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_save_icns",
+          "callee": "images[-1].save",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_save_icns",
+          "callee": "print",
+          "lineNumber": 114
+        },
+        {
+          "caller": "main",
+          "callee": "draw_logo",
+          "lineNumber": 120
+        },
+        {
+          "caller": "main",
+          "callee": "_save_ico",
+          "lineNumber": 121
+        },
+        {
+          "caller": "main",
+          "callee": "_save_icns",
+          "lineNumber": 122
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packaging/generate_icon_designs.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 283,
+      "nonEmptyLines": 233,
+      "functions": [
+        {
+          "name": "_supersample",
+          "startLine": 29,
+          "endLine": 32,
+          "params": [
+            "size",
+            "factor"
+          ]
+        },
+        {
+          "name": "_finish",
+          "startLine": 35,
+          "endLine": 37,
+          "params": [
+            "img",
+            "size"
+          ]
+        },
+        {
+          "name": "_v_gradient",
+          "startLine": 40,
+          "endLine": 57,
+          "params": [
+            "size",
+            "c_top",
+            "c_bot",
+            "radius_ratio"
+          ]
+        },
+        {
+          "name": "_glow",
+          "startLine": 60,
+          "endLine": 66,
+          "params": [
+            "size",
+            "draw_fn",
+            "color",
+            "blur_ratio"
+          ]
+        },
+        {
+          "name": "design_1",
+          "startLine": 70,
+          "endLine": 117,
+          "params": [
+            "size"
+          ]
+        },
+        {
+          "name": "design_2",
+          "startLine": 121,
+          "endLine": 157,
+          "params": [
+            "size"
+          ]
+        },
+        {
+          "name": "design_3",
+          "startLine": 161,
+          "endLine": 198,
+          "params": [
+            "size"
+          ]
+        },
+        {
+          "name": "design_4",
+          "startLine": 202,
+          "endLine": 254,
+          "params": [
+            "size"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 257,
+          "endLine": 279,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_supersample",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "_finish",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "_v_gradient",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "_glow",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "design_1",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "design_2",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "design_3",
+          "line": 161,
+          "isDefault": false
+        },
+        {
+          "name": "design_4",
+          "line": 202,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 257,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_supersample",
+          "callee": "Image.new",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_finish",
+          "callee": "img.resize",
+          "lineNumber": 37
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "Image.new",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "img.load",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "range",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "max",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "int",
+          "lineNumber": 46
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "int",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "int",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "range",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "Image.new",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "int",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "md.rounded_rectangle",
+          "lineNumber": 55
+        },
+        {
+          "caller": "_v_gradient",
+          "callee": "img.putalpha",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_glow",
+          "callee": "Image.new",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_glow",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_glow",
+          "callee": "draw_fn",
+          "lineNumber": 64
+        },
+        {
+          "caller": "_glow",
+          "callee": "layer.filter",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_glow",
+          "callee": "ImageFilter.GaussianBlur",
+          "lineNumber": 65
+        },
+        {
+          "caller": "design_1",
+          "callee": "_supersample",
+          "lineNumber": 71
+        },
+        {
+          "caller": "design_1",
+          "callee": "_v_gradient",
+          "lineNumber": 74
+        },
+        {
+          "caller": "design_1",
+          "callee": "img.alpha_composite",
+          "lineNumber": 75
+        },
+        {
+          "caller": "design_1",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 77
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "dd.line",
+          "lineNumber": 84
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "int",
+          "lineNumber": 84
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "dd.line",
+          "lineNumber": 85
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "int",
+          "lineNumber": 85
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "dd.line",
+          "lineNumber": 86
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "int",
+          "lineNumber": 86
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "dd.line",
+          "lineNumber": 88
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "int",
+          "lineNumber": 88
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "dd.line",
+          "lineNumber": 89
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "int",
+          "lineNumber": 89
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "dd.line",
+          "lineNumber": 90
+        },
+        {
+          "caller": "draw_brackets",
+          "callee": "int",
+          "lineNumber": 90
+        },
+        {
+          "caller": "draw_wick",
+          "callee": "dd.line",
+          "lineNumber": 94
+        },
+        {
+          "caller": "draw_wick",
+          "callee": "int",
+          "lineNumber": 94
+        },
+        {
+          "caller": "draw_body",
+          "callee": "dd.rounded_rectangle",
+          "lineNumber": 97
+        },
+        {
+          "caller": "design_1",
+          "callee": "Image.new",
+          "lineNumber": 103
+        },
+        {
+          "caller": "design_1",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 104
+        },
+        {
+          "caller": "design_1",
+          "callee": "draw_body",
+          "lineNumber": 105
+        },
+        {
+          "caller": "design_1",
+          "callee": "glow.filter",
+          "lineNumber": 106
+        },
+        {
+          "caller": "design_1",
+          "callee": "ImageFilter.GaussianBlur",
+          "lineNumber": 106
+        },
+        {
+          "caller": "design_1",
+          "callee": "Image.new",
+          "lineNumber": 108
+        },
+        {
+          "caller": "design_1",
+          "callee": "Image.composite",
+          "lineNumber": 109
+        },
+        {
+          "caller": "design_1",
+          "callee": "Image.new",
+          "lineNumber": 109
+        },
+        {
+          "caller": "design_1",
+          "callee": "glow.point",
+          "lineNumber": 110
+        },
+        {
+          "caller": "design_1",
+          "callee": "min",
+          "lineNumber": 110
+        },
+        {
+          "caller": "design_1",
+          "callee": "int",
+          "lineNumber": 110
+        },
+        {
+          "caller": "design_1",
+          "callee": "img.alpha_composite",
+          "lineNumber": 111
+        },
+        {
+          "caller": "design_1",
+          "callee": "draw_brackets",
+          "lineNumber": 113
+        },
+        {
+          "caller": "design_1",
+          "callee": "draw_wick",
+          "lineNumber": 114
+        },
+        {
+          "caller": "design_1",
+          "callee": "draw_body",
+          "lineNumber": 115
+        },
+        {
+          "caller": "design_1",
+          "callee": "_finish",
+          "lineNumber": 117
+        },
+        {
+          "caller": "design_2",
+          "callee": "_supersample",
+          "lineNumber": 122
+        },
+        {
+          "caller": "design_2",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 123
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "dd.line",
+          "lineNumber": 133
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "int",
+          "lineNumber": 133
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "dd.line",
+          "lineNumber": 134
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "int",
+          "lineNumber": 134
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "dd.line",
+          "lineNumber": 135
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "int",
+          "lineNumber": 135
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "dd.line",
+          "lineNumber": 137
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "int",
+          "lineNumber": 137
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "dd.line",
+          "lineNumber": 138
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "int",
+          "lineNumber": 138
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "dd.line",
+          "lineNumber": 139
+        },
+        {
+          "caller": "gradient_brackets",
+          "callee": "int",
+          "lineNumber": 139
+        },
+        {
+          "caller": "design_2",
+          "callee": "Image.new",
+          "lineNumber": 142
+        },
+        {
+          "caller": "design_2",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 143
+        },
+        {
+          "caller": "design_2",
+          "callee": "gradient_brackets",
+          "lineNumber": 144
+        },
+        {
+          "caller": "design_2",
+          "callee": "gd.rounded_rectangle",
+          "lineNumber": 145
+        },
+        {
+          "caller": "design_2",
+          "callee": "glow_layer.filter",
+          "lineNumber": 146
+        },
+        {
+          "caller": "design_2",
+          "callee": "ImageFilter.GaussianBlur",
+          "lineNumber": 146
+        },
+        {
+          "caller": "design_2",
+          "callee": "img.alpha_composite",
+          "lineNumber": 147
+        },
+        {
+          "caller": "design_2",
+          "callee": "gradient_brackets",
+          "lineNumber": 150
+        },
+        {
+          "caller": "design_2",
+          "callee": "d.line",
+          "lineNumber": 151
+        },
+        {
+          "caller": "design_2",
+          "callee": "int",
+          "lineNumber": 151
+        },
+        {
+          "caller": "design_2",
+          "callee": "d.rounded_rectangle",
+          "lineNumber": 152
+        },
+        {
+          "caller": "design_2",
+          "callee": "d.rounded_rectangle",
+          "lineNumber": 155
+        },
+        {
+          "caller": "design_2",
+          "callee": "_finish",
+          "lineNumber": 157
+        },
+        {
+          "caller": "design_3",
+          "callee": "_supersample",
+          "lineNumber": 162
+        },
+        {
+          "caller": "design_3",
+          "callee": "_v_gradient",
+          "lineNumber": 165
+        },
+        {
+          "caller": "design_3",
+          "callee": "img.alpha_composite",
+          "lineNumber": 166
+        },
+        {
+          "caller": "design_3",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 167
+        },
+        {
+          "caller": "design_3",
+          "callee": "d.line",
+          "lineNumber": 180
+        },
+        {
+          "caller": "design_3",
+          "callee": "int",
+          "lineNumber": 180
+        },
+        {
+          "caller": "design_3",
+          "callee": "d.rounded_rectangle",
+          "lineNumber": 182
+        },
+        {
+          "caller": "design_3",
+          "callee": "Image.new",
+          "lineNumber": 188
+        },
+        {
+          "caller": "design_3",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 189
+        },
+        {
+          "caller": "design_3",
+          "callee": "gd.rounded_rectangle",
+          "lineNumber": 190
+        },
+        {
+          "caller": "design_3",
+          "callee": "glow.filter",
+          "lineNumber": 191
+        },
+        {
+          "caller": "design_3",
+          "callee": "ImageFilter.GaussianBlur",
+          "lineNumber": 191
+        },
+        {
+          "caller": "design_3",
+          "callee": "img.alpha_composite",
+          "lineNumber": 192
+        },
+        {
+          "caller": "design_3",
+          "callee": "d.line",
+          "lineNumber": 195
+        },
+        {
+          "caller": "design_3",
+          "callee": "int",
+          "lineNumber": 196
+        },
+        {
+          "caller": "design_3",
+          "callee": "_finish",
+          "lineNumber": 198
+        },
+        {
+          "caller": "design_4",
+          "callee": "_supersample",
+          "lineNumber": 203
+        },
+        {
+          "caller": "design_4",
+          "callee": "_v_gradient",
+          "lineNumber": 206
+        },
+        {
+          "caller": "design_4",
+          "callee": "img.alpha_composite",
+          "lineNumber": 207
+        },
+        {
+          "caller": "design_4",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 208
+        },
+        {
+          "caller": "brackets",
+          "callee": "dd.rounded_rectangle",
+          "lineNumber": 214
+        },
+        {
+          "caller": "brackets",
+          "callee": "int",
+          "lineNumber": 216
+        },
+        {
+          "caller": "brackets",
+          "callee": "dd.rounded_rectangle",
+          "lineNumber": 218
+        },
+        {
+          "caller": "brackets",
+          "callee": "int",
+          "lineNumber": 220
+        },
+        {
+          "caller": "brackets2",
+          "callee": "int",
+          "lineNumber": 224
+        },
+        {
+          "caller": "brackets2",
+          "callee": "dd.line",
+          "lineNumber": 226
+        },
+        {
+          "caller": "brackets2",
+          "callee": "int",
+          "lineNumber": 226
+        },
+        {
+          "caller": "brackets2",
+          "callee": "dd.rounded_rectangle",
+          "lineNumber": 227
+        },
+        {
+          "caller": "brackets2",
+          "callee": "dd.line",
+          "lineNumber": 229
+        },
+        {
+          "caller": "brackets2",
+          "callee": "int",
+          "lineNumber": 229
+        },
+        {
+          "caller": "brackets2",
+          "callee": "dd.ellipse",
+          "lineNumber": 232
+        },
+        {
+          "caller": "brackets2",
+          "callee": "dd.line",
+          "lineNumber": 234
+        },
+        {
+          "caller": "brackets2",
+          "callee": "int",
+          "lineNumber": 234
+        },
+        {
+          "caller": "brackets2",
+          "callee": "dd.rounded_rectangle",
+          "lineNumber": 235
+        },
+        {
+          "caller": "brackets2",
+          "callee": "dd.line",
+          "lineNumber": 237
+        },
+        {
+          "caller": "brackets2",
+          "callee": "int",
+          "lineNumber": 237
+        },
+        {
+          "caller": "brackets2",
+          "callee": "dd.ellipse",
+          "lineNumber": 239
+        },
+        {
+          "caller": "design_4",
+          "callee": "Image.new",
+          "lineNumber": 242
+        },
+        {
+          "caller": "design_4",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 243
+        },
+        {
+          "caller": "design_4",
+          "callee": "gd.rounded_rectangle",
+          "lineNumber": 244
+        },
+        {
+          "caller": "design_4",
+          "callee": "glow.filter",
+          "lineNumber": 245
+        },
+        {
+          "caller": "design_4",
+          "callee": "ImageFilter.GaussianBlur",
+          "lineNumber": 245
+        },
+        {
+          "caller": "design_4",
+          "callee": "img.alpha_composite",
+          "lineNumber": 246
+        },
+        {
+          "caller": "design_4",
+          "callee": "brackets2",
+          "lineNumber": 248
+        },
+        {
+          "caller": "design_4",
+          "callee": "d.line",
+          "lineNumber": 250
+        },
+        {
+          "caller": "design_4",
+          "callee": "int",
+          "lineNumber": 250
+        },
+        {
+          "caller": "design_4",
+          "callee": "d.rounded_rectangle",
+          "lineNumber": 252
+        },
+        {
+          "caller": "design_4",
+          "callee": "_finish",
+          "lineNumber": 254
+        },
+        {
+          "caller": "main",
+          "callee": "Image.new",
+          "lineNumber": 266
+        },
+        {
+          "caller": "main",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 267
+        },
+        {
+          "caller": "main",
+          "callee": "zip",
+          "lineNumber": 269
+        },
+        {
+          "caller": "main",
+          "callee": "fn",
+          "lineNumber": 270
+        },
+        {
+          "caller": "main",
+          "callee": "grid.alpha_composite",
+          "lineNumber": 272
+        },
+        {
+          "caller": "main",
+          "callee": "fn(1024).save",
+          "lineNumber": 274
+        },
+        {
+          "caller": "main",
+          "callee": "fn",
+          "lineNumber": 274
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 275
+        },
+        {
+          "caller": "main",
+          "callee": "grid.save",
+          "lineNumber": 277
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 278
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 279
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/.claude/skills/desktop-release/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 28,
+      "nonEmptyLines": 22,
+      "sections": [
+        {
+          "heading": "Desktop Release",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "发布边界",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "执行流程",
+          "level": 2,
+          "line": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/.devcontainer/devcontainer.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 33,
+      "nonEmptyLines": 33,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "image",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "customizations",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "updateContentCommand",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "postAttachCommand",
+          "level": 1,
+          "line": 21
+        },
+        {
+          "heading": "portsAttributes",
+          "level": 1,
+          "line": 24
+        },
+        {
+          "heading": "forwardPorts",
+          "level": 1,
+          "line": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    }
+  ]
+}

@@ -1,0 +1,5942 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 10,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 10,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 10,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/core/backtest_grid_ranking.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 147,
+      "nonEmptyLines": 124,
+      "functions": [
+        {
+          "name": "rank_robust_params",
+          "startLine": 34,
+          "endLine": 52,
+          "params": [
+            "cells",
+            "key_fn",
+            "period_fn",
+            "value_fn",
+            "representative_fn",
+            "recent_period",
+            "period_rank_fn"
+          ]
+        },
+        {
+          "name": "robust_label",
+          "startLine": 55,
+          "endLine": 69,
+          "params": [
+            "score"
+          ]
+        },
+        {
+          "name": "weak_period_guardrails",
+          "startLine": 72,
+          "endLine": 84,
+          "params": [
+            "cells",
+            "period_fn",
+            "value_fn"
+          ]
+        },
+        {
+          "name": "_score_param_group",
+          "startLine": 87,
+          "endLine": 111,
+          "params": [
+            "key",
+            "group",
+            "period_fn",
+            "value_fn",
+            "representative_fn",
+            "recent_period"
+          ]
+        },
+        {
+          "name": "_best_cells_by_period",
+          "startLine": 114,
+          "endLine": 124,
+          "params": [
+            "group",
+            "period_fn",
+            "value_fn"
+          ]
+        },
+        {
+          "name": "_resolve_recent_period",
+          "startLine": 127,
+          "endLine": 137,
+          "params": [
+            "cells",
+            "period_fn",
+            "period_rank_fn"
+          ]
+        },
+        {
+          "name": "_robust_score",
+          "startLine": 140,
+          "endLine": 143,
+          "params": [
+            "values",
+            "recent_ret",
+            "positive_periods"
+          ]
+        },
+        {
+          "name": "_rank_value",
+          "startLine": 146,
+          "endLine": 147,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RobustParamScore",
+          "startLine": 15,
+          "endLine": 25,
+          "methods": [],
+          "properties": [
+            "key",
+            "cells",
+            "best_cell",
+            "score",
+            "period_count",
+            "positive_periods",
+            "avg_cash_return",
+            "min_cash_return",
+            "recent_cash_return",
+            "values"
+          ]
+        },
+        {
+          "name": "PeriodGuardrail",
+          "startLine": 29,
+          "endLine": 31,
+          "methods": [],
+          "properties": [
+            "period_key",
+            "best_value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RobustParamScore",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "PeriodGuardrail",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "rank_robust_params",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "robust_label",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "weak_period_guardrails",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "_score_param_group",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "_best_cells_by_period",
+          "line": 114,
+          "isDefault": false
+        },
+        {
+          "name": "_resolve_recent_period",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "_robust_score",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "_rank_value",
+          "line": 146,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "rank_robust_params",
+          "callee": "defaultdict",
+          "lineNumber": 44
+        },
+        {
+          "caller": "rank_robust_params",
+          "callee": "groups[key_fn(cell)].append",
+          "lineNumber": 46
+        },
+        {
+          "caller": "rank_robust_params",
+          "callee": "key_fn",
+          "lineNumber": 46
+        },
+        {
+          "caller": "rank_robust_params",
+          "callee": "_resolve_recent_period",
+          "lineNumber": 47
+        },
+        {
+          "caller": "rank_robust_params",
+          "callee": "_score_param_group",
+          "lineNumber": 49
+        },
+        {
+          "caller": "rank_robust_params",
+          "callee": "groups.items",
+          "lineNumber": 50
+        },
+        {
+          "caller": "rank_robust_params",
+          "callee": "sorted",
+          "lineNumber": 52
+        },
+        {
+          "caller": "robust_label",
+          "callee": "max",
+          "lineNumber": 67
+        },
+        {
+          "caller": "weak_period_guardrails",
+          "callee": "defaultdict",
+          "lineNumber": 78
+        },
+        {
+          "caller": "weak_period_guardrails",
+          "callee": "value_fn",
+          "lineNumber": 80
+        },
+        {
+          "caller": "weak_period_guardrails",
+          "callee": "groups[period_fn(cell)].append",
+          "lineNumber": 82
+        },
+        {
+          "caller": "weak_period_guardrails",
+          "callee": "period_fn",
+          "lineNumber": 82
+        },
+        {
+          "caller": "weak_period_guardrails",
+          "callee": "PeriodGuardrail",
+          "lineNumber": 83
+        },
+        {
+          "caller": "weak_period_guardrails",
+          "callee": "max",
+          "lineNumber": 83
+        },
+        {
+          "caller": "weak_period_guardrails",
+          "callee": "groups.items",
+          "lineNumber": 83
+        },
+        {
+          "caller": "weak_period_guardrails",
+          "callee": "max",
+          "lineNumber": 83
+        },
+        {
+          "caller": "weak_period_guardrails",
+          "callee": "sorted",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_score_param_group",
+          "callee": "_best_cells_by_period",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_score_param_group",
+          "callee": "tuple",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_score_param_group",
+          "callee": "by_period.values",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_score_param_group",
+          "callee": "value_fn",
+          "lineNumber": 96
+        },
+        {
+          "caller": "_score_param_group",
+          "callee": "by_period.get",
+          "lineNumber": 97
+        },
+        {
+          "caller": "_score_param_group",
+          "callee": "value_fn",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_score_param_group",
+          "callee": "sum",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_score_param_group",
+          "callee": "RobustParamScore",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_score_param_group",
+          "callee": "tuple",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_score_param_group",
+          "callee": "representative_fn",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_score_param_group",
+          "callee": "_robust_score",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_score_param_group",
+          "callee": "len",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_score_param_group",
+          "callee": "mean",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_score_param_group",
+          "callee": "min",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_best_cells_by_period",
+          "callee": "period_fn",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_best_cells_by_period",
+          "callee": "_rank_value",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_best_cells_by_period",
+          "callee": "value_fn",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_best_cells_by_period",
+          "callee": "_rank_value",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_best_cells_by_period",
+          "callee": "value_fn",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_resolve_recent_period",
+          "callee": "period_fn",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_resolve_recent_period",
+          "callee": "sorted",
+          "lineNumber": 136
+        },
+        {
+          "caller": "_resolve_recent_period",
+          "callee": "min",
+          "lineNumber": 137
+        },
+        {
+          "caller": "_robust_score",
+          "callee": "float",
+          "lineNumber": 142
+        },
+        {
+          "caller": "_robust_score",
+          "callee": "min",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_robust_score",
+          "callee": "mean",
+          "lineNumber": 143
+        },
+        {
+          "caller": "_rank_value",
+          "callee": "float",
+          "lineNumber": 147
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 8,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/scripts/update_backtest_market_report.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 124,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "parse_args",
+          "startLine": 17,
+          "endLine": 29,
+          "params": []
+        },
+        {
+          "name": "main",
+          "startLine": 32,
+          "endLine": 49,
+          "params": []
+        },
+        {
+          "name": "_record_hypothesis_evidence",
+          "startLine": 52,
+          "endLine": 76,
+          "params": [
+            "args",
+            "confirmation",
+            "confirmation_path",
+            "evidence_type",
+            "evidence_output"
+          ]
+        },
+        {
+          "name": "_write_stability",
+          "startLine": 79,
+          "endLine": 93,
+          "params": [
+            "args",
+            "cells"
+          ]
+        },
+        {
+          "name": "_write_walk_forward",
+          "startLine": 96,
+          "endLine": 103,
+          "params": [
+            "args",
+            "cells"
+          ]
+        },
+        {
+          "name": "_artifact_ref",
+          "startLine": 106,
+          "endLine": 109,
+          "params": [
+            "run_url",
+            "confirmation_path",
+            "evidence_type"
+          ]
+        },
+        {
+          "name": "_link_local_registry",
+          "startLine": 112,
+          "endLine": 120,
+          "params": [
+            "evidence"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "parse_args",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "_record_hypothesis_evidence",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "_write_stability",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "_write_walk_forward",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "_artifact_ref",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "_link_local_registry",
+          "line": 112,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parse_args",
+          "callee": "argparse.ArgumentParser",
+          "lineNumber": 18
+        },
+        {
+          "caller": "parse_args",
+          "callee": "parser.add_argument",
+          "lineNumber": 19
+        },
+        {
+          "caller": "parse_args",
+          "callee": "parser.add_argument",
+          "lineNumber": 20
+        },
+        {
+          "caller": "parse_args",
+          "callee": "parser.add_argument",
+          "lineNumber": 21
+        },
+        {
+          "caller": "parse_args",
+          "callee": "parser.add_argument",
+          "lineNumber": 22
+        },
+        {
+          "caller": "parse_args",
+          "callee": "parser.add_argument",
+          "lineNumber": 23
+        },
+        {
+          "caller": "parse_args",
+          "callee": "parser.add_argument",
+          "lineNumber": 24
+        },
+        {
+          "caller": "parse_args",
+          "callee": "parser.add_argument",
+          "lineNumber": 25
+        },
+        {
+          "caller": "parse_args",
+          "callee": "parser.add_argument",
+          "lineNumber": 26
+        },
+        {
+          "caller": "parse_args",
+          "callee": "parser.add_argument",
+          "lineNumber": 27
+        },
+        {
+          "caller": "parse_args",
+          "callee": "parser.add_argument",
+          "lineNumber": 28
+        },
+        {
+          "caller": "parse_args",
+          "callee": "parser.parse_args",
+          "lineNumber": 29
+        },
+        {
+          "caller": "main",
+          "callee": "parse_args",
+          "lineNumber": 33
+        },
+        {
+          "caller": "main",
+          "callee": "load_grid_cells",
+          "lineNumber": 34
+        },
+        {
+          "caller": "main",
+          "callee": "Path",
+          "lineNumber": 34
+        },
+        {
+          "caller": "main",
+          "callee": "build_report",
+          "lineNumber": 35
+        },
+        {
+          "caller": "main",
+          "callee": "Path",
+          "lineNumber": 36
+        },
+        {
+          "caller": "main",
+          "callee": "out_path.parent.mkdir",
+          "lineNumber": 37
+        },
+        {
+          "caller": "main",
+          "callee": "out_path.write_text",
+          "lineNumber": 38
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 39
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 39
+        },
+        {
+          "caller": "main",
+          "callee": "build_confirmation",
+          "lineNumber": 41
+        },
+        {
+          "caller": "main",
+          "callee": "Path",
+          "lineNumber": 42
+        },
+        {
+          "caller": "main",
+          "callee": "confirmation_path.parent.mkdir",
+          "lineNumber": 43
+        },
+        {
+          "caller": "main",
+          "callee": "confirmation_path.write_text",
+          "lineNumber": 44
+        },
+        {
+          "caller": "main",
+          "callee": "json.dumps",
+          "lineNumber": 44
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 45
+        },
+        {
+          "caller": "main",
+          "callee": "_record_hypothesis_evidence",
+          "lineNumber": 46
+        },
+        {
+          "caller": "main",
+          "callee": "_write_stability",
+          "lineNumber": 47
+        },
+        {
+          "caller": "main",
+          "callee": "_write_walk_forward",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_record_hypothesis_evidence",
+          "callee": "str(args.hypothesis_id or \"\").strip",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_record_hypothesis_evidence",
+          "callee": "str",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_record_hypothesis_evidence",
+          "callee": "_artifact_ref",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_record_hypothesis_evidence",
+          "callee": "confirmation.get",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_record_hypothesis_evidence",
+          "callee": "confirmation.get",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_record_hypothesis_evidence",
+          "callee": "Path",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_record_hypothesis_evidence",
+          "callee": "output.parent.mkdir",
+          "lineNumber": 73
+        },
+        {
+          "caller": "_record_hypothesis_evidence",
+          "callee": "output.write_text",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_record_hypothesis_evidence",
+          "callee": "json.dumps",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_record_hypothesis_evidence",
+          "callee": "print",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_record_hypothesis_evidence",
+          "callee": "_link_local_registry",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_write_stability",
+          "callee": "build_parameter_stability",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_write_stability",
+          "callee": "Path",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_write_stability",
+          "callee": "output.parent.mkdir",
+          "lineNumber": 84
+        },
+        {
+          "caller": "_write_stability",
+          "callee": "output.write_text",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_write_stability",
+          "callee": "json.dumps",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_write_stability",
+          "callee": "print",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_write_stability",
+          "callee": "_record_hypothesis_evidence",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_write_walk_forward",
+          "callee": "build_walk_forward_validation",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_write_walk_forward",
+          "callee": "Path",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_write_walk_forward",
+          "callee": "output.parent.mkdir",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_write_walk_forward",
+          "callee": "output.write_text",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_write_walk_forward",
+          "callee": "json.dumps",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_write_walk_forward",
+          "callee": "print",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_artifact_ref",
+          "callee": "str(run_url or \"\").strip().rstrip",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_artifact_ref",
+          "callee": "str(run_url or \"\").strip",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_artifact_ref",
+          "callee": "str",
+          "lineNumber": 107
+        },
+        {
+          "caller": "_artifact_ref",
+          "callee": "str",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_artifact_ref",
+          "callee": "confirmation_path.resolve",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_link_local_registry",
+          "callee": "str",
+          "lineNumber": 115
+        },
+        {
+          "caller": "_link_local_registry",
+          "callee": "local_db.load_research_hypothesis",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_link_local_registry",
+          "callee": "print",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_link_local_registry",
+          "callee": "local_db.link_research_evidence",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_link_local_registry",
+          "callee": "print",
+          "lineNumber": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/core/test_backtest_grid_ranking.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "test_rank_robust_params_prefers_cross_period_positive_combo",
+          "startLine": 16,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "test_rank_robust_params_accepts_workflow_dict_cells",
+          "startLine": 39,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "test_rank_robust_params_uses_first_available_recent_period",
+          "startLine": 58,
+          "endLine": 74,
+          "params": []
+        },
+        {
+          "name": "test_weak_period_guardrails_reports_only_non_positive_periods",
+          "startLine": 77,
+          "endLine": 86,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Cell",
+          "startLine": 9,
+          "endLine": 13,
+          "methods": [],
+          "properties": [
+            "style",
+            "period",
+            "hold",
+            "cash_return"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Cell",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "test_rank_robust_params_prefers_cross_period_positive_combo",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "test_rank_robust_params_accepts_workflow_dict_cells",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "test_rank_robust_params_uses_first_available_recent_period",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "test_weak_period_guardrails_reports_only_non_positive_periods",
+          "line": 77,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_rank_robust_params_prefers_cross_period_positive_combo",
+          "callee": "Cell",
+          "lineNumber": 18
+        },
+        {
+          "caller": "test_rank_robust_params_prefers_cross_period_positive_combo",
+          "callee": "Cell",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_rank_robust_params_prefers_cross_period_positive_combo",
+          "callee": "Cell",
+          "lineNumber": 20
+        },
+        {
+          "caller": "test_rank_robust_params_prefers_cross_period_positive_combo",
+          "callee": "Cell",
+          "lineNumber": 21
+        },
+        {
+          "caller": "test_rank_robust_params_prefers_cross_period_positive_combo",
+          "callee": "Cell",
+          "lineNumber": 22
+        },
+        {
+          "caller": "test_rank_robust_params_prefers_cross_period_positive_combo",
+          "callee": "Cell",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_rank_robust_params_prefers_cross_period_positive_combo",
+          "callee": "rank_robust_params",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_rank_robust_params_prefers_cross_period_positive_combo",
+          "callee": "max",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test_rank_robust_params_prefers_cross_period_positive_combo",
+          "callee": "float",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test_rank_robust_params_prefers_cross_period_positive_combo",
+          "callee": "robust_label",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_rank_robust_params_accepts_workflow_dict_cells",
+          "callee": "rank_robust_params",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_rank_robust_params_accepts_workflow_dict_cells",
+          "callee": "str",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_rank_robust_params_accepts_workflow_dict_cells",
+          "callee": "robust_label",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_rank_robust_params_uses_first_available_recent_period",
+          "callee": "Cell",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_rank_robust_params_uses_first_available_recent_period",
+          "callee": "Cell",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_rank_robust_params_uses_first_available_recent_period",
+          "callee": "rank_robust_params",
+          "lineNumber": 64
+        },
+        {
+          "caller": "test_rank_robust_params_uses_first_available_recent_period",
+          "callee": "robust_label",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_weak_period_guardrails_reports_only_non_positive_periods",
+          "callee": "Cell",
+          "lineNumber": 79
+        },
+        {
+          "caller": "test_weak_period_guardrails_reports_only_non_positive_periods",
+          "callee": "Cell",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_weak_period_guardrails_reports_only_non_positive_periods",
+          "callee": "Cell",
+          "lineNumber": 81
+        },
+        {
+          "caller": "test_weak_period_guardrails_reports_only_non_positive_periods",
+          "callee": "weak_period_guardrails",
+          "lineNumber": 84
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/workflows/test_backtest_parameter_stability.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "_cell",
+          "startLine": 9,
+          "endLine": 27,
+          "params": [
+            "root",
+            "period",
+            "hold",
+            "stop",
+            "cash_return"
+          ]
+        },
+        {
+          "name": "_grid",
+          "startLine": 30,
+          "endLine": 34,
+          "params": [
+            "root",
+            "returns"
+          ]
+        },
+        {
+          "name": "test_parameter_stability_passes_when_half_of_neighbors_are_cross_period_positive",
+          "startLine": 37,
+          "endLine": 53,
+          "params": [
+            "tmp_path"
+          ]
+        },
+        {
+          "name": "test_parameter_stability_fails_for_parameter_island",
+          "startLine": 56,
+          "endLine": 69,
+          "params": [
+            "tmp_path"
+          ]
+        },
+        {
+          "name": "test_parameter_stability_reviews_insufficient_neighbor_coverage",
+          "startLine": 72,
+          "endLine": 78,
+          "params": [
+            "tmp_path"
+          ]
+        },
+        {
+          "name": "test_parameter_stability_reviews_when_anchor_misses_required_period",
+          "startLine": 81,
+          "endLine": 90,
+          "params": [
+            "tmp_path"
+          ]
+        },
+        {
+          "name": "test_parse_params_keeps_trailing_activate_distinct",
+          "startLine": 93,
+          "endLine": 104,
+          "params": []
+        },
+        {
+          "name": "test_parse_period_key_covers_all_matrix_periods",
+          "startLine": 107,
+          "endLine": 116,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_cell",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "_grid",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "test_parameter_stability_passes_when_half_of_neighbors_are_cross_period_positive",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "test_parameter_stability_fails_for_parameter_island",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "test_parameter_stability_reviews_insufficient_neighbor_coverage",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "test_parameter_stability_reviews_when_anchor_misses_required_period",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "test_parse_params_keeps_trailing_activate_distinct",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "test_parse_period_key_covers_all_matrix_periods",
+          "line": 107,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_cell",
+          "callee": "artifact.mkdir",
+          "lineNumber": 11
+        },
+        {
+          "caller": "_cell",
+          "callee": "(artifact / f\"summary_{period}_h{hold}.md\").write_text",
+          "lineNumber": 12
+        },
+        {
+          "caller": "_cell",
+          "callee": "\"\\n\".join",
+          "lineNumber": 13
+        },
+        {
+          "caller": "_grid",
+          "callee": "returns.items",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_grid",
+          "callee": "zip",
+          "lineNumber": 33
+        },
+        {
+          "caller": "_grid",
+          "callee": "_cell",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_parameter_stability_passes_when_half_of_neighbors_are_cross_period_positive",
+          "callee": "_grid",
+          "lineNumber": 38
+        },
+        {
+          "caller": "test_parameter_stability_passes_when_half_of_neighbors_are_cross_period_positive",
+          "callee": "build_parameter_stability",
+          "lineNumber": 47
+        },
+        {
+          "caller": "test_parameter_stability_passes_when_half_of_neighbors_are_cross_period_positive",
+          "callee": "load_grid_cells",
+          "lineNumber": 47
+        },
+        {
+          "caller": "test_parameter_stability_fails_for_parameter_island",
+          "callee": "_grid",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_parameter_stability_fails_for_parameter_island",
+          "callee": "build_parameter_stability",
+          "lineNumber": 66
+        },
+        {
+          "caller": "test_parameter_stability_fails_for_parameter_island",
+          "callee": "load_grid_cells",
+          "lineNumber": 66
+        },
+        {
+          "caller": "test_parameter_stability_reviews_insufficient_neighbor_coverage",
+          "callee": "_grid",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_parameter_stability_reviews_insufficient_neighbor_coverage",
+          "callee": "build_parameter_stability",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_parameter_stability_reviews_insufficient_neighbor_coverage",
+          "callee": "load_grid_cells",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_parameter_stability_reviews_when_anchor_misses_required_period",
+          "callee": "_cell",
+          "lineNumber": 83
+        },
+        {
+          "caller": "test_parameter_stability_reviews_when_anchor_misses_required_period",
+          "callee": "_cell",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_parameter_stability_reviews_when_anchor_misses_required_period",
+          "callee": "_cell",
+          "lineNumber": 85
+        },
+        {
+          "caller": "test_parameter_stability_reviews_when_anchor_misses_required_period",
+          "callee": "build_parameter_stability",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_parameter_stability_reviews_when_anchor_misses_required_period",
+          "callee": "load_grid_cells",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_parse_params_keeps_trailing_activate_distinct",
+          "callee": "_parse_params",
+          "lineNumber": 102
+        },
+        {
+          "caller": "test_parse_period_key_covers_all_matrix_periods",
+          "callee": "_parse_period_key",
+          "lineNumber": 116
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/workflows/test_backtest_walk_forward.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "_cell",
+          "startLine": 15,
+          "endLine": 34,
+          "params": [
+            "root",
+            "period",
+            "hold",
+            "cash_return"
+          ]
+        },
+        {
+          "name": "_grid",
+          "startLine": 37,
+          "endLine": 40,
+          "params": [
+            "root",
+            "returns"
+          ]
+        },
+        {
+          "name": "test_walk_forward_uses_train_winner_without_reoptimizing_test_period",
+          "startLine": 43,
+          "endLine": 53,
+          "params": [
+            "tmp_path"
+          ]
+        },
+        {
+          "name": "test_walk_forward_passes_when_each_train_winner_survives_next_window",
+          "startLine": 56,
+          "endLine": 62,
+          "params": [
+            "tmp_path"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_cell",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "_grid",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "test_walk_forward_uses_train_winner_without_reoptimizing_test_period",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "test_walk_forward_passes_when_each_train_winner_survives_next_window",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_cell",
+          "callee": "artifact.mkdir",
+          "lineNumber": 18
+        },
+        {
+          "caller": "_cell",
+          "callee": "(artifact / f\"summary_{period}_h{hold}.md\").write_text",
+          "lineNumber": 19
+        },
+        {
+          "caller": "_cell",
+          "callee": "\"\\n\".join",
+          "lineNumber": 20
+        },
+        {
+          "caller": "_grid",
+          "callee": "returns.items",
+          "lineNumber": 38
+        },
+        {
+          "caller": "_grid",
+          "callee": "zip",
+          "lineNumber": 39
+        },
+        {
+          "caller": "_grid",
+          "callee": "_cell",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_walk_forward_uses_train_winner_without_reoptimizing_test_period",
+          "callee": "_grid",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_walk_forward_uses_train_winner_without_reoptimizing_test_period",
+          "callee": "build_walk_forward_validation",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_walk_forward_uses_train_winner_without_reoptimizing_test_period",
+          "callee": "load_grid_cells",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_walk_forward_passes_when_each_train_winner_survives_next_window",
+          "callee": "_grid",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_walk_forward_passes_when_each_train_winner_survives_next_window",
+          "callee": "build_walk_forward_validation",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_walk_forward_passes_when_each_train_winner_survives_next_window",
+          "callee": "load_grid_cells",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/tests/workflows/test_report_layer_scope.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 71,
+      "classes": [
+        {
+          "name": "TestRegimeTableScope",
+          "startLine": 35,
+          "endLine": 53,
+          "methods": [
+            "test_discloses_scope_when_given",
+            "test_still_renders_without_scope",
+            "test_data_rows_intact"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestTriggerTableScope",
+          "startLine": 56,
+          "endLine": 65,
+          "methods": [
+            "test_discloses_scope",
+            "test_data_rows_intact"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestBacktestGateFallbackMatchesLive",
+          "startLine": 68,
+          "endLine": 89,
+          "methods": [
+            "test_all_three_workflows_agree"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestRegimeTableScope",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "TestTriggerTableScope",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "TestBacktestGateFallbackMatchesLive",
+          "line": 68,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_discloses_scope_when_given",
+          "callee": "\"\\n\".join",
+          "lineNumber": 38
+        },
+        {
+          "caller": "test_discloses_scope_when_given",
+          "callee": "_build_regime_stats_table",
+          "lineNumber": 38
+        },
+        {
+          "caller": "test_still_renders_without_scope",
+          "callee": "\"\\n\".join",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_still_renders_without_scope",
+          "callee": "_build_regime_stats_table",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_data_rows_intact",
+          "callee": "\"\\n\".join",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_data_rows_intact",
+          "callee": "_build_regime_stats_table",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_discloses_scope",
+          "callee": "\"\\n\".join",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_discloses_scope",
+          "callee": "_build_trigger_stats_table",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_data_rows_intact",
+          "callee": "\"\\n\".join",
+          "lineNumber": 63
+        },
+        {
+          "caller": "test_data_rows_intact",
+          "callee": "_build_trigger_stats_table",
+          "lineNumber": 63
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "Path(\".github/workflows\").joinpath(name).read_text",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "Path(\".github/workflows\").joinpath",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "Path",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "re.search",
+          "lineNumber": 81
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "hit.group",
+          "lineNumber": 83
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "re.search",
+          "lineNumber": 85
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "(fb.group(1) if fb else raw.strip().strip('\"').strip(\"'\")).strip",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "fb.group",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "raw.strip().strip('\"').strip",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "raw.strip().strip",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "raw.strip",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "len",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "set",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "values.values",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "next",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "iter",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_all_three_workflows_agree",
+          "callee": "values.values",
+          "lineNumber": 89
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/workflows/backtest_market_report_artifacts.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 288,
+      "nonEmptyLines": 241,
+      "functions": [
+        {
+          "name": "load_grid_cells",
+          "startLine": 54,
+          "endLine": 65,
+          "params": [
+            "artifacts_dir"
+          ]
+        },
+        {
+          "name": "read_trades",
+          "startLine": 68,
+          "endLine": 72,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "_to_float",
+          "startLine": 75,
+          "endLine": 88,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "_to_int",
+          "startLine": 91,
+          "endLine": 93,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "_coalesce",
+          "startLine": 96,
+          "endLine": 97,
+          "params": [
+            "value",
+            "fallback"
+          ]
+        },
+        {
+          "name": "_extract_line_value",
+          "startLine": 100,
+          "endLine": 106,
+          "params": [
+            "content",
+            "label_pattern"
+          ]
+        },
+        {
+          "name": "_extract_float",
+          "startLine": 109,
+          "endLine": 110,
+          "params": [
+            "content",
+            "label_pattern"
+          ]
+        },
+        {
+          "name": "_extract_int",
+          "startLine": 113,
+          "endLine": 114,
+          "params": [
+            "content",
+            "label_pattern"
+          ]
+        },
+        {
+          "name": "_parse_range",
+          "startLine": 117,
+          "endLine": 124,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "_parse_simple_field",
+          "startLine": 127,
+          "endLine": 129,
+          "params": [
+            "content",
+            "label"
+          ]
+        },
+        {
+          "name": "_parse_board_sample",
+          "startLine": 132,
+          "endLine": 139,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "_parse_params",
+          "startLine": 142,
+          "endLine": 162,
+          "params": [
+            "dirname"
+          ]
+        },
+        {
+          "name": "_parse_period_key",
+          "startLine": 165,
+          "endLine": 173,
+          "params": [
+            "dirname"
+          ]
+        },
+        {
+          "name": "_split_md_row",
+          "startLine": 176,
+          "endLine": 177,
+          "params": [
+            "line"
+          ]
+        },
+        {
+          "name": "_parse_cash_style_rows",
+          "startLine": 180,
+          "endLine": 189,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "_cash_style_rows_after_header",
+          "startLine": 192,
+          "endLine": 201,
+          "params": [
+            "lines",
+            "idx",
+            "headers"
+          ]
+        },
+        {
+          "name": "_fallback_cash_style_rows",
+          "startLine": 204,
+          "endLine": 217,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "_find_trades_path",
+          "startLine": 220,
+          "endLine": 222,
+          "params": [
+            "summary_path"
+          ]
+        },
+        {
+          "name": "_find_style_trades_path",
+          "startLine": 225,
+          "endLine": 228,
+          "params": [
+            "summary_path",
+            "portfolio_style"
+          ]
+        },
+        {
+          "name": "_summary_metadata",
+          "startLine": 231,
+          "endLine": 247,
+          "params": [
+            "summary_path",
+            "content"
+          ]
+        },
+        {
+          "name": "_grid_cell_from_style",
+          "startLine": 250,
+          "endLine": 288,
+          "params": [
+            "meta",
+            "content",
+            "params",
+            "style_row"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GridCell",
+          "startLine": 14,
+          "endLine": 51,
+          "methods": [],
+          "properties": [
+            "artifact_dir",
+            "summary_path",
+            "trades_path",
+            "period_key",
+            "portfolio_style",
+            "portfolio_style_label",
+            "hold",
+            "stop_loss",
+            "take_profit",
+            "trailing_stop",
+            "start",
+            "end",
+            "top_n",
+            "board",
+            "sample_size",
+            "trades",
+            "win_rate",
+            "avg_ret",
+            "median_ret",
+            "max_drawdown",
+            "sharpe",
+            "calmar",
+            "total_return",
+            "cash_initial",
+            "cash_final",
+            "cash_total_return",
+            "cash_trades",
+            "cash_commission_total",
+            "cash_max_drawdown",
+            "wbt_sharpe",
+            "wbt_max_drawdown",
+            "wbt_daily_win_rate",
+            "metrics_engine",
+            "entry_price_mode",
+            "strategy_policy",
+            "trailing_activate"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GridCell",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "load_grid_cells",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "read_trades",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "_to_float",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "_to_int",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "_coalesce",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "_extract_line_value",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "_extract_float",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "_extract_int",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "_parse_range",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "_parse_simple_field",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "_parse_board_sample",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "_parse_params",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "_parse_period_key",
+          "line": 165,
+          "isDefault": false
+        },
+        {
+          "name": "_split_md_row",
+          "line": 176,
+          "isDefault": false
+        },
+        {
+          "name": "_parse_cash_style_rows",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "_cash_style_rows_after_header",
+          "line": 192,
+          "isDefault": false
+        },
+        {
+          "name": "_fallback_cash_style_rows",
+          "line": 204,
+          "isDefault": false
+        },
+        {
+          "name": "_find_trades_path",
+          "line": 220,
+          "isDefault": false
+        },
+        {
+          "name": "_find_style_trades_path",
+          "line": 225,
+          "isDefault": false
+        },
+        {
+          "name": "_summary_metadata",
+          "line": 231,
+          "isDefault": false
+        },
+        {
+          "name": "_grid_cell_from_style",
+          "line": 250,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "load_grid_cells",
+          "callee": "sorted",
+          "lineNumber": 55
+        },
+        {
+          "caller": "load_grid_cells",
+          "callee": "Path",
+          "lineNumber": 55
+        },
+        {
+          "caller": "load_grid_cells",
+          "callee": "glob.glob",
+          "lineNumber": 55
+        },
+        {
+          "caller": "load_grid_cells",
+          "callee": "str",
+          "lineNumber": 55
+        },
+        {
+          "caller": "load_grid_cells",
+          "callee": "_parse_params",
+          "lineNumber": 58
+        },
+        {
+          "caller": "load_grid_cells",
+          "callee": "summary_path.read_text",
+          "lineNumber": 61
+        },
+        {
+          "caller": "load_grid_cells",
+          "callee": "_summary_metadata",
+          "lineNumber": 62
+        },
+        {
+          "caller": "load_grid_cells",
+          "callee": "_parse_cash_style_rows",
+          "lineNumber": 63
+        },
+        {
+          "caller": "load_grid_cells",
+          "callee": "_fallback_cash_style_rows",
+          "lineNumber": 63
+        },
+        {
+          "caller": "load_grid_cells",
+          "callee": "cells.append",
+          "lineNumber": 64
+        },
+        {
+          "caller": "load_grid_cells",
+          "callee": "_grid_cell_from_style",
+          "lineNumber": 64
+        },
+        {
+          "caller": "read_trades",
+          "callee": "path.exists",
+          "lineNumber": 69
+        },
+        {
+          "caller": "read_trades",
+          "callee": "path.open",
+          "lineNumber": 71
+        },
+        {
+          "caller": "read_trades",
+          "callee": "list",
+          "lineNumber": 72
+        },
+        {
+          "caller": "read_trades",
+          "callee": "csv.DictReader",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_to_float",
+          "callee": "raw.strip().replace(\",\", \"\").replace",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_to_float",
+          "callee": "raw.strip().replace",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_to_float",
+          "callee": "raw.strip",
+          "lineNumber": 78
+        },
+        {
+          "caller": "_to_float",
+          "callee": "text.replace(\"（wbt 可用）\", \"\").replace",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_to_float",
+          "callee": "text.replace",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_to_float",
+          "callee": "re.search",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_to_float",
+          "callee": "float",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_to_float",
+          "callee": "match.group",
+          "lineNumber": 86
+        },
+        {
+          "caller": "_to_int",
+          "callee": "_to_float",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_to_int",
+          "callee": "int",
+          "lineNumber": 93
+        },
+        {
+          "caller": "_extract_line_value",
+          "callee": "re.compile",
+          "lineNumber": 101
+        },
+        {
+          "caller": "_extract_line_value",
+          "callee": "content.splitlines",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_extract_line_value",
+          "callee": "pattern.match",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_extract_line_value",
+          "callee": "match.group(1).strip",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_extract_line_value",
+          "callee": "match.group",
+          "lineNumber": 105
+        },
+        {
+          "caller": "_extract_float",
+          "callee": "_to_float",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_extract_float",
+          "callee": "_extract_line_value",
+          "lineNumber": 110
+        },
+        {
+          "caller": "_extract_int",
+          "callee": "_to_int",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_extract_int",
+          "callee": "_extract_line_value",
+          "lineNumber": 114
+        },
+        {
+          "caller": "_parse_range",
+          "callee": "_extract_line_value",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_parse_range",
+          "callee": "part.strip",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_parse_range",
+          "callee": "raw.split",
+          "lineNumber": 121
+        },
+        {
+          "caller": "_parse_range",
+          "callee": "len",
+          "lineNumber": 122
+        },
+        {
+          "caller": "_parse_simple_field",
+          "callee": "_extract_line_value",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_parse_simple_field",
+          "callee": "re.escape",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_parse_board_sample",
+          "callee": "_parse_simple_field",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_parse_board_sample",
+          "callee": "re.match",
+          "lineNumber": 136
+        },
+        {
+          "caller": "_parse_board_sample",
+          "callee": "match.group(1).strip",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_parse_board_sample",
+          "callee": "match.group",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_parse_board_sample",
+          "callee": "match.group(2).strip",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_parse_board_sample",
+          "callee": "match.group",
+          "lineNumber": 139
+        },
+        {
+          "caller": "_parse_params",
+          "callee": "re.search",
+          "lineNumber": 150
+        },
+        {
+          "caller": "_parse_params",
+          "callee": "int",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_parse_params",
+          "callee": "match.group",
+          "lineNumber": 157
+        },
+        {
+          "caller": "_parse_params",
+          "callee": "int",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_parse_params",
+          "callee": "match.group",
+          "lineNumber": 158
+        },
+        {
+          "caller": "_parse_params",
+          "callee": "int",
+          "lineNumber": 159
+        },
+        {
+          "caller": "_parse_params",
+          "callee": "match.group",
+          "lineNumber": 159
+        },
+        {
+          "caller": "_parse_params",
+          "callee": "int",
+          "lineNumber": 160
+        },
+        {
+          "caller": "_parse_params",
+          "callee": "match.group",
+          "lineNumber": 160
+        },
+        {
+          "caller": "_parse_params",
+          "callee": "int",
+          "lineNumber": 161
+        },
+        {
+          "caller": "_parse_params",
+          "callee": "match.group",
+          "lineNumber": 161
+        },
+        {
+          "caller": "_parse_period_key",
+          "callee": "re.search",
+          "lineNumber": 169
+        },
+        {
+          "caller": "_parse_period_key",
+          "callee": "match.group",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_split_md_row",
+          "callee": "part.strip",
+          "lineNumber": 177
+        },
+        {
+          "caller": "_split_md_row",
+          "callee": "line.strip().strip(\"|\").split",
+          "lineNumber": 177
+        },
+        {
+          "caller": "_split_md_row",
+          "callee": "line.strip().strip",
+          "lineNumber": 177
+        },
+        {
+          "caller": "_split_md_row",
+          "callee": "line.strip",
+          "lineNumber": 177
+        },
+        {
+          "caller": "_parse_cash_style_rows",
+          "callee": "content.splitlines",
+          "lineNumber": 181
+        },
+        {
+          "caller": "_parse_cash_style_rows",
+          "callee": "enumerate",
+          "lineNumber": 183
+        },
+        {
+          "caller": "_parse_cash_style_rows",
+          "callee": "_split_md_row",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_parse_cash_style_rows",
+          "callee": "line.strip().startswith",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_parse_cash_style_rows",
+          "callee": "line.strip",
+          "lineNumber": 184
+        },
+        {
+          "caller": "_parse_cash_style_rows",
+          "callee": "rows.extend",
+          "lineNumber": 187
+        },
+        {
+          "caller": "_parse_cash_style_rows",
+          "callee": "_cash_style_rows_after_header",
+          "lineNumber": 187
+        },
+        {
+          "caller": "_cash_style_rows_after_header",
+          "callee": "raw.strip().startswith",
+          "lineNumber": 195
+        },
+        {
+          "caller": "_cash_style_rows_after_header",
+          "callee": "raw.strip",
+          "lineNumber": 195
+        },
+        {
+          "caller": "_cash_style_rows_after_header",
+          "callee": "_split_md_row",
+          "lineNumber": 197
+        },
+        {
+          "caller": "_cash_style_rows_after_header",
+          "callee": "len",
+          "lineNumber": 198
+        },
+        {
+          "caller": "_cash_style_rows_after_header",
+          "callee": "len",
+          "lineNumber": 198
+        },
+        {
+          "caller": "_cash_style_rows_after_header",
+          "callee": "rows.append",
+          "lineNumber": 200
+        },
+        {
+          "caller": "_cash_style_rows_after_header",
+          "callee": "dict",
+          "lineNumber": 200
+        },
+        {
+          "caller": "_cash_style_rows_after_header",
+          "callee": "zip",
+          "lineNumber": 200
+        },
+        {
+          "caller": "_fallback_cash_style_rows",
+          "callee": "_parse_simple_field",
+          "lineNumber": 205
+        },
+        {
+          "caller": "_fallback_cash_style_rows",
+          "callee": "raw_style.split(\"(\")[-1].rstrip",
+          "lineNumber": 208
+        },
+        {
+          "caller": "_fallback_cash_style_rows",
+          "callee": "raw_style.split",
+          "lineNumber": 208
+        },
+        {
+          "caller": "_fallback_cash_style_rows",
+          "callee": "raw_style.split(\"(\", 1)[0].strip",
+          "lineNumber": 209
+        },
+        {
+          "caller": "_fallback_cash_style_rows",
+          "callee": "raw_style.split",
+          "lineNumber": 209
+        },
+        {
+          "caller": "_fallback_cash_style_rows",
+          "callee": "_extract_line_value",
+          "lineNumber": 210
+        },
+        {
+          "caller": "_fallback_cash_style_rows",
+          "callee": "_extract_line_value",
+          "lineNumber": 211
+        },
+        {
+          "caller": "_fallback_cash_style_rows",
+          "callee": "_extract_line_value",
+          "lineNumber": 212
+        },
+        {
+          "caller": "_fallback_cash_style_rows",
+          "callee": "_extract_line_value",
+          "lineNumber": 213
+        },
+        {
+          "caller": "_fallback_cash_style_rows",
+          "callee": "_extract_line_value",
+          "lineNumber": 214
+        },
+        {
+          "caller": "_fallback_cash_style_rows",
+          "callee": "_extract_line_value",
+          "lineNumber": 215
+        },
+        {
+          "caller": "_find_trades_path",
+          "callee": "sorted",
+          "lineNumber": 221
+        },
+        {
+          "caller": "_find_trades_path",
+          "callee": "summary_path.parent.glob",
+          "lineNumber": 221
+        },
+        {
+          "caller": "_find_style_trades_path",
+          "callee": "sorted",
+          "lineNumber": 227
+        },
+        {
+          "caller": "_find_style_trades_path",
+          "callee": "summary_path.parent.glob",
+          "lineNumber": 227
+        },
+        {
+          "caller": "_find_style_trades_path",
+          "callee": "path.name.startswith",
+          "lineNumber": 227
+        },
+        {
+          "caller": "_summary_metadata",
+          "callee": "_parse_range",
+          "lineNumber": 232
+        },
+        {
+          "caller": "_summary_metadata",
+          "callee": "_parse_board_sample",
+          "lineNumber": 233
+        },
+        {
+          "caller": "_summary_metadata",
+          "callee": "_find_trades_path",
+          "lineNumber": 237
+        },
+        {
+          "caller": "_summary_metadata",
+          "callee": "_parse_period_key",
+          "lineNumber": 238
+        },
+        {
+          "caller": "_summary_metadata",
+          "callee": "_parse_simple_field(content, \"每日候选上限\").replace(\"Top\", \"\").strip",
+          "lineNumber": 241
+        },
+        {
+          "caller": "_summary_metadata",
+          "callee": "_parse_simple_field(content, \"每日候选上限\").replace",
+          "lineNumber": 241
+        },
+        {
+          "caller": "_summary_metadata",
+          "callee": "_parse_simple_field",
+          "lineNumber": 241
+        },
+        {
+          "caller": "_summary_metadata",
+          "callee": "_parse_simple_field",
+          "lineNumber": 244
+        },
+        {
+          "caller": "_summary_metadata",
+          "callee": "_parse_simple_field",
+          "lineNumber": 245
+        },
+        {
+          "caller": "_summary_metadata",
+          "callee": "_parse_simple_field",
+          "lineNumber": 246
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "style_row.get",
+          "lineNumber": 257
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_find_style_trades_path",
+          "lineNumber": 260
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "GridCell",
+          "lineNumber": 262
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "style_row.get",
+          "lineNumber": 265
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "style_row.get",
+          "lineNumber": 265
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_int",
+          "lineNumber": 271
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_coalesce",
+          "lineNumber": 272
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_to_float",
+          "lineNumber": 272
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "style_row.get",
+          "lineNumber": 272
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_float",
+          "lineNumber": 272
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_float",
+          "lineNumber": 273
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_float",
+          "lineNumber": 274
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_float",
+          "lineNumber": 275
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_float",
+          "lineNumber": 276
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_float",
+          "lineNumber": 277
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_float",
+          "lineNumber": 278
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_float",
+          "lineNumber": 279
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_coalesce",
+          "lineNumber": 280
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_to_float",
+          "lineNumber": 280
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "style_row.get",
+          "lineNumber": 280
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_float",
+          "lineNumber": 280
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_coalesce",
+          "lineNumber": 281
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_to_float",
+          "lineNumber": 281
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "style_row.get",
+          "lineNumber": 281
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_float",
+          "lineNumber": 281
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_coalesce",
+          "lineNumber": 282
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_to_int",
+          "lineNumber": 282
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "style_row.get",
+          "lineNumber": 282
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_int",
+          "lineNumber": 282
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_coalesce",
+          "lineNumber": 283
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_to_float",
+          "lineNumber": 283
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "style_row.get",
+          "lineNumber": 283
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_float",
+          "lineNumber": 283
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_coalesce",
+          "lineNumber": 284
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_to_float",
+          "lineNumber": 284
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "style_row.get",
+          "lineNumber": 284
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_float",
+          "lineNumber": 284
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_float",
+          "lineNumber": 285
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_float",
+          "lineNumber": 286
+        },
+        {
+          "caller": "_grid_cell_from_style",
+          "callee": "_extract_float",
+          "lineNumber": 287
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 22,
+        "functionCount": 21,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/workflows/backtest_market_report_builder.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 943,
+      "nonEmptyLines": 808,
+      "functions": [
+        {
+          "name": "_safe_mean",
+          "startLine": 52,
+          "endLine": 53,
+          "params": [
+            "values"
+          ]
+        },
+        {
+          "name": "_safe_median",
+          "startLine": 56,
+          "endLine": 57,
+          "params": [
+            "values"
+          ]
+        },
+        {
+          "name": "_pct",
+          "startLine": 60,
+          "endLine": 61,
+          "params": [
+            "num",
+            "den"
+          ]
+        },
+        {
+          "name": "_fmt_num",
+          "startLine": 64,
+          "endLine": 69,
+          "params": [
+            "value",
+            "digits",
+            "suffix"
+          ]
+        },
+        {
+          "name": "_fmt_signed",
+          "startLine": 72,
+          "endLine": 75,
+          "params": [
+            "value",
+            "digits",
+            "suffix"
+          ]
+        },
+        {
+          "name": "_cash_pnl",
+          "startLine": 78,
+          "endLine": 81,
+          "params": [
+            "cell"
+          ]
+        },
+        {
+          "name": "_fmt_param",
+          "startLine": 84,
+          "endLine": 89,
+          "params": [
+            "cell"
+          ]
+        },
+        {
+          "name": "_period_label",
+          "startLine": 92,
+          "endLine": 95,
+          "params": [
+            "cell"
+          ]
+        },
+        {
+          "name": "_period_sort_key",
+          "startLine": 98,
+          "endLine": 99,
+          "params": [
+            "label"
+          ]
+        },
+        {
+          "name": "_normalize_regime",
+          "startLine": 102,
+          "endLine": 104,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "_regime_label",
+          "startLine": 107,
+          "endLine": 108,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "_style_sort_key",
+          "startLine": 111,
+          "endLine": 112,
+          "params": [
+            "label"
+          ]
+        },
+        {
+          "name": "_format_backtest_ranges",
+          "startLine": 115,
+          "endLine": 134,
+          "params": [
+            "cells"
+          ]
+        },
+        {
+          "name": "_cell_sort_key",
+          "startLine": 137,
+          "endLine": 138,
+          "params": [
+            "cell"
+          ]
+        },
+        {
+          "name": "_cash_sort_key",
+          "startLine": 141,
+          "endLine": 144,
+          "params": [
+            "cell"
+          ]
+        },
+        {
+          "name": "_cash_drawdown",
+          "startLine": 147,
+          "endLine": 148,
+          "params": [
+            "cell"
+          ]
+        },
+        {
+          "name": "_robust_param_key",
+          "startLine": 151,
+          "endLine": 152,
+          "params": [
+            "cell"
+          ]
+        },
+        {
+          "name": "_cell_cash_return",
+          "startLine": 155,
+          "endLine": 156,
+          "params": [
+            "cell"
+          ]
+        },
+        {
+          "name": "_cell_cash_return_or_none",
+          "startLine": 159,
+          "endLine": 161,
+          "params": [
+            "cell"
+          ]
+        },
+        {
+          "name": "_representative_cell",
+          "startLine": 164,
+          "endLine": 170,
+          "params": [
+            "cells"
+          ]
+        },
+        {
+          "name": "_robust_label",
+          "startLine": 173,
+          "endLine": 174,
+          "params": [
+            "score"
+          ]
+        },
+        {
+          "name": "_rank_robust_params",
+          "startLine": 177,
+          "endLine": 185,
+          "params": [
+            "cells"
+          ]
+        },
+        {
+          "name": "_build_period_best_table",
+          "startLine": 188,
+          "endLine": 223,
+          "params": [
+            "cells"
+          ]
+        },
+        {
+          "name": "_build_style_best_table",
+          "startLine": 226,
+          "endLine": 259,
+          "params": [
+            "cells"
+          ]
+        },
+        {
+          "name": "_build_robust_param_table",
+          "startLine": 262,
+          "endLine": 291,
+          "params": [
+            "scores"
+          ]
+        },
+        {
+          "name": "_build_matrix",
+          "startLine": 294,
+          "endLine": 316,
+          "params": [
+            "cells",
+            "best"
+          ]
+        },
+        {
+          "name": "_numeric_ret",
+          "startLine": 319,
+          "endLine": 323,
+          "params": [
+            "row"
+          ]
+        },
+        {
+          "name": "_group_stats",
+          "startLine": 326,
+          "endLine": 347,
+          "params": [
+            "rows",
+            "key_fn"
+          ]
+        },
+        {
+          "name": "_cycle_count_label",
+          "startLine": 350,
+          "endLine": 354,
+          "params": [
+            "key",
+            "count",
+            "total"
+          ]
+        },
+        {
+          "name": "_latest_cycle",
+          "startLine": 357,
+          "endLine": 380,
+          "params": [
+            "rows",
+            "sample_size"
+          ]
+        },
+        {
+          "name": "_build_trade_diagnostics",
+          "startLine": 383,
+          "endLine": 409,
+          "params": [
+            "rows"
+          ]
+        },
+        {
+          "name": "_best_per_hold_comment",
+          "startLine": 412,
+          "endLine": 420,
+          "params": [
+            "cells"
+          ]
+        },
+        {
+          "name": "_strategy_policy_context",
+          "startLine": 423,
+          "endLine": 429,
+          "params": [
+            "cells"
+          ]
+        },
+        {
+          "name": "_entry_price_context",
+          "startLine": 432,
+          "endLine": 436,
+          "params": [
+            "cells"
+          ]
+        },
+        {
+          "name": "_build_execution_context_lines",
+          "startLine": 439,
+          "endLine": 472,
+          "params": [
+            "cells",
+            "best",
+            "diagnostics",
+            "current_cycle",
+            "cycle_detail",
+            "generated",
+            "pos_sharpe",
+            "neg_sharpe",
+            "run_url",
+            "verdict_lines"
+          ]
+        },
+        {
+          "name": "_build_verdict_lines",
+          "startLine": 475,
+          "endLine": 504,
+          "params": [
+            "confirmation",
+            "stability",
+            "walk_forward"
+          ]
+        },
+        {
+          "name": "_build_conclusion_lines",
+          "startLine": 507,
+          "endLine": 544,
+          "params": [
+            "cells",
+            "best",
+            "robust_best",
+            "diagnostics"
+          ]
+        },
+        {
+          "name": "_build_period_guardrail_lines",
+          "startLine": 547,
+          "endLine": 558,
+          "params": [
+            "cells"
+          ]
+        },
+        {
+          "name": "_round_metric",
+          "startLine": 561,
+          "endLine": 562,
+          "params": [
+            "value",
+            "digits"
+          ]
+        },
+        {
+          "name": "_confirmation_weak_periods",
+          "startLine": 565,
+          "endLine": 578,
+          "params": [
+            "cells"
+          ]
+        },
+        {
+          "name": "_confirmation_status",
+          "startLine": 581,
+          "endLine": 595,
+          "params": [
+            "score",
+            "weak_periods"
+          ]
+        },
+        {
+          "name": "_confirmation_summary",
+          "startLine": 598,
+          "endLine": 617,
+          "params": [
+            "status",
+            "score",
+            "weak_periods",
+            "readiness_check"
+          ]
+        },
+        {
+          "name": "_confirmation_param",
+          "startLine": 620,
+          "endLine": 632,
+          "params": [
+            "score"
+          ]
+        },
+        {
+          "name": "_confirmation_policy_check",
+          "startLine": 635,
+          "endLine": 644,
+          "params": [
+            "cells"
+          ]
+        },
+        {
+          "name": "_confirmation_entry_price_check",
+          "startLine": 647,
+          "endLine": 655,
+          "params": [
+            "cells"
+          ]
+        },
+        {
+          "name": "build_confirmation",
+          "startLine": 658,
+          "endLine": 696,
+          "params": [
+            "cells",
+            "run_url",
+            "generated_at"
+          ]
+        },
+        {
+          "name": "_period_best_cell",
+          "startLine": 699,
+          "endLine": 701,
+          "params": [
+            "cells",
+            "period_key",
+            "style"
+          ]
+        },
+        {
+          "name": "_playbook_ref",
+          "startLine": 704,
+          "endLine": 709,
+          "params": [
+            "cell"
+          ]
+        },
+        {
+          "name": "_playbook_evidence",
+          "startLine": 712,
+          "endLine": 716,
+          "params": [
+            "cell",
+            "fallback"
+          ]
+        },
+        {
+          "name": "_build_trading_playbook_lines",
+          "startLine": 719,
+          "endLine": 738,
+          "params": [
+            "cells",
+            "robust_best"
+          ]
+        },
+        {
+          "name": "_build_followup_lines",
+          "startLine": 741,
+          "endLine": 762,
+          "params": [
+            "regime_stats",
+            "trigger_stats"
+          ]
+        },
+        {
+          "name": "_build_ranked_table",
+          "startLine": 765,
+          "endLine": 792,
+          "params": [
+            "ranked",
+            "best"
+          ]
+        },
+        {
+          "name": "_build_trade_structure_lines",
+          "startLine": 795,
+          "endLine": 806,
+          "params": [
+            "diagnostics"
+          ]
+        },
+        {
+          "name": "_build_regime_stats_table",
+          "startLine": 809,
+          "endLine": 847,
+          "params": [
+            "regime_stats",
+            "scope"
+          ]
+        },
+        {
+          "name": "_build_trigger_stats_table",
+          "startLine": 850,
+          "endLine": 875,
+          "params": [
+            "trigger_stats",
+            "scope"
+          ]
+        },
+        {
+          "name": "_build_methodology_notes",
+          "startLine": 878,
+          "endLine": 887,
+          "params": []
+        },
+        {
+          "name": "build_report",
+          "startLine": 890,
+          "endLine": 943,
+          "params": [
+            "cells",
+            "run_url",
+            "generated_at"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_safe_mean",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "_safe_median",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "_pct",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "_fmt_num",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "_fmt_signed",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "_cash_pnl",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "_fmt_param",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "_period_label",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "_period_sort_key",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "_normalize_regime",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "_regime_label",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "_style_sort_key",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "_format_backtest_ranges",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "_cell_sort_key",
+          "line": 137,
+          "isDefault": false
+        },
+        {
+          "name": "_cash_sort_key",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "_cash_drawdown",
+          "line": 147,
+          "isDefault": false
+        },
+        {
+          "name": "_robust_param_key",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "_cell_cash_return",
+          "line": 155,
+          "isDefault": false
+        },
+        {
+          "name": "_cell_cash_return_or_none",
+          "line": 159,
+          "isDefault": false
+        },
+        {
+          "name": "_representative_cell",
+          "line": 164,
+          "isDefault": false
+        },
+        {
+          "name": "_robust_label",
+          "line": 173,
+          "isDefault": false
+        },
+        {
+          "name": "_rank_robust_params",
+          "line": 177,
+          "isDefault": false
+        },
+        {
+          "name": "_build_period_best_table",
+          "line": 188,
+          "isDefault": false
+        },
+        {
+          "name": "_build_style_best_table",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "_build_robust_param_table",
+          "line": 262,
+          "isDefault": false
+        },
+        {
+          "name": "_build_matrix",
+          "line": 294,
+          "isDefault": false
+        },
+        {
+          "name": "_numeric_ret",
+          "line": 319,
+          "isDefault": false
+        },
+        {
+          "name": "_group_stats",
+          "line": 326,
+          "isDefault": false
+        },
+        {
+          "name": "_cycle_count_label",
+          "line": 350,
+          "isDefault": false
+        },
+        {
+          "name": "_latest_cycle",
+          "line": 357,
+          "isDefault": false
+        },
+        {
+          "name": "_build_trade_diagnostics",
+          "line": 383,
+          "isDefault": false
+        },
+        {
+          "name": "_best_per_hold_comment",
+          "line": 412,
+          "isDefault": false
+        },
+        {
+          "name": "_strategy_policy_context",
+          "line": 423,
+          "isDefault": false
+        },
+        {
+          "name": "_entry_price_context",
+          "line": 432,
+          "isDefault": false
+        },
+        {
+          "name": "_build_execution_context_lines",
+          "line": 439,
+          "isDefault": false
+        },
+        {
+          "name": "_build_verdict_lines",
+          "line": 475,
+          "isDefault": false
+        },
+        {
+          "name": "_build_conclusion_lines",
+          "line": 507,
+          "isDefault": false
+        },
+        {
+          "name": "_build_period_guardrail_lines",
+          "line": 547,
+          "isDefault": false
+        },
+        {
+          "name": "_round_metric",
+          "line": 561,
+          "isDefault": false
+        },
+        {
+          "name": "_confirmation_weak_periods",
+          "line": 565,
+          "isDefault": false
+        },
+        {
+          "name": "_confirmation_status",
+          "line": 581,
+          "isDefault": false
+        },
+        {
+          "name": "_confirmation_summary",
+          "line": 598,
+          "isDefault": false
+        },
+        {
+          "name": "_confirmation_param",
+          "line": 620,
+          "isDefault": false
+        },
+        {
+          "name": "_confirmation_policy_check",
+          "line": 635,
+          "isDefault": false
+        },
+        {
+          "name": "_confirmation_entry_price_check",
+          "line": 647,
+          "isDefault": false
+        },
+        {
+          "name": "build_confirmation",
+          "line": 658,
+          "isDefault": false
+        },
+        {
+          "name": "_period_best_cell",
+          "line": 699,
+          "isDefault": false
+        },
+        {
+          "name": "_playbook_ref",
+          "line": 704,
+          "isDefault": false
+        },
+        {
+          "name": "_playbook_evidence",
+          "line": 712,
+          "isDefault": false
+        },
+        {
+          "name": "_build_trading_playbook_lines",
+          "line": 719,
+          "isDefault": false
+        },
+        {
+          "name": "_build_followup_lines",
+          "line": 741,
+          "isDefault": false
+        },
+        {
+          "name": "_build_ranked_table",
+          "line": 765,
+          "isDefault": false
+        },
+        {
+          "name": "_build_trade_structure_lines",
+          "line": 795,
+          "isDefault": false
+        },
+        {
+          "name": "_build_regime_stats_table",
+          "line": 809,
+          "isDefault": false
+        },
+        {
+          "name": "_build_trigger_stats_table",
+          "line": 850,
+          "isDefault": false
+        },
+        {
+          "name": "_build_methodology_notes",
+          "line": 878,
+          "isDefault": false
+        },
+        {
+          "name": "build_report",
+          "line": 890,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_safe_mean",
+          "callee": "mean",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_safe_median",
+          "callee": "median",
+          "lineNumber": 57
+        },
+        {
+          "caller": "_fmt_num",
+          "callee": "isinstance",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_fmt_num",
+          "callee": "math.isnan",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_fmt_num",
+          "callee": "math.isinf",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_period_label",
+          "callee": "PERIOD_LABELS.get",
+          "lineNumber": 94
+        },
+        {
+          "caller": "_period_sort_key",
+          "callee": "PERIOD_ORDER.get",
+          "lineNumber": 99
+        },
+        {
+          "caller": "_normalize_regime",
+          "callee": "str(value or \"\").strip",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_normalize_regime",
+          "callee": "str",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_regime_label",
+          "callee": "REGIME_LABELS.get",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_style_sort_key",
+          "callee": "STYLE_ORDER.get",
+          "lineNumber": 112
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "defaultdict",
+          "lineNumber": 116
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "groups[cell.period_key or _period_label(cell)].append",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "_period_label",
+          "lineNumber": 118
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "len",
+          "lineNumber": 119
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "next",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "iter",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "groups.items",
+          "lineNumber": 120
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "min",
+          "lineNumber": 123
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "max",
+          "lineNumber": 123
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "PERIOD_LABELS.get",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "sorted",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "PERIOD_LABELS.get",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "parts.append",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "min",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "max",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "len",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_format_backtest_ranges",
+          "callee": "\"；\".join",
+          "lineNumber": 134
+        },
+        {
+          "caller": "_cell_sort_key",
+          "callee": "float",
+          "lineNumber": 138
+        },
+        {
+          "caller": "_cash_sort_key",
+          "callee": "_cell_sort_key",
+          "lineNumber": 144
+        },
+        {
+          "caller": "_cell_cash_return",
+          "callee": "float",
+          "lineNumber": 156
+        },
+        {
+          "caller": "_cell_cash_return_or_none",
+          "callee": "_cell_cash_return",
+          "lineNumber": 160
+        },
+        {
+          "caller": "_cell_cash_return_or_none",
+          "callee": "float",
+          "lineNumber": 161
+        },
+        {
+          "caller": "_representative_cell",
+          "callee": "max",
+          "lineNumber": 167
+        },
+        {
+          "caller": "_representative_cell",
+          "callee": "max",
+          "lineNumber": 170
+        },
+        {
+          "caller": "_robust_label",
+          "callee": "robust_label",
+          "lineNumber": 174
+        },
+        {
+          "caller": "_rank_robust_params",
+          "callee": "rank_robust_params",
+          "lineNumber": 178
+        },
+        {
+          "caller": "_rank_robust_params",
+          "callee": "_period_label",
+          "lineNumber": 181
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "defaultdict",
+          "lineNumber": 189
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "groups[cell.period_key or _period_label(cell)].append",
+          "lineNumber": 191
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "_period_label",
+          "lineNumber": 191
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "len",
+          "lineNumber": 192
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "sorted",
+          "lineNumber": 202
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "max",
+          "lineNumber": 204
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "lines.append",
+          "lineNumber": 207
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "\" | \".join",
+          "lineNumber": 209
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "PERIOD_LABELS.get",
+          "lineNumber": 211
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "min",
+          "lineNumber": 212
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "max",
+          "lineNumber": 212
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "_fmt_param",
+          "lineNumber": 213
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "_fmt_signed",
+          "lineNumber": 214
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "_fmt_num",
+          "lineNumber": 215
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "_fmt_num",
+          "lineNumber": 216
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "_fmt_num",
+          "lineNumber": 217
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "_cash_drawdown",
+          "lineNumber": 217
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "str",
+          "lineNumber": 218
+        },
+        {
+          "caller": "_build_period_best_table",
+          "callee": "len",
+          "lineNumber": 218
+        },
+        {
+          "caller": "_build_style_best_table",
+          "callee": "defaultdict",
+          "lineNumber": 227
+        },
+        {
+          "caller": "_build_style_best_table",
+          "callee": "groups[cell.portfolio_style or \"slot_equal_4\"].append",
+          "lineNumber": 229
+        },
+        {
+          "caller": "_build_style_best_table",
+          "callee": "len",
+          "lineNumber": 230
+        },
+        {
+          "caller": "_build_style_best_table",
+          "callee": "sorted",
+          "lineNumber": 240
+        },
+        {
+          "caller": "_build_style_best_table",
+          "callee": "max",
+          "lineNumber": 242
+        },
+        {
+          "caller": "_build_style_best_table",
+          "callee": "lines.append",
+          "lineNumber": 243
+        },
+        {
+          "caller": "_build_style_best_table",
+          "callee": "\" | \".join",
+          "lineNumber": 245
+        },
+        {
+          "caller": "_build_style_best_table",
+          "callee": "PERIOD_LABELS.get",
+          "lineNumber": 248
+        },
+        {
+          "caller": "_build_style_best_table",
+          "callee": "_fmt_param",
+          "lineNumber": 249
+        },
+        {
+          "caller": "_build_style_best_table",
+          "callee": "_fmt_signed",
+          "lineNumber": 250
+        },
+        {
+          "caller": "_build_style_best_table",
+          "callee": "_fmt_num",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_build_style_best_table",
+          "callee": "_fmt_num",
+          "lineNumber": 252
+        },
+        {
+          "caller": "_build_style_best_table",
+          "callee": "_fmt_num",
+          "lineNumber": 253
+        },
+        {
+          "caller": "_build_style_best_table",
+          "callee": "_cash_drawdown",
+          "lineNumber": 253
+        },
+        {
+          "caller": "_build_style_best_table",
+          "callee": "str",
+          "lineNumber": 254
+        },
+        {
+          "caller": "_build_style_best_table",
+          "callee": "len",
+          "lineNumber": 254
+        },
+        {
+          "caller": "_build_robust_param_table",
+          "callee": "len",
+          "lineNumber": 263
+        },
+        {
+          "caller": "_build_robust_param_table",
+          "callee": "enumerate",
+          "lineNumber": 272
+        },
+        {
+          "caller": "_build_robust_param_table",
+          "callee": "lines.append",
+          "lineNumber": 275
+        },
+        {
+          "caller": "_build_robust_param_table",
+          "callee": "\" | \".join",
+          "lineNumber": 277
+        },
+        {
+          "caller": "_build_robust_param_table",
+          "callee": "str",
+          "lineNumber": 279
+        },
+        {
+          "caller": "_build_robust_param_table",
+          "callee": "_fmt_param",
+          "lineNumber": 280
+        },
+        {
+          "caller": "_build_robust_param_table",
+          "callee": "_fmt_signed",
+          "lineNumber": 282
+        },
+        {
+          "caller": "_build_robust_param_table",
+          "callee": "_fmt_signed",
+          "lineNumber": 283
+        },
+        {
+          "caller": "_build_robust_param_table",
+          "callee": "_fmt_signed",
+          "lineNumber": 284
+        },
+        {
+          "caller": "_build_robust_param_table",
+          "callee": "_fmt_num",
+          "lineNumber": 285
+        },
+        {
+          "caller": "_build_robust_param_table",
+          "callee": "str",
+          "lineNumber": 286
+        },
+        {
+          "caller": "_build_matrix",
+          "callee": "sorted",
+          "lineNumber": 295
+        },
+        {
+          "caller": "_build_matrix",
+          "callee": "sorted",
+          "lineNumber": 296
+        },
+        {
+          "caller": "_build_matrix",
+          "callee": "_cell_sort_key",
+          "lineNumber": 300
+        },
+        {
+          "caller": "_build_matrix",
+          "callee": "_cell_sort_key",
+          "lineNumber": 300
+        },
+        {
+          "caller": "_build_matrix",
+          "callee": "lines.append",
+          "lineNumber": 304
+        },
+        {
+          "caller": "_build_matrix",
+          "callee": "\" | \".join",
+          "lineNumber": 304
+        },
+        {
+          "caller": "_build_matrix",
+          "callee": "lines.append",
+          "lineNumber": 305
+        },
+        {
+          "caller": "_build_matrix",
+          "callee": "\"|\".join",
+          "lineNumber": 305
+        },
+        {
+          "caller": "_build_matrix",
+          "callee": "len",
+          "lineNumber": 305
+        },
+        {
+          "caller": "_build_matrix",
+          "callee": "by_pair.get",
+          "lineNumber": 309
+        },
+        {
+          "caller": "_build_matrix",
+          "callee": "row.append",
+          "lineNumber": 311
+        },
+        {
+          "caller": "_build_matrix",
+          "callee": "row.append",
+          "lineNumber": 314
+        },
+        {
+          "caller": "_build_matrix",
+          "callee": "lines.append",
+          "lineNumber": 315
+        },
+        {
+          "caller": "_build_matrix",
+          "callee": "\" | \".join",
+          "lineNumber": 315
+        },
+        {
+          "caller": "_numeric_ret",
+          "callee": "float",
+          "lineNumber": 321
+        },
+        {
+          "caller": "_numeric_ret",
+          "callee": "row.get",
+          "lineNumber": 321
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "defaultdict",
+          "lineNumber": 327
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "groups[key_fn(row) or \"-\"].append",
+          "lineNumber": 329
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "key_fn",
+          "lineNumber": 329
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "groups.items",
+          "lineNumber": 332
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "_numeric_ret",
+          "lineNumber": 333
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "sum",
+          "lineNumber": 334
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "sorted",
+          "lineNumber": 335
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "r.get",
+          "lineNumber": 335
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "r.get",
+          "lineNumber": 335
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "stats.append",
+          "lineNumber": 336
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "len",
+          "lineNumber": 339
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "_pct",
+          "lineNumber": 340
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "len",
+          "lineNumber": 340
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "_safe_mean",
+          "lineNumber": 341
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "_safe_median",
+          "lineNumber": 342
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "sorted",
+          "lineNumber": 347
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "int",
+          "lineNumber": 347
+        },
+        {
+          "caller": "_group_stats",
+          "callee": "str",
+          "lineNumber": 347
+        },
+        {
+          "caller": "_cycle_count_label",
+          "callee": "_regime_label",
+          "lineNumber": 353
+        },
+        {
+          "caller": "_latest_cycle",
+          "callee": "r.get",
+          "lineNumber": 358
+        },
+        {
+          "caller": "_latest_cycle",
+          "callee": "dated.sort",
+          "lineNumber": 359
+        },
+        {
+          "caller": "_latest_cycle",
+          "callee": "r.get",
+          "lineNumber": 359
+        },
+        {
+          "caller": "_latest_cycle",
+          "callee": "r.get",
+          "lineNumber": 359
+        },
+        {
+          "caller": "_latest_cycle",
+          "callee": "Counter",
+          "lineNumber": 364
+        },
+        {
+          "caller": "_latest_cycle",
+          "callee": "_normalize_regime",
+          "lineNumber": 364
+        },
+        {
+          "caller": "_latest_cycle",
+          "callee": "r.get",
+          "lineNumber": 364
+        },
+        {
+          "caller": "_latest_cycle",
+          "callee": "counts.most_common",
+          "lineNumber": 365
+        },
+        {
+          "caller": "_latest_cycle",
+          "callee": "tail[-1].get",
+          "lineNumber": 366
+        },
+        {
+          "caller": "_latest_cycle",
+          "callee": "tail[0].get",
+          "lineNumber": 367
+        },
+        {
+          "caller": "_latest_cycle",
+          "callee": "_cycle_count_label",
+          "lineNumber": 368
+        },
+        {
+          "caller": "_latest_cycle",
+          "callee": "len",
+          "lineNumber": 368
+        },
+        {
+          "caller": "_latest_cycle",
+          "callee": "len",
+          "lineNumber": 369
+        },
+        {
+          "caller": "_latest_cycle",
+          "callee": "len",
+          "lineNumber": 376
+        },
+        {
+          "caller": "_latest_cycle",
+          "callee": "\"、\".join",
+          "lineNumber": 377
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "_numeric_ret",
+          "lineNumber": 384
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "sorted",
+          "lineNumber": 387
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "_safe_mean",
+          "lineNumber": 388
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "len",
+          "lineNumber": 388
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "_safe_mean",
+          "lineNumber": 389
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "len",
+          "lineNumber": 389
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "abs",
+          "lineNumber": 392
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "mean",
+          "lineNumber": 392
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "mean",
+          "lineNumber": 393
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "sorted",
+          "lineNumber": 394
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "r.get",
+          "lineNumber": 394
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "r.get",
+          "lineNumber": 394
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "len",
+          "lineNumber": 396
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "len",
+          "lineNumber": 397
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "len",
+          "lineNumber": 398
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "_pct",
+          "lineNumber": 399
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "len",
+          "lineNumber": 399
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "len",
+          "lineNumber": 399
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "_safe_mean",
+          "lineNumber": 400
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "_safe_mean",
+          "lineNumber": 401
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "_safe_mean",
+          "lineNumber": 403
+        },
+        {
+          "caller": "_build_trade_diagnostics",
+          "callee": "_safe_median",
+          "lineNumber": 404
+        },
+        {
+          "caller": "_best_per_hold_comment",
+          "callee": "sorted",
+          "lineNumber": 414
+        },
+        {
+          "caller": "_best_per_hold_comment",
+          "callee": "max",
+          "lineNumber": 418
+        },
+        {
+          "caller": "_best_per_hold_comment",
+          "callee": "parts.append",
+          "lineNumber": 419
+        },
+        {
+          "caller": "_best_per_hold_comment",
+          "callee": "_fmt_param",
+          "lineNumber": 419
+        },
+        {
+          "caller": "_best_per_hold_comment",
+          "callee": "\"；\".join",
+          "lineNumber": 420
+        },
+        {
+          "caller": "_strategy_policy_context",
+          "callee": "sorted",
+          "lineNumber": 424
+        },
+        {
+          "caller": "_strategy_policy_context",
+          "callee": "len",
+          "lineNumber": 427
+        },
+        {
+          "caller": "_strategy_policy_context",
+          "callee": "\"；\".join",
+          "lineNumber": 429
+        },
+        {
+          "caller": "_strategy_policy_context",
+          "callee": "len",
+          "lineNumber": 429
+        },
+        {
+          "caller": "_strategy_policy_context",
+          "callee": "len",
+          "lineNumber": 429
+        },
+        {
+          "caller": "_entry_price_context",
+          "callee": "sorted",
+          "lineNumber": 433
+        },
+        {
+          "caller": "_entry_price_context",
+          "callee": "len",
+          "lineNumber": 436
+        },
+        {
+          "caller": "_entry_price_context",
+          "callee": "\"；\".join",
+          "lineNumber": 436
+        },
+        {
+          "caller": "_build_execution_context_lines",
+          "callee": "_format_backtest_ranges",
+          "lineNumber": 462
+        },
+        {
+          "caller": "_build_execution_context_lines",
+          "callee": "diagnostics.get",
+          "lineNumber": 465
+        },
+        {
+          "caller": "_build_execution_context_lines",
+          "callee": "diagnostics.get",
+          "lineNumber": 465
+        },
+        {
+          "caller": "_build_execution_context_lines",
+          "callee": "_entry_price_context",
+          "lineNumber": 468
+        },
+        {
+          "caller": "_build_execution_context_lines",
+          "callee": "_strategy_policy_context",
+          "lineNumber": 469
+        },
+        {
+          "caller": "_build_execution_context_lines",
+          "callee": "len",
+          "lineNumber": 470
+        },
+        {
+          "caller": "_build_verdict_lines",
+          "callee": "str",
+          "lineNumber": 480
+        },
+        {
+          "caller": "_build_verdict_lines",
+          "callee": "item.get",
+          "lineNumber": 480
+        },
+        {
+          "caller": "_build_verdict_lines",
+          "callee": "all",
+          "lineNumber": 481
+        },
+        {
+          "caller": "_build_verdict_lines",
+          "callee": "confirmation.get",
+          "lineNumber": 500
+        },
+        {
+          "caller": "_build_verdict_lines",
+          "callee": "stability.get",
+          "lineNumber": 501
+        },
+        {
+          "caller": "_build_verdict_lines",
+          "callee": "walk_forward.get",
+          "lineNumber": 502
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_robust_label",
+          "lineNumber": 518
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_param",
+          "lineNumber": 518
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_num",
+          "lineNumber": 520
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_num",
+          "lineNumber": 520
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_signed",
+          "lineNumber": 520
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_num",
+          "lineNumber": 520
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_num",
+          "lineNumber": 521
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_num",
+          "lineNumber": 521
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_signed",
+          "lineNumber": 521
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_cash_pnl",
+          "lineNumber": 521
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_signed",
+          "lineNumber": 521
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_num",
+          "lineNumber": 521
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_cash_drawdown",
+          "lineNumber": 521
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_num",
+          "lineNumber": 522
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_num",
+          "lineNumber": 522
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_num",
+          "lineNumber": 522
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_best_per_hold_comment",
+          "lineNumber": 523
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "lines.append",
+          "lineNumber": 526
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_signed",
+          "lineNumber": 528
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_signed",
+          "lineNumber": 529
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_num",
+          "lineNumber": 530
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "lines.extend",
+          "lineNumber": 532
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_build_period_guardrail_lines",
+          "lineNumber": 532
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "lines.append",
+          "lineNumber": 534
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "lines.append",
+          "lineNumber": 536
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "diagnostics.get",
+          "lineNumber": 539
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "lines.append",
+          "lineNumber": 540
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_signed",
+          "lineNumber": 541
+        },
+        {
+          "caller": "_build_conclusion_lines",
+          "callee": "_fmt_signed",
+          "lineNumber": 542
+        },
+        {
+          "caller": "_build_period_guardrail_lines",
+          "callee": "weak_period_guardrails",
+          "lineNumber": 549
+        },
+        {
+          "caller": "_build_period_guardrail_lines",
+          "callee": "_period_label",
+          "lineNumber": 551
+        },
+        {
+          "caller": "_build_period_guardrail_lines",
+          "callee": "PERIOD_LABELS.get",
+          "lineNumber": 554
+        },
+        {
+          "caller": "_build_period_guardrail_lines",
+          "callee": "lines.append",
+          "lineNumber": 555
+        },
+        {
+          "caller": "_build_period_guardrail_lines",
+          "callee": "_fmt_signed",
+          "lineNumber": 556
+        },
+        {
+          "caller": "_round_metric",
+          "callee": "round",
+          "lineNumber": 562
+        },
+        {
+          "caller": "_confirmation_weak_periods",
+          "callee": "weak_period_guardrails",
+          "lineNumber": 566
+        },
+        {
+          "caller": "_confirmation_weak_periods",
+          "callee": "_period_label",
+          "lineNumber": 568
+        },
+        {
+          "caller": "_confirmation_weak_periods",
+          "callee": "PERIOD_LABELS.get",
+          "lineNumber": 574
+        },
+        {
+          "caller": "_confirmation_weak_periods",
+          "callee": "_round_metric",
+          "lineNumber": 575
+        },
+        {
+          "caller": "_confirmation_summary",
+          "callee": "_fmt_signed",
+          "lineNumber": 610
+        },
+        {
+          "caller": "_confirmation_summary",
+          "callee": "\"、\".join",
+          "lineNumber": 613
+        },
+        {
+          "caller": "_confirmation_summary",
+          "callee": "str",
+          "lineNumber": 613
+        },
+        {
+          "caller": "_confirmation_summary",
+          "callee": "readiness_check.get",
+          "lineNumber": 615
+        },
+        {
+          "caller": "_confirmation_summary",
+          "callee": "readiness_check.get",
+          "lineNumber": 616
+        },
+        {
+          "caller": "_confirmation_param",
+          "callee": "_fmt_param",
+          "lineNumber": 625
+        },
+        {
+          "caller": "_confirmation_policy_check",
+          "callee": "sorted",
+          "lineNumber": 636
+        },
+        {
+          "caller": "_confirmation_policy_check",
+          "callee": "len",
+          "lineNumber": 639
+        },
+        {
+          "caller": "_confirmation_policy_check",
+          "callee": "policy.startswith",
+          "lineNumber": 642
+        },
+        {
+          "caller": "_confirmation_entry_price_check",
+          "callee": "sorted",
+          "lineNumber": 648
+        },
+        {
+          "caller": "_confirmation_entry_price_check",
+          "callee": "len",
+          "lineNumber": 651
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "ValueError",
+          "lineNumber": 660
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "_rank_robust_params",
+          "lineNumber": 662
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "_confirmation_weak_periods",
+          "lineNumber": 664
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "_confirmation_policy_check",
+          "lineNumber": 665
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "_confirmation_entry_price_check",
+          "lineNumber": 666
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "_confirmation_status",
+          "lineNumber": 667
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "datetime.now().strftime",
+          "lineNumber": 671
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "datetime.now",
+          "lineNumber": 671
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "generated.split",
+          "lineNumber": 675
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "_confirmation_summary",
+          "lineNumber": 678
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "len",
+          "lineNumber": 679
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "_round_metric",
+          "lineNumber": 682
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "_round_metric",
+          "lineNumber": 683
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "_round_metric",
+          "lineNumber": 684
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "_round_metric",
+          "lineNumber": 685
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "_confirmation_param",
+          "lineNumber": 686
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "_strategy_policy_context",
+          "lineNumber": 687
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "bool",
+          "lineNumber": 688
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "str",
+          "lineNumber": 689
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "_entry_price_context",
+          "lineNumber": 691
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "bool",
+          "lineNumber": 692
+        },
+        {
+          "caller": "build_confirmation",
+          "callee": "str",
+          "lineNumber": 693
+        },
+        {
+          "caller": "_period_best_cell",
+          "callee": "max",
+          "lineNumber": 701
+        },
+        {
+          "caller": "_playbook_ref",
+          "callee": "_fmt_signed",
+          "lineNumber": 707
+        },
+        {
+          "caller": "_playbook_ref",
+          "callee": "_fmt_num",
+          "lineNumber": 708
+        },
+        {
+          "caller": "_playbook_ref",
+          "callee": "_cash_drawdown",
+          "lineNumber": 708
+        },
+        {
+          "caller": "_playbook_ref",
+          "callee": "_fmt_param",
+          "lineNumber": 709
+        },
+        {
+          "caller": "_playbook_evidence",
+          "callee": "PERIOD_LABELS.get",
+          "lineNumber": 715
+        },
+        {
+          "caller": "_playbook_evidence",
+          "callee": "_fmt_signed",
+          "lineNumber": 716
+        },
+        {
+          "caller": "_build_trading_playbook_lines",
+          "callee": "_period_best_cell",
+          "lineNumber": 720
+        },
+        {
+          "caller": "_build_trading_playbook_lines",
+          "callee": "_period_best_cell",
+          "lineNumber": 721
+        },
+        {
+          "caller": "_build_trading_playbook_lines",
+          "callee": "_playbook_evidence",
+          "lineNumber": 723
+        },
+        {
+          "caller": "_build_trading_playbook_lines",
+          "callee": "_playbook_ref",
+          "lineNumber": 732
+        },
+        {
+          "caller": "_build_trading_playbook_lines",
+          "callee": "_playbook_ref",
+          "lineNumber": 736
+        },
+        {
+          "caller": "_build_followup_lines",
+          "callee": "isinstance",
+          "lineNumber": 743
+        },
+        {
+          "caller": "_build_followup_lines",
+          "callee": "isinstance",
+          "lineNumber": 744
+        },
+        {
+          "caller": "_build_followup_lines",
+          "callee": "any",
+          "lineNumber": 746
+        },
+        {
+          "caller": "_build_followup_lines",
+          "callee": "lines.append",
+          "lineNumber": 747
+        },
+        {
+          "caller": "_build_followup_lines",
+          "callee": "\"、\".join",
+          "lineNumber": 749
+        },
+        {
+          "caller": "_build_followup_lines",
+          "callee": "_fmt_signed",
+          "lineNumber": 749
+        },
+        {
+          "caller": "_build_followup_lines",
+          "callee": "lines.append",
+          "lineNumber": 750
+        },
+        {
+          "caller": "_build_followup_lines",
+          "callee": "\"、\".join",
+          "lineNumber": 752
+        },
+        {
+          "caller": "_build_followup_lines",
+          "callee": "_fmt_signed",
+          "lineNumber": 752
+        },
+        {
+          "caller": "_build_followup_lines",
+          "callee": "lines.append",
+          "lineNumber": 753
+        },
+        {
+          "caller": "_build_followup_lines",
+          "callee": "next",
+          "lineNumber": 754
+        },
+        {
+          "caller": "_build_followup_lines",
+          "callee": "isinstance",
+          "lineNumber": 755
+        },
+        {
+          "caller": "_build_followup_lines",
+          "callee": "lines.append",
+          "lineNumber": 756
+        },
+        {
+          "caller": "_build_followup_lines",
+          "callee": "_fmt_signed",
+          "lineNumber": 757
+        },
+        {
+          "caller": "_build_followup_lines",
+          "callee": "lines.append",
+          "lineNumber": 759
+        },
+        {
+          "caller": "_build_ranked_table",
+          "callee": "enumerate",
+          "lineNumber": 773
+        },
+        {
+          "caller": "_build_ranked_table",
+          "callee": "lines.append",
+          "lineNumber": 775
+        },
+        {
+          "caller": "_build_ranked_table",
+          "callee": "\" | \".join",
+          "lineNumber": 777
+        },
+        {
+          "caller": "_build_ranked_table",
+          "callee": "str",
+          "lineNumber": 779
+        },
+        {
+          "caller": "_build_ranked_table",
+          "callee": "_fmt_param",
+          "lineNumber": 780
+        },
+        {
+          "caller": "_build_ranked_table",
+          "callee": "_fmt_num",
+          "lineNumber": 781
+        },
+        {
+          "caller": "_build_ranked_table",
+          "callee": "_fmt_num",
+          "lineNumber": 782
+        },
+        {
+          "caller": "_build_ranked_table",
+          "callee": "_fmt_signed",
+          "lineNumber": 783
+        },
+        {
+          "caller": "_build_ranked_table",
+          "callee": "_fmt_num",
+          "lineNumber": 784
+        },
+        {
+          "caller": "_build_ranked_table",
+          "callee": "_cash_drawdown",
+          "lineNumber": 784
+        },
+        {
+          "caller": "_build_ranked_table",
+          "callee": "_fmt_num",
+          "lineNumber": 785
+        },
+        {
+          "caller": "_build_ranked_table",
+          "callee": "_fmt_signed",
+          "lineNumber": 786
+        },
+        {
+          "caller": "_build_ranked_table",
+          "callee": "str",
+          "lineNumber": 787
+        },
+        {
+          "caller": "_build_trade_structure_lines",
+          "callee": "_fmt_num",
+          "lineNumber": 801
+        },
+        {
+          "caller": "_build_trade_structure_lines",
+          "callee": "_fmt_signed",
+          "lineNumber": 802
+        },
+        {
+          "caller": "_build_trade_structure_lines",
+          "callee": "_fmt_signed",
+          "lineNumber": 803
+        },
+        {
+          "caller": "_build_trade_structure_lines",
+          "callee": "_fmt_num",
+          "lineNumber": 804
+        },
+        {
+          "caller": "_build_trade_structure_lines",
+          "callee": "_fmt_signed",
+          "lineNumber": 805
+        },
+        {
+          "caller": "_build_regime_stats_table",
+          "callee": "str",
+          "lineNumber": 830
+        },
+        {
+          "caller": "_build_regime_stats_table",
+          "callee": "lines.append",
+          "lineNumber": 832
+        },
+        {
+          "caller": "_build_regime_stats_table",
+          "callee": "\" | \".join",
+          "lineNumber": 834
+        },
+        {
+          "caller": "_build_regime_stats_table",
+          "callee": "_regime_label",
+          "lineNumber": 837
+        },
+        {
+          "caller": "_build_regime_stats_table",
+          "callee": "str",
+          "lineNumber": 838
+        },
+        {
+          "caller": "_build_regime_stats_table",
+          "callee": "_fmt_num",
+          "lineNumber": 840
+        },
+        {
+          "caller": "_build_regime_stats_table",
+          "callee": "_fmt_signed",
+          "lineNumber": 841
+        },
+        {
+          "caller": "_build_regime_stats_table",
+          "callee": "_fmt_signed",
+          "lineNumber": 842
+        },
+        {
+          "caller": "_build_trigger_stats_table",
+          "callee": "lines.append",
+          "lineNumber": 862
+        },
+        {
+          "caller": "_build_trigger_stats_table",
+          "callee": "\" | \".join",
+          "lineNumber": 864
+        },
+        {
+          "caller": "_build_trigger_stats_table",
+          "callee": "str",
+          "lineNumber": 866
+        },
+        {
+          "caller": "_build_trigger_stats_table",
+          "callee": "str",
+          "lineNumber": 867
+        },
+        {
+          "caller": "_build_trigger_stats_table",
+          "callee": "_fmt_num",
+          "lineNumber": 868
+        },
+        {
+          "caller": "_build_trigger_stats_table",
+          "callee": "_fmt_signed",
+          "lineNumber": 869
+        },
+        {
+          "caller": "_build_trigger_stats_table",
+          "callee": "_fmt_signed",
+          "lineNumber": 870
+        },
+        {
+          "caller": "build_report",
+          "callee": "ValueError",
+          "lineNumber": 892
+        },
+        {
+          "caller": "build_report",
+          "callee": "sorted",
+          "lineNumber": 894
+        },
+        {
+          "caller": "build_report",
+          "callee": "_rank_robust_params",
+          "lineNumber": 895
+        },
+        {
+          "caller": "build_report",
+          "callee": "max",
+          "lineNumber": 898
+        },
+        {
+          "caller": "build_report",
+          "callee": "read_trades",
+          "lineNumber": 899
+        },
+        {
+          "caller": "build_report",
+          "callee": "_build_trade_diagnostics",
+          "lineNumber": 900
+        },
+        {
+          "caller": "build_report",
+          "callee": "_group_stats",
+          "lineNumber": 901
+        },
+        {
+          "caller": "build_report",
+          "callee": "_normalize_regime",
+          "lineNumber": 901
+        },
+        {
+          "caller": "build_report",
+          "callee": "r.get",
+          "lineNumber": 901
+        },
+        {
+          "caller": "build_report",
+          "callee": "_group_stats",
+          "lineNumber": 902
+        },
+        {
+          "caller": "build_report",
+          "callee": "r.get",
+          "lineNumber": 902
+        },
+        {
+          "caller": "build_report",
+          "callee": "_latest_cycle",
+          "lineNumber": 903
+        },
+        {
+          "caller": "build_report",
+          "callee": "datetime.now().strftime",
+          "lineNumber": 905
+        },
+        {
+          "caller": "build_report",
+          "callee": "datetime.now",
+          "lineNumber": 905
+        },
+        {
+          "caller": "build_report",
+          "callee": "build_confirmation",
+          "lineNumber": 906
+        },
+        {
+          "caller": "build_report",
+          "callee": "build_parameter_stability",
+          "lineNumber": 907
+        },
+        {
+          "caller": "build_report",
+          "callee": "build_walk_forward_validation",
+          "lineNumber": 908
+        },
+        {
+          "caller": "build_report",
+          "callee": "_build_verdict_lines",
+          "lineNumber": 909
+        },
+        {
+          "caller": "build_report",
+          "callee": "sum",
+          "lineNumber": 910
+        },
+        {
+          "caller": "build_report",
+          "callee": "len",
+          "lineNumber": 911
+        },
+        {
+          "caller": "build_report",
+          "callee": "_build_period_best_table",
+          "lineNumber": 912
+        },
+        {
+          "caller": "build_report",
+          "callee": "_build_style_best_table",
+          "lineNumber": 913
+        },
+        {
+          "caller": "build_report",
+          "callee": "_build_robust_param_table",
+          "lineNumber": 914
+        },
+        {
+          "caller": "build_report",
+          "callee": "_build_execution_context_lines",
+          "lineNumber": 916
+        },
+        {
+          "caller": "build_report",
+          "callee": "lines.extend",
+          "lineNumber": 928
+        },
+        {
+          "caller": "build_report",
+          "callee": "_build_trading_playbook_lines",
+          "lineNumber": 928
+        },
+        {
+          "caller": "build_report",
+          "callee": "lines.extend",
+          "lineNumber": 929
+        },
+        {
+          "caller": "build_report",
+          "callee": "_build_conclusion_lines",
+          "lineNumber": 929
+        },
+        {
+          "caller": "build_report",
+          "callee": "lines.extend",
+          "lineNumber": 931
+        },
+        {
+          "caller": "build_report",
+          "callee": "lines.extend",
+          "lineNumber": 932
+        },
+        {
+          "caller": "build_report",
+          "callee": "lines.extend",
+          "lineNumber": 933
+        },
+        {
+          "caller": "build_report",
+          "callee": "lines.extend",
+          "lineNumber": 934
+        },
+        {
+          "caller": "build_report",
+          "callee": "_build_ranked_table",
+          "lineNumber": 934
+        },
+        {
+          "caller": "build_report",
+          "callee": "lines.extend",
+          "lineNumber": 936
+        },
+        {
+          "caller": "build_report",
+          "callee": "_build_matrix",
+          "lineNumber": 936
+        },
+        {
+          "caller": "build_report",
+          "callee": "lines.extend",
+          "lineNumber": 937
+        },
+        {
+          "caller": "build_report",
+          "callee": "_build_trade_structure_lines",
+          "lineNumber": 937
+        },
+        {
+          "caller": "build_report",
+          "callee": "_fmt_param",
+          "lineNumber": 938
+        },
+        {
+          "caller": "build_report",
+          "callee": "len",
+          "lineNumber": 938
+        },
+        {
+          "caller": "build_report",
+          "callee": "lines.extend",
+          "lineNumber": 939
+        },
+        {
+          "caller": "build_report",
+          "callee": "_build_regime_stats_table",
+          "lineNumber": 939
+        },
+        {
+          "caller": "build_report",
+          "callee": "lines.extend",
+          "lineNumber": 940
+        },
+        {
+          "caller": "build_report",
+          "callee": "_build_trigger_stats_table",
+          "lineNumber": 940
+        },
+        {
+          "caller": "build_report",
+          "callee": "lines.extend",
+          "lineNumber": 941
+        },
+        {
+          "caller": "build_report",
+          "callee": "_build_followup_lines",
+          "lineNumber": 941
+        },
+        {
+          "caller": "build_report",
+          "callee": "lines.extend",
+          "lineNumber": 942
+        },
+        {
+          "caller": "build_report",
+          "callee": "_build_methodology_notes",
+          "lineNumber": 942
+        },
+        {
+          "caller": "build_report",
+          "callee": "\"\\n\".join",
+          "lineNumber": 943
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 57,
+        "functionCount": 57,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/workflows/backtest_parameter_stability.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 154,
+      "nonEmptyLines": 126,
+      "functions": [
+        {
+          "name": "build_parameter_stability",
+          "startLine": 14,
+          "endLine": 39,
+          "params": [
+            "cells",
+            "run_url",
+            "generated_at"
+          ]
+        },
+        {
+          "name": "_rank",
+          "startLine": 42,
+          "endLine": 50,
+          "params": [
+            "cells"
+          ]
+        },
+        {
+          "name": "_param_key",
+          "startLine": 53,
+          "endLine": 61,
+          "params": [
+            "cell"
+          ]
+        },
+        {
+          "name": "_representative",
+          "startLine": 64,
+          "endLine": 69,
+          "params": [
+            "cells"
+          ]
+        },
+        {
+          "name": "_period_rank",
+          "startLine": 72,
+          "endLine": 74,
+          "params": [
+            "period"
+          ]
+        },
+        {
+          "name": "_neighbors",
+          "startLine": 77,
+          "endLine": 83,
+          "params": [
+            "anchor",
+            "ranked"
+          ]
+        },
+        {
+          "name": "_adjacent",
+          "startLine": 86,
+          "endLine": 92,
+          "params": [
+            "anchor",
+            "candidate",
+            "value_sets"
+          ]
+        },
+        {
+          "name": "_cross_period_positive",
+          "startLine": 95,
+          "endLine": 101,
+          "params": [
+            "score"
+          ]
+        },
+        {
+          "name": "_verdict",
+          "startLine": 104,
+          "endLine": 115,
+          "params": [
+            "anchor",
+            "neighbors",
+            "stable"
+          ]
+        },
+        {
+          "name": "_summary",
+          "startLine": 118,
+          "endLine": 133,
+          "params": [
+            "verdict",
+            "anchor",
+            "neighbors",
+            "stable"
+          ]
+        },
+        {
+          "name": "_score_payload",
+          "startLine": 136,
+          "endLine": 150,
+          "params": [
+            "score"
+          ]
+        },
+        {
+          "name": "_round",
+          "startLine": 153,
+          "endLine": 154,
+          "params": [
+            "value"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "build_parameter_stability",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "_rank",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "_param_key",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "_representative",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "_period_rank",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "_neighbors",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "_adjacent",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "_cross_period_positive",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "_verdict",
+          "line": 104,
+          "isDefault": false
+        },
+        {
+          "name": "_summary",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "_score_payload",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "_round",
+          "line": 153,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "build_parameter_stability",
+          "callee": "_rank",
+          "lineNumber": 15
+        },
+        {
+          "caller": "build_parameter_stability",
+          "callee": "ValueError",
+          "lineNumber": 17
+        },
+        {
+          "caller": "build_parameter_stability",
+          "callee": "_neighbors",
+          "lineNumber": 19
+        },
+        {
+          "caller": "build_parameter_stability",
+          "callee": "_cross_period_positive",
+          "lineNumber": 20
+        },
+        {
+          "caller": "build_parameter_stability",
+          "callee": "_verdict",
+          "lineNumber": 21
+        },
+        {
+          "caller": "build_parameter_stability",
+          "callee": "_summary",
+          "lineNumber": 27
+        },
+        {
+          "caller": "build_parameter_stability",
+          "callee": "_score_payload",
+          "lineNumber": 28
+        },
+        {
+          "caller": "build_parameter_stability",
+          "callee": "len",
+          "lineNumber": 29
+        },
+        {
+          "caller": "build_parameter_stability",
+          "callee": "len",
+          "lineNumber": 30
+        },
+        {
+          "caller": "build_parameter_stability",
+          "callee": "round",
+          "lineNumber": 31
+        },
+        {
+          "caller": "build_parameter_stability",
+          "callee": "len",
+          "lineNumber": 31
+        },
+        {
+          "caller": "build_parameter_stability",
+          "callee": "len",
+          "lineNumber": 31
+        },
+        {
+          "caller": "build_parameter_stability",
+          "callee": "_score_payload",
+          "lineNumber": 32
+        },
+        {
+          "caller": "build_parameter_stability",
+          "callee": "sorted",
+          "lineNumber": 36
+        },
+        {
+          "caller": "_rank",
+          "callee": "rank_robust_params",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_rank",
+          "callee": "_period_rank",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_representative",
+          "callee": "max",
+          "lineNumber": 66
+        },
+        {
+          "caller": "_representative",
+          "callee": "float",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_period_rank",
+          "callee": "order.get",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_neighbors",
+          "callee": "sorted",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_neighbors",
+          "callee": "range",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_neighbors",
+          "callee": "_adjacent",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_adjacent",
+          "callee": "range",
+          "lineNumber": 87
+        },
+        {
+          "caller": "_adjacent",
+          "callee": "len",
+          "lineNumber": 88
+        },
+        {
+          "caller": "_adjacent",
+          "callee": "abs",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_adjacent",
+          "callee": "values.index",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_adjacent",
+          "callee": "values.index",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_cross_period_positive",
+          "callee": "REQUIRED_PERIODS.issubset",
+          "lineNumber": 98
+        },
+        {
+          "caller": "_cross_period_positive",
+          "callee": "min",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_cross_period_positive",
+          "callee": "float",
+          "lineNumber": 100
+        },
+        {
+          "caller": "_verdict",
+          "callee": "REQUIRED_PERIODS.issubset",
+          "lineNumber": 109
+        },
+        {
+          "caller": "_verdict",
+          "callee": "_cross_period_positive",
+          "lineNumber": 111
+        },
+        {
+          "caller": "_verdict",
+          "callee": "len",
+          "lineNumber": 113
+        },
+        {
+          "caller": "_verdict",
+          "callee": "len",
+          "lineNumber": 115
+        },
+        {
+          "caller": "_verdict",
+          "callee": "len",
+          "lineNumber": 115
+        },
+        {
+          "caller": "_summary",
+          "callee": "len",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_summary",
+          "callee": "len",
+          "lineNumber": 125
+        },
+        {
+          "caller": "_summary",
+          "callee": "', '.join",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_summary",
+          "callee": "sorted",
+          "lineNumber": 128
+        },
+        {
+          "caller": "_summary",
+          "callee": "_cross_period_positive",
+          "lineNumber": 129
+        },
+        {
+          "caller": "_summary",
+          "callee": "len",
+          "lineNumber": 131
+        },
+        {
+          "caller": "_summary",
+          "callee": "len",
+          "lineNumber": 132
+        },
+        {
+          "caller": "_summary",
+          "callee": "len",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_summary",
+          "callee": "len",
+          "lineNumber": 133
+        },
+        {
+          "caller": "_score_payload",
+          "callee": "_round",
+          "lineNumber": 147
+        },
+        {
+          "caller": "_score_payload",
+          "callee": "_round",
+          "lineNumber": 148
+        },
+        {
+          "caller": "_score_payload",
+          "callee": "_round",
+          "lineNumber": 149
+        },
+        {
+          "caller": "_round",
+          "callee": "round",
+          "lineNumber": 154
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 12,
+        "functionCount": 12,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "reference/WyckoffTradingAgent/WyckoffTradingAgent-main/workflows/backtest_walk_forward.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "build_walk_forward_validation",
+          "startLine": 13,
+          "endLine": 31,
+          "params": [
+            "cells",
+            "run_url",
+            "generated_at"
+          ]
+        },
+        {
+          "name": "_walk_forward_windows",
+          "startLine": 34,
+          "endLine": 49,
+          "params": [
+            "cells"
+          ]
+        },
+        {
+          "name": "_evaluate_window",
+          "startLine": 52,
+          "endLine": 73,
+          "params": [
+            "style",
+            "train_period",
+            "test_period",
+            "grouped"
+          ]
+        },
+        {
+          "name": "_param_key",
+          "startLine": 76,
+          "endLine": 77,
+          "params": [
+            "cell"
+          ]
+        },
+        {
+          "name": "_params_payload",
+          "startLine": 80,
+          "endLine": 86,
+          "params": [
+            "cell"
+          ]
+        },
+        {
+          "name": "_summary",
+          "startLine": 89,
+          "endLine": 94,
+          "params": [
+            "status",
+            "positive",
+            "evaluated"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "build_walk_forward_validation",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "_walk_forward_windows",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "_evaluate_window",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "_param_key",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "_params_payload",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "_summary",
+          "line": 89,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "build_walk_forward_validation",
+          "callee": "_walk_forward_windows",
+          "lineNumber": 16
+        },
+        {
+          "caller": "build_walk_forward_validation",
+          "callee": "sum",
+          "lineNumber": 18
+        },
+        {
+          "caller": "build_walk_forward_validation",
+          "callee": "float",
+          "lineNumber": 18
+        },
+        {
+          "caller": "build_walk_forward_validation",
+          "callee": "len",
+          "lineNumber": 19
+        },
+        {
+          "caller": "build_walk_forward_validation",
+          "callee": "len",
+          "lineNumber": 19
+        },
+        {
+          "caller": "build_walk_forward_validation",
+          "callee": "_summary",
+          "lineNumber": 25
+        },
+        {
+          "caller": "build_walk_forward_validation",
+          "callee": "len",
+          "lineNumber": 25
+        },
+        {
+          "caller": "build_walk_forward_validation",
+          "callee": "len",
+          "lineNumber": 26
+        },
+        {
+          "caller": "build_walk_forward_validation",
+          "callee": "len",
+          "lineNumber": 27
+        },
+        {
+          "caller": "_walk_forward_windows",
+          "callee": "defaultdict",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_walk_forward_windows",
+          "callee": "by_style_period[(style, cell.period_key)].append",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_walk_forward_windows",
+          "callee": "max",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_walk_forward_windows",
+          "callee": "period_end.get",
+          "lineNumber": 41
+        },
+        {
+          "caller": "_walk_forward_windows",
+          "callee": "sorted",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_walk_forward_windows",
+          "callee": "sorted",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_walk_forward_windows",
+          "callee": "zip",
+          "lineNumber": 47
+        },
+        {
+          "caller": "_walk_forward_windows",
+          "callee": "_evaluate_window",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_evaluate_window",
+          "callee": "grouped.get",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_evaluate_window",
+          "callee": "grouped.get",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_evaluate_window",
+          "callee": "max",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_evaluate_window",
+          "callee": "float",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_evaluate_window",
+          "callee": "float",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_evaluate_window",
+          "callee": "_param_key",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_evaluate_window",
+          "callee": "next",
+          "lineNumber": 64
+        },
+        {
+          "caller": "_evaluate_window",
+          "callee": "_param_key",
+          "lineNumber": 64
+        },
+        {
+          "caller": "_evaluate_window",
+          "callee": "_params_payload",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    }
+  ]
+}
