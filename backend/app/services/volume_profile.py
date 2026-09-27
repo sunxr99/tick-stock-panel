@@ -198,6 +198,18 @@ class MinuteQuality:
     reasons: tuple[str, ...]
 
 
+@dataclass(frozen=True)
+class SanitizedMinuteBars:
+    """Minute bars accepted for both quality accounting and Histogram input."""
+
+    rows: tuple[dict[str, Any], ...]
+    raw_count: int
+    accepted_count: int
+    rejected_count: int
+    duplicate_count: int
+    reasons: tuple[str, ...]
+
+
 @dataclass
 class BatchMinuteDataContext:
     """Run-scoped, as-of-safe daily/minute bars for a candidate batch.
@@ -309,7 +321,7 @@ def _on_or_before_as_of(row: Mapping[str, Any], as_of: date | datetime) -> bool:
     if not isinstance(as_of, datetime):
         return row_day <= as_of
     stamp = _as_datetime(row.get("datetime"))
-    return stamp <= as_of if stamp is not None else row_day <= as_of.date()
+    return stamp <= as_of if stamp is not None else False
 
 
 def _records(frame: pl.DataFrame | Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
@@ -474,6 +486,8 @@ class VolumeProfileEngine:
         fallback_used: bool = False,
         quality_reasons: Sequence[str] = (),
         atr_14: float | None = None,
+        current_price: float | None = None,
+        use_explicit_current_price: bool = False,
     ) -> VolumeProfileResult:
         as_of = _as_date(request.as_of)
         all_rows = _records(bars)
@@ -481,7 +495,7 @@ class VolumeProfileEngine:
         valid = []
         for row in rows:
             low, high, close, volume = (_as_float(row.get("low")), _as_float(row.get("high")), _as_float(row.get("close")), _as_float(row.get("volume")))
-            if low is None or high is None or close is None or volume is None or high < low or volume < 0:
+            if any(value is None or not isfinite(value) for value in (low, high, close, volume)) or high < low or volume < 0:
                 continue
             valid.append(row)
         if not valid:
@@ -538,8 +552,11 @@ class VolumeProfileEngine:
             PriceBin(index=index, low=low, high=high, center=(low + high) / 2.0, volume=volumes[index])
             for index, (low, high) in enumerate(edges)
         )
-        current_row = max(valid, key=lambda row: (_row_date(row) or date.min, _as_datetime(row.get("datetime")) or datetime.min))
-        current_price = _as_float(current_row.get("close"))
+        if use_explicit_current_price:
+            current_price = current_price if current_price is not None and isfinite(current_price) else None
+        else:
+            current_row = max(valid, key=lambda row: (_row_date(row) or date.min, _as_datetime(row.get("datetime")) or datetime.min))
+            current_price = _as_float(current_row.get("close"))
         hvn, lvn = self._nodes(bins)
         data_dates = sorted({_row_date(row) for row in valid if _row_date(row) is not None})
         poc = bins[poc_index].center
@@ -927,6 +944,8 @@ class VolumeProfileService:
         return self.build(symbol, VolumeProfileRequest(ProfileType.WYCKOFF_RANGE, as_of, allocation_mode=allocation_mode, range_start=range_start, range_confirmed_at=range_confirmed_at, allow_daily_fallback=allow_daily_fallback))
 
     def build(self, symbol: str, request: VolumeProfileRequest) -> VolumeProfileResult:
+        if isinstance(request.as_of, datetime):
+            return _unavailable(request, symbol, reason="intraday_service_not_supported")
         as_of = _as_date(request.as_of)
         if request.profile_type == ProfileType.WYCKOFF_RANGE and request.range_start is None:
             return _unavailable(request, symbol, reason="wyckoff_range_start_unavailable")
@@ -954,11 +973,13 @@ class VolumeProfileService:
 
         minute = self.repo.get_minute_by_dates([symbol], window_dates)
         minute_rows = _records(minute)
-        minute_quality = self._minute_quality(minute_rows, window_rows)
+        sanitized_minute = self._sanitize_minute_bars(minute_rows)
+        minute_quality = self._minute_quality(sanitized_minute, window_rows)
+        current_daily_price = _as_float(window_rows[-1].get("close")) if window_rows else None
         if request.allocation_mode == AllocationMode.CLOSE_ONLY:
             if minute_quality.quality in {ProfileQuality.FULL, ProfileQuality.PARTIAL}:
                 source_rows, granularity, quality, fallback_used = (
-                    minute_rows,
+                    sanitized_minute.rows,
                     DataGranularity.MINUTE_1M,
                     minute_quality.quality,
                     False,
@@ -997,30 +1018,45 @@ class VolumeProfileService:
                 fallback_used=fallback_used,
                 quality_reasons=minute_quality.reasons,
                 atr_14=atr_14,
+                current_price=current_daily_price,
+                use_explicit_current_price=True,
             )
 
-        # Range profiles deliberately remain a partial *minute* profile when
-        # the formal range predates local minute history.  Falling back would
-        # silently change the meaning of an otherwise explicit Range VP.
-        if request.profile_type == ProfileType.WYCKOFF_RANGE and minute_quality.actual_bars:
-            quality = ProfileQuality.FULL if minute_quality.quality == ProfileQuality.FULL else ProfileQuality.PARTIAL
-            return self.engine.build_profile(
-                minute_rows,
+        # A Range VP never silently falls back to daily bars. It remains a
+        # labelled minute result only when minute coverage is at least 90%.
+        if request.profile_type == ProfileType.WYCKOFF_RANGE:
+            if minute_quality.quality in {ProfileQuality.FULL, ProfileQuality.PARTIAL}:
+                return self.engine.build_profile(
+                    sanitized_minute.rows,
+                    request,
+                    symbol=symbol,
+                    data_granularity=DataGranularity.MINUTE_1M,
+                    required_trading_days=required_days,
+                    actual_trading_days=len(window_rows),
+                    expected_minute_bars=minute_quality.expected_bars,
+                    actual_minute_bars=minute_quality.actual_bars,
+                    minute_coverage_ratio=minute_quality.coverage_ratio,
+                    quality=minute_quality.quality,
+                    quality_reasons=minute_quality.reasons,
+                    atr_14=atr_14,
+                    current_price=current_daily_price,
+                    use_explicit_current_price=True,
+                )
+            return _unavailable(
                 request,
-                symbol=symbol,
-                data_granularity=DataGranularity.MINUTE_1M,
-                required_trading_days=required_days,
-                actual_trading_days=len(window_rows),
-                expected_minute_bars=minute_quality.expected_bars,
-                actual_minute_bars=minute_quality.actual_bars,
-                minute_coverage_ratio=minute_quality.coverage_ratio,
-                quality=quality,
+                symbol,
+                reason="minute_coverage_insufficient",
+                required_days=required_days,
+                actual_days=len(window_rows),
+                expected_bars=minute_quality.expected_bars,
+                actual_bars=minute_quality.actual_bars,
+                coverage=minute_quality.coverage_ratio,
+                quality=ProfileQuality.INSUFFICIENT,
                 quality_reasons=minute_quality.reasons,
-                atr_14=atr_14,
             )
         if minute_quality.quality in {ProfileQuality.FULL, ProfileQuality.PARTIAL}:
             return self.engine.build_profile(
-                minute_rows,
+                sanitized_minute.rows,
                 request,
                 symbol=symbol,
                 data_granularity=DataGranularity.MINUTE_1M,
@@ -1032,6 +1068,8 @@ class VolumeProfileService:
                 quality=minute_quality.quality,
                 quality_reasons=minute_quality.reasons,
                 atr_14=atr_14,
+                current_price=current_daily_price,
+                use_explicit_current_price=True,
             )
         if request.allow_daily_fallback:
             return self._daily_result(symbol, request, window_rows, required_days, atr_14, minute_quality=minute_quality)
@@ -1089,41 +1127,76 @@ class VolumeProfileService:
         )
 
     @staticmethod
-    def _minute_quality(minute_rows: Sequence[Mapping[str, Any]], daily_rows: Sequence[Mapping[str, Any]]) -> MinuteQuality:
+    def _sanitize_minute_bars(minute_rows: Sequence[Mapping[str, Any]]) -> SanitizedMinuteBars:
+        """Reject invalid minute inputs before both quality checks and VAP allocation."""
+        reasons: list[str] = []
+        accepted: dict[tuple[date, datetime], dict[str, Any]] = {}
+        conflicted: set[tuple[date, datetime]] = set()
+        duplicate_count = 0
+        rejected_count = 0
+        for raw in minute_rows:
+            row = dict(raw)
+            day = _row_date(row)
+            stamp = _as_datetime(row.get("datetime"))
+            low, high = _as_float(row.get("low")), _as_float(row.get("high"))
+            open_price, close = _as_float(row.get("open")), _as_float(row.get("close"))
+            volume = _as_float(row.get("volume"))
+            if day is None or stamp is None:
+                rejected_count += 1
+                reasons.append("missing_minute_timestamp")
+                continue
+            if any(value is None or not isfinite(value) for value in (low, high, open_price, close, volume)) or volume < 0:
+                rejected_count += 1
+                reasons.append(f"invalid_ohlcv:{day.isoformat()}")
+                continue
+            tolerance = _ohlcv_price_tolerance(low, high, open_price, close)
+            if low > high + tolerance or open_price < low - tolerance or open_price > high + tolerance or close < low - tolerance or close > high + tolerance:
+                rejected_count += 1
+                reasons.append(f"invalid_ohlcv:{day.isoformat()}")
+                continue
+            key = (day, stamp)
+            if key in conflicted:
+                duplicate_count += 1
+                rejected_count += 1
+                continue
+            existing = accepted.get(key)
+            if existing is None:
+                accepted[key] = row
+                continue
+            duplicate_count += 1
+            existing_values = tuple(_as_float(existing.get(column)) for column in ("open", "high", "low", "close", "volume"))
+            row_values = (open_price, high, low, close, volume)
+            if existing_values == row_values:
+                reasons.append(f"duplicate_timestamp:{day.isoformat()}")
+                continue
+            rejected_count += 2
+            accepted.pop(key)
+            conflicted.add(key)
+            reasons.append(f"conflicting_duplicate_timestamp:{day.isoformat()}")
+        rows = tuple(sorted(accepted.values(), key=lambda row: (_row_date(row) or date.min, _as_datetime(row.get("datetime")) or datetime.min)))
+        return SanitizedMinuteBars(
+            rows=rows,
+            raw_count=len(minute_rows),
+            accepted_count=len(rows),
+            rejected_count=rejected_count,
+            duplicate_count=duplicate_count,
+            reasons=tuple(sorted(set(reasons))),
+        )
+
+    @staticmethod
+    def _minute_quality(sanitized: SanitizedMinuteBars, daily_rows: Sequence[Mapping[str, Any]]) -> MinuteQuality:
         active_days = {_row_date(row) for row in daily_rows if (_as_float(row.get("volume")) or 0.0) > 0 and _row_date(row) is not None}
         by_day: dict[date, list[Mapping[str, Any]]] = defaultdict(list)
-        for row in minute_rows:
+        for row in sanitized.rows:
             day = _row_date(row)
             if day is not None:
                 by_day[day].append(row)
-        reasons: list[str] = []
-        valid_by_day: dict[date, list[Mapping[str, Any]]] = {}
+        reasons = list(sanitized.reasons)
         for day, rows in by_day.items():
             timestamps = [_as_datetime(row.get("datetime")) for row in rows]
             valid_timestamps = [stamp for stamp in timestamps if stamp is not None]
-            if len(valid_timestamps) != len(set(valid_timestamps)):
-                reasons.append(f"duplicate_timestamp:{day.isoformat()}")
             if valid_timestamps != sorted(valid_timestamps):
                 reasons.append(f"timestamp_out_of_order:{day.isoformat()}")
-            if any(_row_date(row) != day for row in rows):
-                reasons.append(f"wrong_trade_date:{day.isoformat()}")
-            invalid_ohlcv = 0
-            for row in rows:
-                low, high, open_price, close, volume = (_as_float(row.get("low")), _as_float(row.get("high")), _as_float(row.get("open")), _as_float(row.get("close")), _as_float(row.get("volume")))
-                if low is None or high is None or open_price is None or close is None or volume is None or volume < 0:
-                    invalid_ohlcv += 1
-                    continue
-                tolerance = _ohlcv_price_tolerance(low, high, open_price, close)
-                if (
-                    low > high + tolerance
-                    or open_price < low - tolerance
-                    or open_price > high + tolerance
-                    or close < low - tolerance
-                    or close > high + tolerance
-                ):
-                    invalid_ohlcv += 1
-            if invalid_ohlcv:
-                reasons.append(f"invalid_ohlcv:{day.isoformat()}:{invalid_ohlcv}")
             zero_ratio = sum((_as_float(row.get("volume")) or 0.0) == 0 for row in rows) / len(rows) if rows else 0.0
             if zero_ratio >= 0.5:
                 reasons.append(f"high_zero_volume_ratio:{day.isoformat()}:{zero_ratio:.3f}")
@@ -1133,13 +1206,12 @@ class VolumeProfileService:
             ]
             if any(5.0 < gap < 60.0 for gap in gaps):
                 reasons.append(f"intraday_gap:{day.isoformat()}")
-            valid_by_day[day] = rows
         missing = sorted(active_days - set(by_day))
         reasons.extend(f"missing_active_day:{day.isoformat()}" for day in missing)
-        observed = [len({stamp for stamp in (_as_datetime(row.get("datetime")) for row in rows) if stamp is not None}) for day, rows in valid_by_day.items() if day in active_days]
-        bars_per_active_day = max(observed, default=0)
-        expected = bars_per_active_day * len(active_days)
-        actual = sum(observed)
+        # A-share full-day 1m data has 240 bars (09:30--11:29, 13:00--14:59).
+        # Never infer the expected session size from the incomplete sample itself.
+        expected = 240 * len(active_days)
+        actual = sum(len(rows) for day, rows in by_day.items() if day in active_days)
         coverage = actual / expected if expected else None
         if coverage is None or coverage < 0.90:
             quality = ProfileQuality.INSUFFICIENT

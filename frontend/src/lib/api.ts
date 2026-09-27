@@ -417,7 +417,17 @@ export interface OverviewMarket {
   limit: { limit_up: number; broken: number; failed: number; limit_down: number; max_boards: number; seal_rate?: number; tiers: { boards: number; count: number; stocks?: { symbol: string; name?: string; amount?: number }[] }[]; sealed_ready?: boolean; fake_up?: number; fake_down?: number }
   distribution: { label: string; count: number; pct: number }[]
   trend: { above_ma5: number; above_ma20: number; above_ma60: number; above_ma5_pct: number; above_ma20_pct: number; above_ma60_pct: number; new_high: number; new_low: number }
-  activity: { avg_turnover: number; high_turnover: number; high_vol_ratio: number; vol_ratio: number }
+  activity: {
+    avg_turnover: number
+    high_turnover: number
+    high_vol_ratio: number
+    vol_ratio: number
+    market_amount?: number | null
+    market_amount_ma5?: number | null
+    market_amount_ma20?: number | null
+    market_amount_ratio_20?: number | null
+    market_amount_ma5_ratio_20?: number | null
+  }
   radar: { key: string; label: string; value: number }[]
   emotion: { score: number; label: string }
   top_gainers: MarketSnapshotRow[]
@@ -426,6 +436,80 @@ export interface OverviewMarket {
   active_leaders: MarketSnapshotRow[]
   concept_rank: { leading: OverviewDimensionRankItem[]; lagging: OverviewDimensionRankItem[] }
   industry_rank: { leading: OverviewDimensionRankItem[]; lagging: OverviewDimensionRankItem[] }
+}
+
+export interface MarketRiskRow {
+  date: string
+  methodology_version: string
+  price_basis: 'raw_unadjusted'
+  computed_at: string
+  calculation_ms: number
+  availability: 'available' | 'partial'
+  risk_state: 'neutral' | 'attention' | 'insufficient_data'
+  /** 缺字段兼容 v1 历史快照；日终重算后始终存在。 */
+  risk_level?: 'low' | 'watch' | 'elevated' | 'high' | 'unavailable'
+  risk_signal_category_count?: number
+  risk_signal_categories?: string[]
+  market_phase?: 'uptrend_healthy' | 'top_warning' | 'weakening_confirmed' | 'low_level_consolidation' | 'mixed' | 'insufficient_data'
+  top_warning_level?: 'low' | 'watch' | 'elevated' | 'high' | 'unavailable'
+  top_warning_categories?: string[]
+  recovery_candidate?: 'none' | 'candidate' | 'unavailable'
+  recovery_categories?: string[]
+  low_level_consolidation_categories?: string[]
+  /** 0–100 研究型市场强度分；任一组成维度不可用时为 null。 */
+  market_strength_score?: number | null
+  market_strength_trend_score?: number | null
+  market_strength_breadth_score?: number | null
+  market_strength_participation_score?: number | null
+  market_strength_new_high_low_score?: number | null
+  market_strength_volume_score?: number | null
+  csi_all_position_60?: number | null
+  csi300_position_60?: number | null
+  risk_reasons: string[]
+  data_warnings: string[]
+  active_stock_count: number
+  stock_snapshot_count: number
+  change_valid_count: number
+  change_coverage_pct: number | null
+  up_count: number
+  down_count: number
+  flat_count: number
+  up_amount: number
+  down_amount: number
+  down_amount_share: number | null
+  market_amount: number
+  market_amount_ma5: number | null
+  market_amount_ma20: number | null
+  market_amount_ratio_20: number | null
+  market_amount_ma5_ratio_20: number | null
+  ma20_valid_count: number
+  ma20_above_count: number
+  ma20_above_pct: number | null
+  ma20_coverage_pct: number | null
+  ma50_valid_count: number
+  ma50_above_count: number
+  ma50_above_pct: number | null
+  ma50_coverage_pct: number | null
+  new_high_low_250_valid_count: number
+  new_high_250_count: number
+  new_low_250_count: number
+  new_high_low_250_coverage_pct: number | null
+  csi_all_close: number | null
+  csi_all_ma20: number | null
+  csi_all_ma60: number | null
+  csi_all_above_ma20: boolean | null
+  csi_all_above_ma60: boolean | null
+  csi_all_ma20_direction: 'up' | 'down' | 'flat' | 'unavailable'
+  csi_all_atr14_close_ratio: number | null
+  csi_all_available: boolean
+  csi300_close: number | null
+  csi300_ma20: number | null
+  csi300_ma60: number | null
+  csi300_above_ma20: boolean | null
+  csi300_above_ma60: boolean | null
+  csi300_ma20_direction: 'up' | 'down' | 'flat' | 'unavailable'
+  csi300_atr14_close_ratio: number | null
+  csi300_available: boolean
 }
 
 // ===== 概念涨幅轮动矩阵 =====
@@ -2494,6 +2578,9 @@ export const api = {
   marketSnapshot: () =>
     request<{ as_of: string | null; rows: MarketSnapshotRow[] }>('/api/screener/market-snapshot'),
   overviewMarket: (asOf?: string) => request<OverviewMarket>(`/api/overview/market${asOf ? `?as_of=${asOf}` : ''}`),
+  marketRiskLatest: () => request<{ row: MarketRiskRow | null }>('/api/market-risk/latest'),
+  marketRiskDate: (asOf: string) => request<{ row: MarketRiskRow | null }>(`/api/market-risk/date/${encodeURIComponent(asOf)}`),
+  marketRiskHistory: (limit = 20) => request<{ rows: MarketRiskRow[]; total: number }>(`/api/market-risk/history?limit=${limit}`),
 
   // 概念涨幅轮动矩阵: 每列(日期)各自把所有概念按当天涨幅从高到低排序
   rpsRotation: (days: number, kind?: 'concept' | 'industry', level?: number) =>
@@ -3470,6 +3557,7 @@ export interface PipelineJob {
     enriched_days: number
     index_count?: number
     index_daily_rows?: number
+    market_risk_days?: number
     minute_rows: number
     skipped_stages?: string[]
   } | null

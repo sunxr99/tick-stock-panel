@@ -589,7 +589,23 @@ def run_now(
         logger.warning("refresh enriched cache failed (soft): %s", e)
         stage_errors.append(f"refresh enriched cache: {e}")
 
-    # Step 2.6: 市场环境(regime) 增量计算 — enriched 已就绪后聚合环境指标。
+    # Step 2.6: 大盘风险快照 — 只读已完成的原始股票/指数日线，按日期覆盖落盘。
+    # 首次仅回填最近 60 个交易日，后续每个日终任务只重算最新交易日；历史区间
+    # 由 /api/market-risk/recompute 显式触发，避免日终任务意外做全量历史扫描。
+    market_risk_days = 0
+    try:
+        emit("compute_market_risk", 90, "计算大盘风险指标…")
+        from app.services import market_risk
+
+        risk_rows = market_risk.compute_market_risk_incremental(repo, repo.store.data_dir)
+        market_risk_days = risk_rows.height if not risk_rows.is_empty() else 0
+        emit("compute_market_risk", 91, f"大盘风险 {market_risk_days} 天")
+    except Exception as e:  # noqa: BLE001
+        logger.warning("compute_market_risk failed: %s", e)
+        stage_errors.append(f"compute_market_risk: {e}")
+        skipped.append("market_risk")
+
+    # Step 2.7: 市场环境(regime) 增量计算 — enriched 已就绪后聚合环境指标。
     # 双检测(缺口+stale), 自动补算遗漏/被覆写的日。软失败: 不阻断主管道。
     # 默认关闭: regime 是本地聚合计算(非拉取), 首次/regime 表为空时需全量回填
     # 多日, 内存与耗时较高。用户可在数据页「市场环境」卡片设置里开启自动计算,
@@ -622,7 +638,7 @@ def run_now(
             stage_errors.append(f"compute_regime: {e}")
             skipped.append("regime")
 
-    # Step 2.7: 市场主线(概念/行业涨停梯队聚合) 增量计算 — regime 同开关。
+    # Step 2.8: 市场主线(概念/行业涨停梯队聚合) 增量计算 — regime 同开关。
     # 只窄扫连板 >=1 的行, 增量通常 1 天, 开销可忽略。软失败: 不阻断主管道。
     mainline_rows = 0
     if not _prefs_regime.get_pipeline_regime_enabled():
@@ -644,7 +660,7 @@ def run_now(
             stage_errors.append(f"compute_mainline: {e}")
             skipped.append("mainline")
 
-    # Step 2.8: Persist the current THS concept membership under the actual
+    # Step 2.9: Persist the current THS concept membership under the actual
     # completed enriched market date.  This is deliberately independent from
     # manual Wyckoff runs: future point-in-time concept research needs one
     # auditable snapshot for every successful daily pipeline.
@@ -662,7 +678,7 @@ def run_now(
         concept_membership_snapshot = {"status": "capture_failed", "error": str(e)}
         stage_errors.append(f"concept membership snapshot: {e}")
 
-    # Step 2.9: Build the persisted rotation facts only after the concept
+    # Step 2.10: Build the persisted rotation facts only after the concept
     # snapshot step.  Concept rows fail closed without a same-session snapshot;
     # SW3 rows continue to use their own point-in-time interval store.
     sector_rotation_rows: dict[str, int]
@@ -704,6 +720,7 @@ def run_now(
         "etf_adj_factor_symbols": etf_adj_symbols,
         "minute_rows": written_minute,
         "cache_refreshed": cache_refreshed,
+        "market_risk_days": market_risk_days,
         "regime_days": regime_days,
         "mainline_rows": mainline_rows,
         "concept_membership_snapshot": concept_membership_snapshot,

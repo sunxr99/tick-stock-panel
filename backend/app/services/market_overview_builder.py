@@ -13,7 +13,7 @@ from __future__ import annotations
 
 import math
 import re
-from datetime import date
+from datetime import date, timedelta
 from typing import Any
 
 import polars as pl
@@ -71,6 +71,61 @@ def _score(value: float, low: float, high: float) -> int:
     if high <= low:
         return 50
     return max(0, min(100, round((value - low) / (high - low) * 100)))
+
+
+def _market_amount_context_from_frame(frame: pl.DataFrame, as_of: date) -> dict[str, float | None]:
+    """Calculate market turnover windows from standardized trading-day data."""
+    required = {"date", "amount", "volume", "close"}
+    if frame.is_empty() or not required.issubset(frame.columns):
+        return {"market_amount": None, "market_amount_ma5": None, "market_amount_ma20": None,
+                "market_amount_ratio_20": None, "market_amount_ma5_ratio_20": None}
+    daily = (
+        frame
+        .filter(
+            (pl.col("date") <= as_of)
+            & (pl.col("amount") > 0)
+            & (pl.col("volume") > 0)
+            & (pl.col("close") > 0)
+        )
+        .group_by("date")
+        .agg(pl.col("amount").sum().alias("market_amount"))
+        .sort("date")
+        .with_columns([
+            pl.col("market_amount").rolling_mean(window_size=5, min_samples=5).alias("market_amount_ma5"),
+            pl.col("market_amount").rolling_mean(window_size=20, min_samples=20).alias("market_amount_ma20"),
+        ])
+    )
+    target = daily.filter(pl.col("date") == as_of)
+    if target.is_empty():
+        return {"market_amount": None, "market_amount_ma5": None, "market_amount_ma20": None,
+                "market_amount_ratio_20": None, "market_amount_ma5_ratio_20": None}
+    row = target.row(0, named=True)
+    amount = _finite(row.get("market_amount"))
+    ma5 = _finite(row.get("market_amount_ma5"))
+    ma20 = _finite(row.get("market_amount_ma20"))
+    return {
+        "market_amount": amount,
+        "market_amount_ma5": ma5,
+        "market_amount_ma20": ma20,
+        "market_amount_ratio_20": amount / ma20 if amount is not None and ma20 and ma20 > 0 else None,
+        "market_amount_ma5_ratio_20": ma5 / ma20 if ma5 is not None and ma20 and ma20 > 0 else None,
+    }
+
+
+def _market_amount_context(repo, as_of: date) -> dict[str, float | None]:
+    """Read a narrow recent window; return unavailable values when the cache misses."""
+    try:
+        history = repo.get_enriched_range(
+            as_of - timedelta(days=45),
+            as_of,
+            columns=["date", "amount", "volume", "close"],
+        )
+    except Exception:
+        history = None
+    return _market_amount_context_from_frame(history, as_of) if history is not None else {
+        "market_amount": None, "market_amount_ma5": None, "market_amount_ma20": None,
+        "market_amount_ratio_20": None, "market_amount_ma5_ratio_20": None,
+    }
 
 
 # ================================================================
@@ -425,6 +480,7 @@ def build_market_overview(
     amounts = [_finite(r.get("amount")) or 0 for r in rows]
     total_amount = sum(amounts)
     avg_amount = total_amount / total if total else 0
+    market_amount_context = _market_amount_context(repo, as_of)
 
     pct_values = [_finite(r.get("change_pct")) for r in rows]
     pct_values = [v for v in pct_values if v is not None]
@@ -528,10 +584,22 @@ def build_market_overview(
     mainline_cover_pct = max([(_finite(item.get("count")) or 0) / total * 100 for item in mainline_items], default=0) if total else 0
     mainline_score = round(_score(mainline_avg, -0.005, 0.03) * 0.65 + _score(mainline_cover_pct, 1, 12) * 0.35) if mainline_items else 50
 
+    money_parts: list[tuple[int, float]] = [
+        (_score(avg_vol_ratio, 0.6, 1.8), 0.45),
+        (_score(high_vol_pct, 2, 12), 0.15),
+    ]
+    amount_ratio_20 = market_amount_context["market_amount_ratio_20"]
+    amount_ma5_ratio_20 = market_amount_context["market_amount_ma5_ratio_20"]
+    if amount_ratio_20 is not None:
+        money_parts.append((_score(amount_ratio_20, 0.70, 1.30), 0.25))
+    if amount_ma5_ratio_20 is not None:
+        money_parts.append((_score(amount_ma5_ratio_20, 0.85, 1.15), 0.15))
+    money_score = round(sum(score * weight for score, weight in money_parts) / sum(weight for _, weight in money_parts))
+
     radar = [
         {"key": "index", "label": "指数", "value": _score(avg_index_pct, -2.5, 2.5)},
         {"key": "profit", "label": "赚钱", "value": round(_score(up_pct, 20, 80) * 0.45 + _score(avg_pct, -0.02, 0.02) * 0.25 + _score(median_pct, -0.02, 0.02) * 0.20 + _score(strong_diff_pct, -8, 8) * 0.10)},
-        {"key": "money", "label": "量能", "value": round(_score(avg_vol_ratio, 0.6, 1.8) * 0.70 + _score(high_vol_pct, 2, 12) * 0.30)},
+        {"key": "money", "label": "量能", "value": money_score},
         {"key": "speculation", "label": "投机", "value": round(_score(limit_up, 5, 90) * 0.25 + _score(seal_rate, 30, 85) * 0.35 + _score(max_boards, 1, 8) * 0.25 + _score(tier2_count, 0, 30) * 0.15)},
         {"key": "resilience", "label": "抗跌", "value": 100 - round(_score(down_pct, 20, 80) * 0.55 + _score(strong_down_pct, 1, 12) * 0.45)},
         {"key": "mainline", "label": "主线", "value": mainline_score},
@@ -583,6 +651,7 @@ def build_market_overview(
             "high_turnover": high_turnover,
             "high_vol_ratio": high_vol_pct,
             "vol_ratio": avg_vol_ratio,
+            **market_amount_context,
         },
         "radar": radar,
         "emotion": {"score": emotion_score, "label": emotion_label},

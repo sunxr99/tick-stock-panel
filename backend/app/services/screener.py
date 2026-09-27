@@ -81,6 +81,48 @@ def _load_wyckoff_industry_context(repo: KlineRepository, as_of: date) -> tuple[
     return mapping, source
 
 
+def _load_tdx_wyckoff_context(
+    repo: KlineRepository, as_of: date, top_n: int
+) -> tuple[dict[str, list[str]], dict[str, list[str]], list[str], str]:
+    """Load exact-date TDX board memberships for the isolated Wyckoff path.
+
+    Industry resonance uses only the product-default ``8810xx``--``8814xx``
+    fine-industry taxonomy. Concepts remain an independent, overlapping map.
+    """
+    from app.services import tdx_board_rotation
+
+    def groups(category: str) -> dict[str, list[str]]:
+        frame = (
+            tdx_board_rotation.load_resonance_industry_membership(
+                repo.store.data_dir, trade_date=as_of
+            )
+            if category == "industry"
+            else tdx_board_rotation.load_category_membership(
+                repo.store.data_dir, trade_date=as_of, category=category
+            )
+        )
+        if frame.is_empty():
+            return {}
+        labeled = frame.with_columns(
+            pl.concat_str([
+                pl.col("name"), pl.lit(" ["), pl.col("ts_code"), pl.lit("]"),
+            ]).alias("_group")
+        )
+        return {
+            str(row["con_code"]): [str(value) for value in row["_group"]]
+            for row in labeled.group_by("con_code").agg(
+                pl.col("_group").unique().sort()
+            ).iter_rows(named=True)
+        }
+
+    industry_map = groups("industry")
+    concept_map = groups("concept")
+    hot_concepts = tdx_board_rotation.top_category_board_names(
+        repo.store.data_dir, trade_date=as_of, category="concept", limit=top_n
+    )
+    return industry_map, concept_map, hot_concepts, "tushare_tdx_member_daily_snapshot"
+
+
 @dataclass
 class ScreenerResult:
     as_of: date
@@ -489,26 +531,35 @@ class ScreenerService:
             )
             market = dict(market or {})
             market["wyckoff_benchmark"] = benchmark
-            industry_map, industry_source = _load_wyckoff_industry_context(self.repo, as_of)
-            market["wyckoff_sector_map"] = industry_map
-            market["wyckoff_sector_map_source"] = industry_source
-            market["wyckoff_sector_map_level"] = "SW1"
             wyckoff_config = next(
                 engine.get(strategy_id).wyckoff_config
                 for strategy_id in strategy_ids
                 if engine.get(strategy_id).execution_backend == "wyckoff_funnel"
             )
-            concept_map, hot_concepts = ({}, [])
-            if wyckoff_config.use_concept_map:
-                concept_map, hot_concepts = _load_wyckoff_concept_context(
-                    self.repo,
-                    as_of,
-                    int(wyckoff_config.top_n_sectors),
+            if getattr(wyckoff_config, "sector_source", "tdx") == "tdx":
+                tdx_context = _load_tdx_wyckoff_context(
+                    self.repo, as_of, int(wyckoff_config.top_n_sectors)
                 )
+                industry_map, concept_map, hot_concepts, industry_source = tdx_context
+                market["wyckoff_sector_map_level"] = "TDX_FLAT"
+                market["wyckoff_concept_map_source"] = "tushare_tdx_member_daily_snapshot"
+                market["wyckoff_hot_concepts_source"] = "tushare_tdx_daily"
+            else:
+                industry_map, industry_source = _load_wyckoff_industry_context(self.repo, as_of)
+                concept_map, hot_concepts = ({}, [])
+                if wyckoff_config.use_concept_map:
+                    concept_map, hot_concepts = _load_wyckoff_concept_context(
+                        self.repo,
+                        as_of,
+                        int(wyckoff_config.top_n_sectors),
+                    )
+                market["wyckoff_sector_map_level"] = "SW1"
+                market["wyckoff_concept_map_source"] = "ext_data_snapshot"
+                market["wyckoff_hot_concepts_source"] = "market_mainline_concept_rank"
+            market["wyckoff_sector_map"] = industry_map
+            market["wyckoff_sector_map_source"] = industry_source
             market["wyckoff_concept_map"] = concept_map
             market["wyckoff_hot_concepts"] = hot_concepts
-            market["wyckoff_concept_map_source"] = "ext_data_snapshot"
-            market["wyckoff_hot_concepts_source"] = "market_mainline_concept_rank"
             logger.info(
                 "Wyckoff metadata: industry=%s/%d concepts=%d hot_concepts=%d",
                 industry_source,

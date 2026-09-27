@@ -74,6 +74,20 @@ def _finite_number(value: object) -> float | None:
     return None
 
 
+def _tdx_context_sort_key(result: object, sector_by_id: dict[str, object]) -> tuple[bool, float, bool, float, str]:
+    """Order flat TDX contexts without treating a valid zero as missing."""
+    sector = sector_by_id.get(str(getattr(result, "sector_id", "")))
+    sector_score = _finite_number(getattr(sector, "score", None))
+    rs_score = _finite_number(getattr(result, "rs_score", None))
+    return (
+        sector_score is None,
+        -(sector_score if sector_score is not None else float("-inf")),
+        rs_score is None,
+        -(rs_score if rs_score is not None else float("-inf")),
+        str(getattr(result, "sector_id", "")),
+    )
+
+
 def _result_sector_level(result: object) -> int | None:
     """Read the declared level, with stable-ID parsing for lightweight callers."""
     level = getattr(result, "sector_level", None)
@@ -153,6 +167,7 @@ def rank_wyckoff_candidates(
     candidates: list[dict[str, Any]],
     _min_industry_members: int = 0,
     _require_full_v2_levels: bool = False,
+    _membership_kind: str = "industry",
 ) -> list[dict[str, Any]]:
     """Annotate candidates with frozen legacy and SW2+SW3 Opportunity scores.
 
@@ -163,17 +178,19 @@ def rank_wyckoff_candidates(
     """
     if not candidates:
         return []
+    if _membership_kind not in {"industry", "tdx_industry"}:
+        raise ValueError("_membership_kind must be 'industry' or 'tdx_industry'")
     if _min_industry_members < 0:
         raise ValueError("_min_industry_members must be non-negative")
 
     try:
         sector_results_by_level = {
             level: build_sector_strength(
-                repo, kind="industry", level=level, as_of=as_of,
+                repo, kind=_membership_kind, level=level, as_of=as_of,
                 _strict_industry_level=True,
                 _min_industry_members=_min_industry_members,
             )
-            for level in (1, 2, 3)
+            for level in ((1, 2, 3) if _membership_kind == "industry" else (None,))
         }
     except Exception as exc:  # fail closed; Wyckoff selection remains intact
         logger.warning("Wyckoff Sector/RS ranking skipped: sector strength failed: %s", exc)
@@ -203,7 +220,11 @@ def rank_wyckoff_candidates(
         return _assign_ranks(ranked)
 
     rs_by_symbol_level: dict[str, dict[int, object]] = {}
+    tdx_rs_by_symbol: dict[str, list[object]] = {}
     for result in rs_results:
+        if _membership_kind == "tdx_industry":
+            tdx_rs_by_symbol.setdefault(str(result.symbol), []).append(result)
+            continue
         level = _result_sector_level(result)
         if level is not None:
             rs_by_symbol_level.setdefault(str(result.symbol), {})[level] = result
@@ -213,9 +234,22 @@ def rank_wyckoff_candidates(
         row = dict(candidate)
         symbol = str(row.get("symbol") or "")
         contexts = rs_by_symbol_level.get(symbol, {})
-        legacy_rs, sw2_rs_result, sw3_rs_result = (
-            contexts.get(1), contexts.get(2), contexts.get(3)
-        )
+        if _membership_kind == "tdx_industry":
+            # A stock can be a member of several flat TDX industry boards.
+            # The formal L3 path retains all memberships; this read-only
+            # research summary chooses its strongest available board
+            # deterministically and labels the choice below.
+            tdx_contexts = tdx_rs_by_symbol.get(symbol, [])
+            legacy_rs = min(
+                tdx_contexts,
+                key=lambda item: _tdx_context_sort_key(item, sector_by_id),
+            ) if tdx_contexts else None
+            sw2_rs_result = None
+            sw3_rs_result = None
+        else:
+            legacy_rs, sw2_rs_result, sw3_rs_result = (
+                contexts.get(1), contexts.get(2), contexts.get(3)
+            )
         legacy_sector = sector_by_id.get(str(getattr(legacy_rs, "sector_id", "")))
         sw2_sector = sector_by_id.get(str(getattr(sw2_rs_result, "sector_id", "")))
         sw3_sector = sector_by_id.get(str(getattr(sw3_rs_result, "sector_id", "")))
@@ -238,7 +272,11 @@ def rank_wyckoff_candidates(
         # The frozen weights apply when all requested inputs exist.  A missing
         # SW3 never receives a fabricated industry assignment: the available
         # SW2 / Market weights are simply renormalized and the basis is exposed.
-        if _require_full_v2_levels and (not sw2_available or not sw3_available or market_rs is None):
+        if _membership_kind == "tdx_industry":
+            sector_score_v2 = legacy_sector_score
+            rs_score_v2 = legacy_rs_score
+            opportunity_basis = "tdx_flat_best_context"
+        elif _require_full_v2_levels and (not sw2_available or not sw3_available or market_rs is None):
             sector_score_v2 = None
             rs_score_v2 = None
             opportunity_basis = "insufficient_members" if _min_industry_members else "missing_required_v2_level"
@@ -264,7 +302,7 @@ def rank_wyckoff_candidates(
         sw3_percentile = getattr(sw3_sector, "percentile", None)
         sw2_label = "STRONG" if sw2_percentile is not None and sw2_percentile >= 50 else "WEAK" if sw2_sector is not None else "UNKNOWN"
         sw3_label = "STRONG" if sw3_percentile is not None and sw3_percentile >= 50 else "WEAK" if sw3_sector is not None else "UNKNOWN"
-        sector_hierarchy_state = f"SW2_{sw2_label}_SW3_{sw3_label}"
+        sector_hierarchy_state = "TDX_FLAT" if _membership_kind == "tdx_industry" else f"SW2_{sw2_label}_SW3_{sw3_label}"
 
         # Existing phase/state diagnostics deliberately retain their SW1
         # context.  They are not inputs to OpportunityScore or V2 composition.
@@ -349,6 +387,7 @@ def rank_wyckoff_candidates(
             "opportunity_score_v2": opportunity_score_v2,
             "opportunity_score_basis": opportunity_basis,
             "sector_hierarchy_state": sector_hierarchy_state,
+            "tdx_context_selection": "highest_sector_strength_then_rs" if _membership_kind == "tdx_industry" else None,
             "sw2_available": sw2_available,
             "sw3_available": sw3_available,
             **hierarchy,
@@ -375,9 +414,11 @@ def rank_wyckoff_candidates(
             "sw3_sector_context": _context_values(sw3_sector, _SECTOR_CONTEXT_FIELDS) if sw3_sector is not None else None,
             "sw2_rs_context": _context_values(sw2_rs_result, _RS_CONTEXT_FIELDS) if sw2_rs_result is not None else None,
             "sw3_rs_context": _context_values(sw3_rs_result, _RS_CONTEXT_FIELDS) if sw3_rs_result is not None else None,
-            "ranking_status": "complete" if dynamic_complete and opportunity_basis == "sw2_sw3" else "partial",
+            "ranking_status": "complete" if dynamic_complete and opportunity_basis in {"sw2_sw3", "tdx_flat_best_context"} else "partial",
             "ranking_unavailable_reason": None if opportunity_score_v2 is not None else "sector_or_relative_strength_incomplete",
         })
+    if _membership_kind == "tdx_industry":
+        return _assign_ranks(ranked)
     missing_sw2 = sum(not bool(row.get("sw2_available")) for row in ranked)
     missing_sw3 = sum(not bool(row.get("sw3_available")) for row in ranked)
     if missing_sw2 or missing_sw3:
@@ -386,6 +427,27 @@ def rank_wyckoff_candidates(
             as_of, len(ranked), missing_sw2, missing_sw3,
         )
     return _assign_ranks(ranked)
+
+
+def rank_tdx_wyckoff_candidates(
+    repo,
+    *,
+    as_of: date,
+    candidates: list[dict[str, Any]],
+    _min_industry_members: int = 0,
+) -> list[dict[str, Any]]:
+    """TDX flat-industry counterpart to the frozen SW hierarchy context.
+
+    It shares the existing Sector Strength / RS formulas and candidate result
+    schema, while keeping the different TDX membership taxonomy explicit.
+    """
+    return rank_wyckoff_candidates(
+        repo,
+        as_of=as_of,
+        candidates=candidates,
+        _min_industry_members=_min_industry_members,
+        _membership_kind="tdx_industry",
+    )
 
 
 def _assign_ranks(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:

@@ -121,6 +121,10 @@ class FunnelConfig:
     # for an explicitly configured research run, but must not silently change
     # the production candidate universe.
     use_concept_map: bool = False
+    # ``tdx`` uses daily 88-board member snapshots.  ``sw_ths`` preserves the
+    # original THS-concept + SW1-fallback path and remains available for a
+    # later explicit switch without altering any L1/L2/L3 thresholds.
+    sector_source: str = "tdx"
     l3_keep_strength_min: float = 0.60
     l3_leader_strength_min: float = 0.80
     l3_hot_leader_strength_min: float = 0.55

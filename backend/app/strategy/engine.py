@@ -1212,10 +1212,17 @@ class StrategyEngine:
         except Exception as exc:  # pragma: no cover - optional CZSC dependency isolation
             logger.warning("Wyckoff result CZSC B-point enrichment skipped: %s", exc)
         snapshot = result.to_snapshot()
+        sector_map_source = str(
+            market.get("wyckoff_sector_map_source", "current_enriched_industry")
+        )
         snapshot["l3_grouping"] = {
-            "kind": "industry",
-            "level": 1,
-            "source": market.get("wyckoff_sector_map_source", "current_enriched_industry"),
+            "kind": (
+                "tdx_industry"
+                if sector_map_source == "tushare_tdx_member_daily_snapshot"
+                else "industry"
+            ),
+            "level": market.get("wyckoff_sector_map_level", 1),
+            "source": sector_map_source,
         }
         snapshot["v2"] = {
             "mode": "parallel_diagnostics",
@@ -1268,9 +1275,17 @@ class StrategyEngine:
             }
             for symbol in candidate_symbols
         ]
-        from app.services.wyckoff_candidate_ranking import rank_wyckoff_candidates
+        from app.services.wyckoff_candidate_ranking import (
+            rank_tdx_wyckoff_candidates,
+            rank_wyckoff_candidates,
+        )
 
-        ranked_context_rows = rank_wyckoff_candidates(
+        rank_context = (
+            rank_tdx_wyckoff_candidates
+            if sector_map_source == "tushare_tdx_member_daily_snapshot"
+            else rank_wyckoff_candidates
+        )
+        ranked_context_rows = rank_context(
             context.repo,
             as_of=context.as_of,
             candidates=candidates,

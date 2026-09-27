@@ -64,7 +64,7 @@ def run_funnel(
     benchmark: pd.DataFrame | None,
     name_map: dict[str, str] | None = None,
     market_cap_map: dict[str, float] | None = None,
-    sector_map: dict[str, str] | None = None,
+    sector_map: dict[str, str | list[str]] | None = None,
     concept_map: dict[str, list[str]] | None = None,
     hot_concepts: list[str] | None = None,
     cfg: FunnelConfig | None = None,

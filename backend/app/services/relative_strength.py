@@ -101,7 +101,7 @@ class RelativeStrengthResult:
 def _parse_sector_id(sector_id: str) -> tuple[str, int | None, str]:
     """Parse the stable IDs emitted by ``SectorStrengthResult``."""
     parts = sector_id.split(":", 2)
-    if len(parts) != 3 or parts[0] not in {"concept", "industry"}:
+    if len(parts) != 3 or parts[0] not in {"concept", "industry", "tdx_industry"}:
         raise ValueError(f"invalid sector_id: {sector_id!r}")
     kind, level_text, name = parts
     if not name:
@@ -109,6 +109,10 @@ def _parse_sector_id(sector_id: str) -> tuple[str, int | None, str]:
     if kind == "concept":
         if level_text != "all":
             raise ValueError(f"concept sector_id must use ':all:': {sector_id!r}")
+        return kind, None, name
+    if kind == "tdx_industry":
+        if level_text != "all":
+            raise ValueError(f"TDX industry sector_id must use ':all:': {sector_id!r}")
         return kind, None, name
     if level_text not in {"1", "2", "3", "all"}:
         raise ValueError(f"invalid industry level in sector_id: {sector_id!r}")
@@ -451,7 +455,11 @@ def build_relative_strength(
                 symbol=symbol,
                 benchmark_id=_BENCHMARK_ID,
                 sector_ids=all_sector_ids[symbol],
-                membership_as_of=target if membership_source == "tushare_sw_index_member_all" else None,
+                membership_as_of=(
+                    target
+                    if membership_source in {"tushare_sw_index_member_all", "tushare_tdx_member_daily_snapshot"}
+                    else None
+                ),
                 sector_id=sector_id,
                 sector_name=str(context["sector_name"]),
                 sector_kind=sector_kind,

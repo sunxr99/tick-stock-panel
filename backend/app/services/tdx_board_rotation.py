@@ -12,6 +12,8 @@ from pathlib import Path
 
 import polars as pl
 
+from app.services.sector_membership import canonicalize_member_map
+
 logger = logging.getLogger(__name__)
 
 TDX_RECENT_DIR = "tdx_board_history_recent"
@@ -23,6 +25,9 @@ _CATEGORY_TYPES = {
     "industry": "行业板块",
     "style": "风格板块",
 }
+# 通达信 ``idx_type`` 不提供行业层级字段。产品已确认将 8810xx--8814xx
+# 这套互斥细分行业作为 Sector / RS / Wyckoff 共振的默认行业口径。
+_RESONANCE_INDUSTRY_PREFIXES = ("8810", "8811", "8812", "8813", "8814")
 _INDEX_REQUIRED = {"ts_code", "trade_date", "name", "idx_type"}
 _DAILY_REQUIRED = {"ts_code", "trade_date", "close", "pct_change", "amount", "turnover_rate", "up_num", "down_num"}
 
@@ -135,3 +140,101 @@ def load_hot_rotation_members(data_dir: Path, *, trade_date: date, ts_code: str)
     return frame.filter(
         (pl.col("trade_date") == trade_date.strftime("%Y%m%d")) & (pl.col("ts_code") == ts_code.upper())
     ).select(_MEMBER_COLUMNS).unique().sort("con_code")
+
+
+def load_category_membership(
+    data_dir: Path, *, trade_date: date, category: str
+) -> pl.DataFrame:
+    """Return one exact-date TDX category snapshot with board identifiers.
+
+    The API does not expose a hierarchy field for TDX industry boards.  Rows
+    are therefore intentionally returned as flat board memberships instead of
+    inferring parent/child links from board codes or names.
+    """
+    idx_type = _CATEGORY_TYPES.get(category)
+    schema = {
+        "trade_date": pl.Utf8,
+        "ts_code": pl.Utf8,
+        "name": pl.Utf8,
+        "con_code": pl.Utf8,
+        "con_name": pl.Utf8,
+    }
+    if idx_type is None:
+        raise ValueError(f"unsupported TDX category: {category!r}")
+    index = _read(index_path(data_dir), _INDEX_REQUIRED)
+    members = _read(member_path(data_dir, trade_date=trade_date), set(_MEMBER_COLUMNS))
+    if index is None or members is None:
+        return pl.DataFrame(schema=schema)
+    target = trade_date.strftime("%Y%m%d")
+    index = index.filter(
+        (pl.col("trade_date").cast(pl.Utf8) == target)
+        & (pl.col("idx_type") == idx_type)
+    ).select("trade_date", "ts_code", "name").unique()
+    members = members.filter(pl.col("trade_date").cast(pl.Utf8) == target)
+    if index.is_empty() or members.is_empty():
+        return pl.DataFrame(schema=schema)
+    return (
+        members.join(index, on=["trade_date", "ts_code"], how="inner")
+        .select("trade_date", "ts_code", "name", "con_code", "con_name")
+        .unique()
+        .sort(["ts_code", "con_code"])
+    )
+
+
+def load_industry_member_map(data_dir: Path, *, as_of: date) -> pl.DataFrame:
+    """Build the canonical TDX 881 fine-industry map for one published session.
+
+    ``tdx_industry`` stores the board code as its stable calculation key and
+    keeps the human-readable board name separately.  A missing exact snapshot
+    returns no mapping; it never falls back to a newer constituent list.
+    """
+    memberships = load_resonance_industry_membership(data_dir, trade_date=as_of)
+    schema = {"_sym_up": pl.Utf8, "tdx_industry": pl.Utf8, "_sector_display_name": pl.Utf8}
+    if memberships.is_empty():
+        return pl.DataFrame(schema=schema)
+    raw = memberships.select(
+        pl.col("con_code").alias("_sym_up"),
+        pl.col("ts_code").alias("tdx_industry"),
+    )
+    canonical = canonicalize_member_map(raw, "tdx_industry")
+    display = memberships.select(
+        "ts_code",
+        pl.concat_str([pl.col("name"), pl.lit(" ["), pl.col("ts_code"), pl.lit("]")]).alias("_sector_display_name"),
+    ).unique().rename({"ts_code": "tdx_industry"})
+    return canonical.join(display, on="tdx_industry", how="left").sort(["tdx_industry", "_sym_up"])
+
+
+def load_resonance_industry_membership(data_dir: Path, *, trade_date: date) -> pl.DataFrame:
+    """Return the default single-taxonomy TDX industry memberships for resonance.
+
+    ``8810xx`` through ``8814xx`` are deliberately selected after the exact-date
+    industry snapshot is loaded.  No ``8802xx`` regional board, ``8803xx`` /
+    ``8804xx`` parallel industry board, or future membership list can enter the
+    Sector / RS / Wyckoff resonance calculation.
+    """
+    memberships = load_category_membership(data_dir, trade_date=trade_date, category="industry")
+    if memberships.is_empty():
+        return memberships
+    return memberships.filter(
+        pl.col("ts_code").str.slice(0, 4).is_in(_RESONANCE_INDUSTRY_PREFIXES)
+    ).sort(["ts_code", "con_code"])
+
+
+def top_category_board_names(
+    data_dir: Path, *, trade_date: date, category: str, limit: int
+) -> list[str]:
+    """Return exact-date board labels ordered by the published TDX momentum."""
+    if limit <= 0:
+        return []
+    frame = load_hot_rotation_history(data_dir)
+    if frame.is_empty():
+        return []
+    selected = frame.filter((pl.col("date") == trade_date) & (pl.col("category") == category))
+    if selected.is_empty():
+        return []
+    return [
+        f"{row['name']} [{row['ts_code']}]"
+        for row in selected.sort(["pct_change", "return_5d", "ts_code"], descending=[True, True, False])
+        .head(limit)
+        .iter_rows(named=True)
+    ]

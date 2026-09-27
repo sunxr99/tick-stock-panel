@@ -26,7 +26,7 @@ class Layer3Result:
 
 def layer3_sector_resonance(
     symbols: list[str],
-    sector_map: dict[str, str],
+    sector_map: dict[str, str | list[str]],
     cfg: FunnelConfig,
     *,
     base_symbols: list[str] | None = None,
@@ -49,7 +49,7 @@ def layer3_sector_resonance(
 
 def evaluate_layer3_sector_resonance(
     symbols: list[str],
-    sector_map: dict[str, str],
+    sector_map: dict[str, str | list[str]],
     cfg: FunnelConfig,
     *,
     base_symbols: list[str] | None = None,
@@ -115,13 +115,15 @@ def evaluate_layer3_sector_resonance(
     )
 
 
-def _groups(symbols: list[str], sector_map: dict[str, str], concept_map: dict[str, list[str]] | None, use_concept: bool) -> tuple[dict[str, int], dict[str, list[str]]]:
+def _groups(symbols: list[str], sector_map: dict[str, str | list[str]], concept_map: dict[str, list[str]] | None, use_concept: bool) -> tuple[dict[str, int], dict[str, list[str]]]:
     counts: dict[str, int] = {}
     groups: dict[str, list[str]] = {}
     for symbol in symbols:
         values = list(dict.fromkeys(str(value).strip() for value in (concept_map or {}).get(symbol, []) if str(value).strip())) if use_concept else []
-        if not values and sector_map.get(symbol):
-            values = [sector_map[symbol]]
+        sector_membership = sector_map.get(symbol)
+        if not values and sector_membership:
+            raw_values = sector_membership if isinstance(sector_membership, list) else [sector_membership]
+            values = list(dict.fromkeys(str(value).strip() for value in raw_values if str(value).strip()))
         groups[symbol] = values
         for value in values:
             counts[value] = counts.get(value, 0) + 1

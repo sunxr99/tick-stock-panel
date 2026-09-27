@@ -26,7 +26,8 @@ from app.tickflow.repository import DataStore, KlineRepository
 def _bar(day: date, low: float, high: float, close: float, volume: float, minute: int | None = None) -> dict:
     row = {"date": day, "open": low, "high": high, "low": low, "close": close, "volume": volume, "amount": volume * close}
     if minute is not None:
-        row["datetime"] = datetime.combine(day, datetime.min.time()).replace(hour=9, minute=30 + minute)
+        offset = minute if minute < 120 else minute + 90
+        row["datetime"] = datetime.combine(day, datetime.min.time()).replace(hour=9, minute=30) + timedelta(minutes=offset)
     return row
 
 
@@ -41,10 +42,15 @@ def _minute_rows(daily_rows: list[dict], *, drop_days: set[date] | None = None) 
         if daily["date"] in dropped:
             continue
         rows.extend(
-            [
-                _bar(daily["date"], daily["low"], daily["close"], daily["low"] + 0.03, 400, 0),
-                _bar(daily["date"], daily["close"], daily["high"], daily["close"], 600, 1),
-            ]
+            _bar(
+                daily["date"],
+                daily["low"],
+                daily["high"],
+                daily["low"] + (daily["high"] - daily["low"]) * (minute + 1) / 240,
+                1000 / 240,
+                minute,
+            )
+            for minute in range(240)
         )
     return rows
 
@@ -167,6 +173,53 @@ def test_minute_quality_tolerates_only_machine_precision_at_ohlc_boundaries() ->
 
     assert rejected.quality == ProfileQuality.PARTIAL
     assert any(reason.startswith("invalid_ohlcv:") for reason in rejected.quality_reasons)
+    assert rejected.profile_high is not None and rejected.profile_high < 100
+
+
+def test_sanitized_duplicate_minute_does_not_double_count_histogram_volume() -> None:
+    daily = _daily_rows(20)
+    minute = _minute_rows(daily)
+    minute.append(dict(minute[0]))
+
+    result = VolumeProfileService(_Repo(daily, minute)).build_vp20("000001.SZ", daily[-1]["date"])
+
+    assert result.quality == ProfileQuality.PARTIAL
+    assert result.actual_minute_bars == 20 * 240
+    assert any(reason.startswith("duplicate_timestamp:") for reason in result.quality_reasons)
+    assert sum(item.volume for item in result.bins) == pytest.approx(20_000)
+
+
+def test_partial_minute_histogram_uses_as_of_daily_close_not_prior_day_close() -> None:
+    daily = _daily_rows(20)
+    minute = _minute_rows(daily, drop_days={daily[-1]["date"]})
+
+    result = VolumeProfileService(_Repo(daily, minute)).build_vp20("000001.SZ", daily[-1]["date"])
+
+    assert result.data_granularity == DataGranularity.MINUTE_1M
+    assert result.quality == ProfileQuality.PARTIAL
+    assert result.current_price == daily[-1]["close"]
+    assert result.data_end == daily[-2]["date"]
+
+
+def test_systematic_half_session_missing_is_not_full_coverage() -> None:
+    daily = _daily_rows(20)
+    minute = [row for row in _minute_rows(daily) if row["datetime"].hour < 12]
+
+    result = VolumeProfileService(_Repo(daily, minute)).build_vp20("000001.SZ", daily[-1]["date"])
+
+    assert result.data_granularity == DataGranularity.DAILY
+    assert result.quality == ProfileQuality.FALLBACK
+    assert result.minute_coverage_ratio == pytest.approx(0.5)
+
+
+def test_service_fails_closed_for_intraday_as_of() -> None:
+    daily = _daily_rows(20)
+    result = VolumeProfileService(_Repo(daily, _minute_rows(daily))).build(
+        "000001.SZ", VolumeProfileRequest(ProfileType.VP20, datetime.combine(daily[-1]["date"], datetime.min.time()).replace(hour=10))
+    )
+
+    assert result.quality == ProfileQuality.UNAVAILABLE
+    assert result.unavailable_reason == "intraday_service_not_supported"
 
 
 def test_missing_wyckoff_range_start_is_fail_closed() -> None:
@@ -176,7 +229,7 @@ def test_missing_wyckoff_range_start_is_fail_closed() -> None:
     assert result.unavailable_reason == "wyckoff_range_start_unavailable"
 
 
-def test_wyckoff_range_before_minute_history_remains_partial_minute_profile() -> None:
+def test_wyckoff_range_with_insufficient_minute_history_is_marked_insufficient() -> None:
     daily = _daily_rows(10)
     minute = _minute_rows(daily[5:])
     result = VolumeProfileService(_Repo(daily, minute)).build_wyckoff_range(
@@ -185,11 +238,9 @@ def test_wyckoff_range_before_minute_history_remains_partial_minute_profile() ->
         range_start=daily[0]["date"],
         range_confirmed_at=daily[-1]["date"],
     )
-    assert result.data_granularity == DataGranularity.MINUTE_1M
-    assert result.quality == ProfileQuality.PARTIAL
+    assert result.quality == ProfileQuality.INSUFFICIENT
+    assert result.unavailable_reason == "minute_coverage_insufficient"
     assert result.fallback_used is False
-    assert result.requested_start == daily[0]["date"]
-    assert result.data_start == daily[5]["date"]
 
 
 def test_wyckoff_range_confirmation_is_service_level_fail_closed() -> None:

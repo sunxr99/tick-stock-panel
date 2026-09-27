@@ -12,6 +12,7 @@ export const STAGE_LABELS: Record<string, string> = {
   sync_daily: '同步日 K',
   sync_adj: '同步除权因子',
   compute_enriched: '计算技术指标',
+  compute_market_risk: '计算大盘风险',
   sync_minute: '同步分钟 K',
   sync_czsc_minute: '同步 CZSC 原生分钟 K',
   extend_history: '扩展日K历史',

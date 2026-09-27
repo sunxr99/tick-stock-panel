@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import date
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -115,3 +116,37 @@ def test_wyckoff_industry_context_uses_sw1_from_rps_membership(monkeypatch) -> N
 
     assert sector_map == {"000001.SZ": "银行", "000002.SZ": "电子"}
     assert source == "tushare_sw_index_member_all"
+
+
+def test_wyckoff_tdx_context_uses_881_fine_industry_memberships(monkeypatch) -> None:
+    from app.services import tdx_board_rotation
+    from app.services.screener import _load_tdx_wyckoff_context
+
+    def members(_data_dir, *, trade_date, category):
+        assert trade_date == date(2026, 9, 23)
+        if category == "industry":
+            return pl.DataFrame({
+                "ts_code": ["880001.TDX", "881001.TDX", "881501.TDX"],
+                "name": ["Broad", "Fine", "Outside fine scope"],
+                "con_code": ["000001.SZ", "000001.SZ", "000001.SZ"],
+                "con_name": ["平安银行", "平安银行", "平安银行"],
+                "trade_date": ["20260923", "20260923", "20260923"],
+            })
+        return pl.DataFrame({
+            "ts_code": ["885001.TDX"],
+            "name": ["AI"],
+            "con_code": ["000001.SZ"],
+            "con_name": ["平安银行"],
+            "trade_date": ["20260923"],
+        })
+
+    monkeypatch.setattr(tdx_board_rotation, "load_category_membership", members)
+    monkeypatch.setattr(tdx_board_rotation, "top_category_board_names", lambda *_args, **_kwargs: ["AI [885001.TDX]"])
+    repo = SimpleNamespace(store=SimpleNamespace(data_dir=Path(".")))
+
+    industries, concepts, hot, source = _load_tdx_wyckoff_context(repo, date(2026, 9, 23), 5)
+
+    assert industries["000001.SZ"] == ["Fine [881001.TDX]"]
+    assert concepts["000001.SZ"] == ["AI [885001.TDX]"]
+    assert hot == ["AI [885001.TDX]"]
+    assert source == "tushare_tdx_member_daily_snapshot"

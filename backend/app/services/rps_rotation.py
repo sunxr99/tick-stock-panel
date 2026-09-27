@@ -72,6 +72,19 @@ def _load_concept_map_df(
 
     缓存: 维度成分股是 snapshot, 进程内不变, 缓存 600s。按 kind 分别缓存。
     """
+    # TDX industry calculations use an exact daily board snapshot.  This is
+    # deliberately a distinct kind from SW industry so the two taxonomies can
+    # run side-by-side and their sector ids cannot collide.
+    if kind == "tdx_industry":
+        from app.services.tdx_board_rotation import load_industry_member_map
+
+        target = as_of or _latest_enriched_date(repo)
+        if target is None:
+            return pl.DataFrame(schema={"_sym_up": pl.Utf8, kind: pl.Utf8}), 0
+        map_df = load_industry_member_map(repo.store.data_dir, as_of=target)
+        _map_source[kind] = "tushare_tdx_member_daily_snapshot"
+        return map_df, map_df.get_column(kind).n_unique() if kind in map_df.columns else 0
+
     # Industry calculations use the dedicated SW interval store for both
     # historical and current requests.  A missing SW file still falls back to
     # the existing extension snapshot so deployments can start before the
@@ -166,12 +179,15 @@ def membership_source_for_kind(kind: str) -> str:
     """Return the configured membership provenance for a sector dimension."""
     return _map_source.get(
         kind,
-        "tushare_sw_index_member_all" if kind == "industry" else "current_ext_snapshot",
+        "tushare_tdx_member_daily_snapshot" if kind == "tdx_industry"
+        else "tushare_sw_index_member_all" if kind == "industry" else "current_ext_snapshot",
     )
 
 
 def membership_note_for_kind(kind: str) -> str:
     """Return a user-facing note describing the membership time semantics."""
+    if kind == "tdx_industry":
+        return "成员关系来自通达信 8810xx--8814xx 细分行业当日快照. 缺少该日快照时严格返回空结果"
     return _SW_MEMBERSHIP_NOTE if kind == "industry" else _MEMBERSHIP_NOTE
 _RELATIVE_MOMENTUM_WEIGHTS = {3: 0.20, 5: 0.25, 10: 0.25, 20: 0.30}
 _BREADTH_WEIGHTS = {"up_ratio": 0.70, "strong_stock_ratio": 0.30}
@@ -453,8 +469,8 @@ def build_sector_strength(
     every required *trading* date; absent data is exposed as ``None`` rather
     than being backfilled from an earlier date.
     """
-    if kind not in {"concept", "industry"}:
-        raise ValueError("kind must be 'concept' or 'industry'")
+    if kind not in {"concept", "industry", "tdx_industry"}:
+        raise ValueError("kind must be 'concept', 'industry', or 'tdx_industry'")
     if _min_industry_members < 0:
         raise ValueError("_min_industry_members must be non-negative")
     if kind != "industry":
@@ -493,7 +509,7 @@ def build_sector_strength(
             pl.col("_sym_up").n_unique().alias("member_count")
         ).iter_rows(named=True)
     }
-    if kind == "industry" and _min_industry_members:
+    if kind in {"industry", "tdx_industry"} and _min_industry_members:
         eligible = {
             sector for sector, count in member_counts.items()
             if count >= _min_industry_members
@@ -900,7 +916,8 @@ def build_rps_rotation(repo, days: int = 12, kind: str = "concept", level: int |
     if latest is None:
         return {"dates": [], "columns": {}, "concept_count": 0}
 
-    cache_key = f"{kind}|{level}|{latest.isoformat()}"
+    scope = "8810-8814" if kind == "tdx_industry" else "default"
+    cache_key = f"{kind}|{level}|{scope}|{latest.isoformat()}"
     now = time.time()
     cached = _cache.get(cache_key)
     if cached and (now - _cache_ts.get(cache_key, 0)) < _CACHE_TTL:

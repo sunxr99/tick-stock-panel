@@ -60,6 +60,27 @@ def test_canonical_member_map_does_not_double_count_bare_and_qualified_keys() ->
     ]
 
 
+def test_tdx_industry_keeps_flat_board_ids_and_provenance(monkeypatch) -> None:
+    stocks, benchmark, dates = _frames()
+    mapping = pl.DataFrame({
+        "_sym_up": ["AAA.SH", "AAB.SH", "BBB.SH", "BBC.SH"],
+        "tdx_industry": ["880001.TDX", "880001.TDX", "881001.TDX", "881001.TDX"],
+        "_sector_display_name": ["Broad [880001.TDX]"] * 2 + ["Fine [881001.TDX]"] * 2,
+    })
+    monkeypatch.setattr(rps_rotation, "_load_concept_map_df", lambda *_args: (mapping, 2))
+
+    results = rps_rotation.build_sector_strength(
+        _Repo(stocks, benchmark), kind="tdx_industry", as_of=dates[-1]
+    )
+
+    assert [result.sector_id for result in results] == [
+        "tdx_industry:all:880001.TDX",
+        "tdx_industry:all:881001.TDX",
+    ]
+    assert results[0].name == "Broad [880001.TDX]"
+    assert results[0].data_quality["membership_source"] == "tushare_tdx_member_daily_snapshot"
+
+
 def test_industry_sparse_gate_excludes_groups_before_sector_ranking(monkeypatch) -> None:
     stocks, benchmark, dates = _frames()
     mapping = pl.DataFrame({

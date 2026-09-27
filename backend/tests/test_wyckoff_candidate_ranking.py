@@ -121,6 +121,32 @@ def test_extension_penalties_and_priority_rules_are_explicit(monkeypatch) -> Non
     assert row["risk_reasons"] == ["sector_extension_elevated", "rs_extension_extended"]
 
 
+def test_tdx_flat_ranking_uses_explicit_best_board_context(monkeypatch) -> None:
+    sector = _sector(80.0, "LEADING")
+    sector.sector_id = "tdx_industry:all:880001.TDX"
+    rs = _rs("AAA.SH", 90.0, "HIGH_AND_RISING")
+    rs.sector_id = sector.sector_id
+    rs.sector_level = None
+    seen: list[dict] = []
+
+    def build_sector(*_args, **kwargs):
+        seen.append(kwargs)
+        return [sector]
+
+    monkeypatch.setattr(wyckoff_candidate_ranking, "build_sector_strength", build_sector)
+    monkeypatch.setattr(wyckoff_candidate_ranking, "build_relative_strength", lambda *_args, **_kwargs: [rs])
+
+    row = wyckoff_candidate_ranking.rank_tdx_wyckoff_candidates(
+        object(), as_of=_AS_OF, candidates=[{"symbol": "AAA.SH"}]
+    )[0]
+
+    assert seen[0]["kind"] == "tdx_industry"
+    assert row["opportunity_score_basis"] == "tdx_flat_best_context"
+    assert row["sector_hierarchy_state"] == "TDX_FLAT"
+    assert row["tdx_context_selection"] == "highest_sector_strength_then_rs"
+    assert row["ranking_status"] == "complete"
+
+
 def test_sort_tie_breakers_and_wyckoff_czsc_fields_do_not_affect_ranking(monkeypatch) -> None:
     sector = _sector(80.0, "LEADING")
     ranked = _rank(

@@ -54,6 +54,17 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = PROJECT_ROOT / "data"
 DEFAULT_SEED = 20260919
 DEFAULT_SAMPLE_SIZE = 12
+_SIGNAL_COLUMNS = (
+    "signal_date",
+    "symbol",
+    "research_candidate_rank",
+    "research_candidate_score",
+    "wyckoff_channel",
+    "wyckoff_stage",
+    "wyckoff_source",
+    "wyckoff_l3_path",
+    "vp_risk_bucket",
+)
 # The local SW2021 membership interval archive begins on this date.  Starting
 # here keeps L3 point-in-time and fail-closed rather than silently falling back
 # to a later industry membership list.
@@ -171,6 +182,11 @@ def _signal_row(*, as_of: date, row: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def _signal_fields(frame: pl.DataFrame) -> pl.DataFrame:
+    """Discard derived return columns before a resumed forward-return pass."""
+    return frame.select([column for column in _SIGNAL_COLUMNS if column in frame.columns])
+
+
 def _load_stored_signals(path: Path, *, completed_days: int) -> pl.DataFrame:
     """Read resumable results without trusting an interrupted first write."""
     if not path.exists():
@@ -186,7 +202,7 @@ def _load_stored_signals(path: Path, *, completed_days: int) -> pl.DataFrame:
         return pl.DataFrame()
 
 
-def _report(*, signals: pl.DataFrame, state: dict[str, Any], rows_path: Path) -> dict[str, Any]:
+def _report(*, signals: pl.DataFrame, state: dict[str, Any], rows_path: Path, sector_source: str) -> dict[str, Any]:
     return {
         "status": "complete",
         "experiment": "current_wyckoff_funnel_month_stratified_random12",
@@ -196,7 +212,7 @@ def _report(*, signals: pl.DataFrame, state: dict[str, Any], rows_path: Path) ->
         "formal_strategy_contract": {
             "strategy_id": "wyckoff_funnel",
             "saved_override_applied": True,
-            "l3": "SW2021 industry level 1, fail-closed",
+            "l3": "TDX flat industry snapshot, fail-closed" if sector_source == "tdx" else "SW2021 industry level 1, fail-closed",
             "legacy_l4": "research trigger only; does not alter membership",
             "wyckoff_v2": "parallel diagnostics only; does not alter membership",
             "post_l3_basic_filter": True,
@@ -235,8 +251,15 @@ def main() -> None:
     parser.add_argument("--data-dir", type=Path, default=DATA_DIR)
     parser.add_argument("--output-dir", type=Path, default=DATA_DIR / "research" / "wyckoff_current_random12_20260919")
     parser.add_argument("--start", type=_parse_date, default=DEFAULT_START)
+    parser.add_argument("--end", type=_parse_date, default=None, help="抽样信号日的末日 (包含)")
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED)
     parser.add_argument("--sample-size", type=int, default=DEFAULT_SAMPLE_SIZE)
+    parser.add_argument(
+        "--sector-source",
+        choices=("tdx", "sw_ths"),
+        default=None,
+        help="仅本次回测使用的 L3 行业来源; 不修改已保存策略配置",
+    )
     args = parser.parse_args()
 
     data_dir = args.data_dir.resolve()
@@ -255,6 +278,8 @@ def main() -> None:
         start=args.start,
         benchmark_dates=benchmark_dates,
     )
+    if args.end is not None:
+        eligible = [value for value in eligible if value <= args.end]
     state = _read_json(state_path)
     if state.get("selected_signal_dates"):
         selected_dates = [date.fromisoformat(value) for value in state["selected_signal_dates"]]
@@ -283,12 +308,20 @@ def main() -> None:
         columns=["date", "open", "close"],
     )
     engine = StrategyEngine(strategy_dirs=_strategy_dirs(data_dir))
+    selected_sector_source = args.sector_source or str(
+        getattr(engine.get("wyckoff_funnel").wyckoff_config, "sector_source", "tdx")
+    )
+    # The strategy definition owns one mutable Wyckoff config for the process.
+    # This research-only override keeps the saved production config untouched
+    # while ensuring both context assembly and execution use the same source.
+    engine.get("wyckoff_funnel").wyckoff_config.sector_source = selected_sector_source
     overrides = strategy_config.load_override(data_dir, "wyckoff_funnel")
     screener = ScreenerService(repo)
     stored = _load_stored_signals(
         rows_path,
         completed_days=len(state.get("date_runs") or {}),
     )
+    stored = _signal_fields(stored) if not stored.is_empty() else stored
     records = stored.to_dicts() if not stored.is_empty() else []
     completed = set(stored.get_column("signal_date").to_list()) if not stored.is_empty() else set()
     started = time.perf_counter()
@@ -312,7 +345,10 @@ def main() -> None:
             "research_triggers": evidence.get("wyckoff_research_trigger_count"),
         }
         records.extend(_signal_row(as_of=as_of, row=row) for row in result.rows)
-        raw = pl.DataFrame(records)
+        # Candidate evidence is sparse: a numeric field can be absent from the
+        # first 100 rows and appear later as a float.  Infer from all rows so a
+        # resumed, cross-period run cannot lock that column to an integer type.
+        raw = pl.DataFrame(records, infer_schema_length=None)
         signals = _attach_forward_returns(raw, prices, trading_dates, benchmark_prices)
         signals.write_parquet(rows_path)
         state["completed_signal_dates"] = len(state["date_runs"])
@@ -321,12 +357,19 @@ def main() -> None:
         _write_json(state_path, state)
         print(f"[{ordinal}/{len(selected_dates)}] {as_of}: {state['date_runs'][as_of.isoformat()]}", flush=True)
 
-    signals = pl.read_parquet(rows_path) if rows_path.exists() else pl.DataFrame()
+    signals = _signal_fields(pl.read_parquet(rows_path)) if rows_path.exists() else pl.DataFrame()
+    signals = _attach_forward_returns(signals, prices, trading_dates, benchmark_prices)
+    signals.write_parquet(rows_path)
     state["status"] = "complete"
     state["completed_signal_dates"] = len(selected_dates)
     state["elapsed_seconds"] = round(time.perf_counter() - started, 2)
     _write_json(state_path, state)
-    report = _report(signals=signals, state=state, rows_path=rows_path)
+    report = _report(
+        signals=signals,
+        state=state,
+        rows_path=rows_path,
+        sector_source=selected_sector_source,
+    )
     _write_json(report_path, report)
     print(json.dumps({"report": str(report_path), "horizons": report["horizons"]}, ensure_ascii=False, indent=2))
 

@@ -17,7 +17,10 @@ _HISTORY_DIR = "sector_membership_history"
 _HISTORY_FILE = "memberships.parquet"
 _SW_HISTORY_FILE = "sw_memberships.parquet"
 _SW_SOURCE_PREFIX = "tushare_sw_index_member_all"
-_VALID_KINDS = {"concept", "industry"}
+# ``tdx_industry`` is a separate, date-snapshot based taxonomy.  It is kept
+# distinct from SW ``industry`` so a caller can never re-resolve a TDX sector
+# id through the SW interval store by accident.
+_VALID_KINDS = {"concept", "industry", "tdx_industry"}
 _HISTORY_SCHEMA = {
     "symbol": pl.Utf8,
     "kind": pl.Utf8,

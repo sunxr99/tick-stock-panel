@@ -50,21 +50,26 @@ def get_rotation(
 def get_sector_strength(
     request: Request,
     as_of: Annotated[date | None, Query(description="Strict trading date; defaults to latest enriched date")] = None,
-    kind: str = Query("concept", pattern="concept|industry", description="维度: concept 概念 / industry 行业"),
+    kind: str = Query("industry", pattern="concept|industry", description="维度: concept 概念 / industry 行业"),
     level: int | None = Query(None, ge=1, le=3, description="行业层级(仅 kind=industry): 1/2/3 级"),
+    source: str = Query("tdx", pattern="tdx|sw_ths", description="行业成员口径: tdx 通达信快照 / sw_ths 原申万与同花顺口径"),
 ) -> dict:
     """只读返回指定交易日的冻结 Sector Strength V1.1 全量结果。
 
     返回行中的 ``sector_id`` 可原样作为 ``/relative-strength`` 的重复
     ``sector_id`` 查询参数。此接口不做 Top-N 截断或候选池过滤。
     """
+    if source == "tdx" and kind != "industry":
+        raise HTTPException(status_code=422, detail="TDX Sector Strength currently supports kind=industry only")
+    calculation_kind = "tdx_industry" if source == "tdx" else kind
     rows = rps_rotation.build_sector_strength(
-        request.app.state.repo, kind=kind, level=level, as_of=as_of
+        request.app.state.repo, kind=calculation_kind, level=level, as_of=as_of
     )
     return {
         "rows": jsonable_encoder([asdict(row) for row in rows]),
         "total": len(rows),
         "requested_as_of": as_of.isoformat() if as_of else None,
+        "source": source,
     }
 
 

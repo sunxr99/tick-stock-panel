@@ -2,9 +2,9 @@ import { useState, useEffect, useRef, type ReactNode } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Activity, ArrowDownRight, ArrowUpRight, BarChart3, BellRing, Database, Flame, Gauge, Info, LineChart, Loader2, Play, RefreshCw, Sparkles, Target, Timer } from 'lucide-react'
+import { Activity, ArrowDownRight, ArrowUpRight, BarChart3, BellRing, Database, Flame, Gauge, Info, LineChart, Loader2, Play, RefreshCw, ShieldAlert, Sparkles, Target, Timer } from 'lucide-react'
 import { DatePicker } from '@/components/DatePicker'
-import { api, type MarketSnapshotRow, type OverviewDimensionRankItem, type OverviewMarket, type AlertEvent } from '@/lib/api'
+import { api, type MarketSnapshotRow, type OverviewDimensionRankItem, type OverviewMarket, type AlertEvent, type MarketRiskRow, type RegimeRow } from '@/lib/api'
 import { QK } from '@/lib/queryKeys'
 import { fmtBigNum, fmtPct } from '@/lib/format'
 import { DimensionMembersDialog, dimensionKindForSourceField, type DimensionMembersTarget } from '@/components/DimensionMembersDialog'
@@ -405,12 +405,266 @@ function LadderMini({ limit }: { limit: OverviewMarket['limit'] }) {
   )
 }
 
-function MiniMetric({ label, value, cls = 'text-foreground' }: { label: string; value: string; cls?: string }) {
+function MiniMetric({ label, value, cls = 'text-foreground', sub }: { label: string; value: string; cls?: string; sub?: string }) {
   return (
     <div className="rounded-md bg-elevated/45 px-2 py-1.5 border border-border/40">
       <div className="text-[10px] text-muted">{label}</div>
       <div className={`mt-0.5 font-mono text-xs font-semibold ${cls}`}>{value}</div>
+      {sub && <div className="mt-0.5 truncate text-[9px] text-muted">{sub}</div>}
     </div>
+  )
+}
+
+function fmtRatio(v: number | null | undefined) {
+  return v == null || !Number.isFinite(v) ? '—' : `${(v * 100).toFixed(1)}%`
+}
+
+function IndexRiskMetric({ label, above20, above60, direction, atr }: {
+  label: string
+  above20: boolean | null
+  above60: boolean | null
+  direction: MarketRiskRow['csi_all_ma20_direction']
+  atr: number | null
+}) {
+  const state = above60 === false ? 'MA60下' : above20 === false ? 'MA20下' : above20 === true ? 'MA20上' : '数据不足'
+  const cls = above60 === false || above20 === false ? 'text-bear' : above20 === true ? 'text-bull' : 'text-warning'
+  const directionLabel = direction === 'up' ? 'MA20上行' : direction === 'down' ? 'MA20下行' : direction === 'flat' ? 'MA20走平' : 'MA20—'
+  return <MiniMetric label={label} value={state} cls={cls} sub={`${directionLabel} · ATR ${fmtRatio(atr)}`} />
+}
+
+function BreadthTrendSparkline({ rows }: { rows: MarketRiskRow[] }) {
+  const values = rows
+    .filter(row => row.ma50_above_pct != null)
+    .slice(-20)
+    .map(row => row.ma50_above_pct!)
+  if (values.length < 2) return <span className="text-muted">趋势数据不足</span>
+  const min = Math.min(...values)
+  const max = Math.max(...values)
+  const spread = Math.max(max - min, 0.01)
+  const points = values.map((value, index) => {
+    const x = index / (values.length - 1) * 120
+    const y = 30 - (value - min) / spread * 26
+    return `${x},${y}`
+  }).join(' ')
+  const cls = values[values.length - 1] >= values[0] ? 'text-bull' : 'text-bear'
+  return (
+    <span className={`inline-flex items-center gap-1 ${cls}`} title="最近 20 个已计算交易日的 MA50 广度">
+      <svg viewBox="0 0 120 32" className="h-7 w-24 overflow-visible" role="img" aria-label="MA50 广度趋势">
+        <line x1="0" y1="30" x2="120" y2="30" stroke="currentColor" opacity="0.2" />
+        <polyline points={points} fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
+      </svg>
+      <span className="font-mono">{fmtRatio(values[values.length - 1])}</span>
+    </span>
+  )
+}
+
+function marketStrengthLabel(score: number | null | undefined) {
+  if (score == null) return '数据不足'
+  if (score >= 70) return '强'
+  if (score >= 55) return '偏强'
+  if (score >= 45) return '均衡'
+  if (score >= 30) return '偏弱'
+  return '弱'
+}
+
+function MarketStrengthChart({
+  rows,
+  emotionRows,
+  currentEmotion,
+}: {
+  rows: MarketRiskRow[]
+  emotionRows: RegimeRow[]
+  currentEmotion?: { date: string | null; score: number }
+}) {
+  const chartRef = useRef<HTMLDivElement>(null)
+  const [chartWidth, setChartWidth] = useState(0)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const strengthByDate = new Map(
+    rows
+      .filter(item => item.market_strength_score != null)
+      .map(item => [item.date, item.market_strength_score!] as const),
+  )
+  const emotionByDate = new Map(emotionRows.map(item => [item.date, item.score] as const))
+  // 选中日/最新日的看板雷达分优先，历史日期沿用已持久化的市场环境日序列评分。
+  if (currentEmotion?.date) emotionByDate.set(currentEmotion.date, currentEmotion.score)
+  const dates = Array.from(new Set([...strengthByDate.keys(), ...emotionByDate.keys()])).sort().slice(-60)
+
+  useEffect(() => {
+    const element = chartRef.current
+    if (!element) return
+    const updateWidth = () => setChartWidth(Math.max(1, Math.floor(element.getBoundingClientRect().width)))
+    updateWidth()
+    const observer = new ResizeObserver(updateWidth)
+    observer.observe(element)
+    return () => observer.disconnect()
+  }, [])
+
+  if (dates.length < 2) return <div className="flex h-28 items-center justify-center text-[10px] text-muted">市场强度与短线情绪历史数据不足</div>
+  const latestStrength = [...dates].reverse().map(item => strengthByDate.get(item)).find((item): item is number => item != null)
+  const latestEmotion = [...dates].reverse().map(item => emotionByDate.get(item)).find((item): item is number => item != null)
+  const height = 112
+  const left = 24
+  const right = 8
+  const top = 9
+  const bottom = 19
+  const width = Math.max(chartWidth, 320)
+  const x = (index: number) => left + index * (width - left - right) / (dates.length - 1)
+  const y = (value: number) => top + (100 - value) * (height - top - bottom) / 100
+  const pathFor = (values: Array<number | undefined>) => values.reduce((path, value, index) => {
+    if (value == null) return `${path} `
+    const previous = values[index - 1]
+    return `${path}${previous == null ? 'M' : 'L'}${x(index).toFixed(1)},${y(value).toFixed(1)} `
+  }, '')
+  const strengthValues = dates.map(item => strengthByDate.get(item))
+  const emotionValues = dates.map(item => emotionByDate.get(item))
+  const strengthLine = pathFor(strengthValues)
+  const emotionLine = pathFor(emotionValues)
+  const activeIndex = hoveredIndex ?? dates.length - 1
+  const activeDate = dates[activeIndex]
+  const activeStrength = strengthByDate.get(activeDate)
+  const activeEmotion = emotionByDate.get(activeDate)
+  const tooltipLeft = Math.min(Math.max(x(activeIndex) / width * 100, 16), 84)
+  const updateHoveredIndex = (clientX: number, rect: DOMRect) => {
+    const ratio = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width))
+    setHoveredIndex(Math.round(ratio * (dates.length - 1)))
+  }
+  return (
+    <div ref={chartRef} className="rounded-md border border-border/50 bg-elevated/35 px-2 py-1.5">
+      <div className="mb-1 flex flex-wrap items-center justify-between gap-x-3 gap-y-0.5 text-[10px]">
+        <span className="text-secondary">市场强度 / 短线情绪 <span className="text-muted">近 {dates.length} 个交易日 · 0–100</span></span>
+        <span className="flex items-center gap-2 font-mono">
+          {latestStrength != null && <span style={{ color: scoreColor(latestStrength) }}>强度 {latestStrength.toFixed(1)} · {marketStrengthLabel(latestStrength)}</span>}
+          {latestEmotion != null && <span className="text-violet-500">情绪 {latestEmotion.toFixed(0)}</span>}
+        </span>
+      </div>
+      <div className="relative">
+        <svg
+          viewBox={`0 0 ${width} ${height}`}
+          className="h-28 w-full touch-none text-muted"
+          role="img"
+          aria-label="市场强度与短线情绪历史折线图；移动鼠标可查看日期和分数"
+          onMouseMove={event => updateHoveredIndex(event.clientX, event.currentTarget.getBoundingClientRect())}
+          onMouseLeave={() => setHoveredIndex(null)}
+          onTouchMove={event => updateHoveredIndex(event.touches[0].clientX, event.currentTarget.getBoundingClientRect())}
+        >
+        {[30, 45, 55, 70].map(value => <g key={value}><line x1={left} y1={y(value)} x2={width - right} y2={y(value)} stroke="currentColor" opacity="0.14" strokeDasharray="3 3" /><text x="0" y={y(value) + 3} fill="currentColor" opacity="0.48" fontSize="9">{value}</text></g>)}
+        <path d={emotionLine} fill="none" stroke="#8b5cf6" strokeWidth="1.8" strokeLinejoin="round" strokeLinecap="round" strokeDasharray="4 3" />
+        <path d={strengthLine} fill="none" stroke={latestStrength == null ? '#94a3b8' : scoreColor(latestStrength)} strokeWidth="2.3" strokeLinejoin="round" strokeLinecap="round" />
+        <line x1={x(activeIndex)} y1={top} x2={x(activeIndex)} y2={height - bottom} stroke="currentColor" opacity="0.35" strokeDasharray="2 2" />
+        {activeEmotion != null && <circle cx={x(activeIndex)} cy={y(activeEmotion)} r="3.2" fill="#8b5cf6" stroke="hsl(var(--surface))" strokeWidth="1.4" />}
+        {activeStrength != null && <circle cx={x(activeIndex)} cy={y(activeStrength)} r="3.2" fill={scoreColor(activeStrength)} stroke="hsl(var(--surface))" strokeWidth="1.4" />}
+        <text x={left} y={height - 4} fill="currentColor" opacity="0.48" fontSize="9">{dates[0]}</text>
+        <text x={width - right} y={height - 4} textAnchor="end" fill="currentColor" opacity="0.48" fontSize="9">{dates[dates.length - 1]}</text>
+        </svg>
+        <div
+          className="pointer-events-none absolute top-1 -translate-x-1/2 rounded border border-border bg-surface/95 px-1.5 py-1 text-[10px] shadow-sm"
+          style={{ left: `${tooltipLeft}%` }}
+        >
+          <div className="font-mono text-foreground">{activeDate}</div>
+          <div className="mt-0.5 flex gap-2 whitespace-nowrap">
+            <span style={{ color: activeStrength == null ? undefined : scoreColor(activeStrength) }}>强度 {activeStrength?.toFixed(1) ?? '—'}</span>
+            <span className="text-violet-500">情绪 {activeEmotion?.toFixed(0) ?? '—'}</span>
+          </div>
+        </div>
+      </div>
+      <div className="mt-0.5 flex flex-wrap gap-x-3 text-[9px] text-muted">
+        <span><i className="mr-1 inline-block h-0.5 w-3 align-middle" style={{ backgroundColor: latestStrength == null ? '#94a3b8' : scoreColor(latestStrength) }} />市场强度</span>
+        <span><i className="mr-1 inline-block h-0.5 w-3 align-middle border-t border-dashed border-violet-500" />短线情绪</span>
+        <span>历史情绪为市场环境日终评分；当前选中日以情绪雷达分为准</span>
+      </div>
+    </div>
+  )
+}
+
+function MarketRiskCard({ row, history, emotionHistory, currentEmotion }: {
+  row: MarketRiskRow | null | undefined
+  history: MarketRiskRow[]
+  emotionHistory: RegimeRow[]
+  currentEmotion?: { date: string | null; score: number }
+}) {
+  if (!row) {
+    return (
+      <section className="rounded-card border border-dashed border-border bg-surface/60 p-3">
+        <SectionTitle icon={ShieldAlert} title="大盘风险 V1" hint="日终快照" />
+        <p className="text-xs text-muted">尚未生成风险快照。完成一次日终数据管道后会自动计算；缺失数据不会显示为低风险。</p>
+      </section>
+    )
+  }
+  const riskLevel = row.risk_level ?? (row.risk_state === 'insufficient_data' ? 'unavailable' : row.risk_state === 'attention' ? 'watch' : 'low')
+  const tone = riskLevel === 'high' ? 'text-bear border-bear/40 bg-bear/8'
+    : riskLevel === 'elevated' || riskLevel === 'watch' || riskLevel === 'unavailable' ? 'text-warning border-warning/40 bg-warning/8'
+      : 'text-secondary border-border bg-elevated/45'
+  const status = riskLevel === 'high' ? '风险等级：高'
+    : riskLevel === 'elevated' ? '风险等级：偏高'
+      : riskLevel === 'watch' ? '风险等级：中'
+        : riskLevel === 'unavailable' ? '数据不足'
+          : '风险等级：低'
+  const phase = row.market_phase ?? (row.risk_state === 'insufficient_data' ? 'insufficient_data' : 'mixed')
+  const phaseLabel = phase === 'uptrend_healthy' ? '上升健康'
+    : phase === 'top_warning' ? '顶部预警'
+      : phase === 'weakening_confirmed' ? '转弱确认'
+        : phase === 'low_level_consolidation' ? '低位震荡'
+        : phase === 'insufficient_data' ? '数据不足'
+          : '多空混合'
+  const topWarning = row.top_warning_level ?? 'unavailable'
+  const topWarningLabel = topWarning === 'high' ? '高'
+    : topWarning === 'elevated' ? '偏高'
+      : topWarning === 'watch' ? '关注'
+        : topWarning === 'low' ? '无'
+          : '数据不足'
+  const recoveryLabel = row.recovery_candidate === 'candidate' ? '修复候选' : row.recovery_candidate === 'unavailable' ? '数据不足' : '未出现'
+  const past = history.filter(item => item.date < row.date && item.ma50_above_pct != null)
+  const base = past.length >= 5 ? past[past.length - 5] : undefined
+  const breadthDelta = base != null && row.ma50_above_pct != null
+    ? row.ma50_above_pct - base.ma50_above_pct!
+    : null
+  const evidence = row.risk_reasons.length ? row.risk_reasons : row.data_warnings
+  return (
+    <section className="rounded-card border border-border bg-surface/80 p-2 shadow-[0_1px_2px_hsl(var(--border)/0.4)] backdrop-blur-sm">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <SectionTitle icon={ShieldAlert} title="大盘风险 V1" hint={`${row.date} · 日终`} />
+        <div className="flex items-center gap-1.5">
+          <span className="rounded-full border border-border bg-elevated/45 px-2 py-0.5 text-[10px] font-medium" style={{ color: row.market_strength_score == null ? undefined : scoreColor(row.market_strength_score) }}>强度 {row.market_strength_score?.toFixed(1) ?? '—'} · {marketStrengthLabel(row.market_strength_score)}</span>
+          <span className={`rounded-full border px-2 py-0.5 text-[10px] font-medium ${tone}`}>{status}</span>
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-1.5 sm:grid-cols-3 lg:grid-cols-6">
+        <IndexRiskMetric label="中证全指" above20={row.csi_all_above_ma20} above60={row.csi_all_above_ma60} direction={row.csi_all_ma20_direction} atr={row.csi_all_atr14_close_ratio} />
+        <IndexRiskMetric label="沪深300" above20={row.csi300_above_ma20} above60={row.csi300_above_ma60} direction={row.csi300_ma20_direction} atr={row.csi300_atr14_close_ratio} />
+        <MiniMetric label="站上 MA20" value={`${fmtRatio(row.ma20_above_pct)}`} cls={pctClass(row.ma20_above_pct == null ? null : row.ma20_above_pct - 0.5)} />
+        <MiniMetric label="站上 MA50" value={fmtRatio(row.ma50_above_pct)} cls={pctClass(row.ma50_above_pct == null ? null : row.ma50_above_pct - 0.5)} />
+        <MiniMetric label="涨 / 平 / 跌" value={`${row.up_count} / ${row.flat_count} / ${row.down_count}`} cls={row.down_count > row.up_count ? 'text-bear' : 'text-bull'} />
+        <MiniMetric label="下跌成交占比" value={fmtRatio(row.down_amount_share)} cls={row.down_amount_share != null && row.down_amount_share > 0.5 ? 'text-bear' : 'text-foreground'} />
+      </div>
+      <div className="mt-1.5 grid grid-cols-1 gap-1.5 lg:grid-cols-[minmax(0,1fr)_20rem]">
+        <div className="rounded-md border border-border/50 bg-elevated/35 px-2 py-1.5 text-[11px] text-secondary">
+          <div className="flex flex-wrap gap-x-3 gap-y-1">
+            <span>市场阶段: <b className="text-foreground">{phaseLabel}</b></span>
+            {row.low_level_consolidation_categories?.length ? <span>止跌依据: <b className="text-bull">{row.low_level_consolidation_categories.join('、')}</b></span> : null}
+            <span>顶部预警: <b className={topWarning === 'high' ? 'text-bear' : topWarning === 'elevated' || topWarning === 'watch' ? 'text-warning' : 'text-foreground'}>{topWarningLabel}</b>{row.top_warning_categories?.length ? `（${row.top_warning_categories.join('、')}）` : ''}</span>
+            <span>修复信号: <b className={row.recovery_candidate === 'candidate' ? 'text-bull' : 'text-foreground'}>{recoveryLabel}</b>{row.recovery_categories?.length ? `（${row.recovery_categories.join('、')}）` : ''}</span>
+            <span>MA20: <b className="font-mono text-foreground">{row.ma20_above_count}/{row.ma20_valid_count}</b></span>
+            <span>MA50: <b className="font-mono text-foreground">{row.ma50_above_count}/{row.ma50_valid_count}</b></span>
+            <span>量能: <b className={pctClass(row.market_amount_ratio_20 == null ? null : row.market_amount_ratio_20 - 1)}>当日/MA20 {fmtRatio(row.market_amount_ratio_20)} · MA5/MA20 {fmtRatio(row.market_amount_ma5_ratio_20)}</b></span>
+            <span>量能健康度: <b className="font-mono text-foreground">{row.market_strength_volume_score?.toFixed(1) ?? '—'}</b></span>
+            <span>60日区间位置: <b className="font-mono text-foreground">全指 {fmtRatio(row.csi_all_position_60)} · 沪深300 {fmtRatio(row.csi300_position_60)}</b></span>
+            <span>250日新高/低: <b className="font-mono text-foreground">{row.new_high_250_count}/{row.new_low_250_count}</b></span>
+            <span>ATR14/收盘: <b className="font-mono text-foreground">全指 {fmtRatio(row.csi_all_atr14_close_ratio)} · 沪深300 {fmtRatio(row.csi300_atr14_close_ratio)}</b></span>
+          </div>
+          <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-[10px] text-muted">
+            <span>有效股票 {row.active_stock_count}/{row.stock_snapshot_count}</span>
+            <span>MA50 广度近5日变动 <span className={pctClass(breadthDelta)}>{fmtRatio(breadthDelta)}</span></span>
+            <BreadthTrendSparkline rows={history} />
+            <span>风险维度 {row.risk_signal_category_count ?? (row.risk_reasons.length ? 1 : 0)} 类{row.risk_signal_categories?.length ? `：${row.risk_signal_categories.join('、')}` : ''}</span>
+            <span>原始日线口径（全市场复权因子历史覆盖不足）</span>
+          </div>
+        </div>
+        <div className="rounded-md border border-border/50 bg-elevated/35 px-2 py-1.5 text-[10px] leading-relaxed">
+          {evidence.length > 0 ? evidence.map(reason => <div key={reason} className="text-secondary">• {reason}</div>) : <div className="text-muted">当前无明确风险线索；这不代表低风险或预测结论。</div>}
+        </div>
+      </div>
+      <div className="mt-1.5"><MarketStrengthChart rows={history} emotionRows={emotionHistory} currentEmotion={currentEmotion} /></div>
+    </section>
   )
 }
 
@@ -607,6 +861,21 @@ export function Dashboard() {
     placeholderData: (prev) => prev,
   })
   const data = overview.data
+  const marketRisk = useQuery({
+    queryKey: selectedDate ? QK.marketRiskDate(selectedDate) : QK.marketRiskLatest,
+    queryFn: () => selectedDate ? api.marketRiskDate(selectedDate) : api.marketRiskLatest(),
+    staleTime: 30_000,
+  })
+  const marketRiskHistory = useQuery({
+    queryKey: QK.marketRiskHistory(60),
+    queryFn: () => api.marketRiskHistory(60),
+    staleTime: 60_000,
+  })
+  const emotionHistory = useQuery({
+    queryKey: QK.regimeHistory(60),
+    queryFn: () => api.regimeHistory(undefined, undefined, 60),
+    staleTime: 60_000,
+  })
   const caps = useCapabilities()
   const settings = useSettings()
   const hasDepth = !!caps.data?.capabilities?.['depth5.batch']
@@ -672,6 +941,9 @@ export function Dashboard() {
     if (fetchSucceeded) {
       qc.invalidateQueries({ queryKey: QK.dataStatus })
       qc.invalidateQueries({ queryKey: QK.overviewMarket(undefined) })
+      qc.invalidateQueries({ queryKey: QK.marketRiskLatest })
+      qc.invalidateQueries({ queryKey: QK.marketRiskHistory(60) })
+      qc.invalidateQueries({ queryKey: QK.regimeHistory(60) })
     }
   }, [fetchSucceeded, qc])
 
@@ -693,7 +965,10 @@ export function Dashboard() {
   const handleRefresh = () => {
     setManualFetching(true)
     api.refreshCache()
-      .then(() => qc.invalidateQueries({ queryKey: ['overview-market'] }))
+      .then(() => {
+        qc.invalidateQueries({ queryKey: ['overview-market'] })
+        qc.invalidateQueries({ queryKey: ['market-risk'] })
+      })
       .finally(() => {
         overview.refetch().finally(() => setManualFetching(false))
       })
@@ -830,7 +1105,16 @@ export function Dashboard() {
           return `梯队 ${data.limit.tiers.length}`
         })()} tone="accent" />
         <KpiCell label="成交额" value={fmtBigNum(data.amount.total)} sub={`均额 ${fmtBigNum(data.amount.avg)}`} />
-        <KpiCell label="换手 / 量比" value={`${fmtPrice(data.activity.avg_turnover, 1)}% / ${fmtPrice(data.activity.vol_ratio, 2)}`} sub={`高换手 ${data.activity.high_turnover} · 放量占比 ${fmtPrice(data.activity.high_vol_ratio, 1)}%`} tone="accent" />
+        <KpiCell label="换手 / 量比" value={`${fmtPrice(data.activity.avg_turnover, 1)}% / ${fmtPrice(data.activity.vol_ratio, 2)}`} sub={`成交额/MA20 ${fmtRatio(data.activity.market_amount_ratio_20)} · 高换手 ${data.activity.high_turnover}`} tone="accent" />
+      </div>
+
+      <div className="mb-1.5">
+        <MarketRiskCard
+          row={marketRisk.data?.row}
+          history={marketRiskHistory.data?.rows ?? []}
+          emotionHistory={emotionHistory.data?.rows ?? []}
+          currentEmotion={{ date: data.as_of, score }}
+        />
       </div>
 
       <div className="grid grid-cols-1 gap-1.5 xl:grid-cols-[minmax(0,1fr)_20rem]">

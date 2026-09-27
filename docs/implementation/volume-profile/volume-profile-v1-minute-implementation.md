@@ -38,8 +38,10 @@ CLOSE_ONLY           -> 分钟优先；不足时显式日线 fallback
 
 分钟质量按目标股票本身的日线活跃日生成预期日期；日线 `volume=0` 的停牌日不被
 错误计为缺分钟。每个窗口检查重复/倒序 timestamp、缺活跃交易日、OHLC/volume 异常、
-大量零成交量、非预期的盘中缺口（5--60 分钟）和交易日错误。每个有效日以窗口中观测
-到的最大有效分钟根数作为 session 基准，而不是硬编码 240 根。
+大量零成交量和非预期的盘中缺口（5--60 分钟）。A 股完整 1 分钟会话按 240 根作为
+session 基准，因此“每天都缺同一半天”不会再由待测样本自身的最大根数误判为 100% 覆盖。
+分钟 bar 会先统一净化：非法 OHLCV 不进入 Histogram；相同 timestamp 的相同记录去重，
+冲突记录拒收并留下质量原因。
 
 ```text
 coverage >= 98%         FULL
@@ -79,8 +81,8 @@ allocation(i) = bar_volume * overlap(i) / (bar_high - bar_low)
   只能获得 50% 分钟覆盖，按默认策略明确输出日线 `FALLBACK`。
 - **WyckoffRangeVP**：只接受调用方传入的**正式 Wyckoff Trading Range start**；当前
   `TradingRange` DTO 没有 start 字段，因此传入缺失时返回
-  `wyckoff_range_start_unavailable`，绝不自行从价格重新猜 range。若 start 早于分钟历史
-  但仍有后段分钟数据，返回 `MINUTE_1M + PARTIAL`，并保留 `requested_start/data_start`。
+  `wyckoff_range_start_unavailable`，绝不自行从价格重新猜 range。Range 分钟覆盖低于 90%
+  时返回 `INSUFFICIENT`，不会把少量后段分钟数据伪装成可解释的完整区间 Profile。
 
 ## 动态、位置、接受与延展上下文
 
@@ -116,10 +118,10 @@ distance-to-VAH 和 ATR distance 回填研究标签，而无需重建分钟 Hist
 ## Non-Repainting
 
 `VolumeProfileEngine.build_profile()` 再次截断传入 bar：date 型 `as_of=D` 可使用 D 的完整
-收盘会话；datetime 型 `as_of` 严格使用 `bar.datetime <= as_of`。即使调用者错误混入 D+1
-或同日更晚分钟数据，也不能改变当前 histogram、POC、VAH、VAL、节点或位置。动态结果按
-历史 `as_of` 重算而非从当前完整窗口回推。单元测试覆盖 Future Bar Isolation、同日未来
-minute isolation 与 Prefix Consistency。
+收盘会话；datetime 型严格使用 `bar.datetime <= as_of`，没有 timestamp 的 bar 不会在盘中
+请求中放行。当前 Repository Service 仅支持盘后 date 型请求；传入 datetime 会 fail-closed，
+避免不完整 D 日日线 fallback 泄漏未来信息。分钟 Histogram 与观测价格分离：盘后结果的
+`current_price` 使用 D 日可靠日线 close，而不在 D 日分钟缺失时冒充为 D-1 close。
 
 ## 单元测试与真实样本
 

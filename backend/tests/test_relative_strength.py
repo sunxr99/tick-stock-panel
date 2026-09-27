@@ -76,6 +76,26 @@ def test_stock_vs_market_sector_and_rank_are_explainable(monkeypatch) -> None:
     assert aaa.benchmark_id == "all_stock_equal_weight"
 
 
+def test_tdx_industry_sector_id_preserves_exact_snapshot_as_of(monkeypatch) -> None:
+    stocks, dates = _frames()
+    mapping = pl.DataFrame({
+        "_sym_up": ["AAA.SH", "AAB.SH", "BBB.SH", "BBC.SH"],
+        "tdx_industry": ["880001.TDX", "880001.TDX", "881001.TDX", "881001.TDX"],
+        "_sector_display_name": ["Broad [880001.TDX]"] * 2 + ["Fine [881001.TDX]"] * 2,
+    })
+    monkeypatch.setattr(relative_strength, "_load_concept_map_df", lambda *_args: (mapping, 2))
+
+    rows = relative_strength.build_relative_strength(
+        _Repo(stocks),
+        sector_ids=("tdx_industry:all:880001.TDX",),
+        as_of=dates[-1],
+    )
+
+    assert {row.symbol for row in rows} == {"AAA.SH", "AAB.SH"}
+    assert all(row.sector_kind == "tdx_industry" for row in rows)
+    assert all(row.membership_as_of == dates[-1] for row in rows)
+
+
 def test_rank_percentile_ties_are_preserved(monkeypatch) -> None:
     stocks, _ = _frames()
     stocks = stocks.with_columns(

@@ -70,3 +70,43 @@ def test_member_lookup_requires_exact_trade_date_and_board(tmp_path) -> None:
     assert frame.to_dicts() == [{
         "trade_date": "20260922", "ts_code": "880001.TDX", "con_code": "000001.SZ", "con_name": "平安银行",
     }]
+
+
+def _write_snapshot(root, trade_date: str = "20260923") -> None:
+    (root / "tdx_members" / f"trade_date={trade_date}").mkdir(parents=True)
+    pl.DataFrame({
+        "ts_code": ["880001.TDX", "881001.TDX", "881501.TDX", "885001.TDX"],
+        "trade_date": [trade_date] * 4,
+        "name": ["Broad", "Fine", "Outside fine scope", "AI"],
+        "idx_type": ["行业板块", "行业板块", "行业板块", "概念板块"],
+    }).write_parquet(root / "tdx_index.parquet")
+    pl.DataFrame({
+        "ts_code": ["880001.TDX", "881001.TDX", "881501.TDX", "885001.TDX"],
+        "trade_date": [trade_date] * 4,
+        "con_code": ["000001.SZ"] * 4,
+        "con_name": ["平安银行"] * 4,
+    }).write_parquet(root / "tdx_members" / f"trade_date={trade_date}" / "part.parquet")
+
+
+def test_tdx_industry_map_requires_exact_date_and_uses_881_fine_boards_only(tmp_path) -> None:
+    root = tmp_path / "tdx_board_history_recent"
+    _write_snapshot(root)
+
+    current = tdx_board_rotation.load_industry_member_map(tmp_path, as_of=date(2026, 9, 23))
+    missing = tdx_board_rotation.load_industry_member_map(tmp_path, as_of=date(2026, 9, 22))
+
+    assert current.to_dicts() == [
+        {"_sym_up": "000001.SZ", "tdx_industry": "881001.TDX", "_sector_display_name": "Fine [881001.TDX]"},
+    ]
+    assert missing.is_empty()
+
+
+def test_tdx_category_membership_excludes_other_board_types(tmp_path) -> None:
+    root = tmp_path / "tdx_board_history_recent"
+    _write_snapshot(root)
+
+    members = tdx_board_rotation.load_category_membership(
+        tmp_path, trade_date=date(2026, 9, 23), category="industry"
+    )
+
+    assert members.get_column("ts_code").to_list() == ["880001.TDX", "881001.TDX", "881501.TDX"]
